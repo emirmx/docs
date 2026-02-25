@@ -24,12 +24,12 @@ For metering of multi-app users, the same value must be stored across all apps. 
 
 To ensure your multi-app users are counted correctly, you may want to consider the following guidelines:
 
-### Choosing a cross-app user identifier
+### Choosing a Cross-App User Identifier:
 
 User metering may not have been considered when your application was originally designed. As a result, different applications may store different identifier values for the same multi-app user in the `system.user.name`. Additionally, all apps in your portfolio may use different user-provisioning logic. Some apps use standard identity modules (Administration, SAML, OIDC SSO, SCIM, or LDAP) while others rely on proprietary modules or app logic to create users. This can lead to inconsistent identifiers.
 Even when all apps use the same solution, for example, OIDC SSO, the technical identifier value for a multi-app user may still differ.
 
-### Avoiding pairwise identifiers:
+### Avoiding Pairwise Identifiers:
 
 Even if all your apps are using the same user onboarding (provisioning) logic, this does not guarantee a user gets the same (technical) identifier value in all your applications. 
 The OpenID Connect specifications incorporate the concept of [pairwise user identifiers](https://openid.net/specs/openid-connect-core-1_0.html#PairwiseAlg). The general idea of pairwise identifiers is to prevent user correlation across apps owned by different service providers.  A user gets a different value in each app when using pairwise user identifiers.
@@ -40,11 +40,11 @@ Within your application portfolio, the possibility to prevent cross-app user cor
 
 ### Keeping the Existing Logic and Extending
 
-If your apps are not consistently storing the same identifier for a multi-app user in `system.user.name`, you can start using a new user attribute, new `UserCommons.namedUserIdentifier.value`.You can keep the existing application logic as it is, and in addition, store the selected user identifier value for a multi-app user in this new attribute.
+If your apps are not consistently storing the same identifier for a multi-app user in `system.user.name`, you can start using a new user attribute, a new `UserCommons.namedUserIdentifier.value`.You can keep the existing application logic as it is, and in addition, store the selected user identifier value for a multi-app user in this new attribute.
 
 ### Paying Attention to Case Sensitivity
 
-By design, the `system.user.name` is case sensitive and allows customers to store any user identifier without restrictions. If you choose to store an email address in these fields, or another identifier, that should be treated as case-insensitive. Mendix recommends downcasting such values to lowercase. The SAML, OIDC SSO, and SCIM modules already apply this for email claims/attributes received from your IdP.
+By design, the `system.user.name` is case sensitive and allows customers to store any user identifier without restrictions. If you choose to store an email address in these fields, or another identifier, that should be treated as case-insensitive. Mendix recommends downcasting such values to lowercase. The SAML, OIDC SSO, and SCIM modules already apply this for email claims or attributes received from your IdP.
 
 For more information, refer to the [Versioning](/developerportal/deploy/implementing-user-metering/#versioning-information) section below.
 
@@ -65,18 +65,18 @@ The user-role-based user classification module classifies users by using the rol
 
 ### Custom User Classification
 
-This method can be implemented either by using the [User Classification](/appstore/modules/user-classification/) module or by creating fully custom microflows. The main advantage of this approach is the flexibility it provides- you can apply any classification logic you choose while still relying on the user classification module as the base. However, this method requires developing custom logic and involves upgrading your app to a new version of your app to include the [user classification](https://marketplace.mendix.com/link/component/245015) module.
+This method can be implemented either by using the [User Classification](/appstore/modules/user-classification/) module or by creating fully custom microflows. The main advantage of this approach is the flexibility it provides. You can apply any classification logic you choose while still relying on the user classification module as the base. However, this method requires developing custom logic and involves upgrading your app to a new version of your app to include the [user classification](https://marketplace.mendix.com/link/component/245015) module.
 
 {{% alert color="info" %}}
 In situations where there is ambiguity about the user classification, Mendix considers users as internal users. Ambiguity may happen in the following situations:
 
-* A multi-app user is marked as external in one app and internal in another app.
-* When applying userrole-based classification, and a user has both an Internal and an External userrole.
+* A multi-app user is marked as `External` in one app and `Internal` in another app.
+* When applying userrole-based classification, and a user has both an `Internal` and an `External` userrole.
 {{% /alert %}}
 
 Classification by the platform is not supported by using your email domains, nor any other logic. Your app logic is responsible for classification. For more information, refer to [Custom Classification](/developerportal/deploy/populate-user-type/#custom-classification).
 
-## (De)Activation of users
+## (De)Activation of Users
 
 `system.user.active` attribute controls active or inactive users in your application. Users with an ‘active’ state can log in to your app and are counted for user metering purposes, while non-active users cannot login are not counted for user metering.
 
@@ -86,14 +86,14 @@ You can provision the user records (for example, created, updated, or deleted) u
 * The SCIM module allows your app to be integrated with your IdP to create, update, or delete user records. Depending on the (configured) business logic in your IdP, users may be created, deactivated, or deleted
 
     * as a result of the Joiner/Mover/Leaver processes.
-    * as result of license optimization, users who haven’t logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
+    * as a result of license optimization, users who have not logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
 
 * The LDAP module allows you to synchronize users and their status (active=false/true) from your on-premises Active Directory to your application. This is a similar module to SCIM but using a different protocol.
 
 If you are considering deactivating or removing user records for optimization of user cost, you are advised to consider the following:  
 
 * Users cannot log in when in the deactivated (active=false) state. The primary purpose of the active state is to control which users can log in. When SSO is used, the user may be successfully logged in at the IdP; however, the Mendix application fails to grant access if the active state is not updated.
-* Actual logins, frequency of login, or system.user.lastlogin is also not relevant for metering. A user is counted as an active user if the state was active on any day of the calendar month.
+* Actual logins, frequency of login, or `system.user.lastlogin` is also not relevant for metering. A user is counted as an active user if the state was active on any day of the calendar month.
 * If you choose to remove user records, associated data may be deleted depending on your domain model.
 * The SAML and OIDC SSO modules are capable of (re)creating any user that was deleted. This can be described as just-in-time user provisioning, also known as on-the-fly user onboarding or real-time user creation.
 
@@ -118,7 +118,7 @@ The following are entities and their attributes:
 
 1. `User`: Every Mendix app has a system module containing an entity `User`.
 
-    * `system.user.name`: This field is used to identify users, unless a UserCommons.namedUserIdentifier.value is available for the same user.
+    * `system.user.name`: This field is used to identify users, unless a `UserCommons.namedUserIdentifier.value` is available for the same user.
     * `system.User.Active`: A Boolean attribute, `Active`, is used to select the active user account for user metering. A user record that has `Active=true` during the metering period is counted as an active user during the billing period and reconciliated against one of the allocated user licenses.
 
 2. `UserReportInfo`: The system module also features the `UserReportInfo`.
@@ -127,7 +127,7 @@ The following are entities and their attributes:
 
 3. `namedUserIdentifier`(optional): Recent versions of the [UserCommons](https://marketplace.mendix.com/link/component/223053) module include a `namedUserIdentifier` entity.
 
-    * `UserCommons.namedUserIdentifier.value`: User commons modules in your app model assign the values to the `namedUserIdentifier.value` attribute to identify a user instead of `system.user.name`.The `namedUserIdentifier` overrides `user.name`.
+    * `UserCommons.namedUserIdentifier.value`: User commons modules in your app model assign the values to the `namedUserIdentifier.value` attribute to identify a user instead of `system.user.name`. The `namedUserIdentifier` overrides `user.name`.
 
 Note that one application may use `system.user.name` and not `userCommons.namedUserIdentifier.value`, or may exclude the UserCommons module, while another application may use `userCommons.namedUserIdentifier.value` instead. If the values in these different fields are the same for a multi-app user, the Mendix user metering mechanism correctly identifies the user as a single multi-app user (deduplication).
 
