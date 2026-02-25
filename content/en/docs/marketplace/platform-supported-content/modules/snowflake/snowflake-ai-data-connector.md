@@ -55,7 +55,7 @@ To use the Snowflake AI Data Connector, you must also install and configure the 
 
 * [Community Commons](https://marketplace.mendix.com/link/component/170) – This module is a required dependency for the Snowflake AI Data Connector.
 * [Encryption](https://marketplace.mendix.com/link/component/1011) – This module is a required dependency for the Snowflake AI Data Connector. The EncryptionKey constant must be set up in your application settings.
-* From version 4.0.0 and up the Snowflake AI Data Connector is no longer dependend on the [GenAI Commons](https://marketplace.mendix.com/link/component/227931) module.
+* From version 4.0.0 and up the Snowflake AI Data Connector is no longer dependent on the [GenAI Commons](https://marketplace.mendix.com/link/component/227931) module.
 
 ### Licensing and Cost
 
