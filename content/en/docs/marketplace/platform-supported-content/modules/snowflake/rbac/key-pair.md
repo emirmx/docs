@@ -16,7 +16,7 @@ In the context of integration between Snowflake and Mendix, RBAC helps ensure th
 
 ### Prerequisites
 
-To enable key-pair RBAC for your Mendix app, you must first install and configure the [Snowflake REST SQL Connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+To enable key-pair RBAC for your Mendix app, you must first install and configure the [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
 
 ## Configuring the Connection Details {#connection-details}
 
@@ -60,13 +60,13 @@ To interact with Snowflake, you must configure your Mendix app to execute SQL qu
 3. Fill out the **Timeout**, **Database**, **Schema**, and **Warehouse** fields as required.
 4. In the **Role** field, specify the Snowflake user role to be used for executing the query, or leave the field blank if you want the statement to be executed with the user's default role in Snowflake. Keep in mind that the user only has access to the warehouse, schema, database, and data granted to their assigned user role.
 5. Add a **Retrieve Objects** action after the **Statement** object.
-6. In the **XPath constraint** field, enter the following XPath: `[SnowflakeRESTSQL.ConnectionDetails_Account = $currentUser]`
+6. In the **XPath constraint** field, enter the following XPath: `[SnowflakeAIDataConnector.ConnectionDetails_Account = $currentUser]`
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/retrieve-details.png" >}}
 
     This ensures that the connection details are the ones associated with the current user account, so that the user can only access the data to which they have access in Snowflake.
 
-7. Add an **Execute Statement** action provided by the [Rest SQL Connector](/appstore/connectors/snowflake/snowflake-rest-sql/) after the **Retrieve Objects** action.
+7. Add an **Execute Statement** action provided by the [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-rest-sql/) after the **Retrieve Objects** action.
 8. Configure the **Statement** and **ConnectionDetails** parameters as shown in the following figure:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/execute-statement.png" >}}
