@@ -16,13 +16,13 @@ The table below summarizes the monitoring capabilities each tool supports:
 
 | APM Tool | Logs | Metrics | Traces | Min. Mendix Version |
 | --- | :---: | :---: | :---: | --- |
-| [AppDynamics](https://www.appdynamics.com/) | | ✓ | | 9.7 |
-| [Dynatrace](https://www.dynatrace.com/) | ✓ | ✓ | | 9.7 |
-| [Datadog](https://www.datadoghq.com/) | ✓ | ✓ | ✓ | 7.15 ¹ |
-| [Splunk Cloud Platform](https://www.splunk.com/en_us/products/splunk-cloud-platform.html) | ✓ | | | — |
-| [New Relic](https://www.newrelic.com/) | ✓ | ✓ | | 9.7 |
+| [AppDynamics](https://www.appdynamics.com/) | | {{< icon name="checkmark-circle-filled" color="green" >}} | | 9.7 |
+| [Dynatrace](https://www.dynatrace.com/) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | | 9.7 |
+| [Datadog](https://www.datadoghq.com/) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | 7.15 ¹ |
+| [Splunk Cloud Platform](https://www.splunk.com/en_us/products/splunk-cloud-platform.html) | {{< icon name="checkmark-circle-filled" color="green" >}} | | | — |
+| [New Relic](https://www.newrelic.com/) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | | 9.7 |
 
-<small>¹ Logs and metrics from Mendix 7.15. Tracing requires Mendix 10.24.12 or 11.5 and above.</small>
+<small>¹ Logs and metrics are available from Mendix 7.15 and above. Tracing requires Mendix 10.24.12 or 11.5 and above.</small>
 
 This document explains what information can be provided to a SaaS-based data analytics platform.
 

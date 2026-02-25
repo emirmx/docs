@@ -166,13 +166,13 @@ Tags you set here also influence Mendix's pre-configured Datadog variables. In p
 
 ## Pre-configured Variables{#pre-configured-variables}
 
-When Datadog is enabled for your Mendix app, Mendix automatically configures a set of Datadog variables on your behalf. Understanding these helps you avoid unexpected behaviour and allows you to override them where needed.
+When Datadog is enabled for your Mendix app, Mendix automatically configures a set of Datadog variables on your behalf. Understanding these helps you avoid unexpected behavior and allows you to override them where needed.
 
 Mendix sets the following [Unified Service Tagging](https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging/) variables automatically, deriving their values from your app's configuration:
 
-* **`DD_SERVICE`** — defaults to your app's name, derived from its domain. You can override this by setting a `service:<name>` tag (for example, `service:customermanagement`) on the **Tags** tab of your environment.
-* **`DD_ENV`** — set from the `env:` tag if present.
-* **`DD_VERSION`** — set from the `version:` tag if present; otherwise defaults to the Mendix model version of your application.
+* `DD_SERVICE` – defaults to your app's name, derived from its domain. You can override this by setting a `service:<name>` tag (for example, `service:customermanagement`) on the **Tags** tab of your environment.
+* `DD_ENV` – set from the `env:` tag if present.
+* `DD_VERSION` – set from the `version:` tag if present; otherwise defaults to the Mendix model version of your application.
 
 ### Automatically Configured Variables{#auto-configured-variables}
 
@@ -197,21 +197,21 @@ Variables marked **No** in the **Can Be Overridden?** column are fixed by Mendix
 
 To view metrics for multiple instances of an application on the Datadog dashboard, follow these steps:
 
-1. In Datadog, go to **Metrics** > **Explorer**.
+1. In Datadog, go to **Metrics** and click **Explorer**.
 2. In the search form, search for your desired metric.
 3. In the **from** field, specify your desired app environment's **Environment ID**. Use the format `application_name:<environment id>`.
 4. In the **avg by** field, select **pod_name**.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/metrics/datadog-metrics/datadog-metrics-explorer.png" alt="Metrics Explorer search form" class="no-border" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/metrics/datadog-metrics/datadog-metrics-explorer.png" alt="Metrics Explorer search form" >}}
 
 If the app has more than one instance, you will see lines on the graph for each instance.
 
 ## Mendix Tracing{#mendix-tracing}
 
-[Mendix Tracing](https://docs.mendix.com/refguide/tracing-in-runtime/) sends Mendix Runtime traces to [Datadog APM](https://docs.datadoghq.com/tracing/), giving you distributed tracing visibility into your app's performance and microflow executions.
+[Mendix Tracing](/refguide/tracing-in-runtime/) sends Mendix Runtime traces to [Datadog APM](https://docs.datadoghq.com/tracing/), giving you distributed tracing visibility into your app's performance and microflow executions.
 
 {{% alert color="info" %}}
-Mendix Tracing requires Mendix Runtime version **10.24.12** or later, or **11.5** or later.
+Mendix Tracing requires Mendix Runtime 10.24.12 or above, or 11.5 or above.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -232,7 +232,7 @@ To enable Mendix Tracing, follow these steps:
 
 ### Filtering Traces{#filter-traces}
 
-To control which traces are sent to Datadog, set the `MX_TRACING_FILTER` custom environment variable. For available filter options and syntax, see [Tracing in Runtime](https://docs.mendix.com/refguide/tracing-in-runtime/#filtering) in the Mendix Reference Guide.
+To control which traces are sent to Datadog, set the `MX_TRACING_FILTER` custom environment variable. For available filter options and syntax, see [Tracing in Runtime](/refguide/tracing-in-runtime/#filtering).
 
 ## Additional Information{#additional-info}
 
@@ -305,7 +305,7 @@ Previously, when Mendix Cloud ran on Cloud Foundry, hosts were incorrectly regis
 
 * [Monitor Your Mendix Apps with Datadog](https://www.mendix.com/blog/monitor-your-mendix-apps-with-datadog/) – a Mendix blog about the capabilities of Datadog and using Datadog with Mendix
 * [Metrics](/developerportal/operate/metrics/)
-* [Tracing in Runtime](https://docs.mendix.com/refguide/tracing-in-runtime/) – Mendix documentation
+* [Tracing in Runtime](/refguide/tracing-in-runtime/) – Mendix documentation
 * [Java Runtime Metrics](https://docs.datadoghq.com/tracing/runtime_metrics/java/) – Datadog documentation
 * [Postgres](https://docs.datadoghq.com/integrations/postgres/) – Datadog documentation
 * [System Check](https://docs.datadoghq.com/integrations/system/) – Datadog documentation
