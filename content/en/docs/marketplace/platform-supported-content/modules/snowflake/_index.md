@@ -17,7 +17,7 @@ The integration between Mendix and Snowflake is available in either direction. T
 
 The following diagram outlines the available integration options:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/Snowflake Architecture slide.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/Snowflake Architecture slide.png" >}}
 
 ### Building Mendix Apps on Top of Snowflake
 
@@ -43,7 +43,7 @@ The [Snowflake AI Data Connector](https://marketplace.mendix.com/link/component/
 
 With the Snowflake AI Data Connector, authentication can be done either on system or on end-user level, and the connector supports role-based access control (RBAC) per end user as well.
 
-The Snowflake AI Data Connector requires an additional step to transform data rows received from the REST SQL API into Mendix objects. For more information, see [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+The Snowflake AI Data Connector requires an additional step to transform data rows received from the REST SQL API into Mendix objects. For more information, see [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-ai-data-connector/).
 
 ##### Role Base Access Control (RBAC)
 

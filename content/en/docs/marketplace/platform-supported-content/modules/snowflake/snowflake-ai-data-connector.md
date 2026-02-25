@@ -99,7 +99,7 @@ To configure the authentication, perform the following steps:
 
 1. In the **App Explorer**, under the **SnowflakeAIDataConnector** section, find the **SNIPPET_SnowflakeConfiguration** snippet and drag and drop it into a page in your module.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/drag_snippet_to_page.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/drag_snippet_to_page.png" >}}
 
 2. Assign the module role **SnowflakeAIDataConnector.Administrator** to the application role that will be used to set up the configuration, so that the added logic will be usable.
 3. Run the application and go to the page where you added the snippet.
@@ -107,15 +107,15 @@ To configure the authentication, perform the following steps:
 5. On the **Connection details** page, fill out all fields with the details of your Snowflake account. For more information, see [ConnectionDetails](#connection-details).
 6. In the Snowflake console, click **Copy account URL**. This URL will be used as the **Account URL** parameter for **Connection details**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/snowsight-account-url.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/snowsight-account-url.png" >}}
 
 7. In the Snowflake console, click **Copy account identifier**. Before using it inside Mendix, you must replace the `.` separator with a `-`. The final string will be used as the **Account identifier** parameter for the **Connection details**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/snowsight-account-identifier.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/snowsight-account-identifier.png" >}}
 
 8. Enter the passphrase and upload [your private key file](#setup-key-pair-snowflake) in *.p8* format.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/connection_details.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/connection_details.png" >}}
 
 9. Click **Save** to save the connection, or click **Save and test connection** to generate a JSON Web Token (JWT) and validate your connection.
 
@@ -123,7 +123,7 @@ To configure the authentication, perform the following steps:
 
 After you configure the authentication for Snowflake, you can implement the functions of the connector by using the provided activities in microflows. An extended microflow has been implemented and added to the Snowflake AI Data Connector as an example for users that would like to retrieve a list of objects from an existing table in Snowflake. In the **SnowflakeAIDataConnector** module, see the **EXAMPLE_ExecuteStatement** microflow and the **ExampleObject** domain model entity to learn how the [**TransformResponsesToMxObjects** operation](#transform-response-to-mx-object) can be used to easily convert the data received in **HttpResponse** objects into Mendix objects. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/example_implementation.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/example_implementation.png" >}}
 
 #### Asynchronous Query Execution
 
@@ -226,7 +226,7 @@ Since version 3.1.0, the Snowflake AI Data Connector supports using a proxy to m
 
 Once configured, the connector automatically detects the `ProxySettings` object and routes REST requests through the specified proxy.
 
- {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/ProxyExample.png" >}}
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/ProxyExample.png" >}}
 
 ## Technical Reference
 
@@ -318,7 +318,7 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
 6. To get the Cortex Analyst Response entity, add the **Response: Get Cortex Analyst Response** action from the Toolbox, and then add the **Response** entity as a parameter. The response contains the following information:
     * **Request_ID** – The returned *RequestId*
    
- {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/CortexAnalystRequestExample.png" >}}
 
  ## Configuring Snowflake Cortex Search {#cortex-search}
 
