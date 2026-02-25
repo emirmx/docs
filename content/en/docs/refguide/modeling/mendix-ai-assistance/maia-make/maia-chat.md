@@ -37,9 +37,7 @@ See below a list of Maia Chat's data sources:
 ## Using Maia Chat in Studio Pro
 
 {{% alert color="info" %}}
-In Studio Pro 11.8 and above, Maia Chat is incorporated into the unified [Maia Make](/refguide/maia-make/) interface. There is no dedicated interface only for Maia Chat. With Maia Make, you can ask questions, ask Maia to explain your logic and pages, and let it generate development artifacts such as data structures, overview pages, and microflows for you.
-
-Maia Make is enabled by default. You can disable it in Studio Pro **Preferences**, via the **Maia** tab.
+In Studio Pro 11.8 and above, Maia Chat is incorporated into the unified Maia Make capabilities. There is no dedicated interface only for Maia Chat. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
 {{% /alert %}}
 
 In Studio Pro 11.7 and below, there are two ways to access Maia Chat in Studio Pro:
