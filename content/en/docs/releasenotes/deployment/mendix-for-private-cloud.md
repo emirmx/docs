@@ -22,6 +22,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have addressed a _license decode error_ error message that appeared in the Operator logs when using a fallback license. (Ticket 271720)
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 
+#### License Manager CLI v0.10.8 {#0.10.8}
+
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+
 ### February 19, 2026
 
 #### Portal Improvements
