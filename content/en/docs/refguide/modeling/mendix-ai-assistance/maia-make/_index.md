@@ -41,6 +41,10 @@ To access the conversational interface, in the upper-right corner of Studio Pro,
 
 Alternatively, you can also click **View** at the Studio Pro top bar and select **Maia** to open the interface.
 
+{{% alert color="warning" %}}
+The Maia ({{% icon name="sparkles" %}} ) icon on the right side of the top bar does not work in Studio Pro 11.8.
+{{% /alert %}}
+
 {{% alert color="info" %}}
 Under the **Maia** pane, there is also the **Learn** tab. It is a separate Maia capability that is not part of Maia Make. For more information, see [Maia Learn](/refguide/maia-learn/).
 {{% /alert %}}
