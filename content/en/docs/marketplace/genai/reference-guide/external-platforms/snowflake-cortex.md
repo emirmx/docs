@@ -12,7 +12,7 @@ description: "Describes the Snowflake Cortex service."
 
 ## Integrating Your Mendix App with Snowflake Cortex
 
-To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install and configure the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install and configure the [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
 
 Mendix also offers a [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845), which you can use as an example of how to implement the Cortex functionalities in your own app.
 
