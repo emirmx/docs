@@ -14,6 +14,10 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 * We have improved the handling of PostgreSQL HA unavailability issues in certain Azure regions to prevent failed Spacelift Stack runs when infrastructure redundancy is enabled.
 
+### Known issues:
+
+* The initialised cluster is visible to multiple logged in users within a subscription on the Mendix on Azure portal. This is expected Portunus behavior. Additional users can be removed upon request.
+
 ### Release date: January 29, 2026
 
 * To improve your sign-in experience, we have eliminated an unnecessary pop-up that previously appeared after successfully signing into Azure.
