@@ -6,7 +6,19 @@ description: "Describes how to setup and use tracing in the Mendix Runtime."
 
 ## Introduction
 
-Mendix supports tracing via OpenTelemetry. When tracing is enabled, the runtime generates traces that help you analyze errors and performance.
+Mendix supports tracing via OpenTelemetry. When tracing is enabled, the runtime generates traces that help you analyze errors and performance. Tracing provides deep insight into applications performance and stability by collecting and analysing runtime data during operation. It offers these key benefits:
+
+* **End‑to‑end request visibility**: Tracing can follow a single request across all involved services.
+* **Clear causality and root‑cause analysis**: Traces show exactly where an issue occurred and how it propagated.
+* **Precise latency attribution**: Tracing pinpoints which operation or dependency affected response times the most.
+* **Correlation across telemetry signals**: Traces can be correlated with logs and metrics for a holistic performance and error analysis.
+* **Vendor‑neutral, future‑proof instrumentation**: OpenTelemetry is an open industry standard and best practice.
+
+Tracing is an important tool for maintaining critical applications, ensuring application performance, and troubleshooting issues with applications in production.
+
+
+## Prerequisites
+
 These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
 
 {{% alert color="warning" %}}
