@@ -16,7 +16,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Known issues:
 
-* The initialised cluster is visible to multiple logged in users within a subscription on the Mendix on Azure portal. This is expected Portunus behavior. Additional users can be removed upon request.
+* The initialised cluster is visible to multiple logged in users within a subscription on the Mendix on Azure portal.
 
 ### Release date: January 29, 2026
 
