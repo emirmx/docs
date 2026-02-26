@@ -4,7 +4,12 @@ linktitle: "Certificate Management"
 url: /control-center/certificate-management/
 description: "Describes the Certificate Management page in Mendix Control Center."
 weight: 40
+beta: true
 ---
+
+{{% alert color="warning" %}}
+This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
 
 ## Introduction
 
@@ -34,7 +39,7 @@ This overview helps you proactively manage certificate renewals and avoid servic
 Each configured certificate is shown in a table with the following fields:
 
 * **Description** – A descriptive name for the certificate. Use clear and meaningful names to make certificates easy to identify.
-* **Expiration date** – The date and time the certificate expires
+* **Certificate Expires** – The date and time the certificate expires
 * **Number of custom domains** – The number of custom domains currently using the certificate
 * **Status** – The current state of the certificate:
     * **Valid** – Currently valid and in use

@@ -90,7 +90,7 @@ Make sure you have configured a CNAME record for your custom domain with your do
 
 For certain use cases, it is important for the Mendix runtime to know the public URL of your applications. This is most commonly needed when your app generates links back to itself.
 
-To tell the runtime where it lives, set the `ApplicationRootUrl` [custom runtime setting](/refguide/custom-settings/#general). To set the custom runtime setting, follow the instructions in the [Custom Runtime Settings](/developerportal/deploy/environments-details/#custom-runtime-settings) section of *Environment Details*.
+To tell the runtime where it lives, set the `ApplicationRootUrl` [custom runtime setting](/refguide/custom-settings/#applicationrooturl-section). To set the custom runtime setting, follow the instructions in the [Custom Runtime Settings](/developerportal/deploy/environments-details/#custom-runtime-settings) section of *Environment Details*.
 
 ### Can You Configure Multiple Custom Domains for the Same Application? {#multiple-custom-domains}
 

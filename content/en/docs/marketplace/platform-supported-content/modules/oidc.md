@@ -411,7 +411,7 @@ For more information about configuring your app for OIDC with Amazon Cognito, se
 
 In version 2.3.0 and above, you can configure the OIDC SSO module using app [constants](/refguide/constants/) rather than using the app administration pages. As the developer of an app using OIDC SSO, you can set default values. These values can be overridden using the app constants.
 
-To enable the use of app constants to configure the OIDC SSO module, configure your app to run the Startup microflow in the OIDC module (OIDC.ASU_OIDC_Startup) as (part of) the [after startup](/refguide/app-settings/#after-startup) microflow.
+To enable the use of app constants to configure the OIDC SSO module, configure your app to run the Startup microflow in the OIDC module (OIDC.ASU_OIDC_Startup) as (part of) the [after startup](/refguide/runtime-tab/#after-startup) microflow.
 
 Use the following security best-practices when setting up your constants:
 
