@@ -12,32 +12,47 @@ This feature is in Public Beta. For more information, refer to [Release Status](
 
 ## Introduction
 
+Audit logs provide a record of changes that users and admins make to the system.     
+Audit logs are valuable for a variety of reasons:
+
+* They enable security monitoring and forensic analysis.
+* They support compliance with regulatory requirements.
+* They help in troubleshooting and problem solving.
+* They allow tracking of resource usage and user behavior.
+
 ## Audit Logs
 
 The **Audit Logs** tab displays a list of all activities over the past 90 days. It includes the following details:
 
-* **Date** – The date when the activity was logged.
+* **Date** – The date and time when the activity was logged.
 * **Email** – The email of the user who performed the activity.
 * **Action** – The activity that was performed.
-* **Service** – 
-* **Description** – 
-* **Outcome** – 
-* **Resource Name** –
-* **Resource Type** –
+* **Service** – The name of the service which produced the activity.
+* **Description** – A short description of the activity.
+* **Outcome** – The status of the activity, which can be one of the following:
+
+    * **Success Action** – The activity was successfully completed as intended.
+    * **Success Audit** – A security access attempt was audited and was successful. 
+    * **Warning** – The activity failed with a warning.
+    * **Error** – The activity failed with error, which is usually a data or functionality loss, or an unexpected error.
+    * **Failure Audit** – A security access attempt was audited and was not successful.
+
+* **Resource Name** – The object that underwent the change.
+* **Resource Type** – The type of the object that underwent the change.
 * **Details** – The following information is displayed and can be downloaded for each audit log item:
 
     * **Log ID** – The unique identifier of the log.
-    * **Date** – The date when the log was generated.
-    * **Owner ID** –  
-    * **Owner ID Type** – 
+    * **Date** – The date and time when the log was generated.
+    * **Owner ID** – The unique identifier of the logged in user.
+    * **Owner ID Type** – The role of the logged in user.
     * **User Email** – The email address of the user who performed the action that generated the log.
     * **User Name** – The name of the user who performed the action that generated the log.
     * **User ID** – The unique identifier of the user who performed the action that generated the log.
     * **IP Address** – The IP address corresponding to the user who performed the action that generated the log.
     * **Action** – The action that generated the log.
-    * **Description** – 
-    * **Outcome** – 
-    * **Error Message** –
+    * **Description** – A detailed description of the activity.
+    * **Outcome** – The status of the activity. The possible values are the same as the ones in the main page.
+    * **Error Message** – If the activity fails with an error or a warning, this field displays the error message.
     * **Old Value** – The state of the entity prior to the change that generated the log.
     * **New Value** – The state of the entity after the change that generated the log.
     * **Resource Name** – The name of the resource that was changed.
@@ -45,9 +60,11 @@ The **Audit Logs** tab displays a list of all activities over the past 90 days. 
 
 You can use the **Filters** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.
 
-### Exporting Audit Logs
+The list displays activity logs from the last 90 days. To view older information, you can [download audit logs](#export-logs).
 
-You can export audit logs in a CSV format. This is available for logs that are no older than 90 days old.     
+### Exporting Audit Logs {#export-logs}
+
+You can export audit logs in a CSV format. This is available for all logs, including those that are older than 90 days.     
 You can choose between these options:
 
 * Export all logs. To do that, click **Export All**.
@@ -63,7 +80,7 @@ Once the logs are ready for export, a download link is displayed on the [Downloa
 When you export audit logs, a download link is displayed on this tab once the export CSV is ready for download.    
 These are details available on the this tab:
 
-* **Submitted on** – 
+* **Submitted on** – The date and time when the export request was made.
 * **Requester** – The user who requested the export.
 * **Expires in** – The number of days that the exported CSV is available for download.
 * **Status** – The status of the CSV generation. Once the CSV export is fully generated, the status becomes **Completed**.
