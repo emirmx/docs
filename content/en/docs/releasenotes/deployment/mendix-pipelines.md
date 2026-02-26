@@ -16,7 +16,7 @@ To see the current status of the Mendix Pipelines, see [Mendix Status](https://s
 
 #### New Features
 
-* We have added AI-powered log summary to all Mendix Pipeline steps to provide insights into pipeline operations.
+* We have added [AI-powered log summary](/developerportal/deploy/mendix-pipelines/#ai-log-summary) to all Mendix Pipeline steps to provide insights into pipeline operations.
 
 ## 2025
 
