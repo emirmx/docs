@@ -343,6 +343,7 @@ Content-Length: 235
     "PhoneNumber": "123123"
     "AddressType": "Home"
 }
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/create-resources-associations.png" class="no-border" alt="JSON response" >}} 
 
@@ -420,6 +421,30 @@ POST http://localhost:8080/odata/CustomerApi/v1/Customers
 
 The response is as follows:
 
+```json
+HTTP/1.1 422 Unprocessable Entity
+Date: Wed, 08 Feb 2023 16:22:09 GMT
+Connection: close
+Cache-Control: no-store
+Content-Language: en-US
+Content-Type: application/json;charset=utf-8
+Content-Length: 141
+
+{
+    "error": {
+        "code": "422",
+        "message": "Validation failed",
+        "details": [
+            { 
+                "code": "VE001",
+                "target": "Lastname",
+                "message": "Please provide a lastname"
+            }
+        ]
+    }
+}
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/error-422.png" width="350" class="no-border" alt="JSON response" >}} 
 
 #### Validation Microflows {#validation-microflows}
@@ -476,6 +501,23 @@ DELETE http://localhost:8080/odata/CustomerApi/v1/Customers(5)
 ```
 
 The response is as follows:
+
+```json
+HTTP/1.1 404 Not Found
+Date: Wed, 08 Feb 2023 16:19:30 GMT
+Connection: close
+Content-Language: en-US
+Content-Type: application/json;charset=utf-8
+Content-Length: 67
+
+{
+    "error": {
+        "code": "404",
+        "message": "Entity with key '5' not found."
+    }
+}
+
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/standard-error-codes.png" class="no-border" alt="JSON response" >}} 
 
