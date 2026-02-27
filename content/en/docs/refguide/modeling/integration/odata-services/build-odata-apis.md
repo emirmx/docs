@@ -85,6 +85,35 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers
 
 The response is as follows:
 
+```json
+HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2023 15:33:34 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 293
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers",
+    "value": [
+        {
+            "CustomerId": 1
+            "FirstName": "John",
+            "LastName": "Smith",
+            "Title": "Engineer",
+            "CompanyName": "CustKo"
+        },
+        {
+            "CustomerId": 2
+            "FirstName": "Pete",
+            "LastName": "Arnhold",
+            "Title": "Sales Manager",
+            "CompanyName": "Devco"
+      }
+    ]
+}
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/fetch-all-customers.png" width="400" class="no-border" alt="JSON response" >}} 
 
 ### Getting a Resource by Identifier
@@ -96,6 +125,24 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers(1)
 ```
 
 The response is as follows:
+
+```json
+HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2023 16:12:13 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 186
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+    "CustomerId": 1
+    "FirstName": "Irene",
+    "LastName": "Smith",
+    "Title": "Engineer",
+    "CompanyName": "CustKo"
+}
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/fetch-single-customer.png" width="500" class="no-border" alt="JSON response" >}} 
 
@@ -124,6 +171,31 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers?$filter=contains(Lastna
 
 The response is as follows:
 
+```json
+HTTP/1.1 200 OK
+Date: Thu, 09 Feb 2023 08:16:33 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 273
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(FirstNameCompanyName)",
+    "value": [
+        {
+            "FirstName": "Irene",
+            "LastName": "Aisha",
+            "CompanyName": "Foster Hale"
+        },
+        {
+            "FirstName": "Angela",
+            "LastName": "Naja",
+            "CompanyName": "Mimosa Advertising"
+      }
+    ]
+}
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/filter-sort-page-attribute.png" width="500" class="no-border" alt="JSON response" >}} 
 
 Alternatively, you can specify the query in the payload of a `POST` call, which is useful if you have a long complex query.
@@ -151,6 +223,14 @@ POST http://localhost:8080/odata/CustomerApi/v1/Customers
 
 The response is as follows:
 
+```json
+HTTP/1.1 201 OK
+Date: Wed, 08 Feb 2023 16:13:32 GMT
+Connection: close
+Cache-Control: no-store
+Location: Customers(5)
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/insert-new-data.png" class="no-border" alt="JSON response" >}} 
 
 The following `GET` request uses the returned location header to query the new resource at its endpoint:
@@ -160,6 +240,24 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers(5)
 ```
 
 The response is as follows:
+
+```json
+HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2023 16:14:26 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 188
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+    "CustomerId": 5,
+    "FirstName": "Jimmy",
+    "LastName": "Smooth",
+    "Title": "Engineer"
+    "CompanyName": "Mimosa Advertising"
+}
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/query-resource-endpoint.png" class="no-border" alt="JSON response" >}} 
 
