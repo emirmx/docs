@@ -147,7 +147,7 @@ If the commands return a *not found* response, your environment database and blo
 
 #### S3 Bucket Region Might Need to Be Set Manually
 
-In Studio Pro version 11.6, the AWS S3 library was updated from version 1 to version 2. This new AWS library version can no longer automatically detect an S3 bucket's region from its endpoint address, and needs the bucket endpoint to be specified manually. The AWS S3 library is also updated in the latest LTS versions of Studio Pro.
+In Studio Pro version 11.6, the AWS S3 library was updated from version 1 to version 2. This new AWS library version can no longer automatically detect an S3 bucket's region from its endpoint address, and needs the bucket endpoint to be specified manually. The AWS S3 library is also updated in the latest LTS versions of Studio Pro: 9.24.41 (or later) and 10.24.14 (or later)
 
 Mendix Operator 2.25 (or later versions) will automatically recognise an S3 bucket's region from its endpoint address:
 
