@@ -281,6 +281,24 @@ Prefer: return=representation
 
 The following is the response:
 
+```json
+HTTP/1.1 200 OK
+Date: Mon, 13 Mar 2023 13:38:20 GMT
+Connection: close
+Cache-Control: no-store
+Content-Type: application/json;charset=utf-8
+Location: Customers(15)
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+    "CustomerId": 15,
+    "FirstName": "Alexis",
+    "LastName": "Sweeper",
+    "Title": "Ir."
+    "CompanyName": "GadgetsAndBeers"
+}
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/prefer-header.png" class="no-border" alt="JSON response" >}} 
 
 #### Creating Resources with Associations
@@ -305,6 +323,27 @@ Prefer: return=representation
 
 The response is as follows:
 
+```json
+HTTP/1.1 200 OK
+Date: Wed, 15 Mar 2023 13:39:18 GMT
+Connection: close
+Cache-Control: no-store
+Content-Type: application/json;charset=utf-8
+Location: Addresses(8)
+Content-Length: 235
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Addresses/$entity",
+    "AddressId": 8,
+    "Street": "Mainstreet",
+    "HouseNumber": "11",
+    "Zipcode": "13423",
+    "City": "Bristol",
+    "Country": "UK",
+    "PhoneNumber": "123123"
+    "AddressType": "Home"
+}
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/create-resources-associations.png" class="no-border" alt="JSON response" >}} 
 
 ### Modifying Existing Data
@@ -323,6 +362,12 @@ PATCH http://localhost:8080/odata/CustomerApi/v1/Customers(5)
 
 The response is as follows:
 
+```json
+HTTP/1.1 204 No Content
+Date: Wed, 08 Feb 2023 16:16:20 GMT
+Connection: close
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/modify-existing-data-1.png" class="no-border" alt="JSON response" >}} 
 
 And a subsequent `GET` request:
@@ -332,6 +377,24 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers(5)
 ```
 
 The response is as follows:
+
+```json
+HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2023 16:16:46 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 189
+
+{
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+    "CustomerId": 5,
+    "FirstName": "Jimmy",
+    "LastName": "Smooth",
+    "Title": "Engineer"
+    "CompanyName": "CustKo"
+}
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/modify-existing-data-2.png" class="no-border" alt="JSON response" >}} 
 
