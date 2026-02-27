@@ -304,21 +304,30 @@ The settings below configure metrics through [micrometer](https://micrometer.io/
 
 ## Proxy Settings {#proxy-settings}
 
-The settings below allow you to use a proxy. 
+### Http(s) Connections
 
-{{% alert color="warning" %}}
-These settings have to be set as JVM properties, not as custom Runtime settings.
-{{% /alert %}}
+The settings below configure the app to use a proxy for http(s) connections used in:
+
+  1. Integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request) and  [call external action](/refguide/call-external-action/).
+  2. External object microflow activities [send external object](/refguide/send-external-object/) and [delete external object](/refguide/delete-external-object/).
+  3. Retrieving external entity data using a [consumed OData service](/refguide/consumed-odata-service/).
+  4. Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()].
+
+These settings can be set either as JVM properties or as custom Runtime settings.
 
 | Name | Description | Default Value |
 | --- | --- | --- |
-| <a id="httpproxyHost" href="#httpproxyHost">http.proxyHost</a> | Defines the hostname of the HTTP proxy server. | |
-| <a id="httpproxyPort" href="#httpproxyPort">http.proxyPort</a> | Defines the port number of the HTTP proxy server. | |
+| <a id="httpproxyHost" href="#httpproxyHost">http.proxyHost</a> | Defines the hostname of the HTTP proxy server. |  |
+| <a id="httpproxyPort" href="#httpproxyPort">http.proxyPort</a> | Defines the port number of the HTTP proxy server. |  |
 | <a id="httpproxyUser" href="#httpproxyUser">http.proxyUser</a> | Defines the user of the HTTP proxy server. | | 
 | <a id="httpproxyPassword" href="#httpproxyPassword">http.proxyPassword</a> | Defines the password of the HTTP proxy server. | | 
-| <a id="httpsproxyHost" href="#httpsproxyHost">https.proxyHost</a> | Defines the hostname of the HTTPS proxy server. | |
-| <a id="httpsproxyPort" href="#httpsproxyPort">https.proxyPort</a> | Defines the port number of the HTTPS proxy server. | |
+
+### License Server
+
+The settings below configure the app to use a proxy to reach the Mendix license server. These settings have to be set as JVM properties, not as custom Runtime settings.
+
+| <a id="httpsproxyHost" href="#httpsproxyHost">https.proxyHost</a> | Defines the hostname of the HTTPS proxy server. |  |
+| <a id="httpsproxyPort" href="#httpsproxyPort">https.proxyPort</a> | Defines the port number of the HTTPS proxy server. |  |
 | <a id="httpsproxyUser" href="#httpsproxyUser">https.proxyUser</a> | Defines the user of the HTTPS proxy server. | | 
 | <a id="httpsproxyPassword" href="#httpsproxyPassword">https.proxyPassword</a> | Defines the password of the HTTPS proxy server. | | 
-
-{{% alert color="info" %}} `http.nonProxyHosts` only affects the license server. {{% /alert %}}
+| <a id="httpsnonProxyHosts" href="#httpsnonProxyHosts">https.nonProxyHosts</a> | Defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '|'. The patterns may start or end with a '*' for wildcards. | | 
