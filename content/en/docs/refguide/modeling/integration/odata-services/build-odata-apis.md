@@ -389,7 +389,7 @@ In this example, you can publish a single REST resource that combines data from 
 
 2. Use an OQL dataset to define the query to fetch this information from your entities:
 
-    {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/oql-database.png" class="no-border" alt="Domain model with four entities >}} 
+    {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/oql-database.png" class="no-border" alt="Domain model with four entities"  >}} 
 
 3. Define a microflow that will fetch the correct data when a user does a `GET` on the **CustomerHomeAddress** resource:
 
