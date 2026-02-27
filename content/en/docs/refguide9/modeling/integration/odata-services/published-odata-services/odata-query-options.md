@@ -101,7 +101,7 @@ Filters can be combined with `and`, `or`, `not`, and `()`. For example: `?$filte
 
 ### Filtering by Association
 
-You can filter on attributes of an associated entity. The way you do this depends on whether the association exposes one object or a list of objects. You do not need to include the association name in the filter, only the entity name of the associated entity.
+You can filter on attributes of an associated entity. The way you do this depends on whether the association exposes one object or a list of objects. You only need to include the associated entity’s name in the filter, not the association name.
 
 | Type | Example |
 | --- | --- |
