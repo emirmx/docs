@@ -10,7 +10,7 @@ Mendix supports tracing via OpenTelemetry. When tracing is enabled, the runtime 
 These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
 
 {{% alert color="warning" %}}
-Tracing is currently not supported on Mendix Cloud and Mendix Cloud Dedicated.
+Tracing is currently supported only via [Datadog integration](/developerportal/operate/datadog-metrics/) on Mendix Cloud.
 {{% /alert %}}
 
 ## Generated spans
