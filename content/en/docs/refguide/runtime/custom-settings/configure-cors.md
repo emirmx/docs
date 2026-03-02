@@ -13,7 +13,7 @@ This document describes the custom runtime settings required to enable CORS in t
 
 ## Settings to Configure {#settings}
 
-To enable CORS, configure the following custom runtime settings:
+To enable CORS, configure the following custom runtime settings. For general information on how to set custom runtime settings, see [Runtime Customization](/refguide/custom-settings/).
 
 ### Runtime Settings
 
