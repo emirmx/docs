@@ -533,6 +533,45 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers(1)?$expand=Addresses,No
 
 The response is as follows:
 
+```json
+
+HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2023 16:27:06 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+Content-Length: 442
+
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+  "CustomerId": 1,
+  "FirstName": "John",
+  "Lastname": "Smith",
+  "Title": "Engineer",
+  "CompanyName": "CustKo",
+  "Addresses": [
+    {
+      "AddressId": 1,
+      "Street": "Middlesquare",
+      "HouseNumber": "4",
+      "Zipcode": "12334",
+      "City": "Middletown",
+      "Country": "United Kingdom",
+      "PhoneNumber": "1231233",
+      "AddressType": "Office"
+    }
+  ],
+  "Notes": [
+    {
+      "NoteId": 1,
+      "Summary": "Tried calling",
+      "Note": "Not available"
+    }
+  ]
+}
+
+```
+
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/expand-expression.png" width="300" class="no-border" alt="JSON response" >}} 
 
 You can use `select` and `expand` in combination with `filter`, `orderby`, `top`, and `skip`. For more information, see the [Filtering, Sorting, Paginating, and Selecting Data](#filter-sort-page-select-data) section below. 
@@ -558,6 +597,40 @@ Content-Type: text/plain
 ```
 
 The response is as follows:
+
+```json
+
+HTTP/1.1 200 OK
+Date: Sat, 11 Feb 2023 08:52:46 GMT
+Connection: close
+Cache-Control: no-store
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+
+
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(CustomerId,Lastname,Addresses,Notes)",
+  "value": [
+    {
+      "CustomerId": 3,
+      "Lastname": "Naja",
+      "Addresses": [
+        {
+          "AddressId": 3,
+          "City": "New York"
+        },
+        {
+          "AddressId": 4,
+          "City": "Gouda"
+        }
+      ],
+      "Notes": ""
+    }
+  ]
+}
+
+
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/long-queries.png" class="no-border" alt="JSON response" >}} 
 
@@ -612,6 +685,36 @@ In this example, you can publish a single REST resource that combines data from 
 
     The response is as follows:
 
+    ```json
+
+    HTTP/1.1 200 OK
+    Date: Wed, 08 Feb 2023 22:35:13 GMT
+    Connection: close
+    Cache-Control: no-store
+    Content-Type: application/json;charset=utf-8
+    OData-Version: 4.0
+    Content-Length: 295
+
+    {
+    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#CustomerHomeAddresses(CustomerId,FullName,Street,City)",
+    "value": [
+        {
+        "CustomerId": 8,
+        "FullName": "Jimmy2 Johnson",
+        "Street": null,
+        "City": null
+        },
+        {
+        "CustomerId": 4,
+        "FullName": "Irène Aisha",
+        "Street": "Conifer Drive",
+        "City": "Seattle"
+        }
+    ]
+    }
+
+    ```
+
     {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/get-call.png" class="no-border" alt="Microflow with query OQL dataset settings" >}} 
 
 5. You have decoupled your REST resource from your domain model persistable entities. You can change your entities and use the OQL query to ensure the published data remains backwards compatible.
@@ -621,6 +724,26 @@ In this example, you can publish a single REST resource that combines data from 
     {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/view-log-line-details.png" class="no-border" alt="OQL query log details"  >}} 
 
     With some formatting, it can be more readable. The original OQL query is used as a subquery (inline view) for the OData query. All the expressions will be pushed down into the database and benefit from the performance of the database optimizer:
+
+    ```sql
+    
+    select  bq.CustomerId   as CustomerId,
+            bq.FullName     as FullName,
+            bq.Street       as Street,
+            bq.City         as City
+    from (
+            select  cust.CustomerId              as CustomerId,
+                    cust.FirstName + ' ' + cust.Lastname  as FullName,
+                    addr.Street                  as Street,
+                    addr.City                    as City
+            from    CustomerService.Customer as cust
+            left join cust/CustomerService.Address_Customer/CustomerService.Address as addr
+            where   addr.AddressType = 'Home'
+        ) as bq
+    order by City desc
+    limit 2
+
+    ```
 
     {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/subquery.png" class="no-border" alt="JSON response" >}} 
 
