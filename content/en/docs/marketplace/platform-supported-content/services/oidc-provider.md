@@ -41,7 +41,7 @@ You can build a Mendix application that acts as a SSO Broker by using the OIDC S
 
 For more information on the concepts behind authorization, see [Authorization](#authorization) below.
 
-Your deployment pipeline (deployment agent) will be responsible for registering additional Mendix apps with the SSO broker. This process can be automated using client registration API provided by the OIDC Provider module. The module supports Authorization grant type for this use case.
+Your deployment pipeline (deployment agent) will be responsible for registering additional Mendix apps with the SSO broker. This process can be automated using client registration API provided by the OIDC Provider module. The module supports the Authorization grant type for this use case.
 
 #### SSO Within Multi-app Mendix Solution
 
@@ -51,7 +51,7 @@ Mendix Solution Vendors (MSVs) may build a multi-app solution that acts as a sin
 
 As an MSV, you probably want to hide the internal multi-application structure from your end-users. They prefer logging in once to your overall solution, rather than separately to individual apps. The OIDC Provider module allows you to build a **Central Portal App** where your end-users login once and subsequently get a SSO experience when navigating to the various applications in the solution. This approach does not need an external third-party IdP to create such a SSO experience, as your Central Portal App acts as a lightweight solution for customer identity and access management (CIAM).
 
-Instead of using local credentials in the Central Portal App, you may want to integrate your solution with an IdP. As an MSV, you probably also want to hide the internal multi-application structure from this IdP and have a single integration point. The Central Portal App can then act as an SSO broker, similar to the usage scenario described in the [SSO Brokering for rapid innovation](#brokering) section above. The module supports Authorization code grant for this use case.
+Instead of using local credentials in the Central Portal App, you may want to integrate your solution with an IdP. As an MSV, you probably also want to hide the internal multi-application structure from this IdP and have a single integration point. The Central Portal App can then act as an SSO broker, similar to the usage scenario described in the [SSO Brokering for rapid innovation](#brokering) section above. The module supports the Authorization code grant for this use case.
 
 #### Non-user Specific API Consumption 
 
