@@ -1,0 +1,64 @@
+---
+title: "Configuring CORS in the Mendix Runtime"
+linktitle: "Configuring CORS"
+url: /refguide/configure-cors/
+description: "Describes how to enable Cross-Origin Resource Sharing (CORS) in the Mendix Runtime, allowing browser-based clients on other domains to access the runtime."
+---
+
+## Introduction
+
+Cross-Origin Resource Sharing (CORS) is a mechanism that allows a web application running on one domain to make requests to a server on a different domain. By default, browsers block such cross-origin requests for security reasons. If your Mendix front end is hosted on a different domain than the Mendix Runtime (for example, when using a separate single-page application or a microfrontend architecture), you need to configure CORS so the browser permits these requests.
+
+This document describes the custom runtime settings required to enable CORS in the Mendix Runtime.
+
+## Settings to Configure {#settings}
+
+To enable CORS, configure the following custom runtime settings:
+
+### Runtime Settings
+
+| Name | Value | Description |
+| --- | --- | --- |
+| `com.mendix.core.SameSiteCookies` | `None` | Allows cookie sharing between the runtime origin and the client origin. This is required for cross-origin authentication to work correctly. |
+| `Client.EnableCors` | `true` | When enabled, the runtime responds to CORS preflight (`OPTIONS`) requests from the browser. |
+
+### Custom HTTP Response Headers
+
+In addition to the runtime settings above, you need to set the following custom HTTP response headers via the `Headers` setting:
+
+| Header | Value | Description |
+| --- | --- | --- |
+| `Access-Control-Allow-Credentials` | `true` | Indicates that the server allows credentials (cookies, authorization headers) to be included in cross-origin requests. |
+| `Access-Control-Allow-Headers` | `Content-Type, x-csrf-token` | Specifies which HTTP headers can be used in the actual request. Expand this list if your application uses additional custom headers. |
+| `Access-Control-Allow-Methods` | `POST, GET, OPTIONS` | Specifies the HTTP methods allowed when accessing the resource. Expand this list if your application uses additional methods (for example, `PUT` or `DELETE`). |
+| `Access-Control-Allow-Origin` | Your client domain (for example, `https://my-app.example.com`) | The origin from which the client application is served. This must match the exact domain, including the scheme and port. |
+| `Access-Control-Request-Method` | `*` | Indicates which methods are supported by the resource in response to a preflight request. |
+
+{{% alert color="info" %}}
+If you change these settings, you need to restart your app to apply the changes.
+{{% /alert %}}
+
+## Example `m2ee.yaml` Configuration {#example}
+
+The following example shows how to configure CORS in an `m2ee.yaml` file. Replace `YOUR_ORIGIN` with the actual domain of your client application (for example, `https://my-app.example.com`):
+
+```yaml
+mxruntime:
+    com.mendix.core.SameSiteCookies: None
+    Client.EnableCors: true
+    Headers:
+        "Access-Control-Allow-Credentials": "true"
+        "Access-Control-Allow-Headers": "Content-Type, x-csrf-token"
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+        "Access-Control-Allow-Origin": YOUR_ORIGIN
+        "Access-Control-Request-Method": "*"
+```
+
+## Troubleshooting
+
+If CORS is not working as expected, check the following:
+
+* **Browser console errors** — Look for CORS-related error messages in the browser developer tools console. These typically indicate which header is missing or misconfigured.
+* **Origin mismatch** — Ensure the value of `Access-Control-Allow-Origin` exactly matches the origin shown in the browser error, including the scheme (`https://`) and port number (if applicable).
+* **Missing `SameSiteCookies` setting** — Without `com.mendix.core.SameSiteCookies` set to `None`, cookies will not be sent on cross-origin requests, which can cause authentication failures.
+* **HTTPS requirement** — When `SameSiteCookies` is set to `None`, the `Secure` attribute is automatically added to cookies, meaning both the runtime and the client must be served over HTTPS.
