@@ -3,7 +3,7 @@ title: "Dynamic Role Management in Private Mendix Platform"
 linktitle: "Dynamic Role Management"
 url: /private-mendix-platform/dynamic-role-management/
 description: "Documents the dynamic role management functionality of the Private Mendix Platform."
-weight: 50
+weight: 55
 ---
 
 ## Introduction
