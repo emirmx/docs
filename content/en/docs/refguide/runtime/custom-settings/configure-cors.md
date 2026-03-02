@@ -32,7 +32,6 @@ In addition to the runtime settings above, you need to set the following custom 
 | `Access-Control-Allow-Headers` | `Content-Type, x-csrf-token` | Specifies which HTTP headers can be used in the actual request. Expand this list if your application uses additional custom headers. |
 | `Access-Control-Allow-Methods` | `POST, GET, OPTIONS` | Specifies the HTTP methods allowed when accessing the resource. Expand this list if your application uses additional methods (for example, `PUT` or `DELETE`). |
 | `Access-Control-Allow-Origin` | Your client domain (for example, `https://my-app.example.com`) | The origin from which the client application is served. This must match the exact domain, including the scheme and port. |
-| `Access-Control-Request-Method` | `*` | Indicates which methods are supported by the resource in response to a preflight request. |
 
 {{% alert color="info" %}}
 If you change these settings, you need to restart your app to apply the changes.
@@ -51,7 +50,6 @@ mxruntime:
         "Access-Control-Allow-Headers": "Content-Type, x-csrf-token"
         "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
         "Access-Control-Allow-Origin": YOUR_ORIGIN
-        "Access-Control-Request-Method": "*"
 ```
 
 ## Troubleshooting
