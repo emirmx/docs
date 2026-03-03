@@ -14,16 +14,17 @@ The [Snowflake AI Data Connector](https://marketplace.mendix.com/link/component/
 
 The Snowflake AI Data Connector supports the following:
 
-1. **Authentication:**
+* Authentication:
 
-    * Key-pair authentication (using PKCS #8 standard RSA keys)
-    * OAuth authentication
+    * Authentication with an RSA key pair according to PKCS #8 standard
+    * Authentication with OAUTH through an OIDC provider
 
-2. **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
+* Functionality: Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
 
     * Read data from Snowflake.
     * Write data to Snowflake.
     * Trigger the following [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
+  
         * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) – Predicts future metric values from past trends in time-series data.
         * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) – Flags metric values that differ from typical expectations.
         * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) – Given a piece of text, classifies it into one of the categories that you define.
@@ -33,19 +34,13 @@ The Snowflake AI Data Connector supports the following:
         * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) – Returns a summary of the given text.
         * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) – Translates given text from any supported language to any other.
         * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) – Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
-        * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) – Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
+        * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) – Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text.
+          
     * Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) – This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
+    * Synchronous execution of calls
+    * Query your Cortex Search services
 
 For more use cases and examples for [Snowflake Cortex LLM functions](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions), written by the Head of Snowflake Tech Consulting, see [Karthik S Raman's Medium profile](https://medium.com/@karthiksraman).
-
-The current version of the connector supports the following:
-
-* Authentication with an RSA key pair according to PKCS #8 standard
-* Authentication with OAUTH through an OIDC provider
-* Execution of single SQL statements
-* Synchronous execution of calls
-* Execution of a Cortex Analyst query
-* Querying your Cortex Search services
 
 ### Prerequisites {#prerequisites}
 
