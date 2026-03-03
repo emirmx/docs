@@ -682,6 +682,7 @@ This tool adds a function that performs a retrieval from a knowledge base to a [
 | `MinimumSimilarity` | Decimal | optional | Filters the results to retrieve only chunks with a similarity score greater than or equal to the specified value. The score ranges from 0 (no similarity) to 1.0 (the same vector). |
 | `MetadataCollection` | Object | optional | Optional: This contains a list for additional filtering in the retrieve. Only chunks that comply with the metadata labels will be returned. |
 | `DisplayTitle` | String | optional | A title meant for users if knowledge base retrievals are shown in the UI. |
+| `IsVisible` | Boolean | optional | If set to true, the knowledge base is visible for the user in chat. | 
 
 ###### Return Value
 
