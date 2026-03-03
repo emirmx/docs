@@ -68,11 +68,7 @@ The Echo connector is a module in the [GenAI Showcase App](https://marketplace.m
 This section allows you to focus on implementing chat completions, a fundamental capability supported by most LLMs. To make the process more practical, develop an example connector—the Echo Connector. This simple connector returns the similar text as output provided as input while remaining fully compatible with the chat capabilities of GenAICommons and ConversationalUI.
 During development, you will get the key considerations to keep in mind when creating your own connector. You can either start from scratch and build your own connector or use the finished Echo Connector from the GenAI Showcase App and modify it to fit your use case.
 
-To enable chat completion, the key microflow to consider is `ChatCompletions_WithHistory`, located in the GenAICommons module. 
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/ChatCompletions_WithHistory.png" >}}
-
-This microflow plays a crucial role as it derives and calls the appropriate microflow from the provided DeployedModel, ensuring that the module remains independent of individual connectors. This is especially important for modules like ConversationalUI, which should work seamlessly with any connector following the same principles.
+To enable chat completion, the key microflow to consider is `ChatCompletions_WithHistory`, located in the GenAICommons module. This microflow plays a crucial role as it derives and calls the appropriate microflow from the provided DeployedModel, ensuring that the module remains independent of individual connectors. This is especially important for modules like ConversationalUI, which should work seamlessly with any connector following the same principles.
 
 To integrate properly, the microflow must supply two essential input objects:
 
