@@ -13,19 +13,19 @@ With our Multi-Cloud strategy, Mendix allows the apps that you build to be deplo
 
 The full stack is depicted in the table below. This indicates which components are **Mendix** supported, or supported by a **Mendix Partner** or a third party. If no support is indicated, then you will need to arrange support of this component yourself. Each of the components is described in more detail in [Components of the Mendix Stack](/support/#components), in *Mendix Support*.
 
-| Stack (see [Components of the Mendix Stack](/support/#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Mendix on Kubernetes - Con&shy;nected | Mendix on Kubernetes - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry/ Docker & Kuber&shy;netes | Tradi&shy;tional³ |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Stack (see [Components of the Mendix Stack](/support/#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Mendix on Kubernetes - Con&shy;nected | Mendix on Kubernetes - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry, Docker & Kuber­netes, Tradi&shy;tional³ |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | **Appli&shy;cation** | | | | | | | | |
-| **Platform Support&shy;ed Marketplace content** | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix |
-| **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | | |
-| **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix | Mendix |
-| **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner or Certified Customer²  | | | |
-| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | | |
-| **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix | |
-| **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix | Mendix |
-| **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | | |
-| **Infra&shy;structure** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | | |
-| **Database/ File Storage/ Network** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | | |
+| **Platform Support&shy;ed Marketplace content** | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix |
+| **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | |
+| **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix |
+| **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner or Certified Customer²  | | |
+| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | |
+| **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix |
+| **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Infra&shy;structure** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Database/ File Storage/ Network** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
 
 ¹Support will go through [SAP Support](https://launchpad.support.sap.com/#/incident/create/prefilled/comp_name=XX-PART-MDX-RAD).
 
