@@ -85,9 +85,27 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 | `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
 | `IsActive` | A boolean to specify if the model is active/usable with the current authentication settings and user preference. |
 
+#### `ConsumedKnowledgeBase` {#consumed-knowledge-base}
+
+The `ConsumedKnowledgeBase` represents a GenAI knowledge base resource. Each connector module that integrates with knowledge base resources implements its own specialization. If multiple collections of data are supported by the knowledge base resource, these collections will be a specialization of `DeployedKnowledgeBase`. The consumed knowledge base can be added to the request when calling an LLM, along with the identifier of such a collection, so that the logic can use the chosen data in the knowledge base for text generation. The consumed knowledge base entity contains a display name, architecture, and a label field specifying how the concept of a collection should be called in the user front-end (e.g. **Index** for Azure Search Resources). Furthermore it contains the name of the microflow to be executed to do a retrieval for the specified deployed knowledge base specialization, a microflow that returns the selectable options in the front-end for the data collections (identifiers) inside of the resource, and lastly, a microflow that based on the chosen colleciton identifier retrieves an instance of the connector-specific specialization of `DeployedKnowledgeBase`.
+
+As these objects are created as a specialization by the logic in connectors themselves (specializations), such a specialization typically contains more specific data required for the connection to the resource according to the provider infrastructure details, such as endpoints and credentials. Admins need to configure this at runtime.
+
+This is a new generalization, introduced in module version 10.0.0. To migrate data from erlier versions, please refer to the GenAI migration guide: TODO LINK HERE.
+
+| Attribute | Description |
+| --- | --- |
+| `DisplayName` | The display name of the consumed knowledge base. | 
+| `Architecture` | The architecture of the consumed knowledge base, for example, Mendix Cloud or Amazon Bedrock. |
+| `CollectionIdentifierLabel` |  The name of a deployed knowledge base (collection), in the language of the provider (e.g. **Index** for Azure Search Resources). This is used in the front end when building agents. |
+| `RetrievalMicroflow` |  The microflow to execute to retrieve information for the specified knowledge base resource. |
+| `GetCollectionsMicroflow` |  The microflow to execute to retrieve selectable options for collections present in the specified consumed knowledge base. |
+| `GetDeployedKnowledgeBaseMicroflow` |  The microflow to execute to retrieve selectable options for collections present in the specified consumed knowledge base. |
+| `IsSelectable` | A boolean to specify if the knowledge base resource is active/usable when defining agents. |
+
 #### `DeployedKnowledgeBase` {#deployed-knowledge-base}
 
-The `DeployedKnowledgeBase` represents a GenAI knowledge base that can be added to the request when calling an LLM. It contains a display name, a technical name (or identifier), the name of the microflow to be executed for the specified knowledge base specialization, and other relevant information  to connect to the knowledge base. These objects are created by the connectors themselves (see their specializations), allowing admins to configure them at runtime.
+The `DeployedKnowledgeBase` represents a GenAI knowledge base collection that can be added to the request when calling an LLM. It refers to a discrete dataset as part of the [ConsumedKnowledgeBase](#consumed-knowledge-base) It contains a display name, a technical name (or identifier), the name of the microflow to be executed for the specified knowledge base specialization, and other relevant information  to connect to the knowledge base. These objects are created by the connectors themselves (see their specializations), allowing admins to configure them at runtime.
 
 The `DeployedKnowledgeBase` entity replaces the capabilities covered by the `Connection` entity for knowledge base interaction in earlier versions of GenAI Commons. 
 
@@ -647,9 +665,9 @@ This microflow does not have a return value.
 
 ##### Tools: Add Knowledge Base {#add-knowledge-base-to-request}
 
-This tool adds a function that performs a retrieval from a knowledge base to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these microflows, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the appropriate knowledge base function based on the LLM response and continue the process until the assistant's final response is returned.
+This tool adds a function that performs a retrieval from a knowledge base to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these knowledge base, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the appropriate knowledge base function based on the LLM response and continue the process until the assistant's final response is returned.
 
-`DeployedKnowledgeBase` objects have provider-specific specializations, for example, `Collection` for Mendix Cloud.
+`ConsumedKnowledgeBase` objects have provider-specific specializations, for example, `MxCloudKnowledgeBaseResource` for Mendix Cloud.
 
 ###### Input Parameters
 
@@ -658,10 +676,12 @@ This tool adds a function that performs a retrieval from a knowledge base to a [
 | `Request` | [Request](#request) | mandatory | The request to which the knowledge base should be added. |
 | `Name` | String | mandatory | The name of the knowledge base to use or call. Technically, this is the name of the tool that is passed to the LLM. This needs to be unique per request (if multiple tools/knowledge base retrievals are added). |
 | `Description` | String | optional | A description of the knowledge base's purpose, used by the model to determine when and how to invoke it. |
-| `DeployedKnowledgeBase` | Object | mandatory | The knowledge base that is called within this tool. This object includes a `microflow`, which is executed when the knowledge base is invoked. |
+| `ConsumedKnowledgeBase` | Object | mandatory | The knowledge base resource that is called within this tool. This also determines which provider (and connector) is used. Only specialization objects are allowed, not a generalized GenAICommons object. |
+| `CollectionIdentifier` | String | Mandatory | This is a string reference to the dataset (collection) which is part of the consumed knowledge base, that contains the relevant data for the LLM. E.g. for Mendix Cloud knowledge base resources, this would correspond to the name of a `Collection`,  |
 | `MaxNumberOfResults` | Integer | optional | This can be used to limit the number of results that should be retrieved. |
 | `MinimumSimilarity` | Decimal | optional | Filters the results to retrieve only chunks with a similarity score greater than or equal to the specified value. The score ranges from 0 (no similarity) to 1.0 (the same vector). |
 | `MetadataCollection` | Object | optional | Optional: This contains a list for additional filtering in the retrieve. Only chunks that comply with the metadata labels will be returned. |
+| `DisplayTitle` | String | optional | A title meant for users if knowledge base retrievals are shown in the UI. |
 
 ###### Return Value
 
