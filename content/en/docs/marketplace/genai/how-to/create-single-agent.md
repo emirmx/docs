@@ -317,7 +317,7 @@ You will also connect the agent to our knowledge base, so that it can use histor
 
 1. From the agent view page for the `IT-Ticket Helper` agent, under **Knowledge bases**, add a new knowledge base:
 
-    * Knowledge base: select the knowledge base created in a previous step. For Mendix Cloud GenAI in particular, look for the collection `HistoricalTickets`. If nothing appears in the list, refer to the documentation of the connector on how to set it up correctly.
+    * Consumed Knowledge base: select the knowledge base resource created in a previous step. Next, look for the collection `HistoricalTickets`. If nothing appears in the list, refer to the documentation of the connector on how to set it up correctly.
     * Name: `RetrieveSimilarTickets` (expression)
     * Description: `Similar tickets from the database` (expression)
     * MaxNumberOfResults: empty (expression; optional)
@@ -506,13 +506,12 @@ For both approaches, you need an `MCPClient.MCPServerConfiguration` object conta
 
 Finally, you can add a tool for knowledge base retrieval. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 
-1. In the microflow `ACT_TicketHelper_CallAgent`, add a `Retrieve` action, before the request is created, to retrieve a **Deployed Knowledge Base** object:
+1. In the microflow `_ACT_TicketHelper_Agent_GenAICommons`, add a `Retrieve` action, before the request is created, to retrieve a **Consumed Knowledge Base** object:
 
     * Source: `From database`
-    * Entity: `GenAICommons.DeployedKnowledgeBase` (search for *DeployedKnowledgeBase*)
-    * Xpath: `[Name = 'HistoricalTickets']` (name that was used in the [Ingest Data into Knowledge Base](#ingest-knowledge-base))
+    * Entity: `GenAICommons.ConsumedKnowledgeBase` (search for *ConsumedKnowledgeBase*)
     * Range: `First`
-    * Object name: `DeployedKnowledgeBase` (default)
+    * Object name: `ConsumedKnowledgeBase` (default)
 
 2. Add the `Tools: Add Knowledge Base` action after the **Request** creation microflow:
 
@@ -522,7 +521,8 @@ Finally, you can add a tool for knowledge base retrieval. This allows the agent 
     * MetadataCollection: empty (expression; optional)
     * Name: `RetrieveSimilarTickets` (expression)
     * Description: `Similar tickets from the database` (expression)
-    * DeployedKnowledgeBase: `DeployedKnowledgeBase` (as retrieved in step 1)
+    * ConsumedKnowledgeBase: `ConsumedKnowledgeBase` (as retrieved in step 1)
+    * CollectionIdentifier: `'HistoricalTickets'` (name that was used in the [Ingest Data into Knowledge Base](#ingest-knowledge-base))
     * Use return value: `no`
 
 You have successfully integrated a knowledge base into your agent interaction. Run the app to see the agent integrated in the use case. Using the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it will use the functions or the knowledge base. If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Now, when a user submits a request like "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution. 
