@@ -152,7 +152,7 @@ For supported knowledge bases registered in your app, you can connect them to ag
 
 To allow an agent to perform semantic searches, add the knowledge base to the agent definition and configure the retrieval parameters, such as the number of chunks to retrieve, and the threshold similarity. Multiple knowledge bases can be added to the agent to pick from. Give each knowledge base a name and description (in human language) so that the model can decide which retrieves are necessary based on the input it gets.
 
-Note that [user access approval](#enum-useraccessapproval) is always set to `VisibleForUser` for knowledge base retrievals.
+Note that [user access approval](#enum-useraccessapproval) can only be set to `HiddenForUser` or `VisibleForUser` for knowledge base retrievals when using the corresponding tool action.
 
 #### Testing and Refining the Agent
 
