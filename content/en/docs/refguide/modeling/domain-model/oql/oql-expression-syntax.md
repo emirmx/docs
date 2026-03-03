@@ -685,10 +685,12 @@ These are the currently supported functions:
 
 * CAST
 * COALESCE
+* DATEADD
 * DATEDIFF
 * DATEPART
 * DATETRUNC
 * LENGTH
+* LOCATE
 * LOWER
 * RANGEBEGIN
 * RANGEEND
@@ -849,6 +851,90 @@ FROM Sales.CustomerInfo
 
 ²In OQL v1, the expression gets the type of the first argument. If you use OQL v1, the type of `AgeOrAmount` in the example above is Integer, not Decimal.
 
+### DATEADD {#dateadd-function}
+
+The `DATEADD` function adds a specified period of time to an expression of type `DATETIME`. The return type is `DATETIME`.
+
+This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+DATEADD ( datepart , length_expression , date_expression [, timezone ] )
+```
+
+##### datepart
+
+`datepart` specifies the interval in which `length_expression` is measured.
+
+Supported options are `YEAR`, `QUARTER`, `MONTH`, `WEEK`, `DAY`, `HOUR`, `MINUTE`, `SECOND`.
+
+##### length_expression
+
+`length_expression` specifies the amount of intervals to add or subtract. For example, `DATEADD ( WEEK , 3 , OrderDate )` adds 3 weeks to an attribute `OrderDate`. Expressions that resolve to Integer or Long are allowed.
+
+##### date_expression
+
+`date_expression` specifies the date to add intervals to. The expression should resolve to a `DATETIME` value. String representations of `DATETIME` are accepted.
+
+##### timezone
+
+`timezone` specifies the time zone to use for the operation. This parameter is optional and defaults to the user time zone. It should be a string literal containing an IANA time zone. GMT offset time zones are not supported.
+
+For the `DATEADD` function, this parameter affects the difference between standard time and daylight saving time.
+
+{{% alert color="info" %}}
+The user time zone is usually different from UTC. To get the result in the UTC time zone, explicitly specify `'UTC'` in this parameter. For details on time zone handling in Mendix Runtime, see [Date and Time Handling](/refguide/date-and-time-handling/).
+{{% /alert %}}
+
+#### Examples{#oql-dateadd-example}
+
+Assume the entity `Sales.Period` has 2 objects:
+
+```sql
+SELECT * FROM Sales.Period
+```
+
+| ID | Start               | End                 | Revenue |                                                        
+|:---|---------------------|---------------------|--------:|
+| -  | 2024-05-02 00:00:00 | 2025-07-05 00:00:00 | 28      |
+| -  | 2024-05-02 00:00:00 | 2024-06-02 15:12:45 | 10      |
+
+You can use `DATEADD` to add or subtract intervals from date values:
+
+```sql
+SELECT
+	DATEADD(QUARTER, 3, End) AS EndPlus3Quarters,
+	DATEADD(DAY, -5, End) AS EndMinus5Days,
+	DATEADD(MINUTE, 15, End) AS EndPlus15Minutes,
+FROM
+	Sales.Period
+```
+
+| EndPlus3Quarters    | EndMinus5Days       | EndPlus15Minutes    |                                                        
+|:--------------------|---------------------|--------------------:|
+| 2026-04-05 00:00:00 | 2025-06-30 00:00:00 | 2025-07-05 00:15:00 |
+| 2025-03-02 15:12:45 | 2024-05-29 15:12:45 | 2024-06-02 15:27:45 |
+
+The optional time zone parameter affects the difference between standard time and daylight saving time. For example, let's assume that a user in the time zone `Europe/Berlin` is running the OQL query below. In 2024, daylight saving time in that time zone ended on 27th of October at 02:00. Before that moment, the offset was `UTC+2h`, and after that it was `UTC+1h`. In `UTC` time zone, there was no clock change, and the offset was always `UTC+0h`. That explains the 1-hour difference between the results of the `DATEADD` function with the default time zone value `Europe/Berlin` and with the explicitly specified value `UTC`.
+
+```sql
+SELECT
+	Start,
+	DATEADD(MONTH, 6, Start) AS StartPlus6MonthsBerlin,
+	DATEADD(MONTH, 6, Start, 'UTC') AS StartPlus6MonthsUTC,
+FROM
+	Sales.Period
+WHERE
+	Revenue = 28
+```
+
+| Start               | StartPlus6MonthsBerlin  | StartPlus6MonthsUTC  |                                                        
+|:--------------------|-------------------------|---------------------:|
+| 2024-05-02 00:00:00 | 2024-11-02 00:00:00     | 2024-11-01 23:00:00  |
+
 ### DATEDIFF {#datediff-function}
 
 The `DATEDIFF` function returns the difference between two given `DATETIME` expressions. The difference is given in the specified unit.
@@ -994,7 +1080,7 @@ SELECT End FROM Sales.Period WHERE DATEPART(YEAR, End) = 2025
 
 The `DATETRUNC` function truncates a `DATETIME` value to a specified datepart. The return type is `DATETIME`.
 
-This function was introduced in Mendix version 11.9.0
+This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
 
 #### Syntax
 
@@ -1006,7 +1092,9 @@ DATETRUNC ( datepart , date_expression [, timezone ] )
 
 ##### datepart
 
-`datepart` specifies the part to which the `DATETIME` value is truncated. For possible values, see [Examples](#oql-datetrunc-example), below.
+`datepart` specifies the part to which the `DATETIME` value is truncated.
+
+Supported options are `YEAR`, `QUARTER`, `MONTH`, `WEEK`, `DAY`, `HOUR`, `MINUTE`, `SECOND`. See [Examples](#oql-datetrunc-example), below.
 
 ##### date_expression
 
@@ -1032,14 +1120,6 @@ The user time zone is usually different from UTC. To get the result in the UTC t
 | `HOUR`       | `2005-09-03T16:00:00.000`                       |
 | `MINUTE`     | `2005-09-03T16:34:00.000`                       |
 | `SECOND`     | `2005-09-03T16:34:20.000`                       |
-
-{{% alert color="info" %}}
-Date part types `DAYOFYEAR`, `WEEKDAY` and `MILLISECOND` are not supported by the `DATETRUNC` function
-{{% /alert %}}
-
-{{% alert color="info" %}}
-For the date part type `WEEK`, the result of the `DATETRUNC` function depends on the database configuration. For example, by default, the first day of the week in MS SQL Server is Sunday, which means that dates are truncated to previous Sunday if date part type `WEEK` is used.
-{{% /alert %}}
 
 The `DATETRUNC` function can be used to group data by time periods:
 
@@ -1099,6 +1179,65 @@ SELECT Text, LENGTH(Text) as text_length FROM Sales.Reports
 |-------------------------------|------------:|
 | "Performance is satisfactory" | 27          |
 | "Order has been completed"    | 24          |
+
+### LOCATE{#locate-function}
+
+#### Description
+
+Returns the index of the first occurence of a substring in a string. The index is 1-based. If no occurrence is found, returns 0.
+
+This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+LOCATE ( expression , pattern [, offset ] )
+```
+
+`expression` specifies the string to be searched.
+
+`pattern` specifies the substring to search for.
+
+`offset` specifies how many characters in the beginning of `expression` should be ignored. This parameter is optional, and its default value is 0.
+
+{{% alert color="info" %}}
+Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
+{{% /alert %}}
+
+#### Example
+
+You can use `LOCATE` to find a substring in a string:
+
+```sql
+SELECT
+	LastName,
+	LOCATE(LastName, 'se') AS LocateSe,
+FROM Sales.Order
+```
+
+| LastName | LocateSe |
+|:---------|:--------:|
+| Doe      | 0        |
+| Doe      | 0        |
+| Moose    | 4        |
+
+If you specify an offset, `LOCATE` will not search the first part of the string:
+
+```sql
+SELECT
+	LOCATE('dendrochronological', 'logic') AS LocateLogic,
+	LOCATE('dendrochronological', 'chrono') AS LocateChrono,
+	LOCATE('dendrochronological', 'logic', 10) AS LocateLogicAt10,
+	LOCATE('dendrochronological', 'chrono', 10) AS LocateChronoAt10,
+FROM Sales.Order
+ORDER BY LastName LIMIT 1
+```
+
+| LocateLogic | LocateChrono | LocateLogic10 | LocateChrono10 |
+|:-----------:|:------------:|:-------------:|:--------------:|
+| 13          | 7            | 13            | 0              |
 
 ### LOWER{#lower-function}
 
