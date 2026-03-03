@@ -93,28 +93,27 @@ Content-Type: application/json;charset=utf-8
 OData-Version: 4.0
 Content-Length: 293
 
+
 {
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers",
-    "value": [
-        {
-            "CustomerId": 1
-            "FirstName": "John",
-            "LastName": "Smith",
-            "Title": "Engineer",
-            "CompanyName": "CustKo"
-        },
-        {
-            "CustomerId": 2
-            "FirstName": "Pete",
-            "LastName": "Arnhold",
-            "Title": "Sales Manager",
-            "CompanyName": "Devco"
-      }
-    ]
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers",
+  "value": [
+    {
+      "CustomerId": 1,
+      "FirstName": "John",
+      "Lastname": "Smith",
+      "Title": "Engineer",
+      "CompanyName": "CustKo"
+    },
+    {
+      "CustomerId": 2,
+      "FirstName": "Pete",
+      "Lastname": "Arnhold",
+      "Title": "Sales Manager",
+      "CompanyName": "Devco"
+    }
+  ]
 }
 ```
-
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/fetch-all-customers.png" width="400" class="no-border" alt="JSON response" >}} 
 
 ### Getting a Resource by Identifier
 
@@ -134,17 +133,17 @@ Content-Type: application/json;charset=utf-8
 OData-Version: 4.0
 Content-Length: 186
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
-    "CustomerId": 1
-    "FirstName": "Irene",
-    "LastName": "Smith",
-    "Title": "Engineer",
-    "CompanyName": "CustKo"
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/fetch-single-customer.png" width="500" class="no-border" alt="JSON response" >}} 
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+  "CustomerId": 1,
+  "FirstName": "John",
+  "Lastname": "Smith",
+  "Title": "Engineer",
+  "CompanyName": "CustKo"
+}
+
+```
 
 OData also supports using multi-field IDs by providing the required attributes as a key value list between the brackets.
 
@@ -179,24 +178,24 @@ Content-Type: application/json;charset=utf-8
 OData-Version: 4.0
 Content-Length: 273
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(FirstNameCompanyName)",
-    "value": [
-        {
-            "FirstName": "Irene",
-            "LastName": "Aisha",
-            "CompanyName": "Foster Hale"
-        },
-        {
-            "FirstName": "Angela",
-            "LastName": "Naja",
-            "CompanyName": "Mimosa Advertising"
-      }
-    ]
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/filter-sort-page-attribute.png" width="500" class="no-border" alt="JSON response" >}} 
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(FirstName,Lastname,CompanyName)",
+  "value": [
+    {
+      "FirstName": " Irène",
+      "Lastname": "Aisha",
+      "CompanyName": "Foster Hale"
+    },
+    {
+      "FirstName": "Angela",
+      "Lastname": "Naja ",
+      "CompanyName": "Mimosa Advertising"
+    }
+  ]
+}
+
+```
 
 Alternatively, you can specify the query in the payload of a `POST` call, which is useful if you have a long complex query.
 
@@ -231,8 +230,6 @@ Cache-Control: no-store
 Location: Customers(5)
 ```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/insert-new-data.png" class="no-border" alt="JSON response" >}} 
-
 The following `GET` request uses the returned location header to query the new resource at its endpoint:
 
 ```
@@ -249,17 +246,17 @@ Content-Type: application/json;charset=utf-8
 OData-Version: 4.0
 Content-Length: 188
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
-    "CustomerId": 5,
-    "FirstName": "Jimmy",
-    "LastName": "Smooth",
-    "Title": "Engineer"
-    "CompanyName": "Mimosa Advertising"
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/query-resource-endpoint.png" class="no-border" alt="JSON response" >}} 
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+  "CustomerId": 5,
+  "FirstName": "Jimmy",
+  "Lastname": "Smooth",
+  "Title": "Engineer",
+  "CompanyName": "CustKo"
+}
+
+```
 
 #### Using a Prefer Header
 
@@ -289,17 +286,17 @@ Cache-Control: no-store
 Content-Type: application/json;charset=utf-8
 Location: Customers(15)
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
-    "CustomerId": 15,
-    "FirstName": "Alexis",
-    "LastName": "Sweeper",
-    "Title": "Ir."
-    "CompanyName": "GadgetsAndBeers"
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/prefer-header.png" class="no-border" alt="JSON response" >}} 
+{
+  "@context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+  "CustomerId": 15,
+  "FirstName": "Alexis",
+  "Lastname": "Sweeper",
+  "Title": "Ir.",
+  "CompanyName": "GadgetsAndBeers"
+}
+
+```
 
 #### Creating Resources with Associations
 
@@ -309,7 +306,7 @@ If you want to create a new resource associated with another resource, you can r
 POST http://localhost:8080/odata/CustomerApi/v1/Addresses
 Prefer: return=representation
 
-{ 
+{
     "Country: "UK",
     "HouseNumber":"11",
     "PhoneNumber":"123123",
@@ -332,20 +329,20 @@ Content-Type: application/json;charset=utf-8
 Location: Addresses(8)
 Content-Length: 235
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Addresses/$entity",
-    "AddressId": 8,
-    "Street": "Mainstreet",
-    "HouseNumber": "11",
-    "Zipcode": "13423",
-    "City": "Bristol",
-    "Country": "UK",
-    "PhoneNumber": "123123"
-    "AddressType": "Home"
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/create-resources-associations.png" class="no-border" alt="JSON response" >}} 
+{
+  "@context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Addresses/$entity",
+  "AddressId": 8,
+  "Street": "Mainstreet",
+  "HouseNumber": "11",
+  "Zipcode": "13423",
+  "City": "Bristol",
+  "Country": "Uk",
+  "PhoneNumber": " 123123",
+  "AddressType": "Home"
+}
+
+```
 
 ### Modifying Existing Data
 
@@ -369,8 +366,6 @@ Date: Wed, 08 Feb 2023 16:16:20 GMT
 Connection: close
 ```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/modify-existing-data-1.png" class="no-border" alt="JSON response" >}} 
-
 And a subsequent `GET` request:
 
 ```
@@ -387,17 +382,17 @@ Content-Type: application/json;charset=utf-8
 OData-Version: 4.0
 Content-Length: 189
 
-{
-    "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
-    "CustomerId": 5,
-    "FirstName": "Jimmy",
-    "LastName": "Smooth",
-    "Title": "Engineer"
-    "CompanyName": "CustKo"
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/modify-existing-data-2.png" class="no-border" alt="JSON response" >}} 
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers/$entity",
+  "CustomerId": 5,
+  "FirstName": "Jimmy2",
+  "Lastname": "Smooth",
+  "Title": "Engineer",
+  "CompanyName": "CustKo"
+}
+
+```
 
 [Validation rules](#validation-rules) defined on the entity will be respected automatically. You can use a [validation microflow](#validation-microflows) if you want to enrich the default behavior, including adding additional validations. 
 
@@ -430,22 +425,22 @@ Content-Language: en-US
 Content-Type: application/json;charset=utf-8
 Content-Length: 141
 
-{
-    "error": {
-        "code": "422",
-        "message": "Validation failed",
-        "details": [
-            { 
-                "code": "VE001",
-                "target": "Lastname",
-                "message": "Please provide a lastname"
-            }
-        ]
-    }
-}
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/error-422.png" width="350" class="no-border" alt="JSON response" >}} 
+{
+  "error": {
+    "code": "422",
+    "message": "Validation failed",
+    "details": [
+      {
+        "code": "VE001",
+        "target": "Lastname",
+        "message": "Please provide a lastname"
+      }
+    ]
+  }
+}
+
+```
 
 #### Validation Microflows {#validation-microflows}
 
@@ -480,7 +475,36 @@ You can generate and reuse generated validation microflows. The following exampl
 
      The response is as follows:
 
-     {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/validation-response-payload.png" width="300" class="no-border" alt="JSON response" >}} 
+     ```json
+    HTTP/1.1 422 Unprocessable Entity
+    Date: Fri, 10 Feb 2023 18:41:17 GMT
+    Connection: close
+    Cache-Control: no-store
+    Content-Language: en-US
+    Content-Type: application/json;charset=utf-8
+    Content-Length: 201
+
+    
+    {
+    "error": {
+        "code": "422",
+        "message": "Validation failed",
+        "details": [
+        {
+            "code": "VE001",
+            "target": "CompanyName",
+            "message": "Company name is empty"
+        },
+        {
+            "code": "VE001",
+            "target": "Title",
+            "message": "Title is empty"
+        }
+        ]
+    }
+    }
+     ```
+
 
 ### Deleting Data
 
@@ -511,15 +535,14 @@ Content-Type: application/json;charset=utf-8
 Content-Length: 67
 
 {
-    "error": {
-        "code": "404",
-        "message": "Entity with key '5' not found."
-    }
+  "error": {
+    "code": "404",
+    "message": "Entity with key '5' not found."
+  }
 }
 
-```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/standard-error-codes.png" class="no-border" alt="JSON response" >}} 
+```
 
 ## Performance
 
@@ -572,8 +595,6 @@ Content-Length: 442
 
 ```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/expand-expression.png" width="300" class="no-border" alt="JSON response" >}} 
-
 You can use `select` and `expand` in combination with `filter`, `orderby`, `top`, and `skip`. For more information, see the [Filtering, Sorting, Paginating, and Selecting Data](#filter-sort-page-select-data) section below. 
 
 See the following `GET` request:
@@ -587,7 +608,36 @@ GET http://localhost:8080/odata/CustomerApi/v1/Customers
             &$top=1
 ```
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/sort-top-skip.png" class="no-border" alt="JSON response" >}} 
+```json
+
+HTTP/1.1 200 OK
+Date: Sat, 11 Feb 2023 08:49:50 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(CustomerId,Lastname)",
+  "value": [
+    {
+      "CustomerId": 3,
+      "Lastname": "Naja ",
+      "Addresses": [
+        {
+          "AddressId": 3,
+          "City": "New York"
+        },
+        {
+          "AddressId": 4,
+          "City": "Gouda"
+        }
+      ],
+      "Notes": []
+    }
+  ]
+}
+
+```
 
 For long queries, place the query in the request body. You can do this by using `POST` and adding `$query` to the endpoint. See the following `POST` request:
 
@@ -609,11 +659,11 @@ OData-Version: 4.0
 
 
 {
-  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(CustomerId,Lastname,Addresses,Notes)",
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#Customers(CustomerId,Lastname)",
   "value": [
     {
       "CustomerId": 3,
-      "Lastname": "Naja",
+      "Lastname": "Naja ",
       "Addresses": [
         {
           "AddressId": 3,
@@ -624,15 +674,13 @@ OData-Version: 4.0
           "City": "Gouda"
         }
       ],
-      "Notes": ""
+      "Notes": []
     }
   ]
 }
 
 
 ```
-
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/long-queries.png" class="no-border" alt="JSON response" >}} 
 
 This result is very similar to using GraphQL, where you can query a graph of objects and limit the attributes returned to only those that you need. 
 
@@ -745,8 +793,6 @@ In this example, you can publish a single REST resource that combines data from 
 
     ```
 
-    {{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/subquery.png" class="no-border" alt="JSON response" >}} 
-
 ### Defining Logic in an Insert Microflow
 
 How do you provide logic in a REST API if REST best practices specify that you should only use the default CRUD (create, read, update, delete) operations?
@@ -785,7 +831,21 @@ POST http://localhost:8080/odata/CustomerApi/v1/CustomerEmailRequests
 
 The response is as follows:
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/call-send-email-logic.png" width="300" class="no-border" alt="JSON response" >}} 
+```json
+POST http://localhost:8080/odata/CustomerApi/v1/CustomerEmailRequests
+
+{
+  "Subject": "Test email",
+  "EmailText": "Hello",
+  "CustomerId": 1
+}
+
+HTTP/1.1 201 Created
+Date: Fri, 10 Feb 2023 10:07:37 GMT
+Connection: close
+Cache-Control: no-store
+Location: CustomerEmailRequests(12)
+```
 
 When you `GET` the resource from the location provided, the status has the value **Sent**, indicating that the logic has completed. See the following `GET` request:
 
@@ -795,7 +855,24 @@ GET http://localhost:8080/odata/CustomerApi/v1/CustomerEmailRequests(12)
 
 The response is as follows:
 
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/build-odata-apis/get-resource-sent.png" class="no-border" alt="JSON response" >}} 
+```json
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2023 10:08:23 GMT
+Connection: close
+Content-Type: application/json;charset=utf-8
+OData-Version: 4.0
+
+
+{
+  "@odata.context": "http://localhost:8080/odata/CustomerApi/v1/$metadata#CustomerEmailRequests/$entity",
+  "CustomerEmailRequestId": 12,
+  "Subject": "Test email",
+  "EmailText": "Hello",
+  "CustomerId": 1,
+  "Status": "Sent"
+}
+
+```
 
 ## Versioning {#versioning}
 
