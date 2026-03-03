@@ -5,6 +5,12 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.14
+
+**Release date: Feb 25, 2026**
+
+- We updated `.gitignore` to more precisely exclude `node_modules` directories in specific locations.
+
 ## 14.1.13 {#1422}
 
 **Release date: February 24, 2026**
