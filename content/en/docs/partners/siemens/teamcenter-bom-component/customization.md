@@ -46,7 +46,7 @@ This microflow is invoked by the TcBOM widget to retrieve the data to be rendere
 
 {{< figure src="/attachments/partners/siemens/teamcenter-bom-component/custom-retrieveclientcolumndata.png">}}
 
-#### Input parameter: 
+#### Input parameter
 * **Object:** `MendixDataRoot`
 * **Attributes and associations:**
   * `WidgetId`: A unique identifier for the specific TcBOM widget instance making the request. This is useful if you have multiple TcBOM widgets in your application that need to display different data. You can use this ID to discriminate and return the appropriate data.
@@ -55,7 +55,7 @@ This microflow is invoked by the TcBOM widget to retrieve the data to be rendere
 
 {{< figure src="/attachments/partners/siemens/teamcenter-bom-component/domain-model-mendixdataroot-with-associations.png">}}
 
-#### Return value:
+#### Return value
 * **Object:** `List of ClientDataResponse`
 * **Attributes:**
   * `Value`: the value to display in a targeted cell in the BOM”
