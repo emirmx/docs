@@ -1,5 +1,5 @@
 ---
-title: "Pushing, Pulling, and Comitting"
+title: Pulling, Pushing, and Comitting"
 url: /refguide/pushing-pulling/
 weight: 30
 description: "Describes how to push, pull, and commit your changes."
