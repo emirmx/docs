@@ -452,7 +452,7 @@ It is recommended that you adapt to the same interface when developing custom ch
 
 ##### Chat Completions (with history) {#chat-completions-with-history}
 
-The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM. Note that the response might not be complete if tools with [UserAccessApproval](#enum_useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. If you are using the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) module, this is automatically handled.
+The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. If you are using the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) module, this is automatically handled.
 
 ###### Input Parameters
 
@@ -469,7 +469,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 
 ##### Chat Completions (without history) {#chat-completions-without-history}
 
-The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Note that the response might not be complete if tools with [UserAccessApproval](#enum_useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. See [here](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) for more information.
+The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. See [here](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) for more information.
 
 ###### Input Parameters
 
@@ -631,7 +631,7 @@ Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Req
 | `ToolName` | String | mandatory | The name of the tool to use/call. |
 | `ToolDescription` | String | optional | A description of what the tool does, used by the model to choose when and how to call the tool. |
 | `FunctionMicroflow` | Microflow | mandatory | The microflow that is called within this function. A function microflow can have none or multiple primitive input parameters. Additionally, a Request and/or Tool object can be added as input. The microflow needs to return a String.<br/>Note that function microflows do not respect entity access of the current user. Make sure that you only return information that the user is allowed to view, otherwise confidential information may be visible to the current user in the assistant's response. |
-| `UserAccessApproval` | Enumeration GenAICommons.ENUM_UserAccessApproval | optional | Control how the tool calling should behave. <br/>HiddenForUser (Default): automatic tool approval, tools are not shown to users.<br/>VisibleForUser: automatic tool approval, tools are visible to users.<br/>UserConfirmationRequired: user decides if tools are called or not. |
+| `UserAccessApproval` | [Enumeration GenAICommons.ENUM_UserAccessApproval](#enum-useraccessapproval) | optional | Control how the tool calling should behave. <br/>HiddenForUser (Default): automatic tool approval, tools are not shown to users.<br/>VisibleForUser: automatic tool approval, tools are visible to users.<br/>UserConfirmationRequired: user decides if tools are called or not. |
 | `DisplayTitle` | String | optional | A title meant for users if tools are shown in the UI. |
 | `DisplayDescription` | String | optional | A description meant for users if tools are shown in the UI. |
 

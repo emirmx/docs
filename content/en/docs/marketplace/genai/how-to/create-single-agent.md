@@ -150,7 +150,7 @@ We will add two microflows that the agent can leverage to use live app data:
 * One microflow will cover the count of tickets in the database that have a specific status. 
 * The other microflow will cover the details of a specific ticket, given that the identifier is known. 
 
-The final result for the function microflows used in this document can be found in the **ExampleMicroflows** folder of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. This example focuses only on retrieval functions, but you can also expose functions that perform actions on behalf of the user—for example, creating a new ticket, as demonstrated in the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369).
+The final result for the function microflows used in this document can be found in the **ExampleMicroflows** module of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. This example focuses only on retrieval functions, but you can also expose functions that perform actions on behalf of the user—for example, creating a new ticket, as demonstrated in the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369).
 
 #### Function Microflow: Get Number of Tickets by Status
 
@@ -269,7 +269,7 @@ Create an agent that can be called to interact with the LLM. The [Agent Commons]
     4. Choose the version you want to set as `In Use`. 
     5. Select the *Initial agent with prompt* version and click **Select**. 
 
-### Empower the Agent
+### Empower the Agent {#empower-agent}
 
 In order to let the agent generate responses based on specific data and information, you will connect it to two function microflows and a knowledge base. Even though the implementation is not complex—you only need to link it in the front end—it is highly recommended to be familiar with the [Integrate Function Calling into Your Mendix App](/appstore/modules/genai/how-to/howto-functioncalling/) and [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/#chatsetup) documents. These guides cover the foundational concepts for function calling and knowledge base retrieval. 
 
@@ -367,7 +367,26 @@ The button does not perform any actions yet, so you need to create a microflow t
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_AgentCommons.png" >}}
 
-Run the app to see the agent integrated in the use case. From the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it uses the functions or knowledge base.  If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Furthermore, when a user submits a request like, "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution.
+Run the app to see the agent integrated in the use case. From the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it uses the functions or the knowledge base. If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Furthermore, when a user submits a request like "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution.
+
+#### Enable User Confirmation for Tools {#user-confirmation}
+
+This is an optional step to use the human-in-the-loop pattern to give users control over tool executions. When [adding tools to the agent](#empower-agent) you can configure a `User Access and Approval` setting to either make the tools visible to the user or require the user to confirm or reject a tool call. This way, the user is in control of actions that the LLM requested to perform.
+
+To make this work, you need to implement a few steps. For more information, see [here](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop):
+
+1. Change the `User Access and Approval` setting for one of the tools to `User Confirmation Required` in the agent editor. You may want to add a display title and description to make it more human-readable. Make sure to save the version and mark it as `In Use`.
+2. In Studio Pro, modify your microflow that calls the agent. After the agent retrieval step, add the `Create Request` action from the toolbox. All parameters can be empty except the `ID`, which you can get from the `TicketHelper` object.
+3. Afterward, add the microflow `Request_AddMessage_ToolMessages` from the ConversationalUI module. Pass the message that is associated with your **TicketHelper**.
+4. Duplicate the `Request_CallAgent_ToolUserConfirmation_Example` microflow from ConversationalUI in your own module and include it in the project. This microflow needs to be called instead of `Call Agent Without History`. You need to make some modifications to it (the annotations show the position):
+    * Add your context object **TicketHelper** as an input parameter and pass it in the first **Call Agent Without History** action.
+    * Change the message retrieval to retrieve a **Message** from your **TicketHelper** via association.
+    * After calling the microflow `Response_CreateOrUpdateMessage`, add a `Change object` action to set the association **TicketHelper_Message** to the **Message_Conversational** object.
+    * After the decision, add an action to call the `ACT_TicketHelper_CallAgent_Commons` again to ensure that updated tool messages are sent back to the LLM.
+    * Inside the loop in the `false` path, you can open a page for the user to decide if the tool should be executed or not. For this, you may want to add the `ToolMessage_UserConfirmation_Example` page to your module.
+5. Create microflows for the **confirm** and **reject** buttons that should update the status of the tool message, for example by calling the `ToolMessage_UpdateStatus` microflow. If no more pending tool messages are available, you can call the **ACT_TicketHelper_CallAgent_Commons** again. Make sure to always close the popup page on decisions.
+
+Examples for both Agent Commons and GenAI Commons can be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in the `ExampleMicroflows` module.
 
 ## Define the Agent Using Microflows {#define-genai-commons}
 
@@ -528,6 +547,8 @@ Finally, you can add a tool for knowledge base retrieval. This allows the agent 
 You have successfully integrated a knowledge base into your agent interaction. Run the app to see the agent integrated in the use case. Using the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it will use the functions or the knowledge base. If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Now, when a user submits a request like "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_GenAICommons.png" >}}
+
+If you'd like to learn how to [Enable User Confirmation for Tools](#user-confirmation) similar as described for agent above, you can find examples in the `ExampleMicroflows` module of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
 ## Testing and Troubleshooting
 
