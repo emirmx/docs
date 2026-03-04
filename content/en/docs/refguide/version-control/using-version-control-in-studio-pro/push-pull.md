@@ -7,15 +7,9 @@ description: "Describes how to push, pull, and commit your changes."
 
 ## Introduction
 
-This document describes how to use version control in Mendix Studio Pro. 
+When you make and save changes to a working copy of app on your disk, the saved changes are not immediately visible to others. The documents, folders, and modules that have been changed can be identified by looking at the **status**.
 
-For more information on related concepts and the theory behind how version control works in Mendix, see [Version Control](/refguide/version-control/).
-
-## Day-to-Day Development
-
-Let us say you have a working copy of an app on disk. You make changes to the app and save them. Saved changes are not immediately visible to others. The documents, folders, and modules that have been changed can be identified by looking at the **status**.
-
-When you are happy with a set of changes, you commit and push them to the remote repository (Team Server). Others can then choose to update/pull and retrieve those changes.
+When you are happy with a set of changes, you can commit and push them to the remote repository (Team Server). Others can then choose to update or pull and retrieve those changes.
 
 You can **update/pull** your working copy with changes committed by others.
 
