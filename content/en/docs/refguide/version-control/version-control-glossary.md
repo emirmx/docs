@@ -98,7 +98,7 @@ Renaming the app by renaming the *.mpr* file is not supported. Renaming your app
 
 With more complex apps, you may want to manage your code in a more sophisticated way. For example, you may want to develop new features separately from the currently deployed version of your app so that you can fix any bugs without having to release all the new features. This is done using [Branch Lines](#branch-line).
 
-If you are already familiar with using branches, you can check the [Branching Best-Practices](/refguide/using-version-control-in-studio-pro/#branching-best-practices) section of *Using Version Control in Studio Pro* for advice on how to use branches when developing your Mendix app.
+If you are already familiar with using branches, you can check the [Branching Best-Practices](/refguide/managing-branches/#branching-best-practices) section of *Using Version Control in Studio Pro* for advice on how to use branches when developing your Mendix app.
 
 ### Main Line
 
