@@ -7,10 +7,6 @@ description: "Describes how to work with version control in Mendix Cloud apps."
 
 ## Introduction
 
-[tbd]
-
-### Deploying Locally
-
 While developing, you can deploy and run your app on your local machine by clicking the menu item **Run** > **Run Locally**. This allows you to test the app as it currently is stored on your local machine.
 
 ### Deploying Your Working Copy
