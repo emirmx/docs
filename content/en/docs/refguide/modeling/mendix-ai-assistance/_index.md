@@ -13,7 +13,13 @@ Mendix AI Assistance (Maia) refers to Mendix Platform capabilities that leverage
 
 Mendix developers can use Maia to get guidance by asking questions, get recommendation and assistance for certain development tasks, and even generate part of their app. 
 
-For information on Mendix data storage policies and practices for Maia, see [Maia Privacy Policy](https://www.mendix.com/legal/privacy/maia/).
+Maia does not use any project, customer, company, or user-entered data for model training. Maia operates on pre-trained, off-the-shelf large language models (LLMs). For more information on Mendix data storage policies and practices for Maia, see [Maia Privacy Policy](https://www.mendix.com/legal/privacy/maia/). 
+
+{{% alert color="info" %}}
+You can use the **Usage Data** setting on the **Advanced** tab of the Studio Pro **Preferences** dialog to prevent Studio Pro from sending usage data to Mendix, including prompts entered when using Maia features in Studio Pro. When this setting is set to **No**, prompts entered are not stored by Mendix and are not used for analytics. Disabling this setting may affect the behavior of some features in Studio Pro. For more information, see the [Usage Data](/refguide/preferences-dialog/#usage-data) section in *Preferences*. 
+
+This setting does not prevent data from being sent to third-party services used by certain Maia features and applies only to Maia capabilities in Studio Pro. It does not affect [Maia in Mendix Portal](/portal/maia/#maia-capabilities-in-mendix-portal).
+{{% /alert %}}
 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
@@ -23,7 +29,7 @@ For more information on how to ensure optimal performance of Maia, see the [Best
 
 To ensure the smooth operation of Mendix AI Assistance (Maia), the following network requirements must be met:
 
-* Ensure access to hostnames within the `maia.mendix.com` subdomain
+* Ensure access to hostnames within the `maia.mendix.com` and `mxassist.rnd.mendix.com` subdomains
 * Allow secure network traffic through port 443 (HTTPS) to enable uninterrupted operation of Maia
 
 ## Maia Capabilities in Mendix Studio Pro 
@@ -33,6 +39,16 @@ Mendix AI Assistance (Maia) in Studio Pro has the following capabilities:
 Starting point for app creation:
 
 * **Start with Maia** - a starting point in Studio Pro that helps you to start the app development process. Based on a required text description and an optional image or PDF, it generates an app that includes a domain model, data management overview pages, test data, and a tailored homepage. For more information, see [Start with Maia](/refguide/start-with-maia/).
+* **Maia Make** - a unified conversational interface in Studio Pro that groups all AI-assisted development capabilities into a single chat experience. With this interface, everything happens in one place. Start a conversation, describe what you need, and Maia generates the necessary app artifacts—a new domain model, overview pages, or microflows, or explaining your app logic and pages. Below is a list of Maia Make Capabilities:
+
+    * **Domain model creation** - Describe your data structure and Maia creates the entities and associations you need.
+    * **Page generation** - Generate overview pages.
+    * **Microflow generation** - Generate microflows, enumerations, XPath constraints, and expressions.
+    * **MCP client** - Connect to compatible MCP Servers to leverage tools such as Playwright or Figma to improve the capabilities of Maia.
+    * **Document upload** - Upload a PDF or an image and you can ask Maia to use it in your app creation. 
+    * **User story linking** - Select an existing story in Studio Pro and Maia can help you realize it. 
+
+    This unified conversational interface is released in Studio Pro 11.8. For more information, see [Maia Make](/refguide/maia-make/).
 
 Guidance:
 
@@ -64,7 +80,11 @@ Generators:
 
 ## Maia in Mendix Portal
 
-Various Maia features are available in Mendix Portal. For more information, refer to [Maia in Mendix Portal](/maia-mx-portal/).
+Various Maia features are available in Mendix Portal. For more information, refer to [Maia in Mendix Portal](/portal/maia/).
+
+## Maia in Private Mendix Platform
+
+Various Maia features are available in Private Mendix Platform. For more information, refer to [Maia in Private Mendix Platform](/private-mendix-platform/maia/).
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
@@ -72,6 +92,7 @@ The table below presents all the third-party services each Maia capability uses 
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
+| Start with Maia | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Maia Chat | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | User prompts and the generated answers |
 | Maia Learn | No third-party services used | N/A |
 | Maia Explain | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | Project context to fulfill user prompt request |
@@ -85,9 +106,9 @@ The table below presents all the third-party services each Maia capability uses 
 | Maia for Workflows | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Translation Generator | [Amazon Translate](https://aws.amazon.com/translate/) | All translatable texts in the application, for example, labels, button names, and menu items |
 | Validation Assist | No third-party services used | NA |
-| Maia Rewrite | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | The draft question description from users |
-| Maia Summarize | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |
-| Maia Create User Story | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts |
+| Maia Rewrite | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | The draft question description from users |
+| Maia Summarize | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |
+| Maia Create User Story | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | User prompts |
 
 ## Best Practice for Maia Performance {#maia-performance-best-practice}
 

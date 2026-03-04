@@ -52,6 +52,10 @@ While changing the model version, note the following:
 Ensure you are using Mendix Cloud GenAI Connector version 5.3.0 and above to support the latest Cohere Embed v4 model. To see the upgraded model version reflected in your GenAI Connector after upgrading, make sure you are using Mendix Cloud GenAI Connector version 5.4.0 and above.
 {{% /alert %}}
 
+#### Adjusting the Plan Size of GenAI Resources (Text and Embedding Models) 
+
+After a resource is provisioned, you can change its plan size, either upgrade or downgrade it to match your actual production token usage. Company admins can change the plan through the GenAI Resources self-service in the Control Center. For more information, see the [Adjusting GenAI Resource Plan Size](/control-center/genai-resources-self-service/#adjusting-genai-resource-plan-size) section of *GenAI Resources*.
+
 ### Team
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Team.png" >}}

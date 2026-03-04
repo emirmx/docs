@@ -61,7 +61,7 @@ The [Mobile SSO](https://marketplace.mendix.com/link/component/223516) module re
 
 It requires the following Marketplace modules to be included in your app:
 
-* [OIDC SSO](https://marketplace.mendix.com/link/component/120371)
+* [OIDC SSO](https://marketplace.mendix.com/link/component/120371) (below version 4.2.0)
 * [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513)
 
 ## Installation

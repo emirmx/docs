@@ -24,7 +24,7 @@ For more information and general help on version control, see the following docu
 
 Mendix Studio Pro needs to connect to the Team Server, where all your apps are stored. If you are having issues connecting to the Team Server, see [Troubleshooting Team Server Issues](/refguide/troubleshoot-team-server-issues/).
 
-### Getting an Unexpected Error: `The project contains changes that have not been committed yet. Please commit first before attempting to merge again.` {#css-error}
+### Getting a Changes Have Not Been Committed Error {#css-error}
 
 {{% alert color="info" %}}
 This is a known issue for Mendix version 10.0 and above. For more information, see [10.0](/releasenotes/studio-pro/10.0/#css-ki) release notes.
@@ -102,7 +102,7 @@ When filing a Git support issue with Mendix Support, attach the log files by doi
 
 1. Navigate to the **Help** menu > **Open Log File Directory**:
 
-   {{< figure src="/attachments/refguide/version-control/on-premises-git/troubleshoot-git-issues/open-log-file-directory-menu.png" alt="Download from Version Control Server dialog" class="no-border" >}}
+   {{< figure src="/attachments/refguide/version-control/on-premises-git/troubleshoot-git-issues/open-log-file-directory-menu.png" alt="Download from Version Control Server dialog" class="no-border" width="250" >}}
 
 2. Copy the file called *log.txt* into your ticket. You can also attach additional *log.X.txt* files if they exist.
 
@@ -112,13 +112,28 @@ When filing a Git support issue with Mendix Support, attach the log files by doi
 The properties described below might contain personal information. We advise you to make sure that all the private information is removed before sharing them. 
 {{% /alert %}}
 
-There are properties of the Git repository that provide you with information useful for troubleshooting different issues. Execute the following using the command line in the app’s folder:
+Several properties of the Git repository can provide you with information useful for troubleshooting different [general](#general-properties) and [configuration](#config-properties) issues. You can view them by executing the commands from the command line in the app's folder.
 
-`git status -b` — provides information on the current state of the repository
+#### General {#general-properties}
 
-`git remote -v` — lists the remotes specified for the repository
+The following properties provide general information about the repository status and remotes.
 
-`git config --list --show-origin --show-scope` — provides information on user's Git config
+* `git status -b` - Provides information on the current state of the repository.
+* `git remote -v` - Lists the remotes specified for the repository.
+
+#### Configuration {#config-properties}
+
+Git stores configuration at several levels:
+
+* System - Affects the entire Git installation.
+* Global - Affects the current user.
+* Local - Affects a specific repository.
+
+More specific configuration overrides more generic configuration (for example, local overrides global). You can inspect the configuration and see where each value is defined by using the following command:
+
+`git config --list --show-origin --show-scope`
+
+This command shows all active configuration values along with the file and scope they come from.
 
 ### Cannot Create Package from a Revision{#cannot-create-package}
 
@@ -126,10 +141,9 @@ Sometimes it is impossible to create a package from a certain revision. See belo
 
 #### Missing Metadata
 
-##### Issue
+##### Cause
 
-When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history.
-This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
+When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history. This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
 
 To create a deployment package, Studio Pro downloads the specific revision into a temporary folder and then creates the package from there. Studio Pro checks the Mendix version of the selected revision to confirm that it is compatible with the version of Studio Pro. 
 
@@ -175,3 +189,19 @@ You can run `git gc` in the command line to manually optimize the repository. `g
 ### Cloning my Project Takes a Long Time
 
 Cloning or downloading your app consists of several steps. First the required data is downloaded from the server and then a local unpacking process is executed. The duration of the clone process depends on your repository size, internet connection and computer performance. In case cloning is taking a very long time, consider changing the [clone type](/refguide/clone-type/), or follow the steps described in [Troubleshooting Repository Size](/refguide/troubleshoot-repository-size/).
+
+### Unable to Save Conflicting Files
+
+When performing operations such as rebase, merge, cherry-pick, revert, or merging a feature branch, you may encounter an error stating that access to a certain path is denied, or see a a message like the following: *Saving the conflicting mpr files failed, please abort and try again.*
+
+#### Cause
+
+Studio Pro is unable to save changes to the project files due to file locks or conflicts.
+
+#### Solution
+
+To solve this issue, perform the following steps:
+
+1. Close the error dialog.
+2. Abort the current operation in Studio Pro.
+3. Retry the operation. 
