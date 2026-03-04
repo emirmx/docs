@@ -1,6 +1,6 @@
 ---
-title: "Deploying Packages with External Tools"
-url: /refguide/using-version-control-in-studio-pro/
+title: "Working with External Tools"
+url: /refguide/version-control-external-tools/
 weight: 80
 description: "Describes how to work external tools to deploy packages."
 ---

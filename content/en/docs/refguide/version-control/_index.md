@@ -18,9 +18,20 @@ Version Control allows you to manage your app development in two ways:
 
 Version control in Mendix is built on top [Git](https://git-scm.com). The concepts will be familiar to seasoned users of these version control systems (VCS). Mendix simplifies the VCS commands by building them into Studio Pro and the Mendix Portal.
 
-### Mendix Team Server
+## Mendix Team Server
 
 [Mendix Team Server](/developerportal/repository/team-server/) is the Mendix-hosted environment that stores all Mendix apps. It facilitates versioning your apps by integrating them into a version control system. Mendix Studio Pro integrates with the Team Server allowing you to create and update apps, commit changes, and merge model versions with one click.
+
+## Peer Review and Merging
+
+Studio Pro supports peer review and merging through the version control functionalities available in Studio Pro. For more information on how to set this process up, see [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/).
+
+Currently, Mendix does not support pull or merge requests through the Team Server for Mendix. When using third-party tools it is possible to review the following code extensions:
+
+* code for Java and JavaScript actions
+* HTML/CSS for theming
+
+## Frequently Asked Questions
 
 ### What Version Control System Is Team Server Built On? {#which-team-server}
 
@@ -47,13 +58,5 @@ Yes, as the Team Server is based on a full implementation of Git. You can direct
 Yes, it is possible to connect to a third-party Git version control repository, which is often called BYO-GIT (Bring Your Own Git).
 
 For more information about limitations and the supported Git repositories, see the [Introduction](/refguide/on-premises-git/#intro) and [Preparing Your Repository](/refguide/on-premises-git/#preparing-your-repo) sections in *Working with Git On-Premises Version Control Server*.
-
-## Does Mendix 11 Support Pull Requests and Peer Reviews? 
-
-Studio Pro supports peer review and merging through the version control functionalities available in Studio Pro. For more information on how to set this process up, see [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/).
-Currently, Mendix does not support pull or merge requests through the Team Server for Mendix. When using third-party tools it is possible to review the following code extensions:
-
-* code for Java and JavaScript actions
-* HTML/CSS for theming
 
 ## Documents in This Category
