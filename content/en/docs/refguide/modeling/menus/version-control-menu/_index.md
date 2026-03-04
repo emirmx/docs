@@ -76,3 +76,4 @@ The **Add Snapshot of Data** option creates a snapshot of the built-in database 
 
 * [Studio Pro Overview](/refguide/studio-pro-overview/)
 * [Version Control](/refguide/version-control/)
+* [Pulling, Committing, and Pushing](/refguide/pushing-pulling/)

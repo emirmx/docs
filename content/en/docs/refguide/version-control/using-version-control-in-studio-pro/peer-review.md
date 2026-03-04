@@ -1,5 +1,5 @@
 ---
-title: "Using History"
+title: "Using Version Control History"
 url: /refguide/version-control-using-history/
 weight: 60
 description: "Describes how to use the History features of version control."

@@ -60,3 +60,8 @@ To merge the whole branch back to the main line to integrate a new feature there
 ### Branch Line
 
 Choose the branch line that you want to merge. It is not necessary to select individual revisions in this case, because all revisions of the branch line are merged automatically.
+
+## Read More
+
+* [Pulling, Committing, and Pushing](/refguide/pushing-pulling/)
+* [Combining Changes and Resolving Conflicts](/refguide/resolving-conflicts/)
