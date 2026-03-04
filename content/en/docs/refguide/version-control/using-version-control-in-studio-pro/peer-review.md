@@ -2,7 +2,7 @@
 title: "Using History"
 url: /refguide/version-control-using-history/
 weight: 60
-description: "Describes how to work with version control and how to resolve some issues which may arise."
+description: "Describes how to use the History features of version control."
 ---
 
 ## Introduction
