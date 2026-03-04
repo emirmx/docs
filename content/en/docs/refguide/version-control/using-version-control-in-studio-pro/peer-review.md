@@ -7,7 +7,7 @@ description: "Describes how to use the History features of version control."
 
 ## Introduction
 
-To review the changes for a particular revision, use the **History** menu.
+To review the changes for a particular revision, use the [History menu](/refguide/history-dialog/).
 
 ### History {#history}
 
