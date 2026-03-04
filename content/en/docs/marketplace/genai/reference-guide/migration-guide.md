@@ -44,7 +44,7 @@ Mendix recommends to take the following steps per release to ensure a smooth upg
 
 The sections below cover each release increment of a set of modules that are released at the same moment in time. For upgrade paths not covering any of the below mentioned module releases, no additional actions are required.
 
-### Release March 2026
+### Release March 2026 {#march-2026}
 
 This section describes breaking changes and required actions for a number of GenAI modules released early March 2026. The changes prepare the domain models for future improvements considering Agent definitions using MCP tools and Knowledge Bases.
 
