@@ -36,7 +36,7 @@ The OpenID Connect specifications incorporate the concept of [pairwise user iden
 
 Mendix recommends storing the user’s email address in the `UserCommons.NamedUserIdentifier.value`; this ensures usage of a pairwise unique identifier in the `system.user.name` does not affect metering.
 
-Within your application portfolio, the possibility to prevent cross-app user correlation is probably not needed; instead, you do want the Mendix metering system to correlate users and recognize multi-app users. Microsoft’s Entra ID uses pairwise identifiers in the OIDC `sub` claim. It is, however, possible to include the `oid` claim, which contains the same value for a given multi-app user across all applications; Entra ID’s `object-id`. Mendix recommends storing the `oid` claim in the `system.user.name` if you are using the OIDC SSO module with Entra ID.
+Within your application portfolio, the possibility to prevent cross-app user correlation is probably not needed; instead, you do want the Mendix metering system to correlate users and recognize multi-app users. Microsoft’s Entra ID uses pairwise identifiers in the OIDC `sub` claim. It is, however, possible to include the `oid` claim, which contains the same value for a given multi-app user across all applications; Entra ID’s user object ID. Mendix recommends storing the `oid` claim in the `system.user.name` if you are using the OIDC SSO module with Entra ID.
 
 ### Keeping the Existing Logic and Extending
 
