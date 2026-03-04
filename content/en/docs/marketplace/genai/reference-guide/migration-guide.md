@@ -60,13 +60,13 @@ The following module versions are released as **compatible** with each other and
 
 | Module              | Previous Versions | New Version | Contains deprecations | Requires migration |
 |---------------------|-----------------|-------------|-----------------|----|
-| GenAI Commons | 5.x.x and lower | 6.0.0 | No | Yes, as part of dependent modules |
-| Agent Commons | 2.x.x and lower | 3.0.0 | Yes | Yes |
-| MCP Client | 2.x.x and lower | 3.0.0 | Yes | No, but update required for other migrations to work |
-| OpenAI Connector | 7.x.x and lower | 8.0.0 | Yes | Yes |
-| Amazon Bedrock Connector | 9.x.x and lower | 10.0.0 | No | Yes | 
-| PgVector Knowledge Base | 5.x.x and lower| 6.0.0 | Yes | Yes |
-| Mendix Cloud GenAI Connector | 5.x.x and lower | 6.0.0 | No | Yes |
+| GenAI Commons | 5.x.x  | 6.0.0 | No | Yes, as part of dependent modules |
+| Agent Commons | 2.x.x  | 3.0.0 | Yes | Yes |
+| MCP Client | 2.x.x  | 3.0.0 | Yes | No, but update required for other migrations to work |
+| OpenAI Connector | 7.x.x  | 8.0.0 | Yes | Yes |
+| Amazon Bedrock Connector | 9.x.x  | 10.0.0 | No | Yes | 
+| PgVector Knowledge Base | 5.x.x | 6.0.0 | Yes | Yes |
+| Mendix Cloud GenAI Connector | 5.x.x  | 6.0.0 | No | Yes |
 
 {{% alert color="info" %}}
 Even if a module has no deprecations, we strongly recommend upgrading all modules together according to the above table. This ensures that migrations of other modules can work properly.
@@ -148,62 +148,62 @@ To prevent having to recreate existing data concerning Agent definitions and kno
 
    1. upgrade the **Amazon Bedrock Connector** module to v10.0.0 in your Mendix project.
    1. include logic to **run the data migration microflow** upon starting your application (e.g. include it in the after-startup):
-   ```
-   AmazonBedrockConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
-   ```
-   This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
+      ```
+      AmazonBedrockConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
+      ```
+      This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
    1. if the **Agent Commons** is part of your app as well and there are Agents defined using knowledge bases, include the following initially excluded submicroflow into the project and add it as microflow call according to the annotation in the above-mentioned microflow:
-   ```
-   AmazonBedrockConnector > USE_ME > Migration > AmazonBedrock_KnowledgeBase_Migrate
-   ```
-   This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
+      ```
+      AmazonBedrockConnector > USE_ME > Migration > AmazonBedrock_KnowledgeBase_Migrate
+      ```
+      This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
 
 
 1. If your app has the **Mendix Cloud GenAI Connector** module:
 
    1. upgrade the **Mendix Cloud GenAI Connector** module to v6.0.0 in your Mendix project.
    1. include logic to **run the data migration microflow** upon starting your application (e.g. include it in the after-startup):
-   ```
-   MxGenAIConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
-   ``` 
-   This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
+      ```
+      MxGenAIConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
+      ``` 
+      This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
    1. if the **Agent Commons** is part of your app as well and there are Agents defined using knowledge bases, include the following initially excluded submicroflow into the project and add it as microflow call according to the annotation in the above-mentioned microflow:
-   ```
-   MxGenAIConnector > USE_ME > Migration > MxGenAI_KnowledgeBase_Migrate
-   ```
-   This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
+      ```
+      MxGenAIConnector > USE_ME > Migration > MxGenAI_KnowledgeBase_Migrate
+      ```
+      This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
 
 1. If your app has the **OpenAI Connector** module:
 
    1. upgrade the **OpenAI Connector** module to v8.0.0 in your Mendix project.
    1. include logic to **run the data migration microflow** upon starting your application (e.g. include it in the after-startup):
-   ```
-   OpenAIConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
-   ```
-   This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
+      ```
+      OpenAIConnector > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
+      ```
+      This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
    1. if the **Agent Commons** is part of your app as well and there are Agents defined using knowledge bases, include the following initially excluded submicroflow into the project and add it as microflow call according to the annotation in the above-mentioned microflow:
-   ```
-   OpenAIConnector > USE_ME > Migration > Azure_KnowledgeBase_Migrate
-   ```
-   This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
+      ```
+      OpenAIConnector > USE_ME > Migration > Azure_KnowledgeBase_Migrate
+      ```
+      This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
 
 1. If your app has the **PgVector Knowledge Base** module:
 
    1. upgrade the **PgVector Knowledge Base** module to v6.0.0 in your Mendix project.
    1. include logic to **run the data migration microflow** upon starting your application (e.g. include it in the after-startup):
-   ```
-   PgVectorKnowledgeBase > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
-   ```
-   This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
+      ```
+      PgVectorKnowledgeBase > USE_ME > Migration > ConsumedKnowledgeBase_Migrate
+      ```
+      This microflow will make sure the new attributes on the generalization are set properly and the `DisplayName` field is migrated.
    1. if the **Agent Commons** is part of your app as well and there are Agents defined using knowledge bases, include the following initially excluded submicroflow into the project and add it as microflow call according to the annotation in the above-mentioned microflow:
-   ```
-   PgVectorKnowledgeBase > USE_ME > Migration > PgVector_KnowledgeBase_Migrate
-   ```
-   This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
+      ```
+      PgVectorKnowledgeBase > USE_ME > Migration > PgVector_KnowledgeBase_Migrate
+      ```
+      This microflow will set the `CollectionIdentifier` field on the `KnowledgeBase` entity, as well as the outgoing reference to the `ConsumedKnowledgeBase`.
 
 1. **Update any custom logic or pages** in your application that reference:
-   - The attributes `DisplayName_DEPR` on the `DatabaseConfiguration` and `AzureAISearchResource` entities. Instead, now use the `DisplayName` field that comes as part of the generalization. 
-   - The association `KnowledgeBase_DeployedModel_DEPR`. Instead, now use the `CollectionIdentifier` attribute on the `KnowledgeBase` entity, if needed in combination with the `KnowledgeBase_ConsumedKnowledgeBase` association. 
+   1. The attributes `DisplayName_DEPR` on the `DatabaseConfiguration` and `AzureAISearchResource` entities. Instead, now use the `DisplayName` field that comes as part of the generalization. 
+   1. The association `KnowledgeBase_DeployedModel_DEPR`. Instead, now use the `CollectionIdentifier` attribute on the `KnowledgeBase` entity, if needed in combination with the `KnowledgeBase_ConsumedKnowledgeBase` association. 
 1. **Verify** your application compiles and runs correctly before deploying to cloud environments. 
 1. **Remove** the migration logic from the app logic the moment it has run **at least once in every impacted environment**. It can, however, be triggered multiple times without harm.
 
