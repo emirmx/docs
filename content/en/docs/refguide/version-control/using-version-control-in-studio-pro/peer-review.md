@@ -1,7 +1,6 @@
 ---
-title: "Peer Reviewing Changes"
-url: /refguide/peer-reviewing/
-linktitle: "Peer Reviewing"
+title: "Using History"
+url: /refguide/version-control-using-history/
 weight: 60
 description: "Describes how to work with version control and how to resolve some issues which may arise."
 ---
