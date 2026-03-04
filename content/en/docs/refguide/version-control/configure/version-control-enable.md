@@ -7,9 +7,11 @@ description: "Learn how you can start or join an app that uses version control."
 
 ## Introduction {#intro}
 
-Version control is automatically enabled for every new Mendix application that you create. [TBD]
+Version control is enabled by default for Mendix apps. If the option was explicitly disabled during app creation, you can also enable it at a later point.
 
 ## Starting an App with Version Control
+
+Version control is automatically enabled for every new Mendix application that you create, unless you disable online services during the app creation.
 
 To start a new app with version control, do the following:
 
@@ -38,4 +40,8 @@ The app will be downloaded from the Team Server and opened in Studio Pro.
 
 ## Enabling Version Control for an Existing App
 
-[add info: https://docs.mendix.com/refguide/upload-to-version-control-dialog/]
+If version control was disabled during the app creation, you can enable it by performing the following steps:
+
+1. In Studio Pro, open the [Version Control menu](/refguide/upload-to-version-control-dialog).
+2. Click **Upload to Version Control Server**.
+3. Select the server where you want to store the app. You can also create a new server.
