@@ -970,7 +970,7 @@ This microflow creates a new [MetadataCollection](#metadatacollection-entity) an
 
 | Name | Caption | Description |
 | --- | --- | --- |
-| `HiddenForUser` | **HiddenForUser** | Automatic tool approval; tools are not shown to users. |
+| `HiddenForUser` | **HiddenForUser** | Automatic tool approval; tools are not shown to users. (default value) |
 | `VisibleForUser` | **VisibleForUser** | Automatic tool approval; tools are visible to users. |
 | `UserConfirmationRequired` | **UserConfirmationRequired** | User decides if tools are called or not. |
 
