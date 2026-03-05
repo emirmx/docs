@@ -45,10 +45,10 @@ At the end of each month, the Mendix Platform aggregates the collected data. Use
 
 ### User Classification and Reporting
 
-Users are thereafter automatically classified in the following sequence:
+Users are thereafter automatically classified in the following user licensing buckets based on your user licenses:
 
 1. External Users
-2. Single-App Users
+2. Single-App Internal Users
 3. Multi-App Internal Users (default)
 
 End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage.
