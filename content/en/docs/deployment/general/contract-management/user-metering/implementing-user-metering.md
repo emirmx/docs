@@ -50,7 +50,8 @@ For more information, refer to the [Versioning](/developerportal/deploy/implemen
 
 ## User Classification
 
-For accurate user metering, `External` users must be correctly classified. If they are not, your company may exceed the licensed capacity for `Internal` users, and Mendix may require you to acquire additional internal user licenses.
+For accurate user metering, `External` users must be correctly classified. If they are not, your company may exceed the licensed capacity for `Internal` users, and Mendix may require you to acquire additional internal user licenses. If you do not classify your `External` users, they will be treated as `Internal` users by default.
+
 There are several approaches to classify users as `Internal` or `External`, ranging from configuration-only to custom development. These options are:
 
 ### IdP-Based User Classification
