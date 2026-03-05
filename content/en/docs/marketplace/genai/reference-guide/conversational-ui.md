@@ -219,7 +219,7 @@ Since version 6.0.0, the module stores messages from tool calling persistently i
 
 This changes how action microflows are used, because they are called each time a tool is called and the UI changes for the user, for example displaying a tool call or waiting for a user decision if a tool can be executed. Logic that only needs to happen right after the user sends their message (preprocessing) or after the final assistant's message was returned (postprocessing), should perhaps only be executed for those cases.
 
-If no [user-visibility](#enum-useraccessapproval) is configured for tools and you'd like to not store tool messages (and therefore retain the behavior from versions before 6.0.0), you can change the boolean `SaveToolCallHistory` to false on the [Request](/appstore/modules/genai/genai-for-mx/commons/#request). Note that [knowledge base retrievals](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) are by default `VisibleForUser`.
+If no [user-visibility](#enum-useraccessapproval) is configured for tools and you'd like to not store tool messages (and therefore retain the behavior from versions before 6.0.0), you can change the boolean `SaveToolCallHistory` to false on the [Request](/appstore/modules/genai/genai-for-mx/commons/#request). Note that [knowledge base retrievals](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) are by default `HiddenForUser`.
 
 ### Human in the loop {#human-in-the-loop}
 
