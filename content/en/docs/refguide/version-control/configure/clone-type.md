@@ -1,5 +1,5 @@
 ---
-title: "Clone Type"
+title: "Selecting the Clone Type"
 url: /refguide/clone-type/
 weight: 40
 description: Describes full and partial clone types for Git. 
