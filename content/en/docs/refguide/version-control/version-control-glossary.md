@@ -15,7 +15,7 @@ description: "Presents and explains several concepts related to version control.
 
 To commit to the Team Server you will need to have a role in the app which allows you to edit the app. For more information, see the [Team Roles](/developerportal/general/app-roles/#team-roles) section *App Roles*.
 
-For more information on the Team Server and technologies involved, see [Version Control FAQ](/refguide/version-control-faq/).
+For more information on the Team Server and technologies involved, see [Version Control FAQ](/refguide/version-control/).
 
 ### Repository {#repository}
 
