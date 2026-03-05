@@ -304,14 +304,14 @@ The settings below configure metrics through [micrometer](https://micrometer.io/
 
 ### Http(s) Connections
 
-The settings below configure the app to use a proxy for http(s) connections used in:
+The settings below configure the app to use a proxy for all connections, whether they are http or https connections, in:
 
   1. Integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request) and  [call external action](/refguide/call-external-action/).
   2. External object microflow activities [send external object](/refguide/send-external-object/) and [delete external object](/refguide/delete-external-object/).
   3. Retrieving external entity data using a [consumed OData service](/refguide/consumed-odata-service/).
   4. Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()].
 
-These settings can be set either as JVM properties or as custom Runtime settings.
+These settings can be set either as JVM properties or as custom Runtime settings. When set as both a JVM propery and a custom runtime setting, the app uses the custom runtime setting.
 
 | Name | Description | Default Value |
 | --- | --- | --- |
@@ -319,6 +319,8 @@ These settings can be set either as JVM properties or as custom Runtime settings
 | <a id="httpproxyPort" href="#httpproxyPort">http.proxyPort</a> | Defines the port number of the HTTP proxy server. |  |
 | <a id="httpproxyUser" href="#httpproxyUser">http.proxyUser</a> | Defines the user of the HTTP proxy server. | | 
 | <a id="httpproxyPassword" href="#httpproxyPassword">http.proxyPassword</a> | Defines the password of the HTTP proxy server. | | 
+
+Note that the `http.` part of the names of these settings does not imply anything about `http` or `https` connections - it's just the name of the setting.
 
 ### License Server
 
@@ -329,3 +331,5 @@ The settings below configure the app to use a proxy to reach the Mendix license 
 | <a id="httpsproxyUser" href="#httpsproxyUser">https.proxyUser</a> | Defines the user of the HTTPS proxy server. | | 
 | <a id="httpsproxyPassword" href="#httpsproxyPassword">https.proxyPassword</a> | Defines the password of the HTTPS proxy server. | | 
 | <a id="httpsnonProxyHosts" href="#httpsnonProxyHosts">https.nonProxyHosts</a> | Defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '|'. The patterns may start or end with a '*' for wildcards. | | 
+
+Note that the `https.` part of the names of these settings does not imply anything about `http` or `https` connections - it's just the name of the setting.
