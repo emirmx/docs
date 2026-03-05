@@ -321,6 +321,10 @@ This setting is enabled by default. The editor allows the user to write rich tex
 
 You can publish data as a GraphQL service. When you enable this feature, you can indicate that a published OData service [also supports GraphQL](/refguide/published-odata-services/#supports-graphql).
 
+### JavaScript Action Editor
+
+Select this option to use the modernized version of the JavaScript Action Editor. You must close all open JavaScript Actions to use this feature.
+
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
