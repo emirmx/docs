@@ -21,7 +21,7 @@ You can revert changes in the **Changes** pane, from **Version Control** > **Rev
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revertx2.png" alt="Two ways of reverting" class="no-border" >}}
 
 {{% alert color="info" %}}
-You can also **Revert All Changes** while [merging](#merge). This will restore your app to the most recent commit, discarding changes creating by the merging process.
+You can also **Revert All Changes** while [merging](/refguide/resolving-conflicts/#merge). This will restore your app to the most recent commit, discarding changes creating by the merging process.
 {{% /alert %}}
 
 ### Reverting a Previous Commit {#revert-previous-commit}
@@ -34,7 +34,7 @@ Select the **Version Control** menu > **Revert a Commit...** to revert a commit.
 Reverting a commit creates a new commit that undoes the changes introduced by the original commit. This may lead to unexpected results depending on the context of the original commit.
 
 * **Cherry picking and reverting** – If you used [Cherry Pick](/refguide/merge-dialog/#cherry-pick) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be reapplied when merging the full branch. This happens because the revert commit explicitly negates the cherry-picked changes, and Git recognizes them as already addressed.
-* **Merging and reverting** – If you [merged another branch](/refguide/version-control/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
+* **Merging and reverting** – If you [merged another branch](/refguide/version-control/glossary/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
 {{% /alert %}}
 
 Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, etc, one by one.
