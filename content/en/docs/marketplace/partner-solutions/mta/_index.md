@@ -1,7 +1,6 @@
 ---
 title: "Menditect Test Automation"
 url: /appstore/partner-solutions/mta/
-linktitle: "MTA"
 description: "Introduces Menditect Test Automation, which is new Mendix partner for automated testing."
 weight: 20
 ---

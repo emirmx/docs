@@ -1,7 +1,6 @@
 ---
 title: "Dynamic Case Management"
 url: /appstore/partner-solutions/dcm/
-linktitle: "DCM"
 description: "Introduces Mendix Dynamic Case Management for complex processes."
 weight: 30
 beta: true
