@@ -11,6 +11,12 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows a web applicatio
 
 This document describes the custom runtime settings required to enable CORS in the Mendix Runtime.
 
+{{% alert color="info" %}}
+
+This feature is only supported in Mendix 11.9 and later.
+
+{{% /alert %}}
+
 ## Settings to Configure {#settings}
 
 To enable CORS, configure the following custom runtime settings. For general information on how to set custom runtime settings, see [Runtime Customization](/refguide/custom-settings/).
@@ -20,7 +26,6 @@ To enable CORS, configure the following custom runtime settings. For general inf
 | Name | Value | Description |
 | --- | --- | --- |
 | `com.mendix.core.SameSiteCookies` | `None` | Allows cookie sharing between the runtime origin and the client origin. This is required for cross-origin authentication to work correctly. |
-| `Client.EnableCors` | `true` | When enabled, the runtime responds to CORS preflight (`OPTIONS`) requests from the browser. |
 
 ### Custom HTTP Response Headers
 
@@ -44,7 +49,6 @@ The following example shows how to configure CORS in an `m2ee.yaml` file. Replac
 ```yaml
 mxruntime:
     com.mendix.core.SameSiteCookies: None
-    Client.EnableCors: true
     Headers:
         "Access-Control-Allow-Credentials": "true"
         "Access-Control-Allow-Headers": "Content-Type, x-csrf-token"
