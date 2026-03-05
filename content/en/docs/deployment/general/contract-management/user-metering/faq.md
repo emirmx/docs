@@ -15,45 +15,45 @@ This document answers common questions about user metering, outlining user class
 ### Is User Metering Automatically Enabled?
 
 User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. Data collection begins as soon as your application is deployed to a production environment. 
-
-### Where Can I View My User Consumption Data?
+<!-- ### Where Can I View My User Consumption Data?
 
 Navigate to the **Control Center** > **Entitlements** > **End-Users** > **Usage Report**.
-For more information, refer to the Usage Report Tab section of *End-Users*. <!-- Link from the Control Center doc -->
+For more information, refer to the Usage Report Tab section of *End-Users*.  
 
 ### When Can I See My Monthly Usage Data?
 
 User pack utilization is extracted regularly from the apps and available as a daily snapshot on the Control Center. 
 The daily snapshots are processed and deduplicated across all your apps at the end of each month and become available on the 1st of the following month as monthly usage data. Monthly reports show aggregated license usage over the month.
+Link from the Control Center doc -->
 
 ### What Happens if I Exceed My Entitlement?
 
 If you exceed your licensed entitlements:
 
 * No immediate service disruption: Your applications continue to run normally.
-* Alert displayed: A warning icon appears in the end-of-month Usage Report on the Control Center.
+    <!--* Alert displayed: A warning icon appears in the end-of-month Usage Report on the Control Center. -->
 * Compliance discussion: Your Customer Success Manager (CSM) will contact you to discuss:
 
     * Purchasing additional user packs
     * Optimizing user classification
     * Adjusting your license agreement
 
-Mendix recommends that you monitor your usage regularly and purchase additional capacity before reaching your limit.
+<!--Mendix recommends that you monitor your usage regularly and purchase additional capacity before reaching your limit.
 
 ### Can I View Usage Data From Previous Months?
 
-Apps across Mendix Cloud began collecting user metering data starting in November 2025. Based on when your app was onboarded on user metering, you may have access to historical usage data. Navigate to the **Usage Report** and select the desired month to see the usage data.
+Apps across Mendix Cloud began collecting user metering data starting in November 2025. Based on when your app was onboarded on user metering, you may have access to historical usage data. Navigate to the **Usage Report** and select the desired month to see the usage data.-->
 
 ## Questions on User Classification
 
-### How Are Users Classified If I Do Not Configure User Classification?
+### How Are Users Classified If I Do Not Assign Single-App Internal User Pack to an app? 
 
 If no action is taken, all users are classified as Multi-App Internal Users by default.
 This means all users in your apps are aggregated together and classified as multi-app internal users. 
 
 ### I Have External Users in My Applications. How Do I Ensure They Are Counted Correctly?
 
-Explicitly mark users as `External` in your application to ensure they are counted correctly under your External User pack. If you do not have an External User pack, these users will be classified as `Internal`, even if they are marked as `External` users.
+Explicitly mark users as `External` in your application to ensure they are counted correctly under your External User pack. If you do not have an External User pack, these users will be classified as `Internal`, even if they are marked as `External` users. Also a multi-app user who is marked as `Internal` in one app, but as `External` in another app, will be counted as an internal multi-app user.
 
 For more information, refer to [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification).
 
@@ -82,6 +82,8 @@ Deactivate users as soon as they no longer need access. This ensures that they a
 Technically, you can deactivate or remove users to optimize license costs.
 
 To optimise license cost, you may choose to delete records in the `system.user` object, while maintaining data in custom user objects.
+
+You may also choose to deactivate users by using SCIM integration between your app and your IdP. This requires you to include the [SCIM](/appstore/modules/scim/) module in your application.
 
 {{% alert color="info" %}}
 Check your organization's data retention policies before purging any user data. Deactivation usually satisfies both license optimization and compliance requirements.
