@@ -73,7 +73,7 @@ For each revision, you can see the following information:
 * The Mendix Studio Pro version used
 * The revision number
 
-You can also access the revision history in Studio Pro. For more information, see the [History](/refguide/using-version-control-in-studio-pro/#history) section in *Using Version Control in Studio Pro*.
+You can also access the revision history in Studio Pro. For more information, see the [Using History](/refguide/version-control-using-history/) section in *Using Version Control in Studio Pro*.
 
 ## Revision Details {#revision-details}
 

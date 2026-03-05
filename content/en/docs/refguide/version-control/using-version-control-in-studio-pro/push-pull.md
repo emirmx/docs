@@ -17,7 +17,7 @@ You can also see a **history** of all the changes that have been committed, no m
 
 ### Status {#status}
 
-The status of your app is a summary of all the changes in your working copy when compared with the original (the original version is the version you pulled from the remote repository before making your changes (or the newly created app if you have not pulled anything yet). Studio Pro shows the status both in the **App Explorer** and in the **Changes** pane.
+The status of your app is a summary of all the changes in your working copy when compared with the original. The original version is the version you pulled from the remote repository before making your changes, or the newly created app if you have not pulled anything yet. Studio Pro shows the status both in the **App Explorer** and in the **Changes** pane.
 
 The **App Explorer** shows an icon in front of items (such as documents, folders, and modules) to present that are changed in some way. The different icons indicate the different kinds of changes which have been made.
 
@@ -28,7 +28,7 @@ The **App Explorer** shows an icon in front of items (such as documents, folders
 | {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/item-added.png" class="no-border" >}} | You added this item. |
 | {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/item-moved.png" class="no-border" >}} | You moved this item to another position in the app tree. |
 | {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/item-deleted.png" class="no-border" >}} | You deleted this item. |
-| {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/item-conflicting.png" class="no-border" >}} | You and somebody else made conflicting changes to this item. For more information, see the [Dealing With Conflicts](#conflicts) section below. |
+| {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/item-conflicting.png" class="no-border" >}} | You and somebody else made conflicting changes to this item. For more information, see [Combining Changes and Resolving Conflicts](/refguide/resolving-conflicts/). |
 
 {{% alert color="info" %}}
 In the **App Explorer**, there is only room for one icon for each item. If an item is both modified and moved, it is shown as modified with a yellow icon.
@@ -134,7 +134,7 @@ Git prevents you from pushing your changes if it sees your changes and the remot
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/server-your-work.png" alt="The local changes consist of commits 1, 3, while the remote server has commits 1, 2, and 4 on the same branch." class="no-border" >}} 
 
-There are two ways for Studio Pro to combine the commits: **Rebase** (default) and **Merge**. For more information, see [Combining Changes and Conflict Resolution](/refguide/merge-algorithm/#combine-changes).
+There are two ways for Studio Pro to combine the commits: **Rebase** (default) and **Merge**. For more information, see [Combining Changes and Conflict Resolution](/refguide/resolving-conflicts/#combine-changes).
 
 ### Pulling
 
