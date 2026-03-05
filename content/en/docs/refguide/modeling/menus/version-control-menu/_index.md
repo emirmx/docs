@@ -21,7 +21,7 @@ The **Commit** option commits all local changes made to the app since the previo
 
 ## Push{#push}
 
-The **Push** option sends your local changes to the version control server. For more information, see the [Commit/Push](/refguide/version-control/#commit) section in *Version Control*.
+The **Push** option sends your local changes to the version control server. For more information, see the [Commit/Push](/refguide/version-control/glossary/#commit) section in *Version Control*.
 
 ## History
 

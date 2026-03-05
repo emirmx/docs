@@ -6,7 +6,7 @@ url: /refguide/merge-dialog/
 
 ## Introduction
 
-With the **Merge** dialog you can [merge](/refguide/version-control/#merge) changes from a branch line to the main line. For example, a fix that you applied in a maintenance branch line can be merged back to the main line so that you do not have to apply the fix by hand again. Also if you completed developing a large feature in a separate branch line you can use merge to incorporate that feature into the main line.
+With the **Merge** dialog you can [merge](/refguide/version-control/glossary/#merge) changes from a branch line to the main line. For example, a fix that you applied in a maintenance branch line can be merged back to the main line so that you do not have to apply the fix by hand again. Also if you completed developing a large feature in a separate branch line you can use merge to incorporate that feature into the main line.
 
 {{% alert color="warning" %}}
 Before continuing with the merge action, make sure you are currently working in the development line to which you want to merge.
