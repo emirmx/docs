@@ -37,7 +37,7 @@ Your application logic plays an important role in creating and maintaining accur
 
 ### Data Collection
 
-All applications on the Mendix Cloud and Mendix Cloud Dedicated automatically send user data back to the Mendix platform. The data is collected throughout the month from the production environment only. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
+All applications on the Mendix Cloud and Mendix Cloud Dedicated automatically send user data back to the Mendix platform. Data is collected from all environments throughout the month. However, only data from the production environment is considered for consumption numbers and billing purpose. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
 
 ### Data Aggregation and Deduplication
 
@@ -53,9 +53,13 @@ Users are thereafter automatically classified in the following sequence:
 
 End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage.
 
-## How User Aggregation and Deduplication Work
+## How Deduplication and User Classification Work
 
-The user aggregation and deduplication process determines which user pack is consumed when a user accesses one or more of your applications. The process evaluates users in a sequence so that each user is counted according to the correct license pack without duplication. The classification follows the steps below:
+The user classification and deduplication process determines which user pack is consumed when a user accesses one or more of your applications. The process evaluates users in a sequence so that each user is counted according to the correct license pack without duplication. The classification follows the steps below:
+
+### User Identification (Deduplication)
+
+Users are deduplicated based on common identifier values. A customer who has different identifier values in the aggregated data cannot be recognized as same user, and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values persist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
 
 ### Classifying External Users
 
@@ -75,8 +79,11 @@ All remaining users are classified as `Internal` Users and further classified as
 After `External` users are classified, the classification process further classifies the single-app internal users.
 
 If the application is associated with a Single-App Internal User Pack, the user of the app will be classified as a single-app internal user. This user will be counted against the single-app internal user pack for that application.
+ <!-- *For more details on how to assign single-app user packs to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
-For more details on how to assign single-app user packs to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center. <!-- Link from the Control Center doc -->
+ {{% alert color="info" %}}
+An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that app and will be also be counted separately for any other apps they use. 
+{{% /alert %}}
 
 ### Classifying Multi-App Internal Users
 
