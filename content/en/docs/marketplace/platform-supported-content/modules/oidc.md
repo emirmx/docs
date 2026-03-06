@@ -874,7 +874,7 @@ This section is only relevant if you are a Mendix partner and you want to integr
 {{% /alert %}}
 
 {{% alert color="info" %}}
-From version 4.x.x of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
+From version 4.3.0 of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
 {{% /alert %}}
 
 To parse of SAM access tokens you need to do the following when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app):
