@@ -11,7 +11,7 @@ numberless_headings: true
 
 **Release date: March 06, 2026**
 
-This release includes routine security updates, which does not pose any apparent risk for Mendix customers.
+This release includes routine security updates, which do not pose any apparent risk to Mendix customers.
 
 ## 1.0.2
 
