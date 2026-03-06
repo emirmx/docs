@@ -334,13 +334,13 @@ In this case, the OIDC client is the app you are making.
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
     * `private_key_jwt`: This method introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. It has the following Private Key Source options: 
-        * JWKS URI: When you select the **JWKS URI** from the **Private Key Source**, you can configure the following fields:
+        * JWKS URI: When you select the **JWKS URI** from the **Public Key Exchange**, you can configure the following fields:
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
 
         Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
-        * X. 509 Certificate: This is a certificate-based authentication. Once the configuration is ready, download the certificate in the `pre`, `cer`, or `cer` format. You can also download it by editing the configuration and clicking **Download**. It is supported from version x.x.x of the OIDC module. Configure the following fields:
+        * X. 509 Certificate: This is a certificate-based authentication. Once the configuration is ready, download the certificate in the `pre`, `cer`, or `cer` format. You can also download it by editing the configuration and clicking **Download**. It is supported from version 4.3.0 of the OIDC module. Configure the following fields:
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
 
