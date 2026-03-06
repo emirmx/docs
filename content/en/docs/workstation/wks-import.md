@@ -67,3 +67,7 @@ To transfer the contents of a single station, perform the following steps:
 4. Click **Continue**.
 5. On the **Summary** screen, review the information and optionally select a group to categorize it, such as *Assembly*.
 6. Click **Create Station**.
+
+{{% alert color="info" %}}
+By default, the single station import operates in duplicate mode. That is, when you import a station with same name as an existing station, a new station is created with a number appended to the name. For example, copying and pasting a station called *My Station* creates a station called *My Station (1)*.
+{{% /alert %}}
