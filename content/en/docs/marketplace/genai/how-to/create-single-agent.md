@@ -305,9 +305,9 @@ Before adding tools via MCP, ensure you have at least one `MCPClient.MCPServerCo
 
    1. Navigate to the agent view page for the IT-Ticket Helper agent and go to the Tools section. Add a new tool of type MCP tools.
    2. Select the appropriate MCP server configuration from the available options.
-   3. Choose how to add MCP tools:
-        * **Use all available tools**: imports the entire server, including all tools it provides. This also means less control over individual tools and if tools are added in the future, that they get added automatically on agent execution.
-        * **Select Tools**: allows you to import specific tools from the server and changing specific fields for individual tools.
+   3. Choose **Tool selection** option:
+        * **Use all available tools**: imports the entire server, including all tools it provides. This also means that less control over individual tools and if tools are added in the future, they get added automatically on agent execution.
+        * **Select tools**: allows you to import specific tools from the server and changing specific fields for individual tools.
    4. Click **Save**. The connected server or your selected tools will now appear in the agent's tool section.
 
 #### Include Knowledge Base Retrieval: Similar Tickets
@@ -370,22 +370,24 @@ Run the app to see the agent integrated in the use case. From the **TicketHelper
 
 #### Enable User Confirmation for Tools {#user-confirmation}
 
-This is an optional step to use the human-in-the-loop pattern to give users control over tool executions. When [adding tools to the agent](#empower-agent) you can configure a `User Access and Approval` setting to either make the tools visible to the user or require the user to confirm or reject a tool call. This way, the user is in control of actions that the LLM requested to perform.
+This is an optional step to use the human-in-the-loop pattern to give users control over tool executions. When [adding tools to the agent](#empower-agent) you can configure a **User Access and Approval** setting to either make the tools visible to the user or require the user to confirm or reject a tool call. This way, the user is in control of actions that the LLM requested to perform.
 
-To make this work, you need to implement a few steps. For more information, see [here](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop):
+For more information, refer to [Human in the loop](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop)
 
-1. Change the `User Access and Approval` setting for one of the tools to `User Confirmation Required` in the agent editor. You may want to add a display title and description to make it more human-readable. Make sure to save the version and mark it as `In Use`.
-2. In Studio Pro, modify your microflow that calls the agent. After the agent retrieval step, add the `Create Request` action from the toolbox. All parameters can be empty except the `ID`, which you can get from the `TicketHelper` object.
-3. Afterward, add the microflow `Request_AddMessage_ToolMessages` from the ConversationalUI module. Pass the message that is associated with your **TicketHelper**.
-4. Duplicate the `Request_CallAgent_ToolUserConfirmation_Example` microflow from ConversationalUI in your own module and include it in the project. This microflow needs to be called instead of `Call Agent Without History`. You need to make some modifications to it (the annotations show the position):
-    * Add your context object **TicketHelper** as an input parameter and pass it in the first **Call Agent Without History** action.
-    * Change the message retrieval to retrieve a **Message** from your **TicketHelper** via association.
-    * After calling the microflow `Response_CreateOrUpdateMessage`, add a `Change object` action to set the association **TicketHelper_Message** to the **Message_Conversational** object. Additionally set the RequestId derived from the Response Id.
+Follow the steps below:
+
+1. Change the **User Access and Approval** setting for one of the tools to **User Confirmation Required** in the agent editor. You may want to add a display title and description to make it more human-readable. Make sure to save the version and mark it as **In Use**.
+2. In Studio Pro, modify your microflow that calls the agent. After the agent retrieval step, add the `Create Request` action from the toolbox. All parameters can be empty except the ID, which you can get from the `TicketHelper` object.
+3. Add the microflow `Request_AddMessage_ToolMessages` from the ConversationalUI module and pass the message that is associated with your `TicketHelper`.
+4. Duplicate the `Request_CallAgent_ToolUserConfirmation_Example` microflow from ConversationalUI in your own module and include it in the project. Call this microflow instead of `Call Agent Without History`. Make some modifications to it (the annotations show the position):
+    * Add your context object `TicketHelper` as an input parameter and pass it in the first `Call Agent Without History` action.
+    * Change the message retrieval to retrieve a **Message** from your `TicketHelper` via association.
+    * After calling the microflow `Response_CreateOrUpdateMessage`, add a `Change object` action to set the association **TicketHelper_Message** to the **Message_Conversational** object. Additionally set the `RequestId` derived from the `ResponseId`.
     * After the decision, add an action to call the `ACT_TicketHelper_CallAgent_Commons` again to ensure that updated tool messages are sent back to the LLM.
     * Inside the loop in the `false` path, you can open a page for the user to decide if the tool should be executed or not. For this, you may want to add the `ToolMessage_UserConfirmation_Example` page to your module.
-5. Create microflows for the **confirm** and **reject** buttons that should update the status of the tool message, for example by calling the `ToolMessage_UpdateStatus` microflow. If no more pending tool messages are available, you can call the **ACT_TicketHelper_CallAgent_Commons** again. Make sure to always close the popup page on decisions.
+5. Create microflows for the **confirm** and **reject** buttons that should update the status of the tool message, for example, by calling the `ToolMessage_UpdateStatus` microflow. If no more pending tool messages are available, you can call the **ACT_TicketHelper_CallAgent_Commons** again. Make sure to always close the popup page on decisions.
 
-Examples for both Agent Commons and GenAI Commons can be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in the `ExampleMicroflows` module.
+You can find examples for both Agent Commons and GenAI Commons in the `ExampleMicroflows` module of [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
 ## Define the Agent Using Microflows {#define-genai-commons}
 
@@ -524,10 +526,10 @@ For both approaches, you need an `MCPClient.MCPServerConfiguration` object conta
 
 Finally, you can add a tool for knowledge base retrieval. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 
-1. In the microflow `_ACT_TicketHelper_Agent_GenAICommons`, add a `Retrieve` action, before the request is created, to retrieve a **Consumed Knowledge Base** object:
+1. To retrieve a **Consumed Knowledge Base** object, add a `Retrieve` action in the `_ACT_TicketHelper_Agent_GenAICommons` microflow before the request is created. 
 
     * Source: `From database`
-    * Entity: `GenAICommons.ConsumedKnowledgeBase` (search for *ConsumedKnowledgeBase*)
+    * Entity: `GenAICommons.ConsumedKnowledgeBase` (search for `ConsumedKnowledgeBase`)
     * Range: `First`
     * Object name: `ConsumedKnowledgeBase` (default)
 
@@ -539,7 +541,7 @@ Finally, you can add a tool for knowledge base retrieval. This allows the agent 
     * MetadataCollection: empty (expression; optional)
     * Name: `RetrieveSimilarTickets` (expression)
     * Description: `Similar tickets from the database` (expression)
-    * ConsumedKnowledgeBase: `ConsumedKnowledgeBase` (as retrieved in step 1)
+    * ConsumedKnowledgeBase: `ConsumedKnowledgeBase` (as retrieved in step above)
     * CollectionIdentifier: `'HistoricalTickets'` (name that was used in the [Ingest Data into Knowledge Base](#ingest-knowledge-base))
     * Use return value: `no`
 
@@ -547,7 +549,7 @@ You have successfully integrated a knowledge base into your agent interaction. R
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_GenAICommons.png" >}}
 
-If you'd like to learn how to [Enable User Confirmation for Tools](#user-confirmation) similar as described for agent above, you can find examples in the `ExampleMicroflows` module of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
+If you would like to learn how to [Enable User Confirmation for Tools](#user-confirmation) similar as described for agent above, you can find examples in the `ExampleMicroflows` module of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
 ## Testing and Troubleshooting
 
