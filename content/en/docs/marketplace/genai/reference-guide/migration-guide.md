@@ -84,11 +84,13 @@ Migration steps are grouped by topic rather than by module, as some changes span
 ###### What Changed
 - The association from entity `SingleMCPTool` towards the entity `MCPTool` has been deprecated.
 - Entity `SingleMCPTool` has a new association `SingleMCPTool_ConsumedMCPService` and a new attribute `Tool`.
+- Entity `MCPServerConfiguration` was renamed to `ConsumedMCPService` along with the corresponding page `ConsumedMCPService_Overview` and java action `ConsumedMCPService_CreateMCPClient`
 
 ###### Impact
+The above page and java action need to be reselected if they are used in your application.
 Agent definitions containing Single MCP tools require migration to prevent failing agent calls at runtime. 
 
-Migration is only required if your app uses Agent definitions containing Single MCP tools
+Data migration is only required if your app uses Agent definitions containing Single MCP tools
 
 ###### Required Actions
 
