@@ -308,8 +308,7 @@ Before adding tools via MCP, ensure you have at least one `MCPClient.MCPServerCo
    3. Choose how to add MCP tools:
         * **Use all available tools**: imports the entire server, including all tools it provides. This also means less control over individual tools and if tools are added in the future, that they get added automatically on agent execution.
         * **Select Tools**: allows you to import specific tools from the server and changing specific fields for individual tools.
-   4. If you selected import type `tools`, you can choose to enable all available tools or select only the specific ones you need.
-   5. Click **Save**. The connected server or your selected tools will now appear in the agent's tool section.
+   4. Click **Save**. The connected server or your selected tools will now appear in the agent's tool section.
 
 #### Include Knowledge Base Retrieval: Similar Tickets
 
