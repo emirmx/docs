@@ -13,19 +13,19 @@ With our Multi-Cloud strategy, Mendix allows the apps that you build to be deplo
 
 The full stack is depicted in the table below. This indicates which components are **Mendix** supported, or supported by a **Mendix Partner** or a third party. If no support is indicated, then you will need to arrange support of this component yourself. Each of the components is described in more detail in [Components of the Mendix Stack](/support/#components), in *Mendix Support*.
 
-| Stack (see [Components of the Mendix Stack](/support/#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Mendix on Kubernetes - Con&shy;nected | Mendix on Kubernetes - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry/ Docker & Kuber&shy;netes | Tradi&shy;tional³ |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Stack (see [Components of the Mendix Stack](/support/#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Mendix on Kubernetes - Con&shy;nected | Mendix on Kubernetes - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry, Docker & Kuber­netes, Tradi&shy;tional³ |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | **Appli&shy;cation** | | | | | | | | |
-| **Platform Support&shy;ed Marketplace content** | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix |
-| **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | | |
-| **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
-| **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner²  | | | |
-| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
-| **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | |
-| **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
-| **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
-| **Infra&shy;structure** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
-| **Database/ File Storage/ Network** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
+| **Platform Support&shy;ed Marketplace content** | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix |
+| **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | |
+| **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix |
+| **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner or Certified Customer²  | | |
+| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | |
+| **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner or Certified Customer² | Mendix | Mendix |
+| **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Infra&shy;structure** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
+| **Database/ File Storage/ Network** | Mendix | Mendix | | | Certified Mendix Partner or Certified Customer² | Mendix Partner¹ | |
 
 ¹Support will go through [SAP Support](https://launchpad.support.sap.com/#/incident/create/prefilled/comp_name=XX-PART-MDX-RAD).
 
@@ -72,7 +72,7 @@ Mendix Support does not have access to app health, logs, graphs and monitoring. 
 
 Private Mendix Platform provides a platform experience in on-premises or (virtual) Mendix on Kubernetes environments. It is dependent on Mendix on Kubernetes and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
 
-This offering is delivered, managed and supported by Certified Partners (or Certified Customers). If you run into issues regarding your private platform, please contact your Certified Partner for support.
+This offering is delivered, managed and supported by Certified Partners (or Certified Customers). If you run into issues regarding your private platform, please contact your Certified Partner (or Customer) for support.
 
 ## SAP Business Technology Platform
 
