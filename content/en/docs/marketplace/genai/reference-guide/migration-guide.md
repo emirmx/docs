@@ -122,13 +122,14 @@ The following modules require upgrade:
 
 ###### What Changed
 
-- A new entity `ConsumedKnowledgeBase` has been added to the domain model of GenAI Commons. Each connector that provides logic to interact with Deployed Knowledge Bases now provides a specialization for this new entity. 
-- In n the **Amazon Bedrock Connector** module, entity `BedrockConsumedKnowledgeBase` was added as a specialization of `ConsumedKnowledgeBase`.
-- In the **Mendix Cloud GenAI Connector** module, existing entity `MxCloudKnowledgeBaseResource` is now a specialization of `ConsumedKnowledgeBase`.
-- In the **OpenAI Connector** module, existing entity `AzureAISearchResource` is now a specialization of `ConsumedKnowledgeBase`. The `DisplayName` attribute has been deprecated and replaced by the attribute on the generalization.
-- In the **PgVector Knowledge Base** module, existing entity `DatabaseConfiguration` is now a specialization of `ConsumedKnowledgeBase`. The `DisplayName` attribute has been deprecated and replaced by the attribute on the generalization.
+* A new entity `ConsumedKnowledgeBase` has been added to the domain model of GenAI Commons. Each connector that provides logic to interact with Deployed Knowledge Bases now provides a specialization for this new entity. 
+* In n the **Amazon Bedrock Connector** module, entity `BedrockConsumedKnowledgeBase` was added as a specialization of `ConsumedKnowledgeBase`.
+* In the **Mendix Cloud GenAI Connector** module, existing entity `MxCloudKnowledgeBaseResource` is now a specialization of `ConsumedKnowledgeBase`.
+* In the **OpenAI Connector** module, existing entity `AzureAISearchResource` is now a specialization of `ConsumedKnowledgeBase`. The `DisplayName` attribute has been deprecated and replaced by the attribute on the generalization.
+* In the **PgVector Knowledge Base** module, existing entity `DatabaseConfiguration` is now a specialization of `ConsumedKnowledgeBase`. The `DisplayName` attribute has been deprecated and replaced by the attribute on the generalization.
 
 ###### Impact
+
 Agent definitions using KnowledgeBases require migration to prevent failing agent calls at runtime. 
 Existing knowledge base configurations in any of the mentioned connector modules, require migration to prevent failing knowledge base calls at runtime.
 
