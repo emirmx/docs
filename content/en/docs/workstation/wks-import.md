@@ -44,6 +44,15 @@ To transfer multiple station configurations, along with their associated applica
     * **Include Apps** - If you select this option, the import creates any apps that are linked to the exported stations but do not yet exist in the workspace with the same URL and public key.
     * **Include Devices** - If you select this option, the import includes any exported device configurations.
 
+8. Select how you want to handle duplicate stations and devices (that is, stations and devices with same name as an existing station or device). The following options are available:
+
+    * **Ignore** - The item is skipped.
+    * **Duplicate** - A new item is created with a number appended to the name, for example, *My Station (1)*.
+    * **Replace** - The existing item is replaced by the new one.
+    * **Merge** - This option is only available for stations. The new station along with its apps and devices is merged with the existing station with the same name.
+
+    {{< figure src="/attachments/workstation/wks-import4.png" class="no-border" >}}
+
 After the import finishes, your target workspace has the same applications and station configurations as the source workspace, but the stations are not yet registered to computers.
 
 ## Importing and Exporting a Single Station
