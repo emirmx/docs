@@ -65,7 +65,7 @@ For both actions, you can pass an `ArgumentCollection` if the prompt or tool req
 
 ### Using MCP Client Module with GenAI Commons and Conversational UI {#use-with-genai-commons}
 
-To add all tools from an MCP server to a `GenAICommons.Request`, you can use the `Request: Add all tools from MCP server` toolbox action. This action will first list all tools from the provided MCP server configuration, iterate over them, and adding them one by one to the tool collection. The request can then be passed to a Chat Completions operation.
+To add all tools from an MCP server to a `GenAICommons.Request`, you can use the `Request: Add all tools from MCP server` toolbox action. This action will first list all tools from the provided MCP server configuration, iterate over them, and adding them one by one to the tool collection. The request can then be passed to a Chat Completions operation. 
 
 You can also find an example [action microflow](/appstore/modules/genai/genai-for-mx/conversational-ui/#action-microflow) `ChatCompletions_MCPClient_ActionMicroflow` in the **Example Implementations** folder of the module. This microflow demonstrates how a Conversational UI chat action including MCP tools can be facilitated. Duplicate and include this microflow into your custom module and modify it according to your requirements.
 

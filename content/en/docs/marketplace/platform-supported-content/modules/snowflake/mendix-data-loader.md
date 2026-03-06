@@ -182,12 +182,12 @@ Programmatically triggering an ingestion job can meet data ingestion requirement
 ### Prerequisites
 
 * A fully configured data source in the Mendix Data Loader
-* A Mendix app equipped with the Snowflake REST SQL connector
+* A Mendix app equipped with the Snowflake AI Data Connector
 * An authenticated user that is allowed to trigger stored procedures
 
 ### Triggering the Ingestion
 
-To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-ai-data-connector/).
 
 1. Obtain the Snowflake data source ID by performing the following steps:
 
@@ -196,7 +196,7 @@ To trigger an ingestion job programmatically, use the `ExecuteStatement` operati
     3. Click **View** by the configured data source.
     4. Copy the value for the `ID` key.
 
-2. In the Snowflake REST SQL connector, use the `ExecuteStatement` operation to execute the following statement:
+2. In the Snowflake AI Data Connector, use the `ExecuteStatement` operation to execute the following statement:
 
 ```sql
 CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','');
