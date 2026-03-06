@@ -93,7 +93,7 @@ Furthermore, it contains the name of the microflow to be executed to do a retrie
 
 As these objects are created as a specialization by the logic in connectors themselves (specializations), such a specialization typically contains more specific data required for the connection to the resource according to the provider infrastructure details, such as endpoints and credentials. Admins need to configure this at runtime.
 
-This entity was introduced in module version 6.0.0. To migrate data from erlier versions, refer to the [GenAI migration guide](/appstore/modules/genai/genai-for-mx/migration-guide/#march-2026).
+`ConsumedKnowledgeBase` entity is introduced in module version 6.0.0. To migrate data from erlier versions, refer to the [GenAI migration guide](/appstore/modules/genai/genai-for-mx/migration-guide/#march-2026).
 
 | Attribute | Description |
 | --- | --- |
