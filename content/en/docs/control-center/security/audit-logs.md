@@ -22,23 +22,36 @@ Audit logs are valuable for a variety of reasons:
 
 ## Audit Logs
 
-The **Audit Logs** tab displays a list of all activities over the past 90 days. It includes the following details:
+The **Audit Logs** tab displays a list of all activities over the past 365 days.     
+Each list entry includes the following details:
 
 * **Date** – The date and time when the activity was logged.
 * **Email** – The email of the user who performed the activity.
 * **Action** – The activity that was performed.
-* **Service** – The name of the service which produced the activity.
+* **Service** – The name of the service which produced the activity. These are the possible values:
+
+    * Mendix Portal
+    * Deployment
+    * Control Center
+    * Marketplace
+    * Compass
+    * Portfolio
+    * Catalog
+
 * **Description** – A short description of the activity.
 * **Outcome** – The status of the activity, which can be one of the following:
 
     * **Success Action** – The activity was successfully completed as intended.
-    * **Success Audit** – A security access attempt was audited and was successful. 
-    * **Warning** – The activity failed with a warning.
+    * **Warning** – The activity succeeded with a warning. This also includes an explanation of the warning.
     * **Error** – The activity failed with error, which is usually a data or functionality loss, or an unexpected error.
+    * **Success Audit** – A security access attempt was audited and was successful. 
     * **Failure Audit** – A security access attempt was audited and was not successful.
 
 * **Resource Name** – The object that underwent the change.
+* **Resource ID** – The unique ID of the resource.
 * **Resource Type** – The type of the object that underwent the change.
+* **Resource Description** – A description of the resource.
+* **Origin Type** – 
 * **Details** – The following information is displayed and can be downloaded for each audit log item:
 
     * **Log ID** – The unique identifier of the log.
@@ -55,23 +68,30 @@ The **Audit Logs** tab displays a list of all activities over the past 90 days. 
     * **Error Message** – If the activity fails with an error or a warning, this field displays the error message.
     * **Old Value** – The state of the entity prior to the change that generated the log.
     * **New Value** – The state of the entity after the change that generated the log.
-    * **Resource Name** – The name of the resource that was changed.
-    * **Resource Type** – The type of resource that was changed.   
+    * Resource Details – Mendix records up to four resources, and displays the following information for each:
+
+        * **Name** – The name of the resource that was changed.
+        * **ID** – The unique ID of the resource.
+        * **Type** – The type of resource that was changed.   
+        * **Description** – A description of the resource.
 
 You can use the **Filters** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.
 
-The list displays activity logs from the last 90 days. To view older information, you can [download audit logs](#export-logs).
+You can search activity logs from the last 90 days. To search through all logs from the last 365 days, you can [download audit logs](#export-logs).    
+
+Logs are stored for 365 days, per the Siemens privacy policy. If you want to store them for longer, [use the API](/apidocs-mxsdk/apidocs/apis-for-audit-logs/) to extract them to your own system.
+
+{{% alert color="info" %}}
+When you search audit logs, only the first 100 results are displayed. To retrieve the full results, use the **Export from Selected Date Range** option, and do a local search.
+{{% /alert %}}
 
 ### Exporting Audit Logs {#export-logs}
 
 You can export audit logs in a CSV format. This is available for all logs, including those that are older than 90 days.     
 You can choose between these options:
 
-* Export all logs. To do that, click **Export All**.
-* Export a selection of logs. To do that, select the log items you are interested in, then click **Export Selection**.
-* Export logs from a specific timeframe. To do that, click **Export from Selected Date Range**, then select the start and end dates and times.
-* Export filtered logs. To do that, filter by the criteria you are interested in, then click **Export All**. 
-* Export from archive.
+* **Export from Selected Date Range** – Select the timeframe for which you want to export logs.
+* **Export All** – Export all logs.
 
 Once the logs are ready for export, a download link is displayed on the [Downloads](#downloads) tab.
 
@@ -84,9 +104,9 @@ These are details available on the this tab:
 * **Requester** – The user who requested the export.
 * **Expires in** – The number of days that the exported CSV is available for download.
 * **Status** – The status of the CSV generation. Once the CSV export is fully generated, the status becomes **Completed**.
-* **Time Frame of Export** – 
+* **Time Frame of Export** – The time range for which the export was requested.
 * **Download** – This link is displayed if the export CSV is ready for download.
 
 ## Retrieving Audit Logs via API
 
-You can use the [Audit Logging API](/apidocs-mxsdk/apidocs/apis-for-audit-logs/) to manage and download audit logs. This API is particularly useful in scenarios where you want to download audit logs that are over 90 days old, but no more than one year old.
+You can use the [Audit Logging API](/apidocs-mxsdk/apidocs/apis-for-audit-logs/) to manage and download audit logs. This API is particularly useful in scenarios where you want to store audit logs in your own system for more than 365 days.
