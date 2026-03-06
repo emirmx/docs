@@ -61,7 +61,8 @@ Sometimes you can run into problems when installing Studio Pro. One work-around 
 
 The prerequisites are the following:
 
-* | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 - 9.24.41 | Studio Pro 9.24.42 and above |
+* Microsoft .NET Desktop Runtime
+    | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 - 9.24.41 | Studio Pro 9.24.42 and above |
     | --- | --- | --- |
     |  [Microsoft .NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) – Mendix recommends using version 6.0.6 or above | [Microsoft .NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) – Mendix recommends using version 8.0.14 or above | [.NET Desktop Runtime 10.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) <br/> Mendix recommends using version 10.0.3 or above |
     
@@ -102,9 +103,9 @@ It is possible to prepare the prerequisite installers beforehand, so that the Me
 4. Download the prerequisites listed in the [Troubleshooting](#troubleshooting) section above and move them into the **Dependencies** folder.
 5. Rename the following dependencies:
    * Microsoft .NET Desktop Runtime
-      * For Studio Pro versions 9.0.0 through 9.24.33, rename the Microsoft .NET Desktop Runtime 6.0.x
+      * For Studio Pro versions 9.0.0 - 9.24.33, rename the Microsoft .NET Desktop Runtime 6.0.x
         * Rename the Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*
-      * For Studio Pro versions 9.24.34 through 9.24.41, rename the Microsoft .NET Desktop Runtime 8.0.x
+      * For Studio Pro versions 9.24.34 - 9.24.41, rename the Microsoft .NET Desktop Runtime 8.0.x
         * Rename *windowsdesktop-runtime-8.0.14-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
       * For Studio Pro versions 9.24.42 and above, rename the Microsoft .NET Desktop Runtime 10.0.x
         * Rename *windowsdesktop-runtime-10.0.3-win-x64.exe* to *windowsdesktop-runtime-10.0-x64.exe*

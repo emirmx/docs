@@ -100,19 +100,19 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
 4. Download the prerequisites listed in the **[Troubleshooting](https://docs.mendix.com/refguide9/install/#troubleshooting)** section above and move them into the **Dependencies** folder.
 5. Rename the following dependencies:
    1. Microsoft .NET Desktop Runtime
-      * For Studio Pro versions 10.0.0 through 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x
+      * For Studio Pro versions 10.0.0 - 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x
         * On x64, rename *windowsdesktop-runtime-6.0.35-win-x64.exe* to *windowsdesktop-runtime-6.0-x64.exe*
         * On ARM64, rename *windowsdesktop-runtime-6.0.35-win-arm64.exe* to *windowsdesktop-runtime-6.0-arm64.exe*
-      * For Studio Pro versions 10.11.0 through 10.24.15, rename the Microsoft .NET Desktop Runtime 8.0.x
+      * For Studio Pro versions 10.11.0 - 10.24.15, rename the Microsoft .NET Desktop Runtime 8.0.x
         * On x64, rename *windowsdesktop-runtime-8.0.10-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
         * On ARM64, rename *windowsdesktop-runtime-8.0.10-win-arm64.exe* to *windowsdesktop-runtime-8.0-arm64.exe*
       * For Studio Pro versions 10.24.16 and above, rename the Microsoft .NET Desktop Runtime 10.0.x
         * On x64, rename *windowsdesktop-runtime-10.0.3-win-x64.exe* to *windowsdesktop-runtime-10.0-x64.exe*
         * On ARM64, rename *windowsdesktop-runtime-10.0.3-win-arm64.exe* to *windowsdesktop-runtime-10.0-arm64.exe*
    2. Eclipse Temurin JDK (x64)
-      * For Studio Pro versions 10.0.0 through 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
+      * For Studio Pro versions 10.0.0 - 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
         * For example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.20.1_1.msi* to *adoptiumjdk_11_x64.msi*
-      * For Studio Pro versions 10.11.0 through 10.18.0, rename the Java Development Kit 21 (x64) *msi* 
+      * For Studio Pro versions 10.11.0 - 10.18.0, rename the Java Development Kit 21 (x64) *msi* 
         * For example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi* to *adoptiumjdk_21_x64.msi*
       * For Studio Pro versions 10.12.11 and 10.18.1 and above, rename the Java Development Kit 21 *msi*
         * On x64, rename *OpenJDK21U-jdk_x64_windows_hotspot_21.0.5_11.msi* to *adoptiumjdk_21_x64.msi*
