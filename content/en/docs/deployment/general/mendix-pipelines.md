@@ -167,6 +167,27 @@ Check out a branch. To configure this step, use the drop-down menu to select the
 
 Build a deployment package based on the latest major, minor, or patch version of the branch you checked out. The highest version is incremented based on the increment settings specified in this step.
 
+##### GET Request
+
+Retrieve information from an external API to inform or control the pipeline's next steps. The GET request step requires the following:
+
+* **Request URL** – The endpoint to query.
+* **Initial delay (seconds)** – Time to wait before the first request. Must be between 0 and 10800 seconds.
+* **Polling interval (seconds)** – Time between retries. Must be between 5 and 300 seconds.
+* **Maximum wait time (seconds)** – Total time to wait before timing out. Must be between 0 and 10800 seconds.
+
+The GET request step has the following [success criteria](https://jqlang.org/manuallets):
+
+* **API call succeeds** – The API returns a 2xx response.
+* **API output meets condition** – The user-defined condition in jQuery  evaluates to true (for example, `.Result = Success`).
+
+##### POST Request
+
+Send structured data to an external API to trigger an action or update a system. The POST request step requires the **Request URL**, which is the endpoint to send data to. The [success criteria](https://jqlang.org/manuallets) for the POST request step are:
+
+* **API call succeeds** – The API returns a 2xx response.
+* **API output meets condition** – The user-defined condition in jQuery evaluates to true (for example, `.Result = Success`).
+
 ##### Maia Best Practice Recommender{##recommender}
 
 Evaluate the results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your Mendix Pipeline. You can configure this step to fail the Mendix Pipeline if errors, warnings, deprecations, and/or recommendations are detected.
