@@ -87,25 +87,27 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 
 #### `ConsumedKnowledgeBase` {#consumed-knowledge-base}
 
-The `ConsumedKnowledgeBase` represents a GenAI knowledge base resource. Each connector module that integrates with knowledge base resources implements its own specialization. If multiple collections of data are supported by the knowledge base resource, these collections will be a specialization of `DeployedKnowledgeBase`. The consumed knowledge base can be added to the request when calling an LLM, along with the identifier of such a collection, so that the logic can use the chosen data in the knowledge base for text generation. The consumed knowledge base entity contains a display name, architecture, and a label field specifying how the concept of a collection should be called in the user front-end (e.g. **Index** for Azure Search Resources). Furthermore it contains the name of the microflow to be executed to do a retrieval for the specified deployed knowledge base specialization, a microflow that returns the selectable options in the front-end for the data collections (identifiers) inside of the resource, and lastly, a microflow that based on the chosen colleciton identifier retrieves an instance of the connector-specific specialization of `DeployedKnowledgeBase`.
+The `ConsumedKnowledgeBase` represents a GenAI knowledge base resource. Each connector module that integrates with knowledge base resources implements its own specialization. If multiple collections of data are supported by the knowledge base resource, these collections will be a specialization of `DeployedKnowledgeBase`. The consumed knowledge base can be added to the request when calling an LLM, along with the identifier of such a collection, so that the logic can use the chosen data in the knowledge base for text generation. The consumed knowledge base entity contains a display name, architecture, and a label field specifying how the concept of a collection should be called in the user front-end, for example, **Index** for Azure Search Resources. 
+
+Furthermore, it contains the name of the microflow to be executed to do a retrieval for the specified deployed knowledge base specialization, a microflow that returns the selectable options in the front-end for the data collections (identifiers) inside of the resource, and lastly, a microflow that based on the chosen colleciton identifier retrieves an instance of the connector-specific specialization of `DeployedKnowledgeBase`.
 
 As these objects are created as a specialization by the logic in connectors themselves (specializations), such a specialization typically contains more specific data required for the connection to the resource according to the provider infrastructure details, such as endpoints and credentials. Admins need to configure this at runtime.
 
-This entity was introduced in module version 6.0.0. To migrate data from erlier versions, please refer to the [GenAI migration guide](/appstore/modules/genai/genai-for-mx/migration-guide/#march-2026)
+This entity was introduced in module version 6.0.0. To migrate data from erlier versions, refer to the [GenAI migration guide](/appstore/modules/genai/genai-for-mx/migration-guide/#march-2026).
 
 | Attribute | Description |
 | --- | --- |
 | `DisplayName` | The display name of the consumed knowledge base. | 
 | `Architecture` | The architecture of the consumed knowledge base, for example, Mendix Cloud or Amazon Bedrock. |
-| `CollectionIdentifierLabel` |  The name of a deployed knowledge base (collection), in the language of the provider (e.g. **Index** for Azure Search Resources). This is used in the front end when building agents. |
-| `RetrievalMicroflow` |  The microflow to execute to retrieve information for the specified knowledge base resource. |
-| `GetCollectionsMicroflow` |  The microflow to execute to retrieve selectable options for collections present in the specified consumed knowledge base. |
-| `GetDeployedKnowledgeBaseMicroflow` |  The microflow to execute to retrieve selectable options for collections present in the specified consumed knowledge base. |
-| `IsSelectable` | A boolean to specify if the knowledge base resource is active/usable when defining agents. |
+| `CollectionIdentifierLabel` | The name of a deployed knowledge base (collection), in the language of the provider. (for example, **Index** for Azure Search Resources). This is used in the front end when building agents. |
+| `RetrievalMicroflow` | The microflow to retrieve information for the specified knowledge base resource. |
+| `GetCollectionsMicroflow` | The microflow to execute to retrieve selectable options for collections present in the specified consumed knowledge base. |
+| `GetDeployedKnowledgeBaseMicroflow` | The microflow to retrieve selectable options for collections present in the specified consumed knowledge base. |
+| `IsSelectable` | A boolean to specify if the knowledge base resource is active or usable when defining agents. |
 
 #### `DeployedKnowledgeBase` {#deployed-knowledge-base}
 
-The `DeployedKnowledgeBase` represents a GenAI knowledge base collection that can be added to the request when calling an LLM. It refers to a discrete dataset as part of the [ConsumedKnowledgeBase](#consumed-knowledge-base) It contains a display name, a technical name (or identifier), the name of the microflow to be executed for the specified knowledge base specialization, and other relevant information  to connect to the knowledge base. These objects are created by the connectors themselves (see their specializations), allowing admins to configure them at runtime.
+The `DeployedKnowledgeBase` represents a GenAI knowledge base collection that can be added to the request when calling an LLM. It refers to a discrete dataset as part of the [ConsumedKnowledgeBase](#consumed-knowledge-base). It contains a display name, a technical name (or identifier), the name of the microflow to be executed for the specified knowledge base specialization, and other relevant information  to connect to the knowledge base. These objects are created by the connectors themselves (see their specializations), allowing admins to configure them at runtime.
 
 The `DeployedKnowledgeBase` entity replaces the capabilities covered by the `Connection` entity for knowledge base interaction in earlier versions of GenAI Commons. 
 
@@ -135,7 +137,7 @@ The data stored in this entity is to be used later on for token consumption moni
 
 | Attribute | Description |
 | --- | --- |
-| `UsageId` | The usage id is set internally to identify a usage based on the conversation id. |
+| `UsageId` | The usage id is set internally to identify a usage based on the conversation ID. |
 | `Architecture` | The architecture of the used deployed model; e.g. OpenAI or Amazon Bedrock. |
 | `DeployedModelDisplayName` | DisplayName of the DeployedModel. |
 | `InputTokens` | The amount of tokens consumed by an LLM call that is related to the input. |
@@ -202,7 +204,7 @@ A tool span is created for each tool call requested by the LLM. The tool call is
 | `ToolName` | The name of the tool that was called. |
 | `ToolDescription` | The description of the tool. |
 | `_ToolCallId` | The ID of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
-| `ToolCallStatus` | The current status of the ToolCall. |
+| `ToolCallStatus` | The current status of the  tool call. |
 
 `ToolSpan` was introduced in version 5.3.0.
 
@@ -342,8 +344,8 @@ A tool call object may be generated by the model in certain scenarios, such as a
 | `ToolCallId` | This is a model-generated ID of the proposed tool call. It is used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
 | `Input` | The input is the raw tool JSON input generated by the model, usually passed for external tools where no mapping to a microflow is required. |
 | `Status` | The current status of the ToolCall to determine next steps and UI display. |
-| `ToolResult` | The result of the toolcall. |
-| `IsError` | Indicates if the toolcall failed. |
+| `ToolResult` | The result of the tool call. |
+| `IsError` | Indicates if the tool call failed. |
 
 #### `Reference` {#reference}
 
@@ -452,7 +454,7 @@ It is recommended that you adapt to the same interface when developing custom ch
 
 ##### Chat Completions (with history) {#chat-completions-with-history}
 
-The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. If you are using the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) module, this is automatically handled.
+The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In such cases, implement the logic to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. If you are using the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) module, this is automatically handled.
 
 ###### Input Parameters
 
@@ -469,7 +471,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 
 ##### Chat Completions (without history) {#chat-completions-without-history}
 
-The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In those cases, logic needs to be implemented to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. See [here](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop) for more information.
+The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Note that the response might not be complete if tools with [UserAccessApproval](#enum-useraccessapproval) other than `HiddenForUser` are added or the request specifies that the tool messages should be stored ([SaveToolCallHistory](#request)). In such cases, implement a logic to call the action again, with [toolcalls](#toolcall) appended to the assistant's message as well as messages of role tool to the request. For more information, refer to [Human in the loop](/appstore/modules/genai/genai-for-mx/conversational-ui/#human-in-the-loop).
 
 ###### Input Parameters
 
@@ -551,7 +553,7 @@ This microflow can add a new [Message](#message) to the [Request](#request) obje
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|--- |---|---|---|
+| --- | --- | --- | --- |
 | `Request` | [Request](#request) | mandatory | This is the request object that contains the functional input for the model to generate a response. |
 | `ENUM_MessageRole` | [ENUM_MessageRole](#enum-messagerole) | mandatory | The role of the message author. |
 | `FileCollection` | [FileCollection](#filecollection) | optional | This is an optional collection of files that are part of the message. |
@@ -560,7 +562,7 @@ This microflow can add a new [Message](#message) to the [Request](#request) obje
 ###### Return Value
 
 | Name | Type | Description |
-|--- |---|---|
+| --- | --- | --- |
 | `Message` | [Message](#message) | The message that was created and added to the request. |
 
 ##### Create Request {#chat-create-request}
@@ -570,7 +572,7 @@ This microflow can be used to create a request for a chat completion operation. 
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|--- |--- |--- |--- |
+| --- | --- | --- | --- |
 | `SystemPrompt` | String | optional | A system message can specify the assistant persona or give the model more guidance, context, or instructions. This attribute is optional. |
 | `Temperature` | Decimal | optional | This is the sampling temperature. Higher values will make the output more random, while lower values make it more focused and deterministic. This attribute is optional. |
 | `MaxTokens` | Integer/Long | Depends on AI provider or model | This is the maximum number of tokens to generate in the chat completion. The total length of input tokens and generated tokens is limited by the model's context length. This attribute is optional. |
@@ -579,8 +581,8 @@ This microflow can be used to create a request for a chat completion operation. 
 ###### Return Value
 
 | Name | Type | Description |
-|--- |--- |--- |
-| `Request` |[Request](#request) | This is the created request object. |
+| --- | --- | --- |
+| `Request` | [Request](#request) | This is the created request object. |
 
 ##### Files: Add File to Collection {#add-file-to-collection}
 
@@ -589,7 +591,7 @@ Use this microflow to add a file to an existing [FileCollection](#filecollection
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `FileCollection` | [FileCollection](#filecollection) | mandatory | The wrapper object for Files. The File Collection is an optional part of a [Message](#message). |
 | `URL` | String | Either URL or FileDocument is required. | This is the URL of the file. |
 | `FileDocument` | `System.FileDocument` | Either URL or FileDocument is required. | The file for which the contents are part of a message. |
@@ -607,7 +609,7 @@ To include files within a message, you must provide them in the form of a file c
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `URL` | String | Either URL or FileDocument is required. | This is the URL of the file. |
 | `FileDocument` | `System.FileDocument` | Either URL or FileDocument is required. | The file for which the contents are part of a message. |
 | `ENUM_FileType` | [ENUM_FileType](#enum-filetype) | mandatory | This is the type of the file. |
@@ -616,7 +618,7 @@ To include files within a message, you must provide them in the form of a file c
 ###### Return Value
 
 | Name | Type | Description |
-|--- |---|---|
+| --- | --- | --- |
 | `FileCollection` | [FileCollection](#filecollection) | This is the created file collection with the new file associated with it. |
 
 ##### Tools: Add Function to Request {#add-function-to-request}
@@ -626,7 +628,7 @@ Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Req
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `Request` | [Request](#request) | mandatory | The request to add the function to. |
 | `ToolName` | String | mandatory | The name of the tool to use/call. |
 | `ToolDescription` | String | optional | A description of what the tool does, used by the model to choose when and how to call the tool. |
@@ -644,7 +646,7 @@ Note that calling the microflow may fail if the model passes parameters in the w
 ###### Return Value
 
 | Name | Type | Description |
-|---|---|---|
+| --- | --- | --- |
 | `Function` | [Function](#function) | This is the function object that was added to [ToolCollection](#toolcollection) which is part of the request. This object can be used optionally as input for controlling the tool choice of the [Request](#request), see [Tools: Set Tool Choice](#set-toolchoice). |
 
 ##### Tools: Set Tool Choice {#set-toolchoice}
@@ -654,7 +656,7 @@ Use this microflow to control how the model should determine which function to l
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `Request` | [Request](#request) | mandatory | The request for which to set a tool choice. |
 | `Tool` | [Tool](#tool) | Required if `ENUM_ToolChoice` equals `tool`. | Specifies the tool to be used. Required if the `ENUM_ToolChoice` equals `tool`; ignored for all other enumeration values. |
 | `ENUM_ToolChoice` | [ENUM_ToolChoice](#enum-toolchoice) | mandatory | Determines the tool choice. For more information, see the [ENUM_ToolChoice](#enum-toolchoice) section for a list of the available values. |
@@ -672,12 +674,12 @@ This tool adds a function that performs a retrieval from a knowledge base to a [
 ###### Input Parameters
 
 | Name | Type | Notes | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `Request` | [Request](#request) | mandatory | The request to which the knowledge base should be added. |
 | `Name` | String | mandatory | The name of the knowledge base to use or call. Technically, this is the name of the tool that is passed to the LLM. This needs to be unique per request (if multiple tools/knowledge base retrievals are added). |
 | `Description` | String | optional | A description of the knowledge base's purpose, used by the model to determine when and how to invoke it. |
 | `ConsumedKnowledgeBase` | Object | mandatory | The knowledge base resource that is called within this tool. This also determines which provider (and connector) is used. Only specialization objects are allowed, not a generalized GenAICommons object. |
-| `CollectionIdentifier` | String | Mandatory | This is a string reference to the dataset (collection) which is part of the consumed knowledge base, that contains the relevant data for the LLM.  E.g. for Mendix Cloud knowledge base resources, this would correspond to the name of a `Collection`. Refer to the documentation of the specific connector to learn more. |
+| `CollectionIdentifier` | String | Mandatory | This is a string reference to the dataset (collection) which is part of the consumed knowledge base, that contains the relevant data for the LLM.  For example, for Mendix Cloud knowledge base resources, this would correspond to the name of a `Collection`. Refer to the documentation of the specific connector to learn more. |
 | `MaxNumberOfResults` | Integer | optional | This can be used to limit the number of results that should be retrieved. |
 | `MinimumSimilarity` | Decimal | optional | Filters the results to retrieve only chunks with a similarity score greater than or equal to the specified value. The score ranges from 0 (no similarity) to 1.0 (the same vector). |
 | `MetadataCollection` | Object | optional | Optional: This contains a list for additional filtering in the retrieve. Only chunks that comply with the metadata labels will be returned. |
