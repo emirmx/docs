@@ -16,6 +16,10 @@ Different user roles are granted various levels of access to import and export t
 
 ## Importing and Exporting Stations in Bulk
 
+{{% alert color="info" %}}
+The import option is only available to licensed users. For more information, see [Mendix Workstation](/mendix-workstation/).
+{{% /alert %}}
+
 To transfer multiple station configurations, along with their associated applications and devices, between workspaces, perform the following steps:
 
 1. Open the [Workspaces](https://workstation.home.mendix.com/) page.
