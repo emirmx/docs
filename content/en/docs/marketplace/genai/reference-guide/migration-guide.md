@@ -133,7 +133,7 @@ The following modules require an upgrade:
 ###### Impact
 
 Agent definitions using knowledge bases require migration to prevent failing agent calls at runtime. 
-Existing knowledge base configurations in any of the mentioned connector modules require migration to prevent failing knowledge base calls at runtime.
+Existing knowledge base configurations in any of the mentioned connector modules require migration to prevent failing knowledge base calls at runtime. In addition, any data in the display name field may be lost and needs to be set again manually.
 
 Migration is only required if your app interacts with knowledge bases from any of the modules mentioned in the [Key Changes](#keychanges) section, or contains existing data for such knowledge base configurations.
 
@@ -155,18 +155,21 @@ To prevent the need to recreate existing data related to Agent definitions and k
    1. Upgrade the Mendix Cloud GenAI Connector module to V6.0.0 in your Mendix app.
    2. Include logic to run the data migration microflow upon starting your app (for example, include it in the after-startup): **MxGenAIConnector** > **USE_ME** > **Migration** > `ConsumedKnowledgeBase_Migrate`. This microflow makes sure the new attributes on the generalization are set properly, and the `DisplayName` field is migrated.
    3. If the Agent Commons is part of your app and there are Agents defined using knowledge bases, include the following initially excluded sub-microflow into the app and add it as a microflow call according to the annotation in the above-mentioned microflow: **MxGenAIConnector** > **USE_ME** > **Migration** > `MxGenAI_KnowledgeBase_Migrate`. This microflow sets the `CollectionIdentifier` field on the `KnowledgeBase` entity and outgoing reference to the `ConsumedKnowledgeBase`.
+   4. Set the `DisplayName` field for each `ConsumedKnowledgeBase` object by importing a key for the knowledge base. This can be an existing key that was imported earlier, or a new key can be obtained in the [Mendix Portal](https://genai.home.mendix.com/).
 
 5. If your app has the OpenAI Connector module:
 
    1. Upgrade the OpenAI Connector module to V8.0.0 in your Mendix app.
    2. Include logic to run the data migration microflow upon starting your app (for example, include it in the after-startup): **OpenAIConnector** > **USE_ME** > **Migration** > `ConsumedKnowledgeBase_Migrate`. This microflow makes sure the new attributes on the generalization are set properly, and the `DisplayName` field is migrated.
    3. If the Agent Commons is part of your app and there are Agents defined using knowledge bases, include the following initially excluded sub-microflow into the app and add it as a microflow call according to the annotation in the above-mentioned microflow: **OpenAIConnector** > **USE_ME** > **Migration** > `Azure_KnowledgeBase_Migrate`. This microflow sets the `CollectionIdentifier` field on the `KnowledgeBase` entity and the outgoing reference to the `ConsumedKnowledgeBase`.
+   4. Set the `DisplayName` field for each `ConsumedKnowledgeBase` object by logging into the running app and using the `Configuration_Overview` page.
 
 6. If your app has the PgVector Knowledge Base module:
 
    1. Upgrade the PgVector Knowledge Base module to V6.0.0 in your Mendix app.
    2. Include logic to run the data migration microflow upon starting your application (forexample, include it in the after-startup): **PgVectorKnowledgeBase** > **USE_ME** > **Migration** > `ConsumedKnowledgeBase_Migrate`. This microflow makes sure the new attributes on the generalization are set properly, and the `DisplayName` field is migrated.
    3. If the **Agent Commons** is part of your app and there are Agents defined using knowledge bases, include the following initially excluded sub-microflow into the project and add it as a microflow call according to the annotation in the above-mentioned microflow: **PgVectorKnowledgeBase** > **USE_ME** > **Migration** > `PgVector_KnowledgeBase_Migrate`. This microflow sets the `CollectionIdentifier` field on the `KnowledgeBase` entity and outgoing reference to the `ConsumedKnowledgeBase`.
+   4. Set the `DisplayName` field for each `ConsumedKnowledgeBase` object by logging into the running app and using the `DatabaseConfiguration_Overview` page.
 
 7. Update any custom logic or pages in your application that reference:
    1. The attributes `DisplayName_DEPR` on the `DatabaseConfiguration` and `AzureAISearchResource` entities. Instead, now use the `DisplayName` field that comes as part of the generalization. 
