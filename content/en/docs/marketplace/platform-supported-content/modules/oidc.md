@@ -203,15 +203,16 @@ If your app is already developed using Mendix 9 or above, but uses the community
 
 This section provides an overview of updates for the OIDC SSO module across different versions. It includes new dependencies, snippet replacements, and microflow renaming to ensure a smooth transition while migrating to higher module versions.
 
-| Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
+| Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.3.3 | - | Supporting multi-domain and sub-path |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
 | | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
 | | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
 | | | | The `OIDC.ACT_Account_RetrieveAccount` microflow, located in the **USE_ME** folder, has been removed as it is no longer required. |
-| 9.24.18 and above | 3.2.0 | Select and refresh the Administration and System modules manually in the `MxModelReflection.MxObjects_Overview` page| Added a new heading for selected scopes: *Your app will request the following scopes at IdP*. |
+| 9.24.18 and above | 3.2.0 | Select and refresh the Administration and System modules manually in the `MxModelReflection.MxObjects_Overview` page | Added a new heading for selected scopes: *Your app will request the following scopes at IdP*. |
 | 9.24.2 and above | 3.1.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | `OIDC.Startup` microflow renamed to `OIDC.ASU_OIDC_Startup` |
 | 9.24.2 and above | 3.0.1 | Use `Snip_Login_Button` snippet instead of `Snip_Login_Automatic` | `Snip_Login_Automatic` snippet removed from the module |
 | 9.24.2 and above | 3.0.0 (migrating to 3.0.0 and above) | Include [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency. | New UserCommons module |
@@ -977,19 +978,17 @@ You can disable this setting by navigating to **Security > Anonymous users** and
 2. To implement the SSO redirection, you will need to replace the code in the `<script>` tag of your login page (for example, `login.html`) with code which does one of the following, depending on whether you want automatic or manual redirection:
 
     * For automatic redirection, you can use `window.onload` to automatically redirect users to the SSO login page. You could, for example, use the following code:
-    
+
         ```javascript
-        const returnURL = encodeURIComponent(window.location.search+window.location.hash);
-        self.location = '/oauth/v2/login?cont='+returnURL;
+        const cont = window.location.search + window.location.hash;
+        const base = window.location.pathname.replace(/\/login\.html$/, '');
+        const loginUrl = base + '/oauth/v2/login';
+        window.location.href = cont ? loginUrl + '?cont=' + encodeURIComponent(cont) : loginUrl;
         ```
 
-    * For manual redirection, you can add an onclick event to a button that manually triggers the SSO login. For example:
-    
-        ```javascript
-        window.location.href='/oauth/v2/login?cont=' + encodeURIComponent(window.location.search + window.location.hash);
-        ```
+    * For manual redirection, you can use the same code above and add an onclick event to a button that manually triggers the SSO login.
 
-Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
+Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful login, they will be directed to the desired page using page and microflow URLs.
 
 #### Using Deep Link Module{#using-deep-link}
 
