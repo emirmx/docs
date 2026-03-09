@@ -480,6 +480,10 @@ when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not nee
 
     Example: `OIDC.Default_SAM_TokenProcessing_CustomATP`
 
+* **CustomATPTokenType**: an optional deploy-time constant — when **CustomATP** is enabled, optionally, **CustomATPTokenType** can be set to `ID-TOKEN`. Default is `ACCESS-TOKEN`.
+
+    Example: `ID-TOKEN`
+    
 * **CustomCallbackURL** – the custom callback URL
 
 * **SelectedClaim** – selected claim values — multiple values can be separated by a space
@@ -872,6 +876,10 @@ To parse access tokens, you need to do the following:
 This section is only relevant if you are a Mendix partner and you want to integrate your app with the Siemens SAM IdP.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+From version 4.3.0 of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
+{{% /alert %}}
+
 To parse of SAM access tokens you need to do the following when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app):
 
 1. Select *OIDC.Default_SAM_TokenProcessing_CustomATP* as the **custom AccessToken processing microflow**.
@@ -920,7 +928,7 @@ If you are using Microsoft Entra ID, ensure you have followed the instructions f
 
 You can find a sample microflow for parsing access tokens, `OIDC.ACT_Token_CustomATPRetrieveRoles` in the OIDC module.
 
-Your custom microflow should use the access token to create a list of user roles. Your token will contain one of the following:
+Your custom microflow should use the access token or ID-token to create a list of user roles. Your token will contain one of the following:
 
 * the UUIDs of the user roles in your app which map to the `System.UserRole/ModelGUID` attribute
 * the name of the user role in the app, which can be used to find the `System.UserRole` within the app itself using the `Name` attribute
