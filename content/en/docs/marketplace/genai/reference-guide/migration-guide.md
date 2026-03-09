@@ -87,7 +87,7 @@ The following modules require an upgrade:
 
 ###### Impact
 
-Existing custom code that use any of the renamed pages and microflows will show consistency errors in Studio Pro. Furtermore, agent definitions containing Single MCP tools require migration to prevent failing agent calls at runtime. 
+Existing custom code that use any of the renamed pages and microflows will show consistency errors in the Studio Pro. Furthermore, agent definitions containing Single MCP tools require migration to prevent failing agent calls at runtime. 
 
 Data migration is only required if your app uses Agent definitions containing Single MCP tools.
 
