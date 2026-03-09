@@ -8,7 +8,7 @@ description: "Describes how to setup and use tracing in the Mendix Runtime."
 
 Mendix supports tracing via OpenTelemetry. When tracing is enabled, the runtime generates traces that help you analyze errors and performance.
 
-Tracing provides a deep insight into applications' performance and stability by collecting and analysing runtime data during operation. It offers these key benefits:
+Tracing provides a deep insight into applications' performance and stability by collecting and analyzing runtime data during operation. It offers these key benefits:
 
 * End‑to‑end request visibility – tracing can follow a single request across all involved services.
 * Clear causality and root‑cause analysis – traces show exactly where an issue occurred and how it propagated.
