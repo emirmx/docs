@@ -20,6 +20,10 @@ Before starting this how-to, make sure you have completed the following prerequi
 * Read [Configuring a Domain Model](/refguide/configuring-a-domain-model/)
 * Read [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
 
+{{% alert color="info" %}}
+Debugging with breakpoints is not supported for Microflows executed during application startup (for example, the After Startup Microflow and any Microflows it calls).
+{{% /alert %}}
+
 ## Debugging Overview
 
 There are three debugging panes: **Breakpoints**, **Debugger**, and **Variables**:
