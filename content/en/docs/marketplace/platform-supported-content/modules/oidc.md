@@ -334,16 +334,14 @@ In this case, the OIDC client is the app you are making.
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
-    * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication also known as key pair based authentication. This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
-        * JWKS URI: When you select the **JWKS URI** from the **Public Key Exchange**, you can configure the following fields:
+    * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication (also known as key pair based authentication). This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
+        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS  endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the **JWKS URI** from the **Public Key Exchange** configure the following fields:
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
 
         Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
-        * X. 509 Certificate: This is a certificate-based authentication. Once the configuration is ready, download the certificate in the `pre`, `cer`, or `cer` format. You can also download it by editing the configuration and clicking **Download**. It is supported from version 4.3.0 of the OIDC module. Configure the following fields:
-            * Key Pair Expiration Days: (default 90)
-            * JWT (Signing Algorithm): (default RS256)
+        * X. 509 Certificate: This will use a certificate to transfer the public key of your application to the IdP. Choose this method if you are using Entra ID as your IdP. Once the configuration is ready, download the certificate in the `pre`, `cer`, or `cer` format. You can also download it by editing the configuration and clicking **Download**. It is supported from version 4.3.0 of the OIDC module.
 
             {{% alert color="info" %}}X. 509 Certificate supports only the RS256 Signing Algorithm. {{% /alert %}}
 
