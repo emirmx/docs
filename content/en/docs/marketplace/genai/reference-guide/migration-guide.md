@@ -87,11 +87,13 @@ The following modules require an upgrade:
 
 ###### Impact
 
-Select the page and Java action mentioned in the [What Changed](#changes) section above if they are used in your application. Agent definitions containing Single MCP tools require migration to prevent failing agent calls at runtime. 
+Existing custom code that use any of the renamed pages and microflows will show consistency errors in Studio Pro. Furtermore, agent definitions containing Single MCP tools require migration to prevent failing agent calls at runtime. 
 
 Data migration is only required if your app uses Agent definitions containing Single MCP tools.
 
 ###### Required Actions
+
+In order to resolve consistency errors for the renamed `ConsumedMCPService` entity, select the page and Java action mentioned in the [Key Changes](#changes) section above if they are used in your application.
 
 To prevent the need to recreate existing data related to Agent definitions, perform the following steps:
 
