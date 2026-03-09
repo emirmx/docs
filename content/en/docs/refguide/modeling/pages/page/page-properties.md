@@ -91,7 +91,7 @@ Additionally, you can use `Id` as an attribute to include the identifier of the 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-url-dialog.png" alt="page url dialog" class="no-border" >}}
 
 {{% alert color="warning" %}}
-Page URLs are not supported for pages that have non-persistable entities as parameters
+Page URLs are not supported for pages that have non-persistable entities as parameters, or have optional parameters.
 {{%/alert %}}
 
 In simple e-commerce applications, the URLs can be configured as follows:
