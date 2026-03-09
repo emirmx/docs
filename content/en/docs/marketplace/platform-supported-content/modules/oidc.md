@@ -334,7 +334,7 @@ In this case, the OIDC client is the app you are making.
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
-    * `private_key_jwt`: This method introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. It has the following Private Key Source options: 
+    * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication also known as key pair based authentication. This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
         * JWKS URI: When you select the **JWKS URI** from the **Public Key Exchange**, you can configure the following fields:
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
