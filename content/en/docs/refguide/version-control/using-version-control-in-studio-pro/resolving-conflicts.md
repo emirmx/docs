@@ -1,11 +1,12 @@
 ---
-title: "Combining Changes and Conflict Resolution"
-linktitle: "Combining Changes and Conflict Resolution"
-url: /refguide/merge-algorithm/
-weight: 10
-description: "Describes combining changes with conflict resolution flow."
+title: "Combining Changes and Resolving Conflicts"
+url: /refguide/resolving-conflicts/
+linktitle: "Resolving Conflicts"
+weight: 50
+description: "Describes how to combine changes and resolve conflicts with the conflict resolution flow."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 aliases:
+    - /refguide/merge-algorithm/
     - /refguide/new-merge-algorithm
     - /refguide/rebase-conflict
     - /refguide/rebase
