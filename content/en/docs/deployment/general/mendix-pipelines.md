@@ -169,24 +169,38 @@ Build a deployment package based on the latest major, minor, or patch version of
 
 ##### GET Request
 
-Retrieve information from an external API to inform or control the pipeline's next steps. The GET request step requires the following:
+Use the **GET request** step to retrieve data from an external API and use the response to inform or control the next steps in the pipeline.
 
-* **Request URL** – The endpoint to query.
-* **Initial delay (seconds)** – Time to wait before the first request. Must be between 0 and 10800 seconds.
-* **Polling interval (seconds)** – Time between retries. Must be between 5 and 300 seconds.
-* **Maximum wait time (seconds)** – Total time to wait before timing out. Must be between 0 and 10800 seconds.
+The **GET request** step has the following configuration fields:
 
-The GET request step has the following [success criteria](https://jqlang.org/manuallets):
+| Field | Required? | Description |
+| --- | :---: | --- |
+| **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/app`). |
+| **Additional URL path** | No | Path appended to the Request URL (for example, `/123/status`). |
+| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, set `Authorization` to `Bearer $API_Key`). |
+| **Success Condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default and logs: `No success condition set — this step will pass by default`.|
+| **Failure Condition (in jQuery)** | No | Defines failure of the API output. If empty, the step passes if the success condition is met; otherwise the step keeps polling until maximum wait time is reached and logs: `No fail condition set — the step will run until success or timeout`. |
+| **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
+| **Initial Delay (seconds)** | Yes | Delay before the first call. Range must be between 0 and 10800. |
+| **Polling Interval (seconds)** | Yes | Time between retries. Range must be between 5 and 300. |
+| **Maximum Wait Time (seconds)** | Yes | Total time to wait before timing out. Range must be between 0 and 10800. |
 
-* **API call succeeds** – The API returns a 2xx response.
-* **API output meets condition** – The user-defined condition in jQuery  evaluates to true (for example, `.Result = Success`).
+{{% alert color="info" %}}
+To learn more about jq, refer to the [jQuery manual](https://jqlang.org/manual).
+{{% /alert %}}
 
 ##### POST Request
 
-Send structured data to an external API to trigger an action or update a system. The POST request step requires the **Request URL**, which is the endpoint to send data to. The [success criteria](https://jqlang.org/manuallets) for the POST request step are:
+Use the **POST request** step to send structured data to an external API to trigger an action or update a system. The POST request step has the following configuration fields:
 
-* **API call succeeds** – The API returns a 2xx response.
-* **API output meets condition** – The user-defined condition in jQuery evaluates to true (for example, `.Result = Success`).
+| Field | Required? | Description |
+| --- | :---: | --- |
+| **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/apps`). |
+| **Additional URL path** | No | Path appended to the Request URL (for example, `/start`). |
+| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, `x-api-key: $API_Key`). |
+| **Request body (JSON)** | No | JSON payload to send. Default: `{}`. |
+| **Success condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default and log message shows: `No success condition set — this step will pass by default`. |
+| **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
 
 ##### Maia Best Practice Recommender{##recommender}
 
