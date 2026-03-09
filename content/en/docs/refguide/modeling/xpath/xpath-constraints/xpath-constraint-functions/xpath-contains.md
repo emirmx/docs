@@ -23,7 +23,7 @@ contains ( attribute, string_expression )
 
 ### attribute
 
-`attribute` specifies the attribute to test in. Attribute must be of the **String** type.
+`attribute` specifies the attribute to test. It must be of the **String** type.
 
 ### expression
 
