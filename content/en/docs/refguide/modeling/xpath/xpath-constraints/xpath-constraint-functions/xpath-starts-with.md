@@ -30,9 +30,9 @@ starts-with ( attribute, string_expression )
 `string_expression` specifies the value to test for being at the start of the attribute. It should be a string literal or a string parameter.
 
 {{% alert color="info" %}}
-In the case the `attribute` is an empty value or `NULL`, the function will always return `false`, independent of the value of `string_expression`.
+If the `attribute` is an empty value or `NULL`, the function will always return `false`, independent of the value of `string_expression`.
 
-In the case the `string_expression` is empty, it is treated as an empty string. The function is then equivalent to ```attribute != empty```.
+If the `string_expression` is empty, it is treated as an empty string. The function is then equivalent to ```attribute != empty```.
 {{% /alert %}}
 
 ## Example
@@ -40,12 +40,12 @@ In the case the `string_expression` is empty, it is treated as an empty string. 
 This query returns all the customers from which the name starts with the string "Jans":
 
 {{< tabpane >}}
-  {{% tab header="Environments:" disabled=true /%}}
-  {{< tab header="Studio Pro" lang="StudioPro" >}}
-    [starts-with(Name, 'Jans')]
+    {{% tab header="Environments:" disabled=true /%}}
+    {{< tab header="Studio Pro" lang="StudioPro" >}}
+        [starts-with(Name, 'Jans')]
     {{% /tab %}}
-  {{< tab header="Java" lang="JavaQuery" >}}
-     //Sales.Customer[starts-with(Name, 'Jans')]
+    {{< tab header="Java" lang="JavaQuery" >}}
+        //Sales.Customer[starts-with(Name, 'Jans')]
     {{% /tab %}}
 {{< /tabpane >}}
 

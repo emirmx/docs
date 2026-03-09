@@ -30,9 +30,9 @@ contains ( attribute, string_expression )
 `string_expression` specifies the value to test for being contained in the attribute. It can be a string literal or a string parameter.
 
 {{% alert color="info" %}}
-In the case the `attribute` is an empty value or `NULL`, the function will always return `false`, independent of the value of `string_expression`.
+If the `attribute` is an empty value or `NULL`, the function will always return `false`, independent of the value of `string_expression`.
 
-In the case the `string_expression` is empty, it is treated as an empty string. The function is then equivalent to ```attribute != empty```.
+If the `string_expression` is empty, it is treated as an empty string. The function is then equivalent to ```attribute != empty```.
 {{% /alert %}}
 
 ## Example
