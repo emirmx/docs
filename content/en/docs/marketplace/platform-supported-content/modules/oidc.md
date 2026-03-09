@@ -205,7 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
-| 10.24.0 and above | 4.3.3 | - | Supporting multi-domain and sub-path |
+| 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
@@ -336,7 +336,7 @@ In this case, the OIDC client is the app you are making.
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
     * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication (also known as key pair based authentication). This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
-        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS  endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the **JWKS URI** from the **Public Key Exchange** configure the following fields:
+        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the **JWKS URI** from the **Public Key Exchange** configure the following fields:
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
 
