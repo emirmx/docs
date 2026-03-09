@@ -1,14 +1,16 @@
 ---
-title: "Installation and configuration"
+title: "BOM component configuration"
 url: /partners/siemens/bom-component-configuration/
 weight: 2
 description: "Configuration instructions and explanation for the usage of the Teamcenter BOM component."
 ---
 
-## Configuration
-### After-startup
-Add the TcConnector after-startup microflow to your project: Startup [TcConnector]. This microflow registers the required request handlers used by the **TcBOM widget**.
+## After-startup
+The BOM component relies on specific connections to and from your Teamcenter instance. 
 
+To ensure this is properly setup, you must add the `Startup` microflow that is provided by the `TcConnector` module to your project's [After startup settings](/refguide/runtime-tab/#after-startup). This microflow registers the required request handlers used by the **TcBOM widget**.
+
+## BOM Component
 ### General tab
 {{< figure src="/attachments/partners/siemens/teamcenter-bom-component/bom-widget-configuration-general.png">}}
 

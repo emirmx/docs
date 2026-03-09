@@ -1,5 +1,5 @@
 ---
-title: "Customization options"
+title: "Advanced customization options"
 url: /partners/siemens/bom-component-customization/
 weight: 3
 description: "Describes the customization capabilities that allow developers to add in data from other external systems and how these can be combined into the Teamcenter BOM component."

@@ -8,6 +8,8 @@ description: "Describes Teamcenter BOM component, which enables out of the box v
 ## Introduction
 The Teamcenter BOM Widget brings **Teamcenter Bill of Materials (BOM)** capabilities into Mendix applications. Use it to view, edit, configure, and perform property updates on Teamcenter BOM structures directly in Mendix, reducing context switches and simplifying product structure tasks.
 
+{{< figure src="/attachments/partners/siemens/teamcenter-bom-component/bom-widget-studio-pro.png">}}
+
 ### Key Capabilities
 * Display Teamcenter BOMs: render complex product structures within Mendix pages.
 * Edit BOM properties: update BOM line properties from Mendix.
