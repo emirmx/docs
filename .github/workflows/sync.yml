@@ -1,0 +1,40 @@
+name: Sync Docs Fork with Upstream
+
+on:
+  schedule:
+    # Daily at midnight (UTC).
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger from the GitHub UI.
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    env:
+      DEFAULT_BRANCH: development
+      UPSTREAM_REPO_URL: https://github.com/mendix/docs.git
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ env.DEFAULT_BRANCH }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote and fetch
+        run: |
+          git remote add upstream ${{ env.UPSTREAM_REPO_URL }}
+          git fetch upstream
+
+      - name: Merge upstream changes into default branch
+        run: |
+          git checkout ${{ env.DEFAULT_BRANCH }}
+          git merge upstream/${{ env.DEFAULT_BRANCH }} --no-edit
+          git push origin ${{ env.DEFAULT_BRANCH }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
