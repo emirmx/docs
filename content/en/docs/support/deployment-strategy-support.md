@@ -39,16 +39,16 @@ In the diagrams below, the following colors are used:
 
 The concepts in the diagrams are described in the [Components of the Mendix Stack](/support/mendix-stack-components/) page, as follows:   
  
-* <sup>1</sup>[Database, File Storage, and Network](/support/#database-file-storage-and-network)    
-* <sup>2</sup>[Infrastructure](/support/#infrastructure)    
-* <sup>3</sup>[Container Runtime Platform](/support/#container-runtime-platform)    
-* <sup>4</sup>[Buildpack, m2ee, and Service Console](/support/#buildpack-m2ee-and-service-console)    
-* <sup>5</sup>[Application Operation](/support/#application-operation)    
-* <sup>6</sup>[Logs and Metrics](/support/#logs-and-metrics)    
-* <sup>7</sup>[Deployment Pipeline](/support/#deployment-pipeline)    
-* <sup>8</sup>[Runtime](/support/#runtime)    
-* <sup>9</sup>[Marketplace Components](/support/#marketplace-components)    
-* <sup>10</sup>[Application](/support/#application)     
+* <sup>1</sup>[Database, File Storage, and Network](/support/mendix-stack-components/#database-file-storage-and-network)    
+* <sup>2</sup>[Infrastructure](/support/mendix-stack-components/#infrastructure)    
+* <sup>3</sup>[Container Runtime Platform](/support/mendix-stack-components/#container-runtime-platform)    
+* <sup>4</sup>[Buildpack, m2ee, and Service Console](/support/mendix-stack-components/#buildpack-m2ee-and-service-console)    
+* <sup>5</sup>[Application Operation](/support/mendix-stack-components/#application-operation)    
+* <sup>6</sup>[Logs and Metrics](/support/mendix-stack-components/#logs-and-metrics)    
+* <sup>7</sup>[Deployment Pipeline](/support/mendix-stack-components/#deployment-pipeline)    
+* <sup>8</sup>[Runtime](/support/mendix-stack-components/#runtime)    
+* <sup>9</sup>[Marketplace Components](/support/mendix-stack-components/#marketplace-components)    
+* <sup>10</sup>[Application](/support/mendix-stack-components/#application)     
 
 ## Mendix Public and Dedicated Cloud
 
