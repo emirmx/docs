@@ -76,7 +76,8 @@ General Availability means that a feature is available for all users. This type 
 | Multilingual Studio Pro and Platform: Chinese, Japanese, Korean | General Availability: Mx 11.0 |
 | Multilingual Studio Pro and Platform: Portuguese | Public Beta: Mx 11.0 |
 | Module updates while retaining customizations | Public Beta: Mx 11.21 |
-| Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.10 |
+| Easy comparison of revisions (textual diffing) | General Availability 11.9 |
+| Easy comparison of revisions (visual diffing) | Public Beta 11.18 |
 | Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
 | Merge Requests (aka Pull requests) | Public Beta: Mx 12.x |
 | OpenTelemetry Tracing | General Availability: Mx 11.12 |
