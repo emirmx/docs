@@ -89,7 +89,7 @@ It is possible to customize this microflow to determine the correct user. Whiche
 #### CustomUserProvisioning {#customuserprovisioning}
 
 {{% alert color="info" %}}
-Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated.
+Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated. To show custom user-facing error messages, call `SAML20.ThrowSAMLFeedbackException` from a custom microflow (`UC_CustomProvisioning`) configured in the **Custom UserProvisioning** field of the **UserProvisioning** tab. For more information, refer to the [Custom User Provisioning at Runtime](#custom-provisioning-rt) section above.
 {{% /alert %}}
 
 When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow in the parameter `AssertionAttributeList`, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.
@@ -97,4 +97,3 @@ When selecting in the SSO configuration to run the `customUserProvisioning` acti
 #### CustomAfterSigninLogic
 
 After a new session is created for the user, this microflow can be called to copy any data from the previous session to the new session. This microflow behaves similarly to the platform after the sign-in microflow. Using this microflow, it is possible to copy records from the anonymous user to the newly signed-in user.
-
