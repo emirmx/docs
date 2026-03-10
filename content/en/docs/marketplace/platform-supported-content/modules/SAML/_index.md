@@ -421,6 +421,8 @@ The following settings apply to the IdP configuration:
 
 When you add a new configuration or change an existing one, you should restart your app. This ensures that the correct configuration is used.
 
+The SAML module provides you so-called Just-In-Time (JIT) user provisioning. To read more, refer to [Just-In-Time User Provisioning via SAML](appstore/modules/saml/user-provisioning/)
+
 ## URLs{#urls}
 
 The following diagram gives an overview of all endpoints that the SAML SSO module exposes and consumes:
@@ -448,6 +450,7 @@ Your SAML IdP can consume the following endpoints at your app. Typically the SP-
 * Academy lecture [SSO Using SAML](https://academy.mendix.com/link/modules/115/lectures/938/2.3.1-SSO-using-SAML)
 
     {{% alert color="info" %}}You must log into the Mendix Platform to see the lecture above.{{% /alert %}}
+* [Just-In-Time User Provisioning via SAML](appstore/modules/saml/user-provisioning/)
 * [Advanced configuration for SAML](/appstore/modules/saml/advanced-configuration/)
 * [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/)
 * [OIDC SSO](/appstore/modules/oidc/)
