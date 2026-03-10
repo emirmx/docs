@@ -125,6 +125,7 @@ Maia MCP Client has the following limitations:
 * Tools from new servers are disabled by default.
 * OAuth requires localhost access for the [callback URL](#callback-url).
 * Server configurations are stored per project and are not shared across projects.
+* When using Bearer Token based authentication for the [MCP client](/refguide/maia-mcp/#authentication), the token information is current not being sent, leading to failed authentication.
 
 ## Read More
 
