@@ -104,7 +104,8 @@ To prevent the need to recreate existing data related to Agent definitions, perf
    The **AgentCommons** > **USE_ME** > **Migration** > `SingleMCPTool_Migrate` microflow will set the new association and attribute on existing `SingleMCPTool` records.
 
 4. Update any custom logic or pages in your app that refer the old entity or its attributes `MCPTool` in the MCPClient module. Available tools are not cached anymore. In cases where the actual list of available tools is required, refer to the `ConsumedMCPService_ListTools` microflow.
-5. Verify your application compiles and runs correctly before deploying to cloud environments.
+5. In your running apps, you need to configure your MCP connections again on the `ConsumedMCPService_Overview` page. Furthermore, in existing agents where those MCP connections were used, you need to add them again. Ensure to save a new version when using the agent in microflows.
+6. Verify your application compiles and runs correctly before deploying to cloud environments.
 
 {{% alert color="info" %}}
 The `MCPTool` entity and related attributes and association will be permanently removed in the next major version of the MCP Client (V4.0.0) and Agent Commons (V4.0.0) modules.
