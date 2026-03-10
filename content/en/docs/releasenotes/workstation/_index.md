@@ -28,8 +28,6 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 * Duplicate station naming in single import - The single import behavior has been updated to accept duplicate names by automatically adding a numeric suffix when a station with the same name is imported, ensuring unique identification and smoother workflow. We have addressed an issue where empty stations were unintentionally created.
 
-#### Known Bugs and Limitations
-
 ### Workstation Client
 
 #### Fixes
