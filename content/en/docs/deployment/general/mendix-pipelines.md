@@ -176,10 +176,10 @@ The **GET request** step has the following configuration fields:
 | Field | Required? | Description |
 | --- | :---: | --- |
 | **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/app`). |
-| **Additional URL path** | No | Path appended to the Request URL (for example, `/123/status`). |
-| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, set `Authorization` to `Bearer $API_Key`). |
-| **Success Condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default and logs: `No success condition set — this step will pass by default`.|
-| **Failure Condition (in jQuery)** | No | Defines failure of the API output. If empty, the step passes if the success condition is met; otherwise the step keeps polling until maximum wait time is reached and logs: `No fail condition set — the step will run until success or timeout`. |
+| **Additional URL path** | No | Path appended to the Request URL (for example, `$GET Request.Result1 or 123` ). |
+| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, set `Authorization` to `$API_Key`). |
+| **Success Condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default. |
+| **Failure Condition (in jQuery)** | No | Defines failure of the API output. If empty, the step passes if the success condition is met; otherwise the step keeps polling until maximum wait time is reached. |
 | **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
 | **Initial Delay (seconds)** | Yes | Delay before the first call. Range must be between 0 and 10800. |
 | **Polling Interval (seconds)** | Yes | Time between retries. Range must be between 5 and 300. |
@@ -196,10 +196,10 @@ Use the **POST request** step to send structured data to an external API to trig
 | Field | Required? | Description |
 | --- | :---: | --- |
 | **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/apps`). |
-| **Additional URL path** | No | Path appended to the Request URL (for example, `/start`). |
+| **Additional URL path** | No | Path appended to the Request URL (for example, `$POST Request.Result1 or 123`). |
 | **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, `x-api-key: $API_Key`). |
 | **Request body (JSON)** | No | JSON payload to send. Default: `{}`. |
-| **Success condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default and log message shows: `No success condition set — this step will pass by default`. |
+| **Success condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default. |
 | **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
 
 ##### Maia Best Practice Recommender{##recommender}
