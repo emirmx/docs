@@ -231,51 +231,23 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | User Role | OIDC Module Role |
 | --- | --- |
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
-| Anonymous | OIDC.Anonymous (optional) |
 | User | OIDC.User |
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" >}}
 
-### Allowing Anonymous User Role 
+### End User Login When Using Single or Multiple IdPs
 
-#### User Roles for Single IdP
+If a single Identity Provider (IdP) is configured in the OIDC SSO module, end users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login`. When accessing the URL, users are automatically redirected to the configured IdP for authentication.
 
-If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login` This means you do not need to configure the *Anonymous* user role for a single IdP.
+If multiple IdPs are configured in the OIDC module, end users can access the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. In this case, they will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
 
-#### Allowing Anonymous Users for Multiple IdPs (Optional)
-
-The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles-anonymous.png" class="no-border" >}}
-
-In the **Anonymous** tab of the app security settings, do the following:
-
-1. Set **Allow anonymous users** to **Yes**
-2. Select *Anonymous* as the **Anonymous user role**
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/anonymous-user.png" class="no-border" >}}
-
-{{% alert color="warning" %}}
-Enabling anonymous users introduces a broader attack surface. If you choose this option, follow Mendix guidelines for [setting up anonymous user security](/howto/security/set-up-anonymous-user-security/) to mitigate potential risks.
+{{% alert color="info" %}}
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. You can remove the `Anonymous` User Role from the module. 
 {{% /alert %}}
-
-### Excluding Anonymous User Role
-
-Mendix recommends not to enable anonymous userrole. You can use the login endpoint `oauth/v2/login` for a single IdP.
-For multiple IdPs, anonymous users are not needed. 
-
-You have the following options with multiple IdPs:
-
-1. using the dedicated endpoint - `oauth/v2/login`
-2. using a high-code non-Mendix page to select an IdP for login.
-
-Mendix does not recommend using a Mendix page for an IdP selection as it requires anonymous users. 
 
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
-
-If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs (multiple IdPs), or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
