@@ -103,8 +103,8 @@ To prevent the need to recreate existing data related to Agent definitions, perf
 
    The **AgentCommons** > **USE_ME** > **Migration** > `SingleMCPTool_Migrate` microflow will set the new association and attribute on existing `SingleMCPTool` records.
 
-4. Update any custom logic or pages in your app that refer the old entity or its attributes `MCPTool` in the MCPClient module. Available tools are not cached anymore. In cases where the actual list of available tools is required, refer to the `ConsumedMCPService_ListTools` microflow.
-5. In your running apps, you need to configure your MCP connections again on the `ConsumedMCPService_Overview` page. Furthermore, in existing agents where those MCP connections were used, you need to add them again. Ensure to save a new version when using the agent in microflows.
+4. Update any custom logic or pages in your app that refer to the old entity or its attributes `MCPTool` in the MCPClient module. Available tools are not cached anymore. In cases where the actual list of available tools is required, refer to the `ConsumedMCPService_ListTools` microflow.
+5. In your running apps, configure your MCP connections again on the `ConsumedMCPService_Overview` page. Furthermore, in existing agents where those MCP connections were used, you need to add them again. Ensure to save a new version when using the agent in microflows.
 6. Verify your application compiles and runs correctly before deploying to cloud environments.
 
 {{% alert color="info" %}}
@@ -156,7 +156,7 @@ To prevent the need to recreate existing data related to Agent definitions and k
    1. Upgrade the Mendix Cloud GenAI Connector module to V6.0.1 in your Mendix app.
    2. Include logic to run the data migration microflow upon starting your app (for example, include it in the after-startup): **MxGenAIConnector** > **USE_ME** > **Migration** > `ConsumedKnowledgeBase_Migrate`. This microflow makes sure the new attributes on the generalization are set properly, and the `DisplayName` field is migrated.
    3. If the Agent Commons is part of your app and there are Agents defined using knowledge bases, include the following initially excluded sub-microflow into the app and add it as a microflow call according to the annotation in the above-mentioned microflow: **MxGenAIConnector** > **USE_ME** > **Migration** > `MxGenAI_KnowledgeBase_Migrate`. This microflow sets the `CollectionIdentifier` field on the `KnowledgeBase` entity and outgoing reference to the `ConsumedKnowledgeBase`.
-   4. Set the `DisplayName` field for each `ConsumedKnowledgeBase` object by importing a key for the knowledge base. This can be an existing key that was imported earlier, or a new key can be obtained in the [Mendix Portal](https://genai.home.mendix.com/).
+   4. Set the `DisplayName` field for each `ConsumedKnowledgeBase` object by importing a key for the knowledge base. You can use the existing key that was imported earlier, or get a new key from the [Mendix Portal](https://genai.home.mendix.com/).
 
 5. If your app has the OpenAI Connector module:
 
