@@ -41,9 +41,9 @@ The following frameworks are required. They will be installed automatically by t
 
 * Microsoft .NET desktop runtime (x64) and all applicable Windows security patches
 
-    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
-    | --- | --- |
-    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
+    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 - 10.24.15 | Studio Pro 10.24.16 and above |
+    | --- | --- | --- |
+    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime | .NET 10 Desktop Runtime |
     
 * Microsoft Visual C++ 2019 Redistributable Package (x64)
 * A Java Developer Kit (JDK) version 11, 17, or 21 - if not yet installed on your machine, Mendix will install 'Eclipse Temurin JDK 21 (x64 or ARM64)'
@@ -56,9 +56,9 @@ When you are running Studio Pro on a Parallels virtual machine on an ARM64 devic
 
 * .NET Desktop Runtime (arm64)
 
-    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
-    | --- | --- |
-    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
+    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 - 10.24.15 | Studio Pro 10.24.16 and above |
+    | --- | --- | --- |
+    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime | .NET 10 Desktop Runtime |
 
 * Microsoft Edge WebView2 Evergreen Runtime (arm64)
 
