@@ -53,7 +53,7 @@ Users are thereafter automatically classified in the following user licensing bu
 
 End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage.
 
-## How Deduplication and User Classification Work
+## How User Classification and Deduplication Work
 
 The user classification and deduplication process determines which user pack is consumed when a user accesses one or more of your applications. The process evaluates users in a sequence so that each user is counted according to the correct license pack without duplication. The classification follows the steps below:
 
@@ -74,6 +74,10 @@ Once classified, the user is licensed under the External User Pack and excluded 
 
 All remaining users are classified as `Internal` Users and further classified as described in the sections below.
 
+{{% alert color="info" %}}
+A multi-app user who is marked as `Internal` in one app and `External` in another will be counted as an internal user. 
+{{% /alert %}}
+
 ### Classifying Single-App Internal Users
 
 After `External` users are classified, the classification process further classifies the single-app internal users.
@@ -81,7 +85,7 @@ After `External` users are classified, the classification process further classi
 If the application is associated with a Single-App Internal User Pack, the user of the app will be classified as a single-app internal user. This user will be counted against the single-app internal user pack for that application.
  <!-- *For more details on how to assign single-app user packs to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
- {{% alert color="info" %}}
+{{% alert color="info" %}}
 An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that app and will be also be counted separately for any other apps they use. 
 {{% /alert %}}
 
