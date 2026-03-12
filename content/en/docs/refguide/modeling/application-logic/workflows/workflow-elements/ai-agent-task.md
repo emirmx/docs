@@ -2,7 +2,7 @@
 title: "AI Agent Task"
 url: /refguide/ai-agent-task/
 weight: 85
-#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. The anchor {#ai-agents} is also used in the product. 
 ---
 
 ## Introduction
@@ -15,15 +15,13 @@ When the workflow reaches the AI agent task, the agent performs a predefined tas
 
 ## AI Agents {#ai-agents}
 
-An AI Agent is an autonomous software system powered by large language models (LLMs) that perceives its environment, reasons, plans, and takes actions to achieve specific goals without constant human supervision.
+An AI Agent is an autonomous software system powered by large language models (LLMs). It can perceive its environment, reason, plan, and take actions to achieve specific goals without constant human supervision.
 
 ### Configuring Agents in Studio Pro
 
-Agents are configured in the Agent Editor in Studio Pro. There you define the agent's instructions, connect it to the required tools, and set its behavior. Once configured, the agent can be called from a workflow using the AI agent task. For more information, see [How to Configure Studio Pro Agents](AddLink).
+You can configure an AI agent using the Agent Editor in Studio Pro. In the editor, you define the agent's instructions, connect it to the required tools, and set its behavior. Once configured, the agent can be called from a workflow using the AI agent task. For a step-by-step guide, see [How to Configure Agents in Studio Pro](AddLink).
 
-### Using Agents in Your Project
-
-If you do not have agents in your project yet, follow [How to Configure Studio Pro Agents](AddLink) to get started.
+If the Agent Editor is not available in Studio Pro, make sure you first complete the [Prerequisites](AddLink) section in [How to Configure Agents in Studio Pro](AddLink).
 
 ## Properties
 
