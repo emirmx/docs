@@ -421,7 +421,9 @@ The following settings apply to the IdP configuration:
 
 When you add a new configuration or change an existing one, you should restart your app. This ensures that the correct configuration is used.
 
-The SAML module provides you with so-called Just-In-Time (JIT) user provisioning. To read more, refer to [Just-In-Time User Provisioning via SAML](appstore/modules/saml/user-provisioning/).
+## User Provisioning
+
+The SAML module provides you with so-called Just-In-Time (JIT) user provisioning. To read more, refer to [Just-In-Time User Provisioning via SAML](/appstore/modules/saml/user-provisioning/).
 
 ## URLs{#urls}
 
