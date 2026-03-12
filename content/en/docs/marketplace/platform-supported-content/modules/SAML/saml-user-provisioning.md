@@ -16,7 +16,7 @@ By default, end-users are provisioned using the Account object in the Administra
 
 If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
 
-In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
+In the default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
 
 | IdP Attribute | Configured Entity Attribute |
 | --- | --- |
@@ -36,16 +36,16 @@ You may have a requirement that users log in to your application only via SSO. H
 
 {{% alert color="info" %}} This feature is available in version 4.0.0 and above. {{% /alert %}}
 
-You can set up custom user provisioning by selecting the **IdP Configuration** tab of the SAML module. Select configuration and you can see the **User Provisioning** tab.
+You can set up custom user provisioning by selecting the **IdP Configuration** tab of the SAML module. Select a configuration, and you can see the **User Provisioning** tab.
 
 1. Set up the following information in the **User Provisioning** tab:
 
-    * **Custom user Entity (extension of System.User)** – the Mendix entity in which you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513) this would be `Administration.Account`.
-    * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user. 
+    * **Custom user Entity (extension of System.User)** – the Mendix entity in which you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
+    * **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user. 
         * By default, the value is set to *Name*.
-    * **Allow the module to create users** – This enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
+    * **Allow the module to create users** – This enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful, but no user has been configured.
         * By default, the value is set to *Yes*.
-    * **Default Userrole** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that, bulk updates for existing users are not automated when the default role configuration is changed.
+    * **Default User Role** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that bulk updates for existing users are not automated when the default role configuration is changed.
     * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in. For more information, see [Populate User Types](/developerportal/deploy/populate-user-type/).
         * By default, the value is set to *Internal*. 
 
@@ -53,8 +53,8 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
 
     Note the following:
 
-    * You cannot use the IdP claim which is the primary attribute identifying the user and you cannot use the attribute you set in **The attribute where the user principal is stored**.
-    * You can map multiple **IdP Attribute** (claims) to a **Configured Entity Attribute** but you cannot map a new **IdP Attribute** to a **Configured Entity Attribute** if it is already mapped.
+    * You cannot use the IdP claim, which is the primary attribute identifying the user, and you cannot use the attribute you set in **The attribute where the user principal is stored**.
+    * You can map multiple **IdP Attribute** (claims) to a **Configured Entity Attribute**, but you cannot map a new **IdP Attribute** to a **Configured Entity Attribute** if it is already mapped.
     * The IdP Attribute is one of the fixed claims supported by the [OIDC SSO](/appstore/modules/oidc/) module.
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
 
@@ -80,7 +80,7 @@ This section describes the microflows that you may want to customize if needed.
 #### evaluateMultipleUserMatches
 
 {{% alert color="info" %}}
-Starting from the version 4.0.0. of the SAML module, `evaluateMultipleUserMatches` microflow is moved to the UserCommons.{{% /alert %}}
+Starting from version 4.0.0. of the SAML module, `evaluateMultipleUserMatches` microflow is moved to the UserCommons.{{% /alert %}}
 
 The module tries to look up the user that matches the provided user name. When multiple `System.User` records are found, and this microflow is always executed.
 
