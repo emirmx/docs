@@ -2,6 +2,7 @@
 title: "AI Agent Task"
 url: /refguide/ai-agent-task/
 weight: 85
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
@@ -12,13 +13,17 @@ When the workflow reaches the AI agent task, the agent performs a predefined tas
 
 **AI agent task** can be used across a wide range of use cases. Some examples include assessing requests, classifying data, extracting information from unstructured text, summarizing content, and drafting outputs such as notifications or reports.
 
-## Prerequisites
+## AI Agents {#ai-agents}
 
-Before using the AI Agents Task, you need a configured agent ready to call. See How to Configure Studio Pro Agents for a step-by-step guide.
+An AI Agent is an autonomous software system powered by large language models (LLMs) that perceives its environment, reasons, plans, and takes actions to achieve specific goals without constant human supervision.
 
-{{% alert color="info" %}}
-The Agent Editor needs to be set up in Studio Pro first. See How to Setup Studio Pro Agents to get started.
-{{% /alert %}}
+### Configuring Agents in Studio Pro
+
+Agents are configured in the Agent Editor in Studio Pro. There you define the agent's instructions, connect it to the required tools, and set its behavior. Once configured, the agent can be called from a workflow using the AI agent task. For more information, see [How to Configure Studio Pro Agents](AddLink).
+
+### Using Agents in Your Project
+
+If you do not have agents in your project yet, follow [How to Configure Studio Pro Agents](AddLink) to get started.
 
 ## Properties
 
