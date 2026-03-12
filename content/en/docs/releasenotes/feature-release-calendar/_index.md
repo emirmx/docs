@@ -104,7 +104,7 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Dynamic Case Management | Private Beta: Mx 11.3 <br/>Limited Availability: Mx 11.6 |
+| Dynamic Case Management | Private Beta: Mx 11.3 <br/>Limited Availability: Mx 11.12 |
 | Global Inbox Workflow Tasks | Public Beta: Mx 11.10 <br/>General Availability: Mx 11.12 |
 | Workflow non-interrupting Event Subprocesses (Message trigger) | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
 | Workflow Interrupting Event Subprocesses (Message trigger) | General Availability: Mx 11.12 |
