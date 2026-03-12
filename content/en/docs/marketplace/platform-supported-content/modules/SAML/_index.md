@@ -452,7 +452,7 @@ Your SAML IdP can consume the following endpoints at your app. Typically the SP-
 * Academy lecture [SSO Using SAML](https://academy.mendix.com/link/modules/115/lectures/938/2.3.1-SSO-using-SAML)
 
     {{% alert color="info" %}}You must log into the Mendix Platform to see the lecture above.{{% /alert %}}
-* [Just-In-Time User Provisioning via SAML](appstore/modules/saml/user-provisioning/)
+* [Just-In-Time User Provisioning via SAML](/appstore/modules/saml/user-provisioning/)
 * [Advanced configuration for SAML](/appstore/modules/saml/advanced-configuration/)
 * [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/)
 * [OIDC SSO](/appstore/modules/oidc/)
