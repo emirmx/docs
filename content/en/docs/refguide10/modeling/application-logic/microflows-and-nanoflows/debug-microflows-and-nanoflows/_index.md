@@ -1,6 +1,6 @@
 ---
 title: "Debugging Microflows and Nanoflows"
-url: /refguide10/debug-microflows-and-nanoflows//
+url: /refguide10/debug-microflows-and-nanoflows/
 weight: 120
 ---
 
