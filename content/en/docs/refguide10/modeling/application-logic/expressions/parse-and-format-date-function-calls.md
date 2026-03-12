@@ -187,7 +187,7 @@ the output is:
 'Sun, 8 Jun 2008 10:12:01 +0200'
 ```
 
-To get a format like `'2008-06-08T10:12:01'`, you can escape the T with '':
+To get a format like `'2008-06-08T10:12:01'`, you can escape the T with `''`:
 
 ```java
 formatDateTime($object/Date1,'yyyy-MM-dd''T''HH:mm:ss')
