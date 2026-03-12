@@ -25,5 +25,5 @@ The following pages describe the functions that can be executed within constrain
 * [ends-with](/refguide/xpath-ends-with/)
 
 {{% alert color="info" %}}
-In all these functions, the attribute in the example is just the name of the attribute, for example `Name`. This is for clarity. However, the attribute can also contain the path to the attribute, for example `Sales.Order_Customer/Name`.
+In all these functions, the attribute in the example is just the name of the attribute, for example `Name`. This is for clarity. However, the attribute can also contain the path to the attribute, for example `Sales.Order_Customer/Sales.Customer/Name`.
 {{% /alert %}}
