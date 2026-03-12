@@ -24,7 +24,7 @@ For more information, refer to the [User Types and Definitions](/developerportal
 ### Key Features
 
 * Automatic tracking – User consumption is automatically tracked from the moment your app is deployed to production and becomes functional, ensuring real-time tracking. 
-* Monthly reporting – Usage data is collected regularly, processed monthly, and deduplicated.  <!-- Monthly reporting – Usage data is collected regularly, processed monthly, and is available in the Control Center. -->
+* Prompt data processing – Usage data is collected, processed, and deduplicated regularly. <!-- Monthly reporting – Usage data is collected regularly, processed monthly, and is available in the Control Center. -->
 * License type classification – Users are classified by license type as External, Multi-App Internal, or Single-App Internal. This classification yields accurate license tracking and helps optimize licensing costs. 
 
 ## How User Metering Works

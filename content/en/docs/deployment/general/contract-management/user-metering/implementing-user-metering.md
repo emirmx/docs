@@ -7,7 +7,7 @@ description: "This document describes how to implement user metering."
 
 ## Introduction
 
-User metering provides complete visibility into the number and types of users accessing the application, ensuring compliance with the license agreement. You can see this data in the Usage Report of Control Center on the Mendix platform.
+This document provides you an overview of the user metering implimentation, including guidelines for unique user identification, how users are classified, and the process for deactivation of users. <!-- User metering provides complete visibility into the number and types of users accessing the application, ensuring compliance with the license agreement. You can see this data in the Usage Report of Control Center on the Mendix platform. --> 
 For accurate user metering, in-app user classification is a crucial first step. For more information, refer to [How User Metering Works](developerportal/deploy/user-metering/#how-user-metering-works). To do this, the logic in your app models needs to cater to the following aspects, if applicable:
 
 * [Unique user identification](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication)
@@ -16,7 +16,7 @@ For accurate user metering, in-app user classification is a crucial first step. 
 
 ## Guidelines for Unique User Identification (Deduplication)
 
-Mendix allows you to build multi-app solutions and offers a multi-app user license option. For internal users, you may have a single-app user license or a multi-app user license. External user licenses cover both single-app and multi-app users; a multi-app external user is counted only once.  For more information, refer to [User types and definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions).  For accurate user metering, it is a crucial step to identify the unique multi-app user by using the same user identifier in all apps for a user.
+For accurate user metering, it is crucial to identify unique multi-app users by using the same user identifier across all apps. Both external and internal users can be multi-app users, so consistent user identification is relevant for both. For more information about user types, refer to [User types and definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions).
 
 The Mendix metering mechanism requires your app logic to store an identifier for every user in the `UserCommons.namedUserIdentifier.value` (or `system.user.name` as a fallback). For relevant entities and their attributes, see the [Domain Model Entities](/developerportal/deploy/implementing-user-metering/#domain-model-entities) section below.
 
@@ -50,7 +50,7 @@ For more information, refer to the [Versioning](/developerportal/deploy/implemen
 
 ## User Classification
 
-For accurate user metering, `External` users must be correctly classified. If they are not, your company may exceed the licensed capacity for `Internal` users, and Mendix may require you to acquire additional internal user licenses. If you do not classify your `External` users, they will be treated as `Internal` users by default.
+To ensure accurate user metering, external users must be explicitly marked as `External`. If they are not marked accordingly, they will be counted as `Internal` users.
 
 There are several approaches to classify users as `Internal` or `External`, ranging from configuration-only to custom development. These options are:
 
