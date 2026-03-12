@@ -43,7 +43,7 @@ Remember to do the following:
 The Mendix runtime/system module comes with a default login page. When using SAML with a single IdP, this page is not required.
 You need to customize this login page when end-users have different ways of login:
 
-1. If you want to use both Mendix (local) login and SSO login:
+1. If you want to use both the Mendix (local) login and the SSO login:
 
     1. Go to the **App** > **Show App Directory in Explorer** > **theme/web** folder (for Mendix versions below 9.0.0, this is the **theme** folder).
     2. Rename `login.html` to `login-without-sso.html`.
@@ -80,7 +80,7 @@ Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and
 1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs.
 2. Ensure to remove the Deep Link module from your app to start the app successfully. For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
 
-##### Steps for SAML Versions above v3.6.17 and v4.0.1
+##### Steps for SAML Versions Above v3.6.17 and v4.0.1
 
 1. To use the Page URL functionality, replace the content of *login.html* with the content of *login-with-mendixsso-automatically.html* (located in the **resources** > **mendixsso** > **templates** folder) without changing the file name. 
 2. To implement the SSO redirection, replace the code in the `<script>` tag on your login page (for example, *login.html*) with the following code:
@@ -105,7 +105,7 @@ Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and
 
 Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful login, they will be directed to the desired page using page and microflow URLs.
 
-#### Using Deep Link Module{#using-deeplink}
+#### Using the Deep Link Module{#using-deeplink}
 
 When using the SAML module with the Deep link Module (for Mendix 8 and 9), you need to set the `LoginLocation` constant of the Deeplink module to `/SSO/login?f=true&cont=` to redirect the user to the original deep link location after a successful login.
 
@@ -124,11 +124,11 @@ When enabling the log node SSO to show trace messages, you can find detailed inf
 * **"The application hasn't been properly configured to support single sign-on."** – This message indicates an incomplete IdP configuration. In more detailed error messages (via the log file), you are able to see which property in the IdP configuration has not been configured.
 * **"Unable to complete the request"** – A message has been received that does not have a RelayState/RequestID that matches any of the previously generated IDs (or the message has been answered already). If you get this message, you should validate the message communication and confirm that you are not using unsolicited requests. Or, you can enable by checking the box to allow for IdP-initiated authentication.
 * **"The authentication was successful, but there is no account available in this application."** – There is no account that matches the identifying assertion, by downloading the SAMLResponse message, you can see the assertion attributes in the XML file to validate which user name has been sent.
-* **"Your account hasn't been configured to access this application."** – There is a user account available in the application that matches the identifying assertion, but the user does not have user roles or the user is not active. 
+* **"Your account hasn't been configured to access this application."** – There is a user account available in the application that matches the identifying assertion, but the user does not have user roles, or the user is not active. 
 * **"An unexpected error occurred while creating a session"** – An uncaught exception occurred, which could be a configuration error or a situation that has not been supported by the module. More information should be available in the stack trace.
 * **"The response from the identity provider isn't valid."** – The response from the IdP does not contain any assertion attributes.
 * **"No valid SSO Configuration could be found for entity Id: [IdP Alias]"** – Either the specified IdP configuration has not been activated, or an error occurred when reloading the configuration. The error message when reloading the configuration should give more information about the exact problem. The configuration is loaded on startup, when (de-)activating the configuration, or when saving an active configuration.
-* **"Unsupported action: [action], only ....."** – The URL is incorrect. Validate that the URL is correctly structured as *action: login, assertion, metadata, discovery*.
+* **"Unsupported action: [action], only ....."** – The URL is incorrect. Validate that the URL is correctly structured as *action: login, assertion, metadata, or discovery*.
 * **“MSIS7046: The SAML protocol parameter ‘RelayState’ was not found or is not valid.”** – This error can be shown on the ADFS server, most likely when you are using Mac OSX and a Safari browser. Setting the `BindingURI_Redirect` constant to true might help resolve the issue. By default, Mendix favors the `Post` binding, as the maximum size exceeds that of a `Redirect` binding due to its use of cookies and post information instead of URL parameters. The size can be a factor when using encryption.
 * **"Unable to validate Response, see SAMLRequest overview for detailed response. Error: An error occurred while committing user: p:'johndoe@company.com'/u:'JoHnDoE@CoMpAnY.CoM'"** – All user names passing through the SAML module are converted to lower-case, so make sure all the existing user names and new user names are also converted to lower-case. This is because certain systems are not case-sensitive (for example, Active Directory).
 * **“Could not create a session for the provided user principal.”** – This error can be shown if the IdP configuration does not contain any application attributes for the entity where the user (and user principal) is to be found (and stored).
@@ -146,7 +146,7 @@ If it is not an option to have the IdP and the app in the same domain, set the v
 
 When using the SAML module with Mendix version 10.9 to 10.12.2, you may encounter an endless redirect loop to the login page. This issue is related to the session cookie handling in these versions. To resolve this redirect loop, Mendix recommends upgrading to Mendix version 10.12.3 or above. If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
 
-### Testing a New ‘deploy-time’ SAML Configuration
+### Testing a New ‘Deploy-Time’ SAML Configuration
 
 If you detect an error during start-up, the application will start, although SSO via SAML may not work. You can log in as the local MxAdmin user and make the necessary configuration adjustments to get the SSO working, and then you can make the necessary adjustments in the deploy-time configuration.
 
