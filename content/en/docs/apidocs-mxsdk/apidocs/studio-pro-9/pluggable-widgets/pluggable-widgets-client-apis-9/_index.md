@@ -133,6 +133,79 @@ There is a way to use more the convenient `displayValue`  and `setTextValue` whi
 
 The optional field `universe` is used to indicate the set of all possible values that can be passed to a `setValue` if a set is limited. Currently, `universe` is provided only when the edited attribute is of the Boolean or enumeration [types](/refguide9/attributes/#type).
 
+#### Formatter Details {#formatter-details}
+
+The `formatter` field on `EditableValue` is defined as follows:
+
+```ts
+type ParseResult<T> = { valid: true; value: T } | { valid: false };
+
+interface SimpleFormatter<T> {
+  format(value: T | undefined): string;
+  parse(value: string): ParseResult<T>;
+}
+}
+```
+
+You can supply a fully custom formatter using `setFormatter` (the object must implement `format` and `parse`):
+
+```ts
+myDecimalAttribute.setFormatter({
+    format(value: Big | undefined): string {
+        return value !== undefined ? `$${Number(value).toFixed(2)}` : "";
+    },
+    parse(text: string): ParseResult<T> {
+        const num = Number(text.replace(/[$,]/g, ""));
+        return isNaN(num) ? { valid: false } : { valid: true, value: new Big(num) };
+    }
+});
+
+```
+
+Call `setFormatter(undefined)` to reset the formatter to the platform default.
+
+**Date/DateTime** attributes have additional capabilities because of `DateTimeFormatter`, which extends `SimpleFormatter<Date>`:
+
+```ts
+interface DateTimeFormatter {
+    type: "datetime";
+    format(value: Date | undefined): string;
+    parse(value: string): { valid: true; value: Date } | { valid: false };
+    withConfig(config: DateTimeFormatterConfig): DateTimeFormatter;
+    getFormatPlaceholder(): string;
+    config: DateTimeFormatterConfig;
+}
+```
+
+You can check `formatter.type` to detect the attribute's data type at runtime and branch your widget logic accordingly:
+
+```ts
+if (myAttribute.formatter.type === "datetime") {
+    // Date-specific formatting logic
+} else {
+    // String, number, enum, or boolean formatting logic
+}
+```
+
+The following example formats a date attribute using a custom month-year pattern:
+
+```ts
+if (myDateAttribute.formatter.type === "datetime") {
+    const customFormatter = myDateAttribute.formatter.withConfig({
+        type: "custom",
+        pattern: "MMMM YYYY"
+    });
+    const formatted = customFormatter.format(myDateAttribute.value); // e.g. "March 2026"
+}
+```
+
+For enumeration and Boolean attributes, `format` converts the raw value into a human-readable caption as configured in Studio Pro:
+
+```ts
+// myEnumAttribute is an EditableValue<string>
+const caption = myEnumAttribute.formatter.format(myEnumAttribute.value); // e.g. "In Progress"
+```
+
 ### ModifiableValue {#modifiable-value}
 
 `ModifiableValue` is used to represent values that can be changed by a pluggable widget client component. It is passed only to [association properties](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types-9/#association), and is defined as follows:
