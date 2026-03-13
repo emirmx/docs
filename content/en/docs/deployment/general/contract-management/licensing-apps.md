@@ -23,7 +23,7 @@ Unlicensed apps, running outside Mendix Cloud, have some restrictions. These res
 
 ¹ More information on the capabilities of different license options is available on [Mendix Platform Pricing](https://www.mendix.com/pricing).
 
-² End-users of your app are classified as either internal or external. You will need to report this for licensing purposes using either the [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domain to distinguish between them) or by [populating the user type](/developerportal/deploy/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
+² End-users of your app are classified as either internal or external. You will need to report this for licensing purposes using either the [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using the email domain to distinguish between them) or by [populating the user type](/developerportal/deploy/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
 
 ³ Depending on the configuration of your chosen cloud, a container and runtime may be restarted if it appears unhealthy because the runtime has stopped.
 
@@ -38,7 +38,7 @@ Customers can purchase user licenses in the following categories:
 
 ### Multi-App Internal User
 
-These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications, and are licensed under the  Multi-App Internal User Pack. Each internal user is counted as one unique user, regardless of how many apps they access.
+These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications and are licensed under the  Multi-App Internal User Pack. Each internal user is counted as one unique user, regardless of how many apps they access.
 
 ### Single-App Internal User
 
@@ -97,7 +97,7 @@ To license an Insights Hub app, you need to provide your **License ID** and **Li
 
 To license a Mendix app on Mendix on Kubernetes, you need to supply a **Subscription Secret** or license credentials for your app. See below for how it can be added to either a Connected or Standalone cluster.
 
-In addition to the licenses for your apps, you will also need to license the Mendix Operator which helps deploy your app to a Mendix on Kubernetes environment. For details on the Mendix Operator license, see [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing).
+In addition to the licenses for your apps, you will also need to license the Mendix Operator, which helps deploy your app to a Mendix on Kubernetes environment. For details on the Mendix Operator license, see [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing).
 
 #### Mendix on Kubernetes Connected
 
@@ -118,7 +118,7 @@ cf set-env <YOUR_APP> LICENSE_ID <LicenseId>
 cf set-env <YOUR_APP> LICENSE_KEY <LicenseKey>
 ```
 
-Then restart the app so that the environment variables are read and the license goes into effect.
+Then restart the app so that the environment variables, are read and the license goes into effect.
 
 ### Docker
 

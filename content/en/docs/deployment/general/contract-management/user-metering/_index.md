@@ -7,10 +7,10 @@ description: "This document describes how user metering works."
 
 ## Introduction
 
-End-user metering is the process Mendix uses to determine the number and type of users accessing applications in accordance with license agreements. Proper user classification ensures accurate reporting and optimal licensing costs for customers. <!-- *Proper user classification ensures accurate reporting, optimal licensing costs and transparency for both customers and Mendix. Customers can access Usage Report through the Control Center application on the Mendix Platform*. Link Usage Report from the Control Center doc -->
+Mendix uses end user metering process to determine the number and type of users accessing applications in accordance with license agreements. Proper user classification ensures accurate reporting and optimal licensing costs for customers. <!-- *Proper user classification ensures accurate reporting, optimal licensing costs and transparency for both customers and Mendix. Customers can access Usage Report through the Control Center application on the Mendix Platform*. Link Usage Report from the Control Center doc -->
 
 {{% alert color="info" %}}
-End-user metering is currently applied to applications deployed to Mendix Cloud and Mendix Cloud Dedicated environments.
+End user metering is currently applied to applications deployed to Mendix Cloud and Mendix Cloud Dedicated environments.
 {{% /alert %}}
 
 Mendix licenses include user-based pricing plans. With user-based pricing, customers purchase licenses based on the number of users who need access to their Mendix applications. Customers can purchase user licenses in the following categories:
@@ -33,11 +33,11 @@ User metering in the Mendix cloud operates through a four-stage automated proces
 
 ### In-App User Classification
 
-Your application logic plays an important role in creating and maintaining accurate user records. A key component of in-app user classification is maintaining a consistent user identifier. This becomes especially important when customers are using multi-app licenses.  In the Mendix multi-app license pack, the same individual may access multiple apps under a single license agreement. A unique, persistent user identifier ensures accurate tracking and prevents duplication. The application logic is responsible for classifying users as `Internal` or `External`. For more detailed information, refer to the [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification). 
+Your application logic plays an important role in creating and maintaining accurate user records. A key component of in-app user classification is maintaining a consistent user identifier. This becomes especially important when customers are using multi-app licenses.  In the Mendix Multi-App License Pack, the same individual may access multiple apps under a single license agreement. A unique, persistent user identifier ensures accurate tracking and prevents duplication. The application logic is responsible for classifying users as `Internal` or `External`. For more detailed information, refer to the [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification). 
 
 ### Data Collection
 
-All applications on the Mendix Cloud and Mendix Cloud Dedicated automatically send user data back to the Mendix platform. Data is collected from all environments throughout the month. However, only data from the production environment is considered for consumption numbers and billing purpose. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
+All applications on the Mendix Cloud and Mendix Cloud Dedicated automatically send user data back to the Mendix platform. Data is collected from all environments throughout the month. However, only data from the production environment is considered for consumption numbers and billing purposes. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
 
 ### Data Aggregation and Deduplication
 
@@ -51,7 +51,7 @@ Users are thereafter automatically classified in the following user licensing bu
 2. Single-App Internal Users
 3. Multi-App Internal Users (default)
 
-End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage.
+<!-- End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage. -->
 
 ## How User Classification and Deduplication Work
 
@@ -59,18 +59,18 @@ The user classification and deduplication process determines which user pack is 
 
 ### User Identification (Deduplication)
 
-Users are deduplicated based on common identifier values. A customer who has different identifier values in the aggregated data cannot be recognized as same user, and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values persist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+Users are deduplicated based on common identifier values. A customer who has different identifier values in the aggregated data cannot be recognized as the same user, and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values persist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
 
 ### Classifying External Users
 
-The first step is to determine whether a user is an external user:
+The next step is to determine whether a user is an external user:
 
-* If the customer has a valid External User ack subscription, and
+* If the customer has a valid External User Pack subscription, and
 * The user is explicitly marked as `External` within the application.
 
-Then the User is classified as an External user.
+Then the user is classified as an external user.
 
-Once classified, the user is licensed under the External User Pack and excluded from further classification steps. For more information, see the [User classification](/developerportal/deploy/implementing-user-metering/#user-classification) section of *Implementing Metering*.
+Once classified, the user is licensed under the External User Pack and excluded from further classification steps. For more information, see the [User classification](/developerportal/deploy/implementing-user-metering/#user-classification) section of *Implementing User Metering*.
 
 All remaining users are classified as `Internal` Users and further classified as described in the sections below.
 
@@ -83,10 +83,10 @@ A multi-app user who is marked as `Internal` in one app and `External` in anothe
 After `External` users are classified, the classification process further classifies the single-app internal users.
 
 If the application is associated with a Single-App Internal User Pack, the user of the app will be classified as a single-app internal user. This user will be counted against the Single-App Internal User Pack for that application.
- <!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
+<!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
 {{% alert color="info" %}}
-An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that app and will be also be counted separately for any other apps they use. 
+An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that app and will also be counted separately for any other apps they use. 
 {{% /alert %}}
 
 ### Classifying Multi-App Internal Users
@@ -96,4 +96,4 @@ These users are licensed under the Multi-App Internal User Pack, and no further 
 
 ## Read More
 
-* [Licensing Apps](developerportal/deploy/licensing-apps-outside-mxcloud/)
+* [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/)
