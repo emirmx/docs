@@ -21,6 +21,10 @@ The available configuration options are as follows:
 
 ### App bundler {#app-bundler}
 
+{{% alert type="info" %}}
+This setting was introduced in Mendix 11.9.0. 
+{{% /alert %}} 
+
 This setting is only available for applications using React client.
 
 Available options:
