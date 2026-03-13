@@ -306,32 +306,42 @@ The settings below configure metrics through [micrometer](https://micrometer.io/
 
 ### Http(s) Connections
 
-The settings below configure the app to use a proxy for all connections, whether they are http or https connections, in:
+The settings below configure the app to use a proxy for all connections, whether they are using the HTTP or HTTPS protocol. They are used in the following circumstances:
 
-  1. Integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request) and  [call external action](/refguide/call-external-action/).
-  2. External object microflow activities [send external object](/refguide/send-external-object/) and [delete external object](/refguide/delete-external-object/).
-  3. Retrieving external entity data using a [consumed OData service](/refguide/consumed-odata-service/).
-  4. Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()].
+  1. In the integration microflow activities [call web service](/refguide10/call-web-service-action/), [call REST service](/refguide10/call-rest-action/), [send REST request](/refguide10/send-rest-request), and  [call external action](/refguide10/call-external-action/).
+  2. In the external object microflow activities [send external object](/refguide10/send-external-object/) and [delete external object](/refguide10/delete-external-object/).
+  3. When retrieving an external entity data using a [consumed OData service](/refguide10/consumed-odata-service/).
+  4. When calling the Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/http/IHttpConfiguration.html).
 
-These settings can be set either as JVM properties or as custom Runtime settings. When set as both a JVM propery and a custom runtime setting, the app uses the custom runtime setting.
+These settings can be set either as JVM properties or as custom Runtime settings. When both the JVM property and custom runtime setting are set, the app uses the custom runtime setting.
 
 | Name | Description | Default Value |
 | --- | --- | --- |
-| <a id="httpproxyHost" href="#httpproxyHost">http.proxyHost</a> | Defines the hostname of the HTTP proxy server. |  |
-| <a id="httpproxyPort" href="#httpproxyPort">http.proxyPort</a> | Defines the port number of the HTTP proxy server. |  |
+| <a id="httpproxyHost" href="#httpproxyHost">http.proxyHost</a> | Defines the hostname of the HTTP proxy server. | |
+| <a id="httpproxyPort" href="#httpproxyPort">http.proxyPort</a> | Defines the port number of the HTTP proxy server. | |
 | <a id="httpproxyUser" href="#httpproxyUser">http.proxyUser</a> | Defines the user of the HTTP proxy server. | | 
 | <a id="httpproxyPassword" href="#httpproxyPassword">http.proxyPassword</a> | Defines the password of the HTTP proxy server. | | 
 
-Note that the `http.` part of the names of these settings does not imply anything about `http` or `https` connections - it's just the name of the setting.
+{{% alert color="info" %}}
+The `http.` part of the names of these settings does not imply anything about whether the `HTTP` or `HTTPS` protocol is used - it is just the name of the setting.
+{{% /alert %}}
 
 ### License Server
 
-The settings below configure the app to use a proxy to reach the Mendix license server. These settings have to be set as JVM properties, not as custom Runtime settings.
+The settings below configure the app to use a proxy to reach the Mendix license server.
 
-| <a id="httpsproxyHost" href="#httpsproxyHost">https.proxyHost</a> | Defines the hostname of the HTTPS proxy server. |  |
-| <a id="httpsproxyPort" href="#httpsproxyPort">https.proxyPort</a> | Defines the port number of the HTTPS proxy server. |  |
+{{% alert color="info" %}}
+These settings have to be set as JVM properties, not as custom runtime settings.
+{{% /alert %}}
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| <a id="httpsproxyHost" href="#httpsproxyHost">https.proxyHost</a> | Defines the hostname of the HTTPS proxy server. | |
+| <a id="httpsproxyPort" href="#httpsproxyPort">https.proxyPort</a> | Defines the port number of the HTTPS proxy server. | |
 | <a id="httpsproxyUser" href="#httpsproxyUser">https.proxyUser</a> | Defines the user of the HTTPS proxy server. | | 
 | <a id="httpsproxyPassword" href="#httpsproxyPassword">https.proxyPassword</a> | Defines the password of the HTTPS proxy server. | | 
-| <a id="httpsnonProxyHosts" href="#httpsnonProxyHosts">https.nonProxyHosts</a> | Defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '|'. The patterns may start or end with a '*' for wildcards. | | 
+| <a id="httpsnonProxyHosts" href="#httpsnonProxyHosts">https.nonProxyHosts</a> | Defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '&#x007C;'. The patterns may start or end with a '*' for wildcards. | | 
 
-Note that the `https.` part of the names of these settings does not imply anything about `http` or `https` connections - it's just the name of the setting.
+{{% alert color="info" %}}
+The `https.` part of the names of these settings does not imply anything about whether the `HTTP` or `HTTPS` protocol is used - it is just the name of the setting.
+{{% /alert %}}

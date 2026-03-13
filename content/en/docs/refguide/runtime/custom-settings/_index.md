@@ -302,8 +302,6 @@ The settings below configure metrics through [micrometer](https://micrometer.io/
 
 ## Proxy Settings {#proxy-settings}
 
-{{% todo %}}Copy across to Mx9 and Mx 10{{% /todo %}}
-
 ### Http(s) Connections
 
 The settings below configure the app to use a proxy for all connections, whether they are using the HTTP or HTTPS protocol. They are used in the following circumstances:
@@ -311,7 +309,7 @@ The settings below configure the app to use a proxy for all connections, whether
   1. In the integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request), and  [call external action](/refguide/call-external-action/).
   2. In the external object microflow activities [send external object](/refguide/send-external-object/) and [delete external object](/refguide/delete-external-object/).
   3. When retrieving an external entity data using a [consumed OData service](/refguide/consumed-odata-service/).
-  4. When calling the Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.HttpConfiguration.html).
+  4. When calling the Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/IHttpConfiguration.html).
 
 These settings can be set either as JVM properties or as custom Runtime settings. When both the JVM property and custom runtime setting are set, the app uses the custom runtime setting.
 
@@ -343,5 +341,5 @@ These settings have to be set as JVM properties, not as custom runtime settings.
 | <a id="httpsnonProxyHosts" href="#httpsnonProxyHosts">https.nonProxyHosts</a> | Defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '&#x007C;'. The patterns may start or end with a '*' for wildcards. | | 
 
 {{% alert color="info" %}}
-The `http.` part of the names of these settings does not imply anything about whether the `HTTP` or `HTTPS` protocol is used - it is just the name of the setting.
+The `https.` part of the names of these settings does not imply anything about whether the `HTTP` or `HTTPS` protocol is used - it is just the name of the setting.
 {{% /alert %}}
