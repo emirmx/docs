@@ -19,6 +19,17 @@ The available configuration options are as follows:
 * **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
 * **Migration mode**: Use the React client and ignore incompatible widgets. Placeholders are displayed in the case of incompatible widgets. Recommended when trying out the new client.
 
+### App bundler {#app-bundler}
+
+This setting is only available for applications using React client.
+
+Available options:
+
+* **Rspack (beta)**: Use Rspack to bundle the React client app. A faster, more memory-efficient bundler.
+* **Rollup**: Use Rollup to bundle the React client app (default). 
+
+For more information about Rspack, see the official documentation [https://www.rspack.dev/](https://www.rspack.dev/)
+
 ### Use New String Behavior {#new-string-behavior}
 
 {{% alert type="info" %}}
