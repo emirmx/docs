@@ -58,11 +58,9 @@ There are several approaches to classify users as `Internal` or `External`, rang
 
 This method requires one of the following identity modules to be enabled: OIDC SSO, SCIM, or SAML. A key advantage of this approach is that it does not require any modifications to your existing app. Classification can begin immediately by setting a constant. However, because users are only classified when they log in, it may take some time before all end users are classified.
 
-For more information, see the [IdP-Based User Classification](/developerportal/deploy/populate-user-type/#idp-based-user-classification) section of *Populate User Types*.
-
 ### Userrole-Based User Classification
 
-The user-role-based user classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your app to include the user classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. For more information, refer to [User-Role-Based Classification](developerportal/deploy/populate-user-type/#user-role-based-user-classification).
+The user-role-based user classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your app to include the user classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. 
 
 ### Custom User Classification
 
@@ -136,7 +134,7 @@ The following are entities and their attributes:
 
     * `system.UserReportInfo.UserType`: `UserType` is used to classify end-users as `External` or `Internal` Users. Your application must set the attribute for all existing and new (external) end users. If it does not, Mendix will classify those users as `Internal`.
 
-    {{< figure src="/attachments/deployment/general/populate-user-type/user-type-enumeration.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/general/implementing-user-metering/user-type-enumeration.png" class="no-border" >}}
 
 3. `namedUserIdentifier`(optional): Recent versions of the [UserCommons](https://marketplace.mendix.com/link/component/223053) module include a `namedUserIdentifier` entity.
 
