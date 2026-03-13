@@ -16,7 +16,7 @@ For accurate user metering, in-app user classification is a crucial first step. 
 
 ## Guidelines for Unique User Identification (Deduplication)
 
-Mendix offers multi-app user licenses, which allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
+Mendix offers two variants of multi-app user licenses namely internal multi-app and external multi-app user licenses. These licenses allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
 
 To ensure unique multi-app users are correctly identified and metered, you must maintain a consistent user identifier across all relevant applications.
 
