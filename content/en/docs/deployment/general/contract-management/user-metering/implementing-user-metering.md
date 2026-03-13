@@ -16,37 +16,35 @@ For accurate user metering, in-app user classification is a crucial first step. 
 
 ## Guidelines for Unique User Identification (Deduplication)
 
-For accurate user metering, it is crucial to identify unique multi-app users by using the same user identifier across all apps. Both external and internal users can be multi-app users, so consistent user identification is relevant for both. For more information about user types, refer to [User types and definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions).
+Mendix offers multi-app user licenses, which allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
 
-The Mendix metering mechanism requires your app logic to store an identifier for every user in the `UserCommons.namedUserIdentifier.value` (or `system.user.name` as a fallback). For relevant entities and their attributes, see the [Domain Model Entities](/developerportal/deploy/implementing-user-metering/#domain-model-entities) section below.
+To ensure unique multi-app users are correctly identified and metered, you must maintain a consistent user identifier across all relevant applications.
 
-For metering of multi-app users, the same value must be stored across all apps. When different values persist, Mendix treats them as different users.
+The Mendix metering mechanism uses the `UserCommons.namedUserIdentifier.value` attribute as the primary user identifier. If this attribute is not available or populated, it falls back to `system.user.name`. For a detailed overview of relevant entities and attributes, refer to the [Domain Model Entities](/deploy/implementing-user-metering/#domain-model-entities) section.
 
-To ensure your multi-app users are counted correctly, you may want to consider the following guidelines:
+### Key Requirements for Multi-App User Identification:
 
-### Choosing a Cross-App User Identifier:
+Consistent Identifier Value: The same value for a given multi-app user must be stored in the chosen identifier attribute (`UserCommons.namedUserIdentifier.value` or `system.user.name`) across all applications that the user accesses. Inconsistent values will result in the user being counted as multiple distinct users.
 
-User metering may not have been considered when your application was originally designed. As a result, different applications may store different identifier values for the same multi-app user in the `system.user.name`. Additionally, all apps in your portfolio may use different user-provisioning logic. Some apps use standard identity modules (Administration, SAML, OIDC SSO, SCIM, or LDAP) while others rely on proprietary modules or app logic to create users. This can lead to inconsistent identifiers.
-Even when all apps use the same solution, for example, OIDC SSO, the technical identifier value for a multi-app user may still differ.
+### Best Practices for Choosing and Implementing a Cross-App User Identifier:
 
-### Avoiding Pairwise Identifiers:
+User identification strategies can vary across application portfolios, particularly when applications were developed independently or use different provisioning methods. Consider the following guidelines to establish a robust and consistent identification strategy:
 
-Even if all your apps are using the same user onboarding (provisioning) logic, this does not guarantee a user gets the same (technical) identifier value in all your applications. 
-The OpenID Connect specifications incorporate the concept of [pairwise user identifiers](https://openid.net/specs/openid-connect-core-1_0.html#PairwiseAlg). The general idea of pairwise identifiers is to prevent user correlation across apps owned by different service providers.  A user gets a different value in each app when using pairwise user identifiers.
+1. Prioritize `UserCommons.namedUserIdentifier.value`: Always aim to use and populate `UserCommons.namedUserIdentifier.value` for user identification. This provides a dedicated field for metering purposes and offers flexibility regardless of the `system.user.name` value.
 
-Mendix recommends storing the user’s email address in the `UserCommons.NamedUserIdentifier.value`; this ensures usage of a pairwise unique identifier in the `system.user.name` does not affect metering.
+2. Use a stable, globally unique identifier: Select an identifier that is stable and consistently unique across your entire user base and application portfolio.
 
-Within your application portfolio, the possibility to prevent cross-app user correlation is probably not needed; instead, you do want the Mendix metering system to correlate users and recognize multi-app users. Microsoft’s Entra ID uses pairwise identifiers in the OIDC `sub` claim. It is, however, possible to include the `oid` claim, which contains the same value for a given multi-app user across all applications; Entra ID’s user object ID. Mendix recommends storing the `oid` claim in the `system.user.name` if you are using the OIDC SSO module with Entra ID.
+    * Recommended Identifier: User's Email Address – Mendix strongly recommends storing the user's email address in `UserCommons.namedUserIdentifier.value`. This is typically a stable and globally unique identifier that users are familiar with. An email address is personal information. The Mendix platform, therefore, collects hashed values of the user identifier to enhance privacy. If you have specific privacy concerns, please consult the [data processing agreement](https://www.siemens.com/en-us/company/compliance/data-privacy/data-privacy-terms/) you have with Siemens.
 
-### Keeping the Existing Logic and Extending
+    * Alternative Identifiers: If using email addresses is not feasible or desired for your organization, you must establish a clear guideline on what user identifier your company will consistently use for cross-app user identification.
 
-If your apps are not consistently storing the same identifier for a multi-app user in `system.user.name`, you can start using a new user attribute, a new `UserCommons.namedUserIdentifier.value`.You can keep the existing application logic as it is, and in addition, store the selected user identifier value for a multi-app user in this new attribute.
+    * Handling Case Sensitivity: When using email addresses or other text-based identifiers, always store these values in lowercase to prevent metering issues caused by case sensitivity. The `system.user.name` attribute is case-sensitive by design. Mendix's standard SAML, OIDC SSO, and SCIM modules already apply this for email claims received from Identity Providers (IdPs).
 
-### Paying Attention to Case Sensitivity
+3. Address pairwise identifiers (for example, OIDC `sub` claim): Some identity providers, such as Microsoft Entra ID, generate "pairwise" identifiers (for example, Entra ID's `sub` claim). These identifiers are unique for each application for the same user. This is designed to prevent correlation across different service providers. However, you are using this technical identifier as the global unique identifier for user metering, it can lead to incorrect multi-app metering within your portfolio. When using the OIDC SSO module with Microsoft Entra ID, you can use the `oid` claim instead of the `sub` claim as the global unique identifier. The `oid` claim contains the Entra ID user object ID and remains consistent for the same user across all applications. Alternatively, if you follow the recommended approach of using the user’s email address as the global unique identifier for user metering, pairwise identifiers will not impact your metering accuracy.
 
-By design, the `system.user.name` is case sensitive and allows customers to store any user identifier without restrictions. If you choose to store an email address in these fields, or another identifier, that should be treated as case-insensitive. Mendix recommends downcasting such values to lowercase. The SAML, OIDC SSO, and SCIM modules already apply this for email claims or attributes received from your IdP.
+4. Integrating with existing application logic: If your current applications use varying `system.user.name` values or different provisioning methods, you can implement `UserCommons.namedUserIdentifier.value` without altering existing logic. Continue using your existing application logic for `system.user.name` if necessary, but additionally implement logic to populate `UserCommons.namedUserIdentifier.value` with your chosen consistent cross-app identifier (for example, email address or `oid` claim). This ensures the metering mechanism has a reliable, consistent identifier to use.
 
-For more information, refer to the [Versioning](/developerportal/deploy/implementing-user-metering/#versioning-information) section below.
+For more information on user types and definitions, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions) section of *Licensing Apps*.
 
 ## User Classification
 
