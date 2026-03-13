@@ -48,6 +48,8 @@ For more information on user types and definitions, refer to the [User Types and
 
 ## User Classification
 
+In the Mendix pricing plan, a distinction is made between internal and external named users of a Mendix app. As a customer, you purchase a license for a specific number of internal users and, optionally, for external users (which are typically cheaper). For accurate user metering, external users must be correctly classified. If they are not, your company may exceed the licensed capacity for internal users, and Mendix may require you to acquire additional internal user licenses.
+
 To ensure accurate user metering, external users must be explicitly marked as `External`. If they are not marked accordingly, they will be counted as `Internal` users.
 
 There are several approaches to classify users as `Internal` or `External`, ranging from configuration-only to custom development. These options are:
@@ -73,7 +75,17 @@ In situations where there is ambiguity about the user classification, Mendix con
 * When applying userrole-based classification, and a user has both an `Internal` and an `External` userrole.
 {{% /alert %}}
 
-Classification by the platform is not supported by using your email domains, nor any other logic. Your app logic is responsible for classification. For more information, refer to [Custom Classification](/developerportal/deploy/populate-user-type/#custom-classification).
+Classification by the platform is not supported by using your email domains, nor any other logic. Your app logic is responsible for classification.
+
+#### Custom Classification Using Your Own Microflow
+
+If you prefer not to use the custom User Classification module, you can instead create the user classification logic entirely from scratch using custom microflows. This approach provides maximum control and flexibility, allowing you to define any classification rules and processes according to your specific requirements. 
+
+{{% alert color="info" %}}
+This approach is for end users who are already set up in your app. For new end users onboarding into your app, you can implement a similar logic to set the `UserType` attribute during initial end user creation.
+{{% /alert %}}
+
+To update the `UserType` attribute of the `UserReportInfo` entity, refer to the [Domain Model Entities](#domain-model-entities) section for more details.
 
 ## (De)Activation of Users
 
@@ -109,7 +121,7 @@ The improved user metering capabilities are introduced in Mendix 11. These capab
 
 If you have extended support on Mendix 8, contact your CSM for guidance on user metering if needed.
 
-## Domain Model Entities
+## Domain Model Entities {#domain-model-entities}
 
 This section explains the entities and their attributes in your app domain model that are relevant for user metering.
 
@@ -123,6 +135,8 @@ The following are entities and their attributes:
 2. `UserReportInfo`: The system module also features the `UserReportInfo`.
 
     * `system.UserReportInfo.UserType`: `UserType` is used to classify end-users as `External` or `Internal` Users. Your application must set the attribute for all existing and new (external) end users. If it does not, Mendix will classify those users as `Internal`.
+
+    {{< figure src="/attachments/deployment/general/populate-user-type/user-type-enumeration.png" class="no-border" >}}
 
 3. `namedUserIdentifier`(optional): Recent versions of the [UserCommons](https://marketplace.mendix.com/link/component/223053) module include a `namedUserIdentifier` entity.
 
