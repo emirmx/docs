@@ -306,7 +306,7 @@ The settings below configure metrics through [micrometer](https://micrometer.io/
 
 The settings below configure the app to use a proxy for all connections, whether they are using the HTTP or HTTPS protocol. They are used in the following circumstances:
 
-  1. In the integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request), and  [call external action](/refguide/call-external-action/).
+  1. In the integration microflow activities [call web service](/refguide/call-web-service-action/), [call REST service](/refguide/call-rest-action/), [send REST request](/refguide/send-rest-request/), and  [call external action](/refguide/call-external-action/).
   2. In the external object microflow activities [send external object](/refguide/send-external-object/) and [delete external object](/refguide/delete-external-object/).
   3. When retrieving an external entity data using a [consumed OData service](/refguide/consumed-odata-service/).
   4. When calling the Mendix runtime API [Core.Http().executeHttpRequest](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/Http.html) and [HttpConfiguration.getInstance().getProxyConfiguration()](https://apidocs.rnd.mendix.com/11/runtime/com/mendix/http/IHttpConfiguration.html).
