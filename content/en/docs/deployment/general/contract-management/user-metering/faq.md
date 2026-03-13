@@ -104,6 +104,10 @@ API Users (also called Service Accounts or System Users) are non-human accounts 
 
 API users with authentication count as Named Users and are included in user metering.
 
+### I Have Users Who Log in Very Infrequently. Does Mendix Allow Reassigning a ‘Seat’ to Different Users?
+
+Yes. A seat can be reassigned at most once per month, meaning that within a single calendar month, a seat can only be used by one user. If a user is active on any day within a calendar month, they will occupy that seat for the entire month, regardless of how often they log in during that period. Over the course of a year, a single seat can therefore be assigned to a maximum of 12 different users.
+
 ## Read More
 
 * [User Metering](/developerportal/deploy/user-metering/)
