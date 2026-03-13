@@ -38,15 +38,15 @@ Customers can purchase user licenses in the following categories:
 
 ### Multi-App Internal User
 
-These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications, and are licensed under the  Multi-app internal user pack. Each internal user is counted as one unique user, regardless of how many apps they access.
+These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications, and are licensed under the  Multi-App Internal User Pack. Each internal user is counted as one unique user, regardless of how many apps they access.
 
 ### Single-App Internal User
 
-An internal user (employee or contractor) licensed for only one specific application and counted as one user limited to a single designated app. They are licensed under the Single-app internal user pack.
+An internal user (employee or contractor) licensed for only one specific application and counted as one user limited to a single designated app. They are licensed under the Single-App Internal User Pack.
 
 ### External User
 
-A user who is not an employee or contractor of the customer or its affiliates, and is explicitly marked “External” within your Mendix application data. This is one unique user across all apps designated for external use and licensed under the External user pack.
+A user who is not an employee or contractor of the customer or its affiliates, and is explicitly marked “External” within your Mendix application data. This is one unique user across all apps designated for external use and licensed under the External User Pack.
 
 For more information on legal definitions, refer to [Order Form Definitions](https://www.mendix.com/legal/platform-usage/order-form-definitions/).
 

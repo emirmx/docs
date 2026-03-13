@@ -65,7 +65,7 @@ Users are deduplicated based on common identifier values. A customer who has dif
 
 The first step is to determine whether a user is an external user:
 
-* If the customer has a valid External User Pack subscription, and
+* If the customer has a valid External User ack subscription, and
 * The user is explicitly marked as `External` within the application.
 
 Then the User is classified as an External user.
@@ -82,8 +82,8 @@ A multi-app user who is marked as `Internal` in one app and `External` in anothe
 
 After `External` users are classified, the classification process further classifies the single-app internal users.
 
-If the application is associated with a Single-App Internal User Pack, the user of the app will be classified as a single-app internal user. This user will be counted against the single-app internal user pack for that application.
- <!-- *For more details on how to assign single-app user packs to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
+If the application is associated with a Single-App Internal User Pack, the user of the app will be classified as a single-app internal user. This user will be counted against the Single-App Internal User Pack for that application.
+ <!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
 {{% alert color="info" %}}
 An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that app and will be also be counted separately for any other apps they use. 
@@ -92,7 +92,7 @@ An internal user accessing multiple apps, one of which is covered under a Single
 ### Classifying Multi-App Internal Users
 
 After external users and single-app internal users have been identified, any remaining internal users are classified as multi-app internal users.
-These users are licensed under the multi-app internal user pack, and no further action is required from your side.
+These users are licensed under the Multi-App Internal User Pack, and no further action is required from your side.
 
 ## Read More
 

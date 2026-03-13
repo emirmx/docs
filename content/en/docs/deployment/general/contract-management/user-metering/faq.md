@@ -14,7 +14,7 @@ This document answers common questions about user metering, outlining user class
 
 ### Is User Metering Automatically Enabled?
 
-User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. All running app environments transmit usage data to Mendix Platform at regular intervals. Data collection begins as soon as your application is deployed to a production environment. 
+User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. All running app environments transmit usage data to the Mendix Platform at regular intervals. Data collection begins as soon as your application is deployed to a production environment. 
 <!-- ### Where Can I View My User Consumption Data?
 
 Navigate to the **Control Center** > **Entitlements** > **End-Users** > **Usage Report**.
@@ -49,17 +49,16 @@ Apps across Mendix Cloud began collecting user metering data starting in Novembe
 ### How Are Users Classified If I Do Not Assign Single-App Internal User Pack to an app? 
 
 If no action is taken, all users are classified as Multi-App Internal Users by default.
-This means all users in your apps are aggregated together and classified as multi-app internal users. 
+This means all users in your apps are aggregated together and classified as Multi-App Internal Users. 
 
 ### I Have External Users in My Applications. How Do I Ensure They Are Counted Correctly?
 
-Explicitly mark users as `External` in your application to ensure they are counted correctly under your External User pack. If you do not have an External User pack, these users will be classified as `Internal`, even if they are marked as `External` users. Also a multi-app user who is marked as `Internal` in one app, but as `External` in another app, will be counted as an internal multi-app user.
+Explicitly mark users as `External` in your application to ensure they are counted correctly under your External User Pack. If you do not have an External User Pack, these users will be classified as `Internal`, even if they are marked as `External` users. Also, a multi-app user who is marked as `Internal` in one app, but as `External` in another app, will be counted as an Internal Multi-App User.
 
 For more information, refer to [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification).
+<!--### I Purchased a Single-App User Pack for My Application. How Do I Set It Up?
 
-### I Purchased a Single-App User Pack for My Application. How Do I Set It Up?
-
-Assign the Single-App User Pack to your application in the Control Center. For more information, refer to Assigning Single-App Internal User Packs. <!-- Link from the Control Center doc -->
+Assign the Single-App User Pack to your application in the Control Center. For more information, refer to Assigning Single-App Internal User Packs. Link from the Control Center doc -->
 
 ### How Do I Assign Single-App User Packs to Multiple Applications With Unique User Bases?
 
@@ -71,7 +70,7 @@ You must purchase a separate Single-App User Pack for each application and assig
 
 Users are counted based on their active status, not login frequency. If they are marked as `Active` in your application, they are counted every month, regardless of whether they log in.
 
-Note that if the user has active status during any moment in a month, they are counted as active user for that calendar month.
+Note that if the user has an active status during any moment in a month, they are counted as an active user for that calendar month.
 
 ### What Is the Best Practice for Deactivating Users Who Left the Organization?
 
@@ -102,7 +101,7 @@ API Users (also called Service Accounts or System Users) are non-human accounts 
 * Background jobs
 * External system access via web services
 
-API users with authentication count as Named Users and are included in user metering.
+API users with authentication count as Named Users and are included in the user metering.
 
 ### I Have Users Who Log in Very Infrequently. Does Mendix Allow Reassigning a ‘Seat’ to Different Users?
 
