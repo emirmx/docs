@@ -41,7 +41,7 @@ All applications on the Mendix Cloud and Mendix Cloud Dedicated automatically se
 
 ### Data Aggregation and Deduplication
 
-At the end of each month, the Mendix Platform aggregates the collected data. Users are counted and rolled up to the app portfolio level. This process is detailed in the [User Aggregation and Deduplication](/developerportal/deploy/user-metering/#how-user-aggregation-and-deduplication-work) section below.
+At the end of each month, the Mendix Platform aggregates the collected data. Users are counted and rolled up to the app portfolio level. This process is detailed in the [User Classification and Deduplication](#classification-deduplication) section below.
 
 ### User Classification and Reporting
 
@@ -53,7 +53,7 @@ Users are thereafter automatically classified in the following user licensing bu
 
 <!-- End-of-month usage reports are generated at the beginning of each month and are made available via the Control Center dashboard. The reports are generally available on the 1st of each month and reflect the previous month's usage. -->
 
-## How User Classification and Deduplication Work
+## How User Classification and Deduplication Work {#classification-deduplication}
 
 The user classification and deduplication process determines which user pack is consumed when a user accesses one or more of your applications. The process evaluates users in a sequence so that each user is counted according to the correct license pack without duplication. The classification follows the steps below:
 

@@ -8,7 +8,7 @@ description: "This document describes how to implement user metering."
 ## Introduction
 
 This document provides you with an overview of the user metering implimentation, including guidelines for unique user identification, how users are classified, and the process for deactivation of users. <!-- User metering provides complete visibility into the number and types of users accessing the application, ensuring compliance with the license agreement. You can see this data in the Usage Report of Control Center on the Mendix platform. --> 
-For accurate user metering, in-app user classification is a crucial first step. For more information, refer to [How User Metering Works](/developerportal/deploy/user-metering/#how-user-metering-works/). To do this, the logic in your app models needs to cater to the following aspects, if applicable:
+For accurate user metering, in-app user classification is a crucial first step. For more information, refer to [How User Metering Works](/developerportal/deploy/user-metering/#how-user-metering-works). To do this, the logic in your app models needs to cater to the following aspects, if applicable:
 
 * [Unique user identification](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication)
 * [User classification](/developerportal/deploy/implementing-user-metering/#user-classification)
