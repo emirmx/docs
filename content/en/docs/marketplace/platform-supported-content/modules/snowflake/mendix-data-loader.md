@@ -338,7 +338,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 If you encounter any issues while using the Mendix Data Loader, use the following troubleshooting tips to help you solve them.
 
-For any additional troubleshooting, contact the [development team](mailto:sa_dev_team@mendix.com).
+For any additional troubleshooting, contact the [development team](mailto:mendix-tech-alliance-dev-team.disw@siemens.com).
 
 ### Ingestion Fails at RETRIEVING_METADATA
 
@@ -390,4 +390,4 @@ Enable the **changedDate** system member on the exposed entity and expose it on 
 
 ## Contact Information
 
-For support or queries regarding the Mendix Data Loader, email the development team at [SA_Dev_Team@mendix.com](mailto:sa_dev_team@mendix.com).
+For support or queries regarding the Mendix Data Loader, email the development team at [mendix-tech-alliance-dev-team.disw@siemens.com](mailto:mendix-tech-alliance-dev-team.disw@siemens.com).
