@@ -175,7 +175,7 @@ interface SimpleFormatter<T> {
 }
 ```
 
-Yu can supply a fully custom formatter using `setFormatter`. The object must implement `format` and `parse`:
+You can supply a fully custom formatter using `setFormatter` (the object must implement `format` and `parse`):
 
 ```ts
 myDecimalAttribute.setFormatter({
@@ -190,9 +190,9 @@ myDecimalAttribute.setFormatter({
 
 ```
 
-Call `setFormatter(undefined)` to reset to the platform default.
+Call `setFormatter(undefined)` to reset the formatter to the platform default.
 
-**Date/DateTime** attributes have additional capabilities thanks to `DateTimeFormatter` which extends `SimpleFormatter<Date>`:
+**Date/DateTime** attributes have additional capabilities because of `DateTimeFormatter`, which extends `SimpleFormatter<Date>`:
 
 ```ts
 interface DateTimeFormatter {
@@ -227,7 +227,7 @@ if (myDateAttribute.formatter.type === "datetime") {
 }
 ```
 
-For enumeration and boolean attributes, `format` converts the raw value into a human-readable caption as configured in Studio Pro:
+For enumeration and Boolean attributes, `format` converts the raw value into a human-readable caption as configured in Studio Pro:
 
 ```ts
 // myEnumAttribute is an EditableValue<string>
