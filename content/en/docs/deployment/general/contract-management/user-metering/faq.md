@@ -14,7 +14,7 @@ This document answers common questions about user metering, outlining user class
 
 ### Is User Metering Automatically Enabled?
 
-User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. Data collection begins as soon as your application is deployed to a production environment. 
+User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. All running app environments transmit usage data to Mendix Platform at regular intervals. Data collection begins as soon as your application is deployed to a production environment. 
 <!-- ### Where Can I View My User Consumption Data?
 
 Navigate to the **Control Center** > **Entitlements** > **End-Users** > **Usage Report**.
@@ -91,7 +91,7 @@ Check your organization's data retention policies before purging any user data. 
 
 ### Are Anonymous Users Counted in User Metering?
 
-Anonymous Users are users who access your application without logging in or authenticating. Anonymous Users are not counted in user metering. Only Named Users (users with unique login credentials) are counted.
+Anonymous Users are users who access your application without logging in or authenticating. Anonymous users are not reported and hence not even counted in user metering. Only Named Users (users with unique login credentials) are counted.
 
 ### Are API Users and Service Accounts Counted in User Metering?
 

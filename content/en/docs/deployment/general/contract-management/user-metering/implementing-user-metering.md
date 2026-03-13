@@ -62,7 +62,7 @@ For more information, see the [IdP-Based User Classification](/developerportal/d
 
 ### Userrole-Based User Classification
 
-The user-role-based user classification module classifies users by using the roles already defined in your app.  It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your app to include the user classification module. For more information, refer to [User-Role-Based Classification](developerportal/deploy/populate-user-type/#user-role-based-user-classification).
+The user-role-based user classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your app to include the user classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. For more information, refer to [User-Role-Based Classification](developerportal/deploy/populate-user-type/#user-role-based-user-classification).
 
 ### Custom User Classification
 
