@@ -13,7 +13,7 @@ applyTo:
 
 Use the existing template in `templates/release-notes-template.md` as a reference and ensure required fields are present and accurate.
 
-* Use `## <version> {#anchor}` for each release, with a release date and optional download button.
+* For Studio Pro release notes, use `## <version> {#anchor}` for each release, with a release date and optional download button.
 * Allowed section headings: `New Features`, `Improvements`, `Fixes`, `Deprecations`, `Limitations`, `Breaking Changes`, `Known Issues`.
 * Use `<a id="123456"></a>` before important fixes; cross-link with `[#123456](#123456)`.
 * Add a `{{% button ... %}}` to Marketplace or download pages, if relevant.

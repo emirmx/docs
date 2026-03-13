@@ -2,11 +2,9 @@
 
 <!-- markdownlint-disable-file -->
 
-This repository contains the source for the Mendix documentation site, a Hugo-based static website that describes the Mendix low-code platform. Content ranges from quick-start tutorials and how-tos to API reference material and release notes.
-
 As an experienced technical editor agent, your primary responsibility is to proofread, edit, and review Markdown files under `content/en/docs` in accordance with the conventions below. Use the Microsoft Writing Style Guide as the base editorial standard and apply the project-specific rules documented here.
 
-## 0 Instruction precedence
+## Instruction Precedence
 
 When instructions conflict, follow this order of precedence:
 
@@ -14,23 +12,23 @@ When instructions conflict, follow this order of precedence:
 2. Task-specific prompt files in `.github/prompts/*.prompt.md` when explicitly referenced.
 3. Overlay instruction files (for example, `.github/release-notes-instructions.md`) when path-scoped.
 4. This file (`.github/copilot-instructions.md`).
-5. Existing conventions in nearby pages within the same section.
+5. Existing conventions in nearby pages within the same folder.
 6. Microsoft Writing Style Guide.
 
-### 0.1 Default execution mode
+### Default Execution Mode
 
 * MUST edit existing files in place unless the user explicitly asks to create new content.
-* MUST preserve meaning, chronology, and intent.
+* MUST preserve meaning and intent.
 * SHOULD prefer the smallest set of edits that fully resolves the request.
-* MUST NOT add net-new product claims, technical behavior, ticket numbers, or release facts unless explicitly requested and sourced from provided content.
+* MUST NOT add new product claims, technical behavior, ticket numbers, or release facts unless explicitly requested and sourced from provided content.
 
-## 1. Project overview
+## Project Overview
 
-* **What** – Mendix is a low‑code application development platform that lets users visually design, build, test, and deploy web and mobile applications.
-* **Who** – Target readers are developers, business analysts, and partners who consume the docs for learning, troubleshooting, and reference.
-* **Tech stack** – Site built with [Hugo](https://gohugo.io/), custom theme and shortcodes under `layouts/`. Content is GitHub-flavored Markdown with YAML front matter; assets live in `static/`.
+* **What** – This repository contains the source code for the Mendix documentation site, which describes the Mendix low‑code application development platform. Documentation site content ranges from quick-start tutorials and how-tos to API reference material and release notes.
+* **Who** – Target readers are developers, business analysts, system administrators, and partners who consume the docs for learning, troubleshooting, and reference. Documents may be at different technical levels, depending on the expected audience.
+* **Tech stack** – Hugo-based static website based on the Docsy theme. Content is GitHub-flavored Markdown with YAML front matter; assets live in `static/`.
 
-## 2. Content structure and hierarchy
+## Content Structure and Hierarchy
 
 The canonical tree is **`/content/en/docs`**. Top‑level directories correspond to major product areas (e.g. `quickstarts`, `refguide`, `deployment`, `marketplace`); each may contain subfolders and `_index.md` files that define section landing pages.
 
@@ -51,11 +49,11 @@ content/en/docs/
 ```
 
 * **Index files (`_index.md`)** define landing pages or categories. They often use `cascade` to pass metadata to children and may set `type`, `layout`, `no_list`, `description_list` etc.
-* Other `.md` files represent individual articles, how‑tos, reference topics, release notes, etc. File names should be simple, lowercase, and hyphen‑separated.
+* Other `.md` files represent individual articles, how‑tos, reference topics, release notes, etc. File names must be simple, lowercase, and hyphen‑separated.
 
 Search the tree to understand where your topic belongs before creating a new file.
 
-## 3. Style standards
+## Style Standards
 
 * **Guiding manual** – Microsoft Writing Style Guide (https://learn.microsoft.com/style-guide/). Apply grammar, inclusive language, terminology, and formatting rules from that document.
 * **Tone** – Clear, concise, active voice; use imperative mood for procedures; second person (you/your) when addressing readers. Keep a conversational, straightforward tone. Present tense. Use American English and write for a global audience. Prefer short, everyday words; avoid or explain jargon. Keep it simple—short sentences and fragments are easier to scan and read, and prune excess words. Avoid marketing language.
@@ -70,25 +68,26 @@ Search the tree to understand where your topic belongs before creating a new fil
 
 Project‑specific preferences are documented in the templates and in `community-tools` example pages; consult them for tricky formatting cases.
 
-## 4. Technical implementation details
+## Technical Implementation Details
 
-### 4.1 Front matter
+### Front Matter
 
-All Markdown files begin with YAML metadata. Required fields vary by page type:
+All Markdown files begin with YAML metadata.
 
-* `title` – Human‑readable page title.
-* `url` – Page URL.
-* `description` – Summary used for metadata and search snippets. Write it as one‑ or two‑clear active sentences beginning with “How to…”, “Describes…”, or a similar action phrase; keep the focus on the page’s purpose and imagine it as a search result.
-* `linktitle` – Optional; short text shown in the left navigation pane.
-* `weight` – Optional; numeric ordering among siblings; use increments of 10 to leave room for future inserts.
-* `draft` – Optional; set to `true` to exclude from production builds; remember to remove it before publishing.
-* `numberless_headings` – Optional; set `true` for release notes and pages where heading numbering is unwanted.
-* `cascade` – Optional; used only in `_index.md` files to propagate parameters (e.g. `mendix_version`, `content_type`, `banner`, `sitemap` settings) to all child pages.
-* `type`, `layout`, `aliases` – Optional; rarely used for landing pages (see root `_index.md`).
+* `title` – Human‑readable page title. (Required)
+* `url` – Page URL. Start and end with `/`, use only lowercase letters, numbers, and hyphens. Doesn't need to match the file path. (Required)
+* `description` – Summary used for metadata, search snippets, and content lists. Write it as one‑ or two‑clear active sentences beginning with “How to…”, “Describes…”, or a similar action phrase; keep the focus on the page’s purpose and imagine it as a search result. (Required)
+* `linktitle` – Short text shown in the left navigation pane; use when `title` is longer than 40 characters. (Optional)
+* `aliases` – Redirect paths for moved or renamed pages. Add old URLs as alias entries. (Optional)
+* `weight` – Numeric ordering among sibling pages; use increments of 10 to leave room for future inserts. (Optional)
+* `draft` – Set to `true` only for new, unpublished pages; `false` by default. (Optional)
+* `cascade` – Used in `_index.md` files to propagate metadata to child pages. Several fields are used only in combination with cascade: `content_type`, `mendix_version`, `sitemap.priority`, and `old_content`. (Optional)
+* `type` – Set to `landingpage` or `swagger` to override the default layout in specific use cases. (Optional)
+* `numberless_headings` – Set to `true` for pages that should not display automatic heading numbers (commonly release notes). (Optional)
 
-### 4.2 Shortcodes
+### Shortcodes
 
-Hugo shortcodes encapsulate reusable components. The ones you will encounter most frequently include:
+Hugo shortcodes start with `{{` and encapsulate reusable components. The ones you will encounter most frequently include:
 
 * `figure` – Images and screenshots. Attributes: `src` (required), `alt` (required or `""`), `class`, `max-width`, `link`. Always store assets under `static/attachments/...` and reference with `/attachments/...`.
 
@@ -96,7 +95,7 @@ Hugo shortcodes encapsulate reusable components. The ones you will encounter mos
   {{< figure src="/attachments/quickstarts/part1/3.login.png" alt="Sign in to Studio Pro" max-width="80%" >}}
   ```
 
-* `alert` – Callouts of type `info`, `warning`, `success`, or `danger`.
+* `alert` – Callouts of type `info` and `warning`.
   ```md
   {{% alert color="warning" %}}
   This action cannot be undone.
@@ -106,26 +105,25 @@ Hugo shortcodes encapsulate reusable components. The ones you will encounter mos
 * `button` – Link buttons with `color`, `href`, `text`, and optional `title` attributes.
 * `icon` – Inline SVG icons stored in `static/mx-icons` (`name` required, optional `color`) for use in UI descriptions.
 * `youtube` / `vidyard` – Embed videos by ID.
-* `swaggerui` / `swaggerui-disable-try-it-out` – Render OpenAPI specs.
+* `swaggerui` / `swaggerui-disable-try-it-out` – Render OpenAPI specs on pages with `type:swagger`.
 * `snippet` – Include external code or page content.
 * `tabpane` / `tab` – Create tabbed code examples.
 * `todo` – Internal draft notes; omitted in production.
 
 The `community-tools/contribute-to-mendix-docs/markdown-shortcodes.md` page contains comprehensive examples. Review it when adding new types or debugging rendering.
 
-## 5. Editorial workflow
+## Editorial Workflow
 
 1. **Locate target content** - Find the correct existing page(s) and related section index files.
 2. **Metadata check** - Validate front matter fields; adapt from similar existing pages when needed.
 3. **Edit pass** - Apply style, clarity, terminology, and structure fixes without changing intent unless requested.
-4. **Cross-reference check** - Use absolute paths and verify that linked pages exist in the repo.
+4. **Cross-reference check** - Use absolute paths to the document URL and verify that linked pages exist in the repo. Don't use the path to the Markdown file.
 5. **Accessibility check** - Ensure images use the `figure` shortcode and include appropriate alt text.
 6. **Final review** - Proofread for spelling, grammar, consistency, and formatting.
-7. **Optional drafting path** - If asked to create new content, start from `templates/*.md` and then follow the same checks above.
 
-## 6. Standard content template
+## Standard Content Template
 
-Create new pages by copying one of the following templates and removing the comment lines (`#`):
+If asked to create new content, start from `templates/*.md` and then follow the same checks above. Create new pages by copying one of the following templates and removing the comment lines (`#`). :
 
 * **How‑to** – `templates/how-to-template.md`
 * **Reference** – `templates/reference-template.md`
