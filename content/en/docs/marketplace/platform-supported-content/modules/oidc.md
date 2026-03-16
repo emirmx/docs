@@ -239,10 +239,13 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 
 If a single Identity Provider (IdP) is configured in the OIDC SSO module, end users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login`. When accessing the URL, users are automatically redirected to the configured IdP for authentication.
 
-If multiple IdPs are configured in the OIDC module, end users can access the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. In this case, they will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
+If multiple IdPs are configured in the OIDC module, the following two mechanisms are supported for selecting the IdP:
+
+1. Depending on deeplink, your application logic may redirect to a IdP-specific endpoint.
+2. In this mechanism, your end users make the selection. Your app logic can use the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. End users will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
 
 {{% alert color="info" %}}
-In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. You can remove the `Anonymous` User Role from the module. 
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. Additionally, check whether `Anonymous` user role can be removed from the app. If your application does not require anonymous access, removing the role is recommended as a security best practice.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
