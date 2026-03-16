@@ -44,7 +44,9 @@ A patch version is released on an as-needed basis. It includes security fixes an
 
 ## Long-Term Support Version (LTS) {#lts}
 
-An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version was released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it. 
+Both LTS and MTS versions are production-grade and fully supported for production use. LTS versions are supported for the longest period of time, allowing to upgrade at a slower pace.
+
+An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version was released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it.
 
 These are the current LTS versions of Studio Pro:
 
@@ -53,12 +55,10 @@ These are the current LTS versions of Studio Pro:
 
 Release notes for the current LTS versions are marked with an LTS badge (<text class="badge badge-pill badge-lts" style="margin-left:0px">LTS</text>) in the left sidebar.
 
-Mendix advises using LTS versions for all production apps, as LTS versions of Studio Pro enjoy the highest security and stability. LTS versions also have the longest support duration compared to other versions.
+Upgrade Cycle: 2 to 4 years
 
 {{% alert color="info" %}}
-
 Mendix recommends using the latest patch version of the release as the latest version will contain the latest fixes.
-
 {{% /alert %}}
 
 ### Support Duration
