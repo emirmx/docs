@@ -99,7 +99,7 @@ Release notes for any current MTS versions are marked with an MTS badge (<text c
 
 Mendix MTS versions offer a balance between getting the latest and greatest Mendix has to offer every month, and security and stability.
 
-Recommended MTS upgrade cycle: 6 to 18 months
+Recommended MTS upgrade cycle: 6 to 18 months.
 
 {{% alert color="info" %}}
 Mendix recommends using the latest patch version of the release as this will contain the latest fixes.
