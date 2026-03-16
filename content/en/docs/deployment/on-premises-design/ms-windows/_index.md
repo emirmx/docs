@@ -45,7 +45,7 @@ Before starting this how-to, make sure you have the following prerequisites:
 
     * Suitable database servers are MariaDB, MS SQL Server, MySQL, Oracle Database and PostgreSQL. See [System Requirements](/refguide/system-requirements/#databases) for more information
 
-* A local or domain user with the *“log on as a service”* local security policy set
+* A local,domain user, or group managed service account (gMSA) with the *“log on as a service”* local security policy set
 
 ## Installing the Mendix Service Console {#service-console}
 
@@ -92,7 +92,7 @@ To deploy a Mendix app using the Mendix Service Console, follow these steps:
 
 4. Click **Next >**.
 
-    {{< figure src="/attachments/deployment/on-premises-design/ms-windows/18580728.png" >}}
+    {{< figure src="/attachments/deployment/on-premises-design/ms-windows/gmsa.png" >}}
 
 5. On the **Project Files** screen, click **Select app…**.
 
