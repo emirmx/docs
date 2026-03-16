@@ -20,7 +20,7 @@ Scope limits which pages are controlled by a service worker, not which requests 
 
 ## Service Worker Lifecycle
 
-Understanding the service worker life cycle is key to understand how updates to your Mendix PWA are handled. A service worker goes through several distinct phases:
+Understanding the service worker lifecycle is key to understand how updates to your Mendix PWA are handled. A service worker goes through several distinct phases:
 
 1. Registration: 
     This is the initial step. The browser downloads the service worker file. If the code contains syntax errors, registration fails and the service worker is discarded.
@@ -145,8 +145,7 @@ export async function JS_ActivatePWAUpdate() {
 
 3. Notifying users
 To avoid interrupting users during critical operations, it is recommended to notify them when an update becomes available.
-For example, you can implement a nanoflow that prompts users to confirm the update when a new version is detected. If the user confirms, the nanoflow can call JS_ActivatePWAUpdate to update.
-This nanoflow can be passed as a parameter to `JS_ListenForPWAUpdates`, which will invoke it when an update is detected.
+For example, you can implement a nanoflow that prompts users to confirm the update when a new version is detected. If the user confirms, the nanoflow can call JS_ActivatePWAUpdate to update. This nanoflow can be passed as a parameter to `JS_ListenForPWAUpdates`, which will invoke it when an update is detected.
 
 4. Reload the Application
 Trigger a reload, or ask users to reload all open tabs or windows to ensure the application loads with the newly activated service worker.
