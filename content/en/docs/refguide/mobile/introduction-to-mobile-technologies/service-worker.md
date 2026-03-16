@@ -35,6 +35,25 @@ Understanding the service worker life cycle is key to understand how updates to 
 4. Redundant:
     A service worker can become redundant if a new version replaces it, or if it fails to install.
 
+## Waiting for Service Worker Readiness
+
+You may want to wait until the Service Worker is ready before performing operations that rely on it, such as interacting with the app while offline.
+The browser provides the [ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready) property, which returns a Promise that resolves when a service worker is active, to ensure that the service worker is fully initialized and that precaching of assets is complete so the app can work offline.
+
+```javascript
+export async function waitForAppReady() {
+    if (!('serviceWorker' in navigator)) {
+        console.warn('service workers are not supported in this browser.');
+        return;
+    }
+    const registration = await navigator.serviceWorker.ready;
+    
+    console.log('A Service Worker is active:', registration.active);
+    // At this point, a service worker is active. 
+    // A page reload is necessary to ensure all assets are served by the new service worker and the app is fully offline ready
+}
+```
+
 ## Service Worker Update
 
 When you deploy a new version of your Mendix PWA, a new service worker file is generated with updated caching strategies and assets list.
@@ -46,7 +65,7 @@ The browser detects this update and initiates a new lifecycle for the updated se
 
 ## Detecting and Handling Updates in Your PWA
 
-The browser's `ServiceWorkerRegistration` interface provides properties and methods to monitor its state and detect updates. Starting from Mendix 11.9.0, a client API is available to skip the waiting phase and immediately activate the new service worker version. 
+The [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface provides properties and methods to monitor its state and detect updates. Starting from Mendix 11.9.0, a client API is available to skip the waiting phase and immediately activate the new service worker version. 
 You can implement a custom update mechanism to notify users when a new version is available and allow them to update the application without closing all tabs/windows.
 
 Implementation Steps:
@@ -65,7 +84,6 @@ export async function JS_ListenForPWAUpdates() {
         const registration = await navigator.serviceWorker.getRegistration();
 
         if (registration) {
-            
             // Detect when a new service worker update is found
             registration.addEventListener('updatefound', () => {
                 const newWorker = registration.installing;
@@ -73,11 +91,18 @@ export async function JS_ListenForPWAUpdates() {
                 if (newWorker) {
                     // Listen for state changes in the new service worker
                     newWorker.addEventListener('statechange', () => {
-                        // New service worker is installed and ready, but waiting because an existing service worker is active
-                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            console.log('A new update is available. Notify the user.');
-                            // Show a confirmation dialog or implement your custom update UI 
-                            // to notify the user that an update is available                        
+                        // New service worker is installed and ready.
+                        if (newWorker.state === 'installed'){
+                            //  The new service worker is waiting because an existing service worker is active
+                            if(navigator.serviceWorker.controller) {
+                                console.log('A new update is available. Notify the user.');
+                                // Show a confirmation dialog or implement your custom update UI 
+                                // to notify the user that an update is available                        
+                            } else {
+                                console.log("Service Worker installed and ready.");
+                                // This is the first time a service worker is installed and activated for this page.
+                                // A page reload is necessary to ensure all assets are served by the new service worker and the app is fully offline ready
+                            }
                         }
                     });
                 }
@@ -123,4 +148,5 @@ To avoid interrupting users during critical operations, it is recommended to not
 For example, you can implement a nanoflow that prompts users to confirm the update when a new version is detected. If the user confirms, the nanoflow can call JS_ActivatePWAUpdate to update.
 This nanoflow can be passed as a parameter to `JS_ListenForPWAUpdates`, which will invoke it when an update is detected.
 
-4. Reload the app, or ask users to reload all open tabs or windows to ensure the application loads with the newly activated service worker.
+4. Reload the Application
+Trigger a reload, or ask users to reload all open tabs or windows to ensure the application loads with the newly activated service worker.
