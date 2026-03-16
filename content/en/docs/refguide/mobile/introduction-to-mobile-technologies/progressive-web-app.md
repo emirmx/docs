@@ -107,6 +107,10 @@ Next to that, it is possible to force a profile by providing the profile name in
 
 When forcing a specific profile on a cloud deployment, it can be necessary to first clear the browser cache.
 
+## Managing PWA Updates
+
+To learn more about the Service Worker life cycle and how to detect and handle PWA updates to provide users with the latest version, see [Service Worker and PWA Updates](/refguide/mobile/introduction-to-mobile-technologies/service-worker).
+
 ## Advanced Settings
 
 See the sections below for information on advanced settings.
