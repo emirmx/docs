@@ -10,7 +10,7 @@ A service worker is a specialized type of web worker, essentially a JavaScript f
 
 Its primary role is to intercept network requests made by your PWA and decide whether to fetch resources from the network or serve them from the cache. This interception capability is crucial for providing robust offline experiences, enabling your PWA to function even when the user has no network connectivity. 
 
-## Service worker Scope {#scope}
+## Service Worker Scope {#scope}
 
 A service worker’s scope is determined by the location of its JavaScript file on the web server.
 
@@ -18,7 +18,7 @@ For example, if a service worker runs on a page located at /subdir/index.html, a
 
 Scope limits which pages are controlled by a service worker, not which requests it can intercept. Once a service worker controls a page, it can intercept any network request that page makes, including requests to cross-origin resources.
 
-## The service worker Lifecycle
+## Service Worker Lifecycle
 
 Understanding the service worker life cycle is key to understand how updates to your Mendix PWA are handled. A service worker goes through several distinct phases:
 
@@ -35,7 +35,7 @@ Understanding the service worker life cycle is key to understand how updates to 
 4. Redundant:
     A service worker can become redundant if a new version replaces it, or if it fails to install.
 
-## service worker Update
+## Service Worker Update
 
 When you deploy a new version of your Mendix PWA, a new service worker file is generated with updated caching strategies and assets list.
 The browser detects this update and initiates a new lifecycle for the updated service worker.
