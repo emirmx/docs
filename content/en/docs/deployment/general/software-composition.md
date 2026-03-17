@@ -22,9 +22,14 @@ The **Software Composition** page is visible to all members of the Mendix app.
 
 To be able to see the software composition information, make sure that you meet the following prerequisites:
 
-* Software Bill of Materials (SBOM) generation and the associated Software Composition capabilities are compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above.
+* SBOM generation and the associated Software Composition capabilities are compatible with the following versions of Studio Pro: 
 
-    {{% alert color="warning" %}}Make sure you upgrade to a compatible Studio Pro version to continue to use Software Composition. Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in Software Composition. Any historical data within Software Composition remains accessible regardless of the upgrade.{{% /alert %}}
+    * 11.9 and above
+    * 10.24.x and above 
+    * 9.24.x and above
+
+    {{% alert color="warning" %}}SBOMs created on older versions may contain inaccuracies. Software composition flags SBOMs and findings created on older versions.    
+    To make sure you have an SBOM without inaccuracies, upgrade to one of the supported versions. Upon upgrade, the model is checked and fixed, resulting in a corrected SBOM.{{% /alert %}}
    
 * Software composition visibility is only possible for deployment packages created via the platform services. It is not available if you manually upload the locally-created deployment package. SBOMs are created behind the scenes for each deployment package. For more information, see [Create Deployment Package](/refguide/create-deployment-package-dialog/).
 
