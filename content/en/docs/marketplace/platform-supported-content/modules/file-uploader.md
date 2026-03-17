@@ -97,7 +97,7 @@ This action runs after a successful upload. When uploading multiple files at onc
 
 ##### On Upload Failure
 
-This action runs when an upload to the server started, but failed during the process. The created object will be passed to the action. This is useful to perform cleanups from empty, dangling objects that are created but the content was not uploaded to them.
+This action runs when an upload to the server started, but failed during the process. The created object will be passed to the action. This is useful to perform cleanups from empty, dangling objects that were created but did not have content uploaded to them.
 
 {{% alert color="info" %}}
 This action will not run if a validation error occurred on the client side, for example, if a provided file was too big or had an incorrect extension. 
