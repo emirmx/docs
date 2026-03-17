@@ -351,7 +351,7 @@ CREATE EVENT TABLE <Db_Name>.<Schema_Name>.LogTable;
 ALTER ACCOUNT SET EVENT_TABLE = <Db_Name>.<Schema_Name>.LogTable;
 ```
 
-To view the log table:
+To view the logs in the log table:
 
 ```sql
 SELECT * FROM <Db_Name>.<Schema_Name>.LogTable WHERE TIMESTAMP BETWEEN '2024-07-01 00:00:01' AND '2024-07-02 23:59:59' ORDER BY TIMESTAMP DESC;
