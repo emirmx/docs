@@ -340,6 +340,23 @@ If you encounter any issues while using the Mendix Data Loader, use the followin
 
 For any additional troubleshooting, contact the [development team](mailto:mendix-tech-alliance-dev-team.disw@siemens.com).
 
+### Accessing the Snowflake Logs
+
+Snowflake works with a logging table. To view the logs, create a Snowflake worksheet and use it to execute SQL commands like the following. 
+
+To create a log table if it does not exist:
+
+```sql
+CREATE EVENT TABLE <Db_Name>.<Schema_Name>.LogTable;
+ALTER ACCOUNT SET EVENT_TABLE = <Db_Name>.<Schema_Name>.LogTable;
+```
+
+To view the logs in the log table:
+
+```sql
+SELECT * FROM <Db_Name>.<Schema_Name>.LogTable WHERE TIMESTAMP BETWEEN '2024-07-01 00:00:01' AND '2024-07-02 23:59:59' ORDER BY TIMESTAMP DESC;
+```
+
 ### Ingestion Fails at RETRIEVING_METADATA
 
 When ingesting data, the Mendix Data Loader displays an error similar to the following: `connection.ConnectionValidationException: Failed to validate connection to https://nodename.mendixcloud.com/odata/TableName/v1/`.
