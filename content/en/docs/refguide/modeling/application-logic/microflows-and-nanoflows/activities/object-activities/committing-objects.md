@@ -10,7 +10,7 @@ This activity can be used in both microflows and nanoflows.
 
 ## Introduction
 
-The **Commit object(s)** activity works on one or more objects. For persistable entities, committing an object stores it in the database. Committing non-persistable entities stores the current attribute values and association values in memory. This allows a rollback to revert to those values. See also [Persistability](/refguide/persistability/). External objects cannot be committed. To store changed values of external objects, use the [Send External Object](/refguide/send-external-object/) activity.
+The **Commit object(s)** activity works on one or more objects. For persistable entities, committing an object writes it to the database. Committing non-persistable entities stores the current attribute values and association values in memory. This allows a rollback to revert to those values. See also [Persistability](/refguide/persistability/). External objects cannot be committed. To store changed values of external objects, use the [Send External Object](/refguide/send-external-object/) activity.
 
 {{% alert color="info" %}}
 A Mendix commit does not always behave like a database commit. See [How Commits Work](#how-commits-work), below, for more information.
@@ -105,15 +105,39 @@ When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across t
 
 ### Committing Objects
 
-When you commit an object, the current value is saved. This means that you cannot roll back to the previous values of the object using the rollback object activity of a microflow.
+When you commit an object, all changes to the current values are saved. This means that you cannot roll back to the previous values of the object using the **Rollback object** activity of a microflow.
 
-However, a Mendix commit is not the same as a database commit. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for more information.
+However, a Mendix commit is not the same as a database (SQL) COMMIT. When you use a **Commit object(s)** action, Mendix actually performs an INSERT into the database. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete.
+
+A consequence of this is that, in contrast to an explicit **Rollback object** call, errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for more information.
+
+#### What Gets Committed
+
+When you work on an object in memory, Mendix records whether the object has been changed. When you perform a **Commit object(s)** action, the current value is written to the database and Mendix marks the object as unchanged in memory. This has a couple of consequences that you might not expect:
+
+* If you commit an object which is then rolled back due to an error, committing the object again will not write the latest version to the database. You can understand this as the following sequence (see [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for a more detailed discussion of how rollbacks work during error handling):
+
+    1. Your microflow starts and creates a savepoint.
+    1. You change your object – it is marked as changed.
+    1. You perform a **Commit object(s)** action which sends the changes to the database – the object is marked as unchanged.
+    1. An error occurs, the microflow ends and data in the database is rolled back to the savepoint.
+    1. You perform a **Commit object(s)** on the object again, but the changes are not written to the database because:
+
+        * The object in memory still has your changes
+        * The object in memory was marked as unchanged after your previous commit
+        * The **Commit object(s)** action does not see the changed marker and so does not recognize that your object in memory has changes which need to be written.
+
+    If you want to keep the changes in the latest version you will have to work around this behavior.
+
+* Deleting an object and then committing it has different outcomes depending on whether the object has already been committed or not:
+
+    * If the object has already been committed, the delete will remove the object from the database, and the subsequent commit will have no effect.
+    * If the object is new (that is, it has not been committed before), the delete will do nothing, but the commit will store the object in the database. Therefore, this sequence of actions (a delete followed by a commit) may lead to unexpected results if the object has not been committed before.
+
+
+#### Committing Non-Persistable Entities
 
 Mendix mimics this behavior for non-persistable entities. Committing a non-persistable entity means that you cannot use a rollback object activity to go back to the previous values, although the rollback error handling in a microflow rolls back to the original values.
-
-{{% alert color="warning" %}}
-Deleting an object and then committing it can have different outcomes depending on whether the object has already been committed or not. If the object has already been committed, the delete will remove the object from the database, and the subsequent commit will have no effect. If the object is new (that is, it has not been committed before), the delete will do nothing, but the commit will store the object in the database. Therefore, this sequence of actions (a delete followed by a commit) may lead to unexpected results if the object has not been committed before.
-{{% /alert %}}
 
 ### Autocommit and Associated Objects {#autocommit-and-associated-objects}
 
