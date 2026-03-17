@@ -97,7 +97,7 @@ This action runs after a successful upload. When uploading multiple files at onc
 
 ##### On Upload Failure
 
-This action runs when an upload to the server has started but failed during the process. The created object will be passed to the action. This is useful to perform cleanups from empty, dangling objects that are created but the content was not uploaded to them.
+This action runs when an upload to the server started, but failed during the process. The created object will be passed to the action. This is useful to perform cleanups from empty, dangling objects that are created but the content was not uploaded to them.
 
 {{% alert color="info" %}}
 This action will not run if a validation error occurred on the client side, for example, if a provided file was too big or had an incorrect extension. 
@@ -109,12 +109,13 @@ Allows the use of custom action buttons that will be displayed on the right side
 
 ##### Custom Buttons
 
-Adds custom buttons that will be used in the file uploader.
-  * **Caption** — Caption text configuration for the custom button.
-  * **Icon** — Provides icon configuration for the custom button.
-  * **Action** — Provides **On click** action configuration for the custom button.
-  * **Default file action** — If set to **Yes**, the action in the button will be used as the default click action for the file.
-  * **Visible** — If set to **False**, the button will be hidden.
+Adds custom buttons that will be used in the file uploader:
+
+* **Caption** — Caption text configuration for the custom button.
+* **Icon** — Provides icon configuration for the custom button.
+* **Action** — Provides **On click** action configuration for the custom button.
+* **Default file action** — If set to **Yes**, the action in the button will be used as the default click action for the file.
+* **Visible** — If set to **False**, the button will be hidden.
 
 ### Nanoflows
 
