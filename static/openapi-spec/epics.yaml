@@ -555,8 +555,8 @@ paths:
     post:
         tags:
           - epics
-        summary: Creates an single epic for an app
-        description: Returns created epic.
+        summary: Create a single epic for an app
+        description: Returns the created epic.
         operationId: postProjectEpics
         parameters:
           - in: path
@@ -575,7 +575,7 @@ paths:
                 properties:
                   name:
                     type: string
-                    example: My first Epic
+                    example: My first epic
                   objective:
                     type: string
                     example: Objective of the whole epic is...
@@ -599,7 +599,7 @@ paths:
           '400':
             description: |-
               The request likely contains invalid data or is missing data.
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema:
@@ -611,8 +611,7 @@ paths:
           '401':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema:
@@ -624,8 +623,7 @@ paths:
           '404':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema: 
@@ -651,7 +649,7 @@ paths:
               format: uuid
           - in: path
             name: epicUUID
-            description: The UUID of the Epic
+            description: The UUID of the epic
             required: true
             schema: 
               type: string
@@ -665,7 +663,7 @@ paths:
                 properties:
                   name:
                     type: string
-                    example: My first Epic
+                    example: My first epic
                   objective:
                     type: string
                     example: Objective of the whole epic is...
@@ -699,8 +697,7 @@ paths:
           '401':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema:
@@ -712,8 +709,7 @@ paths:
           '404':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema: 
@@ -738,7 +734,7 @@ paths:
               format: uuid
           - in: path
             name: epicUUID
-            description: The ID of the Epic
+            description: The ID of the epic
             required: true
             schema: 
               type: string
@@ -749,8 +745,7 @@ paths:
           '401':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema:
@@ -762,8 +757,7 @@ paths:
           '404':
             description: |-
               The required item could not be found.
-
-              The error response gives additional feedback.
+              The error response includes additional feedback.
             content:
               application/json:
                 schema: 
