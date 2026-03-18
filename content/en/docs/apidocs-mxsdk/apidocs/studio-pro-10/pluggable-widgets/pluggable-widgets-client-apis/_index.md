@@ -178,7 +178,7 @@ interface SimpleFormatter<T> {
 
 ##### Built-in Formatter Types {#built-in-formatter-types}
 
-The Mendix platform provides two typed, configurable built-in formatters that extend `SimpleFormatter<T>`. The actual type of `EditableValue.formatter` is `ValueFormatter<T>` — a union that covers both built-in and plain formatters:
+The Mendix platform provides two typed, configurable built-in formatters that extend `SimpleFormatter<T>`: `NumberFormatter` and `DateTimeFormatter`. The actual type of `EditableValue.formatter` is `ValueFormatter<T>` — a union that covers both built-in and plain formatters:
 
 ```ts
 type ValueFormatter<T> =
