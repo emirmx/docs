@@ -183,10 +183,10 @@ interface DateTimeFormatter extends SimpleFormatter<Date> {
 
 The `withConfig` method returns a **new formatter** with a different date pattern while preserving the user's locale. It accepts a `DateTimeFormatterConfig` with the following options:
 
-* `{ type: "date" }` — platform default date format
-* `{ type: "time" }` — platform default time format
-* `{ type: "datetime" }` — platform default datetime format
-* `{ type: "custom", pattern: "..." }` — custom Unicode date pattern (for example `"EEEE"`, `"dd MMMM"`, `"MMMM YYYY"`)
+* `{ type: "date" }`: platform default date format
+* `{ type: "time" }`: platform default time format
+* `{ type: "datetime" }`: platform default datetime format
+* `{ type: "custom", pattern: "..." }`: custom Unicode date pattern (for example `"EEEE"`, `"dd MMMM"`, `"MMMM YYYY"`)
 
 The following example formats a date attribute using a custom month-year pattern:
 
