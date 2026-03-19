@@ -16,7 +16,7 @@ To open the **Environment Details** page, go to [Apps](https://sprintr.home.mend
 
 {{% alert color="info" %}}You must have permissions for **Transport Rights** to view the **Environment Details** page. For details on configuring permissions, see [Node Permissions](/developerportal/deploy/node-permissions/).{{% /alert %}}
 
-The **Environment Details** page shows information about the selected environment and includes eight tabs: **General**, **Model Options**, **Network**, **Log Levels**, **Runtime**, **Maintenance**, **Tags**, and **Services**. You can also use this page to manage and debug several aspects of the environment.
+The **Environment Details** page shows information about the selected environment and includes nine tabs: **General**, **Model Options**, **Network**, **Connectivity**, **Log Levels**, **Runtime**, **Maintenance**, **Tags**, and **Services**. You can also use this page to manage and debug several aspects of the environment.
 
 ## Actions {#actions}
 
@@ -329,7 +329,7 @@ document.cookie = "originURI=/login.html" + (window.location.protocol === "https
 A Content Security Policy (CSP) informs the client (browser) where your page loads resources from. Setting this can make your app more secure by declaring trusted sources for your resources. For more information, see the W3C recommendation [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/).
 
 {{% alert color="info" %}}
-For complete CSP support, including nonce-based CSP, use the [Headers](/refguide/configuration/#headers) custom runtime setting instead of the HTTP Headers UI. For detailed implementation instructions, see [Content Security Policy](/howto/security/csp/).
+For complete CSP support, including nonce-based CSP, use the [Headers](/refguide/configurations-tab/#headers) custom runtime setting instead of the HTTP Headers UI. For detailed implementation instructions, see [Content Security Policy](/howto/security/csp/).
 {{% /alert %}}
 
 The process for setting a full content security policy depends on what your app does. However, a starting point that declares the content security policy that works with a basic Mendix app is given below:
@@ -339,6 +339,32 @@ default-src 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' ; connect-s
 ```
 
 If you have issues that appear to be related to a content security policy, you can use the console of your browser to investigate them.
+
+### Outgoing Connections Certificates
+
+Add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format). These are used when your application initiates SSL/TLS connections.
+
+## The Connectivity Tab {#connectivity-tab}
+
+On the **Connectivity** tab, you can manage the elements described below.
+
+### Connections {#connections}
+
+You can connect from your applications on Mendix Cloud to resources on your own infrastructure using Mendix Cloud Private Connectivity.
+
+The **Connections** tab contains the following information:
+
+* **Resource** – The name of the connected service
+* **Network** – The name of the network associated with the connection
+* **Status** – The connection's current state, such as **Pending Approval**, **Approved** or **Rejected**
+
+You can perform the following actions for connections:
+
+* **Add** a new connection
+* **Cancel** a connection request
+* **Delete** a connection
+
+For more information, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
 
 ### Outgoing Connections Safelisting (Mendix Cloud Dedicated) {#connection-safelist}
 
@@ -412,10 +438,6 @@ You can **Delete** a path or you can **Add** and **Edit** a path with the follow
 * N/A (inherit)
 
 For more information, refer to the [Access Restriction Profiles](/developerportal/deploy/access-restrictions/#access-restriction-profiles) section of *Restricting Access for Incoming Requests*.
-
-### Outgoing Connections Certificates
-
-Add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format). These are used when your application initiates SSL/TLS connections.
 
 ## The Log Levels Tab {#log-levels}
 

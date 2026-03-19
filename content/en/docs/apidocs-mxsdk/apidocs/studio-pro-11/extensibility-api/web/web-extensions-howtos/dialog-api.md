@@ -12,6 +12,10 @@ It also describes how to show a progress dialog that follows a sequence of steps
 
 ## Prerequisites
 
+{{% alert="info" %}}
+If you are using Studio Pro 11.0–11.5 and your extension includes menus, your existing menu code will not work when you upgrade to Studio Pro 11.6. To restore full functionality and support, upgrade to the Extensibility API 11.6 and follow the steps in the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/).
+{{% /alert%}}
+
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
@@ -51,34 +55,23 @@ export const component: IComponent = {
         await studioPro.ui.extensionsMenu.add({
             menuId: menuId,
             caption: "Show modal dialog",
-        });
+            action: async () => {
+                const result = await studioPro.ui.dialogs.showModal(
+                    {
+                        title: "Modal Dialog",
+                        contentSize: { height: 170, width: 400 }
+                    },
+                    {
+                        componentName: "extension/myextension",
+                        uiEntrypoint: "dialog"
+                    }
+                );
 
-        // Open a modal dialog when the menu item is clicked
-        studioPro.ui.extensionsMenu.addEventListener(
-            "menuItemActivated",
-            async (args) => {
-                if (args.menuId === menuId) {
-                    const result = await studioPro.ui.dialogs.showModal(
-                        {
-                            title: "Modal Dialog",
-                            contentSize: { height: 170, width: 400 },
-                        },
-                        {
-                            componentName: "extension/myextension",
-                            uiEntrypoint: "dialog",
-                        }
-                    );
-
-                    if (result !== null)
-                        await studioPro.ui.messageBoxes.show(
-                            "info",
-                            JSON.stringify(result)
-                    );
-                }
+                if (result !== null) await studioPro.ui.messageBoxes.show("info", JSON.stringify(result));
             }
-        );
+        });
     }
-}
+};
 ```
 
 ## Filling the Dialog With Content

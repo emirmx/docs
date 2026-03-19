@@ -22,9 +22,9 @@ The following frameworks are required. They will be installed automatically by t
 
 * Microsoft .NET desktop runtime (x64) and all applicable Windows security patches
 
-    | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 and above |
-    | --- | --- |
-    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
+    | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 - 9.24.41 | Studio Pro 9.24.42 and above |
+    | --- | --- | --- |
+    | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime | .NET 10 Desktop Runtime |
     
 * Microsoft Visual C++ 2015 Redistributable Package (x64)
 * Microsoft Visual C++ 2019 Redistributable Package (x64)
@@ -40,9 +40,9 @@ The following frameworks are required. They will be installed automatically by t
 
 If you are running Studio Pro on an ARM64 device (for example, an M1 Mac), you need the following version of .NET in addition to the x64 version listed above:
 
-| Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 and above |
-| --- | --- |
-| .NET 6 Desktop Runtime (arm64) | .NET 8 Desktop Runtime (arm64) |
+| Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34  - 9.24.41 | Studio Pro 9.24.42 and above |
+| --- | --- | --- |
+| .NET 6 Desktop Runtime (arm64) | .NET 8 Desktop Runtime (arm64) | .NET 10 Desktop Runtime (arm64) |
 
 {{% alert color="info" %}}
 You can choose which JDK is used for building and running locally via the **Edit** > **Preferences** menu item in Studio Pro.
@@ -205,11 +205,11 @@ Current support:
 
 * [IBM DB2](/refguide8/db2/) 11.5 for Linux, Unix, and Windows
 * [MariaDB](/refguide9/mysql/): 10.6, 10.11, 11.4, 11.8
-* [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2022
+* [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2022, 2025
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
 * [MySQL](/refguide9/mysql/): 8.4
-* [Oracle Database](/refguide9/oracle/): 19, 21c, 23ai
-* PostgreSQL: 13, 14, 15, 16, 17
+* [Oracle Database](/refguide9/oracle/): 19, 21c, 23ai (including 26ai)
+* PostgreSQL: 13, 14, 15, 16, 17, 18
 * [SAP HANA](/refguide9/saphana/): 2.00.076.00.1705400033
 
 {{% alert color="warning" %}}

@@ -264,4 +264,3 @@ Find more info on this in [the W3C Easy Checks – A First Review of Web Accessi
 
 * [Mendix Academy's Accessibility Learning Path](https://academy.mendix.com/link/paths/141/Improve-Your-App-Accessibility).
 * [Mendix Accessibility Conformance: Ensure Your Apps Are Accessible](https://www.mendix.com/evaluation-guide/app-lifecycle/develop/ux-multi-channel-apps/accessibility/) 
-

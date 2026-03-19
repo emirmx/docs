@@ -95,7 +95,7 @@ To use retrieval and generation in a single operation, an internally predefined 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-rag.png" >}}
 
-The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retreived chunk from the knowledge base. 
+The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retrieved chunk from the knowledge base. 
 
 Optionally, you can control both reference creation and the output returned for the model during the insertion step:
 
@@ -134,7 +134,9 @@ Document chat enables the model to interpret and analyze documents, such as PDFs
 
 For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
 
-In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT, and MD.
+In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. Note that there is also a practical, model-dependent limit on the number of pages a document can contain - typically around 100 pages, but this is not fixed and can vary with the selected model and the complexity of the file (for example, images, heavy formatting, or embedded content can reduce the effective page limit). If you expect to work with very large documents, consider splitting them into smaller files or providing summarized extracts to improve reliability.
+
+The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT, and MD.
 
 {{% alert color="info" %}}
 The model uses the file name when analyzing documents, which may introduce a potential vulnerability to prompt injection. To reduce this risk, consider modifying file names before including them in the request.
@@ -201,11 +203,13 @@ The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensu
 
 ##### Data Chunks
 
-To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Use the GenAICommons operations to first [initialize a ChunkCollection object](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-create), and then [add a KnowlegdebaseChunk](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information. Both can be found in the **Toolbox** inside of the **GenAI Knowledge Base (Content)** category.
+To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Use the GenAICommons operations to first [initialize a ChunkCollection object](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-create), and then [add a KnowledgeBaseChunk](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information. Both can be found in the **Toolbox** inside of the **GenAI Knowledge Base (Content)** category.
 
 ##### Chunking Strategy
 
 Dividing data into chunks is crucial for model accuracy, as it helps optimize the relevance of the content. The best chunking strategy is to keep a balance between reducing noise by keeping chunks small and retaining enough content within a chunk to get relevant results. Creating overlapping chunks can help preserve more context while maintaining a fixed chunk size. It is recommended to experiment with different chunking strategies to decide the best strategy for your data. In general, if chunks are logical and meaningful to humans, they will also make sense to the model. A chunk size of approximately 1500 characters with overlapping chunks has been proven to be effective for longer texts in the past.
+
+Since embeddings operations have a maximum character limit of 2048 characters per chunk, you must ensure that your chunks do not exceed this limit before submitting them for embedding. Chunks exceeding this limit will cause the embedding operation to fail, so validate your input data accordingly.
 
 The chunk collection can then be stored in the knowledge base using one of the following operations:
 
@@ -231,7 +235,7 @@ The following toolbox actions can be used to retrieve knowledge data from a coll
 1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. 
 2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
-    {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which is associated to the entity that was used to pass a MendixObject during the [insertion stage](#knowledge-base-insertion).
+    {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which is associated with the entity that was used to pass a MendixObject during the [insertion stage](#knowledge-base-insertion).
     {{% /alert %}}
 
 3. `Embed & Retrieve Nearest Neighbors` retrieves a list of type [KnowledgeBaseChunk](/appstore/modules/genai/genai-for-mx/commons/#knowledgebasechunk-entity) from the knowledge base that are most similar to a given `Content` by calculating the cosine similarity of its vectors.
@@ -239,11 +243,11 @@ The following toolbox actions can be used to retrieve knowledge data from a coll
 
 ### Embedding Operations
 
-If you are working directly with embedding vectors for specific use cases that do not include knowledge base interaction (for example clustering or classification), the below operations are relevant. For practical examples and guidance, consider referring to the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) showcase to see how these embedding-only operations can be used.
+If you are working directly with embedding vectors for specific use cases that do not include knowledge base interaction (for example, clustering or classification), the below operations are relevant. For practical examples and guidance, consider referring to the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) showcase to see how these embedding-only operations can be used.
 
 To implement embeddings into your Mendix application, you can use the microflows in the **Knowledge Bases & Embeddings** folder inside of the GenAICommons module. Both microflows for embeddings are exposed as microflow actions under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro.
 
-These microflows require a [DeployedModel](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection) needs to be provided.
+These microflows require a [DeployedModel](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection) needs to be provided. Note that embedding operations enforce a maximum character limit of 2048 characters per chunk; input exceeding this limit will cause the embedding operation to fail, so validate your input before submitting it for embedding.
 
 #### Embeddings (String)
 

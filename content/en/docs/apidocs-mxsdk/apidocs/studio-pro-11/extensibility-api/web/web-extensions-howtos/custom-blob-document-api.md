@@ -193,7 +193,7 @@ To register a new document type, follow the steps below:
     import parseArgs from "minimist"
 
     const outDir = `dist/myextension`
-    const appDir = "/Users/petar.vukmirovic/Mendix/App-Guide-Test-Blob"
+    const appDir = "/Users/<USERNAME>/Mendix/App-Guide-Test-Blob"
     const extensionDirectoryName = "extensions"
 
     const entryPoints = [

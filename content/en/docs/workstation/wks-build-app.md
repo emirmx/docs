@@ -1,8 +1,8 @@
 ---
-title: "Building an App for Mendix Workstation Client"
+title: "Building an App for Mendix Workstation"
 linktitle: "Building an App"
 url: /mendix-workstation/build-app/
-description: "Describes how to install the Workstation Connector and build an app to work with Mendix Workstation Client."
+description: "Describes how to install the Workstation Connector and build an app to work with Mendix Workstation."
 weight: 30
 ---
 
@@ -22,7 +22,7 @@ The Workstation Connector connects with Workstation Client using a local WebSock
 
 ## Prerequisites
 
-* Mendix Workstation Client 3.0.0
+* Mendix Workstation 3.0.0
 * Mendix Studio Pro 9.24.11 or newer
 
 ## Installing and Configuring the Workstation Connector
@@ -31,17 +31,7 @@ To install and configure the Workstation Connector, perform the following steps:
 
 1. Open an existing app to extend with Workstation functionality in Mendix Studio Pro, or create a new app.
 2. Import the [Mendix Workstation Connector](https://marketplace.mendix.com/link/component/247460) from the Mendix Marketplace.
-3. Configure the station in Workstation Management by performing the following steps:
-
-    1. Navigate to the **Workspaces** page in [Workstation Management](https://workstation.home.mendix.com/).
-    2. Click **Create Workspace**, or select an existing workspace from the overview.
-    3. Click **Create Station**.
-    4. Enter a name for the station and optionally select or create a group to categorize it, such as *Assembly*.
-    5. Add devices in the **Devices** section.
-    6. Click **Register Computer** to register your computer.
-    7. Click **Download** to navigate to the Workstation Client listing in the Marketplace, download the Client installer for Windows, install it, and launch it.
-    8. Copy the registration token and paste it into the [Workstation Client](/mendix-workstation/installation/) registration field.
-
+3. Register one or more Workstation Clients. For more information, see [Registering Workstation Clients](/mendix-workstation/register/).
 4. Configure your app as an allowed app by performing the following steps:
 
     1. In your app go to [App Security](/refguide/app-security/#user-roles) and assign the module role **StationConnector.Administrator** to the Administrator user role.
@@ -61,7 +51,11 @@ To install and configure the Workstation Connector, perform the following steps:
 
 The app that you created in the previous section is available on the **Apps** page that you can access through the left navigation menu. To enable or disable the app for all your stations or groups of stations, click the icon in the right column of the app list, and then click **Manage App**.
 
-## Managing Users
+## Managing Users {#invite-users}
+
+{{% alert color="info" %}}
+This feature is only available to licensed Mendix Workstation users. For more information about obtaining a Workstation license, see [Mendix Workstation](/mendix-workstation/).
+{{% /alert %}}
 
 You can invite other Workstation Management users to your workspace to share configurations and collaborate. This feature requires a Workstation license.
 
@@ -71,7 +65,7 @@ To change a user's role or remove them from the workspace, click the three-dot i
 
 ## Getting Started with Custom Logic for Device Interaction
 
-Now that you are ready to start using Mendix Workstation Client, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
+Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
 * **GetStation** - Retrieves the computer information connected to the Client.
 * **SendMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
@@ -135,4 +129,4 @@ Call `UnsubscribeByContext` to end all subscriptions related to a context object
 
 ## Error Logs
 
-Logs for the Workstation Management, Client, and Connector are available in case of issues. For more information about accessing the logs, see [Troubleshooting Mendix Workstation Client](/mendix-workstation/troubleshooting/).
+Logs for the Workstation Management, Client, and Connector are available in case of issues. For more information about accessing the logs, see [Troubleshooting Mendix Workstation](/mendix-workstation/troubleshooting/).

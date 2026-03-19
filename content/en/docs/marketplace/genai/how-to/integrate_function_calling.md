@@ -48,7 +48,7 @@ Selecting the infrastructure for integrating GenAI into your Mendix application 
 
 * [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/): The [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) allows you to utilize Mendix Cloud GenAI Resource Packs directly within your Mendix application.
 
-* [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
+* [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI's platform and Microsoft Foundry.
 
 * [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
 
@@ -152,6 +152,10 @@ Optionally, you can change the system prompt to provide the model additional ins
 3. Inside this action, find the `System prompt` parameter, which has by default an empty value.
 4. Update the `System prompt` value to reflect your desired behavior. For example, *`Answer like a Gen Z person. Always keep your answers short.`*
 5. Save the changes.
+
+### Optional: Setting User Access and Approval
+
+When adding tools to a request, you can optionally set a [User Access Approval](/appstore/modules/genai/genai-for-mx/commons/#enum-useraccessapproval) value to control if the user first needs to confirm the tool before execution or if the tool is even visible to the user. To show different title and description for the tool, you may modify the `DiplayTitle` and `DisplayDescription` which are only used for display and can thus be less technical or detailed than the `Name` and `Description` of the tool.
 
 ## Testing and Troubleshooting {#testing-troubleshooting}
 

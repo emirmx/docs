@@ -123,7 +123,6 @@ To integrate the Istio Service Mesh with an Ingress Controller, perform the foll
 6. In Istio, configure a [Gateway](https://istio.io/latest/docs/reference/config/networking/gateway/) resource to allow traffic through the ingress gateway.
 7. Define a [VirtualService](https://istio.io/latest/docs/reference/config/networking/virtual-service/) to route traffic from the gateway to a service in the mesh.
 
-
 To configure the Istio Service Mesh for Mendix on Kubernetes, set up the following settings:
 
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply. 

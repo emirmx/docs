@@ -287,6 +287,7 @@ Traefik uses 2 types of providers: CRDs or Kubernetes Ingress. Ensure that you i
 #### Configuring Traefik in the Mxpc-cli Tool
 
 To configure Traefik for Mendix on Kubernetes, set up the following settings:
+
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply.
 * **Ingress Domain Name** - Provide the domain name which was registered for Traefik
 * **Ingress Path** - Set to `/*`.

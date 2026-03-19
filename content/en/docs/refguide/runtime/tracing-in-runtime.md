@@ -7,10 +7,23 @@ description: "Describes how to setup and use tracing in the Mendix Runtime."
 ## Introduction
 
 Mendix supports tracing via OpenTelemetry. When tracing is enabled, the runtime generates traces that help you analyze errors and performance.
-These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
+
+Tracing provides a deep insight into applications' performance and stability by collecting and analyzing runtime data during operation. It offers these key benefits:
+
+* End‑to‑end request visibility – tracing can follow a single request across all involved services.
+* Clear causality and root‑cause analysis – traces show exactly where an issue occurred and how it propagated.
+* Precise latency attribution – tracing pinpoints which operation or dependency affected response times the most.
+* Correlation across telemetry signals – traces can be correlated with logs and metrics for holistic performance and error analysis.
+* Vendor‑neutral, future‑proof instrumentation – OpenTelemetry is an open industry standard and best practice.
+
+Tracing is an important tool for maintaining critical applications, ensuring application performance, and troubleshooting issues with applications in production.
+
+## Prerequisites
+
+To view these traces, you will need an observability tool such as [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
 
 {{% alert color="warning" %}}
-Tracing is currently not supported on Mendix Cloud and Mendix Cloud Dedicated.
+Tracing is currently supported only via [Datadog integration](/developerportal/operate/datadog-metrics/) on Mendix Cloud.
 {{% /alert %}}
 
 ## Generated spans
@@ -50,7 +63,15 @@ You can filter out specific traces using the `mendix.tracing.filter` system prop
 
 ### Testing
 
-You can test the tracing using [Jaeger](https://www.jaegertracing.io/). For example, you can use the all-in-one binary or Docker image. Jaeger will listen to endpoint `http://localhost:4318/v1/traces` by default.
+You can test the tracing using [Jaeger](https://www.jaegertracing.io/) or [Grafana](https://grafana.com).
+
+For Jaeger, you can use the all-in-one binary or Docker image. Jaeger will listen to endpoint `http://localhost:4318/v1/traces` by default.
+
+For Grafana, you can use the all-in-one Docker image `grafana/otel-lgtm`. After starting it with the following command, it will listen to the endpoint `http://localhost:4318/v1/traces`.
+
+```
+docker run --name otel-grafana -d -p 3000:3000 -p 4317:4317 -p 4318:4318 grafana/otel-lgtm
+```
 
 Alternatively, you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends which support OpenTelemetry. Check with your APM vendor to confirm that OpenTelemetry is supported. The free online collector configuration tool [OTelBin](https://github.com/dash0hq/otelbin) can help with collector configuration.
 
@@ -61,7 +82,7 @@ The following settings are supported by the Mendix runtime. See [Configure the S
 You can configure the Java Agent through system properties which can be added to the **Extra JVM parameters** field (for example, `-Dotel.exporter.otlp.traces.endpoint`), or set through environment variables. 
 
 | Name | Description | Default |
-|------|-------------|---------|
+| ---- | ----------- | ------- |
 | `otel.service.name` | The name of the service. | `runtimelauncher` |
 | `otel.resource.attributes` | Extra resource attributes to include in every span. Example: `attribute1=value1,attribute2=value2` | |
 | `otel.traces.exporter` | Comma-separated list of span exporters. Supported values are: `otlp`, `console`, `logging-otlp`, and `none`. | `otlp` |
@@ -137,3 +158,10 @@ To use the OpenTelemetry Collector with Datadog, follow these steps:
 1. Install the OpenTelemetry Collector by following the official [installation guide](https://opentelemetry.io/docs/collector/installation/).
 2. Install the `otelcol_contrib` package instead of `otelcol` to include Datadog support. 
 3. Run the collector with the [appropriate configuration](https://docs.datadoghq.com/opentelemetry/setup/collector_exporter/install/#2---configure-the-datadog-exporter-and-connector) adapted for Datadog.
+
+## Include Metrics and Logs in OpenTelemetry
+
+You can also collect metrics data (CPU load, memory, etc.) and logs using OpenTelemetry.
+
+* See the [OpenTelemetry](/refguide/metrics/#opentelemetry) section of *Metrics* for a guide on how to setup metrics with OpenTelemetry.
+* See [Request to Create New Log Subscriber in Open Telemetry Format](/refguide/monitoring-mendix-runtime/#new-log-sub-opentelemetry) in *Monitoring Mendix Runtime* for a guide on how to setup logs with OpenTelemetry.

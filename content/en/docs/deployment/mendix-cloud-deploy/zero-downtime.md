@@ -18,36 +18,37 @@ With ZDT, Mendix Cloud intelligently manages the deployment process, ensuring yo
 
 To leverage the benefits of zero-downtime deployment, your Mendix application and deployment environment must meet the following criteria:
 
-* **Mendix runtime version** – Must be running on Mendix Runtime version 10.24 or higher.
-* **Application instances** – The application must be configured to run with a single runtime instance.
+* **Mendix runtime version** – Must be running on Mendix Runtime version 10.24 or above.
 * **Change type** – The deployment must involve only [configuration-level changes](/developerportal/deploy/zero-downtime/#zdt-application).
-* **Deployment platform** – Must be deployed on Mendix Cloud(Kubernetes).
 
 {{% alert color="info" %}}
-No special setup is required to enable ZDT. When your application and deployment meet these prerequisites, ZDT is automatically applied for eligible changes and can be controlled directly by Technical Contacts through the [Environment Settings](/developerportal/deploy/environments/#environment-settings).
+No special setup is required to enable ZDT. When your application and deployment meet these prerequisites, ZDT is automatically available for eligible changes.
 {{% /alert %}}
 
 ## How Zero-Downtime Deployment Works
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process, showing user initiating deployment, Mendix Cloud starting a new app version in the background while the current version serves users, the new version preparing configuration and reporting ready, Mendix Cloud gracefully stopping the old version, and finally directing traffic to the new version without user interruption." >}}
+<!-- Diagram provided by the deployment team. Contact the team for updates or questions  -->
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process-success-flow.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process, showing the Technical Contact initiating deployment, Mendix Cloud starting a new app version in the background while the current version serves users, the new version preparing configuration and reporting ready, Mendix Cloud gracefully stopping the old version, and finally directing traffic to the new version without user interruption." >}}
 
-When an eligible configuration change is deployed with ZDT enabled, Mendix Cloud orchestrates the following steps:
+When an eligible configuration change is deployed with ZDT, Mendix Cloud orchestrates the following steps:
 
-1. **Initiate deployment** – A user or automated process triggers a deployment in Mendix Cloud.
+1. **Initiate deployment** – The Technical Contact triggers deployment with **Deploy without Downtime** in Mendix Cloud.
 2. **Current version active** – The existing application version continues to serve all user traffic without interruption.
-3. **New version spin-up** – Mendix Cloud starts a new instance of your application, adding the updated configuration, in the background. This new version prepares its configuration.
+3. **New version spin-up** – A new instance of your application starts, adding the updated configuration, in the background. This new version prepares its configuration.
 4. **Health check & readiness** – Once the new instance is fully operational and passes all internal health checks, it reports its readiness to Mendix Cloud.
-5. **Graceful shutdown of old version** – Mendix Cloud then gracefully stops the old application version, ensuring any ongoing processes or sessions are handled appropriately.
-6. **Traffic reroute** – Mendix Cloud directs all incoming user traffic to the newly deployed, healthy application version.
+5. **Graceful shutdown of old version** – The old application version gracefully stops, ensuring any ongoing processes or sessions are handled appropriately.
+6. **Traffic reroute** – All incoming user traffic are directed to the newly deployed healthy application version.
 7. **Continuous user experience** – The end-user experiences no downtime or interruption, as they are continuously served by a running instance of the application throughout the entire deployment process.
 
 ## Managing Zero-Downtime Deployment
 
 By default, this option is off. In this state, your app will use the standard restart process during deployment. This default setting ensures stability and compatibility with existing application behavior.
 
-Technical Contacts can decide whether to attempt a zero-downtime deployment by selecting the **Deploy without downtime** option on the **Other Options** tab when [deploying a package](/developerportal/deploy/environments/#deploy-wizard). If you enable this option, Mendix Cloud will attempt a zero-downtime deployment, if your environment meets eligibility criteria.
+Technical Contacts can decide whether to attempt a zero-downtime deployment by selecting the **Deploy without downtime** option on the **Other Options** tab when [deploying a package](/developerportal/deploy/environments/#deploy-wizard). If you select this option, Mendix Cloud will attempt a zero-downtime deployment.
 
-When a technical contact enables ZDT, the Cloud Portal displays a reminder to review any custom **before-shutdown** or **after-startup** microflows. This is crucial to confirm they won't cause issues during the period when two versions of your application might be running concurrently.
+{{% alert color="info" %}}
+When a Technical Contact selects ZDT, the Cloud Portal displays a reminder to review any custom **before-shutdown** or **after-startup** microflows. This is crucial to ensure these microflows won’t cause conflicts during periods when two versions of your application might be running concurrently.
+{{% /alert %}}
 
 ### When ZDT Applies {#zdt-application}
 
@@ -67,15 +68,12 @@ During these types of updates, Mendix Cloud performs the deployment in a way tha
 
 Zero-downtime deployment will not apply under the following conditions:
 
-* Mendix Runtime version is less than 10.24
-* Application runs with more than one runtime instance
+* Mendix Runtime versions below 10.24
 * Upgrading to a new Mendix Runtime version
 * Deploying a new MDA (application model update)
 * Changes involve database structure updates
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-scaling-process.png" >}}
 
-For these scenarios, the Cloud Portal will display the standard restart message before deployment:
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-scaling-messages.png" >}}
+For these scenarios, the Cloud Portal will display the standard restart message before deployment.
 
 ## Expected ZDT Behavior
 
@@ -99,13 +97,17 @@ For eligible environments, the **Deploy Wizard** clearly indicates that the upco
 
 ### First Deployment
 
-When you deploy an application on Mendix Runtime 10.24 or higher for the very first time, the environment is automatically prepared for future zero-downtime deployments. This initial deployment behaves like a regular one, but from the next deployment onward, eligible configuration changes can be applied without downtime.
+When you deploy an application on Mendix Runtime 10.24 or above for the very first time, the environment is automatically prepared for future zero-downtime deployments. This initial deployment behaves like a regular one, but from the next deployment onward, eligible configuration changes can be applied without downtime.
 
 ### During a Zero-Downtime Deployment Failure
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-error.png" >}}
 
-If a zero-downtime deployment fails, an error message appears in the **Deploy Wizard**. The application itself remains running and available, because the previous version of the app continues to serve traffic.
+If a zero-downtime deployment fails, an error message appears in the **Deploy Wizard**. 
+
+<!-- Diagram provided by the deployment team. Contact the team for updates or questions  -->
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process-failure-flow.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process in a failure scenario" >}}
+The application itself remains running and available, because the previous version of the app continues to serve traffic.
 You can review the error details in the wizard and re-deploy once the issue is resolved.
 
 ## Summary

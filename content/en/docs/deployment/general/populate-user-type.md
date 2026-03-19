@@ -4,6 +4,7 @@ url: /developerportal/deploy/populate-user-type/
 description: "Describes how to classify existing app end-users as either internal or external."
 aliases:
     - /howto/monitoring-troubleshooting/populate-user-type/
+    - /howto9/monitoring-troubleshooting/populate-user-type/
 ---
 
 ## Introduction

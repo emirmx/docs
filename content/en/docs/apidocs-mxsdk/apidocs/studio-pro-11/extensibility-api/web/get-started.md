@@ -24,7 +24,7 @@ Extensions can be built on any operating system, as the underlying framework is 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
+Extension development is only possible by enabling the [Extension Development](/refguide/preferences-dialog/#extension-development) setting in your app's Preferences, or by starting Studio Pro with the `--enable-extension-development` feature flag.
 {{% /alert %}}
 
 ## Creating Your First Extension
@@ -41,7 +41,7 @@ You can also open the application directory containing the application `.mpr` fi
 
 To accelerate your extension development, Mendix provides an extension generator that creates a customizable sample extension.
 
-To use the generator, navigate to your desired source code directory and run the command `npm create @mendix/extension`. You may be prompted by `npm` to grant permission to install the generator. After installation, you will be guided through a series of questions to help configure your extension.
+To use the generator, navigate to your desired source code directory and run the command `npm create @mendix/extension@latest`. You may be prompted by `npm` to grant permission to install the generator. After installation, you will be guided through a series of questions to help configure your extension.
 
 You will be asked the following:
 
@@ -75,54 +75,47 @@ Before you begin, your extension will have to get an instance of the Studio Pro 
 
 In the source code, you should see the following:
 
-1. Line 6 gets an instance of the Studio Pro API by calling `getStudioProApi`.
+1. You get an instance of the Studio Pro API by calling `getStudioProApi`.
    
     ```typescript
     export const component: IComponent = {
         async loaded(componentContext) {
             const studioPro = getStudioProApi(componentContext);
 
-2. Line 7 adds a menu:
+2. A menu is added that opens a tab:
 
     ```typescript
     await studioPro.ui.extensionsMenu.add({
         menuId: "myextension.MainMenu",
         caption: "MyExtension Menu",
         subMenus: [
-            { menuId: "myextension.ShowMenu", caption: "Show tab" },
+            {
+                menuId: "myextension.ShowMenu",
+                caption: "Show tab",
+                // Open a tab when the menu item is clicked
+                action: async () => {
+                    await studioPro.ui.tabs.open(
+                        {
+                            title: "MyExtension tab"
+                        },
+                        {
+                            componentName: "extension/myextension",
+                            uiEntrypoint: "tab"
+                        }
+                    )
+                }
+            }
         ],
     });
     ```
 
-3. Line 16 opens a tab.
-
-    ```typescript
-    // Open a tab when the menu item is clicked
-    studioPro.ui.extensionsMenu.addEventListener(
-        "menuItemActivated",
-        (args) => {
-            if (args.menuId === "myextension.ShowMenu") {
-                studioPro.ui.tabs.open(
-                    {
-                        title: "MyExtension Tab"
-                    },
-                    {
-                        componentName: "extension/myextension",
-                        uiEntrypoint: "tab",
-                    }
-                );
-            }
-        }
-    );
-    ```
-
-4. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built by changing line 6:
+3. If you navigate to `build-extension.mjs`, you can choose the directory where the extension will be installed to after being built by changing line 6:
 
      ```typescript
      const appDir = "C:\\TestApps\\AppTestExtensions"
      ```
 
-5. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. The following lines specify how Studio Pro will be run:
+4. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. The following lines specify how Studio Pro will be run:
      
      ```json
      …

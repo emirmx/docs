@@ -1,14 +1,112 @@
 ---
-title: "Mendix Workstation Client Release Notes"
-linktitle: Mendix Workstation Client
+title: "Mendix Workstation Release Notes"
+linktitle: Mendix Workstation
 url: /releasenotes/workstation/
-description: "Release notes for updates to the Mendix Workstation Client"
+description: "Release notes for updates to the Mendix Workstation"
 weight: 40
 cascade:
     - numberless_headings: true
 ---
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
+
+## 3.5.0
+
+### Release date: March 12, 2026
+
+### Workstation Management
+
+#### New Features
+
+* Updated access controls for Computer Admin role - The Computer Admin role now has updated access permissions, allowing them only to read and view existing bulk registration tokens and their associated details.
+
+* Improved UI for bulk registration token management - We have updated the user interface for managing bulk registration tokens, enhancing the overall user experience and making it more intuitive to work with.
+
+#### Fixes
+
+* Unassigned computers excluded from station export - We have fixed an issue where unassigned computers were incorrectly included in station exports. Now, unassigned computers are no longer exportable as stations and will not appear in the list of stations available for download, ensuring cleaner and more accurate exports.
+
+* Duplicate station naming in single import - The single import behavior has been updated to accept duplicate names by automatically adding a numeric suffix when a station with the same name is imported, ensuring unique identification and smoother workflow. We have addressed an issue where empty stations were unintentionally created.
+
+### Workstation Client
+
+#### Fixes
+
+* Robust remote deregistration error handling - We have fixed an issue where an uncaught error pop-up could occasionally appear if Workstation Management crashed immediately after a remote deregistration of a station. This ensures a more stable and resilient client experience.
+
+## 3.4.0
+
+### Release date: February 12, 2026
+
+### Workstation Management
+
+#### New Features
+
+* Enhanced bulk registration process - We have improved the bulk registration experience to make managing multiple workstations even more efficient and intuitive.
+
+    * New unassigned stations list - If a newly registered station cannot be automatically matched with a preconfigured station, it now appears in the new **Unassigned Stations** list. Before you can edit these unassigned stations, you must first either accept or manually assign them, giving you better control over station assignments.
+    * Code snippet copier - To simplify the registration process from the terminal, we have added a convenient code snippet copier, making the process quicker and less prone to errors.
+    * Reopenable registration token - You can now reopen and copy the registration token if you need to access it again after initial generation.
+    * Token expiration banner - A clear banner now displays if your registration token has expired, helping you stay informed and avoid registration issues.
+
+* Advanced station import options - We have enhanced the station import process by providing more robust options for handling duplicate stations. When importing, you can now specify how you want to manage existing named stations. The following options are available:
+ 
+    * **Ignore** - Existing stations will not be updated or imported.
+    * **Duplicate** - A new station will be created with a suffix number.
+    * **Replace** - The existing station will be entirely replaced by the imported one.
+    * **Merge** - This option allows for a more granular approach. If you choose to merge, you can then decide whether to ignore, replace, or duplicate individual duplicate devices.
+
+#### Fixes
+
+* **Add Device Configuration** dialog stability - We have fixed a bug that was causing the **Add Device Configuration** dialog to close unexpectedly, ensuring a smoother configuration experience.
+* Improved import summary UI - We have reworked the import summary UI for better usability and user experience, providing clearer and more intuitive feedback on your import operations.
+
+#### Known Bugs and Limitations
+
+* Linux terminal registration errors - When registering clients from the terminal on Linux, users may encounter misleading error messages. Despite the error messages, the registration process itself is successful. 
+* Manual refresh required for UI updates - To display the most up-to-date information, you must currently refresh the token expiration banner and the unassigned stations list manually by using the **Refresh** button.
+
+### Workstation Client
+
+#### New Features
+
+* Automatic client reset on deregistration - To ensure a clean state and seamless management, the client now automatically resets itself when it is deregistered from Workstation Management.
+* Improved handling of unknown computer status - When a computer is not matched to an available station, the client now displays a **Waiting** message, indicating that the system is awaiting configuration.
+
+#### Fixes
+
+* Uninstallation cleanup - We have resolved an issue where the *Mendix Workstation* folder was not being completely removed during uninstallation. This fix ensures a cleaner uninstallation process.
+* Error handling for bulk registration - We have fixed an error that occurred when attempting to bulk re-register an unassigned station from PowerShell, leading to a more robust registration experience.
+* Special character display in license agreements - We have fixed an issue that caused special characters to display incorrectly within the license agreement. All text is now rendered accurately.
+* Flexible BLE characteristic matching - We have resolved an issue where BLE characteristics and services were case-sensitive and did not accept standard UUID formats. Now, BLE characteristics can be specified in uppercase and can contain dashes, providing greater flexibility and compatibility. For example, `EF680301-9B35-4933-9B10-52FFA9740042` will now be correctly recognized.
+
+## 3.3.0
+
+### Release date: January 8, 2026
+
+### Workstation Management
+
+#### New Features
+
+* Automatic suffixing for duplicate workstations - To make managing your workstations even smoother, we have implemented automatic suffixing for imported workstations that have duplicate names. This helps prevent naming conflicts and keeps your environment tidy.
+* Feedback module replaced by the new Forum Space - We have removed the Feedback function in the Workstation Management. Don't worry, your voice is still incredibly important to us! Please share your questions, ideas, and feedback in the new dedicated [Mendix Forum Space for Mendix Workstation](https://community.mendix.com/link/spaces/mendix-workstation-client). This change will help us centralize discussions and provide better support.
+* Special characters in Workspace names - You can now use special characters in your Workspace names, giving you more flexibility and personalization.
+* Unique auto-accepted computer names - We have added a uniqueness validation to the **Auto-Accepted Computer Name** field used for bulk registration. This ensures that each computer name is distinct, preventing potential conflicts during the registration process.
+
+#### Fixes
+
+* Enhanced export and import experience - We have revised the UI for the import and export process for a better user experience.
+    * The **Select individual stations** dropdown has been reworked for better usability.
+    * The **Import summary** now provides clearer insights into your import operations.
+* Runtime error prevention - We have addressed and fixed several issues that were causing runtime errors, leading to a more stable experience.
+* Duplicate application prevention during import - We have resolved a bug that caused applications to be duplicated when importing stations. Now, when importing stations that reference an application, the system checks for existing applications with the same identifying properties (like URL and Public Key). If an application already exists, it is reused, preventing unnecessary duplicates and ensuring a cleaner application registry.
+* Input validation for station creation - We have fixed an issue in the station creation process where clicking **Continue** with an empty input field could lead to an error. The process is now more robust.
+
+### Workstation Client
+
+#### Fixes
+
+* File name emission for the file connector - We have resolved an issue where the file connector was not returning the changed file name when subscribing to file changes. Now, when you subscribe to a file path, the file connector correctly emits the specific file names on file change events, providing more precise information.
 
 ## 3.2.0
 
@@ -23,7 +121,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
 
 {{% alert color="info" %}}
-This feature is available only for accounts which have a license for Mendix Workstation Client.
+This feature is available only for accounts which have a license for Mendix Workstation.
 {{% /alert %}}
 
 ##### Remote Workstation Client Refresh
@@ -107,11 +205,11 @@ You can now copy the station configuration to the clipboard, or download it to a
 ### Release date: September 25, 2025
 
 {{% alert color="info" %}}
-This is a Limited Availability release of the Mendix Workstation Client.
+This is a Limited Availability release of Mendix Workstation.
 
-Mendix Workstation Client is available for all Mendix users for development use. 
+Mendix Workstation is available for all Mendix users for development use. 
 
-Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take the Mendix Workstation Client into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation Client for development, but workspaces are individual and cannot be shared.
+Mendix Workstation is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take Mendix Workstation into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation for development, but workspaces are individual and cannot be shared.
 {{% /alert %}}
 
 ### Improvements
@@ -139,7 +237,7 @@ When editing a device, device settings are edited in a side panel. It makes devi
 ### Release date: September 12, 2025
 
 {{% alert color="info" %}}
-The fourth pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+The fourth pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
 {{% /alert %}}
 
 ### New Features
@@ -149,7 +247,7 @@ The fourth pre-release of the Mendix Workstation Client is available under the c
 Mendix Workstation Management is now available for all Mendix users.
 
 {{% alert color="info" %}}
-Users from companies which does not have a Mendix Workstation Client license cannot add members to a workspace that they own.
+Users from companies which does not have a Mendix Workstation license cannot add members to a workspace that they own.
 
 The Workstation Client and all other related Mendix Marketplace items are only available for members of the pre-release program.
 {{% /alert %}}
@@ -166,7 +264,7 @@ It is recommended to disable developer mode for clients used in a production env
 
 #### Workstation Sample App
 
-The Mendix Workstation Client Sample App showcases how to build applications interacting with multiple peripheral devices.
+The Mendix Workstation Sample App showcases how to build applications interacting with multiple peripheral devices.
 
 The app includes reusable peripheral modules for:
 
@@ -204,7 +302,7 @@ The Sample App is available in the Mendix Marketplace.
 ### Release date: August 20, 2025
 
 {{% alert color="info" %}}
-The third pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+The third pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
 {{% /alert %}}
 
 ### New Features
@@ -296,7 +394,7 @@ To upgrade from a previous version, perform the following steps:
 ### Release date: June 13, 2025
 
 {{% alert color="info" %}}
-The second pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. 
+The second pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. 
 {{% /alert %}}
 
 ### New Features
@@ -426,7 +524,7 @@ To upgrade your app from a previous version, perform the following steps:
 ### Release date: March 14, 2025
 
 {{% alert color="info" %}}
-The first pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. 
+The first pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. 
 {{% /alert %}}
 
 ### New Features
