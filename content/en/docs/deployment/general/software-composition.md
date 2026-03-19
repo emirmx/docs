@@ -229,7 +229,7 @@ The finding list contains the following information:
 
 ##### Finding and Component Details
 
-If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes two sections:
+If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes these sections:
 
 * **Finding Details** – This includes the following details:
 
@@ -244,6 +244,8 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
 
     * **Current Version** – The version of the component affected by this finding.
     * **Type** – The type of the component affected by this finding.
+
+* **Mendix Guidance** – AI-generated guidance which describes the vulnerability, outlines the reasons why it is important to fix it, and recommends solutions.
 
 #### Component Usage {#component-component-usage}
 
