@@ -140,6 +140,8 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Type** – The type of the component affected by this finding.
     * **Publisher** – The entity that published the component affected by this finding.
 
+* **Mendix Guidance** – AI-generated guidance which describes the vulnerability, outlines the reasons why it is important to fix it, and recommends solutions.
+
 ## Components {#all-components}
 
 The **Components** tab gives an overview of all the unique components deployed in all the combined app environments. 
