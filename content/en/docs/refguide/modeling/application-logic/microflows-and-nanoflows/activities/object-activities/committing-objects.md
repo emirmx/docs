@@ -107,25 +107,25 @@ When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across t
 
 When you commit an object, all changes to the current values are saved. This means that you cannot roll back to the previous values of the object using the **Rollback object** activity of a microflow.
 
-However, a Mendix commit is not the same as a database (SQL) COMMIT. When you use a **Commit object(s)** action, Mendix actually performs an INSERT into the database. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that, although the current end user can see the updated version of the object, other end users will not see the updated object until the microflows end.
+However, a Mendix commit is not the same as a database (SQL) COMMIT. When you use a **Commit object(s)** activity, Mendix actually performs an INSERT into the database. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that, although the current end user can see the updated version of the object, other end users will not see the updated object until the microflows end.
 
 Another consequence of this is that, in contrast to an explicit **Rollback object** call, errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for more information.
 
 #### What Gets Committed
 
-When you work on an object in memory, Mendix records whether the object has been changed. When you perform a **Commit object(s)** action, the current value is written to the database and Mendix marks the object as unchanged in memory. This has a couple of consequences that you might not expect:
+When you work on an object in memory, Mendix records whether the object has been changed. When you perform a **Commit object(s)** activity, the current value is written to the database and Mendix marks the object as unchanged in memory. This has a couple of consequences that you might not expect:
 
 * If you commit an object which is then rolled back due to an error, committing the object again will not write the latest version to the database. You can understand this as the following sequence (see [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for a more detailed discussion of how rollbacks work during error handling):
 
     1. Your microflow starts and creates a savepoint.
     1. You change your object – it is marked as changed.
-    1. You perform a **Commit object(s)** action which sends the changes to the database – the object is marked as unchanged.
+    1. You perform a **Commit object(s)** activity which sends the changes to the database – the object is marked as unchanged.
     1. An error occurs, the microflow ends and data in the database is rolled back to the savepoint.
     1. You perform a **Commit object(s)** on the object again, but the changes are not written to the database because:
 
         * The object in memory still has your changes
         * The object in memory was marked as unchanged after your previous commit
-        * The **Commit object(s)** action does not see the changed marker and so does not recognize that your object in memory has changes which need to be written.
+        * The **Commit object(s)** activity does not see the changed marker and so does not recognize that your object in memory has changes which need to be written.
 
     If you want to keep the changes in the latest version you will have to work around this behavior.
 
