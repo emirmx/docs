@@ -1196,11 +1196,11 @@ The syntax is as follows:
 LOCATE ( expression , pattern [, offset ] )
 ```
 
-`expression` specifies the string to be searched.
+`expression` specifies the string to be searched. Expressions that resolve to String are allowed.
 
-`pattern` specifies the substring to search for.
+`pattern` specifies the substring to search for. Expressions that resolve to String are allowed.
 
-`offset` specifies how many characters in the beginning of `expression` should be ignored. This parameter is optional, and its default value is 0.
+`offset` specifies how many characters in the beginning of `expression` should be ignored. This parameter is optional, and its default value is 0. Expressions that resolve to Integer or Long are allowed.
 
 {{% alert color="info" %}}
 Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
@@ -1456,6 +1456,58 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 | 0.21         | 0.21428571 |
 | 0.33         | 3.33333333 |
 | 1.17         | 1.17142857 |
+
+### SUBSTRING{#substring-function}
+
+#### Description
+
+Returns part of a string starting at specified character index.
+
+This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+SUBSTRING ( expression , start_char [, length ] )
+```
+
+`expression` specifies the string to be searched. Expressions that resolve to String are allowed.
+
+`start_char` specifies the 1-based index of the first character of the resulting substring. Expressions that resolve to Integer or Long are allowed.
+
+`length` specifies the length limit of the resulting substring. If the `length` argument is not specified, all characters starting with `start_char` are returned. Expressions that resolve to Integer or Long are allowed.
+
+#### Example
+
+```sql
+SELECT
+	LastName,
+	SUBSTRING(UPPER(LastName), 3, 2) AS Substring_3_2,
+FROM Sales.Customer
+```
+
+| LastName | Substring_3_2 |
+|:---------|:--------------|
+| Doe      | E             |
+| Moose    | OS            |
+
+If the string is shorter than the value of `start_char`, the result is an empty string. If it is shorter than `start_char + length`, the result is shorter than `length`:
+
+```sql
+SELECT
+	SUBSTRING('dendrochronological', 13) AS Substring_13,
+	SUBSTRING('dendrochronological', 13, 5) AS Substring_13_5,
+	SUBSTRING('dendrochronological', 13, 10) AS Substring_13_10,
+	SUBSTRING('dendrochronological', 20) AS Substring_20,
+FROM Sales.Customer
+ORDER BY LastName LIMIT 1
+```
+
+| Substring_13 | Substring_13_5 | Substring_13_10 | Substring_20 |
+|:-------------|:---------------|:----------------|:-------------|
+| `logical`    | `logic`        | `logical`       | ` `          |
 
 ### UPPER
 
