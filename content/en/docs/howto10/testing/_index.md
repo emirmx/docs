@@ -15,3 +15,4 @@ Testing is a vital component when creating a Mendix application. Finding and fix
 
 Mendix offers several options for each
 
+{{< figure src="/attachments/howto10/testing/testing-pyramid.png" class="no-border" >}}
