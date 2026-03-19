@@ -131,6 +131,10 @@ The **Password** property defines the password that will be used to authenticate
 
 These headers are added to the HTTP request header. Each custom header is a pair with a key and a value (a microflow expression).
 
+{{% alert color="info" %}}
+The actual computed-value for **Content-Length header** takes precedence over the user-specified value. Incase of unkown length (e.g. streamed or binary content), user-specified value is used.
+{{% /alert %}}
+
 {{% alert color="warning" %}}
 REST endpoints which are using NGINX as a webserver will ['silently drop'](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/#missing-disappearing-http-headers) HTTP headers which contain an underscore `_`.
 {{% /alert %}}
