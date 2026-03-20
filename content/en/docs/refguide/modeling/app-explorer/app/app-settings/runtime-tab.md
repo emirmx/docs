@@ -22,17 +22,15 @@ The available configuration options are as follows:
 ### App bundler {#app-bundler}
 
 {{% alert type="info" %}}
-This setting was introduced in Mendix 11.9.0. 
+This setting was introduced in [Mendix 11.9.0](/releasenotes/studio-pro/11.9/). It is only available for applications using React client.
 {{% /alert %}} 
 
-This setting is only available for applications using React client.
+The available options are listed below:
 
-Available options:
+* **Rspack (beta)**: Use Rspack to bundle the React client app as a faster, more memory-efficient bundler
+* **Rollup**: Use Rollup to bundle the React client app (default)
 
-* **Rspack (beta)**: Use Rspack to bundle the React client app. A faster, more memory-efficient bundler.
-* **Rollup**: Use Rollup to bundle the React client app (default). 
-
-For more information about Rspack, see the official documentation [https://www.rspack.dev/](https://www.rspack.dev/)
+For more information about Rspack, see the [official documentation](https://www.rspack.dev/).
 
 ### Use New String Behavior {#new-string-behavior}
 
