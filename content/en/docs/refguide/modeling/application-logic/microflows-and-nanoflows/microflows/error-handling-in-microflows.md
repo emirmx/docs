@@ -24,6 +24,15 @@ There are four error handling options:
 * **Custom without rollback**
 * **Continue**
 
+In summary, the four error handling options do the following:
+
+| Option | Behavior |
+| --- | --- |
+| Rollback (default) |  All changes are reverted to the state before the microflow started, the microflow aborts, and a system error message is shown. |
+| Custom with rollback |  All changes are reverted to the state before the microflow started, an error flow is followed, and the microflow's subsequent behavior depends on whether the error handling flow ends with an error or end event. |
+| Custom without rollback |  Changes made before the error are kept, an error flow is followed, and the microflow's subsequent behavior depends on whether the error handling flow ends with an error or end event. |
+| Continue |  The microflow proceeds as if no error occurred, keeping all changes, and no error message is logged or displayed to the end-user. |
+
 Except for the **Rollback** option, which is the default, the other three are all custom error handling options. For **Custom with rollback** and **Custom without rollback**, you can create an additional flow from the microflow elements (activities or decisions) from which the error is returned and mark this flow as an error handling flow. You can end this flow with an [error event](/refguide/error-event/) or an [end event](/refguide/end-event/). Hence, we introduce these two custom error handling options based on what event terminates the error handling flow.
 
 {{% alert color="info" %}}
@@ -177,6 +186,26 @@ Consider the following best practices for error handling:
 * Where possible, avoid using the **Continue** option and use **Custom without rollback** instead.
 * Do not try to commit objects which were rolled back, Mendix will no longer see them as being changed. See [How Commits Work](/refguide/committing-objects/#how-commits-work) in *Commit Object(s)* for more information about this.
 * Do not overdo it – you can specify a lot of complicated error handling combinations, but this makes it more difficult (and slower) for the Mendix Runtime to evaluate the microflow, and it also makes it more difficult to predict the exact behavior in case of an exception.
+
+## What Error Handling Gives You
+
+### Consistent Data
+
+Everything that happens in your app happens in a transaction. By default either all instructions are completed or nothing is completed. If you don't specify any error handling and the microflow you are trying to run encounters an error, it will appear that nothing has changed. That means that all the objects you created or changed will be reverted, and the end-user will get an error. This ensures that processes and data remain consistent. 
+
+### Isolated Changes
+
+While updating or creating your objects, you do not want other end-users to see information until your microflow has finished executing. 
+
+To ensure that every end-user or process can only see persisted data, data changed in a microflow is only available within that microflow. None of the changes made inside the microflow will be available outside the microflow, not even to the end-user that initiated the microflow. The information will only be available to all end-users of the application once the microflow has successfully completed all the activities.
+
+### Protection from Parallel Updates
+
+When an object is updated, your app will place a lock on that object until the transaction/microflow ends. While the microflow is running, nothing else can read or write that same object and anything that attempts to do so will have to wait. This lock is released automatically as soon as the microflow ends, allowing any waiting processes to continue normally.
+
+{{% alert color="info" %}}
+This doesn't prevent two end-users editing the same object. Two end-users can open the same object and change it. However, neither will see the changes that the other has made. They can both commit the changes and the change committed second will be applied.
+{{% /alert %}}
 
 ## Read More
 
