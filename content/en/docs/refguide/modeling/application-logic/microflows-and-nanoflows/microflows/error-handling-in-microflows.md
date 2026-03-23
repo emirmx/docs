@@ -28,7 +28,7 @@ In summary, the four error handling options do the following:
 
 | Option | Behavior |
 | --- | --- |
-| Rollback (default) |  All changes are reverted to the state before the microflow started, the microflow aborts, and a system error message is shown. |
+| Rollback (default) |  All changes are reverted to the state before the microflow started, the microflow aborts, and a system error message is shown unless custom error handling is added in a microflow which called this one. |
 | Custom with rollback |  All changes are reverted to the state before the microflow started, an error flow is followed, and the microflow's subsequent behavior depends on whether the error handling flow ends with an error or end event. |
 | Custom without rollback |  Changes made before the activity causing the error are kept, an error flow is followed, and the microflow's subsequent behavior depends on whether the error handling flow ends with an error or end event. |
 | Continue |  The microflow proceeds as if no error occurred, keeping all changes made before the activity causing the error, and no error message is logged or displayed to the end-user. |
