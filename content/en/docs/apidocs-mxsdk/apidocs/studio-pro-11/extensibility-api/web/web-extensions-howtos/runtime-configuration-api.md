@@ -17,11 +17,10 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Set Up the Extension Structure 
 
-Create a menu that will display the runtime constants in the `loaded` method in the main entry point (`src/main/index.ts`). This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Set up the extension structure by following the steps below:
 
-In the example below, you create one menu item that will show a message box with the runtime constants from the active configuration.
-
-Replace your `src/main/index.ts` file with the following:
+1. Create a menu that will display the runtime constants in the `loaded` method in the main entry point (`src/main/index.ts`). This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+2. Replace your `src/main/index.ts` file with the following:
 
 ```typescript
 import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
@@ -69,6 +68,8 @@ export const component: IComponent = {
 };
 ```
 
+In this example, you create one menu item that will show a message box with the runtime constants from the active configuration.
+
 The code uses the:
 
 * `menuApi` from `studioPro.ui.extensionsMenu` to allow you to use the menu API
@@ -79,15 +80,15 @@ The code uses the:
 {{% /alert %}}
 
 The `getConstants()` function returns an array of constant objects, each with the following properties:
-* isPrivate — a boolean indicating whether the constant value is hidden (true) or accessible (false)
-* constantName — the fully qualified name of the constant (e.g., `MyModule.MyConstant`)
-* value — the constant value as a string (only present when isPrivate is false)
+* `isPrivate` – a boolean indicating whether the constant value is hidden (true) or accessible (false)
+* `constantName` – the fully qualified name of the constant (for example, `MyModule.MyConstant`)
+* `value` – the constant value as a string (only present when `isPrivate` is false)
 
 ## Accessing Private Constants
 
-By default, private constants are not accessible and will have isPrivate set to true with no value. To access private constant values, your extension must request the runtime-configuration-private permission.
+By default, private constants are not accessible and will have `isPrivate` set to true with no value. To access private constant values, your extension must request the `runtime-configuration-private` permission.
 
-Add the permission to your extension's package.json after the entrypoints:
+Add the permission to your extension's `package.json` after the entry points:
 
 ```json
 {
@@ -106,11 +107,11 @@ Add the permission to your extension's package.json after the entrypoints:
 
 ```
 
-You have to set the permission to true if you want the permission to appear in the Overview Pane.
+You have to set the permission to true if you want the permission to appear in the Extensions Overview pane.
 
-When a user installs your extension, they can grant this permission through the Extensions Overview pane(View->Extensions) in Studio Pro. Once granted, private constants will be returned with isPrivate set to false and their value included.
+When a user installs your extension, they can grant this permission through the Extensions Overview pane (**View** > **Extensions**) in Studio Pro. Once granted, private constants will be returned with `isPrivate` set to false and their value included.
 
-You can read more about permissions in the [Permission Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
+You can read more about permissions in [Extension Permission](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
 
 ## Extensibility Feedback
 
