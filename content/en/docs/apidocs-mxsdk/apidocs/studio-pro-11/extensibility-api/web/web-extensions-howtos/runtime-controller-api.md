@@ -56,7 +56,7 @@ The `connectionChanged` event provides an object with:
 
 * `isConnected` – a boolean indicating whether the runtime is currently connected (true) or disconnected (false)
 
-{{% alert color="info" %}} Take into consideration that you can currently only detect when the runtime connects/disconnects, but before the runtime setup is completed.
+{{% alert color="info" %}} The event only detects when the runtime connects or disconnects. It cannot be used to determine when the runtime is completely initialized.
 {{% /alert %}}
 
 ## Extensibility Feedback
