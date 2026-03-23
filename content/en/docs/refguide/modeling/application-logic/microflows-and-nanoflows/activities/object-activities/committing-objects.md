@@ -107,7 +107,7 @@ When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across t
 
 When you commit an object, all changes to the current values are saved. This means that you cannot roll back to the previous values of the object using the **Rollback object** activity of a microflow.
 
-However, a Mendix commit is not the same as a database (SQL) COMMIT. When you use a **Commit object(s)** activity, Mendix actually performs an INSERT into the database. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that, although the current end user can see the updated version of the object, other end users will not see the updated object until the microflows end.
+However, a Mendix commit is not the same as a database (SQL) COMMIT. When you use a **Commit object(s)** activity, Mendix actually performs an INSERT or UPDATE on the database. For an object of a persistable entity, the database COMMIT is not performed until the microflow and any microflows from which it is called, complete. This means that, although a retrieve from the database by the end-user's app will see the updated version of the object, the updated object will not be seen globally by other end-users until the microflows end.
 
 Another consequence of this is that, in contrast to an explicit **Rollback object** call, errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for more information.
 
