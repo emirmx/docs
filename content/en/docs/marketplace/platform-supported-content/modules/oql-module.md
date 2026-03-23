@@ -85,13 +85,13 @@ It returns the following:
 
 ### ExecuteDMLStatement {#executedmlstatement}
 
+{{% alert color="info" %}}
+The `ExecuteDMLStatement` action is only available in the OQL Module version 5.0.0 and above.
+{{% /alert %}}
+
 This action executes an [OQL Statement](/refguide/oql-statements/) and returns the number of affected rows.
 
 Named parameters are also supported when running OQL statements.
-
-{{% alert color="info" %}}
-The `ExecuteDMLStatement` action is only available starting with the OQL Module version 5.0.0 and above.
-{{% /alert %}}
 
 ### ExportOQLToCSV {#exportoqltocsv}
 
@@ -128,6 +128,7 @@ If you wish to use named parameters inside an OQL query, you must call the follo
 {{% alert color="info" %}}
 If you wish to keep the same parameters across multiple calls to the [ExecuteOQLStatement](#executeoqlstatement) action, you must set `preserveParameters` to `true`. All other OQL actions above will clear all defined parameters after every call.
 {{% /alert %}}
+
 {{% alert color="info" %}}
-The `AddDateTimeParameter` action is not supported in conjunction with the [ExecuteDMLStatement](#executedmlstatement) action.
+The `AddDateTimeParameter` action cannot be used in conjunction with the [ExecuteDMLStatement](#executedmlstatement) action.
 {{% /alert %}}
