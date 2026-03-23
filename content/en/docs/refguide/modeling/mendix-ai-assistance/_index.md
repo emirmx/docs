@@ -88,7 +88,9 @@ Various Maia features are available in Private Mendix Platform. For more informa
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
-The table below presents all the third-party services each Maia capability uses and what data are sent to the third-party services.
+Maia Make from 11.8 uses Claude Sonnet 4.5. Any capability from after 11.8 uses this model to generate Mendix Models. 
+
+The table below presents all the third-party services each Maia capability uses for versions before Mendix 11.8, and what data are sent to the third-party services.
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
