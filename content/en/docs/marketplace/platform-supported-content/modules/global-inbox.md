@@ -94,7 +94,10 @@ The **Global Inbox** operates on an event-driven architecture:
 ### Setup Global Inbox
 
 1. Import the [Global Inbox module](link) into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
-2. Add the **GlobalTaskInbox** page to your navigation. The **GlobalTaskInbox** page is located at: **GlobalInbox** > **UseMe** > **Pages** > **GlobalTaskInbox**. This page can be accessed by users, allowing them to view all tasks from different applications.
+2. Add the **ACT_GlobalTaskInbox_Open** microflow to your navigation. You can find it in **GlobalInbox** > **UseMe** > **Microflows** > **ACT_GlobalTaskInbox_Open**. This microflow will open the **GlobalTaskInbox** page and ensure that users are able to see their tasks.
+
+{{% alert color="info" %}}If you want to customize the **GlobalTaskInbox** page, make sure to copy it with the **ACT_GlobalTaskInbox_Open** microflow to your own module, as this microflow includes logic to link the app users to their user tasks.{{% /alert %}}
+
 3. Add the User module roles to the required App roles.
 4. Deploy and configure constants
     * The **CleanupEventsAfterDays** constant can be configured at: **UseMe** > **Configuration** > **CleanupEventsAfterDays**. All business events use their own entities to store data for consumption. For example, **CBE_UserTaskUpdatedEvent** stores data for the User Task Updated event. The **CleanupEventsAfterDays** setting is configurable and determines how long event data is retained. Data older than the specified number of days is automatically cleaned up. The default value is set to 30 days.
