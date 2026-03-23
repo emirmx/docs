@@ -18,9 +18,10 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Listening for Connection Changes
 
-You can listen for runtime connection state changes to know when the app starts or stops running. Add an event listener to respond when the connection state changes.
+You can listen for runtime connection state changes to know when the app starts or stops running. To do this, follow the steps below:
 
-Replace your `src/main/index.ts` file with the following:
+1. Add an event listener to respond when the connection state changes.
+2. Replace your `src/main/index.ts` file with the following:
 
 ```typescript
 import { IComponent, getStudioProApi } from "@mendix/extensions-api";
@@ -51,9 +52,9 @@ The code uses the:
 {{% alert color="info" %}} The function is `async` in order for you to use `await` when executing the preview action.
 {{% /alert %}}
 
-The connectionChanged event provides an object with:
+The `connectionChanged` event provides an object with:
 
-* isConnected — a boolean indicating whether the runtime is currently connected (true) or disconnected (false)
+* `isConnected` – a boolean indicating whether the runtime is currently connected (true) or disconnected (false)
 
 {{% alert color="info" %}} Take into consideration that you can currently only detect when the runtime connects/disconnects, but before the runtime setup is completed.
 {{% /alert %}}
