@@ -185,7 +185,7 @@ Install-MxService $appName
 The following script example demonstrates how to set runtime settings for your app. It applies custom runtime configuration settings to your application using a hashtable of key-value pairs.
 
 ```text
-$appName = '{Name of your app}'
+$appName = 'Name of Mendix app'
 $settings = @{
     'MaxJavaHeapSize' = '2048'           
     'DatabaseHost' = 'localhost'        
@@ -200,7 +200,7 @@ Set-MxAppRuntimeSettings $appName -Settings $settings
 The following script example demonstrates how to set an application constant for your app. It updates a specific constant value in your Mendix app configuration.
 
 ```text
-$appName = '{Name of your app}'
+$appName = 'Name of Mendix app'
 $constantName = '{Name of your constant}'
 $constantValue = '{Value for your constant}'
 
