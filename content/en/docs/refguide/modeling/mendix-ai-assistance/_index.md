@@ -88,7 +88,9 @@ Various Maia features are available in Private Mendix Platform. For more informa
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
-The table below presents all the third-party services each Maia capability uses and what data are sent to the third-party services.
+[Maia Make](/refguide/maia-make/) introduced in Studio Pro 11.8 uses Claude Sonnet 4.5. Any Maia Make capability in Studio Pro 11.8 and above uses this model to generate Mendix models. 
+
+The table below presents all the third-party services each Maia capability uses for Studio Pro versions below 11.8, and what data are sent to the third-party services.
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
