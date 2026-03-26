@@ -29,8 +29,8 @@ This property determines how list parameters are passed to the nanoflow.
 
 The following options are available:
 
-* **Shared** - adding or removing items in the called nanoflow is reflected in the caller. This aligns nanoflow behavior with microflows.
-* **Isolated (legacy)** - the called nanoflow works with a separate list, so adding or removing items is not reflected in the caller. This option is deprecated and will be removed in Mendix 12.
+* **Shared** - adding or removing items in the called nanoflow is reflected in the caller. This aligns nanoflow behavior with that of microflows.
+* **Isolated (legacy)** - the called nanoflow works with a separate list. So adding or removing items is not reflected in the caller. This option is deprecated and will be removed in Mendix 12.
 
 Default: *Shared*
 
