@@ -36,6 +36,8 @@ You must also ensure that you have the supported version of [Java Runtime Enviro
 
 ## Creating a Portable App Distribution File
 
+
+
 ## Deploying Your App
 
 After you create the Portable App Distribution file, deploy it to your environment.
