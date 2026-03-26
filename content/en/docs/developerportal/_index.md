@@ -29,10 +29,6 @@ The following sections describe the process for each option.
 
 ### Creating an App with Maia
 
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
-{{% /alert %}}
-
 Follow the steps in [Maia Plan](/developerportal/maia-plan/) to enlist Maia's help in planning and creating an app.
 
 ### Creating an App from a Starter App Template

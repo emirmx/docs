@@ -3,12 +3,7 @@ title: "Maia Plan"
 url: /developerportal/maia-plan/
 description: "Describes the process of planning and building an app using Maia."
 weight: 3
-beta: true
 ---
-
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
-{{% /alert %}}
 
 ## Introduction
 
