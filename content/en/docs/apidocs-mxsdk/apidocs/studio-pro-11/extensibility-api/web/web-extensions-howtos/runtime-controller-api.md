@@ -56,7 +56,7 @@ The code uses the:
 {{% alert color="info" %}} The function is `async` in order for you to use `await` when executing the preview action.
 {{% /alert %}}
 
-The `connectionChanged` event provides an object with:
+The `connectionChanged` event returns an object with:
 
 * `isConnected` – a boolean indicating whether the runtime is currently connected (true) or disconnected (false)
 
