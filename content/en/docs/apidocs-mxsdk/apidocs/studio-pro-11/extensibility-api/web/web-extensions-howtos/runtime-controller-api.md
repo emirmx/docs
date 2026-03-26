@@ -8,6 +8,10 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-controller-api/
 
 This how-to describes how to create a simple menu that displays when the connection changed in a message box.
 
+{{% alert color="info" %}}
+Listening for connection changes was introduced in version 11.9.0.
+{{% /alert %}}
+
 ## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
