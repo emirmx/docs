@@ -45,7 +45,7 @@ Before starting this how-to, make sure you have the following prerequisites:
 
     * Suitable database servers are MariaDB, MS SQL Server, MySQL, Oracle Database and PostgreSQL. See [System Requirements](/refguide/system-requirements/#databases) for more information
 
-* A local,domain user, or group managed service account (gMSA) with the *“log on as a service”* local security policy set
+* A local user, domain user or group managed service account (gMSA) with the *“log on as a service”* local security policy set
 
 ## Installing the Mendix Service Console {#service-console}
 
