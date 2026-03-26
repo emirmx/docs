@@ -14,7 +14,7 @@ Extension permissions were introduced in version 11.9.0.
 
 ## How Permissions Work
 
-Web extensions can request permissions to access sensitive functionalities. The permission system follows these principles:
+Web extensions can request permissions to access sensitive functionality. The permission system follows these principles:
 
 * **Opt-in by default** — Extensions cannot access protected APIs unless they explicitly request the permission and the user grants it
 * **User control** — Users decide which permissions to grant through the Extensions Overview pane in Studio Pro
