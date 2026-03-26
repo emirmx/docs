@@ -323,7 +323,7 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### JavaScript Action Editor
 
-Select this option to use the modernized version of the JavaScript Action Editor. You must close all open JavaScript Actions to use this feature.
+Select this option to use the modernized version of the JavaScript action Editor. You must close all open JavaScript actions to use this feature.
 
 ### Mapping Editor
 

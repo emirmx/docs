@@ -26,7 +26,7 @@ To learn how to create, configure, and use a JavaScript action, see these [Build
 
 {{% alert color="info" %}}
 
-With Mendix 11.9, a new modernized JavaScript Action editor was released into Beta. Enable it via **New Features** in the **Preferences**.
+In Studio Pro 11.9, a new modernized JavaScript action editor was released in beta. Enable it via **New Features** in the Studio Pro **Preferences**.
 
 {{% /alert %}}
 
