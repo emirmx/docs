@@ -33,7 +33,7 @@ The following sections describe the process for each option.
 This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
-Follow the steps in [Creating an App with Maia](/developerportal/creating-with-maia/) to enlist Maia's help in planning and generating an app.
+Follow the steps in [Maia Plan](/developerportal/maia-plan/) to enlist Maia's help in planning and creating an app.
 
 ### Creating an App from a Starter App Template
 

@@ -1,6 +1,6 @@
 ---
-title: "Creating an App with Maia"
-url: /developerportal/creating-with-maia/
+title: "Maia Plan"
+url: /developerportal/maia-plan/
 description: "Describes the process of planning and building an app using Maia."
 weight: 3
 beta: true
@@ -12,13 +12,13 @@ This feature is in Public Beta. For more information, refer to [Release Status](
 
 ## Introduction
 
-You can use Maia to plan and generate an app. This page details the steps involved in providing project context, reviewing and refining the generated project scope, and approving the solution proposal to initiate app development.
+You can use Maia Plan to plan and generate an app. This page details the steps involved in providing project context, reviewing and refining the generated project scope, and approving the solution proposal to initiate app development.
 
 {{< figure src="/attachments/developerportal/maia/maia-create-app-beta.png" alt="Plan and build with Maia" >}}
 
-## Planning and Building an App with Maia
+## Creating an App with Maia Plan
 
-Follow these steps to have Maia plan and generate an app for you:
+Follow these steps to have Maia Plan create an app for you:
 
 1. In **Apps**, click **Create App** in the upper right corner.
 
