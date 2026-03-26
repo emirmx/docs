@@ -115,7 +115,7 @@ You have to set the permission to true if you want the permission to appear in t
 
 When a user installs your extension, they can grant this permission through the Extensions Overview pane (**View** > **Extensions**) in Studio Pro. Once granted, private constants will be returned with `isPrivate` set to false and their value included.
 
-You can read more about permissions in [Extension Permission](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
+You can read more about permissions in [Extension Permissions in Overview Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
 
 ## Extensibility Feedback
 
