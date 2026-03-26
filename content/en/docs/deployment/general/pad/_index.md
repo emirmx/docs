@@ -3,6 +3,8 @@ title: "Portable App Distribution"
 url: /developerportal/deploy/portable-app-distribution/
 weight: 15
 description: "Describes the Portable App Distribution deployment method for Mendix apps."
+no_list: false 
+description_list: true
 ---
 
 ## Introduction
@@ -31,3 +33,39 @@ To license a Mendix app on the Portable App Distribution, add it to your configu
 The Portable App Distribution functionality is available for Mendix Studio Pro version 11.9, 11.6.x MTS, or above.
 
 You must also ensure that you have the supported version of [Java Runtime Environment](/refguide/system-requirements/#java).
+
+## Creating a Portable App Distribution File
+
+## Deploying Your App
+
+After you create the Portable App Distribution file, deploy it to your environment.
+
+### Deploying Locally
+
+To run your app locally, perform the following steps:
+
+1. Extract `..\releases\YourApp_portable_YYYYMMDD_hhmm.zip` to a local folder.
+2. Set the **M2EE_ADMIN_PASS** admin port password by performing one of the following actions:
+
+    * For Windows, run the command `set M2EE_ADMIN_PASS=<your password>`
+    * For Linux, run the command `export M2EE_ADMIN_PASS=<your password>`
+
+{{% alert color="info" %}}
+The Mendix admin port can be used to fetch metrics and other runtime data from an app. It requires a password for security reasons.
+{{% /alert %}}
+
+3. Run the app by using one of the following commands:
+
+    * For Windows, run the command `<your folder location>\bin\start.bat`
+    * For Windows Powershell, run the command `<your folder location>\bin\start.ps1`
+    * For Linux, run the command `<your folder location>\bin\start`
+
+### Deploying to a Self-Hosted Environment
+
+For more information about deploying to a self-hosted environment, refer to the following topics:
+
+* [Portable App Distribution for Docker](/developerportal/deploy/docker-deploy-pad/)
+* [Portable App Distribution for Linux](/developerportal/deploy/linux-pad/)
+* [Portable App Distribution for Cloud Foundry](/developerportal/deploy/cloud-foundry-pad/)
+
+## Read More

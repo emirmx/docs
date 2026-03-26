@@ -3,6 +3,8 @@ title: "Docker"
 url: /developerportal/deploy/docker/
 weight: 60
 description: "Describes how to deploy using a Docker image using a Docker Buildpack."
+no_list: false 
+description_list: true
 ---
 
 ## Introduction
