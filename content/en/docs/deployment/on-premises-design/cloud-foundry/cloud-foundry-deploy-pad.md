@@ -17,20 +17,20 @@ For information about the scope of support, see [Support for Different Deploymen
 
 ## Prerequisites
 
-To deploy your app to an on-premises Cloud Foundry configuration using [Portable App Distribution](/developerportal/deploy/portable-apps-distribution-deploy/), ensure that you fulfill the following prerequisites:
+To deploy your app to an on-premises Cloud Foundry configuration using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/), ensure that you fulfill the following prerequisites:
 
 * You have access to the Cloud Foundry organization and space where the application is deployed.
 * You have access to the database configuration from the database service.
 * You have access to binding other required Cloud Foundry services.
 * The Cloud Foundry CLI is installed.
-* You have generated the [Portable App Distribution .zip file](/developerportal/deploy/portable-apps-distribution-deploy/).
+* You have generated the [Portable App Distribution .zip file](/developerportal/deploy/portable-app-distribution-deploy/).
 
 ## Deploying an App with Portable App Distribution
 
 To deploy your app to Cloud Foundry, perform the following steps:
 
 1. Log in to Cloud Foundry, and then access the organization and space where the application is deployed.
-2. Save the [Portable App Distribution .zip file](/developerportal/deploy/portable-apps-distribution-deploy/) to an accessible location.
+2. Save the [Portable App Distribution .zip file](/developerportal/deploy/portable-app-distribution-deploy/) to an accessible location.
 3. Create a *manifest.yml* file in the root directory of your app.
 
     By default, the `cf push` command uses the *manifest.yml* file in the app directory. To specify a different location for the manifest, you must pass its local path to the `-f` flag when you run `cf push`.

@@ -85,7 +85,7 @@ Mendix Support does not have access to app health, logs, graphs and monitoring â
 
 Mendix is compatible with all the well-known cloud providers: IBM Cloud, Microsoft Azure, Amazon Web Services (AWS), Red Hat OpenShift, and Google Cloud Platform.
 
-Depending on the Cloud architecture a Mendix application is built using the [Portable App Distribution](/developerportal/deploy/portable-apps-distribution-deploy/), the [Mendix Cloud Foundry buildpack](https://github.com/mendix/cf-mendix-buildpack), the [Mendix Docker Buildpack](https://github.com/mendix/docker-mendix-buildpack) or to a Unix-like or Windows server.
+Depending on the Cloud architecture a Mendix application is built using the [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/), the [Mendix Cloud Foundry buildpack](https://github.com/mendix/cf-mendix-buildpack), the [Mendix Docker Buildpack](https://github.com/mendix/docker-mendix-buildpack) or to a Unix-like or Windows server.
 
 Check our [System Requirements](/refguide/system-requirements/) for the supported components of any Cloud Foundry / Docker and Kubernetes / traditional architecture.
 
