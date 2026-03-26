@@ -89,7 +89,7 @@ To deploy a Mendix app using the Mendix Service Console, follow these steps:
     * **Description** – a description of the application that will be visible in the Mendix Service Console
     * **Startup type** – select whether you want the app to be started automatically when the server starts, started with a delay, started manually, or disabled altogether
     * **User name** and **Password** – the app will run under the user account given here, and the service will be installed with this user account configured (for more information, see [Prerequisites](#Prerequisites))
-    * **Install service with LocalSystem account** – optionally, select the checkbox if you want to use a gMSA account for a Mendix app instead of user account given under **User name** and **Password**.
+    * **Install service with LocalSystem account** – optionally, select the checkbox if you want to use a gMSA account for a Mendix app instead of the user account given under **User name** and **Password**.
     
 4. Click **Next**. 
 
