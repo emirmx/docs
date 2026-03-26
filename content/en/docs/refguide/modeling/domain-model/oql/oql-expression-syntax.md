@@ -855,7 +855,9 @@ FROM Sales.CustomerInfo
 
 The `DATEADD` function adds a specified period of time to an expression of type `DATETIME`. The return type is `DATETIME`.
 
-This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.9.0. It is supported only in Java actions.
+{{% /alert %}}
 
 #### Syntax
 
@@ -873,7 +875,7 @@ Supported options are `YEAR`, `QUARTER`, `MONTH`, `WEEK`, `DAY`, `HOUR`, `MINUTE
 
 ##### length_expression
 
-`length_expression` specifies the amount of intervals to add or subtract. For example, `DATEADD ( WEEK , 3 , OrderDate )` adds 3 weeks to an attribute `OrderDate`. Expressions that resolve to Integer or Long are allowed.
+`length_expression` specifies the number of `datepart` intervals to add. For example, `DATEADD ( WEEK , 3 , OrderDate )` adds 3 weeks to an attribute `OrderDate`. You can provide a negative number to subtract a period. Expressions that resolve to Integer or Long are allowed.
 
 ##### date_expression
 
@@ -883,7 +885,7 @@ Supported options are `YEAR`, `QUARTER`, `MONTH`, `WEEK`, `DAY`, `HOUR`, `MINUTE
 
 `timezone` specifies the time zone to use for the operation. This parameter is optional and defaults to the user time zone. It should be a string literal containing an IANA time zone. GMT offset time zones are not supported.
 
-For the `DATEADD` function, this parameter affects the difference between standard time and daylight saving time.
+For the `DATEADD` function, this parameter affects the difference between standard time and daylight saving time. See [Examples](#oql-dateadd-example), below.
 
 {{% alert color="info" %}}
 The user time zone is usually different from UTC. To get the result in the UTC time zone, explicitly specify `'UTC'` in this parameter. For details on time zone handling in Mendix Runtime, see [Date and Time Handling](/refguide/date-and-time-handling/).
@@ -1184,7 +1186,7 @@ SELECT Text, LENGTH(Text) as text_length FROM Sales.Reports
 
 #### Description
 
-Returns the index of the first occurence of a substring in a string. The index is 1-based. If no occurrence is found, returns 0.
+Returns the index of the first occurrence of a substring in a string. The index is 1-based. If the substring is not in the string, it returns 0.
 
 This function was introduced in Mendix version 11.9.0. It is currently supported only in Java actions.
 
@@ -1193,12 +1195,12 @@ This function was introduced in Mendix version 11.9.0. It is currently supported
 The syntax is as follows:
 
 ```sql
-LOCATE ( expression , pattern [, offset ] )
+LOCATE ( expression , substring [, offset ] )
 ```
 
 `expression` specifies the string to be searched. Expressions that resolve to String are allowed.
 
-`pattern` specifies the substring to search for. Expressions that resolve to String are allowed.
+`substring` specifies the substring to search for. Expressions that resolve to String are allowed.
 
 `offset` specifies how many characters in the beginning of `expression` should be ignored. This parameter is optional, and its default value is 0. Expressions that resolve to Integer or Long are allowed.
 
@@ -1368,14 +1370,14 @@ The REPLACE function takes an input string and replaces all occurrences of a spe
 The syntax is as follows:
 
 ```sql
-REPLACE ( expression, pattern, replacement )
+REPLACE ( expression, substring, replacement )
 ```
 
 `expression` specifies the string to be searched.
 
-`pattern` specifies the substring to search for. In the function output, all occurrences of the substring will be replaced with the value of `replacement`.
+`substring` specifies the substring to search for. In the function output, all occurrences of the substring will be replaced with the value of `replacement`.
 
-`replacement` specifies the string to replace the pattern.
+`replacement` specifies the string to replace the substring.
 
 #### Database-specific limitations
 
@@ -1477,7 +1479,7 @@ SUBSTRING ( expression , start_char [, length ] )
 
 `start_char` specifies the 1-based index of the first character of the resulting substring. Expressions that resolve to Integer or Long are allowed.
 
-`length` specifies the length limit of the resulting substring. If the `length` argument is not specified, all characters starting with `start_char` are returned. Expressions that resolve to Integer or Long are allowed.
+`length` specifies the maximum length of the resulting substring. If the result would be longer than `length` it will be truncated. If the `length` argument is not specified, all characters starting with `start_char` are returned. Expressions that resolve to Integer or Long are allowed.
 
 #### Example
 
@@ -1505,9 +1507,9 @@ FROM Sales.Customer
 ORDER BY LastName LIMIT 1
 ```
 
-| Substring_13 | Substring_13_5 | Substring_13_10 | Substring_20 |
-|:-------------|:---------------|:----------------|:-------------|
-| `logical`    | `logic`        | `logical`       | ` `          |
+| Substring_13 | Substring_13_5 | Substring_13_10 | Substring_20     |
+|:-------------|:---------------|:----------------|:-----------------|
+| logical      | logic          | logical         | *(empty string)* |
 
 ### UPPER
 
