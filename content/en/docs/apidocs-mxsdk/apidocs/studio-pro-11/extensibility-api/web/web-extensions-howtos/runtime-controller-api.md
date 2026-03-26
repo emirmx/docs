@@ -25,7 +25,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 You can listen for runtime connection state changes to know when the app starts or stops running. To do this, follow the steps below:
 
 1. Add an event listener to respond when the connection state changes.
-2. Replace your `src/main/index.ts` file with the following:
+2. Replace the content of your `src/main/index.ts` file with the following:
 
 ```typescript
 import { IComponent, getStudioProApi } from "@mendix/extensions-api";
