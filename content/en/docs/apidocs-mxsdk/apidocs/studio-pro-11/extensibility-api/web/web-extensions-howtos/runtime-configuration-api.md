@@ -8,6 +8,10 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-configuration-api/
 
 This how-to describes how to create a simple menu that retrieves and displays the runtime constants from the active configuration in a message box.
 
+{{% alert color="info" %}}
+Access to runtime constants using the web API was introduced in version 11.9.0.
+{{% /alert %}}
+
 ## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
