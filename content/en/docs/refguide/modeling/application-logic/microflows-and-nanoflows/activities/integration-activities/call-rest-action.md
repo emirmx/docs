@@ -132,7 +132,7 @@ The **Password** property defines the password that will be used to authenticate
 These headers are added to the HTTP request header. Each custom header is a pair with a key and a value (a microflow expression).
 
 {{% alert color="info" %}}
-The actual computed-value for **Content-Length header** takes precedence over the user-specified value. Incase of unkown length (e.g. streamed or binary content), user-specified value is used.
+The actual computed value for the **Content-Length header** takes precedence over the user-specified value. In case of an unknown length (for example, streamed or binary content), the user-specified value is used.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
