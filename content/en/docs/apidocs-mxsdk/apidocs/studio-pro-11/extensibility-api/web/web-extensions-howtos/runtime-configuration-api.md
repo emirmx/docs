@@ -84,6 +84,7 @@ The code uses the:
 {{% /alert %}}
 
 The `getConstants()` function returns an array of constant objects, each with the following properties:
+
 * `isPrivate` – a boolean indicating whether the constant value is hidden (true) or accessible (false)
 * `constantName` – the fully qualified name of the constant (for example, `MyModule.MyConstant`)
 * `value` – the constant value as a string (only present when `isPrivate` is false)
