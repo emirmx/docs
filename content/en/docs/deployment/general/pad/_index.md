@@ -1,6 +1,6 @@
 ---
 title: "Portable App Distribution"
-url: /developerportal/deploy/portable-app-distribution/
+url: /developerportal/deploy/portable-app-distribution-deploy/
 weight: 15
 description: "Describes the Portable App Distribution deployment method for Mendix apps."
 no_list: false 
