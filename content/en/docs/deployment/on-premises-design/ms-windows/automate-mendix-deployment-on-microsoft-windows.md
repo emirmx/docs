@@ -200,9 +200,11 @@ Set-MxAppRuntimeSettings $appName -Settings $settings
 The following script example demonstrates how to set an application constant for your app. It updates a specific constant value in your Mendix app configuration.
 
 ```text
-$appName = 'Name of Mendix app'
-$constantName = '{Name of your constant}'
-$constantValue = '{Value for your constant}'
+$appName = '{Name of your app}'
+$constants = @{
+    'constantName' = 'constantValue'
+    'constantName2' = 'constantValue2'
+}
 
 # Set application constant
 Set-MxAppConstants $appName -Constants $constants
