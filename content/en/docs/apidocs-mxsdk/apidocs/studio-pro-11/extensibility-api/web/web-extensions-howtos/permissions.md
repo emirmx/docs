@@ -16,7 +16,7 @@ Extension permissions were introduced in version 11.9.0.
 
 Web extensions can request permissions to access sensitive functionality. The permission system follows these principles:
 
-* **Opt-in by default** — Extensions cannot access protected APIs unless they explicitly request the permission and the user grants it
+* **Opt-in by default** — Extensions cannot access protected APIs unless you request persmission and the extension user grants it
 * **User control** — You decide which permissions to grant through the Extensions Overview pane in Studio Pro
 * **Per-project settings** — Permission grants are stored per project so users can have different permission settings for the same extension across different projects
 
