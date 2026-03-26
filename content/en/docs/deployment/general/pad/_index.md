@@ -5,6 +5,7 @@ weight: 15
 description: "Describes the Portable App Distribution deployment method for Mendix apps."
 no_list: false 
 description_list: true
+beta: true
 ---
 
 ## Introduction
@@ -36,7 +37,7 @@ You must also ensure that you have the supported version of [Java Runtime Enviro
 
 ## Creating a Portable App Distribution File
 
-
+In most production environments, deployment packages are created by using the [Mx-Build](/refguide/mxbuild/) command-line tool. However, you can also [manually create a deployment package](/refguide/create-deployment-package-dialog/) if required, for example, for a local test deployment..
 
 ## Deploying Your App
 
