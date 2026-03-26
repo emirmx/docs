@@ -17,7 +17,7 @@ Mendix offers two options for Docker deployments: Portable App Distribution or t
 
 ### Portable App Distribution
 
-[Portable App Distribution](/developerportal/deploy/portable-app-distribution/) allows users to generate their portable app with a single MxBuild command. It requires fewer manual steps than the Docker Buildpack, simpler environment configuration, and no `rootfs` preparation. Running Portable App Distribution can take as little as 3-6 minutes (the time may vary based on the application's size and complexity).
+[Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/) allows users to generate their portable app with a single MxBuild command. It requires fewer manual steps than the Docker Buildpack, simpler environment configuration, and no `rootfs` preparation. Running Portable App Distribution can take as little as 3-6 minutes (the time may vary based on the application's size and complexity).
 
 ### Docker Buildpack
 

@@ -5,7 +5,6 @@ weight: 15
 description: "Describes the Portable App Distribution deployment method for Mendix apps."
 no_list: false 
 description_list: true
-beta: true
 ---
 
 ## Introduction

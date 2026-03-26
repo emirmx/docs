@@ -7,7 +7,7 @@ description: "Describes how to deploy using a Docker image by using Portable App
 
 ## Introduction
 
-This guide provides a walkthrough for deploying your Mendix application using [Portable App Distribution](/developerportal/deploy/portable-app-distribution/) with Docker. This approach is particularly useful for containerized environments, and can significantly ease your CI/CD setup.
+This guide provides a walkthrough for deploying your Mendix application using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/) with Docker. This approach is particularly useful for containerized environments, and can significantly ease your CI/CD setup.
 
 {{% alert color="info" %}}
 This document is not an official Mendix implementation, or a substitute for recommended production deployment strategies. For more features, such as app management or governance, we suggest using [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) or [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), which offer a structured, tested experience with cloud infrastructure. 
@@ -29,7 +29,7 @@ The Portable App Distribution feature in Mendix Studio Pro provides you with the
 
 To deploy your app to Docker, perform the following steps:
 
-1. Generate the application files. For more information, see [Portable App Distribution](/developerportal/deploy/portable-app-distribution/).
+1. Generate the application files. For more information, see [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/).
 
     These files are the core of your Mendix application and are ready to be included in a Docker image.
 
