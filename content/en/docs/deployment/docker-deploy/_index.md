@@ -2,7 +2,7 @@
 title: "Docker"
 url: /developerportal/deploy/docker/
 weight: 60
-description: "Describes how to deploy using a Docker image using a Docker Buildpack."
+description: "Describes how to deploy your Mendix app to a Docker environment."
 no_list: false 
 description_list: true
 ---
