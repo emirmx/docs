@@ -205,7 +205,7 @@ $constantName = '{Name of your constant}'
 $constantValue = '{Value for your constant}'
 
 # Set application constant
-Set-MxAppConstant $appName -ConstantName $constantName -Value $constantValue
+Set-MxAppConstants $appName -Constants $constants
 ```
 
 ### Sample Script - Get Server Id
