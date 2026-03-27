@@ -14,13 +14,15 @@ To use Maia for Workflows, an internet connection and signing in to Studio Pro a
 
 {{% alert color="info" %}}
 In Studio Pro 11.8, Maia for Workflows is not available.
+
+In Studio Pro 11.9 and above, Maia for Workflows is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia for Workflows. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
 {{% /alert %}}
 
 Maia for Workflows helps you generate a [workflow](/refguide/workflows/). It can also provide explanations or further improvements based on the generated elements. The current version has some known limitations. For example, it is currently intended only for use with empty workflows. Generated elements are appended to the end of the workflow, which may result in incorrectly modeled workflows if the workflow is not empty. For more details, see the [Limitations](#limitation) section below.
 
-## Using Maia for Workflows
+## Using Maia for Workflows in Studio Pro 11.7 and Below
 
-To enable Maia for Workflows, go to **Edit** > **Preferences** > the **Maia** tab and select **Enable Maia for Workflows**.
+To enable Maia for Workflows in Studio Pro 11.7 and below, go to **Edit** > **Preferences** > the **Maia** tab and select **Enable Maia for Workflows**.
 
 Once enabled, you can find it in the the toolbar of a workflow:
 
