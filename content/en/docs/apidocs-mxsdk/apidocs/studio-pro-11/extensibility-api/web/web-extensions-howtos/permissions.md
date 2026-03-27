@@ -18,7 +18,7 @@ Web extensions can request permissions to access sensitive functionality. The pe
 
 * **Opt-in by default** — Extensions cannot access protected APIs unless you request persmission and the extension user grants it
 * **User control** — You decide which permissions to grant through the Extensions Overview pane in Studio Pro
-* **Per-project settings** — Permission grants are stored per project so users can have different permission settings for the same extension across different projects
+* **Per-project settings** — Permission grants are stored per project, so a user’s approval for an extension applies only within that app. This gives them the flexibility to grant a permission in one project and choose different settings for the same extension in another.
 
 ## Requesting Permissions
 
