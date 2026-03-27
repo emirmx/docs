@@ -65,6 +65,11 @@ The Mendix admin port can be used to fetch metrics and other runtime data from a
     * For Windows Powershell, run the command `<your folder location>\bin\start.ps1`
     * For Linux, run the command `<your folder location>\bin\start`
 
+{{% alert color="info" %}}
+On Linux, if the ZIP was extracted on Windows, the +x flag is not preserved. Windows does not have the executability bit. You need to run the command `chmod +x ./bin/start` first.
+{{% /alert %}}
+
+
 ### Deploying to a Self-Hosted Environment
 
 For more information about deploying to a self-hosted environment, refer to the following topics:
