@@ -8,6 +8,10 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-configuration-api/
 
 This how-to describes how to create a simple menu that retrieves and displays the runtime constants from the active configuration in a message box.
 
+{{% alert color="info" %}}
+Access to runtime constants using the web API was introduced in version 11.9.0.
+{{% /alert %}}
+
 ## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
@@ -80,6 +84,7 @@ The code uses the:
 {{% /alert %}}
 
 The `getConstants()` function returns an array of constant objects, each with the following properties:
+
 * `isPrivate` – a boolean indicating whether the constant value is hidden (true) or accessible (false)
 * `constantName` – the fully qualified name of the constant (for example, `MyModule.MyConstant`)
 * `value` – the constant value as a string (only present when `isPrivate` is false)
@@ -111,7 +116,7 @@ You have to set the permission to true if you want the permission to appear in t
 
 When a user installs your extension, they can grant this permission through the Extensions Overview pane (**View** > **Extensions**) in Studio Pro. Once granted, private constants will be returned with `isPrivate` set to false and their value included.
 
-You can read more about permissions in [Extension Permission](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
+You can read more about permissions in [Extension Permissions in Overview Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/).
 
 ## Extensibility Feedback
 

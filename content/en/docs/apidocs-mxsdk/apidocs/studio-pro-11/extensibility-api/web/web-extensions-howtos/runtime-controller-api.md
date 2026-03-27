@@ -8,6 +8,10 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-controller-api/
 
 This how-to describes how to create a simple menu that displays when the connection changed in a message box.
 
+{{% alert color="info" %}}
+Listening for connection changes was introduced in version 11.9.0.
+{{% /alert %}}
+
 ## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
@@ -21,7 +25,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 You can listen for runtime connection state changes to know when the app starts or stops running. To do this, follow the steps below:
 
 1. Add an event listener to respond when the connection state changes.
-2. Replace your `src/main/index.ts` file with the following:
+2. Replace the content of your `src/main/index.ts` file with the following:
 
 ```typescript
 import { IComponent, getStudioProApi } from "@mendix/extensions-api";
@@ -52,7 +56,7 @@ The code uses the:
 {{% alert color="info" %}} The function is `async` in order for you to use `await` when executing the preview action.
 {{% /alert %}}
 
-The `connectionChanged` event provides an object with:
+The `connectionChanged` event returns an object with:
 
 * `isConnected` – a boolean indicating whether the runtime is currently connected (true) or disconnected (false)
 

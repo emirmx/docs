@@ -8,13 +8,17 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/
 
 This how-to describes how the permission system works for web extensions in Studio Pro. Permissions allow extensions to request access to sensitive APIs or data that require explicit user consent.
 
+{{% alert color="info" %}}
+Extension permissions were introduced in version 11.9.0.
+{{% /alert %}}
+
 ## How Permissions Work
 
-Web extensions can request permissions to access sensitive functionalities. The permission system follows these principles:
+Web extensions can request permissions to access sensitive functionality. The permission system follows these principles:
 
-* **Opt-in by default** — Extensions cannot access protected APIs unless they explicitly request the permission and the user grants it
-* **User control** — Users decide which permissions to grant through the Extensions Overview pane in Studio Pro
-* **Per-project settings** — Permission grants are stored per project so users can have different permission settings for the same extension across different projects
+* **Opt-in by default** — Extensions cannot access protected APIs unless you request persmission and the extension user grants it
+* **User control** — You decide which permissions to grant through the Extensions Overview pane in Studio Pro
+* **Per-project settings** — Permission grants are stored per project, so a user’s approval for an extension applies only within that app. This gives them the flexibility to grant a permission in one project and choose different settings for the same extension in another.
 
 ## Requesting Permissions
 
