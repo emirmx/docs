@@ -78,7 +78,7 @@ By default, **Autofocus** is set to "Off" for any newly created pages. For backw
 A page's URL allows end users to directly navigate to the page (for example, from external links or bookmarks). It will be shown in the address bar of the browser when you visit the page. When navigating to a page without a URL configured, the last visited URL is shown. Note that the full URL of the page will be the base URL of your application followed by `/p/` and then by the configured URL of the page (for example, `http://example.mendixcloud.com/p/home_page`).
 
 {{% alert color="info" %}}
-The `/p/` URL prefix can be configured in the [runtime settings](/refguide/runtime-tab/#url-prefix).
+The `/p/` URL prefix can be configured in [runtime settings](/refguide/runtime-tab/#url-prefix).
 {{%/alert %}}
 
 Pages with parameters can also have URLs. For those pages, all page parameters must be present in the URL. The URL syntax depends on the type of parameter:
