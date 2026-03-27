@@ -110,5 +110,5 @@ Due to the complex cross-document nature of a workflow, not all properties of th
 ## Read More
 
 * [Workflow](/refguide/workflows/)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/maia-make/)
+* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
 * [Maia Chat](/refguide/maia-chat/)
