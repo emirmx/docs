@@ -20,7 +20,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 Set up the extension structure by following the steps below:
 
 1. Create a menu that will display the runtime constants in the `loaded` method in the main entry point (`src/main/index.ts`). This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
-2. Replace your `src/main/index.ts` file with the following:
+2. Replace the contents of your `src/main/index.ts` file with the following:
 
 ```typescript
 import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";

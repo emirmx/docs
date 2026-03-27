@@ -49,7 +49,7 @@ When a user installs an extension that requests permissions, they can manage tho
 
 ## Available Permissions
 
-Currently, the following permissions are available for web extensions:
+The following permissions are available for web extensions:
 
 | Permission | Description |
 |------------|-------------|
