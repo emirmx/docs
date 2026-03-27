@@ -40,13 +40,13 @@ To request a permission, declare it in your extension's `package.json` file unde
 }
 ```
 
-Setting a permission to **true** indicates that your extension requests this permission. The user must grant it before your extension can use the protected functionality.
+Setting a permission to **true** indicates that your extension requests this permission. The user must grant it before your extension can use the protected functionality. Default: *False*
 
 ## Granting Permissions (User Flow)
 
 When a user installs an extension that requests permissions, they can manage those permissions through the Extensions Overview pane. Follow the steps below:
 
-1. Open Studio Pro and load a project with the extension installed.
+1. Open Studio Pro and load an app with the extension installed.
 2. Go to **View** > **Extensions Overview** to open the Extensions Overview pane.
 3. Find the extension in the list. Under the extension details, the **Permissions** section displays the requested permissions.
 4. Check or uncheck the checkbox next to each permission to grant or revoke access.
