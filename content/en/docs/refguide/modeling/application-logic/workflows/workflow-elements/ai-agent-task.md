@@ -19,7 +19,7 @@ An AI agent is an autonomous software system powered by large language models (L
 
 With **AI agent task**, you can select a [microflow](#microflow) that calls any agent that has been configured in your application. You are not limited to one approach. Agents can be created and configured in different ways, as long as they can be called via a microflow. 
 
-If you do not yet have any agents configured, you can get started by following the guide on [creating your first agent](/appstore/modules/genai/how-to/howto-single-agent/). For specific information on how to create and call an agent with microflows, see the [Define the Agent Using Microflows](/appstore/modules/genai/how-to/howto-single-agent/#define-genai-commons) section in *Create Your First Agent*. 
+If you do not yet have any agents configured, you can get started by following the guide on [creating your first agent](/appstore/modules/genai/how-to/howto-single-agent/).
 
 {{% alert color="info" %}}
 Support for configuring AI agents using an Agent Editor in Studio Pro is coming soon.
