@@ -74,17 +74,17 @@ For example, Maia for Workflows can analyze a BPMN image representing employee o
 
 Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a photo, BPMN schema, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
-## Limitations {#limitation}
+### Limitations {#limitation}
 
 Maia for Workflows has some limitations.
 
-### Empty Workflows Only
+#### Empty Workflows Only
 
 Maia for Workflows is currently intended only for use with empty Workflows. Using it on existing workflows can result in incorrectly modeled business processes.
 
 Requests for improvements and explanations currently only work within the same session where a workflow has been generated. Once the session is closed, Maia for Workflows loses the context. Any attempts to make changes to that workflow in a new session will also result in the removal of all existing elements.
 
-### Supported Workflow Elements
+#### Supported Workflow Elements
 
 Currently, annotations are not supported. However, most of the other workflow elements are supported. See below a list of supported workflow elements:
 
@@ -99,7 +99,7 @@ Currently, annotations are not supported. However, most of the other workflow el
 * [Call Workflow](/refguide/call-workflow/)
 * [Boundary Events](/refguide/workflow-boundary-events/)
 
-### Not All Properties Can Be Configured
+#### Not All Properties Can Be Configured
 
 Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
 

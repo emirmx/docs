@@ -15,21 +15,28 @@ Maia Make capabilities are grouped into a conversational interface, which is ava
 To use this interface and Maia Make capabilities, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Make is a set of AI-assisted development capabilities in Studio Pro that are available through a unified conversational interface. Describe your requirements in natural language, and Maia generates development artifacts such as data structures, overview pages, and microflows. 
+Maia Make is a set of AI-assisted development capabilities in Studio Pro that are available through a unified conversational interface. Describe your requirements in natural language, and Maia generates development artifacts such as data structures, pages, and microflows. 
 
-You can also ask Maia to provide explanations of your existing logic and pages. Moreover, this interface allows you to integrate with external tools via MCP Servers (Playwright, Figma, and others) and it supports story-based development by generating app artifacts based on existing user stories.
+You can also ask Maia to provide explanations of your existing documents, such as logic and pages. Moreover, this interface allows you to integrate with external tools via MCP Servers (Playwright, Figma, and others) and it supports story-based development by generating app artifacts based on existing user stories.
 
 The key Maia Make capabilities are as follows:
 
 * Conversational assistance for general Mendix development queries
-* Logic and page explanations to clarify existing implementation details
-* Domain model generation from natural language descriptions
-* Overview page generation from natural language descriptions
-* Microflow generation including XPath constraints and expressions
-* External tool integration via compatible MCP Servers (such as Playwright, Figma)
+* Explanations of documents to clarify existing implementation details
+* Generation of documents from natural language descriptions, including domain model, pages, and logic
+* Integration with external tools  via compatible MCP Servers (such as Playwright and Figma)
 * Story-based development to help realize existing user stories
-* PDF and image support to help Maia understand your requirements better
-* Add relevant logic and pages to the interface to give Maia a more desired context
+* Support for PDF and image inputs to help Maia better understand your requirements
+* Adding relevant documents (for instance, logic or pages) to the interface to give Maia a more desired context
+* Editing existing documents, including renaming documents and document elements such as entities, attributes, and microflow parameters
+* Removing elements from documents, enabling more advanced refactoring (Studio Pro 11.9 and above)
+* Undoing changes generated on a per-document basis (in Studio Pro 11.9 and above)
+
+{{% alert color="info" %}}
+Support for workflows, view entities, enumerations, constants, modules, Java actions, JavaScript actions was introduced in Studio Pro 11.9. 
+
+Java actions and JavaScript actions are read-only. Java actions can be used in microflows and can be explained. JavaScript actions can only be explained. 
+{{% /alert %}}
 
 ## Using Maia Make Capabilities
 
