@@ -12,15 +12,19 @@ description: "Describes the features in Maia for Workflows."
 To use Maia for Workflows, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-In Studio Pro 11.8, Maia for Workflows is not available.
-
-In Studio Pro 11.9 and above, Maia for Workflows is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia for Workflows. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
-{{% /alert %}}
-
 Maia for Workflows helps you generate a [workflow](/refguide/workflows/). It can also provide explanations or further improvements based on the generated elements. The current version has some known limitations. For example, it is currently intended only for use with empty workflows. Generated elements are appended to the end of the workflow, which may result in incorrectly modeled workflows if the workflow is not empty. For more details, see the [Limitations](#limitation) section below.
 
-## Using Maia for Workflows in Studio Pro 11.7 and Below
+## Using Maia for Workflows
+
+{{% alert color="info" %}}
+In Studio Pro 11.8, Maia for Workflows is not available.
+{{% /alert %}}
+
+### In Studio Pro 11.9 and Above
+
+In Studio Pro 11.9 and above, Maia for Workflows is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia for Workflows. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
+
+### In Studio Pro 11.7 and Below
 
 To enable Maia for Workflows in Studio Pro 11.7 and below, go to **Edit** > **Preferences** > the **Maia** tab and select **Enable Maia for Workflows**.
 
@@ -40,7 +44,7 @@ After a workflow is generated, you can continue asking Maia in the same session 
 In this dedicated chat, only requests related to Workflows will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
 
-### Best Practices for Text Input
+#### Best Practices for Text Input
 
 To achieve optimal results, provide context about your workflow by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your workflow, the more tailored and accurate the generated workflow will be.
 
@@ -59,7 +63,7 @@ Below are some examples of prompts you can use to ask Maia for further explanati
 Requests for improvements or explanations currently only work within the same session where the workflow is generated. If you close the session and start a new session on that workflow, any attempts to make changes to the workflow will result in the removal of existing elements.
 {{% /alert %}}
 
-### Attachment Requirements {#attachment-requirements}
+#### Attachment Requirements {#attachment-requirements}
 
 Maia for Workflows supports adding a maximum of one image and one PDF as attachments. Support for adding a PDF file was introduced in Studio Pro 11.2.0.
 
@@ -74,17 +78,17 @@ For example, Maia for Workflows can analyze a BPMN image representing employee o
 
 Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a photo, BPMN schema, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
-### Limitations {#limitation}
+#### Limitations {#limitation}
 
 Maia for Workflows has some limitations.
 
-#### Empty Workflows Only
+##### Empty Workflows Only
 
 Maia for Workflows is currently intended only for use with empty Workflows. Using it on existing workflows can result in incorrectly modeled business processes.
 
 Requests for improvements and explanations currently only work within the same session where a workflow has been generated. Once the session is closed, Maia for Workflows loses the context. Any attempts to make changes to that workflow in a new session will also result in the removal of all existing elements.
 
-#### Supported Workflow Elements
+##### Supported Workflow Elements
 
 Currently, annotations are not supported. However, most of the other workflow elements are supported. See below a list of supported workflow elements:
 
@@ -99,7 +103,7 @@ Currently, annotations are not supported. However, most of the other workflow el
 * [Call Workflow](/refguide/call-workflow/)
 * [Boundary Events](/refguide/workflow-boundary-events/)
 
-#### Not All Properties Can Be Configured
+##### Not All Properties Can Be Configured
 
 Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
 
