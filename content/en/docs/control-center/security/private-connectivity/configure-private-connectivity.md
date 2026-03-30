@@ -469,7 +469,8 @@ On the **Activities** tab, you can view a log of activities performed on your Pr
 
 The Mendix internal systems operate on the following subnets:
 
-* 127.0.0.1/32
+* 127.0.0.0/8
+* 169.254.0.0/16
 * 10.10.0.0/16
 * 10.11.0.0/16
 * 172.20.0.0/16

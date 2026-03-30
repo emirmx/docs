@@ -233,39 +233,26 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | User Role | OIDC Module Role |
 | --- | --- |
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
-| Anonymous | OIDC.Anonymous (for multiple IdPs only) |
 | User | OIDC.User |
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" >}}
 
-### User Roles for Single IdP
+### End User Login When Using Single or Multiple IdPs
 
-If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login` This means you do not need to configure the *Anonymous* user role for a single IdP.
+If a single Identity Provider (IdP) is configured in the OIDC SSO module, end users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login`. When accessing the URL, users are automatically redirected to the configured IdP for authentication.
 
-### Allowing Anonymous Users for Multiple IdPs (Optional)
+If multiple IdPs are configured in the OIDC module, the following two mechanisms are supported for selecting the IdP:
 
-The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
-
-In the **Anonymous** tab of the app security settings, do the following:
-
-1. Set **Allow anonymous users** to **Yes**
-2. Select *Anonymous* as the **Anonymous user role**
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/anonymous-user.png" class="no-border" >}}
+1. Depending on deeplink, your application logic may redirect to a IdP-specific endpoint.
+2. In this mechanism, your end users make the selection. Your app logic can use the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. End users will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
 
 {{% alert color="info" %}}
-For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
-{{% /alert %}}
-
-{{% alert color="warning" %}}
-Enabling anonymous users introduces a broader attack surface. If you choose this option, follow Mendix guidelines for [setting up anonymous user security](/howto/security/set-up-anonymous-user-security/) to mitigate potential risks.
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. Additionally, check whether `Anonymous` user role can be removed from the app. If your application does not require anonymous access, removing the role is recommended as a security best practice.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
-
-If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs (multiple IdPs), or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
@@ -881,10 +868,6 @@ To parse access tokens, you need to do the following:
 This section is only relevant if you are a Mendix partner and you want to integrate your app with the Siemens SAM IdP.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-From version 4.3.0 of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
-{{% /alert %}}
-
 To parse of SAM access tokens you need to do the following when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app):
 
 1. Select *OIDC.Default_SAM_TokenProcessing_CustomATP* as the **custom AccessToken processing microflow**.
@@ -895,13 +878,17 @@ To parse of SAM access tokens you need to do the following when performing [Runt
 3. Configure the user roles in your app to match the roles returned by SAM. End-users will be given the matching role when they sign into the app. If the role in the SAM token is not found in the Mendix app the end-user will be given the role `User`.
 4. Save the configuration.
 
-#### Parsing Microsoft Entra ID Access Tokens
+#### Parsing Tokens from Microsoft Entra ID
 
 The OIDC SSO module provides a default access token parsing microflow for Entra ID. To use it, select the appropriate access token parsing microflow:
 
 * For Entra ID, the default access token parsing microflow is `OIDC.Default_Azure_TokenProcessing_CustomATP`.
 
 To confirm that the authorization is working, get an access token from your Entra ID IdP and pass it to the API Endpoint using the authorization header.
+
+{{% alert color="info" %}}
+From version 4.3.0 of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
+{{% /alert %}}
 
 #### Parsing OIDC Provider Access Tokens
 
