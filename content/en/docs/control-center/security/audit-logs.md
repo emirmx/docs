@@ -49,9 +49,31 @@ Each list entry includes the following details:
 
 * **Resource Name** – The object that underwent the change.
 * **Resource ID** – The unique ID of the resource.
-* **Resource Type** – The type of the object that underwent the change.
+* **Resource Type** – The type of the object that underwent the change, which can be one of the following:
+
+    * **Project**
+    * **Environment**
+    * **GenAIResource**
+    * **User**
+    * **ProjectRole**
+    * **Portfolio**
+    * **MarketplaceComponent**
+    * **Story**
+    * **Epic**
+    * **FeedbackItem**
+    * **Backup**
+    * **Page**
+    * **AppLog**
+    * **AccessLog**
+    * **Audit Log**
+    * **Approval Request**
 * **Resource Description** – A description of the resource.
-* **Origin Type** – 
+* **Origin Type** – The origin of the log, which can be one of the following:
+
+    * **User** – The logged-in user.
+    * **API** – This is displayed if the system cannot determine the logged-in user.
+    * **SystemScheduledTask** – This is displayed if the system cannot determine the logged-in user.
+    * **MaskedAction** – This is displayed when logs were triggered by Mendix support.
 * **Details** – The following information is displayed and can be downloaded for each audit log item:
 
     * **Log ID** – The unique identifier of the log.
@@ -75,7 +97,9 @@ Each list entry includes the following details:
         * **Type** – The type of resource that was changed.   
         * **Description** – A description of the resource.
 
-You can use the **Filters** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.
+You can use the **Filters** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.    
+The filter fields only support full search text. As such, if you want to find a specific result, you need to enter its full text. For example, if you want to display all logs associated to the `email@example.com` email address, you need to enter the full `email@example.com` in the filter field.    
+**Event Description** is the only field which supports partial text search.
 
 You can search activity logs from the last 90 days. To search through all logs from the last 365 days, you can [download audit logs](#export-logs).    
 
@@ -93,7 +117,7 @@ You can choose between these options:
 * **Export from Selected Date Range** – Select the timeframe for which you want to export logs.
 * **Export All** – Export all logs.
 
-Once the logs are ready for export, a download link is displayed on the [Downloads](#downloads) tab.
+Once the logs are ready for export, you are notified via email, and a download link is displayed on the [Downloads](#downloads) tab.
 
 ## Downloads {#downloads}
 
