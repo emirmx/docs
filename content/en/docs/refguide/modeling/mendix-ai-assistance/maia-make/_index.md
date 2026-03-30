@@ -17,7 +17,7 @@ To use this interface and Maia Make capabilities, an internet connection and sig
 
 Maia Make is a set of AI-assisted development capabilities in Studio Pro that are available through a unified conversational interface. Describe your requirements in natural language, and Maia generates development artifacts such as data structures, pages, and microflows. 
 
-You can also ask Maia to provide explanations of your existing documents, such as microflows, workflows, and pages. Moreover, this interface allows you to integrate with external tools via MCP Servers (Playwright, Figma, and others) and it supports story-based development by generating app artifacts based on existing user stories.
+You can also ask Maia to provide explanations of your existing documents, such as microflows, workflows, and pages. Moreover, this interface allows you to integrate with external tools, such as Playwright and Figma, via MCP Servers, and it supports story-based development by generating app artifacts based on existing user stories.
 
 The key Maia Make capabilities are as follows:
 
