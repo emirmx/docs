@@ -17,23 +17,23 @@ To use this interface and Maia Make capabilities, an internet connection and sig
 
 Maia Make is a set of AI-assisted development capabilities in Studio Pro that are available through a unified conversational interface. Describe your requirements in natural language, and Maia generates development artifacts such as data structures, pages, and microflows. 
 
-You can also ask Maia to provide explanations of your existing documents, such as logic and pages. Moreover, this interface allows you to integrate with external tools via MCP Servers (Playwright, Figma, and others) and it supports story-based development by generating app artifacts based on existing user stories.
+You can also ask Maia to provide explanations of your existing documents, such as microflows, workflows, and pages. Moreover, this interface allows you to integrate with external tools via MCP Servers (Playwright, Figma, and others) and it supports story-based development by generating app artifacts based on existing user stories.
 
 The key Maia Make capabilities are as follows:
 
 * Conversational assistance for general Mendix development queries
 * Explanations of documents to clarify existing implementation details
-* Generation of documents from natural language descriptions, including domain model, pages, and logic
-* Integration with external tools  via compatible MCP Servers (such as Playwright and Figma)
+* Generation of documents from natural language descriptions, including domain model, pages, microflows, and workflows
+* Integration with external tools via compatible MCP Servers (such as Playwright and Figma)
 * Story-based development to help realize existing user stories
 * Support for PDF and image inputs to help Maia better understand your requirements
-* Adding relevant documents (for instance, logic or pages) to the interface to give Maia a more desired context
+* Adding relevant documents (such as microflows, workflows, and pages) to the interface to give Maia a more desired context
 * Editing existing documents, including renaming documents and document elements such as entities, attributes, and microflow parameters
 * Removing elements from documents, enabling more advanced refactoring (Studio Pro 11.9 and above)
 * Undoing changes generated on a per-document basis (in Studio Pro 11.9 and above)
 
 {{% alert color="info" %}}
-Support for workflows, view entities, enumerations, constants, modules, Java actions, JavaScript actions was introduced in Studio Pro 11.9. 
+Support for workflows, view entities, enumerations, modules, Java actions, JavaScript actions was introduced in Studio Pro 11.9. 
 
 Java actions and JavaScript actions are read-only. Java actions can be used in microflows and can be explained. JavaScript actions can only be explained. 
 {{% /alert %}}
