@@ -23,7 +23,7 @@ There are two ways to use Maia Explain:
 * Use the chat interface directly to get explanations of your document (for instance, a microflow or a page).
 * In the App Explorer, right-click a document to open its context menu, and click **Maia Explain**.
 
-Nanoflows are not supported by Maia Explain in Studio Pro 11.8.
+Nanoflows are currently not supported by Maia Make.
 
 ### In Studio Pro 11.7 and Below
 
