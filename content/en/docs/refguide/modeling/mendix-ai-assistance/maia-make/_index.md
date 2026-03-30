@@ -33,7 +33,7 @@ The key Maia Make capabilities are as follows:
 * Undoing changes generated on a per-document basis (in Studio Pro 11.9 and above)
 
 {{% alert color="info" %}}
-Support for workflows, view entities, enumerations, modules, Java actions, and JavaScript actions was introduced in Studio Pro 11.9. 
+Support for workflows, view entities, enumerations, constants, modules, Java actions, and JavaScript actions was introduced in Studio Pro 11.9. 
 
 Java actions and JavaScript actions are read-only. Java actions can be used in microflows and can be explained. JavaScript actions can only be explained. 
 {{% /alert %}}
