@@ -10,7 +10,9 @@ This event can only be used in **Microflows**.
 
 ## Introduction
 
-An error event defines where a microflow will stop and throw an error that occurred earlier. If you call a microflow, you may want to know whether any errors occurred within the microflow or not. This event throws the error again, so the caller of the microflow can catch them. When you use this event, all database actions within the current transaction will be rolled back (for more information, see [Error Handling in Microflows](/refguide/error-handling-in-microflows/)).
+An error event defines where a microflow will stop and re-throw an error that occurred earlier. If you call a microflow, you may want to know whether any errors occurred within the microflow or not. This event throws the error again, so the caller of the microflow can catch them.
+
+When you use this event, it creates a new error of the type which occurred earlier. Because this is a new error, even if the error that occurred earlier was caught **without rollback**, all database actions within the current transaction will be rolled back (for more information, see [Error Handling in Microflows](/refguide/error-handling-in-microflows/)).
 
 {{% alert color="warning" %}}
 You can only use an error event if an error is in scope: Studio Pro does not allow you to connect the normal execution flow to an error event, because there would not be an error to pass back to the caller.
