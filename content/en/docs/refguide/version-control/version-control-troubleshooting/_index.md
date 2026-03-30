@@ -5,6 +5,8 @@ weight: 90
 description: "Presents a list of problems and fixes for version control issues."
 aliases:
     - /howto/collaboration-requirements-management/troubleshoot-version-control-issues/
+no_list: false
+description_list: true
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor #cannot-create-package below is mapped from Studio Pro, so it should not be removed or changed.
 ---
@@ -205,3 +207,5 @@ To solve this issue, perform the following steps:
 1. Close the error dialog.
 2. Abort the current operation in Studio Pro.
 3. Retry the operation. 
+
+## Read More
