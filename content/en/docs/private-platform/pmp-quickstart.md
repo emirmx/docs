@@ -621,7 +621,7 @@ Re-running the installation command ensures that the installer fetches the relev
 
 If you have installed Private Mendix Platform before, you can upgrade it by doing the following steps:
 
-1. Ensure that your Mendix Operator version is 2.12 or newer.
+1. Ensure that your Mendix Operator version is 2.12 or above.
 2. Ensure that the number of replicas is no higher than 1. If you have manually changed the default value, make sure you revert it to 1 before attempting the upgrade.
 3. Run the command `./installer platform -n=<namespace name>`, where `-n` indicates the namespace where your Private Mendix Platform is installed.
 4. Click **Upgrade Namespace**.
