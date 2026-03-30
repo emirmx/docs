@@ -82,13 +82,21 @@ Once the **Solution Proposal** window is populated, you can see the following in
 
 #### Recommended Marketplace Components
 
-If Mendix identifies Marketplace components that can be used to implement a specific story, they are displayed as follows:
+{{% alert color="warning" %}} This feature is in Public Beta. For more information, refer to Release Status. {{% /alert %}}
+
+If Mendix identifies Marketplace components that can be used to implement a specific story, they are displayed in the following places:
 
 * At the epic level, as a number. Example: *1 Resource*.
 * At the user story level, in the side panel. From here, you can perform the following actions:
 
     * If you want more details about the component, click it to access its page in the Marketplace.
     * If you do not want a component to be used, delete it by clicking the trash can icon.
+
+If your company has company-approved components, Maia only returns company-approved components from the Public and the Private Marketplace.    
+If your company does not have company-approved components, Maia returns the following types of components:
+
+* platform-supported components
+* all Private Marketplace components
     
 ### Opening the App in Studio Pro
 
