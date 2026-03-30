@@ -23,17 +23,17 @@ The key Maia Make capabilities are as follows:
 
 * Conversational assistance for general Mendix development queries
 * Explanations of documents to clarify existing implementation details
-* Generation of documents from natural language descriptions, including domain model, pages, microflows, and workflows
-* Integration with external tools via compatible MCP Servers (such as Playwright and Figma)
+* Generation of documents from natural language descriptions, such as domain model, pages, and microflows
+* Integration with external tools, such as Playwright and Figma, via compatible MCP Servers
 * Story-based development to help realize existing user stories
 * Support for PDF and image inputs to help Maia better understand your requirements
-* Adding relevant documents (such as microflows, workflows, and pages) to the interface to give Maia a more desired context
+* Adding relevant documents, such as microflows and pages, to the interface to give Maia a more desired context
 * Editing existing documents, including renaming documents and document elements such as entities, attributes, and microflow parameters
-* Removing elements from documents, enabling more advanced refactoring (Studio Pro 11.9 and above)
+* Removing elements from documents, enabling more advanced refactoring (in Studio Pro 11.9 and above)
 * Undoing changes generated on a per-document basis (in Studio Pro 11.9 and above)
 
 {{% alert color="info" %}}
-Support for workflows, view entities, enumerations, modules, Java actions, JavaScript actions was introduced in Studio Pro 11.9. 
+Support for workflows, view entities, enumerations, modules, Java actions, and JavaScript actions was introduced in Studio Pro 11.9. 
 
 Java actions and JavaScript actions are read-only. Java actions can be used in microflows and can be explained. JavaScript actions can only be explained. 
 {{% /alert %}}
