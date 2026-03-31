@@ -23,10 +23,11 @@ The type of agent you can build is a single-turn agent, which means that:
 * It focuses on specific task completion. 
 * It uses a knowledge base and function calling to retrieve data or perform actions.
 
-This document covers two approaches to defining an agent for your Mendix app. Both approaches leverage the capabilities of Mendix' Agents Kit:
+This document covers three approaches to defining an agent for your Mendix app. Both approaches leverage the capabilities of Mendix' Agents Kit:
 
-* The first approach uses the [Agent Builder UI to define agents](#define-agent-commons) at runtime by the principles of Agent Commons. It enables versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. 
-* The second approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons, and is more useful for very specific use cases and when the agent needs to be part of the code repository of the app.
+* The first approach uses the [Agent Editor in Studio Pro](#define-agent-editor). It is used for creating and iterating on agent definitions as part of the app model, leveraging existing development capabilities of the platform to define, manage and deploy agents as part of a Mendix app.
+* The second approach uses the [Agent Builder UI to define agents](#define-agent-commons) at runtime by the principles of Agent Commons. It enables versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. 
+* The third approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons, and is more useful for very specific use cases and when the agent needs to be part of the code repository of the app.
 
 ### Prerequisites {#prerequisites}
 
@@ -214,9 +215,19 @@ To get started:
 
 This method provides greater flexibility in managing and sharing functions across different applications and environments.
 
+
+## Define the Agent Using the Agent Editor {#define-agent-editor}
+
+The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to define, manage and deploy agents as part of your app model. With the extension you can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Large Language Models, Knowledge bases and Consumed MCP services.
+
+  {{% alert color="info" %}}
+The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 release as a downloadable extension on the Mendix Marketplace. Click 'Add to Saved' on the [Marketplace listing](https://marketplace.mendix.com/link/component/257918) and stay tuned for updates!
+  {{% /alert %}}
+
+
 ## Define the Agent Using Agent Commons {#define-agent-commons}
 
-The main approach to set up the agent and build logic to generate responses is based on the logic part of the Agent Commons module. Start by defining an agent with a prompt at runtime, then, through the same UI, add tools, (microflows as functions) and knowledge bases to the agent version.
+The main alternative approach to set up the agent and build logic to generate responses is based on the logic part of the Agent Commons module. Start by defining an agent with a prompt at runtime, then, through the same UI, add tools, (microflows as functions) and knowledge bases to the agent version.
 
 ### Set up the Agent with a Prompt
 
