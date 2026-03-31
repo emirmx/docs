@@ -227,7 +227,7 @@ The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 
 
 ## Define the Agent Using Agent Commons {#define-agent-commons}
 
-The main alternative approach to set up the agent and build logic to generate responses is based on the logic part of the Agent Commons module. Start by defining an agent with a prompt at runtime, then, through the same UI, add tools, (microflows as functions) and knowledge bases to the agent version.
+An alternative approach to set up the agent and build logic to generate responses is based on the logic part of the Agent Commons module. Start by defining an agent with a prompt at runtime, then, through the same UI, add tools, (microflows as functions) and knowledge bases to the agent version.
 
 ### Set up the Agent with a Prompt
 
@@ -402,7 +402,7 @@ You can find examples for both Agent Commons and GenAI Commons in the `ExampleMi
 
 ## Define the Agent Using Microflows {#define-genai-commons}
 
-This is an alternative approach to the steps described in the [Define the Agent Using Agent Commons](#define-agent-commons) section. Find out how to set up the agent and build logic to generate responses, using microflows for empowering the agent. You start with a prompt at runtime, and add functions and knowledge bases to the microflow at design time.
+This is an additional approach as alternative to the steps described in previous sections. Find out how to set up the agent and build logic to generate responses, using microflows for empowering the agent. You start with a prompt at runtime, and add functions and knowledge bases to the microflow at design time.
 
 ### Create Your Agent
 
