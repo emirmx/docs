@@ -7,7 +7,7 @@ description: "Describes the configuration and usage of the Global Inbox and Glob
 
 ## Introduction
 
-The **Global Inbox** enables centralized task management across multiple applications by introducing two modules: the [Global Inbox](link) module and the [Global Inbox Connector](link).
+The **Global Inbox** enables centralized task management across multiple applications by introducing two modules: the [Global Inbox](https://marketplace.mendix.com/link/component/259162) module and the [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155).
 
 The **Global Inbox** module offers a centralized task inbox that aggregates workflow tasks from multiple applications, allowing users to view and manage all their tasks in a single overview.
 
@@ -24,7 +24,7 @@ While the architecture can support broader use cases, the current scope focuses 
 
 ### Features
 
-* Consists of two Mendix modules: [Global Inbox](link) module and [Global Inbox Connector](link)
+* Consists of two Mendix modules: [Global Inbox](https://marketplace.mendix.com/link/component/259162) module and [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155)
 * Intended for Mendix Applications that use [Mendix Workflows](https://docs.mendix.com/refguide/workflows/) to manage workflows. Support for non-Mendix Workflows will be introduced at a later stage.
 * Redirects users to Publisher Applications to act on the user task.
 
@@ -55,11 +55,11 @@ The **Global Inbox** operates on an event-driven architecture:
 
 The **Global Inbox** consists of the following components:
 
-* [Global Inbox](link): A module that contains the **Global Task Inbox** page, which aggregates workflow tasks from multiple Publisher Applications into a single overview. It serves as a centralized system that consumes business events and updates the Global Task Inbox accordingly. The page is read-only. Users cannot act on tasks directly. Users can only click on tasks to navigate to the corresponding page in the Publisher Application. It includes three tabs:
+* [Global Inbox](https://marketplace.mendix.com/link/component/259162): A module that contains the **Global Task Inbox** page, which aggregates workflow tasks from multiple Publisher Applications into a single overview. It serves as a centralized system that consumes business events and updates the Global Task Inbox accordingly. The page is read-only. Users cannot act on tasks directly. Users can only click on tasks to navigate to the corresponding page in the Publisher Application. It includes three tabs:
     * **My open tasks**: It shows the tasks assigned to the current user. 
     * **All open tasks**: It shows a list of tasks the current user could pick up. 
     * **Unassigned tasks**: It shows all unassigned tasks. 
-* [Global Inbox Connector](link): A module that can be imported into each Publisher Application and contains the functionality to publish task updates through Mendix Business Events. It is intended for Mendix Publisher Applications that use Mendix Workflows to manage workflows.
+* [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155): A module that can be imported into each Publisher Application and contains the functionality to publish task updates through Mendix Business Events. It is intended for Mendix Publisher Applications that use Mendix Workflows to manage workflows.
 * [Mendix Business Events](https://marketplace.mendix.com/link/component/202649): Events that carry information about user tasks and workflow changes, such as task creation, updates, or completion. All relevant information about  Business Events can be found in the Mendix Business Events documentation. The Global Inbox owns the definition of the Business Events, and the Publisher Applications publishes them. 
 * [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907): The Event Broker is used to deliver all Business Events from Publisher Applications to the Global Inbox. You can use [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) (requires a license) or [bring your own Kafka](https://docs.mendix.com/appstore/services/business-events-deployment/#byok) cluster.
 
@@ -80,7 +80,7 @@ The Global Inbox operates with the following event flow:
 
 ### Setting up Global Inbox
 
-1. Import the [Global Inbox module](link) into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
+1. Import the [Global Inbox module](https://marketplace.mendix.com/link/component/259162) into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
 2. Add the **ACT_GlobalTaskInbox_Open** microflow to your navigation. You can find it in **GlobalInbox** > **UseMe** > **Microflows** > **ACT_GlobalTaskInbox_Open**. This microflow opens the **GlobalTaskInbox** page and ensures that users are able to see their tasks.
 
     {{% alert color="info" %}}If you want to customize the **GlobalTaskInbox** page, make sure to copy it with the **ACT_GlobalTaskInbox_Open** microflow to your own module, as this microflow includes the logic to link the app users to their user tasks.{{% /alert %}}
@@ -96,7 +96,7 @@ Make sure the Global Inbox app is deployed and running before deploying the Publ
 
 ### Setting up Global Inbox Connector
 
-1. Import the [Global Inbox Connector](link) module. This module is responsible for publishing workflow task events to the Global Inbox, enabling the central application to stay synchronized with task creation, updates, and completion occurring in the source applications.
+1. Import the [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155) module. This module is responsible for publishing workflow task events to the Global Inbox, enabling the central application to stay synchronized with task creation, updates, and completion occurring in the source applications.
 2. In the runtime settings of your app, configure the **ASU_GlobalInboxConnector_Startup** microflow for the [after startup property](/refguide/runtime-tab/#after-startup). If there is already an after startup microflow set, add the **ASU_GlobalInboxConnector_Startup** microflow as an microflow call activity in the existing microflow.
 3. Add the User module roles to the required App roles.
 4. Deploy and configure constants:
