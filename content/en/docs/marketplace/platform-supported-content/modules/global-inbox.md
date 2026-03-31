@@ -76,7 +76,7 @@ The Global Inbox operates with the following event flow:
 
 ### Setting up Global Inbox
 
-1. Import the [Global Inbox module](https://marketplace.mendix.com/link/component/259162) into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
+1. Import the [Global Inbox](https://marketplace.mendix.com/link/component/259162) module into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
 2. Add the **ACT_GlobalTaskInbox_Open** microflow to your navigation. You can find it in **GlobalInbox** > **UseMe** > **Microflows** > **ACT_GlobalTaskInbox_Open**. This microflow opens the **GlobalTaskInbox** page and ensures that users are able to see their tasks.
 
     {{% alert color="info" %}}If you want to customize the **GlobalTaskInbox** page, make sure to copy it with the **ACT_GlobalTaskInbox_Open** microflow to your own module, as this microflow includes the logic to link the app users to their user tasks.{{% /alert %}}
