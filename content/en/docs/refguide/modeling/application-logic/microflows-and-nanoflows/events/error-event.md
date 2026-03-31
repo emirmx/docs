@@ -18,6 +18,8 @@ When you use this event, it creates a new error of the type which occurred earli
 You can only use an error event if an error is in scope: Studio Pro does not allow you to connect the normal execution flow to an error event, because there would not be an error to pass back to the caller.
 {{% /alert %}}
 
+## Example of Error Event
+
 In the example below, an error flow is defined when committing an object to the database. Any error is caught, and the flow continues to the error event where the error is passed back to the caller of the microflow. This allows you to implement your error handling on multiple levels.
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/events/error-event/error-event.png" class="no-border" alt="A microflow with a parameter of 'MyEntity'. It has a single action committing 'MyEntity' which has an error flow ending in an error event and the normal flow ending in an end event" >}}
