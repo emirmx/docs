@@ -31,7 +31,7 @@ While the architecture can support broader use cases, the current scope focuses 
 ### Prerequisites
 
 * Mendix 11.6.0 or above
-* Single Sign-On (SSO) is required for user authentication, as the **User.Name** attribute is used to match users across the Global Inbox and Publisher Applications. For security reasons, ensure that the username is not modifiable by the end user and is only set by the SSO provider. 
+* Single Sign-On (SSO) is required for user authentication, as the **System.User.Name** attribute is used to match users across the Global Inbox and Publisher Applications. For security reasons, ensure that the username is not modifiable by the end user and is only set by the SSO provider. 
 
 ### Dependencies
 
@@ -130,10 +130,10 @@ Ensure the **Global Inbox Connector** constants are configured in each Publisher
 
 ## Security
 
-Any user that can see a task in Publisher Application can see the same task in the **Global Inbox**. This is based on the System.User.Name attribute that is used as the unique identifier to link users across the applications. For this reason:
+Any user that can see a task in Publisher Application can see the same task in the **Global Inbox**. This is based on the **System.User.Name** attribute that is used as the unique identifier to link users across the applications. For this reason:
 
 * Single Sign-On (SSO) is required for user authentication
-* Users MUST have the same username (System.User.Name attribute) across the Global Inbox application and all Publisher Applications. 
+* Users MUST have the same username (**System.User.Name** attribute) across the Global Inbox application and all Publisher Applications. 
 * The username should NOT be modifiable and should only be set by the SSO provider.
 
 ## Limitations
