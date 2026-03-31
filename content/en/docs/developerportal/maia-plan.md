@@ -80,6 +80,7 @@ Once the **Solution Proposal** window is populated, you can see the following in
     * To see the full details of a story or to edit it, click the three-dot menu, then select **Edit**.    
     * To remove a story, click the three-dot menu, then select **Delete**.
 
+<!--
 #### Recommended Marketplace Components {#recommender}
 
 {{% alert color="warning" %}} This feature is in Public Beta. For more information, refer to Release Status. {{% /alert %}}
@@ -97,10 +98,11 @@ If your company does not have company-approved components, Maia returns the foll
 
 * platform-supported components
 * all Private Marketplace components
+-->
     
 ### Opening the App
 
-Once you are happy with Maia's suggested project plan, click **Open in Studio Pro** in the top right of the page. This opens Studio Pro, where you can continue working on the new app. Note that, at the moment, Studio Pro does not take into account [recommended components](#recommender).     
+Once you are happy with Maia's suggested project plan, click **Open in Studio Pro** in the top right of the page. This opens Studio Pro, where you can continue working on the new app. <!-- Note that, at the moment, Studio Pro does not take into account [recommended components](#recommender). -->    
 For details, refer to [Maia Make](/refguide/maia-make/) in the Studio Pro documentation.    
 
-You can also click **Open in Planning** to open the **Planning** window of the new app, which includes  all the project's stories. Note that, if you click **Open in Planning** before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window. 
+You can also click **Open in Planning** to open the **Planning** window of the new app, which includes  all the project's stories. <!-- Note that, if you click **Open in Planning** before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window. -->
