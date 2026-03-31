@@ -60,7 +60,7 @@ In this example, the error handling in **Microflow 2** is the default: **Rollbac
 When **Microflow 1** starts with a button click, a savepoint is created at the very beginning of **Microflow 1**. When an error occurs in **Microflow 2**, the default error handling is to roll back all changes to the state of this savepoint (so changes made in **Create Order** and in **Create Customer** are both reverted.), **Microflow 2** terminates, then **Microflow 1** terminates, the error is logged, and a system error message is shown to the end-user.
 
 {{% alert color="warning" %}}
-Rollback does not mark any uncommitted objects as changed. See [How Commits Work](/refguide/committing-objects/#how-commits-work) in *Commit Object(s)* to see the implications of this.
+After a rollback, previously committed objects remain marked as unchanged in memory, even though their database state has been reverted. See [How Commits Work](/refguide/committing-objects/#how-commits-work) in *Commit Object(s)* to see the implications of this.
 {{% /alert %}}
 
 ### Error Handling - Custom with Rollback
@@ -214,7 +214,7 @@ To ensure that every end-user or process can only see persisted data, data chang
 When an object is updated, your app will place a write lock on that object until the transaction/microflow ends. While the microflow is running, nothing else can write to that same object and anything that attempts to do so will have to wait. This lock is released automatically as soon as the microflow ends, allowing any waiting processes to continue normally.
 
 {{% alert color="info" %}}
-This doesn't prevent two end-users editing the same object. Two end-users can read the same object and change it. However, neither will see the changes that the other has made. They can both commit the changes and the change committed second will be applied.
+This doesn't prevent two end-users editing the same object. Two end-users can read the same object and change it. However, neither will see the changes that the other has made. They can both commit the changes and the change committed second will overwrite the changes committed first.
 {{% /alert %}}
 
 ## Read More
