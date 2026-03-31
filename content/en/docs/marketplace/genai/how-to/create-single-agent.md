@@ -218,7 +218,7 @@ This method provides greater flexibility in managing and sharing functions acros
 
 ## Define the Agent Using the Agent Editor {#define-agent-editor}
 
-The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to define, manage and deploy agents as part of your app model. With the extension you can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Large Language Models, Knowledge bases and Consumed MCP services.
+The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to manage the lifecycle of your agents as part of the app model. You can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Large Language Models, Knowledge bases and Consumed MCP services.
 
   {{% alert color="info" %}}
 The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 release as a downloadable extension on the Mendix Marketplace. Click 'Add to Saved' on the [Marketplace listing](https://marketplace.mendix.com/link/component/257918) and stay tuned for updates!
