@@ -12,6 +12,18 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### April 2, 2026
+
+#### Portal Improvements
+
+* We have introduced configurable heap memory to align with Public Cloud optimization logic as a default for Operator 2.26.0 and newer.
+* We have aligned resource plans with Public Cloud standards and continue to support legacy plans.
+* We have moved the Mendix on Azure information banner to the Cluster Manager homepage.
+* Cross-cluster restores are not supported. Environments are visible only within the same cluster.
+* We have fixed an issue where replicas with unknown status showed as licensed.
+* We have fixed an issue where scheduled events were missing after pipeline deployment.
+* We have added context to namespace and clusters invite emails to identify the Mendix on Kubernetes portal as the sender.
+
 ### February 25, 2026
 
 #### Mendix Operator v2.26.0 {#2.26.0}
