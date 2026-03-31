@@ -28,14 +28,10 @@ While the architecture can support broader use cases, the current scope focuses 
 * Intended for Mendix Applications that use [Mendix Workflows](https://docs.mendix.com/refguide/workflows/) to manage workflows. Support for non-Mendix Workflows will be introduced at a later stage.
 * Redirects users to Publisher Applications to act on the user task.
 
-{{% alert color="info" %}}
-For Global Inbox version 2.4.0 and above, attachments are (an optional) part of comments. This means that the **WorkflowAttachment** entity is associated with the **WorkflowComment** entity. Security settings for the **WorkflowAttachment** entity are based on the workflows in which a user is involved, since the context of a specific workflow is not known in advance in [Workflow Commons](/appstore/modules/workflow-commons/). If you would like to set custom security for attachments, you need to configure the attachment entity in your domain model and associate it with the workflow context entity of the workflow. 
-{{% /alert %}}
-
 ### Prerequisites
 
 * Mendix 11.6.0 or above
-* Single Sign-On (SSO) is required for user authentication, as the **User.Name** attribute is used to match users across the Global Inbox and Publisher Applications. For security reasons, ensure that the username is not modifiable by the end user and is only set by the SSO provider. 
+* Single Sign-On (SSO) is required for user authentication, as the **System.User.Name** attribute is used to match users across the Global Inbox and Publisher Applications. For security reasons, ensure that the username is not modifiable by the end user and is only set by the SSO provider. 
 
 ### Dependencies
 
@@ -69,10 +65,10 @@ The Global Inbox operates with the following event flow:
 
 1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegisteredEvent**. This ensures the Global Inbox knows which apps are available to send task events.
 2. Task update and event publication: When a workflow or task is created, updated, or completed in a publisher application that includes the Global Inbox Connector, the connector publishes the following events:
-    * WorkflowUpdatedEvent – triggered when the workflow is updated.
-    * UserTaskUpdatedEvent – triggered when a user task is updated.
-    * UserTaskEndedEvent – triggered when a user task is completed or aborted.
-    * UserTaskOutcomeSelectedEvent – triggered when a user completes a task by selecting an outcome.
+    * **WorkflowUpdatedEvent** – triggered when the workflow is updated.
+    * **UserTaskUpdatedEvent** – triggered when a user task is updated.
+    * **UserTaskEndedEvent** – triggered when a user task is completed or aborted.
+    * **UserTaskOutcomeSelectedEvent** – triggered when a user completes a task by selecting an outcome.
 3. Event consumption: The Global Inbox consumes these events and updates or creates the corresponding task entries in the central task list.
 4. Task visibility and navigation: Tasks become visible in the Global Inbox. Users can click a button to navigate directly to the corresponding task page in the Publisher Application to take action.
 
@@ -80,7 +76,7 @@ The Global Inbox operates with the following event flow:
 
 ### Setting up Global Inbox
 
-1. Import the [Global Inbox module](https://marketplace.mendix.com/link/component/259162) into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
+1. Import the [Global Inbox](https://marketplace.mendix.com/link/component/259162) module into the application that will serve as the central task overview. This application aggregates tasks from multiple Publisher Applications and provides a single interface where users can view all active tasks. It acts as the consumer of task events and maintains the consolidated task list. 
 2. Add the **ACT_GlobalTaskInbox_Open** microflow to your navigation. You can find it in **GlobalInbox** > **UseMe** > **Microflows** > **ACT_GlobalTaskInbox_Open**. This microflow opens the **GlobalTaskInbox** page and ensures that users are able to see their tasks.
 
     {{% alert color="info" %}}If you want to customize the **GlobalTaskInbox** page, make sure to copy it with the **ACT_GlobalTaskInbox_Open** microflow to your own module, as this microflow includes the logic to link the app users to their user tasks.{{% /alert %}}
@@ -134,10 +130,10 @@ Ensure the **Global Inbox Connector** constants are configured in each Publisher
 
 ## Security
 
-Any user that can see a task in Publisher Application can see the same task in the **Global Inbox**. This is based on the System.User.Name attribute that is used as the unique identifier to link users across the applications. For this reason:
+Any user that can see a task in Publisher Application can see the same task in the **Global Inbox**. This is based on the **System.User.Name** attribute that is used as the unique identifier to link users across the applications. For this reason:
 
 * Single Sign-On (SSO) is required for user authentication
-* Users MUST have the same username (System.User.Name attribute) across the Global Inbox application and all Publisher Applications. 
+* Users MUST have the same username (**System.User.Name** attribute) across the Global Inbox application and all Publisher Applications. 
 * The username should NOT be modifiable and should only be set by the SSO provider.
 
 ## Limitations
