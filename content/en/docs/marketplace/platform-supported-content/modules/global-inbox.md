@@ -65,10 +65,10 @@ The Global Inbox operates with the following event flow:
 
 1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegisteredEvent**. This ensures the Global Inbox knows which apps are available to send task events.
 2. Task update and event publication: When a workflow or task is created, updated, or completed in a publisher application that includes the Global Inbox Connector, the connector publishes the following events:
-    * WorkflowUpdatedEvent – triggered when the workflow is updated.
-    * UserTaskUpdatedEvent – triggered when a user task is updated.
-    * UserTaskEndedEvent – triggered when a user task is completed or aborted.
-    * UserTaskOutcomeSelectedEvent – triggered when a user completes a task by selecting an outcome.
+    * **WorkflowUpdatedEvent** – triggered when the workflow is updated.
+    * **UserTaskUpdatedEvent** – triggered when a user task is updated.
+    * **UserTaskEndedEvent** – triggered when a user task is completed or aborted.
+    * **UserTaskOutcomeSelectedEvent** – triggered when a user completes a task by selecting an outcome.
 3. Event consumption: The Global Inbox consumes these events and updates or creates the corresponding task entries in the central task list.
 4. Task visibility and navigation: Tasks become visible in the Global Inbox. Users can click a button to navigate directly to the corresponding task page in the Publisher Application to take action.
 
