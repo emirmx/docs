@@ -28,10 +28,6 @@ While the architecture can support broader use cases, the current scope focuses 
 * Intended for Mendix Applications that use [Mendix Workflows](https://docs.mendix.com/refguide/workflows/) to manage workflows. Support for non-Mendix Workflows will be introduced at a later stage.
 * Redirects users to Publisher Applications to act on the user task.
 
-{{% alert color="info" %}}
-For Global Inbox version 2.4.0 and above, attachments are (an optional) part of comments. This means that the **WorkflowAttachment** entity is associated with the **WorkflowComment** entity. Security settings for the **WorkflowAttachment** entity are based on the workflows in which a user is involved, since the context of a specific workflow is not known in advance in [Workflow Commons](/appstore/modules/workflow-commons/). If you would like to set custom security for attachments, you need to configure the attachment entity in your domain model and associate it with the workflow context entity of the workflow. 
-{{% /alert %}}
-
 ### Prerequisites
 
 * Mendix 11.6.0 or above
