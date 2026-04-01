@@ -206,3 +206,17 @@ If you want to implement complex interval patterns, such as running a scheduled 
 1. Perform the actions relating to the event only if the condition evaluates to true.
 
 This approach allows you to maintain flexibility in scheduling while keeping the logic centralized and easy to manage.
+
+### Renaming Scheduled Events and Deployment Behavior
+
+When a scheduled event is deployed to an environment, its enabled/disabled state is tracked by name, and not by a unique identifier. This applies to any deployment type.
+
+**What this means in practice:**
+If you rename a scheduled event in your model (for example, from `SE_Current` to `SE_Old`) and then create a new scheduled event with the original name (`SE_Current`), the deployment platform will treat the new scheduled event as a continuation of the old one because the name matches.
+
+**As a result:**
+* The new scheduled event (`SE_Current`) will inherit the enabled state of the previously deployed scheduled event that carried the same name.
+* The renamed scheduled event (`SE_Old`) will be treated as a new, previously unseen event and will default to disabled.
+
+**Recommendation**
+Be mindful of this behavior when renaming scheduled events and reusing names within the same application. If you rename a scheduled event and introduce a new one with the original name, verify the enabled/disabled states of all affected scheduled events after deployment to ensure they match your intentions.
