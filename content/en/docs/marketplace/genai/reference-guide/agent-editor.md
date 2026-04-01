@@ -8,7 +8,7 @@ weight: 20
 
 ## Introduction
 
-{{% alert color="info" %}}
+{{% alert color="warning" %}}
 The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 release as a downloadable extension on the Mendix Marketplace. Click **Add to Saved** on the [Marketplace listing](https://marketplace.mendix.com/link/component/257918) and stay tuned for updates!
 {{% /alert %}}
 
