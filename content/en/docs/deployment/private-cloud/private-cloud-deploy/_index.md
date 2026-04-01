@@ -136,16 +136,24 @@ All environments are defined as production environments, which means that [secur
 
     For core resources, there are two sets of values. The **Request** value is the amount of core resources which are initially requested. The **Limit** value is the maximum amount of resource that the environment can use.
 
-    There are three pre-defined sets of resources, **Small**, **Medium**, and **Large**. Choosing these will set the **CPU** and **Memory** values automatically.
+    There are six pre-defined sets of resources, **XS**, **S**, **M**, **L**, **XL**, and **XXL**.
+
+    Legacy plans are still visible with a **Legacy** prefix.
 
     | **Name** | **CPU cores**: Limit | **Memory (GB)**: Limit | **Ephemeral Storage (GB)**: Limit | **CPU cores**: Request | **Memory (GB)**: Request | **Ephemeral Storage (GB)**: Request |
     | --- | --- | --- | --- | --- | --- | --- |
-    | Small | 1 | 0.5 | 1 | 0.1 | 0.5 | 1 |
-    | Medium | 2 | 2 | 1 | 1 | 1 | 1 |
-    | Large | 4 | 4 | 1 | 2 | 2 | 1 |
+    | XS | 0.25 | 1 | 1 | 0.25 | 1 | 1 |
+    | S | 0.5 | 2 | 1 | 0.5 | 2 | 1 |
+    | M | 1 | 4 | 1 | 1 | 4 | 1 |
+    | L | 2 | 8 | 1 | 2 | 8 | 1 |
+    | XL | 4 | 16 | 1 | 4 | 16 | 1 |
+    | XXL | 8 | 32 | 1 | 4 | 32 | 1 |
+    | Legacy Small | 1 | 0.5 | 1 | 0.1 | 0.5 | 1 |
+    | Legacy Medium | 2 | 2 | 1 | 1 | 1 | 1 |
+    | Legacy Large | 4 | 4 | 1 | 2 | 2 | 1 |
     | Custom | own choice | own choice | own choice | own choice | own choice | own choice |
 
-    Alternatively, you can choose **Custom**, and enter your own requirements for **CPU** and **Memory**. Ensure that these values are the same or greater than the values for a *Small* environment, otherwise you may run into problems running your app.
+    Alternatively, you can choose **Custom**, and enter your own requirements for **CPU** and **Memory**. Ensure that these values are the same or greater than the values for a *Legacy Small* environment, otherwise you may run into problems running your app.
 
     {{% alert color="info" %}}If the cluster manager has added and enabled customized core resource plan on Cluster manager page, only the configured custom core resource plans will be visible for selection. Once the custom core resources plans are enabled, environments cannot be created using the default plans until all the associated environments using the custom core resource plan are deleted and the custom resource plan is disabled on the **Cluster manager** page.{{% /alert %}}
 
@@ -538,6 +546,12 @@ Images are not deleted from the container registry. You should delete those imag
 {{% alert color="warning" %}}
 If any of these garbage collection steps fail, you will no longer see the environment in the Mendix Portal, and will have to [delete the storage instances](#delete-storage) manually.
 {{% /alert %}}
+
+##### Custom JVM Heap Memory
+
+You only need to manually adjust JVM memory usage if the default settings aren't fully utilizing available memory. For more information, see [JVM Memory Tuning for Mendix on Kubernetes](/developerportal/deploy/private-cloud-jvm-memory-tuning/).
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/ChangeJVMHeapMemory.png" class="no-border" >}}
 
 ##### Read-Only Root Filesystem
 
