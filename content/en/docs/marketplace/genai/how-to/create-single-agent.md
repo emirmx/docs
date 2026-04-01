@@ -27,7 +27,7 @@ This document covers three approaches to defining an agent for your Mendix app. 
 
 * The first approach uses the [Agent Editor in Studio Pro](#define-agent-editor). It is used for creating and iterating on agent definitions as part of the app model, leveraging existing development capabilities of the platform to define, manage and deploy agents as part of a Mendix app.
 * The second approach uses the [Agent Builder UI to define agents](#define-agent-commons) at runtime by the principles of Agent Commons. It enables versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. 
-* The third approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons, and is more useful for very specific use cases and when the agent needs to be part of the code repository of the app.
+* The third approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons. It is more useful for very specific use cases, especially when the agent needs to be part of the code repository of the app.
 
 ### Prerequisites {#prerequisites}
 
@@ -215,15 +215,13 @@ To get started:
 
 This method provides greater flexibility in managing and sharing functions across different applications and environments.
 
-
 ## Define the Agent Using the Agent Editor {#define-agent-editor}
 
-The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to manage the lifecycle of your agents as part of the app model. You can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Large Language Models, Knowledge bases and Consumed MCP services.
+The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in the Studio Pro. This extension allows you to manage the lifecycle of your agents as part of the app model. You can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Large Language Models, Knowledge bases, and Consumed MCP services.
 
-  {{% alert color="info" %}}
-The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 release as a downloadable extension on the Mendix Marketplace. Click 'Add to Saved' on the [Marketplace listing](https://marketplace.mendix.com/link/component/257918) and stay tuned for updates!
-  {{% /alert %}}
-
+{{% alert color="info" %}}
+The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 release as a downloadable extension on the Mendix Marketplace. Click **Add to Saved** on the [Marketplace listing](https://marketplace.mendix.com/link/component/257918) and stay tuned for updates!
+{{% /alert %}}
 
 ## Define the Agent Using Agent Commons {#define-agent-commons}
 
