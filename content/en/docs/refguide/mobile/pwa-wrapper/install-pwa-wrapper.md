@@ -45,6 +45,8 @@ After installing the module, Mendix Studio Pro prompts you to enable the extensi
 
 After installation, open the builder from the **Extensions** menu in Mendix Studio Pro by selecting **Open App Builder**.
 
+{{< figure src="/attachments/refguide/mobile/pwa-wrapper/launch-app-builder-extension.png" alt="Open App Builder from the Extensions menu in Mendix Studio Pro" width="350" class="no-border" >}}
+
 ## Use the Bundled JavaScript Actions
 
 PWA Wrapper includes JavaScript actions that you can use in your nanoflows. These actions support PWA-based mobile apps that need common mobile capabilities, such as biometric authentication, barcode and QR scanning, uploading pictures and video from the camera or gallery, geolocation, and local notifications, together with related integrations such as network information, file download using the Share API, URL opening, printing file documents, sharing, and permission requests.
