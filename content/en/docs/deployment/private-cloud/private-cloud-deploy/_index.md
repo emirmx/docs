@@ -153,7 +153,7 @@ All environments are defined as production environments, which means that [secur
     | Legacy Large | 4 | 4 | 1 | 2 | 2 | 1 |
     | Custom | own choice | own choice | own choice | own choice | own choice | own choice |
 
-    Alternatively, you can choose **Custom**, and enter your own requirements for **CPU** and **Memory**. Ensure that these values are the same or greater than the values for a *Legacy Small* environment, otherwise you may run into problems running your app.
+    Alternatively, you can choose **Custom**, and enter your own requirements for **CPU** and **Memory**. Ensure that these values are the same or greater than the values for a *Legacy Small* environment, otherwise you may run into problems running your app. Existing environments will continue to utilize their legacy resources.
 
     {{% alert color="info" %}}If the cluster manager has added and enabled customized core resource plan on Cluster manager page, only the configured custom core resource plans will be visible for selection. Once the custom core resources plans are enabled, environments cannot be created using the default plans until all the associated environments using the custom core resource plan are deleted and the custom resource plan is disabled on the **Cluster manager** page.{{% /alert %}}
 
@@ -549,7 +549,8 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 ##### Custom JVM Heap Memory
 
-You only need to manually adjust JVM memory usage if the default settings aren't fully utilizing available memory. For more information, see [JVM Memory Tuning for Mendix on Kubernetes](/developerportal/deploy/private-cloud-jvm-memory-tuning/).
+You only need to manually adjust JVM memory usage if the default settings aren't fully utilizing available memory. The JVM's memory usage must always remain below the total core resource memory to prevent application crashloops
+For more information, see [JVM Memory Tuning for Mendix on Kubernetes](/developerportal/deploy/private-cloud-jvm-memory-tuning/).
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/ChangeJVMHeapMemory.png" class="no-border" >}}
 
