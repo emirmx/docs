@@ -53,4 +53,4 @@ Below is a list of how-tos for you to begin with:
 * [How to Introduce a New Document Type](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/)
 * [How to Listen for Connection Changes](/apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-controller-api/)
 * [How to Access Runtime Constants](/apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-configuration-api/)
-* [How to Use Extension Permissions in Overview Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions)
+* [How to Use Extension Permissions in Overview Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/)
