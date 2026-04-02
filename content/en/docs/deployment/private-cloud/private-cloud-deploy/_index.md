@@ -130,7 +130,7 @@ All environments are defined as production environments, which means that [secur
 
 8. Click **Next**.
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/configureEnvResources.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/configure-env-resources.png" class="no-border" >}}
 
 9. Select **Core Resources**.
 
@@ -529,7 +529,7 @@ For a *connected* cluster, the top level MendixApp CRD will be deleted from the 
 
 * The database will be dropped and the database user will be deleted from the database server — databases and users from other environments will remain untouched.
 
-    {{% alert color="info" %}}If the storage plan is using a JDBC plan (not Postgres or SQL Server), the database and the user will remain untouched).{{% /alert %}}
+    {{% alert color="info" %}}If the storage plan is using a JDBC plan (not Postgres or SQL Server), the database and the user will remain untouched.{{% /alert %}}
 
 * Files related to that environment will be deleted from the S3/Minio storage bucket (or prefix if this is using a shared bucket).
 
@@ -549,10 +549,10 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 ##### Custom JVM Heap Memory
 
-You only need to manually adjust JVM memory usage if the default settings aren't fully utilizing available memory. The JVM's memory usage must always remain below the total core resource memory to prevent application crashloops
+Adjust the JVM memory usage manually if the default settings are not fully utilizing available memory. The JVM's memory usage must always remain below the total core resource memory to prevent application crashloops.
 For more information, see [JVM Memory Tuning for Mendix on Kubernetes](/developerportal/deploy/private-cloud-jvm-memory-tuning/).
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/ChangeJVMHeapMemory.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/change-jvm-heapmemory.png" class="no-border" >}}
 
 ##### Read-Only Root Filesystem
 
