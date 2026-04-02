@@ -32,7 +32,7 @@ Install PWA Wrapper from the Marketplace:
 
 1. Open your app in Mendix Studio Pro.
 2. Open the **Marketplace**.
-3. Search for and install [PWA Wrapper](https://marketplace.mendix.com/link/component/243288).
+3. Search for and install [PWA Wrapper](https://marketplace.mendix.com/link/component/259272).
 
 The installed module includes both parts of the feature:
 
