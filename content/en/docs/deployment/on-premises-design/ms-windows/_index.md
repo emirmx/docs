@@ -93,7 +93,8 @@ To deploy a Mendix app using the Mendix Service Console, follow these steps:
     
 4. Click **Next >**. 
 
-5. Optionally, if you selected the **Install service with LocalSystem account** checkbox while creating the app, install the service once your app is created. The service will be installed with the LocalSystem account. (You can verify the service account type in the Services app of Windows.) Execute the command below in the administrator command prompt to change the account type to your gMSA: `sc.exe config MyServiceName obj= "YOURDOMAIN\MyGMSAAccount$"` 
+5. Optionally, if you selected the **Install service with LocalSystem account** checkbox while creating the app, install the service once your app is created. The service will be installed with the LocalSystem account. (You can verify the service account type in the Services app of Windows.) Execute the following command in the administrator command prompt to change the account type to your gMSA: `sc.exe config MyServiceName obj= "YOURDOMAIN\MyGMSAAccount$"`. 
+Configure folder access permissions for gMSA account on the directory selected in the **Preferences** setting. For more information, refer to the [Installing the Mendix Service Console](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#service-console) section above.
 
     {{< figure src="/attachments/deployment/on-premises-design/ms-windows/gmsa.png" >}}
 
