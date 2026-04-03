@@ -1,20 +1,17 @@
 ---
 title: "OQL Statements"
 url: /refguide/oql-statements/
-beta: true
 weight: 50
 aliases:
     - /refguide/oql-delete-statement/
 ---
-
-{{% alert color="warning" %}} This feature is experimental. For more information, see [Release Status](/releasenotes/release-status/). {{% /alert %}}
 
 ## Introduction
 
 OQL statements are translated to SQL statements that are sent to the database.
 This can be much faster than retrieving the objects in a microflow and then updating or deleting the resulting list.
 
-This feature is experimental and currently only accessible through the Java API by writing a Java action.
+This feature was made generally available in Mendix version 11.8 but is currently only accessible through the Java API by writing a Java action.
 
 {{% alert color="info" %}}
 From Mendix version 11.1, you can delete objects in bulk using OQL `DELETE` statements.
