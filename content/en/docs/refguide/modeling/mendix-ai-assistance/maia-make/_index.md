@@ -28,7 +28,7 @@ The key Maia Make capabilities are as follows:
 * Story-based development to help realize existing user stories
 * Support for PDF and image inputs to help Maia better understand your requirements
 * Adding relevant documents, such as microflows and pages, to the interface to give Maia a more desired context
-* Editing existing documents, including renaming documents and document elements such as entities, attributes, and microflow parameters
+* Editing existing documents, including renaming elements inside of documents such as entities, attributes, and microflow parameters
 * Removing elements from documents, enabling more advanced refactoring (in Studio Pro 11.9 and above)
 * Undoing changes generated on a per-document basis (in Studio Pro 11.9 and above)
 
