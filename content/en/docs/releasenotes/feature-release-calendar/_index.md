@@ -28,10 +28,10 @@ General Availability means that a feature is available for all users. This type 
 | Mendix Cloud GenAI Resource Packs Guardrails | Private Beta: Mx 11.15 |
 | Agent Editor in Studio Pro<sup>1</sup> | General Availability: Mx 11.9 |
 | Agent Observability | General Availability: Mx 11.5 + Mx 10.24 |
-| Model Mendix Agents as part of your Workflow | General Availability: Mx 11.9 |
+| Model Agents as part of your Workflow | General Availability: Mx 11.9 |
 | Dynamic Case Management | Private Beta: Mx 11.3 <br/>Limited Availability: Mx 11.12 |
 | Global Inbox Workflow Tasks | Public Beta: Mx 11.9 <br/>General Availability: Mx 11.12 |
-| Workflow non-interrupting Event Subprocesses (Message trigger) | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
+| Workflow Non-interrupting Event Subprocesses (Message trigger) | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
 | Workflow Interrupting Event Subprocesses (Message trigger) | General Availability: Mx 11.12 |
 | Workflow Interrupting Event Subprocesses (Timer trigger) | General Availability: Mx 11.12 |
 | Workflow Message Events | General Availability: Mx 11.12 |
