@@ -63,56 +63,6 @@ The resources folder contains the *SAMLConfig.properties* file, and through this
 
 If you are using a custom URL, see [How Do I Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL?](/developerportal/deploy/custom-domains/#use-custom-url) in the *Custom Domains* documentation.
 
-### Using Deep Links
-
-{{% alert color="info" %}}
-The Deep Link module has been deprecated from Studio Pro 10.6.0 and replaced by [page URLs](/refguide/page-properties/#url) and [microflow URLs](/refguide/microflow/#url). For instructions on migrating to page and microflow URLs, see the [Using Page and Microflow URLs with SAML](#page-microflow-url-saml) section below.
-{{% /alert %}}
-
-If end-users who use the deep link do not yet have a session in your app, the deep link can trigger the SSO process. If successful, the end-user will be automatically redirected back to the deep link.
-
-For more information on using the Deep Link module (with Mendix 8 and 9), see the [Using Deep Link Module](#using-deeplink) section below.
-
-#### Using Page and Microflow URLs with SAML{#page-microflow-url-saml}
-
-Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and above. To do this, follow the steps below:
-
-1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs.
-2. Ensure to remove the Deep Link module from your app to start the app successfully. For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
-
-##### Steps for SAML Versions Above v3.6.17 and v4.0.1
-
-1. To use the Page URL functionality, replace the content of *login.html* with the content of *login-with-mendixsso-automatically.html* (located in the **resources** > **mendixsso** > **templates** folder) without changing the file name. 
-2. To implement the SSO redirection, replace the code in the `<script>` tag on your login page (for example, *login.html*) with the following code:
-
-    * For automatic redirection: use `window.onload` to automatically redirect users to the SSO login page.
-
-    ```javascript
-    window.onload = function () {
-    const returnURL = encodeURIComponent(window.location.search + window.location.hash);
-    location.replace('/SSO/login?cont=' + returnURL);
-    };
-    ```
-
-    * For manual redirection: add an onclick event to the button that manually triggers the SSO login.
-
-    ```javascript
-    function SSOlogin() {
-    const returnURL = encodeURIComponent(window.location.search + window.location.hash);
-    location.replace('/SSO/login?cont=' + returnURL);
-    }
-    ```
-
-Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful login, they will be directed to the desired page using page and microflow URLs.
-
-#### Using the Deep Link Module{#using-deeplink}
-
-When using the SAML module with the Deep link Module (for Mendix 8 and 9), you need to set the `LoginLocation` constant of the Deeplink module to `/SSO/login?f=true&cont=` to redirect the user to the original deep link location after a successful login.
-
-The DeepLink module does not have full support for multiple IdPs, so it can only trigger logins at one IdP. You can specify which IdP should be used by adding the alias (`MyIdPAlias`) to the `LoginLocation`: `/SSO/login?_idp_id={MyIdPAlias}&cont=`.
-
-If you are using version 6.1.0 or above of the Deep Link module, you should also set the `EnableLeadingSlash` constant to *False*. This prevents users from being redirected to an invalid deep link location.
-
 ## Testing and Troubleshooting
 
 When testing and debugging the configuration, an option is to view the messages in the log files. A detailed cause of the failure will be printed in case something goes wrong.
