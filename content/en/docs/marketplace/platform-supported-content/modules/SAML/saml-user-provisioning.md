@@ -2,7 +2,7 @@
 title: "Just-In-Time User Provisioning via SAML"
 url: /appstore/modules/saml/user-provisioning/
 linktitle: "User Provisioning via SAML"
-weight: 20
+weight: 30
 description: "Describes the configuration of the user provisioning in the SAML module."
 ---
 
