@@ -24,6 +24,14 @@ The Agent Editor will become available shortly after the Mendix Studio Pro 11.9 
 
 ### Typical Use Cases
 
+Typical use cases for Agent Editor include:
+
+* Defining and maintaining agent behavior as part of the app model in Studio Pro, including prompts, models, tools, and knowledge bases.
+
+* Building agentic patterns directly in a Mendix app that rely on LLM interactions, microflow tools, MCP services, and knowledge base retrieval, while keeping configuration close to the application logic.
+
+* Supporting team-based development workflows where agent definitions are version-controlled, reviewed, tested locally, and deployed together with the app to cloud nodes.
+
 
 ### Features
 The Agent Editor helps teams design, test, and ship agents as part of their app lifecycle in Studio Pro.
@@ -32,13 +40,35 @@ It provides the following features:
 
 * Agent-specific Studio Pro documents for agent definitions and related dependencies, including text generation models, knowledge bases, and MCP services.
 * Prompt authoring with placeholder support, so runtime values from user or context objects can be injected during execution.
-* Tool and knowledge base configuration directly in the Agent editor, including temporary activation toggles for fast iteration and comparison.
+* Tool and knowledge base configuration directly in the Agent editor, including activation toggles for fast iteration and comparison.
 * Built-in local test functionality from Studio Pro to validate prompts and agent behavior before release.
-* Microflow integration through the **Call Agent** toolbox action in the **Agent Editor** category.
+* Microflow integration through the **Call Agent** toolbox action under the **Agent Editor** category.
 * Agent definitions as app-model documents under version control, making changes traceable and allowing rollback to previously committed states when needed.
 * Deployment together with the app model, with environment-specific flexibility through constant overrides.
 
 ### Dependencies {#dependencies}
+
+The Agent Editor module requires Mendix Studio Pro version 11.9.0 or above.
+
+In addition, install the following modules:
+
+* [Administration](https://marketplace.mendix.com/link/component/23513)
+* [Agent Commons](https://marketplace.mendix.com/link/component/240371)
+* [Atlas Core](https://marketplace.mendix.com/link/component/117187)
+* [Community Commons](https://marketplace.mendix.com/link/component/170)
+* [Conversational UI](https://marketplace.mendix.com/link/component/239450)
+* [Data Widgets](https://marketplace.mendix.com/link/component/116540)
+* [Encryption](https://marketplace.mendix.com/link/component/1011)
+* [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
+* [MCP Client](https://marketplace.mendix.com/link/component/244893)
+* [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
+* [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
+* [Web Actions](https://marketplace.mendix.com/link/component/114337)
+
+In addition, make sure the following widgets are available in your project:
+
+* [Events Widget](https://marketplace.mendix.com/link/component/224259)
+* [Markdown Viewer Widget](https://marketplace.mendix.com/link/component/230248)
 
 
 ## Installation
@@ -52,6 +82,17 @@ After installation, two modules are added to your app:
 * **Agent Editor Commons** under **Marketplace modules** in the **App Explorer**. This module contains the logic to call agents from microflows.
 
 The detailed functionality of these modules is explained in the following sections of this page.
+
+### First-Time Setup
+
+After installing the modules, complete the following setup before defining model and agent documents:
+
+1. Exclude the `/agenteditor` folder from version control.
+  In Studio Pro, go to **App** > **Show App Directory in Explorer**. Then in the file explorer, edit the `.gitignore`file and add `/agenteditor` on a new line. This folder contains log files and should typically not be tracked in Git.
+2. Ensure the encryption key is configured in the **App** > **Settings** > **Configuration** in Studio Pro. 
+  Make sure that it is 32 characters long. For more information, see the [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant) section of *Encryption*
+3. Configure startup import logic.
+  Select `ASU_AgentEditor` as your [after-startup microflow](/refguide/runtime-tab/#after-startup) in **App** > **Settings** > **Runtime**, or call it from your existing after-startup microflow.
 
 
 ## Configuration
