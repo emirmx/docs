@@ -41,6 +41,12 @@ For each revision the following information is shown, more information about eac
 
 By selecting a revision in this grid, the tabs below the grid will be filled with information about this revision.
 
+### Comparing Revisions
+
+You can compare any revision to your current working state by right-clicking a revision and selecting **Compare to current state**. This opens the [Comparison Pane](/refguide/comparison-pane/), which shows all differences between the selected revision and your current state, including uncommitted changes.
+
+For more information, see [Comparing Revisions](/refguide/comparing-revisions/).
+
 #### Revision{#revision}
 
 A unique alphanumeric identifier of the revision in the repository. The revision identifier is the Git hash for the commit and is unique for a whole repository.
@@ -96,3 +102,5 @@ This tab shows a list of stories that are related to the changes.
 * [Version Control](/refguide/version-control/)
 * [Stories Pane](/refguide/stories-pane/)
 * [Using Version Control History](/refguide/version-control-using-history/)
+* [Comparison Pane](/refguide/comparison-pane/)
+* [Comparing Revisions](/refguide/comparing-revisions/)
