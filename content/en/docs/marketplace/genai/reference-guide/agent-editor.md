@@ -263,3 +263,15 @@ To return to historical agent versions, use version control to inspect previousl
 
 
 ## Troubleshooting
+
+### Testing the agent from Studio Pro results in an error
+This is typically due to incorrect model configuration or an exception originating from the API call of the large language model. Check the **Console** pane in Studio Pro for detailed logs.
+
+### Testing the agent from Studio Pro is disabled
+Executing a test requires the local app to be running and the agent documents to be synchronized to the runtime. Make sure the app has been deployed locally after the last change in any agent-related document.
+
+### The app does not start locally
+This is often caused by validations that are executed in the after-startup logic. Make sure that the encryption key is set and that all model and knowledge base documents are correctly configured with valid constant values. Check the **Console** pane in Studio Pro for additional details.
+
+### Errors pane shows "Extension agent-editor failed to complete its consistency checks"
+This is a known issue caused by internal timeouts. You can resolve it by synchronizing the project folder (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
