@@ -107,7 +107,6 @@ To use the Agent Editor functionalities in your app, you must perform the follow
 7. Improve the agent in next iterations.
 
 
-
 ### Define the model.
 
 In Agent Editor, you define the model as a document in your app model. This model can then be linked to one or more agents in your project.
@@ -116,15 +115,12 @@ Defining a model document is mandatory. Without a model document, the agent you 
 
 At this moment, only models of the Mendix Cloud GenAI type are supported.
 
-To define a model, perform the following steps:
+Model configuration is document-based and can be managed directly in Studio Pro:
 
-1. In the **App Explorer**, right-click your module (for example, `MyFirstModule`) and select **Add other** > **Model**.
-2. The Model editor opens directly after creating the model document.
-3. In the **App Explorer**, create or locate a constant in the same module (for example, `MyFirstModule`) by selecting **Add other** > **Constant**.
-4. Ensure this constant contains the key from your Text Generation resource in the Mendix Portal.
-5. In the Model editor, select this constant in **Model key**.
-6. After selecting the constant, verify that model data is imported.
-7. In the **Connection** section of the Model editor, click **Test** to validate the connection from Studio Pro to the model resource.
+* A Model document can be added from the **App Explorer** at module level.
+* The **Model key** must be configured with a constant that contains the key for a Text Generation resource. This key can be obtained in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com).
+* After the key is selected, model metadata is imported and shown in the editor.
+* The connectivity can be validated in the **Connection** section by using the **Test** button.
 
 {{% alert color="info" %}}
 The value you use for the Text Generation key constant in Studio Pro can be different from the value used in cloud environments. Constant values can be overridden per environment during deployment.
@@ -135,15 +131,13 @@ The value you use for the Text Generation key constant in Studio Pro can be diff
 
 After defining the model, define the agent document and configure the prompts and context. This configuration is mandatory for the agent to run.
 
-To define the agent, perform the following steps:
+Defining an agent is also document-based and can be configured using the Agent editor:
 
-1. In the **App Explorer**, right-click your module and select **Add other** > **Agent**.
-2. In the Agent editor, select the model by clicking **Select**. This opens a document selection dialog where you can choose from the model documents in your app.
-3. In **System prompt**, enter the system instructions for the agent.
-4. In **User prompt**, enter the concrete task for the agent that is used during each execution.
-5. While writing prompts, include placeholders for variables by using double braces, for example, `{{variable}}`. The actual values of these placeholders are typically known at runtime based on the page context.
-6. If placeholders are used, select the **Context entity**. This opens an entity selection dialog in Studio Pro where you can select the entity that provides the placeholder values at runtime.
-7. Optionally, click **Edit** next to **Model settings** to configure parameters such as maximum tokens, temperature, and TopP, which control response length and output randomness. Consult the documentation of your model provider for the allowed ranges.
+* An Agent document can be added from the **App Explorer** at module level.
+* In order to do calls to a text generation resrouce, a Model document must be selected for the agent.
+* The **System prompt** and **User prompt** must be configured for task-style execution. In these prompts, placeholders can be defined with double braces (for example, `{{variable}}`).
+* When placeholders are used, a **Context entity** must be selected so values can be resolved at runtime.
+* The **Model settings** can be adjusted as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
 
 {{% alert color="info" %}}
 Both **System prompt** and **User prompt** are currently mandatory because Agent Editor currently supports task-based agents only. Chat-based agents will be supported by the Agent Editor in a future release.
