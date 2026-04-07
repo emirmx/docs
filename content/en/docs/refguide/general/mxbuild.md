@@ -176,4 +176,4 @@ The location (or locations) associated with the problem have the following prope
 
 ## Troubleshooting {#troubleshooting}
 
-From 11.9.0 MxBuild will now load and run web extensions. Web extensions can now fail the build if they raise consistency errors for your app. For security reasons MxBuild uses Deno to host the web extensions during build time. In some containerized environments you may run into an error 13 access denied when Deno attemps to create its local cache structure. To circomvent this you can set the DENO_DIR environment variable to a location where MxBuild has write access.
+For Studio Pro 11.9.0 and above, MxBuild will load and run web extensions. Web extensions can now fail the build if they raise consistency errors for your app. For security purposes, MxBuild uses Deno to host the web extensions during build time. In some containerized environments, you may run into an `error 13 access denied` when Deno attemps to create its local cache structure. To work around this, you can set the `DENO_DIR` environment variable to a location where MxBuild has write access.
