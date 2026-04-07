@@ -275,3 +275,15 @@ This is often caused by validations that are executed in the after-startup logic
 
 ### Errors pane shows "Extension agent-editor failed to complete its consistency checks"
 This is a known issue caused by internal timeouts. You can resolve it by synchronizing the project folder (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
+
+### Agent documents are not visible in Agent Commons UI
+Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow. After these configuration changes, restart the app.
+
+### MCP tools cannot be listed or called
+If **List tools** fails, verify the consumed MCP service configuration: endpoint constant value, protocol version, and credentials microflow (when authentication is required). If possible, confirm that the target endpoint is reachable: this can be done for example from the running app by temporarily configuring it in the [MCP client module](/appstore/modules/genai/mcp-modules/mcp-client/) manually.
+
+### Knowledge base collections are not listed for Mendix Cloud Knowledge bases
+If **List collections** does not return results, verify the **Knowledge base key** constant and confirm that the configured knowledge base resource is reachable.
+
+### Placeholder values are not resolved during calls
+If prompts contain placeholders, ensure a context object is passed and that it matches the selected **Context entity**. Also verify that variable names in the prompt match available attributes on that entity.
