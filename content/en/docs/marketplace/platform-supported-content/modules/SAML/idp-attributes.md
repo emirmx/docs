@@ -2,14 +2,14 @@
 title: "Reference Guide for SAML IdP Configuration"
 url: /appstore/modules/saml/idp-attributes
 linktitle: "SAML IdP Configuration"
-weight: 10
+weight: 20
 description: "Describes the list of IdP Attributes for the SAML module"
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-This document provides you with a detailed description of each IdP attribute and its default value for deploy-time configuration. You need to use these attributes when configuring the SAML module to create the IdP configuration. For more details, see [Non-default Configuration](/appstore/modules/saml/#non-default).
+This document provides you with a detailed description of each IdP attribute and its default value for deploy-time configuration. You need to use these attributes when configuring the SAML module to create the IdP configuration. For more details, see [Non-default Configuration](/appstore/modules/saml/installation-configuration/#non-default).
 
 ## Identity Configuration
 
@@ -31,7 +31,7 @@ Using artifact binding for SAML responses at the SAML IdP is only available in t
 * v3.3.0/v3.3.1 and above for Mendix 9 and 10
 * v2.3.0 and above for Mendix 8
 
-`POST_BINDING` is the default value when using an [Easy Default Flow](/appstore/modules/saml/#easy-flow).
+`POST_BINDING` is the default value when using an [Easy Default Flow](/appstore/modules/saml/installation-configuration/#easy-flow).
 
 ### Use AssertionConsumerService Concept
 
@@ -39,12 +39,12 @@ In most cases (for example, with Entra ID), you do not want to use the Assertion
 
 * If the **Use AssertionConsumerService Concept** is set to `No…` then Auth-Request contains the `AssertionConsumerServiceURL` and `ProtocolBinding` attributes.
 * If the **Use AssertionConsumerService Concept** is set to `Yes…` then Auth-Request contains only the ‘`AssertionConsumerServiceIndex`’ attribute.
-    By default, it is `No` when using an [Easy Default Flow](/appstore/modules/saml/#easy-flow).
+    By default, it is `No` when using an [Easy Default Flow](/appstore/modules/saml/installation-configuration/#easy-flow).
 
 ### Assertion Consumer Service Index
 
 Set the **Assertion consumer service index** to the value you want to use for `AssertionConsumerServiceIndex` in both the Auth-Request and the SP-Metadata.
-    The configured binding will be included in the SP metadata, as indicated in the [URLs](/appstore/modules/saml/#urls) section. The default value is `0` for the deploy time configuration.
+    The configured binding will be included in the SP metadata, as indicated in the [URLs](/appstore/modules/saml//installation-configuration/#urls) section. The default value is `0` for the deploy time configuration.
 
 ## Attribute Consuming Service
 
@@ -53,7 +53,7 @@ In the **Attribute Consuming Service** tab, you can configure your app using the
 You can set up two sets of attributes by adding new attributes, editing existing attributes, or removing selected attributes. These will be provided at different times. Those listed under **I want to request attribute(s) at my IDP during initial login** will be returned when the end-user initially signs in. Those listed under **I want to request attribute(s) at my IDP during in-session login** will be returned during [In-session Authentication](#in-session).
 Although the typical use case for requesting attributes is to obtain information about the user, you can request an attribute with a specific value. In this case, you can configure the optional Attribute value that must be returned.
 
-When using an [Easy Default Flow](/appstore/modules/saml/#easy-flow), disable both initial and in-session login options.
+When using an [Easy Default Flow](/appstore/modules/saml/installation-configuration/#easy-flow), disable both initial and in-session login options.
 
 Requesting user attributes at the SAML IdP is only available in the following versions of the module (depending on which Mendix version you are using)
 
@@ -69,7 +69,7 @@ Requesting user attributes at the SAML IdP is only available in the following ve
     * **What algorithm do you want to use to sign messages** (or *Encryption method*) – `SHA1 - RSA`, or `SHA256 - RSA`
     * **Encryption key length** – 1024 or 2048 bits
 
-        When using an [Easy Default Flow](/appstore/modules/saml/#easy-flow), default values are `SHA256 - RSA` and 2048 bits
+        When using an [Easy Default Flow](/appstore/modules/saml/installation-configuration/#easy-flow), default values are `SHA256 - RSA` and 2048 bits
 
     Enabling encryption has the following effects on messages being exchanged:
 
