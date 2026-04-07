@@ -36,7 +36,7 @@ Mendix supports a broad range of BPMN constructs, either directly on the Workflo
 |---|---|
 | Embedded Subprocess | Not supported. |
 | Call Activity (Reusable Subprocess) | [Call Workflow](/refguide/call-workflow/) |
-| Event Subprocess | [Event Subprocess](/refguide/workflow-elements/) |
+| Event Subprocess | [Event Subprocess](/refguide/event-sub-processes/) |
 | Transaction Subprocess | Not supported. |
 | Ad-hoc Subprocess | Not supported. |
 
@@ -64,7 +64,7 @@ Mendix supports a broad range of BPMN constructs, either directly on the Workflo
 
 Mendix supports a broad range of BPMN event types. Some are available directly as elements on the Workflow canvas. Others are achieved through [microflows](/refguide/microflows/) that contain workflow-related activities.
 
-> **n/a** — this combination does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.
+> **N/A** — this combination does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.
 >
 > **Not supported** — this combination exists in the BPMN 2.0 specification but is not currently supported in Mendix.
 
@@ -73,12 +73,12 @@ Mendix supports a broad range of BPMN event types. Some are available directly a
 | Variant | How |
 |---|---|
 | Start | Every workflow has one start event. Start a workflow by providing an object of the entity type that the workflow expects. Use the [Call Workflow](/refguide/on-click-event/#call-workflow) page action (for example, on a button with a data view) or the [Call Workflow](/refguide/workflow-call/) activity in a [microflow](/refguide/microflows/) where you pass the [context object](/refguide/workflow-call/#context-object). |
-| Event Subprocess (Interrupting) | n/a |
-| Event Subprocess (Non-Interrupting) | n/a |
-| Intermediate Catch | n/a |
-| Intermediate Boundary (Interrupting) | n/a |
-| Intermediate Boundary (Non-Interrupting) | n/a |
-| Intermediate Throw | n/a |
+| Event Subprocess (Interrupting) | N/A |
+| Event Subprocess (Non-Interrupting) | N/A |
+| Intermediate Catch | N/A |
+| Intermediate Boundary (Interrupting) | N/A |
+| Intermediate Boundary (Non-Interrupting) | N/A |
+| Intermediate Throw | N/A |
 | End | Not supported. Mendix's [End Event](/refguide/end-event/) terminates the entire workflow and aborts any ongoing parallel paths, which is equivalent to a Terminate End Event, not a normal End Event. |
 
 ### Message Events {#message-events}
@@ -91,8 +91,8 @@ Mendix supports a broad range of BPMN event types. Some are available directly a
 | Intermediate Catch | Planned for Studio Pro 11.12 (Notification Event). Use [Wait for Notification](/refguide/wait-for-notification/) activity as alternative. |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
 | Intermediate Boundary (Non-Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Throw | Use [Call Microflow](/refguide/call-microflow/) containing a [Notify Workflow](/refguide/notify-workflow/) activity to send the message and continue the flow. |
-| End | Use [Call Microflow](/refguide/call-microflow/) before the end event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to send the message before the process completes. |
+| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to send the message and continue the flow. |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to send the message before the process completes. |
 
 ### Timer Events {#timer-events}
 
@@ -104,112 +104,112 @@ Mendix supports a broad range of BPMN event types. Some are available directly a
 | Intermediate Catch | [Timer](/refguide/timer/) |
 | Intermediate Boundary (Interrupting) | [Interrupting Timer Event](/refguide/timer/) |
 | Intermediate Boundary (Non-Interrupting) | [Non-Interrupting Timer Event](/refguide/timer/) |
-| Intermediate Throw | n/a |
-| End | n/a |
+| Intermediate Throw | N/A |
+| End | N/A |
 
 ### Error Events {#error-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to detect the error condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity to trigger an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
-| Event Subprocess (Non-Interrupting) | n/a |
-| Intermediate Catch | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | Use an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to handle the error logic and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the error occurs. |
+| Event Subprocess (Non-Interrupting) | N/A |
+| Intermediate Catch | N/A |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Boundary (Non-Interrupting) | n/a |
-| Intermediate Throw | n/a |
-| End | Use a [Call Microflow](/refguide/call-microflow/) to detect the error condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity before the end event to signal the error before the process completes. |
+| Intermediate Boundary (Non-Interrupting) | N/A |
+| Intermediate Throw | N/A |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the error before the process completes. |
 
 ### Signal Events {#signal-events}
 
 | Variant | How |
 |---|---|
 | Start | Use a [microflow](/refguide/microflows/) to start multiple workflows using multiple [Call Workflow](/refguide/workflow-call/) activities. |
-| Event Subprocess (Interrupting) | Use a [microflow](/refguide/microflows/) with the [Notify Workflow](/refguide/notify-workflow/) activity to send notifications to multiple running workflow instances, triggering an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) in each. |
-| Event Subprocess (Non-Interrupting) | Use a [microflow](/refguide/microflows/) with the [Notify Workflow](/refguide/notify-workflow/) activity to send notifications to multiple running workflow instances, triggering a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) in each. |
-| Intermediate Catch | Use a [microflow](/refguide/microflows/) with multiple [Notify Workflow](/refguide/notify-workflow/) activities to deliver notifications to multiple waiting [Wait for Notification](/refguide/wait-for-notification/) activities. |
+| Event Subprocess (Interrupting) | Use an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to handle the signal condition and send notifications using a [Notify Workflow](/refguide/notify-workflow/) activity to multiple running workflow instances. |
+| Event Subprocess (Non-Interrupting) | Use a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to handle the signal condition and send notifications using a [Notify Workflow](/refguide/notify-workflow/) activity to multiple running workflow instances. |
+| Intermediate Catch | Use a [Wait for Notification](/refguide/wait-for-notification/) activity on each workflow instance, and use a microflow with multiple [Notify Workflow](/refguide/notify-workflow/) activities to deliver the signal to all waiting instances. |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
 | Intermediate Boundary (Non-Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Throw | Use [Call Microflow](/refguide/call-microflow/) with multiple [Notify Workflow](/refguide/notify-workflow/) activities to send notifications to multiple workflow instances. |
-| End | Use [Call Microflow](/refguide/call-microflow/) with multiple [Notify Workflow](/refguide/notify-workflow/) activities to send notifications to multiple workflow instances before the process completes. |
+| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing multiple [Notify Workflow](/refguide/notify-workflow/) activities to send the signal to multiple workflow instances. |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing multiple [Notify Workflow](/refguide/notify-workflow/) activities to send the signal to multiple workflow instances before the process completes. |
 
 ### Conditional Events {#conditional-events}
 
 | Variant | How |
 |---|---|
 | Start | Use a [microflow](/refguide/microflows/) that checks the condition and starts the workflow using the [Call Workflow](/refguide/workflow-call/) activity only when the condition is met. |
-| Event Subprocess (Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to evaluate the condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity only when the condition is met to trigger an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
-| Event Subprocess (Non-Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to evaluate the condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity only when the condition is met to trigger a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
+| Event Subprocess (Interrupting) | Use an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to evaluate or create the condition and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the condition is met. |
+| Event Subprocess (Non-Interrupting) | Use a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to evaluate or create the condition and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the condition is met. |
 | Intermediate Catch | Use [Call Microflow](/refguide/call-microflow/) to evaluate the condition and return a result, then use a [Decision](/refguide/decision-in-workflows/) to route the workflow based on that result. |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
 | Intermediate Boundary (Non-Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Throw | n/a |
-| End | n/a |
+| Intermediate Throw | N/A |
+| End | N/A |
 
 ### Escalation Events {#escalation-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to detect the escalation condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity to trigger an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
-| Event Subprocess (Non-Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to detect the escalation condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity to trigger a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
-| Intermediate Catch | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | Use an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to evaluate the escalation condition and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the escalation needs to happen. |
+| Event Subprocess (Non-Interrupting) | Use a [Non-Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to evaluate the escalation condition and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the escalation needs to happen. |
+| Intermediate Catch | N/A |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
 | Intermediate Boundary (Non-Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) containing a [Notify Workflow](/refguide/notify-workflow/) activity to raise the escalation signal and continue the flow. |
-| End | Use a [Call Microflow](/refguide/call-microflow/) before the end event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to raise the escalation signal before the process completes. |
+| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the escalation and continue the flow. |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the escalation before the process completes. |
 
 ### Compensation Events {#compensation-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | Use a [Call Microflow](/refguide/call-microflow/) to detect the compensation condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity to trigger an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications). |
-| Event Subprocess (Non-Interrupting) | n/a |
-| Intermediate Catch | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | Use an [Interrupting Notification Event Subprocess Start](/refguide/workflow-event-sub-processes/#triggers-and-notifications) to the workflow, and use a microflow to evaluate the compensation condition and send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity at the moment the compensation needs to happen. |
+| Event Subprocess (Non-Interrupting) | N/A |
+| Intermediate Catch | N/A |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Boundary (Non-Interrupting) | n/a |
-| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) containing a [Notify Workflow](/refguide/notify-workflow/) activity to raise the compensation signal and redirect the flow to the compensating activity. |
-| End | Use a [Call Microflow](/refguide/call-microflow/) before the end event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to raise the compensation signal before the process completes. |
+| Intermediate Boundary (Non-Interrupting) | N/A |
+| Intermediate Throw | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the compensation and redirect the flow to the compensating activity. |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the compensation before the process completes. |
 
 ### Cancel Events {#cancel-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | n/a |
-| Event Subprocess (Non-Interrupting) | n/a |
-| Intermediate Catch | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | N/A |
+| Event Subprocess (Non-Interrupting) | N/A |
+| Intermediate Catch | N/A |
 | Intermediate Boundary (Interrupting) | Planned for Studio Pro 11.12 (requires Notification Boundary Event). |
-| Intermediate Boundary (Non-Interrupting) | n/a |
-| Intermediate Throw | n/a |
-| End | Use a [Call Microflow](/refguide/call-microflow/) to detect the cancellation condition, then send a notification using a [Notify Workflow](/refguide/notify-workflow/) activity before the end event to signal the cancellation before the process completes. |
+| Intermediate Boundary (Non-Interrupting) | N/A |
+| Intermediate Throw | N/A |
+| End | Use a [Call Microflow](/refguide/call-microflow/) acting as the throw event, containing a [Notify Workflow](/refguide/notify-workflow/) activity to throw the cancellation before the process completes. |
 
 ### Terminate Events {#terminate-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | n/a |
-| Event Subprocess (Non-Interrupting) | n/a |
-| Intermediate Catch | n/a |
-| Intermediate Boundary (Interrupting) | n/a |
-| Intermediate Boundary (Non-Interrupting) | n/a |
-| Intermediate Throw | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | N/A |
+| Event Subprocess (Non-Interrupting) | N/A |
+| Intermediate Catch | N/A |
+| Intermediate Boundary (Interrupting) | N/A |
+| Intermediate Boundary (Non-Interrupting) | N/A |
+| Intermediate Throw | N/A |
 | End | [End Event](/refguide/end-event/) — When the workflow reaches an End Event, the entire workflow terminates and any ongoing parallel paths are aborted. |
 
 ### Link Events {#link-events}
 
 | Variant | How |
 |---|---|
-| Start | n/a |
-| Event Subprocess (Interrupting) | n/a |
-| Event Subprocess (Non-Interrupting) | n/a |
+| Start | N/A |
+| Event Subprocess (Interrupting) | N/A |
+| Event Subprocess (Non-Interrupting) | N/A |
 | Intermediate Catch | [Jump Activity](/refguide/jump-activity/) |
-| Intermediate Boundary (Interrupting) | n/a |
-| Intermediate Boundary (Non-Interrupting) | n/a |
+| Intermediate Boundary (Interrupting) | N/A |
+| Intermediate Boundary (Non-Interrupting) | N/A |
 | Intermediate Throw | [Jump Activity](/refguide/jump-activity/) |
-| End | n/a |
+| End | N/A |
 
 ### Multiple Events {#multiple-events}
 
@@ -234,5 +234,5 @@ Mendix supports a broad range of BPMN event types. Some are available directly a
 | Intermediate Catch | Not supported. |
 | Intermediate Boundary (Interrupting) | Not supported. |
 | Intermediate Boundary (Non-Interrupting) | Not supported. |
-| Intermediate Throw | n/a |
-| End | n/a |
+| Intermediate Throw | N/A |
+| End | N/A |
