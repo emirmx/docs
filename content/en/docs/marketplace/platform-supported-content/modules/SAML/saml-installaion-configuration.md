@@ -260,11 +260,7 @@ Before configuring any IdP, you need to configure the Service Provider (SP), whi
 
 Each IdP should have its own configuration set. Every IdP can be configured and enabled separately. All changes made in the configuration are immediately applied when you save the configuration.
 
- If you have multiple IdPs, please make sure each IdP has a unique **Entity descriptor**. If you add multiple IdPs with the same entity descriptor, you might experience unexpected behavior where a different SSO configuration is selected than the alias provided.
-
-When creating a new IdP configuration, you are guided through a workflow to help you configure everything required for the IdP configuration. Each option in the workflow is explained in the [SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document and can be changed by editing an existing IdP Configuration.
-
-Use **Previous** to go back to the previous dialog or **Cancel** to abandon your changes. Click **Save** on the last step to save the configuration.
+If you have multiple IdPs, please make sure each IdP has a unique **Entity descriptor**. If you add multiple IdPs with the same entity descriptor, you might experience unexpected behavior where a different SSO configuration is selected than the alias provided.
 
 ### Downloading SP Metadata
 
@@ -283,6 +279,12 @@ The following settings apply to the IdP configuration:
 * **Log SAML Requests** – Determines whether all requests and login attempts should be logged and stored in an entity.
 
 When you add a new configuration or change an existing one, you should restart your app. This ensures that the correct configuration is used.
+
+## IdP Configuration
+
+When creating a new IdP configuration, you are guided through a workflow to help you configure everything required for the IdP configuration. Each option in the workflow is explained in the [SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document and can be changed by editing an existing IdP Configuration.
+
+Use **Previous** to go back to the previous dialog or **Cancel** to abandon your changes. Click **Save** on the last step to save the configuration.
 
 ## User Provisioning
 
