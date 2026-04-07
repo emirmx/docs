@@ -83,7 +83,7 @@ After installation, two modules are added to your app:
 
 The detailed functionality of these modules is explained in the following sections of this page.
 
-### First-Time Setup {setup}
+### First-Time Setup {#setup}
 
 After installing the modules, complete the following setup before defining model and Agent documents:
 
@@ -123,7 +123,7 @@ Model configuration is document-based and can be managed directly in Studio Pro:
 * The connectivity can be validated in the **Connection** section by using the **Test** button.
 
 {{% alert color="info" %}}
-The value you use for the Text Generation key constant in Studio Pro can be different from the value used in cloud environments. Constant values can be overridden per environment during deployment.
+The value you use for the constant in Studio Pro can be different from the value used in cloud environments. Constant values can be overridden per environment during deployment. This for example means that you can locally connect to a text generation resource using a different key than the one used for production.
 {{% /alert %}}
 
 
