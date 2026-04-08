@@ -189,7 +189,7 @@ At this moment, only Mendix Cloud GenAI knowledge bases are supported.
 
 In the Knowledge base editor:
 
-* Set **Knowledge base key** by creating or selecting a constant in your module.
+* Set **Knowledge base key** by creating or selecting a String constant in your module.
 * After selecting the key, verify that knowledge base details are imported and shown.
 * Optionally, click **List collections** to test the connection and display the available collections from the knowledge base resource in **Configured Collections**.
 
@@ -221,14 +221,13 @@ Testing is available when the following conditions are met:
 
 * The app model has no consistency errors in Studio Pro (as shown in the **Errors** pane).
 * The app is running locally.
-* The text generation resource configured in the Model document is reachable.
-* Values are provided for all placeholders so a concrete test case can be constructed.
+* The text generation resource configured in the Model document is reachable. You can verify this by clicking the **Test** button on the Model document.
 
 If you change the agent definition (for example, by updating the system prompt or adding/removing tools), restart the local app runtime before testing again. The Agent editor provides a UI indication for this, but it is recommended to account for it explicitly while iterating.
 
 When these conditions are met, you can use the test functionality to validate prompt behavior and configuration before integrating the agent into app logic.
 
-If a call fails during testing, a generic error message is shown in the Agent editor UI. Detailed error information is available in the running app console in Studio Pro (the **Console** pane), similar to errors you would inspect while testing the app UI itself.
+If a call fails during testing, a generic error message is shown in the Agent editor UI. Detailed error information is available in the running app console in Studio Pro (the **Console** pane), similar to errors you would inspect while testing the app itself.
 
 
 ### Include the agent in the app logic {#call-agent}
@@ -237,16 +236,16 @@ Including an agent in the app logic is done by calling it from a microflow. The 
 
 When configuring the action, select the Agent document so that the right agent is called. If your prompts use variable placeholders, pass a context object to the action. This object must be of the selected context entity type so placeholders can be resolved at runtime.
 
-Optionally, you can pass a `Request` object to set request-level values, and a `FileCollection` object with files to send along with the user message. Support for files and images depends on the underlying large language model. Refer to the documentation of the specific connector.
+Optionally, you can pass a `Request` object to set request-level values, and a `FileCollection` object with files to send along with the user message to make use of vision or document chat capabilities. Support for files and images depends on the underlying large language model. Refer to the documentation of the specific connector.
 
 The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic.
 
 
 ### Deploy the agent to cloud environments {#deploy-agent}
 
-Agents created with Agent Editor are documents in the app model. This means they are packaged and deployed together with the rest of the app whenever a deployment is performed.
+Agents created with the Agent Editor are documents in the app model. This means they are packaged and deployed together with the rest of the app whenever a deployment is performed.
 
-Environment-specific flexibility is provided through constants. Values such as the model key, knowledge base key, or custom MCP endpoint can be overridden per app environment. For details, see [Environment Details: Constants](https://docs.mendix.com/developerportal/deploy/environments-details/#constants).
+Environment-specific flexibility is provided through constants. Values such as the model key, knowledge base key, or custom MCP endpoint can be overridden per app environment during the deployment process. For details, see [Environment Details: Constants](https://docs.mendix.com/developerportal/deploy/environments-details/#constants).
 
 Agents created in Studio Pro (using Agent Editor) are visible in the Agent Commons UI, but they are not editable there.
 
@@ -259,17 +258,17 @@ To return to historical agent versions, use version control to inspect previousl
 
 ## Known Limitations {#limitations}
 
-* Currently, the Agent Editor supports only Mendix Cloud GenAI as provider for text generation models and knowledge bases. Support for other providers, such as OpenAI and Amazon Bedrock, is planned for a future release.
+* Currently, the Agent Editor supports only Mendix Cloud GenAI as provider for text generation models and knowledge bases. Support for other providers, such as (Azure) OpenAI and Amazon Bedrock, is planned for a future release.
 * Agent Editor currently supports task-based agents only, which require both **System prompt** and **User prompt** to be configured. Chat-based agents will be supported in a future release.
-* MCP tool support is limited to whole-server integration. Selecting individual tools from an MCP server is not yet supported.
+* MCP tool support is limited to whole-server integration. Selecting individual tools from a consumed MCP service to be added to an agent is not yet supported.
 * If a document that is referenced by an Agent document is excluded, Studio Pro shows a consistency error accordingly. In the current version, these consistency errors may not be resolved automatically when the excluded document is included again. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again).
-* The extension creates a `/agenteditor` log folder in the app directory. This is not excluded from version control automatically upon including the module from the Marketplace. This folder should be added to `.gitignore` manually as described in the [First time setup](setup) section.
+* The extension creates a `/agenteditor` log folder in the app directory. This is not excluded from version control automatically upon including the module from the Marketplace. This folder should be added to `.gitignore` manually as described in the [First time setup](#setup) section.
 
 
 ## Troubleshooting {#troubleshooting}
 
 ### Testing the agent from Studio Pro results in an error
-This is typically due to incorrect model configuration or an exception originating from the API call of the large language model. Check the **Console** pane in Studio Pro for detailed logs.
+This is typically due to incorrect model configuration or an exception originating from the API call of the large language model. Check the **Console** pane in Studio Pro for detailed logs. Additionally, verify that the `ASU_AgentEditor` microflow was added to your after-startup logic as described in the [First time setup](#setup) section.
 
 ### Testing the agent from Studio Pro is disabled
 Executing a test requires the local app to be running and the Agent documents to be synchronized to the runtime. Make sure the app has been deployed locally after the last change in any agent-related document.
@@ -281,7 +280,7 @@ This is often caused by validations that are executed in the after-startup logic
 This is a known issue caused by internal timeouts. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
 
 ### Agent documents are not visible in Agent Commons UI
-Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow. After these configuration changes, restart the app.
+Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow as described in the [First time setup](#setup) section. After these configuration changes, restart the app.
 
 ### MCP tools cannot be listed or called
 If **List tools** fails, verify the consumed MCP service configuration: endpoint constant value, protocol version, and credentials microflow (when authentication is required). If possible, also confirm that the target endpoint is reachable from the running app runtime, for example by temporarily configuring it manually in the [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/).
