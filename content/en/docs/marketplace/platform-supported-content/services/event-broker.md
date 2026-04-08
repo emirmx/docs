@@ -96,7 +96,7 @@ From here, you can manage the default access settings:
 
 ## Mendix Event Broker Bridges {#manage-mx-broker-bridge}
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 Mendix Event Broker Bridges was released for GA in 11.4.0.
 {{% /alert %}}
 
