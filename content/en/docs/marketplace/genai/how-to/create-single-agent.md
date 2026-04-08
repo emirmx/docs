@@ -220,17 +220,17 @@ This method provides greater flexibility in managing and sharing functions acros
 
 The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to manage the lifecycle of your agents as part of the app model. You can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Models for text generation, Knowledge bases for data retrieval, and Consumed MCP services for remote tools.
 
-At the time of initial release, Agent Editor supports only Mendix Cloud GenAI as provider for model and knowledge base configuration. The steps below therefore use the Mendix Cloud GenAI provider type, text generation resource keys, and knowledge base resource keys from the Mendix Cloud GenAI Portal.
+At the time of initial release, Agent Editor supports only [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/) as provider for models and knowledge bases. The steps below therefore use the Mendix Cloud GenAI provider type, text generation resource keys, and knowledge base resource keys from the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com/).
 
 ### Set up the Agent with a Prompt
 
 Create and configure the required Model and Agent documents in Studio Pro, including prompts and a context entity.
 
-1. In the **App Explorer**, right-click your module and select **Add other** > **Model**.
+1. In the **App Explorer**, right-click your module and select **Add other** > **Model**. Set a name, for example `MyModel`.
 
-2. Open the new Model document and set the provider type to Mendix Cloud GenAI.
+2. In the new Model document, set the provider type to Mendix Cloud GenAI.
 
-3. For the **Model key**, create or select a constant that contains your text generation resource key from the Mendix Cloud GenAI Portal.
+3. For the **Model key**, create and select a string type constant that contains your text generation resource key from the Mendix Cloud GenAI Portal.
 
 4. In the **Connection** section, click **Test** to verify that the model can be reached.
 
@@ -257,9 +257,9 @@ Create and configure the required Model and Agent documents in Studio Pro, inclu
     If the retrieved results are not helpful to answer the request, inform the user in a user-friendly way.
     ```
 
-8. In the **User prompt** field, set `{{UserInput}}` so runtime user input from your context object is injected into the call.
+8. In the **User prompt** field, enter `{{UserInput}}`. This creates a placeholder where the user input at runtime should be injected.
 
-9. For the **Context entity**, select the `TicketHelper` entity created in the previous section.
+9. For the **Context entity**, select the `TicketHelper` entity created in the previous section. This entity contains an attribute `UserInput` that matches the variable placeholder.
 
 10. Save the Agent document (for example, on Windows by pressing <kbd>Ctrl</kbd>+<kbd>S</kbd>).
 
@@ -279,9 +279,9 @@ Add a microflow tool that returns the number of tickets for a given status.
 
 3. Configure the tool:
 
+    * **Microflow**: `Ticket_GetNumberOfTicketsInStatus`
     * **Name**: `RetrieveNumberOfTicketsInStatus`
     * **Description**: `Get number of tickets in a certain status. Only the following values for status are available: ['Open', 'In Progress', 'Closed']`
-    * **Microflow**: `Ticket_GetNumberOfTicketsInStatus`
 
 4. Save the tool and Agent document.
 
@@ -293,9 +293,9 @@ Add a microflow tool that returns ticket details for a specific identifier.
 
 2. Configure the tool:
 
-    * **Name**: `RetrieveTicketByIdentifier`
-    * **Description**: `Get ticket details based on a unique ticket identifier (passed as a string). If there is no information for this identifier, inform the user about it.`
     * **Microflow**: `Ticket_GetTicketByID`
+    * **Name**: `RetrieveTicketByIdentifier`
+    * **Description**: `Get ticket details based on a unique ticket identifier (passed as a string). If there is no information for this identifier, inform the user about it.`  
 
 3. Save the tool and the Agent document.
 
@@ -305,9 +305,9 @@ Connect an MCP server as a tool source through a consumed MCP service document a
 
 1. In **App Explorer**, right-click your module and select **Add other** > **Consumed MCP service**.
 
-2. Open the consumed MCP service document and configure:
+2. Give it a name, for example `MyMCP` and configure:
 
-    * **Endpoint**: create or select a constant for your MCP server URL
+    * **Endpoint**: create and select a string constant that contains your MCP server URL
     * **Credentials microflow** (optional): set this when authentication is required
     * **Protocol version**: select the protocol that matches your MCP server
 
@@ -325,7 +325,7 @@ Link a knowledge base collection to the agent so it can retrieve relevant histor
 
 1. In **App Explorer**, right-click your module and select **Add other** > **Knowledge base**.
 
-2. Open the Knowledge base document and configure the **Knowledge base key** by creating or selecting a constant that contains your knowledge base resource key from the Mendix Cloud GenAI Portal.
+2. Set a name, for example `MyKnowledgebase` and configure the **Knowledge base key** by creating and selecting a constant that contains your knowledge base resource key from the Mendix Cloud GenAI Portal.
 
 3. Click **List collections** to validate the connection and load available collections.
 
@@ -337,18 +337,18 @@ Link a knowledge base collection to the agent so it can retrieve relevant histor
     * **Collection**: `HistoricalTickets` 
     * **Name**: `RetrieveSimilarTickets`
     * **Description**: `Similar tickets from the database`
-    * **Max results**: optional
-    * **Min similarity**: optional
+    * **Max results**: leave empty (optional)
+    * **Min similarity**: leave empty (optional)
 
 6. Save the knowledge base tool and the Agent document.
 
 ### Test the Agent from Studio Pro
 
-Run the app locally, provide a test value for the prompt variable, and use the built-in test functionality in the Agent document to validate the current setup. Before testing, make sure the app model has no consistency errors.
+Before testing, make sure the app model has no consistency errors. 
 
-1. Start the app locally in Studio Pro. Wait until the local runtime is fully running.
+1. Make sure to set the `ASU_AgentEditor` as after-startup microflow. Start the app locally in Studio Pro. Wait until the local runtime is fully running.
 
-2. With the `IT_Ticket_Helper` Agent document open, go to the test section of the editor.
+2. With the `IT_Ticket_Helper` Agent document open, go to the Playground section of the editor.
 
 3. Provide a value for the `UserInput` variable, for example: `How can I implement an agent in my Mendix app?`
 
@@ -374,7 +374,7 @@ Wire the **Ask the agent** button to a microflow that invokes the Agent Editor a
     * **Context object**: `TicketHelper` (input parameter)
     * **Request**: empty
     * **FileCollection**: empty
-    * **Object name**: `Response`
+    * **Output: Object name**: `Response`
 
 5. Add a `Change object` action after the **Call Agent** action to update the `ModelResponse` attribute:
 
