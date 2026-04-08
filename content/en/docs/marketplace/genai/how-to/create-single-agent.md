@@ -220,6 +220,8 @@ This method provides greater flexibility in managing and sharing functions acros
 
 The main approach to create and manage agents makes use of the [Agent Editor](https://marketplace.mendix.com/link/component/257918) in Studio Pro. This extension allows you to manage the lifecycle of your agents as part of the app model. You can define Agents as documents of type "Agent" in your app while working in Studio Pro, alongside related documents such as Models for text generation, Knowledge bases for data retrieval, and Consumed MCP services for remote tools.
 
+This approach requires the Agent Editor to be installed in your project as a prerequisite. Make sure your project uses the [required Studio Pro version](/appstore/modules/genai/genai-for-mx/agent-editor/#dependencies) and follow the steps in the [Installation](/appstore/modules/genai/genai-for-mx/agent-editor/#installation) section of the Agent Editor documentation.
+
 At the time of initial release, Agent Editor supports only [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/) as provider for models and knowledge bases. The steps below therefore use the Mendix Cloud GenAI provider type, text generation resource keys, and knowledge base resource keys from the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com/).
 
 ### Set up the Agent with a Prompt
