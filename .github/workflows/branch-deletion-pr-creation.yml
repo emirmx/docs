@@ -54,7 +54,7 @@ jobs:
 
           for BRANCH in $ALL_BRANCHES; do
             branch_lower=$(echo "$BRANCH" | tr '[:upper:]' '[:lower:]')
-            if [[ $branch_lower =~ ^(backup|development|main|master|production)(-[0-9]+)?$ ]]; then
+            if [[ $branch_lower == *backup* || $branch_lower =~ ^(development|main|master|production)(-[0-9]+)?$ ]]; then
               PROTECTED_BRANCHES+=("$BRANCH (protected)")
             elif git branch -r --merged origin/development | grep -q "origin/$BRANCH"; then
               MERGED_BRANCHES_TO_PROCESS+=("$BRANCH")
