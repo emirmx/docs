@@ -222,6 +222,7 @@ Testing is available when the following conditions are met:
 
 * The app model has no consistency errors in Studio Pro (as shown in the **Errors** pane).
 * The app is running locally.
+* The after startup logic as mentioned in the [First-time Setup](#setup) section has run successfully.
 * The text generation resource configured in the Model document is reachable. You can verify this by clicking the **Test** button on the Model document.
 
 If you change the agent definition (for example, by updating the system prompt or adding/removing tools), restart the local app runtime before testing again. The Agent editor provides a UI indication for this, but it is recommended to account for it explicitly while iterating.
@@ -263,13 +264,13 @@ To return to historical agent versions, use version control to inspect previousl
 * Agent Editor currently supports task-based agents only, which require both **System prompt** and **User prompt** to be configured. Chat-based agents will be supported in a future release.
 * MCP tool support is limited to whole-server integration. Selecting individual tools from a consumed MCP service to be added to an agent is not yet supported.
 * If a document that is referenced by an Agent document is excluded, Studio Pro shows a consistency error accordingly. In the current version, these consistency errors may not be resolved automatically when the excluded document is included again. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again).
-* The extension creates a `/agenteditor` log folder in the app directory. This is not excluded from version control automatically upon including the module from the Marketplace. This folder should be added to `.gitignore` manually as described in the [First time setup](#setup) section.
+* The extension creates a `/agenteditor` log folder in the app directory. This is not excluded from version control automatically upon including the module from the Marketplace. This folder should be added to `.gitignore` manually as described in the [First-time setup](#setup) section.
 
 
 ## Troubleshooting {#troubleshooting}
 
 ### Testing the agent from Studio Pro results in an error
-This is typically due to incorrect model configuration or an exception originating from the API call of the large language model. Check the **Console** pane in Studio Pro for detailed logs. Additionally, verify that the `ASU_AgentEditor` microflow was added to your after-startup logic as described in the [First time setup](#setup) section.
+This is typically due to incorrect model configuration or an exception originating from the API call of the large language model. Check the **Console** pane in Studio Pro for detailed logs. Additionally, verify that the `ASU_AgentEditor` microflow was added to your after-startup logic as described in the [First-time setup](#setup) section.
 
 ### Testing the agent from Studio Pro is disabled
 Executing a test requires the local app to be running and the Agent documents to be synchronized to the runtime. Make sure the app has been deployed locally after the last change in any agent-related document.
@@ -281,7 +282,7 @@ This is often caused by validations that are executed in the after-startup logic
 This is a known issue caused by internal timeouts. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
 
 ### Agent documents are not visible in Agent Commons UI
-Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow as described in the [First time setup](#setup) section. After these configuration changes, restart the app.
+Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow as described in the [First-time setup](#setup) section. After these configuration changes, restart the app.
 
 ### MCP tools cannot be listed or called
 If **List tools** fails, verify the consumed MCP service configuration: endpoint constant value, protocol version, and credentials microflow (when authentication is required). For technical details, the log files in the `/agent-editor` folder can be inspected.
