@@ -3,7 +3,8 @@ title: "PWA Wrapper"
 url: /refguide/mobile/pwa-wrapper/
 weight: 45
 description: "Package Mendix PWAs as native Android and iOS apps and use wrapper capabilities."
-beta: true
+cascade:
+    beta: true
 ---
 
 {{% alert color="info" %}}
@@ -14,11 +15,14 @@ This feature is currently in beta. For more information, refer to [Release Statu
 
 PWA Wrapper lets you package a Mendix progressive web app (PWA) as a native mobile app for Android and iOS. This is useful when you want to keep a web-based application architecture while distributing the app through app stores, installing it on managed devices, or adding a small set of commonly used hardware capabilities.
 
-In the current beta release, the scope of PWA Wrapper is limited to Android and iOS.
-
 PWA Wrapper is a Mendix Studio Pro extension that configures the wrapper, generates native packages, and provides a set of JavaScript actions for using a small set of commonly used hardware capabilities in your Mendix app.
 
-PWA Wrapper does not replace Mendix native mobile development. It is intended for PWA-based mobile apps that need native packaging together with commonly used mobile capabilities, including barcode and QR scanning, biometric authentication, media upload, geolocation, and local notifications. If you need a fully native user interface based on React Native or broader native-device integration, see [Native Mobile](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/). If you want to keep a PWA architecture and add native packaging plus common mobile capabilities, PWA Wrapper is the better fit.
+PWA Wrapper does not replace Mendix native mobile development. It is intended for PWA-based mobile apps that need native packaging together with commonly used mobile capabilities, including barcode and QR scanning, biometric authentication, media upload, geolocation, and local notifications.
+
+In summary:
+
+* If you need a fully native user interface based on React Native or broader native-device integration, see [Native Mobile](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/).
+* If you want to keep a PWA architecture and add native packaging together with common mobile capabilities, PWA Wrapper is the better fit.
 
 ## Documentation Overview
 
@@ -45,15 +49,14 @@ Use PWA Wrapper in the following situations:
 The standard workflow is as follows:
 
 1. Build your Mendix app as a web or PWA experience.
-2. Install the PWA Wrapper from Mendix marketplace.
-3. Open the builder, configure app metadata, permissions, and signing.
+2. Install the PWA Wrapper from the Mendix marketplace.
+3. Open the builder and configure app metadata, permissions, and signing.
 4. Generate an Android APK or iOS package and distribute it through your standard mobile deployment process.
 
 ## Limitations
 
 Keep the following beta limitations in mind:
 
-* The current beta release supports Android and iOS only
 * Some capabilities depend on physical device hardware and cannot be validated reliably on simulators or emulators
 * Platform support varies for individual capabilities, so not every capability behaves the same way on Android and iOS
 * Some integrations use standard Web APIs, which means behavior can vary between devices, operating system versions, and embedded browser engines

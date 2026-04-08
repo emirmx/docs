@@ -3,7 +3,6 @@ title: "PWA Wrapper Capabilities"
 url: /refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/
 weight: 30
 description: "Overview of the capabilities exposed by the bundled PWA Wrapper JavaScript actions."
-beta: true
 ---
 
 {{% alert color="info" %}}

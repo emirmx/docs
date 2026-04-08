@@ -3,7 +3,6 @@ title: "PWA Wrapper Limitations"
 url: /refguide/mobile/pwa-wrapper/pwa-wrapper-limitations/
 weight: 35
 description: "Known limitations and platform constraints for PWA Wrapper in the current beta release."
-beta: true
 ---
 
 {{% alert color="info" %}}

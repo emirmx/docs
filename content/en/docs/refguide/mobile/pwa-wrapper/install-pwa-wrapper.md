@@ -3,7 +3,6 @@ title: "Install PWA Wrapper"
 url: /refguide/mobile/pwa-wrapper/install-pwa-wrapper/
 weight: 10
 description: "Install and enable PWA Wrapper in Mendix Studio Pro."
-beta: true
 ---
 
 {{% alert color="info" %}}
@@ -12,15 +11,13 @@ This feature is currently in beta. For more information, refer to [Release Statu
 
 ## Introduction
 
-This page explains how to install and enable PWA Wrapper for Mendix Studio Pro 10.24 and later. After installation, you can open the builder and package your Mendix app as an Android or iOS app.
+This page explains how to install and enable PWA Wrapper for Mendix Studio Pro version 10.24 and above. After installation, you can open the builder and package your Mendix app as an Android or iOS app.
 
-You can start using PWA Wrapper while your Mendix app is still in development. This makes it possible to validate packaging, permissions, device behavior, and capability integrations early, before the app is finalized as a web app or PWA.
-
-In the current beta release, the scope of PWA Wrapper is limited to Android and iOS.
+You can start using PWA Wrapper while your Mendix app is still in development. This means you can validate packaging, permissions, device behavior, and capability integrations early, before the app is finalized as a web app or PWA.
 
 ## Prerequisites
 
-Before installing PWA Wrapper, make sure the following prerequisites are met:
+Before installing [PWA Wrapper](https://marketplace.mendix.com/link/component/259272), make sure the following prerequisites are met:
 
 * You are using Mendix Studio Pro 10.24 or later
 
@@ -41,7 +38,7 @@ The installed module includes both parts of the feature:
 
 After installing the module, Mendix Studio Pro prompts you to enable the extension. Allow that prompt to proceed so you can use PWA Wrapper.
 
-## Open the Builder
+## Open the Builder{#openbuilder}
 
 After installation, open the builder from the **Extensions** menu in Mendix Studio Pro by selecting **Open App Builder**.
 
