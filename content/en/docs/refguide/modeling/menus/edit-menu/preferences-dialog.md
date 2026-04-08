@@ -333,7 +333,9 @@ If Translation Generator is also enabled, you can use it in this editor as well.
 
 ### Workflow
 
-Select this option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+In Studio Pro 11.8, select the **Enable workflow event sub-processes (beta)** option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+
+In Studio Pro 11.9 and above, this option is removed. Workflow event sub-processes are in general availability and are enabled by default.
 
 ## Read More
 
