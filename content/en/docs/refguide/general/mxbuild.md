@@ -79,7 +79,7 @@ Command-line options are described in the table below:
 ### Options When Creating a Package
 
 {{% alert color="info" %}}
-The following options are only applicable with the `--target=package` option.
+The following options are only applicable with the `--target=package` or `--target=portable-app-package` options.
 {{% /alert %}}
 
 Options when creating a package are described in the table below:
