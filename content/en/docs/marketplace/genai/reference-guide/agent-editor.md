@@ -285,7 +285,7 @@ This is a known issue caused by internal timeouts. You can resolve it by synchro
 Agent documents created in Studio Pro are imported through after-startup logic. Verify that `ASU_AgentEditor` is configured as the after-startup microflow, or included in your existing after-startup microflow as described in the [First-time setup](#setup) section. After these configuration changes, restart the app.
 
 ### MCP tools cannot be listed or called
-If **List tools** fails, verify the consumed MCP service configuration: endpoint constant value, protocol version, and credentials microflow (when authentication is required). For technical details, the log files in the `/agent-editor` folder can be inspected.
+If **List tools** fails, verify the consumed MCP service configuration: endpoint constant value, protocol version, and credentials microflow (when authentication is required). For technical details, the log files in the `/agent-editor` folder in the app directory can be inspected.
 
 If possible, also confirm that the target endpoint is reachable from the running app runtime: this can be done for example by temporarily configuring it manually in the [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/) and checking the **Console** pane in Studio Pro for logs.
 
