@@ -50,7 +50,7 @@ For more information, refer to the User Provisioning section of the following mo
 
 * [OIDC SSO](/appstore/modules/oidc/#custom-provisioning-rt)
 * [SCIM](/appstore/modules/scim/#user-provisioning)
-* [SAML](/appstore/modules/saml/#custom-provisioning-rt)
+* [SAML](/appstore/modules/saml/user-provisioning/#custom-provisioning-rt)
 
 #### Prerequisites for IdP-Based User Classification
 
