@@ -30,7 +30,7 @@ Support for configuring AI agents using an Agent Editor in Studio Pro is coming 
 AI agent task properties consist of the following sections:
 
 * [General](#general)
-* [Parameters](#Parameters)
+* [Parameters](#parameters)
 * [Outcomes](#outcomes)
 * [Boundary events](#boundary-events)
 * [Common](#common)
