@@ -109,16 +109,16 @@ To use the Agent Editor functionalities in your app, you must perform the follow
 
 ### Define the model {#define-model}
 
-In Agent Editor, you define the model as a document in your app model. This model can then be linked to one or more agents in your project.
+With the Agent Editor, you can define the model as a document in your app model. This model can then be linked to one or more agents in your project.
 
 Defining a Model document is mandatory. Without a Model document, the agent you configure in the next steps cannot run.
 
-At this moment, only models of the Mendix Cloud GenAI type are supported.
+At this moment, only models provided by Mendix Cloud GenAI are supported.
 
 Model configuration is document-based and can be managed directly in Studio Pro:
 
-* A Model document can be added from the **App Explorer** at module level.
-* The **Model key** must be configured with a constant that contains the key for a Text Generation resource. This key can be obtained in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com).
+* A Model document can be added from the **App Explorer** at module level. Therefore, right-click on the module or folder where you want to create your Model document, select `Add other` and find Model in the bottom section.
+* The **Model key** must be configured with a String constant that contains the key for a Text Generation resource. This key can be obtained in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com).
 * After the key is selected, model metadata is imported and shown in the editor.
 * The connectivity can be validated in the **Connection** section by using the **Test** button.
 
@@ -133,11 +133,11 @@ After defining the model, define the Agent document and configure the prompts an
 
 Defining an agent is also document-based and can be configured using the Agent editor:
 
-* An Agent document can be added from the **App Explorer** at module level.
+* An Agent document can be added from the **App Explorer** at module level. Therefore, right-click on the module or folder where you want to create your Model document, select `Add other` and find Agent in the bottom section.
 * To call a text generation resource, a Model document must be selected for the agent.
 * The **System prompt** and **User prompt** must be configured for task-style execution. In these prompts, placeholders can be defined with double braces (for example, `{{variable}}`).
-* When placeholders are used, a **Context entity** must be selected so values can be resolved at runtime.
-* The **Model settings** can be adjusted as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
+* When placeholders are used, a **Context entity** must be selected so values can be resolved at runtime. The placeholders used within the prompts, need to match with the attribute names of the entity selected, so that attribute values can be inserted instead of the placeholders at runtime.
+* Optionally, the **Model settings** can be adjusted as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
 
 {{% alert color="info" %}}
 Both **System prompt** and **User prompt** are currently mandatory because Agent Editor currently supports task-based agents only. Chat-based agents will be supported by the Agent Editor in a future release.
@@ -158,13 +158,13 @@ To use MCP tools, first create a consumed MCP service document in your module by
 
 In the consumed MCP service document, configure the following fields:
 
-* **Endpoint**: This is the URL where the server can be reached. Create or select the constant that contains your MCP endpoint.
+* **Endpoint**: This is the URL where the server can be reached. Create or select the String constant that contains your MCP endpoint.
 * **Credentials microflow** (optional): Select this when the server requires authentication. The microflow must return a list of `System.HttpHeader` objects. Input parameters are not allowed.
-* **Protocol version**: Select the version used by your server. Typical values are `v2025_03_26` for MCP servers and `v2024_11_05` for SSE-type servers.
+* **Protocol version**: Select the version used by your server. Typical values are `v2025_03_26` for MCP servers that support streamable HTTP transport and `v2024_11_05` for SSE-type servers.
 
 To validate the configuration, click **List tools** in the **Tools** section of the consumed MCP service document. If the connection succeeds, the list of exposed tools is shown.
 
-In the consumed MCP service playground, authentication headers are used only to explore tools from Studio Pro and are not stored.
+In the consumed MCP service playground, authentication headers are used only to explore tools from Studio Pro and are not stored. Setup a credentials microflow to pass authentication headers at runtime.
 
 #### Add Tools to the Agent {#add-tools}
 
@@ -176,6 +176,8 @@ You can choose from the following tool types:
 * **MCP tool**: Select a consumed MCP service in the tool configuration.
 
 In the Agent editor, tools can be temporarily disabled and re-enabled by using the **Active** checkbox. This is useful while iterating and testing the agent behavior with different tool combinations or descriptions. Only enabled tools will be usable by the agent at runtime when called in the app.
+
+Configure [tool choice](/appstore/modules/genai/reference-guide/genai-commons/#enum-toolchoice) to control how the agent behaves with regards to tool calling.
 
 #### Configure Knowledge Base Document {#define-knowledgebase}
 
