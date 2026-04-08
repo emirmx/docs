@@ -205,7 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
-| 10.24.0 and above | 4.x.x | - | **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
+| 10.24.0 and above | 4.4.0 | - | **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
 | 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
