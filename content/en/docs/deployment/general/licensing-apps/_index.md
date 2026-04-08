@@ -90,7 +90,7 @@ You will need to add the license credentials and configure the license in the Me
 
 ### Cloud Foundry{#cloudfoundry}
 
-The steps below are for deployment using Cloud Foundry Buildpack; if you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
+The following steps describe deployment when using the Cloud Foundry Buildpack. If you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
 
 To activate a license on your app running on Cloud Foundry, you need the license credentials provided by Mendix Support.
 
