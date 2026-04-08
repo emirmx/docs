@@ -106,6 +106,8 @@ To use the Agent Editor functionalities in your app, you must perform the follow
 6. Deploy the agent to cloud environments.
 7. Improve the agent in next iterations.
 
+For a step by step tutorial, check out the [create your first agent](https://docs.mendix.com/appstore/modules/genai/how-to/howto-single-agent/#define-agent-editor) documentation.
+
 
 ### Define the model {#define-model}
 
