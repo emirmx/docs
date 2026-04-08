@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Mendix Operator v2.26.1 {#2.26.1}
 
-* We have improved AWS S3 region detection for bucket endpoints using the [Legacy global endpoint](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#VirtualHostingBackwardsCompatibility) format.
+* We have improved the AWS S3 region detection for bucket endpoints using the [Legacy global endpoint](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#VirtualHostingBackwardsCompatibility) format.
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 * We have updated the list of supported platforms to include Kubernetes 1.35 and OpenShift 4.21.
 
