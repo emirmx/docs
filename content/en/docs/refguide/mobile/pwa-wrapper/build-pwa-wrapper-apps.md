@@ -23,7 +23,7 @@ No separate Android packaging prerequisites are required before you start the An
 
 Install Android Studio only if you want to use Android emulators for testing.
 
-### Steps
+### Steps for Android
 
 To generate an Android APK, do the following:
 
@@ -38,19 +38,19 @@ To generate an Android APK, do the following:
     * supported devices
     * screen orientation
 
-    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/app-information.png" alt="Android app information step in the PWA Wrapper builder" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/app-information.png" alt="Android app information step in the PWA Wrapper builder" max-width="500px" >}}
 
 3. Review the available permissions and enable only the permissions related to the capabilities your app uses. For capability-to-permission guidance, see [Capability to Permission Mapping](/refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/#capability-to-permission-mapping).
 
-    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/permissions.png" alt="Permissions step in the PWA Wrapper builder" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/permissions.png" alt="Permissions step in the PWA Wrapper builder" max-width="500px" >}}
 
 4. Go to the signing step and do one of the following:
 
     * choose an existing Android signing configuration
     * create a new signing configuration if this is the first Android build for the app; for platform-specific details, see [Sign Android Apps on Windows and macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#sign-android-apps-on-windows-and-macos)
-5. Continue to the packaging step and start package generation.
+5. Continue to the packaging step and click **Generate Package**.
 
-    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/package-android-app.png" alt="Packaging step for building an Android APK with PWA Wrapper" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/package-android-app.png" alt="Packaging step for building an Android APK with PWA Wrapper" max-width="500px" >}}
 
 6. Wait for the build to complete.
 7. Open the output directory from the builder.
@@ -92,7 +92,7 @@ Install full Xcode if you want to use the iOS simulator for testing.
 iOS packaging for a final signed device build requires macOS. On Windows, you can prepare the portable signing package, but you still need a Mac to generate the final signed IPA.
 {{% /alert %}}
 
-### Steps on macOS
+### Steps for iOS on macOS{#steps-on-mac}
 
 To generate a signed iOS package on macOS, do the following:
 
@@ -108,11 +108,11 @@ To generate a signed iOS package on macOS, do the following:
     * supported devices
     * screen orientation
 
-3. Review the permissions and enable only the permissions required by your app. For capability-to-permission guidance, see [Capability to Permission Mapping](/refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/#capability-to-permission-mapping).
+3. Review the available permissions and enable only the permissions related to the capabilities your app uses. For capability-to-permission guidance, see [Capability to Permission Mapping](/refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/#capability-to-permission-mapping).
 4. Go to the signing step and create or select an iOS signing configuration. For platform-specific details, see [Sign iOS Apps on macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#sign-ios-apps-on-macos).
-5. Continue to the packaging step and start package generation.
+5. Continue to the packaging step and click **Generate Package**.
 
-{{< figure src="/attachments/refguide/mobile/pwa-wrapper/package-ios-app.png" alt="Packaging step for building an iOS package with PWA Wrapper" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/package-ios-app.png" alt="Packaging step for building an iOS package with PWA Wrapper" max-width="500px" >}}
 
 6. Wait for the build to complete.
 7. Open the output directory and retrieve the generated artifacts.
@@ -120,15 +120,15 @@ To generate a signed iOS package on macOS, do the following:
 9. Use the `.app` artifact for simulator testing when it is available.
 10. If you are testing on macOS, optionally continue to the installation step to install the generated app on a simulator or connected device.
 
-### Steps on Windows
+### Steps for iOS on Windows
 
 On Windows, PWA Wrapper can prepare the iOS bundle but not complete the final signing step. The builder produces a portable signing package that can be moved to a Mac.
 
-On Windows, use the same steps 1 through 7 as in [Steps on macOS](/refguide/mobile/pwa-wrapper/build-pwa-wrapper-apps/), then continue as follows:
+On Windows, use the same steps 1 through 7 as in [Steps for iOS on macOS](#steps-on-mac), then continue as follows:
 
 8. Open the output folder and locate the portable signing ZIP.
 9. Copy the portable signing ZIP to a Mac.
-10. Complete the final signing step on macOS as described in [Complete Signing on macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#complete-signing-on-macos).
+10. Complete the final signing step on macOS as described in [Complete Signing on macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#complete-signing-on-macos) in *Sign PWA Wrapper Apps*.
 
 ### iOS Notes
 
@@ -138,7 +138,7 @@ Keep the following limitations in mind:
 * The builder installation step for iOS is available only on macOS hosts
 * Copying packaged web resources is currently not supported on iOS, so the wrapped app must load its frontend resources from the deployed Mendix runtime
 
-For platform-specific details about the signing step inside this build flow, see [Sign iOS Apps on macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#sign-ios-apps-on-macos) for macOS builds and [Prepare iOS Apps on Windows](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#prepare-ios-apps-on-windows) for Windows builds.
+For platform-specific details about the signing step inside this build flow, see [Sign iOS Apps on macOS](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#sign-ios-apps-on-macos) in *Sign PWA Wrapper Apps* for macOS builds and [Prepare iOS Apps on Windows](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/#prepare-ios-apps-on-windows)  in *Sign PWA Wrapper Apps* for Windows builds.
 
 ## Choosing Permissions and Packaging Options
 
@@ -156,10 +156,10 @@ For Android:
 
 1. Connect the Android device or start the emulator.
 2. Select the target device in the builder.
-3. Start installation.
+3. Click **Install to Device**.
 4. Open the app from the device launcher after installation completes.
 
-{{< figure src="/attachments/refguide/mobile/pwa-wrapper/run-on-android-emulator.png" alt="Install the generated Android app on an emulator from the PWA Wrapper builder" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/run-on-android-emulator.png" alt="Install the generated Android app on an emulator from the PWA Wrapper builder" max-width="500px" >}}
 
 For iOS on macOS:
 
@@ -168,10 +168,10 @@ For iOS on macOS:
     * `.ipa` for a physical device
     * `.app` for the simulator
 3. Select the target device in the builder.
-4. Start installation.
+4. Click **Install to Device**.
 5. Launch the app from the device or simulator after installation completes.
 
-{{< figure src="/attachments/refguide/mobile/pwa-wrapper/run-on-ios-simulator.png" alt="Install the generated iOS app on a simulator from the PWA Wrapper builder" max-width=500px >}}
+    {{< figure src="/attachments/refguide/mobile/pwa-wrapper/run-on-ios-simulator.png" alt="Install the generated iOS app on a simulator from the PWA Wrapper builder" max-width="500px" >}}
 
 If installation fails, check the builder error message first. Common causes are missing signing, incompatible provisioning, unavailable devices, or an already installed newer build.
 

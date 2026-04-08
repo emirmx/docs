@@ -29,8 +29,8 @@ Keep the following rules in mind:
 
 * Unsigned Android packages are suitable only for limited emulator testing
 * Unsigned iOS packages are suitable only for simulator scenarios
-* Real-device installation and store distribution require signing
-* If you plan to ship app updates, keep using the same signing identity for later builds of the same app
+* Installation on real devices and distribution of the app through a store require signing
+* Use the same signing identity for later builds of the same app to allow you to ship app updates
 
 ## Manage Signing Configurations
 
@@ -67,7 +67,7 @@ Use the following guidance when choosing a signing approach:
 
 ### Create an Android Signing Configuration
 
-In the current beta flow, PWA Wrapper creates the Android keystore for you when you create a new Android signature.
+PWA Wrapper creates the Android keystore for you when you create a new Android signature.
 
 To create an Android signing configuration, do the following:
 
@@ -75,7 +75,7 @@ To create an Android signing configuration, do the following:
 2. Go to the signing step.
 3. Select **Create New Signature**.
 4. Enter a unique signature name such as `test`, `qa`, or `production`.
-5. Save the signature.
+5. Click **Create Signature** to save the signature.
 
 {{< figure src="/attachments/refguide/mobile/pwa-wrapper/create-android-signing-config.png" alt="Create a new Android signing configuration in PWA Wrapper" max-width=500px >}}
 
@@ -100,7 +100,7 @@ Keep the following recommendations in mind:
 
 ## Sign iOS Apps on macOS
 
-Final iOS signing is supported on macOS.
+Final iOS signing is only supported on macOS.
 
 ### Before You Start
 
@@ -122,7 +122,7 @@ Before building, verify the following:
 
 * the bundle identifier in PWA Wrapper matches the app identifier used in the provisioning profile
 * the provisioning profile was generated using the same certificate that was exported as the `.p12` file
-* the certificate and provisioning profile type match the intended use, such as development for testing or distribution for release
+* the certificate and provisioning profile type match the intended use, such as `development` for testing or `distribution` for release
 * the target test devices are included in the provisioning profile when required
 
 If you receive signing assets from another team, ask specifically for the exported `.p12` file, the `.mobileprovision` file, and the `.p12` passphrase. A `.cer` file by itself is not sufficient for PWA Wrapper.
@@ -138,7 +138,7 @@ After you have the Apple signing files, do the following:
 5. Upload the `.mobileprovision` file.
 6. Upload the `.p12` file.
 7. Enter the `.p12` passphrase.
-8. Save the signature.
+8. Click **Create Signature** to save the signature.
 
 {{< figure src="/attachments/refguide/mobile/pwa-wrapper/create-ios-signing-config.png" alt="Create a new iOS signing configuration in PWA Wrapper" max-width=500px >}}
 
@@ -197,7 +197,7 @@ To configure iOS signing in PWA Wrapper on Windows, do the following:
 5. Upload the `.mobileprovision` file.
 6. Upload the `.p12` file.
 7. Enter the `.p12` passphrase.
-8. Save the signature.
+8. Click **Create Signature** to save the signature.
 
 ### Generate the Portable Signing Bundle on Windows
 
@@ -228,8 +228,8 @@ When the portable signing ZIP includes the `signing/` folder, the script can use
 
 Keep the following PWA Wrapper-specific signing limitations in mind:
 
-* Android real-device installation requires a signed package
-* iOS real-device installation requires a signed IPA
+* Installation on a real Android device requires a signed package
+* Installation on a real iOS device requires a signed IPA
 * The iOS install step in PWA Wrapper is available only when the builder runs on macOS
 * Changing signing identity between releases prevents normal upgrade installation for apps that are already installed
 * Provisioning profiles, certificates, and bundle identifiers must match the app you are packaging
@@ -239,7 +239,7 @@ Common iOS signing mistakes include the following:
 * uploading a `.cer` file instead of a `.p12` file
 * exporting a certificate without its private key
 * using a provisioning profile created for a different bundle identifier
-* using a development certificate with a distribution profile, or the reverse
+* using a development certificate with a distribution profile, or vice versa
 * forgetting to include the target test device in the provisioning profile
 
 If signing succeeds but installation still fails, verify the bundle identifier, signing type, provisioning profile, and target device eligibility before rebuilding.
