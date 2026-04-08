@@ -205,8 +205,8 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
-| 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to `OIDC.Encryptionkey` constant | Encryption and Nanoflow Commons dependencies has been removed |
-| 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path |
+| 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to the `OIDC.Encryptionkey` constant. | Dependencies on the Encryption and Nanoflow Commons modules have been removed. |
+| 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path. |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
@@ -262,7 +262,7 @@ If you are testing phone web and phone web offline locally, use the URLs `http:/
 
 ### Setting Encryption Key
 
-Follow the instructions to [set an encryption key in the Encryption module](/appstore/modules/encryption/#configuration). For OIDC SSO V4.3.0 and below, set a constant called `Encryption.EncryptionKey` and it should be a random value 32 characters long. Starting from version 4.4.0 of the module, set the encryption key in the `OIDC.Encryptionkey` constant with a 32 characters long random value. This key will be used to encrypt and decrypt values.
+Follow the instructions to [set an encryption key in the Encryption module](/appstore/modules/encryption/#configuration). For OIDC SSO V4.3.0 and below, set a constant called `Encryption.EncryptionKey` and assign it a random value 32-character value. Starting from version 4.4.0, set the encryption key in the `OIDC.Encryptionkey` constant using a random 32-character value. This key will be used to encrypt and decrypt values.
 
 {{% alert color="info" %}}
 While upgrading from V4.3.0 to V4.4.0 or above, ensure that any value currently stored in the `Encryption.Encryptionkey` is moved to the `OIDC.Encryptionkey` constant, otherwise, existing IdP client authentication will fail.  
