@@ -148,7 +148,7 @@ To license a Mendix app on Linux or another Unix-like operating system, follow t
 
 For more instructions on how to do this, see [Linux Deployment](/developerportal/deploy/linux/).
 
-### Portable App Distribution
+### Portable App Distribution{#portableappdistribution}
 
 To activate the license on a Mendix app using Portable App Distribution on either Docker, Cloud Foundry, or Unix-like servers, follow these steps:
 
