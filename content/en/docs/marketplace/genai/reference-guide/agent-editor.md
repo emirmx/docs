@@ -139,6 +139,8 @@ Defining an agent is also document-based and can be configured using the Agent e
 * When placeholders are used, a **Context entity** must be selected so values can be resolved at runtime. The placeholders used within the prompts, need to match with the attribute names of the entity selected, so that attribute values can be inserted instead of the placeholders at runtime.
 * Optionally, the **Model settings** can be adjusted as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
 
+You can also check out our template agents, which you can find in the **USE_ME** folder of the `AgentEditorCommons` module.
+
 {{% alert color="info" %}}
 Both **System prompt** and **User prompt** are currently mandatory because Agent Editor currently supports task-based agents only. Chat-based agents will be supported by the Agent Editor in a future release.
 {{% /alert %}}
@@ -146,7 +148,6 @@ Both **System prompt** and **User prompt** are currently mandatory because Agent
 For more information about prompts and prompt engineering, see [Prompt Engineering](/appstore/modules/genai/prompt-engineering/).
 
 Selecting a model is mandatory. You can save the document without it, but if model configuration is incomplete, Studio Pro will show consistency errors. These errors block running the app locally, cloud deployment, and agent testing in later steps.
-
 
 ### Define and add tools and knowledge bases {#define-tools}
 
@@ -238,7 +239,7 @@ When configuring the action, select the Agent document so that the right agent i
 
 Optionally, you can pass a `Request` object to set request-level values, and a `FileCollection` object with files to send along with the user message to make use of vision or document chat capabilities. Support for files and images depends on the underlying large language model. Refer to the documentation of the specific connector.
 
-The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic.
+The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic. Addionally, all agent created via the Agent Editor extension are seamlessly integrated with other Mendix' offerings such as [Token consumption monitor](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#snippet-token-monitor) or the [Tracability](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#traceability) feature from [ConversationalUI](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/).
 
 
 ### Deploy the agent to cloud environments {#deploy-agent}
