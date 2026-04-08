@@ -73,7 +73,7 @@ In addition, make sure the following widgets are available in your project:
 
 ## Installation {#installation}
 
-If you are starting from a blank app or adding agent-editing functionality to an existing project, you need to manually install the [Agent Editor](https://marketplace.mendix.com/link/component/257918) package from the Mendix Marketplace. 
+If you are starting from a blank app or adding agent-editing functionality to an existing project, you need to manually install the [Agent Editor](https://marketplace.mendix.com/link/component/257918) package from the Mendix Marketplace. After download, you might see a warning asking for permission to add an extension to your app. Make sure to click `Trust module and enable extension` in the popup for the agent editor to be installed.
 Before proceeding, ensure your project includes the latest versions of the required [dependencies](#dependencies). Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the Agent Editor. 
 
 After installation, two modules are added to your app:
