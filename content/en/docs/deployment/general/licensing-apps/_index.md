@@ -90,7 +90,7 @@ You will need to add the license credentials and configure the license in the Me
 
 ### Cloud Foundry{#cloudfoundry}
 
-The following steps describe deployment when using the Cloud Foundry Buildpack. If you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
+The following steps describe activating the license for deployments using the Cloud Foundry Buildpack. If you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
 
 To activate a license on your app running on Cloud Foundry, you need the license credentials provided by Mendix Support.
 
@@ -105,7 +105,7 @@ Then restart the app so that the environment variables are read and the license 
 
 ### Docker
 
-The steps below are for deployment using Docker Buildpack; if you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
+The following steps describe activating the license for deployments using the Docker Buildpack. If you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
 
 To activate a license on your app running in a Docker container, you need the license credentials provided by Mendix Support.
 
@@ -137,7 +137,7 @@ For full instructions on how to do this, see [Activate a Mendix License on Micro
 
 ### Unix-Like Server
 
-The steps below are for deployment using the M2EE Tool; if you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
+The following steps describe activating the license for deployments using the M2EE tool. If you are deploying using Portable App Distribution, follow the steps in the [Portable App Distribution](#portableappdistribution) section below. 
 
 To license a Mendix app on Linux or another Unix-like operating system, follow these steps:
 
@@ -150,10 +150,11 @@ For more instructions on how to do this, see [Linux Deployment](/developerportal
 
 ### Portable App Distribution
 
-To activate the license on a Mendix App using Portable App Distribution, it can be Docker, Cloud Foundry, or Unix-Like Server, follow these steps:
+To activate the license on a Mendix app using Portable App Distribution on either Docker, Cloud Foundry, or Unix-like servers, follow these steps:
 
-1. Open the $ConfigName.conf in etc/configurations
-2.  Add the LicenseID and LicenseKey to your runtime configuration
+1. Open the `$ConfigName.conf` in `etc/configurations`.
+2.  Add the `LicenseID` and `LicenseKey` to your runtime configuration:
+   
 ```bash
 # License configuration
 runtime.params {
@@ -161,4 +162,5 @@ runtime.params {
   License.LicenseKey = <license_Key
 }
 ```
-The values for these properties can also be passed via environment variables for your deployment type or by creating a separate config file.
+
+The values for these properties can also be passed by using environment variables for your deployment type, or by creating a separate config file.
