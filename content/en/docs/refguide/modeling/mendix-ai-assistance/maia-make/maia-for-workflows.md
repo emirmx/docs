@@ -12,7 +12,7 @@ description: "Describes the features in Maia for Workflows."
 To use Maia for Workflows, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Workflows helps you generate a [workflow](/refguide/workflows/). It can also provide explanations or further improvements based on the generated elements. The current version has some known limitations. For example, it is currently intended only for use with empty workflows. Generated elements are appended to the end of the workflow, which may result in incorrectly modeled workflows if the workflow is not empty. For more details, see the [Limitations](#limitation) section below.
+Maia for Workflows helps you generate a [workflow](/refguide/workflows/). It can also provide explanations or further improvements based on the generated elements. The current version has some known limitations. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Workflows
 
@@ -59,10 +59,6 @@ Below are some examples of prompts you can use to ask Maia for further explanati
 * Can you make the timer wait for 5 days?
 * I want the process to run in parallel.
 
-{{% alert color="warning" %}}
-Requests for improvements or explanations currently only work within the same session where the workflow is generated. If you close the session and start a new session on that workflow, any attempts to make changes to the workflow will result in the removal of existing elements.
-{{% /alert %}}
-
 #### Attachment Requirements {#attachment-requirements}
 
 Maia for Workflows supports adding a maximum of one image and one PDF as attachments. Support for adding a PDF file was introduced in Studio Pro 11.2.0.
@@ -78,40 +74,20 @@ For example, Maia for Workflows can analyze a BPMN image representing employee o
 
 Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a photo, BPMN schema, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
-#### Limitations {#limitation}
+### Limitations {#limitation}
 
 Maia for Workflows has some limitations.
 
-##### Empty Workflows Only
+#### Supported Workflow Elements
 
-Maia for Workflows is currently intended only for use with empty Workflows. Using it on existing workflows can result in incorrectly modeled business processes.
+Currently, [Multi-user Task](/refguide/multi-user-task/) are not supported. However, most of the other workflow elements are supported.
 
-Requests for improvements and explanations currently only work within the same session where a workflow has been generated. Once the session is closed, Maia for Workflows loses the context. Any attempts to make changes to that workflow in a new session will also result in the removal of all existing elements.
-
-##### Supported Workflow Elements
-
-Currently, annotations are not supported. However, most of the other workflow elements are supported. See below a list of supported workflow elements:
-
-* [User Task](/refguide/user-task/)
-* [Multi-user Task](/refguide/multi-user-task/)
-* [Decision](/refguide/decision-in-workflows/)
-* [Parallel Split](/refguide/parallel-split/)
-* [Jump](/refguide/jump-activity/)
-* [Wait for Notification](/refguide/wait-for-notification/)
-* [Timer](/refguide/timer/)
-* [Call Microflow](/refguide/call-microflow/)
-* [Call Workflow](/refguide/call-workflow/)
-* [Boundary Events](/refguide/workflow-boundary-events/)
-
-##### Not All Properties Can Be Configured
+#### Not All Properties Can Be Configured
 
 Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
 
-* The following properties of [User Task](/refguide/user-task/):
-    * Task page
-    * Targeted users
-    * Due date
-* Any [properties](/refguide/workflow-properties/) of the workflow document itself
+* From the workflow document itself
+  * [Admin Page](/refguide/workflow-properties/#admin-page)
 
 ## Read More
 
