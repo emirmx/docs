@@ -62,8 +62,6 @@ After a resource is provisioned, you can change its plan size, either upgrade or
 
 The **Team** page allows you to manage access to the Mendix Cloud GenAI resource. All users listed in this overview have access to the resource in the GenAI resource portal and can create new keys or invite new users. You can add new users via the **Add Member** button and remove them using the **Remove Member** button next to their name in the overview.
 
-{{% alert color="info" %}}Currently, you can only invite people within the same organization.{{% /alert %}}
-
 #### Inviting External Members
 
 You can invite members from outside your organization to access your GenAI resources by entering their email address in **Add Member**. This option is available only if your company admin has enabled external user invitations. 
