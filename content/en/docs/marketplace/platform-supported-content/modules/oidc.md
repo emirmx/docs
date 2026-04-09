@@ -1136,6 +1136,8 @@ Content - {"error":"invalid_client","error_description":"client authentication f
 
 [Section 5.2 of RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-5.2) indicates and clarifies all the possible error codes that may be returned.
 
+If you want to review tokens during troubleshooting, you can include the `Snippet_Token_View` snippet in a custom admin page; this allows you to see the json content.
+
 ### Custom Microflow Implementation Should Be Required to Process Access_Token Roles
 
 If you get the error message “Custom microflow implementation should be required to process Access_token roles” in the Mendix Studio Pro console logs, this indicates you have not completely implemented your custom microflow for parsing access tokens (`CustomATP_…`). See the section on [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing).
