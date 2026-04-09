@@ -10,6 +10,12 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.6.0
+
+### Release date: April ??, 2026
+
+
+
 ## 3.5.0
 
 ### Release date: March 12, 2026
