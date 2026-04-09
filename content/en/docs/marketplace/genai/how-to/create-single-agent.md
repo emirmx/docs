@@ -301,7 +301,7 @@ Add a microflow tool that returns ticket details for a specific identifier.
 
 3. Save the tool and the Agent document.
 
-#### Connect Functions via MCP (Whole-Server Only)
+#### Connect Functions via MCP (Whole Server Only)
 
 Connect an MCP server as a tool source through a consumed MCP service document and import server-level tools.
 
@@ -310,8 +310,10 @@ Connect an MCP server as a tool source through a consumed MCP service document a
 2. Give it a name, for example `MyMCP` and configure:
 
     * **Endpoint**: create and select a string constant that contains your MCP server URL
-    * **Credentials microflow** (optional): set this when authentication is required
+    * **Credentials microflow** (optional): set this when authentication is required.
     * **Protocol version**: select the protocol that matches your MCP server
+
+    For more details regarding protocol version and authentication, please review the [technical documentation](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/agent-editor/#define-mcp).
 
 3. In the consumed MCP service document, click **List tools** to verify the connection.
 
@@ -319,7 +321,7 @@ Connect an MCP server as a tool source through a consumed MCP service document a
 
 5. Select the consumed MCP service document you configured in the previous steps, then save the tool and the Agent document.
 
-In Agent Editor, MCP integration is currently whole-server only. Selecting individual tools from the MCP server is not supported in this flow.
+In Agent Editor, MCP integration is currently whole server only. This means that all tools exposed by the consumed MCP service will be made available to the agent. Selecting individual tools from the MCP server is not supported in this flow.
 
 #### Include Knowledge Base Retrieval: Similar Tickets
 
@@ -327,7 +329,7 @@ Link a knowledge base collection to the agent so it can retrieve relevant histor
 
 1. In **App Explorer**, right-click your module and select **Add other** > **Knowledge base**.
 
-2. Set a name, for example `MyKnowledgebase` and configure the **Knowledge base key** by creating and selecting a constant that contains your knowledge base resource key from the Mendix Cloud GenAI Portal.
+2. Set a name, for example `MyKnowledgebase` and configure the **Knowledge base key** by creating and selecting a String constant that contains your knowledge base resource key from the Mendix Cloud GenAI Portal.
 
 3. Click **List collections** to validate the connection and load available collections.
 
@@ -348,7 +350,7 @@ Link a knowledge base collection to the agent so it can retrieve relevant histor
 
 Before testing, make sure the app model has no consistency errors. 
 
-1. Make sure to set the `ASU_AgentEditor` as after-startup microflow. Start the app locally in Studio Pro. Wait until the local runtime is fully running.
+1. Select `ASU_AgentEditor` as your [after-startup microflow](/refguide/runtime-tab/#after-startup) in **App** > **Settings** > **Runtime**. Start the app locally in Studio Pro. Wait until the local runtime is fully running.
 
 2. With the `IT_Ticket_Helper` Agent document open, go to the Playground section of the editor.
 
@@ -373,7 +375,7 @@ Wire the **Ask the agent** button to a microflow that invokes the Agent Editor a
 4. Configure the action:
 
     * **Agent**: select the `IT_Ticket_Helper` Agent document
-    * **Context object**: `TicketHelper` (input parameter)
+    * **Context object**: `$TicketHelper` (input parameter)
     * **Request**: empty
     * **FileCollection**: empty
     * **Output: Object name**: `Response`
@@ -386,7 +388,7 @@ Wire the **Ask the agent** button to a microflow that invokes the Agent Editor a
 
 6. Save the microflow and run the project.
 
-You can now open the **TicketHelper_Agent** page and click **Ask the agent** to execute the agent from your app logic. When the model determines that a tool or knowledge base is needed, it will use the configuration that you added in the Agent document.
+View the app in the browser and open the **TicketHelper_Agent** page and click **Ask the agent** to execute the agent from your app logic. When the model determines that a tool or knowledge base is needed, it will use the configuration that you added in the Agent document.
 
 
 ## Define the Agent Using Agent Commons {#define-agent-commons}
