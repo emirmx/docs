@@ -1,13 +1,13 @@
 ---
-title: "Linux Deployment"
-url: /developerportal/deploy/linux/
-description: "How to install and configure Mendix on a Linux system"
+title: "Linux Deployment with M2ee-Tools"
+url: /developerportal/deploy/linux-m2ee/
+description: "How to install and configure Mendix on a Linux system using m2ee-tools."
 weight: 99
 aliases:
     - /developerportal/deploy/unix-like/
 ---
 
-{{% alert color="warning" %}} Linux deployment is only supported on Debian 10 (buster) for the [Mendix Runtime version 9, 10, and 11](https://docs.mendix.com/releasenotes/studio-pro/lts-mts/).  We will not add support for any other versions of the Mendix Runtime.  {{% /alert %}}
+{{% alert color="warning" %}} Linux deployment is only supported on Debian 10 (buster) for the [Mendix Runtime version 9, 10, and 11](https://docs.mendix.com/releasenotes/studio-pro/lts-mts/).  We will not add support for any other versions of the Mendix Runtime. Consider using the [Portable App Distribution for Linux](/developerportal/deploy/linux-pad/) option instead. {{% /alert %}}
 
 ## Introduction
 
