@@ -242,7 +242,7 @@ When configuring the action, select the Agent document so that the right agent i
 
 Optionally, you can pass a `Request` object to set request-level values, and a `FileCollection` object with files to send along with the user message to make use of vision or document chat capabilities. Support for files and images depends on the underlying large language model. Refer to the documentation of the specific connector.
 
-The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic. Addionally, all agent created via the Agent Editor extension are seamlessly integrated with other Mendix' offerings such as [Token consumption monitor](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#snippet-token-monitor) or the [Tracability](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#traceability) feature from [ConversationalUI](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/).
+The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic. Addionally, all agent created via the Agent Editor extension are seamlessly integrated with other Mendix' offerings such as [Token consumption monitor](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#snippet-token-monitor) or the [Traceability](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#traceability) feature from [ConversationalUI](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/).
 
 
 ### Deploy the agent to cloud environments {#deploy-agent}
