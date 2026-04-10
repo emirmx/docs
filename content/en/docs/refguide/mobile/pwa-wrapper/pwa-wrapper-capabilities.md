@@ -13,7 +13,7 @@ This feature is currently in beta. For more information, refer to [Release Statu
 
 PWA Wrapper includes bundled JavaScript actions that a Mendix PWA can call from nanoflows. These actions expose device features through a combination of wrapper-native bridges and supported Web APIs.
 
-Support can vary by platform, operating system version, browser engine, and configured permissions. Always test the capabilities you depend on on the actual devices you plan to support.
+Support can vary by platform, operating system version, browser engine, and configured permissions. Always test the capabilities you depend on using the actual devices you plan to support.
 
 In the current beta release, PWA Wrapper capabilities are documented for Android and iOS.
 
@@ -21,7 +21,7 @@ In the current beta release, PWA Wrapper capabilities are documented for Android
 
 Verify the final packaged app on representative physical devices before release.
 
-| Capability | Description | Physical device required | Secure context required |
+| Capability | Description | Physical device required | [Secure context required](#secure-context) |
 | --- | --- | --- | --- |
 | Scan barcode and QR code | Opens the camera to scan supported barcode and QR formats from a nanoflow. | Yes | No |
 | Network information | Reads the current connection state so the app can react to online or offline conditions. | No | Yes |
@@ -36,7 +36,7 @@ Verify the final packaged app on representative physical devices before release.
 | Permissions | Checks or requests supported runtime permissions from the app flow. | No | Yes |
 | Biometric authentication | Checks biometric availability and prompts the user for biometric authentication. This depends on device hardware and biometric enrollment. | Yes | No |
 
-## Secure Context
+### Secure Context Required{#secure-context}
 
 Some PWA Wrapper capabilities rely on standard Web APIs that are only available in a secure context.
 
@@ -70,7 +70,7 @@ When a capability relies on camera, location, or notifications, align the config
 When you build a Mendix app with PWA Wrapper capabilities, follow these guidelines:
 
 * Request permissions only when they are needed in the user flow
-* Add clear fallback logic for devices where a capability is unavailable
+* Handle denied permissions or unsupported devices by providing clear fallback logic
 * Verify native behavior on physical devices, not only simulators or emulators
 * Align the configured wrapper permissions with the JavaScript actions your app calls
 

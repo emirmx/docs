@@ -19,7 +19,6 @@ Use this page together with [Build PWA Wrapper Apps](/refguide/mobile/pwa-wrappe
 
 Keep the following product-level limitations in mind:
 
-* The current beta release supports Android and iOS only
 * Capability coverage is limited to the integrations currently provided by the bundled PWA Wrapper JavaScript actions
 
 For an overview of the supported capabilities, see [PWA Wrapper Capabilities](/refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/).
@@ -31,7 +30,7 @@ Keep the following build and installation constraints in mind:
 * Final iOS signing requires macOS
 * Copying packaged web resources is currently not supported on iOS, so the wrapped iOS app must load frontend resources from the deployed Mendix runtime
 * Real-device installation requires signed packages
-* If an incompatible or newer build of the app is already installed on a device, it may need to be uninstalled before a new build can be installed
+* If an incompatible or newer build of the app is already installed on a device, it may need to be uninstalled before your current build can be installed
 
 For build-specific steps and host-platform behavior, see [Build PWA Wrapper Apps](/refguide/mobile/pwa-wrapper/build-pwa-wrapper-apps/).
 
