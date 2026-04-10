@@ -174,7 +174,7 @@ You can choose from the following tool types:
 
 In the Agent editor, tools can be temporarily disabled and re-enabled by using the **Active** checkbox. This is useful while iterating and testing the agent behavior with different tool combinations or descriptions. Only enabled tools will be usable by the agent at runtime when called in the app.
 
-Configure [tool choice](/appstore/modules/genai/reference-guide/genai-commons/#enum-toolchoice) to control how the agent behaves with regard to tool calling.
+Configure [tool choice](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) to control how the agent behaves with regard to tool calling.
 
 #### Configuring Knowledge Base Document {#define-knowledgebase}
 
