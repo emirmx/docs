@@ -274,7 +274,7 @@ This is often caused by validations that are executed in the after-startup logic
 
 ### Errors Pane Shows “Extension Agent-Editor Failed To Complete Its Consistency Checks”
 
-This is a known issue caused by internal timeouts. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>) or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
+This is a known issue caused by internal timeouts. It is more likely to occur if there are many Agent documents as part of the project. You can resolve it by synchronizing the project directory (<kbd>F4</kbd>), running the project locally, or by making a small change in any agent-related document (for example, add a character to a system prompt and remove it again). If it happens very frequently, contact Mendix Support.
 
 ### Agent Documents Are Not Visible in Agent Commons UI
 
