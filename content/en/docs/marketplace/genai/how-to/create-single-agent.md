@@ -357,7 +357,7 @@ Before testing, make sure the app model has no consistency errors.
 
 4. Click **Test** to execute the agent by using your local runtime.
 
-5. Observe the result in the test output area of the Agent document.
+5. Observe the result in the test output area of the Agent document. In this case, since the input is not about IT-related issues, the response text of the gent is likely to contain a phrase saying that it is not allowed to or able to answer. This is the intentional behavior.
 
 If you make changes to the agent definition afterwards, restart or redeploy the local runtime when needed before testing again. If a test call fails, check the **Console** pane in the Studio Pro for detailed error information.
 
