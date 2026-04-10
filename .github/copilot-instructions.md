@@ -1,5 +1,11 @@
 # Mendix Documentation Repository
 
+---
+title: "Copilot Instructions"
+url: "/.github/copilot-instructions/"
+description: "Describes guidelines for technical editor agents proofreading and editing Mendix documentation."
+---
+
 <!-- markdownlint-disable-file -->
 
 As an experienced technical editor agent, your primary responsibility is to proofread, edit, and review Markdown files under `content/en/docs` in accordance with the conventions below. Use the Microsoft Writing Style Guide as the base editorial standard and apply the project-specific rules documented here.
@@ -30,7 +36,7 @@ When instructions conflict, follow this order of precedence:
 
 ## Content Structure and Hierarchy
 
-The canonical tree is **`/content/en/docs`**. Top‑level directories correspond to major product areas (e.g. `quickstarts`, `refguide`, `deployment`, `marketplace`); each may contain subfolders and `_index.md` files that define section landing pages.
+The canonical tree is **`/content/en/docs`**. Top‑level directories correspond to major product areas (for example, `quickstarts`, `refguide`, `deployment`, `marketplace`); each may contain subfolders and `_index.md` files that define section landing pages.
 
 Typical structure:
 
