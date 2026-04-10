@@ -11,7 +11,7 @@ This feature is currently in beta. For more information, refer to [Release Statu
 
 ## Introduction
 
-This page summarizes the main cross-cutting limitations of PWA Wrapper in the current beta release.
+This page summarizes the main limitations of PWA Wrapper in the current beta release.
 
 Use this page together with [Build PWA Wrapper Apps](/refguide/mobile/pwa-wrapper/build-pwa-wrapper-apps/), [Sign PWA Wrapper Apps](/refguide/mobile/pwa-wrapper/sign-pwa-wrapper-apps/), and [PWA Wrapper Capabilities](/refguide/mobile/pwa-wrapper/pwa-wrapper-capabilities/).
 

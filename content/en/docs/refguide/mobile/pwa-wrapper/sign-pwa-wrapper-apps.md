@@ -32,7 +32,7 @@ Keep the following rules in mind:
 * Installation on real devices and distribution of the app through a store require signing
 * Use the same signing identity for later builds of the same app to allow you to ship app updates
 
-## Manage Signing Configurations
+## Manage Signing Configurations{#configurations}
 
 To manage signing configurations in PWA Wrapper, do the following:
 
@@ -95,7 +95,7 @@ After creating the signature, do the following:
 Keep the following recommendations in mind:
 
 * Use one stable signing configuration per app line if you plan to publish updates
-* Back up the generated Android signing directory before moving to another machine
+* Back up the generated Android signing directory before moving to another machine—the relevant directories are listed in [Manage Signing Configurations](#configurations, above.)
 * Validate the signed APK on a physical Android device before release
 
 ## Sign iOS Apps on macOS
