@@ -200,3 +200,7 @@ If you are unsure whether a command is safe to run, **do not run it**. Instead, 
 - Run tests after making changes: see project-specific test commands
 - Do not add dependencies without asking
 - Do not refactor code beyond what was requested
+
+### Claude Code Settings Management
+
+For personal configuration changes (AWS_PROFILE, etc.), always suggest `.claude/settings.local.json` instead of modifying `.claude/settings.json`. The local file is gitignored and overrides shared settings.

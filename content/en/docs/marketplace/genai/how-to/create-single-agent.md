@@ -27,7 +27,7 @@ This document covers three approaches to defining an agent for your Mendix app. 
 
 * The first approach uses the [Agent Editor in Studio Pro](#define-agent-editor). It is used for creating and iterating on agent definitions as part of the app model, leveraging existing development capabilities of the platform to define, manage and deploy agents as part of a Mendix app.
 * The second approach uses the [Agent Builder UI to define agents](#define-agent-commons) at runtime by the principles of Agent Commons. It enables versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. 
-* The third approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons, and is more useful for very specific use cases and when the agent needs to be part of the code repository of the app.
+* The third approach [defines the agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons. It is more useful for very specific use cases, especially when the agent needs to be part of the code repository of the app.
 
 ### Prerequisites {#prerequisites}
 
