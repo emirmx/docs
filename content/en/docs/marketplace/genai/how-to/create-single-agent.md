@@ -51,7 +51,7 @@ Before building an agent in your app, make sure your scenario meets the followin
 
 ## Agent Use Case
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.svg" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.svg" alt="Agent use case structure showing integration of LLM, knowledge base, and function calling" >}}
 
 The agent combines multiple capabilities of the GenAI Suite of Mendix, Agents Kit. In this document, you will set up the logic to start using LLM calls to dynamically determine which in-app and external information is needed based on user input. The system retrieves the necessary information, uses it to reason about the actions to be performed, and handles execution, while keeping the user informed and involved where needed. The end result is an example of an agent in a Mendix app. In this use case, the user can ask IT-related questions to the model, which assists in solving problems. The model has access to a knowledge base containing historical, resolved tickets that can help identify suitable solutions. Additionally, function microflows are available to enrich the context with relevant ticket information, for example, the number of currently open tickets or the status of a specific ticket.
 
@@ -393,7 +393,7 @@ View the app in the browser, open the **TicketHelper_Agent** page, and click **A
 
 An alternative approach to set up the agent and build logic to generate responses is based on the logic part of the Agent Commons module. Start by defining an agent with a prompt at runtime, then, through the same UI, add tools, (microflows as functions) and knowledge bases to the agent version.
 
-### Seting Up the Agent with a Prompt
+### Setting Up the Agent with a Prompt
 
 Create an agent that can be called to interact with the LLM. The [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module allows agentic AI engineers to define agents and perform prompt engineering at runtime.
 
@@ -539,7 +539,7 @@ The button does not perform any actions yet, so you need to create a microflow t
 
 6. Save the microflow and run the project.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_AgentCommons.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_AgentCommons.png" alt="Microflow showing Agent Commons implementation" >}}
 
 Run the app to see the agent integrated in the use case. From the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it uses the functions or the knowledge base. If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Furthermore, when a user submits a request like "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution.
 
@@ -593,7 +593,7 @@ Create an agent that can be sent to the LLM. The [Agent Commons](/appstore/modul
     2. Determine the type of request:
     
         * Case A: The user is asking for general information. Use either the `RetrieveNumberOfTicketsInStatus` or the `RetrieveTicketByIdentifier` tool, based on the specific user request.
-        * Case B: The user iw trying to solve an IT-related issue. Use the `FindSimilarTickets` tool to base your response on relevant historical tickets.
+        * Case B: The user is trying to solve an IT-related issue. Use the `FindSimilarTickets` tool to base your response on relevant historical tickets.
   
     If the retrieved results are not helpful to answer the request, inform the user in a user-friendly way.
     ```
@@ -688,7 +688,7 @@ As a second function, the model can pass an identifier if the user asked for det
     * Function microflow: select the microflow called `Ticket_GetTicketByID`
     * Use return value: `no`
   
-#### Connectig Functions via MCP 
+#### Connecting Functions via MCP 
 
 Instead of using local functions, you can also add functions available via MCP. To add them in `ACT_TicketHelper_CallAgent`, you have two options available in the **USE_ME** folder of the MCP Client module.
  
@@ -722,7 +722,7 @@ Finally, you can add a tool for knowledge base retrieval. This allows the agent 
 
 You have successfully integrated a knowledge base into your agent interaction. Run the app to see the agent integrated in the use case. Using the **TicketHelper_Agent** page, the user can ask the model questions and receive responses. When it deems it relevant, it will use the functions or the knowledge base. If you ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that the function microflow was executed. Now, when a user submits a request like "My VPN crashes all the time and I need it to work on important documents", the agent will search the knowledge base for similar tickets and provide a relevant solution. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_GenAICommons.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_GenAICommons.png" alt="Microflow showing GenAI Commons implementation" >}}
 
 If you would like to learn how to [Enable User Confirmation for Tools](#user-confirmation) similar as described for agent above, you can find examples in the `ExampleMicroflows` module of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
