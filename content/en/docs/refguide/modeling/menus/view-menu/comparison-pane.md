@@ -19,6 +19,8 @@ To compare a revision to your current state:
 2. Right-click any revision in the list.
 3. Select **Compare to current state**.
 
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state option in History pane right-click menu" class="no-border" >}}
+
 The Comparison Pane opens and shows all differences between the selected revision and your current working state, including any uncommitted changes.
 
 ## Version Compatibility
@@ -48,6 +50,8 @@ When starting a comparison or performing other operations that take more than a 
 ## Level 1: Document List
 
 Level 1 displays all documents that differ between the selected revision and your current state.
+
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level1.png" alt="Comparison Pane Level 1 showing document list" class="no-border" >}}
 
 ### Task Bar
 
@@ -90,6 +94,8 @@ The icon and text spacing is consistent with the History Pane style.
 ## Level 2 and 3: Element and Property Diffs
 
 Double-clicking a document in Level 1 navigates to Level 2 and Level 3, which appear side by side. Level 2 shows changed elements, and Level 3 shows the property differences for the selected element.
+
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level2-3.png" alt="Comparison Pane Level 2 and Level 3 showing element and property differences" class="no-border" >}}
 
 ### Task Bar
 

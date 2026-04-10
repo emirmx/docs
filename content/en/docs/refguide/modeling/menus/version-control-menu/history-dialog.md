@@ -45,6 +45,8 @@ By selecting a revision in this grid, the tabs below the grid will be filled wit
 
 You can compare any revision to your current working state by right-clicking a revision and selecting **Compare to current state**. This opens the [Comparison Pane](/refguide/comparison-pane/), which shows all differences between the selected revision and your current state, including uncommitted changes.
 
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state in History pane right-click menu" class="no-border" >}}
+
 For more information, see [Comparing Revisions](/refguide/comparing-revisions/).
 
 #### Revision{#revision}
