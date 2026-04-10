@@ -1022,6 +1022,52 @@ SELECT Revenue : DATEDIFF(MONTH, End, Start ) as avg_revenue FROM Sales.Period
 The way the difference is calculated depends on the database. The `YEAR` difference between "2002-01-01" and "2001-12-31" will be `1` with some databases and `0` with others.
 {{% /alert %}}
 
+### DATEPARSE {#dateparse-function}
+
+The `DATEPARSE` function parses string values to Date and time using a specified pattern.
+
+This function was introduced in Mendix version 11.10.0. It is currently supported only in Java actions.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+DATEPARSE ( expression , pattern )
+```
+
+`expression` is a value of type String.
+
+`pattern` is a pattern used to convert `expression` to a Date and time value. Only string literals are allowed.
+
+#### Pattern syntax
+
+`DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls).
+
+#### Limitations and database-specific differences
+
+When an OQL query is executed, `DATEPARSE` is converted to the corresponding database function. Due to implementation specifics of database engines, different limitations apply:
+
+1. Format letters `u`, `F`, `G`, `k`, `K` are not supported.
+2. Additionally, format letters `S` and `W` are not supported in MySQL and MariaDB.
+3. For SQL Server, `DATEPARSE` accepts only patterns that match SQL Server styles 0 to 7, 9 to 13, 100 to 107, 109 to 113, 120 and 121. See [SQL Server documentation](https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles) for the list of supported styles.
+4. Format letter `h` accepts different ranges of values per database:
+	1. HSQLDB accepts values `0` to `11`
+	2. Other databases accept values `1` to `12`
+5. In addition to listed limitations, there are other implementation differences between database engines.
+
+{{% alert color="warning" %}}
+Always test usages of `DATEPARSE` with the database engine on which your app runs. OQL queries with `DATEPARSE` may return different results in HSQLDB and in the production database.
+{{% /alert %}}
+
+#### Examples{#oql-dateparse-example}
+
+| Function call                                 | Result | Notes |
+|--------------|------|-----|
+| `DATEPARSE('20 Mar 2026', 'dd MMM yyyy')`       | 2026-03-20 00:00:00.000 | This format works for all databases. It matches SQL Server style 102. |
+| `DATEPARSE('2026-03-20 14:30:45', 'yyyy-MM-dd HH:mm:ss')`       | 2026-03-20 14:30:45.000 | This format works for all databases. It matches SQL Server style 120. |
+| `DATEPARSE('20/03/2026 14:30:45.123', 'dd/MM/yyyy HH:mm:ss.SSS')`       | 2026-03-20 14:30:45.123 | This format does not work in MySQL and MariaDB due to unsupported letter `S`. It does not work in SQL Server because there is no matching datetime style. |
+
 ### DATEPART {#datepart-function}
 
 The `DATEPART` function retrieves a specified element from `DATETIME` values. The return type is `INTEGER`.
