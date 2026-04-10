@@ -8,7 +8,7 @@ description: "Configuration instructions and explanation for the usage of the Te
 ## After Startup
 
 The Teamcenter BOM component relies on specific connections to and from your Teamcenter instance.     
-To ensure that everything is properly set up, you must add the `Startup` microflow that is provided by the `TcConnector` module to your project's [After startup settings](/refguide/runtime-tab/#after-startup). This microflow registers the required request handlers used by the Teamcenter BOM widget.
+To ensure that everything is properly set up, you must add the `Startup` microflow that is provided by the `TcConnector` module to your project's [After startup settings](/refguide/runtime-tab/#after-startup). This microflow registers the required request handlers used by the Teamcenter BOM component.
 
 ## Teamcenter BOM Component Tabs
 
