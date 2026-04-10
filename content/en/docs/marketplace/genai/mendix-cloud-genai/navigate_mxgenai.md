@@ -58,7 +58,7 @@ After a resource is provisioned, you can change its plan size, either upgrade or
 
 ### Team
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Team.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/genai-resource-team.png" >}}
 
 The **Team** page allows you to manage access to the Mendix Cloud GenAI resource. All users listed in this overview have access to the resource in the GenAI resource portal and can create new keys or invite new users. You can add new users via the **Add Member** button and remove them using the **Remove Member** button next to their name in the overview.
 
