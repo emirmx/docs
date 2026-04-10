@@ -1,5 +1,5 @@
-{{- /* <!-- Embed vidyard player and javascript. Use this shortcode as {{< vidyard "videocode" >}} --> */ -}}
-{{- with .Get 0 }}
+{{- /* <!-- Embed Vidyard player and JavaScript. Use this shortcode as {{< vidyard id="videocode" date_updated="YYYY-MM-DD" >}} --> */ -}}
+{{- with .Get "id" }}
   <p>
     <img
       style="width: 100%; margin: auto; display: block;"
