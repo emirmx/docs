@@ -1,6 +1,6 @@
 ---
-title: "Cloud Foundry"
-url: /developerportal/deploy/cloud-foundry-deploy/
+title: "Cloud Foundry Buildpack (Deprecated)"
+url: /developerportal/deploy/cloud-foundry-buildpack/
 weight: 50
 description: "Describes how to deploy to a Cloud Foundry environment which does not have Mendix support in the Mendix Portal."
 aliases:
@@ -14,13 +14,18 @@ aliases:
     - /refguide/deploying-a-mendix-app-to-cloud-foundry
     - /refguide8/deploying-a-mendix-app-to-cloud-foundry 
     - /refguide9/deploying-a-mendix-app-to-cloud-foundry
+    - /developerportal/deploy/cloud-foundry-deploy/
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-{{% alert color="warning" %}} Cloud Foundry deployment from Studio Pro is deprecated in version 10 and removed in version 11. {{% /alert %}}
+{{% alert color="warning" %}} 
+Cloud Foundry buildpack deployment from Studio Pro is deprecated in version 10 and removed in version 11. Consider using the [Portable App Distribution for Cloud Foundry](/developerportal/deploy/cloud-foundry-pad/) option instead. 
+
+The following documentation is provided for reference purposes only.
+{{% /alert %}}
 
 Mendix apps can be deployed to a variety of different environments, for example Mendix Cloud, on-premises, or Kubernetes.
 
