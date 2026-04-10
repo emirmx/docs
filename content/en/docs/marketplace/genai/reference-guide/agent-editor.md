@@ -9,32 +9,29 @@ weight: 20
 ## Introduction
 
 The [Agent Editor](https://marketplace.mendix.com/link/component/257918) module enables users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLMs).
-With the Agent Editor module, you can define agents at design time in Studio Pro (11.9.0 and higher), and manage their lifecycle as part of your project, by taking advantage of existing platform capabilities such as Model documents, version control, and deployment capabilities. Agents can be defined and developed locally and subsequently deployed to cloud environments directly with the app model.
+With the Agent Editor module, you can define agents at design time in Studio Pro (11.9.0 and above), and manage their lifecycle as part of your project, by taking advantage of existing platform capabilities such as Model documents, version control, and deployment capabilities. Agents can be defined and developed locally and subsequently deployed to cloud environments directly with the app model.
 
 The Agent Editor is compatible with the Agent Commons module: you can define and manage prompts, microflows (as tools), external MCP servers, knowledge bases, and large language models to build agentic patterns that support your business logic. Additionally, it allows you to define variables that act as placeholders for data from the app session context, which are replaced with actual values when the end user interacts with the app.
 
 The Agent Editor module includes a Studio Pro extension that allows users to define GenAI Agents as documents in the app model. The Agent Editor Commons module, which is installed as part of the same package, includes logic and activities to call these agents from microflows in a running application.
 
-
 {{% alert color="info" %}}
 Currently, Agent Editor supports only Mendix Cloud GenAI as provider. Support for other providers, such as (Azure) OpenAI and Amazon Bedrock, is planned for future releases.
 {{% /alert %}}
-
-
 
 ### Typical Use Cases {#use-cases}
 
 Typical use cases for Agent Editor include:
 
-* Defining and maintaining agent behavior as part of the app model in Studio Pro, including prompts, models, tools, and knowledge bases.
+* Defining and maintaining agent behavior as part of the app model in the Studio Pro, including prompts, models, tools, and knowledge bases.
 
 * Building agentic patterns directly in a Mendix app that rely on LLM interactions, microflow tools, MCP services, and knowledge base retrieval, while keeping configuration close to the application logic.
 
 * Supporting team-based development workflows where agent definitions are version-controlled, reviewed, tested locally, and deployed together with the app to cloud nodes.
 
-
 ### Features {#features}
-The Agent Editor helps teams design, test, and ship agents as part of their app lifecycle in Studio Pro.
+
+The Agent Editor helps teams design, test, and ship agents as part of their app lifecycle in the Studio Pro.
 
 It provides the following features:
 
@@ -70,10 +67,9 @@ In addition, make sure the following widgets are available in your project:
 * [Events Widget](https://marketplace.mendix.com/link/component/224259)
 * [Markdown Viewer Widget](https://marketplace.mendix.com/link/component/230248)
 
-
 ## Installation {#installation}
 
-If you are starting from a blank app or adding agent-editing functionality to an existing project, you need to manually install the [Agent Editor](https://marketplace.mendix.com/link/component/257918) package from the Mendix Marketplace. After download, you might see a warning asking for permission to add an extension to your app. Make sure to click `Trust module and enable extension` in the popup for the agent editor to be installed.
+If you are starting from a blank app or adding agent-editing functionality to an existing project, you need to manually install the [Agent Editor](https://marketplace.mendix.com/link/component/257918) package from the Mendix Marketplace. After download, you might see a warning asking for permission to add an extension to your app. Make sure to click **Trust module and enable extension** in the popup to install the Agent Editor.
 Before proceeding, ensure your project includes the latest versions of the required [dependencies](#dependencies). Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the Agent Editor. 
 
 After installation, two modules are added to your app:
@@ -88,18 +84,18 @@ The detailed functionality of these modules is explained in the following sectio
 After installing the modules, complete the following setup before defining model and Agent documents:
 
 1. Exclude the `/agenteditor` folder from version control.
-    In Studio Pro, go to **App** > **Show App Directory in Explorer**. Then in the file explorer, edit the `.gitignore` file and add `/agenteditor` on a new line. This folder contains log files and should typically not be tracked in Git.
+    In the Studio Pro, go to **App** > **Show App Directory in Explorer**. Then, in the file explorer, edit the `.gitignore` file and add `/agenteditor` on a new line. This folder contains log files and should typically not be tracked in Git.
 2. Ensure the encryption key is configured in the **App** > **Settings** > **Configuration** in Studio Pro. 
     Make sure that it is 32 characters long. For more information, see the [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant) section of *Encryption*.
 3. Configure startup import logic.
     Select `ASU_AgentEditor` as your [after-startup microflow](/refguide/runtime-tab/#after-startup) in **App** > **Settings** > **Runtime**, or add it to your existing after-startup microflow.
 
-
 ## Configuration {#configuration}
+
 To use the Agent Editor functionalities in your app, you must perform the following tasks in Studio Pro:
 
 1. Define the model.
-2. Define the agent with a prompt, context entity and model settings.
+2. Define the agent with a prompt, context entity, and model settings.
 3. Define and add tools and knowledge bases.
 4. Test the agent.
 5. Include the agent in the app logic.
@@ -108,8 +104,7 @@ To use the Agent Editor functionalities in your app, you must perform the follow
 
 For a step by step tutorial, check out the [create your first agent](https://docs.mendix.com/appstore/modules/genai/how-to/howto-single-agent/#define-agent-editor) documentation.
 
-
-### Define the model {#define-model}
+### Defining the Model {#define-model}
 
 With the Agent Editor, you can define the model as a document in your app model. This model can then be linked to one or more agents in your project.
 
@@ -119,43 +114,42 @@ At this moment, only models provided by Mendix Cloud GenAI are supported.
 
 Model configuration is document-based and can be managed directly in Studio Pro:
 
-* A Model document can be added from the **App Explorer** at module level. Therefore, right-click on the module or folder where you want to create your Model document, select `Add other` and find Model in the bottom section.
+* A Model document can be added from the **App Explorer** at module level. Right-click on the module or folder where you want to create your Model document, select **Add other** and find Model in the bottom section.
 * The **Model key** must be configured with a String constant that contains the key for a Text Generation resource. This key can be obtained in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com).
 * After the key is selected, model metadata is imported and shown in the editor.
-* The connectivity can be validated in the **Connection** section by using the **Test** button.
+* You can validate the connectivity in the **Connection** section by using the **Test** button.
 
 {{% alert color="info" %}}
-The value you use for the constant in Studio Pro can be different from the value used in cloud environments. Constant values can be overridden per environment during deployment. This for example means that you can locally connect to a text generation resource using a different key than the one used for production.
+The value you use for the constant in the Studio Pro can be different from the value used in cloud environments. Constant values can be overridden per environment during deployment. This, for example, means that you can locally connect to a text generation resource using a different key than the one used for production.
 {{% /alert %}}
 
-
-### Define the agent with a prompt, context entity and model settings {#define-agent}
+### Defining the Agent With a Prompt, Context Entity and Model Settings {#define-agent}
 
 After defining the model, define the Agent document and configure the prompts and context. This configuration is mandatory for the agent to run.
 
 Defining an agent is also document-based and can be configured using the Agent editor:
 
-* An Agent document can be added from the **App Explorer** at module level. Therefore, right-click on the module or folder where you want to create your Model document, select `Add other` and find Agent in the bottom section.
-* To call a text generation resource, a Model document must be selected for the agent.
-* The **System prompt** and **User prompt** must be configured for task-style execution. In these prompts, placeholders can be defined with double braces (for example, `{{variable}}`).
-* When placeholders are used, a **Context entity** must be selected so values can be resolved at runtime. The placeholders used within the prompts, need to match with the attribute names of the entity selected, so that attribute values can be inserted instead of the placeholders at runtime.
-* Optionally, the **Model settings** can be adjusted as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
+* Add An Agent document can from the **App Explorer** at module level. Right-click on the module or folder where you want to create your Model document, select **Add other** and find Agent in the bottom section.
+* Select a Module document for an agent to call a text generation resource.
+* Configure the **System prompt** and **User prompt** for task-style execution. In these prompts, define placeholders with double braces (for example, `{{variable}}`).
+* When placeholders are used, select a **Context entity** to resolve values at runtime. The placeholders used within the prompts, need to match with the attribute names of the entity selected, so that attribute values can be inserted instead of the placeholders at runtime.
+* Optionally, adjust the **Model settings** as needed (maximum tokens, temperature, and TopP), based on the supported ranges of the model provider.
 
-You can also check out our template agents, which you can find in the **USE_ME** folder of the `AgentEditorCommons` module.
+You can also check out template agents in the **USE_ME** folder of the **AgentEditorCommons** module.
 
 {{% alert color="info" %}}
-Both **System prompt** and **User prompt** are currently mandatory because Agent Editor currently supports task-based agents only. Chat-based agents will be supported by the Agent Editor in a future release.
+Both **System prompt** and **User prompt** are currently mandatory, as the Agent Editor supports only task-based agents at this time. Support for chat-based agents will be introduced in a future release.
 {{% /alert %}}
 
 For more information about prompts and prompt engineering, see [Prompt Engineering](/appstore/modules/genai/prompt-engineering/).
 
 Selecting a model is mandatory. You can save the document without it, but if model configuration is incomplete, Studio Pro will show consistency errors. These errors block running the app locally, cloud deployment, and agent testing in later steps.
 
-### Define and add tools and knowledge bases {#define-tools}
+### Defining and Adding Tools and Knowledge Bases{#define-tools}
 
 To extend the capabilities of your agent, you can add tools directly in the Agent editor. In the Agent Editor, microflows and (external) MCP services can be added as tools to let the agent act dynamically and autonomously, or to access specific data based on input it determines. When the agent is invoked, it uses the function calling pattern to execute the required microflow by using the input specified in the model response. For more technical details about microflow tools and function calling behavior, see [Function Calling](/appstore/modules/genai/function-calling/).
 
-#### Configure Consumed MCP Service {#define-mcp}
+#### Configuring Consumed MCP Service {#define-mcp}
 
 To use MCP tools, first create a consumed MCP service document in your module by selecting **Add other** > **Consumed MCP service** in the **App Explorer**.
 
@@ -169,20 +163,20 @@ To validate the configuration, click **List tools** in the **Tools** section of 
 
 In the consumed MCP service playground, authentication headers are used only to explore tools from Studio Pro and are not stored. Setup a credentials microflow to pass authentication headers at runtime.
 
-#### Add Tools to the Agent {#add-tools}
+#### Adding Tools to the Agent {#add-tools}
 
-Tools can then be added in the **Tools** section of the Agent editor by clicking **New** and selecting a tool type.
+Add Tools can in the **Tools** section of the Agent editor by clicking **New** and selecting a tool type.
 
 You can choose from the following tool types:
 
-* **Microflow tool**: Select a microflow that returns a string. Provide a **Name** and **Description** so the LLM can determine when to use the tool.
+* **Microflow tool**: Select a microflow that returns a string. Provide a **Name** and **Description** so that the LLM can determine when to use the tool.
 * **MCP tool**: Select a consumed MCP service in the tool configuration.
 
 In the Agent editor, tools can be temporarily disabled and re-enabled by using the **Active** checkbox. This is useful while iterating and testing the agent behavior with different tool combinations or descriptions. Only enabled tools will be usable by the agent at runtime when called in the app.
 
 Configure [tool choice](/appstore/modules/genai/reference-guide/genai-commons/#enum-toolchoice) to control how the agent behaves with regards to tool calling.
 
-#### Configure Knowledge Base Document {#define-knowledgebase}
+#### Configuring Knowledge Base Document {#define-knowledgebase}
 
 Knowledge bases are configured as separate documents and can then be linked to agents.
 
@@ -194,27 +188,26 @@ In the Knowledge base editor:
 
 * Set **Knowledge base key** by creating or selecting a String constant in your module.
 * After selecting the key, verify that knowledge base details are imported and shown.
-* Optionally, click **List collections** to test the connection and display the available collections from the knowledge base resource in **Configured Collections**.
+* Optionally, click **List collections** to test the connection and see the available collections from the knowledge base resource under the **Configured Collections**.
 
-#### Link Knowledge Bases to the Agent {#add-knowledgebase}
+#### Linking Knowledge Bases to the Agent {#add-knowledgebase}
 
 To link a knowledge base to an agent, use the **Knowledge bases** section in the Agent editor and click **New**.
 
 In the knowledge base entry:
 
 * Select the configured knowledge base document in **Knowledge base**.
-* In **Collection**, select one of the available collections from the dropdown, or type/paste a collection name to reference a collection that does not exist yet.
+* In **Collection**, select one of the available collections from the dropdown, type, or paste a collection name to reference a collection that does not exist yet.
 * Provide **Name** and **Description** so the LLM can determine when this knowledge base should be used. This serves the same purpose as naming for tools.
 * Optionally configure retrieval settings:
-  * **Max results** controls the maximum number of chunks returned in a single retrieval.
-  * **Min similarity** sets the cosine-similarity threshold between 0 and 1. Higher values (for example, 0.8) are stricter than lower values (for example, 0.2).
+    * **Max results** controls the maximum number of chunks returned in a single retrieval.
+    * **Min similarity** sets the cosine-similarity threshold between 0 and 1. Higher values (for example, 0.8) are stricter than lower values (for example, 0.2).
 
 Knowledge base links can also be temporarily disabled and re-enabled by using the **Active** checkbox, which helps when comparing retrieval behavior during rapid iteration. Only enabled knowledge bases will be usable by the agent at runtime when called in the app.
 
 {{% alert color="info" %}}
-In this release, MCP tools support whole-server integration only. Selecting individual tools from the server is not yet supported.
+Currently, MCP tools support whole-server integration only. Selecting individual tools from the server is not yet supported.
 {{% /alert %}}
-
 
 ### Test the agent {#test-agent}
 
