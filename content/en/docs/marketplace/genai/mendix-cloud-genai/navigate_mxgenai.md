@@ -66,7 +66,7 @@ The **Team** page allows you to manage access to the Mendix Cloud GenAI resource
 
 You can invite members from outside your organization to access your GenAI resources by entering their email address in **Add Member**. This option is available only if your company admin has enabled external user invitations. 
 
-You can tack invitations in the **Pending Invites** tab. Invited users will receive an email with a link to accept or decline the invitation. If they do not yet have a Mendix account, the link redirects them to create one. Once the invitation is accepted, the resource will appear in their GenAI portal overview.
+You can track invitations in the **Pending Invites** tab. Invited users will receive an email with a link to accept or decline the invitation. If they do not yet have a Mendix account, the link redirects them to create one. Once the invitation is accepted, the resource will appear in their GenAI portal overview.
 
 Pending invitations can be withdrawn at any time and will automatically expire after two weeks. External members can create and delete keys, export consumption data, manage knowledge base content and collections, and change the model. However, they can not modify the display name or environment, or manage team membership.
 
