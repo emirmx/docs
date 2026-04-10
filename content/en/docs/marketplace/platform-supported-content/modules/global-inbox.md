@@ -139,5 +139,5 @@ Any user that can see a task in Publisher Application can see the same task in t
 ## Limitations
 
 * **Global Inbox** does not support [Workflow Groups](/refguide/workflow-groups/) at the moment. This will be introduced at a later stage.
-* The beta version of **Global Inbox** has limited support for error handling. Any exceptions that occur in a microflow after updating a user task (or other Workflow-related entity) in the same microflow (for example, updating the targeted users or due date) might result in data becoming out of sync. This is a temporary limitation that will be resolved in an upcoming version.
+* **Global Inbox** has limited support for error handling. Any exceptions that occur in a microflow after updating a user task (or other Workflow-related entity) in the same microflow (for example, updating the targeted users or due date) might result in data becoming out of sync. This is a temporary limitation that will be resolved in an upcoming version.
 * Workflows and tasks that are modeled in the same app that includes the Global Inbox module are NOT available in the Global Inbox. The Global Inbox app only consumes and displays workflow instances from other Mendix applications.
