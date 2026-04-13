@@ -68,13 +68,25 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Snowflake Authentication
 
-To use the capabilities of Snowflake in a Mendix app with the Snowflake AI Data Connector, you must use either OAUTH authentication or RSA key-pair authentication.
+To use the capabilities of Snowflake in a Mendix app with the Snowflake AI Data Connector, you must configure one of the supported authentication methods:
+
+OAuth authentication
+RSA key-pair authentication (KEYPAIR_JWT)
+Programmatic Access Token (PAT)
 
 #### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
 
 To find out how configure the OAUTH Authentication method, see [Role-based Access Control](/appstore/modules/snowflake/snowflake-rbac/).
 
-When using an OAuth token to authenticate REST calls, use the **JWT_GetCreate** microflow from the Utils folder to get or create a JWT object and set your OAuth token and expiration date on the Token and ExpirationDate attributes of the returned JWT object. In the **POST_v1_ExecuteStatement** and **CortexAnalyst** operations, the JWT is retrieved from the **ConnectionDetails** and used for authentication. Be aware that **GET_v1_RetrievePartition** should be edited when using OAuth for authentication. Further instructions on what to change are included in the microflow annotations.
+When using an OAuth token to authenticate REST calls, use the **BearerToken_GetCreate** microflow from the *Utils* folder to get or create a **BearerToken** object. Set your OAuth token and expiration date on the **Token** and **ExpirationDate** attributes of the returned object.
+
+In the **POST_v1_ExecuteStatement** and **CortexAnalyst** operations, the token is retrieved from the **ConnectionDetails** and used for authentication. Be aware that **GET_v1_RetrievePartition** should be edited when using OAuth for authentication. Further instructions on what to change are included in the microflow annotations.
+
+#### Configuring Programmatic Access Token (PAT) Authentication {#setup-pat-snowflake}
+
+Programmatic Access Tokens (PATs) can be used to authenticate Snowflake REST API calls without configuring OAuth or key-pair authentication.
+Use the **BearerToken_GetCreate** microflow from the *Utils* folder to get or create a **BearerToken** object. Set the PAT value on the **Token** attribute and configure the **ExpirationDate** according to the lifetime of the token.
+The token is retrieved from **ConnectionDetails** during execution of operations such as **POST_v1_ExecuteStatement** and **CortexAnalyst** and is used as a bearer token for Snowflake API authentication.
 
 #### Configuring Key-Pair Authentication in Snowflake {#setup-key-pair-snowflake}
 
@@ -235,6 +247,10 @@ Activities define the actions that are executed in a microflow or a nanoflow.
 
 The `ExecuteStatement` activity allows you to execute a command in Snowflake using the SQL statement and the configuration details given in a `Statement` and `ConfigurationDetails` objects and returns a list of `HttpResponse` objects. Make sure that a JWT object containing your KEYPAIR_JWT or OAuth token is associated to your connection details before using the `ExecuteStatement` activity.
 
+#### ExecuteStatement {#execute-statement}
+
+The `ExecuteStatement` activity allows you to execute a command in Snowflake using the SQL statement and the configuration details provided in the `Statement` and `ConnectionDetails` objects. The activity returns a list of `HttpResponse` objects. Make sure that a `BearerToken` object containing your KEYPAIR_JWT, OAuth token, or Programmatic Access Token (PAT) is associated with your `ConnectionDetails`.
+
 The input and output for this service are shown in the table below:
 
 | Input | Output |
@@ -295,13 +311,16 @@ Snowflake Cortex Analyst is currently in open preview. For more information, ref
 * Set up one of the following supported authentication methods for Cortex Analyst:
     * OAUTH
     * KEYPAIR_JWT
+    * PAT (Programmatic Access Token)
 
 ### Configuration 
 
 To configure your Mendix app for Snowflake Cortex Analyst, perform the following steps:
 
 1. Create a microflow and retrieve your **ConnectionDetails** object.
-2. When using KEYPAIR_JWT as your authentication type use the **Generate JWT** action from the **Toolbox** to generate a JWT object. When using OAuth as authentication type please use the **Get or Create JWT** action from the **Toolbox** to create a JWT object and set your OAuth token and expiration date on that object.
+2. Configure authentication based on the authentication type set in **ConnectionDetails**:
+   * When using **KEYPAIR_JWT**, use the **Generate JWT** action from the **Toolbox** to generate a JWT token.
+   * When using **OAuth** or **PAT**, use the **BearerToken_GetCreate** microflow from the **Utils** folder to get or create a **BearerToken** object. Set the **Token** and **ExpirationDate** attributes accordingly.
 3. Add the **Cortex Analyst: Create Request** action from the **Toolbox**, and then configure the **Request** to contain the path to the Snowflake semantic model file and your question/prompt for the model.
 4. Add the **Snowflake Cortex Analyst** action from the Toolbox and provide the following information:
     * **ConnectionDetails** – The connection details that you configured
@@ -326,13 +345,16 @@ Snowflake Cortex Search is a fully-managed, ML-powered Snowflake Cortex feature 
 * Set up one of the following supported authentication methods for Cortex Analyst:
     * OAUTH
     * KEYPAIR_JWT
+    * PAT (Programmatic Access Token)
 
 ### Configuration 
 
 To configure your Mendix app for Snowflake Cortex Search, perform the following steps:
 
 1. Create a microflow and retrieve your **ConnectionDetails** object.
-2. When using KEYPAIR_JWT as your authentication type use the **Generate JWT** action from the **Toolbox** to generate a JWT object. When using OAuth as authentication type please use the **Get or Create JWT** action from the **Toolbox** to create a JWT object and set your OAuth token and expiration date on that object.
+2. Configure authentication based on the authentication type set in **ConnectionDetails**:
+   * When using **KEYPAIR_JWT**, use the **Generate JWT** action from the **Toolbox** to generate a JWT token.
+   * When using **OAuth** or **PAT**, use the **BearerToken_GetCreate** microflow from the **Utils** folder to get or create a **BearerToken** object. Set the **Token** and **ExpirationDate** attributes accordingly.
 3. Create a **CortexSearchRequest** object, and then configure the **Request** to contain the path to the Snowflake Cortex Search service, your query/prompt for the model and what indexed columns the Cortex Search service should return.
 4. Add the **Snowflake Cortex Search** action from the Toolbox and provide the following information:
     * **ConnectionDetails** – The connection details that you configured
