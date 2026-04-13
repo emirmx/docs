@@ -128,9 +128,9 @@ The OIDC module requires your app to be using Mendix 9.0 or above.
 
 It requires the following Marketplace modules to be included in your app:
 
-* [Encryption](https://marketplace.mendix.com/link/component/1011) – see [Encryption](/appstore/modules/encryption/) documentation.
+* [Encryption](https://marketplace.mendix.com/link/component/1011) (for version 4.3.0 and below) – see [Encryption](/appstore/modules/encryption/) documentation.
 * [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation.
-* [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation.
+* [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) (for version 4.3.0 and below) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation. 
 * [User Commons](https://marketplace.mendix.com/link/component/223053) (for version 3.0.0 and above)
 
     {{% alert color="warning" %}}
@@ -205,8 +205,8 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
-| 10.24.0 and above | 4.4.0 | - | **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
-| 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path |
+| 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to the `OIDC.Encryptionkey` constant. | Dependencies on the Encryption and Nanoflow Commons modules have been removed. <br> **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
+| 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path. |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
@@ -264,7 +264,11 @@ Admins can view their own token using a snippet in their custom page. They can f
 
 ### Setting Encryption Key
 
-Follow the instructions to [set an encryption key in the Encryption module](/appstore/modules/encryption/#configuration). The constant to set is called `Encryption.EncryptionKey` and should be a random value 32 characters long. This key will be used to encrypt and decrypt values.
+Follow the instructions to [set an encryption key in the Encryption module](/appstore/modules/encryption/#configuration). For OIDC SSO V4.3.0 and below, set a constant called `Encryption.EncryptionKey` and assign it a random value 32-character value. Starting from version 4.4.0, set the encryption key in the `OIDC.Encryptionkey` constant using a random 32-character value. This key will be used to encrypt and decrypt values.
+
+{{% alert color="info" %}}
+While upgrading from V4.3.0 to V4.4.0 or above, ensure that any value currently stored in the `Encryption.Encryptionkey` is moved to the `OIDC.Encryptionkey` constant, otherwise, existing IdP client authentication will fail.  
+{{% /alert %}}
 
 ## IdP Configuration {#idpconfiguration}
 
