@@ -295,3 +295,11 @@ If the **List collections** does not return results, verify the **Knowledge base
 ### Placeholder Values Are Not Resolved During Calls
 
 If prompts contain placeholders, ensure a context object is passed, and it matches the selected **Context entity**. Also, verify that variable names in the prompt match available attributes on that entity.
+
+### Extension is not loaded after module import from Marketplace
+
+If you import the Agent Editor for the first time and you don't see the options to create Agent, Model, Knowledge base, or Consumed MCP service documents, or the extension is not listed under **View** > **Extensions**, try to restart Studio Pro.
+
+If you previously used the Agent Editor and now see an error such as: `The parameter 'Agent' is of unknown type 'agenteditor.agent'.`, try to restart Studio Pro.
+
+In both cases you can confirm that the Agent Editor extension is loaded and enabled under **View** > **Extensions**.
