@@ -68,13 +68,18 @@ To change a user's role or remove them from the workspace, click the three-dot i
 Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
 * **GetStation** - Retrieves the computer information connected to the Client.
-* **SendMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
-* **SubscribeToMessages** - Subscribes to device messages and triggers a nanoflow when messages are received.
-* **SubscribeToErrors** - Subscribes to device connection errors and triggers a nanoflow when errors occur.
-* **Unsubscribe** - End the subscription to device messages or errors.
-* **UnsubscribeByContext** - End all subscriptions related to a context object.
-* **UnsubscribeByDevice** - End all subscriptions related to a specific device.
-* **DisconnectDevice** - Unsubscribe and completely disconnect from a specific device.
+* **SendDeviceMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
+* **WaitForDeviceMessage** - Waits for a message from the connected device for the duration of the specified timeout period.
+* **WaitForObjectChange** - Waits for changes in the specified object for the duration of the specified timeout period.
+* **SubscribeToDeviceMessages** - Subscribes to device messages and triggers a nanoflow when messages are received.
+* **SubscribeToDeviceErrors** - Subscribes to device connection errors and triggers a nanoflow when errors occur.
+* **SubscribeToObjectChanges** - Subscribes to changes in the specified object.
+* **Unsubscribe** - Ends the subscription to device messages or errors.
+* **SetupDevice** - Creates and configures a device with the specified parameters.
+* **ConnectDevice** - Connects to a specific device.
+* **DisconnectDevice** - Unsubscribes and completely disconnects from a specific device.
+
+
 
 These nanoflows and actions serve as the core building blocks for integrating devices into your Mendix applications and tailoring the functionality to your specific requirements.
 

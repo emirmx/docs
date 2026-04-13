@@ -16,6 +16,11 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 
 
+### Deprecations
+
+* We have removed support for named events using strings and string expressions instead of object attributes.
+
+
 ## 3.5.0
 
 ### Release date: March 12, 2026
