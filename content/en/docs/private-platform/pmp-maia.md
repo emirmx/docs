@@ -38,7 +38,7 @@ Generators:
 
 ## Changing the LLM Provider for Maia
 
-Starting in Private Mendix Platform 2.6, instead of usign the default Large Language Model, you can connect Maia to several different models of your choice. Currently this includes the following LLMs:
+Starting in Private Mendix Platform 2.6, instead of usign the default Large Language Model, you can connect Maia to several different models of your choice. Quality of results has been verified on Claude Sonnet 4.5 and might vary per provider and chosen model. The following models have been tested for connectivity:
 
 * Anthropic
     * Small text model - Claude Haiku 4.5
