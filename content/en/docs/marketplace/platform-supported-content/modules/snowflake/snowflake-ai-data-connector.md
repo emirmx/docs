@@ -69,9 +69,9 @@ After you install the connector, you can find it in the **App Explorer**, in the
 ### Configuring Snowflake Authentication
 
 To use the capabilities of Snowflake in a Mendix app with the Snowflake AI Data Connector, you must configure one of the supported authentication methods:
-*OAuth authentication
-*RSA key-pair authentication (KEYPAIR_JWT)
-*Programmatic Access Token (PAT)
+* OAuth authentication
+* RSA key-pair authentication (KEYPAIR_JWT)
+* Programmatic Access Token (PAT)
 
 #### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
 
