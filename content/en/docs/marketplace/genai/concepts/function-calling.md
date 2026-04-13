@@ -29,6 +29,8 @@ This automates the following process happening inside the LLM connector:
 
 For more general information on this topic, see [OpenAI: Function Calling](https://platform.openai.com/docs/guides/function-calling) or [Anthropic Claude: Tool Use](https://docs.anthropic.com/en/docs/tool-use).
 
+### User Control {#user-control}
+
 ## Function Calling with the GenAI Commons Module and the LLM Connectors {#llm-connector}
 
 All platform-supported connectors ([Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), [OpenAI](/appstore/modules/genai/openai/), and [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/)) support function calling by leveraging the [GenAI Commons module](/appstore/modules/genai/commons/). Function calling is supported for all chat completions operations. All entity, attribute, and activity names in this section refer to the GenAI Commons module. 
@@ -49,9 +51,9 @@ A helper operation is available in GenAI Commons to define the Tool Choice:
 * `Tools: Set Tool Choice` can be used to set the `ToolChoice` parameter and the `ToolCollection_ToolChoice` association accordingly.
 
 {{% alert color="warning" %}}
-Function calling is a very powerful capability, but may be used with caution. Please note that function microflows run in the context of the current user without enforcing entity-access. You can use `$currentUser` in XPath queries to ensure you retrieve and return only information that the end-user is allowed to view; otherwise confidential information may become visible to the current end-user in the assistant's response.
+Function calling is a very powerful capability, but may be used with caution. Please note that function microflows run in the context of the current user without enforcing entity-access, unless [enabled](/refguide/microflow/#apply-entity-access) in the microflow settings. Alternatively, you can use `$currentUser` in XPath queries to ensure you retrieve and return only information that the end-user is allowed to view; otherwise confidential information may become visible to the current end-user in the assistant's response.
 
-We also strongly advise that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user, for example sending an email, posting online, or making a purchase.
+We also strongly advise that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user, for example sending an email, posting online, or making a purchase, see [user control](#user-control) above.
 {{% /alert %}}
 
 ### Supported OpenAI models {#supported-models-openai}

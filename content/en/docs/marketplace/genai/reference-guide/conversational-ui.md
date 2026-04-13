@@ -289,6 +289,12 @@ You may need to use the following classes when building a more complex custom pa
 | `chat-page--fullheight` | To be added to the container of a full-screen chat to ensure it fills available space and maintains proper flex layout with wrapping and padding | 
 | `chat-page--fullheight-centered` | To be added to a full-screen chat container to center it on the page with a maximum width, while preserving the full-height flex layout and wrapping | 
 
+#### Markdown rendering
+
+Many modern LLMs generate their responses in markdown format to make it more appealing to users. By default, the text in the chat interface is rendered using the [MarkdownViewer](https://marketplace.mendix.com/link/component/230248) widget. This can be disabled by setting the constant `EnableMarkdownViewer` to false, which will show the response in plain text.
+
+Additionally, sometimes it is helpful to manipulate the markdown styling, for example if the available space is limited. In those cases, you can adjust certain settings using the `widget-markdown` class and apply your custom styling, e.g., removing the spacing from headers or lists.
+
 #### Using a Custom Layout
 
 If you are using a custom layout in your application, you may need to use a layout other than **Atlas_Default**. For such scenarios, the module provides **Layout_MasterBase**—a layout derived from **Atlas_Default** that is applied to every page in the module. You can modify the properties of the master layout to change its appearance. Note that you need to reapply these customizations after each marketplace update.
