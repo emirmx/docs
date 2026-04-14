@@ -67,6 +67,7 @@ Each list entry includes the following details:
     * **AccessLog**
     * **Audit Log**
     * **Approval Request**
+
 * **Resource Description** – A description of the resource.
 * **Origin Type** – The origin of the log, which can be one of the following:
 
@@ -74,6 +75,7 @@ Each list entry includes the following details:
     * **API** – This is displayed if the system cannot determine the logged-in user.
     * **SystemScheduledTask** – This is displayed if the system cannot determine the logged-in user.
     * **MaskedAction** – This is displayed when logs were triggered by Mendix support.
+
 * **Details** – The following information is displayed and can be downloaded for each audit log item:
 
     * **Log ID** – The unique identifier of the log.
@@ -97,7 +99,7 @@ Each list entry includes the following details:
         * **Type** – The type of resource that was changed.   
         * **Description** – A description of the resource.
 
-You can use the **Filters** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.    
+You can use the **Filter** option to only display the audit logs that meet the criteria you are interested in, or you can use the search field to search for a specific log.    
 The filter fields only support full search text. As such, if you want to find a specific result, you need to enter its full text. For example, if you want to display all logs associated to the `email@example.com` email address, you need to enter the full `email@example.com` in the filter field.    
 **Event Description** is the only field which supports partial text search.
 
@@ -121,7 +123,7 @@ Once the logs are ready for export, you are notified via email, and a download l
 
 ## Downloads {#downloads}
 
-When you export audit logs, a download link is displayed on this tab once the export CSV is ready for download.    
+When you export audit logs, a download link is displayed on this tab once the export CSV is ready for download. The download link is valid for seven days.    
 These are details available on the this tab:
 
 * **Submitted on** – The date and time when the export request was made.
