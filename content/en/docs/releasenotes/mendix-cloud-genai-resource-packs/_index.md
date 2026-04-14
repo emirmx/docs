@@ -16,7 +16,7 @@ These release notes cover changes made to the [Mendix Cloud GenAI Resource Packs
 
 #### New Features
 
-It is now possible to add external users to your resources, making collaboration across organizations easier.
+* It is now possible to add external users to your resources, making collaboration across organizations easier.
 
 ### March 5, 2026
 
