@@ -11,6 +11,8 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows a web applicatio
 
 This document describes the custom runtime settings required to enable CORS in the Mendix Runtime.
 
+If you also enable CORS on a [published REST service](/refguide/published-rest-service/) and configure [Allowed Origins](/refguide/cors-settings/), access is granted to both the origins configured on the published REST service and the origins configured through the runtime settings described in this document.
+
 {{% alert color="info" %}}
 
 This feature is only supported in Mendix 11.9 and later.
