@@ -174,7 +174,7 @@ Custom spans in Java actions was introduced in Mendix 11.10.0.
 
 Custom spans can be created in Java actions using the `Core.tracing()` API.
 
-Below is an example of how to create a span and wrap some code with it. The `run` method will start and close the span, set the span status and handle exceptions.
+Below is an example of how to create a span and wrap some code in it. The `run` method starts and closes the span, sets the span status and handles exceptions.
 
 ```java
 Core.tracing()
@@ -185,7 +185,7 @@ Core.tracing()
   });
 ```
 
-If the flow of control is more complicated then you can also manually handle the lifecycle of the span using the `start` and `close` methods.
+If the flow of control is more complicated, then you can also handle the lifecycle of the span manually using the `start` and `close` methods.
 
 ```java
 var span = Core.tracing()
