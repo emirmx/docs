@@ -76,18 +76,18 @@ Make sure to select a clear image to help Maia better understand your request. F
 
 ### Limitations {#limitation}
 
-Maia for Workflows has some limitations.
+Maia for Workflows currently has some limitations.
 
 #### Supported Workflow Elements
 
-Currently, [Multi-user Task](/refguide/multi-user-task/) are not supported. However, most of the other workflow elements are supported.
+Currently, [Multi-user task](/refguide/multi-user-task/) is not supported. However, most of the other workflow elements are supported.
 
 #### Not All Properties Can Be Configured
 
 Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
 
 * From the workflow document itself
-  * [Admin Page](/refguide/workflow-properties/#admin-page)
+* [Admin Page](/refguide/workflow-properties/#admin-page)
 
 ## Read More
 
