@@ -109,7 +109,7 @@ When forcing a specific profile on a cloud deployment, it can be necessary to fi
 
 ## Managing PWA Updates
 
-To learn more about the service worker lifecycle and how to detect and handle PWA updates to provide users with the latest version, see [Service Worker and PWA Updates](/refguide/mobile/introduction-to-mobile-technologies/service-worker).
+To learn more about the service worker lifecycle and how to detect and handle PWA updates to provide users with the latest version, see [Service Worker and PWA Updates](/refguide/mobile/introduction-to-mobile-technologies/pwa-service-worker/).
 
 ## Advanced Settings
 
