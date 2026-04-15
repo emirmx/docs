@@ -146,6 +146,10 @@ Here is an example of column properties:
 
 **Custom Content** allows users to drop widgets into the data grid and use the column attribute value to show custom content. After selecting this option you will be given drop-zones in which to drop your widgets.
 
+{{% alert color="info" %}}
+Placing widgets within custom content which use the row object will automatically set the [network optimization mode](/refguide/datasource-runtime/#network-optimization-modes) to **Optimize for Network Round Trips**.
+{{% /alert %}}
+
 Here is an example of custom content using new Badge widget in **Structure mode**:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/column-custom-content.png" alt="Example of custom content using new Badge widget in Structure mode" class="no-border" >}}
