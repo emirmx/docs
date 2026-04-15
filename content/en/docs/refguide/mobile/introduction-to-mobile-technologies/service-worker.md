@@ -59,13 +59,11 @@ The browser detects this update and initiates a new lifecycle for the updated se
 
 ## Detecting and Handling Updates in Your PWA
 
-The [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface provides properties and methods to monitor its state and detect updates. Starting from Mendix 11.9.0, a client API is available to skip the waiting phase and immediately activate the new service worker version. 
-You can implement a custom update mechanism to notify users when a new version is available and allow them to update the application without closing all tabs/windows.
+The [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface provides properties and methods to monitor its state and detect updates. In Mendix 11.9.0 and above, a Client API ____ is available to skip the waiting phase and immediately activate the new service worker version. 
 
-Implementation Steps:
+You can implement a custom update mechanism to notify users when a new version is available. This allows them to update the application without closing all tabs or windows:
 
-1. Listen for service worker updates
-Create a JavaScript Action to Listen for service worker updates. This action should run when your application starts up, for example, calling the JavaScript action via nanoflow that triggers by [Events](/appstore/widgets/events/) widget
+1. **Listen for service worker updates** — Create a JavaScript Action to listen for service worker updates. This action should run when your application starts up, for example, calling the JavaScript action via nanoflow that triggers by [Events](/appstore/widgets/events/) widget:
 
 ```javascript
 export async function JS_ListenForPWAUpdates() {
@@ -114,8 +112,7 @@ export async function JS_ListenForPWAUpdates() {
 }
 ```
 
-2. Create JavaScript Action to activate the new service worker
-When the user confirms the update, use the Client API `skipWaiting()` to activate the new service worker.
+2. **Create a JavaScript Action to activate the new service worker** — When the user confirms the update, use the Client API `skipWaiting()` to activate the new service worker:
 
 ```javascript
 import { skipWaiting } from "mx-api/pwa";
@@ -137,9 +134,5 @@ export async function JS_ActivatePWAUpdate() {
 }
 ```
 
-3. Notifying users
-To avoid interrupting users during critical operations, it is recommended to notify them when an update becomes available.
-For example, you can implement a nanoflow that prompts users to confirm the update when a new version is detected. If the user confirms, the nanoflow can call JS_ActivatePWAUpdate to update. This nanoflow can be passed as a parameter to `JS_ListenForPWAUpdates`, which will invoke it when an update is detected.
-
-4. Reload the Application
-Trigger a reload, or ask users to reload all open tabs or windows to ensure the application loads with the newly activated service worker.
+3. **Notifying users** — To not interrupt users during critical operations, Mendix recommends notifying them when an update becomes available. For example, you can implement a nanoflow that prompts users to confirm the update when a new version is detected. If the user confirms, the nanoflow can call `JS_ActivatePWAUpdate` to update. This nanoflow can be passed as a parameter to `JS_ListenForPWAUpdates`, which will invoke it when an update is detected.
+4. **Reload the Application** — Trigger a reload, or ask users to reload all open tabs or windows to ensure the application loads with the newly activated service worker.
