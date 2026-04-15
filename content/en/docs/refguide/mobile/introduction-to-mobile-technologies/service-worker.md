@@ -59,9 +59,9 @@ The browser detects this update and initiates a new lifecycle for the updated se
 
 ## Detecting and Handling Updates in Your PWA
 
-The [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface provides properties and methods to monitor its state and detect updates. In Mendix 11.9.0 and above, a Client API ____ is available to skip the waiting phase and immediately activate the new service worker version. 
+The [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface provides properties and methods to monitor its state and detect updates. In Mendix 11.9.0 and above, a Client API [method](https://apidocs.rnd.mendix.com/11/client-mx-api/module-mx-api_pwa.html) is available to skip the waiting phase and immediately activate the new service worker version: `SkipWaiting()`.
 
-You can implement a custom update mechanism to notify users when a new version is available. This allows them to update the application without closing all tabs or windows:
+With `SkipWaiting()`, you can implement a custom update mechanism to notify users when a new version is available. This allows them to update the application without closing all tabs or windows:
 
 1. **Listen for service worker updates** — Create a JavaScript Action to listen for service worker updates. This action should run when your application starts up, for example, calling the JavaScript action via nanoflow that triggers by [Events](/appstore/widgets/events/) widget:
 
