@@ -30,7 +30,9 @@ To understand how updates to your Mendix PWA are handled, you need to understand
 
 ## Waiting for Service Worker Readiness
 
-You may want to wait until the Service Worker is ready before performing operations that rely on it, such as interacting with the app while offline. The browser provides the [ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready) property, which returns a Promise that resolves when a service worker is active, to ensure that the service worker is fully initialized and that precaching of assets is complete so the app can work offline.
+Mendix recommends waiting until the service worker is ready before performing operations that rely on it, such as interacting with the app while offline. 
+
+The browser provides the [ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready) property, which returns a **Promise** that resolves when a service worker is active to ensure that the service worker is fully initialized and that precaching of assets is complete so the app can work offline:
 
 ```javascript
 export async function waitForAppReady() {
