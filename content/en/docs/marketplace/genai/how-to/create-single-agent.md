@@ -47,7 +47,7 @@ Before building an agent in your app, make sure your scenario meets the followin
 
 * Basic understanding of Function Calling and Prompt Engineering: learn about [Function Calling](/appstore/modules/genai/function-calling/) and [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering) to use them within the Mendix ecosystem.
 
-* Optional Prerequisites: Basic understanding of the [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) and the available Mendix modules—[MCP Server module](https://docs.mendix.com/appstore/modules/genai/mcp-modules/mcp-server/) and [MCP Client module](https://docs.mendix.com/appstore/modules/genai/mcp-modules/mcp-client/).
+* Optional Prerequisites: Basic understanding of the [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) and the available Mendix modules—[MCP Server module](/appstore/modules/genai/mcp-modules/mcp-server/) and [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/).
 
 ## Agent Use Case
 
@@ -312,7 +312,7 @@ Connect an MCP server as a tool source through a consumed MCP service document a
     * **Credentials microflow** (optional): set this when authentication is required.
     * **Protocol version**: select the protocol that matches your MCP server
 
-    For more details regarding protocol version and authentication, refer to the [technical documentation](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/agent-editor/#define-mcp).
+    For more details regarding protocol version and authentication, refer to the [technical documentation](/appstore/modules/genai/genai-for-mx/agent-editor/#define-mcp).
 
 3. In the consumed MCP service document, click **List tools** to verify the connection.
 

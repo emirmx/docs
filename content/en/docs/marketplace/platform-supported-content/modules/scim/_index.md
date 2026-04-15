@@ -305,7 +305,7 @@ The SCIM Module supports deleting all users provisioned by an IdP using the **De
 
 ### Deploy-time Configuration {#deploy-time}
 
-Starting from version 3.0.0, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
+Starting from version 3.0.0, you can configure the SCIM module using app [constants](/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
 
 To enable app constants for configuring the SCIM module, set your app to run the after-startup microflow in the OIDC module (`SCIM.ASU_StartUp`).
 

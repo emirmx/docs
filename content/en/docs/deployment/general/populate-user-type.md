@@ -38,9 +38,9 @@ There are several approaches to classify users as `Internal` or `External`, rang
 
 The simplest method to set the `UserType` is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. This approach leverages a connection with an Identity Provider (IdP) to classify users. The primary benefit of IdP-based classification is its efficiency, as it typically only requires configuration within the existing IAM modules. Mendix offers you the following IAM modules:
 
-* [OIDC](https://docs.mendix.com/appstore/modules/oidc/)
-* [SCIM](https://docs.mendix.com/appstore/modules/scim/)
-* [SAML](https://docs.mendix.com/appstore/modules/saml/)
+* [OIDC](/appstore/modules/oidc/)
+* [SCIM](/appstore/modules/scim/)
+* [SAML](/appstore/modules/saml/)
 
 Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
 
