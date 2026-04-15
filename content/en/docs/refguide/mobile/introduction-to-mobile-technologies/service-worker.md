@@ -6,39 +6,31 @@ weight: 20
 
 ## Introduction
 
-A service worker is a specialized type of web worker, essentially a JavaScript file that runs in the background, separate from your main web page. It can control pages within its [scope](#scope), and acts as a proxy between your PWA and the network.
+A service worker is a specialized type of web worker, essentially a JavaScript file that runs in the background, separate from your main web page. It can control pages within its [scope](#scope), and acts as a proxy between your progressive web app (PWA) and the network.
 
-Its primary role is to intercept network requests made by your PWA and decide whether to fetch resources from the network or serve them from the cache. This interception capability is crucial for providing robust offline experiences, enabling your PWA to function even when the user has no network connectivity. 
+A service worker's primary role is to intercept network requests made by your PWA and decide whether to fetch resources from the network or serve them from the cache. This interception capability is crucial for providing robust offline experiences, and enables your PWA to function even when the user has no network connectivity. 
 
 ## Service Worker Scope {#scope}
 
-A service worker’s scope is determined by the location of its JavaScript file on the web server.
-
-For example, if a service worker runs on a page located at /subdir/index.html, and is located at /subdir/sw.js, the service worker's scope is /subdir/
+A service worker’s scope is determined by the location of its JavaScript file on the web server. For example, if a service worker runs on a page located at `/subdir/index.html`,  and is located at `/subdir/sw.js`, the service worker's scope is `/subdir/`.
 
 Scope limits which pages are controlled by a service worker, not which requests it can intercept. Once a service worker controls a page, it can intercept any network request that page makes, including requests to cross-origin resources.
 
 ## Service Worker Lifecycle
 
-Understanding the service worker lifecycle is key to understand how updates to your Mendix PWA are handled. A service worker goes through several distinct phases:
+To understand how updates to your Mendix PWA are handled, you need to understand the service worker lifecycle. A service worker goes through several distinct phases:
 
-1. Registration: 
-    This is the initial step. The browser downloads the service worker file. If the code contains syntax errors, registration fails and the service worker is discarded.
-2. Installation
-    During this phase, the service worker typically caches static assets your PWA needs to function offline. If all assets are successfully precached, the installation succeeds. If installation fails, the service worker is discarded.
-    Once installed:
-    - It becomes activated immediately if no other service worker is currently controlling the page.
-    - If there is already an active service worker, the new one will be installed but enters a waiting state.
-    The "waiting" state, ensures that updates to your application are delivered smoothly and without interrupting your users' current interactions.
-3. Activation: 
-    Once installed, the service worker enters the activating state and then becomes activated. An activated service worker takes control of pages within its scope, that means it is ready to intercept requests.
-4. Redundant:
-    A service worker can become redundant if a new version replaces it, or if it fails to install.
+1. **Registration** — In this step the browser downloads the service worker file. If the code contains syntax errors, registration fails and the service worker is discarded.
+2. **Installation** — During this phase, the service worker typically caches static assets your PWA needs to function offline. If all assets are successfully pre-cached, the installation succeeds. If installation fails, the service worker is discarded.
+    * Once installed:
+        - It becomes activated immediately if no other service worker is currently controlling the page.
+        - If there is already an active service worker, the new one will be installed but enters a **Waiting** state. The **Waiting** state, ensures that updates to your application are delivered smoothly and without interrupting your users' current interactions.
+3. **Activation** — Once installed, the service worker enters the **Activating** state, and then becomes **Activated**. An **Activated** service worker takes control of pages within its scope (meaning it is ready to intercept requests).
+4. **Redundant** — A service worker can become redundant if a new version replaces it, or if it fails to install.
 
 ## Waiting for Service Worker Readiness
 
-You may want to wait until the Service Worker is ready before performing operations that rely on it, such as interacting with the app while offline.
-The browser provides the [ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready) property, which returns a Promise that resolves when a service worker is active, to ensure that the service worker is fully initialized and that precaching of assets is complete so the app can work offline.
+You may want to wait until the Service Worker is ready before performing operations that rely on it, such as interacting with the app while offline. The browser provides the [ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready) property, which returns a Promise that resolves when a service worker is active, to ensure that the service worker is fully initialized and that precaching of assets is complete so the app can work offline.
 
 ```javascript
 export async function waitForAppReady() {
