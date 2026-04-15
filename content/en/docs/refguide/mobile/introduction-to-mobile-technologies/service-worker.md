@@ -1,6 +1,6 @@
 ---
 title: "PWA Service Worker"
-url: /refguide/mobile/introduction-to-mobile-technologies/service-worker
+url: /refguide/mobile/introduction-to-mobile-technologies/pwa-service-worker/
 weight: 20
 ---
 

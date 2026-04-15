@@ -13,7 +13,7 @@ Progressive web apps (PWAs) are an evolution of traditional web apps. Overall, P
 Progressive web apps have three main characteristics:
 
 * **Installable** – PWAs let you add your app to your user's home screen and start a full screen app. This makes PWAs feel more fully-capable native apps.
-* **Reliable** – Using service workers, PWAs can work offline or partially offline. Mendix PWAs can work partially offline (resources like styling, pages, and images are cached) or fully offline (like native mobile apps).
+* **Reliable** – Using [service workers](/refguide/mobile/introduction-to-mobile-technologies/pwa-service-worker/), PWAs can work offline or partially offline. Mendix PWAs can work partially offline (resources like styling, pages, and images are cached) or fully offline (like native mobile apps).
 * **Capable** – PWAs can leverage several device capabilities like the camera and location, and can offer support for web push notifications. Note that support for features depend on which browser is used.
 
 ## Enabling PWA Features
@@ -38,7 +38,7 @@ To be able to fully test PWA functionalities, the app needs to be deployed to th
 
 ### Publishing as a Progressive Web App
 
-When checked and deployed to the cloud, the app registers a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) that is the basis for PWAs. On offline navigation profiles, this option is always enabled. In online navigation profiles, enabling this option will also give the end-user a custom page when the device has no connection. Where desired, this page can be customized by adding an *offline.html* page to the theme folder (for example, *theme/offline.html*). Note that this page should not load any other resources over the network.
+When checked and deployed to the cloud, the app registers a [service worker](/refguide/mobile/introduction-to-mobile-technologies/pwa-service-worker/) that is the basis for PWAs. On offline navigation profiles, this option is always enabled. In online navigation profiles, enabling this option will also give the end-user a custom page when the device has no connection. Where desired, this page can be customized by adding an *offline.html* page to the theme folder (for example, *theme/offline.html*). Note that this page should not load any other resources over the network.
 
 ### Allowing "Add to Home Screen" Prompt
 
