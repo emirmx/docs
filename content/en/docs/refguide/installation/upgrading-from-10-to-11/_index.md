@@ -109,7 +109,7 @@ We understand that this change might cause unexpected changes in existing applic
 
 #### Mendix 11.6.3
 
-In Mendix 11.6.3, we introduced [an option](https://docs.mendix.com/refguide/app-settings/#new-string-behavior) to toggle between the old and the new client-side String attribute behaviors. Projects migrating from Mendix 10 to 11 will retain the old String behavior unless you manually switch to the new one.
+In Mendix 11.6.3, we introduced [an option](https://docs.mendix.com/refguide/runtime-tab/#new-string-behavior) to toggle between the old and the new client-side String attribute behaviors. Projects migrating from Mendix 10 to 11 will retain the old String behavior unless you manually switch to the new one.
 
 It is recommended to migrate your pre-existing projects to use the new behavior as soon as possible. The new behavior will improve consistency between nanoflows and microflows, which will lead to fewer bugs in your applications.
 
