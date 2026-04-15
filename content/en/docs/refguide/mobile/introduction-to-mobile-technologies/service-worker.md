@@ -1,5 +1,5 @@
 ---
-title: "Service Worker and PWA Updates"
+title: "PWA Service Worker"
 url: /refguide/mobile/introduction-to-mobile-technologies/service-worker
 weight: 20
 ---
@@ -12,7 +12,7 @@ A service worker's primary role is to intercept network requests made by your PW
 
 ## Service Worker Scope {#scope}
 
-A service worker’s scope is determined by the location of its JavaScript file on the web server. For example, if a service worker runs on a page located at `/subdir/index.html`,  and is located at `/subdir/sw.js`, the service worker's scope is `/subdir/`.
+A service worker’s scope is determined by the location of its JavaScript file on the web server. For example, if a service worker runs on a page located at `/subdir/index.html` and is located at `/subdir/sw.js`, then the service worker's scope is `/subdir/`.
 
 Scope limits which pages are controlled by a service worker, not which requests it can intercept. Once a service worker controls a page, it can intercept any network request that page makes, including requests to cross-origin resources.
 
