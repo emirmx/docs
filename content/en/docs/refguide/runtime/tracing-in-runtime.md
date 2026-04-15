@@ -179,7 +179,7 @@ Below is an example of how to create a span and wrap some code in it. The `run` 
 ```java
 Core.tracing()
   .createSpan("my span name")
-  .withAttribute("attribute key", "attribute value")
+  .withAttribute("attribute_key", "attribute value")
   .run(span -> {
     // the code here will be wrapped by the span
   });
@@ -190,7 +190,7 @@ If the flow of control is more complicated, then you can also handle the lifecyc
 ```java
 var span = Core.tracing()
   .createSpan("my span name")
-  .withAttribute("attribute key", "attribute value")
+  .withAttribute("attribute_key", "attribute value")
   .start();
 try {
   // your code
