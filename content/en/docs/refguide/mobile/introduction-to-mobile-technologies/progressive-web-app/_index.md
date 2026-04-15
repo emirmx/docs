@@ -34,7 +34,7 @@ Within the navigation profiles the following PWA features can be configured:
 
 {{< figure src="/attachments/refguide/mobile/progressive-web-app/settings.png" alt="PWA settings"   width="350"  class="no-border" >}}
 
-To be able to fully test PWA functionalities, the app needs to be deployed to the cloud. This is because the service worker is only enabled in the cloud over HTTPS.
+To fully test PWA capabilities, the app needs to be deployed to the cloud. This is because the service worker is only enabled in the cloud over HTTPS.
 
 ### Publishing as a Progressive Web App
 
