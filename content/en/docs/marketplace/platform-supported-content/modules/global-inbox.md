@@ -25,7 +25,7 @@ While the architecture can support broader use cases, the current scope focuses 
 ### Features
 
 * Consists of two Mendix modules: [Global Inbox](https://marketplace.mendix.com/link/component/259162) module and [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155)
-* Intended for Mendix Applications that use [Mendix Workflows](https://docs.mendix.com/refguide/workflows/) to manage workflows. Support for non-Mendix Workflows will be introduced at a later stage.
+* Intended for Mendix Applications that use [Mendix Workflows](/refguide/workflows/) to manage workflows. Support for non-Mendix Workflows will be introduced at a later stage.
 * Redirects users to Publisher Applications to act on the user task.
 
 ### Prerequisites
@@ -38,7 +38,7 @@ While the architecture can support broader use cases, the current scope focuses 
 * [Mendix Business Events](https://marketplace.mendix.com/link/component/202649)
 * [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907)
     * Requires a license for apps running on Mendix Cloud
-    * Alternatively, you can use [your own Kafka cluster](https://docs.mendix.com/appstore/services/business-events-deployment/#byok)
+    * Alternatively, you can use [your own Kafka cluster](/appstore/services/business-events-deployment/#byok)
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187) (v4.0.0 or higher)
 * [Atlas Web Content](https://marketplace.mendix.com/index3.html) (v4.0.0 or higher)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540)
@@ -57,7 +57,7 @@ The **Global Inbox** consists of the following components:
     * **Unassigned tasks**: It shows all unassigned tasks. 
 * [Global Inbox Connector](https://marketplace.mendix.com/link/component/259155): A module that can be imported into each Publisher Application and contains the functionality to publish task updates through Mendix Business Events. It is intended for Mendix Publisher Applications that use Mendix Workflows to manage workflows.
 * [Mendix Business Events](https://marketplace.mendix.com/link/component/202649): Events that carry information about user tasks and workflow changes, such as task creation, updates, or completion. All relevant information about  Business Events can be found in the Mendix Business Events documentation. The Global Inbox owns the definition of the Business Events, and the Publisher Applications publishes them. 
-* [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907): The Event Broker is used to deliver all Business Events from Publisher Applications to the Global Inbox. You can use [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) (requires a license) or [bring your own Kafka](https://docs.mendix.com/appstore/services/business-events-deployment/#byok) cluster.
+* [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907): The Event Broker is used to deliver all Business Events from Publisher Applications to the Global Inbox. You can use [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) (requires a license) or [bring your own Kafka](/appstore/services/business-events-deployment/#byok) cluster.
 
 ### Event Flow
 
