@@ -99,8 +99,13 @@ Call tools in parallel for independent operations (reading multiple files, multi
 * **Glob** – Use to find files by pattern (e.g., `*.md`, `**/*config*`)
 * **Grep** – Use to search file contents for specific text or patterns
 * **Write** – Use only for creating new files (prefer Edit for existing files)
+* **Helper Scripts** – Use `.claude/scripts/resolve-doc-url.sh` to resolve documentation URLs (e.g., `/path/to/page/`) to their source markdown files. This is faster and more token-efficient than using Grep to search front matter.
 
 ### Cross-Reference Verification
+
+When following or verifying documentation links:
+* Use `.claude/scripts/resolve-doc-url.sh "/path/to/page/"` to quickly find the source file for a URL
+* This is more efficient than Grep for URL-to-file lookups
 
 When modifying URLs or anchor IDs:
 1. Use Grep to search for the old URL/anchor across all documentation files
