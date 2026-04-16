@@ -5,9 +5,9 @@ user-invocable: true
 disable-model-invocation: false
 ---
 
-> **Skill progression:** This preserves structure. If only basic fixes are needed, use `/proofread`. For deeper reorganization, suggest `/enhance`.
+> **Skill progression:** This preserves structure. If only basic fixes are needed, use `/docs-proofread`. For deeper reorganization, suggest `/docs-enhance`.
 
-First, use the Skill tool to invoke the `proofread` skill.
+First, use the Skill tool to invoke the `docs-proofread` skill.
 
 Then immediately continue: improve clarity and readability without changing meaning, structure, or paragraph order:
 
@@ -22,7 +22,7 @@ Then immediately continue: improve clarity and readability without changing mean
 * Ensure consistent application of Microsoft Writing Style Guide
 
 **Polish should NOT**:
-* Move paragraphs or restructure sections (that's `/enhance`)
+* Move paragraphs or restructure sections (that's `/docs-enhance`)
 * Change technical meaning or accuracy
 * Significantly increase document length
 * Modify code samples (flag issues instead)
