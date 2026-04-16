@@ -692,10 +692,13 @@ These are the currently supported functions:
 * LENGTH
 * LOCATE
 * LOWER
+* LTRIM
 * RANGEBEGIN
 * RANGEEND
 * REPLACE
 * ROUND
+* RTRIM
+* TRIM
 * UPPER
 
 ### CAST{#cast}
@@ -1329,6 +1332,41 @@ SELECT * FROM Sales.Customer WHERE LOWER(LastName) = 'doe'
 This query can no longer take advantage of an index for `LastName` for comparison, resulting in a performance decrease.
 {{% /alert %}}
 
+### LTRIM{#ltrim}
+
+Removes leading characters from a `string`. If no `character` is specified for trimming, space is used.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+LTRIM ( expression [, character ] )
+```
+
+##### expression
+
+`expression` is any string expression to be trimmed. If `expression` is `NULL`, the function will return `NULL`.
+
+##### character
+
+`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+
+{{% alert color="info" %}}
+Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+#### Examples
+
+```sql
+SELECT LTRIM(LastName, 'D') FROM Sales.Order WHERE Price = 1.50000001
+```
+
+| LastName |
+|:---------|
+| oe       |
+| Moose    |
+
 ### Ranges in Datasets
 
 {{% alert color="info" %}}
@@ -1507,6 +1545,41 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 | 0.33         | 3.33333333 |
 | 1.17         | 1.17142857 |
 
+### RTRIM{#rtrim}
+
+Removes trailing characters from a `string`. If no `character` is specified for trimming, space is used.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+RTRIM ( expression [, character ] )
+```
+
+##### expression
+
+`expression` is any string expression to be trimmed. If `expression` is `NULL`, the function will return `NULL`.
+
+##### character
+
+`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+
+{{% alert color="info" %}}
+Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+#### Examples
+
+```sql
+SELECT RTRIM(LastName, 'e') FROM Sales.Order WHERE Price = 1.50000001
+```
+
+| LastName |
+|:---------|
+| Do       |
+| Moos     |
+
 ### SUBSTRING{#substring-function}
 
 #### Description
@@ -1558,6 +1631,41 @@ ORDER BY LastName LIMIT 1
 | Substring_13 | Substring_13_5 | Substring_13_10 | Substring_20     |
 |:-------------|:---------------|:----------------|:-----------------|
 | logical      | logic          | logical         | *(empty string)* |
+
+### TRIM{#trim}
+
+Removes leading and trailing characters from a `string`. If no `character` is specified for trimming, space is used.
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+TRIM ( expression [, character ] )
+```
+
+##### expression
+
+`expression` is any string expression to be trimmed. If `expression` is `NULL`, the function will return `NULL`.
+
+##### character
+
+`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+
+{{% alert color="info" %}}
+Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+#### Examples
+
+```sql
+SELECT TRIM(TRIM(LastName, 'e'), 'D') FROM Sales.Order WHERE Price = 1.50000001
+```
+
+| LastName |
+|:---------|
+| o        |
+| Moos     |
 
 ### UPPER
 
