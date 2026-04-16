@@ -1,6 +1,6 @@
 ---
-name: polish
-description: Proofreads documentation and improves clarity, readability, and word choice without changing meaning or reorganizing structure. Simplifies complex sentences, applies style guide standards, and converts passive voice to active voice. Use when the user wants to polish, improve clarity, make more readable, or clean up documentation while preserving its structure.
+name: docs-polish
+description: Proofreads a single documentation page and improves clarity, readability, and word choice without changing meaning or reorganizing structure. Simplifies complex sentences, applies style guide standards, and converts passive voice to active voice. Use when the user wants to polish, improve clarity, make more readable, or clean up documentation while preserving its structure.
 user-invocable: true
 disable-model-invocation: false
 ---

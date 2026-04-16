@@ -1,6 +1,6 @@
 ---
-name: review
-description: Analyzes documentation pages and generates suggestions for improvements, clarifications, inconsistencies, and structural changes without making any edits. Use when the user asks to review, analyze, audit, or provide feedback on documentation, or when they want suggestions before making changes.
+name: docs-review
+description: Analyzes a documentation page and generates suggestions for improvements, clarifications, inconsistencies, and structural changes without making any edits. Use when the user asks to review, analyze, audit, or provide feedback on documentation, or when they want suggestions before making changes.
 user-invocable: true
 disable-model-invocation: false
 ---

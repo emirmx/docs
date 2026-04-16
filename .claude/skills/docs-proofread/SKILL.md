@@ -1,6 +1,6 @@
 ---
-name: proofread
-description: Checks and fixes spelling, grammar, punctuation, basic Markdown formatting, alt text, and required front matter fields. Makes minimal technical corrections without rewording or restructuring. Use when the user asks to proofread, check for errors, fix typos, or perform a light technical review of documentation.
+name: docs-proofread
+description: In a documentation page, checks and fixes spelling, grammar, punctuation, basic Markdown formatting, alt text, and required front matter fields. Makes minimal technical corrections without rewording or restructuring. Use when the user asks to proofread, check for errors, fix typos, or perform a light technical review of documentation.
 user-invocable: true
 disable-model-invocation: false
 ---
@@ -24,4 +24,4 @@ Do NOT:
 * Simplify complex sentences
 * Reorganize content
 
-If you notice style or clarity issues that need improvement, finish proofreading first, then suggest the user run `/polish` for those improvements.
+If you notice style or clarity issues that need improvement, finish proofreading first, then suggest that the user run `/polish` for those improvements.

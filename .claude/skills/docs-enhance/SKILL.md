@@ -1,6 +1,6 @@
 ---
-name: enhance
-description: Performs comprehensive editing including reorganization, restructuring, and rephrasing while preserving original meaning and intent. Improves flow, strengthens weak phrasing, and enhances overall quality. Use when documentation needs significant structural improvements, better organization, or when the user mentions reorganize, restructure, rewrite, or enhance.
+name: docs-enhance
+description: On a single documentation page, performs comprehensive editing including reorganization, restructuring, and rephrasing while preserving original meaning and intent. Improves flow, strengthens weak phrasing, and enhances overall quality. Use when documentation needs significant structural improvements, better organization, or when the user mentions reorganize, restructure, rewrite, or enhance.
 user-invocable: true
 disable-model-invocation: true
 ---

@@ -1,6 +1,6 @@
 ---
-name: add
-description: Adds new content to existing documentation pages while preserving the original structure and meaning. Integrates new sections, paragraphs, or information smoothly with appropriate transitions. Use when the user wants to add, insert, include, or append new content to existing pages without rewriting what's already there.
+name: docs-add
+description: Adds new content to an existing documentation page while preserving the original structure and meaning. Integrates new sections, paragraphs, or information smoothly with appropriate transitions. Use when the user wants to add, insert, include, or append new content to existing pages without rewriting what's already there.
 user-invocable: true
 disable-model-invocation: true
 ---
