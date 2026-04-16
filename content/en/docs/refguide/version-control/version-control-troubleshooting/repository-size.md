@@ -79,7 +79,7 @@ This tool is executed on a Mendix Git repository. If your Mendix app is still on
 
 The cleanup tool will reduce the size of the repository to a minimum, by only retaining the latest commit of the main branch. This means that all work on branches that have been merged to main branch are kept, but the commits themselves (author, changes per commit, ...) are not.
 
-{{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/git_fixer_mode.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/git_fixer_mode.png"  >}}
 
 {{% alert color="info" %}}
 Uncommitted work, or work committed to branches that have not been merged to the main branch, will be permanently removed from the repository.
@@ -144,7 +144,7 @@ Force pushing your results to the server is a separate step, in a separate scrip
 
 If you are using Mendix Team Server as your Git version control server, you can follow the steps below:
 
-* Ensure you have configured a Personal Access Token to use it as described in the [Authenticating to Team Server](/refguide/using-version-control-in-studio-pro/#authenticating) section in *Using Version Control in Studio Pro*.
+* Ensure you have configured a Personal Access Token to use it as described in the [Authenticating to Team Server](/refguide/version-control-external-tools/#authenticating) section in *Using Version Control in Studio Pro*.
 * Run the second script.
     * When prompted, enable force pushing.
     * Conduct the force push.
@@ -207,7 +207,7 @@ If you are still on SVN in Studio Pro 9, see the [Recommendation on Avoiding Git
 
 Follow the decision tree in the image below to troubleshoot Git-related performance issues:
 
-{{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png"  >}}
 
 \* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
 

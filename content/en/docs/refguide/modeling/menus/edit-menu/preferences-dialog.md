@@ -108,6 +108,10 @@ You can specify which repositories to use for Gradle. The content of this field 
 
 ### Generative AI
 
+* **Enable Maia** - When enabled, you can access all Maia capabilities in Studio Pro. It is enabled by default.
+
+In Studio Pro 11.7 and below, the **Generative AI** section contains the following settings:
+
 The **Generative AI** section contains the following settings:
 
 * **Enable Start with Maia** – When enabled, you can use the **Start with Maia** starting point in Studio Pro to help you create an app. For more information on how to use this feature, see [Start with Maia](/refguide/start-with-maia/). It is enabled by default.
@@ -317,6 +321,10 @@ This setting is enabled by default. The editor allows the user to write rich tex
 
 You can publish data as a GraphQL service. When you enable this feature, you can indicate that a published OData service [also supports GraphQL](/refguide/published-odata-services/#supports-graphql).
 
+### JavaScript Action Editor
+
+Select this option to use the modernized version of the JavaScript action Editor. You must close all open JavaScript actions to use this feature.
+
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
@@ -326,6 +334,12 @@ This setting allows you to set the beta version as the default editor.
 This option allows you to use the web version of the system texts editor. It is enabled by default.
 
 If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
+
+### Workflow
+
+In Studio Pro 11.8, select the **Enable workflow event sub-processes (beta)** option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+
+In Studio Pro 11.9 and above, this option is removed. Workflow event sub-processes are in general availability and are enabled by default.
 
 ## Read More
 

@@ -12,7 +12,7 @@ description: "Describes the Snowflake Cortex service."
 
 ## Integrating Your Mendix App with Snowflake Cortex
 
-To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install and configure the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install and configure the [Snowflake AI Data Connector](/appstore/connectors/snowflake/snowflake-ai-data-connector/).
 
 Mendix also offers a [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845), which you can use as an example of how to implement the Cortex functionalities in your own app.
 
@@ -37,7 +37,7 @@ Under the hood, the functionalities are implemented by calling them from microfl
 
 ### Implementing the Analyst Functionality
 
-For more information about configuring the integration between Mendix and Snowflake Cortex Analyst, see [Configuring Snowflake Cortex Analyst](/appstore/connectors/snowflake/snowflake-rest-sql/#cortex-analyst).
+For more information about configuring the integration between Mendix and Snowflake Cortex Analyst, see [Configuring Snowflake Cortex Analyst](/appstore/connectors/snowflake/snowflake-ai-data-connector/#cortex-analyst).
 
 ### Implementing Other Functionalities {#functionalities}
 
@@ -47,7 +47,7 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
     For more information, see [How to Use Marketplace Content](/appstore/use-content/).
 
-2. In Studio Pro, in the [App Explorer](https://docs.mendix.com/refguide/app-explorer/), go to **Showcase_AI_RESTSQLAPI** > **Pages**.
+2. In Studio Pro, in the [App Explorer](/refguide/app-explorer/), go to **Showcase_AI_RESTSQLAPI** > **Pages**.
 
     This section contains the following pages: 
 
@@ -58,7 +58,7 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
    
 3. To see how a Snowflake Cortex Analyst action is called, use the **Explorer** search box to find and open the *EXAMPLE_CortexAnalyst_GenerateResponseMessage** microflow.
 
-   {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/CortexAnalystRequestExample.png" >}}
 
     This microflow calls the Snowflake Cortex Analyst function.
 

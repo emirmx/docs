@@ -55,7 +55,7 @@ Selecting the infrastructure for integrating GenAI into your Mendix application 
 * Your Own Connector: Optionally, if you prefer a custom connector, you can integrate your chosen infrastructure. However, this document focuses on the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors, as they offer comprehensive support and ease of use to get started.
 
 {{% alert color="info" %}}
-Not all models support function calling. Ensure that your preferred GenAI provider is set up in your Mendix app and that a compatible model is available. Mendix provides an [overview of models and their capabilities](https://docs.mendix.com/appstore/modules/genai/#models).
+Not all models support function calling. Ensure that your preferred GenAI provider is set up in your Mendix app and that a compatible model is available. Mendix provides an [overview of models and their capabilities](/appstore/modules/genai/#models).
 {{% /alert %}}
 
 ### Customizing Microflows {#microflows}
@@ -152,6 +152,10 @@ Optionally, you can change the system prompt to provide the model additional ins
 3. Inside this action, find the `System prompt` parameter, which has by default an empty value.
 4. Update the `System prompt` value to reflect your desired behavior. For example, *`Answer like a Gen Z person. Always keep your answers short.`*
 5. Save the changes.
+
+### Optional: Setting User Access and Approval
+
+When adding tools to a request, you can optionally set a [User Access Approval](/appstore/modules/genai/genai-for-mx/commons/#enum-useraccessapproval) value to control if the user first needs to confirm the tool before execution or if the tool is even visible to the user. To show different title and description for the tool, you may modify the `DiplayTitle` and `DisplayDescription` which are only used for display and can thus be less technical or detailed than the `Name` and `Description` of the tool.
 
 ## Testing and Troubleshooting {#testing-troubleshooting}
 
