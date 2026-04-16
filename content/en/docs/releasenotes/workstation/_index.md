@@ -14,12 +14,57 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 ### Release date: April ??, 2026
 
+### Workstation Management
+
+* Testing improvements - We have enhanced the **Test Your Station** page by making it simpler to send messages to devices without enforcing strict validations. In addition, the page now displays the connection status for each device, as well as the last recorded error, if any.
+
+#### New Features
+
+test coverage
+
+### Workstation Client
+
+#### New Features
+
+SetupDevice
+SetupDevice(name, class, initialize, createDevice, entity, onConnect, onMessage, onDisconnect)
+
+A new high-level API makes creating reusable peripheral modules easier. Solves get/create race condition and doesn't require any use of subscription APIs.
+
+Other additions
+
+
+
+removes Station_User association
+
+fixes ParseTighteningResultRevision001 name
+
+moved all subscription JSAs into _USE_ME/Subscriptions
+
+adds /rest/stationconnector/publickey API for future app-key setup improvements
+
+### Fixes
+
+fixes bug where not receiving devices list wouldn't trigger connection timeout - now using shared abort signal
+
+fixes bug where late discovered devices aren't added to internal device list
+
+fixes bug where callbacks fail after object arguments are garbage collected - now keeps subscriptions to all objects that we hold to prevent garbage collection
+
+fixes bug where new devices aren't connectable
 
 
 ### Deprecations
 
 * We have removed support for named events using strings and string expressions instead of object attributes.
+* We have deprecated the following actions:
 
+    * `SendMessage` and `WaitForResponse` - Deprecated in favor of `SendDeviceMessage` and `WaitForDeviceMessage`
+    * `SubscribeToMessages` (with `subscribeOnce` and implicit connection) - Deprecated in favor of `SubscribeToDeviceMessages`, `Unsubscribe`, and `ConnectDevice`
+    * `SubscribeToErrors` (with `subscribeOnce` and implicit connection) - Deprecated in favor of `SubscribeToDeviceErrors`, `Unsubscribe`, and `ConnectDevice`
+    * `UnsubscribeByDevice` and `UnsubscribeByContext` - Deprecated in favor of `Unsubscribe`
+
+    The deprecated actions are longer exposed as nanoflows and have been moved to the `_USE_ME/Deprecated` folder.
 
 ## 3.5.0
 

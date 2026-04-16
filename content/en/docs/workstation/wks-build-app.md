@@ -65,7 +65,11 @@ To change a user's role or remove them from the workspace, click the three-dot i
 
 ## Getting Started with Custom Logic for Device Interaction
 
-Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
+Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and actions serve as the core building blocks for integrating devices into your Mendix applications and tailoring the functionality to your specific requirements.
+
+### Nanoflows
+
+The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
 * **GetStation** - Retrieves the computer information connected to the Client.
 * **SendDeviceMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
@@ -78,10 +82,18 @@ Now that you are ready to start using Mendix Workstation, you can implement your
 * **SetupDevice** - Creates and configures a device with the specified parameters.
 * **ConnectDevice** - Connects to a specific device.
 * **DisconnectDevice** - Unsubscribes and completely disconnects from a specific device.
+* **Initialize** - Initializes the Client without creating a station or device.
+* **GetStation** - Retrieves the Station object.
+* **CreateStation**, **CommitStation**, **CreateDevice**, **CommitDevice** - Internal nanoflows, required to support the React strict mode.
 
+### Widgets
 
+The following widgets allow you to specify when to execute an action:
 
-These nanoflows and actions serve as the core building blocks for integrating devices into your Mendix applications and tailoring the functionality to your specific requirements.
+* **On Load/Unload** - Execute the action when the widget is first rendered, or when it is removed (unloaded).
+* **On Change** - Execute the action when the specified attribute changes.
+* **On Equal** - Execute the action when an attribute is equal to the specified expression.
+* **On True** - Execute the action when the specified expression is true.
 
 ### Understanding the Domain Model
 
