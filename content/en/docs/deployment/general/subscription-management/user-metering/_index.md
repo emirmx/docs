@@ -86,7 +86,7 @@ If the application is associated with a Single-App Internal User Subscription, t
 <!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
 {{% alert color="info" %}}
-An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that application and will also be counted separately for any other apps they use. 
+An internal user accessing multiple apps, one of which is covered under a Single-App Internal User Pack, is counted as a single-app internal user for that application and is also counted separately for any other applications they use. 
 {{% /alert %}}
 
 ### Classifying Multi-App Internal Users
