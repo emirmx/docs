@@ -75,18 +75,18 @@ Once classified, the user is licensed under the External User Subscription and e
 All remaining users are classified as `Internal` users and further classified as described in the sections below.
 
 {{% alert color="info" %}}
-A multi-app user who is marked as `Internal` in one application and `External` in another will be counted as an internal user. 
+A multi-app user who is marked as `Internal` in one application and `External` in another is counted as an internal user. 
 {{% /alert %}}
 
 ### Classifying Single-App Internal Users
 
 After `External` users are classified, the classification process further classifies the single-app internal users.
 
-If the application is associated with a Single-App Internal User Subscription, the user of the application will be classified as a single-app internal user. This user will be counted against the Single-App Internal User Pack for that application.
+If the application is associated with a Single-App Internal User Subscription, the user of the application is classified as a single-app internal user. This user is then counted against the Single-App Internal User Pack for that application.
 <!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
 {{% alert color="info" %}}
-An internal user accessing multiple applications, one of which is covered under a Single-App Internal User Pack, will be counted as a single-app internal user for that application and will also be counted separately for any other applications they use. 
+An internal user accessing multiple applications, one of which is covered under a Single-App Internal User Subscription, is counted as a single-app internal user for that application and is also counted separately for any other applications they use. 
 {{% /alert %}}
 
 ### Classifying Multi-App Internal Users
