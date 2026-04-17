@@ -20,14 +20,15 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 * Testing improvements - We have enhanced the **Test Your Station** page by making it simpler to send messages to devices without enforcing strict validations. In addition, the page now displays the connection status for each device, as well as the last recorded error, if any.
 
-### Workstation Client
+### Workstation Connector
 
 #### New Features
 
-* New app key-related API - We have added a new `/rest/stationconnector/publickey` API for future improvements to app key configuration.
-* New API for reusable modules - We have created a new high-level `SetupDevice` API to make the creation of reusable peripheral modules easier. The new API does not require the use of any subscription-related APIs.
+* New API for reusable modules - We have created a new high-level `SetupDevice` API to simplify the creation of custom, reusable peripheral modules for your organization. The new API does not require the use of any subscription-related APIs.
 * Better organization for subscription-related actions - We have moved the subscription-related Java actions to the `_USE_ME/Subscriptions` in order to provide more clarity for the user.
 * New nanoflows, Java actions, and widgets - We have added a number of other new nanoflows, Java actions, and widgets that you can use to configure the behaviour of your application. For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
+* Strict mode compatibility - We have changed certain APIs used by the Workstation Connector, so that it is now compatible with [strict mode](/refguide/strict-mode/), increasing the security. Previously, the connector used some APIs that were restricted in strict mode.
+* New app key-related API - We have added a new `/rest/stationconnector/publickey` API for future improvements to app key configuration.
 
 ### Fixes
 
