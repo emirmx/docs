@@ -102,7 +102,7 @@ To use the Agent Editor functionalities in your app, you must perform the follow
 6. Deploy the agent to cloud environments.
 7. Improve the agent in the next iterations.
 
-For a step by step tutorial, check out the [create your first agent](https://docs.mendix.com/appstore/modules/genai/how-to/howto-single-agent/#define-agent-editor) documentation.
+For a step by step tutorial, check out the [create your first agent](/appstore/modules/genai/how-to/howto-single-agent/#define-agent-editor) documentation.
 
 ### Defining the Model {#define-model}
 
@@ -234,13 +234,13 @@ When configuring the action, select the Agent document so that the right agent i
 
 Optionally, you can pass a `Request` object to set request-level values, and a `FileCollection` object with files to send along with the user message to make use of vision or document chat capabilities. Support for files and images depends on the underlying large language model. Refer to the documentation of the specific connector.
 
-The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic. Additionally, all agents created via the Agent Editor extension are seamlessly integrated with other Mendix offerings, such as the [Token consumption monitor](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#snippet-token-monitor) or the [Traceability](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/#traceability) feature from [ConversationalUI](https://docs.mendix.com/appstore/modules/genai/genai-for-mx/conversational-ui/).
+The output is a `GenAICommons.Response` object, aligned with the GenAI Commons and Agent Commons domain models and actions, which can be used for further logic. Additionally, all agents created via the Agent Editor extension are seamlessly integrated with other Mendix offerings, such as the [Token consumption monitor](/appstore/modules/genai/genai-for-mx/conversational-ui/#snippet-token-monitor) or the [Traceability](/appstore/modules/genai/genai-for-mx/conversational-ui/#traceability) feature from [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/).
 
 ### Deploying the Agent to Cloud Environments {#deploy-agent}
 
 Agents created with the Agent Editor are documents in the app model. This means they are packaged and deployed together with the rest of the app whenever a deployment is performed.
 
-Environment-specific flexibility is provided through constants. Values such as the model key, knowledge base key, or custom MCP endpoint can be overridden per app environment during the deployment process. For details, see [Environment Details: Constants](https://docs.mendix.com/developerportal/deploy/environments-details/#constants).
+Environment-specific flexibility is provided through constants. Values such as the model key, knowledge base key, or custom MCP endpoint can be overridden per app environment during the deployment process. For details, see [Environment Details: Constants](/developerportal/deploy/environments-details/#constants).
 
 Agents created in Studio Pro (using Agent Editor) are visible in the Agent Commons UI, but they are not editable there.
 
