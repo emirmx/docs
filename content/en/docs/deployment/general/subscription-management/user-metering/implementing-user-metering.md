@@ -56,7 +56,7 @@ There are several approaches to classify users as `Internal` or `External`, rang
 
 ### IdP-Based User Classification
 
-This method requires one of the following identity modules to be enabled: OIDC SSO, SCIM, or SAML. A key advantage of this approach is that it does not require any modifications to your existing app. Classification can begin immediately by setting a constant. However, because users are only classified when they log in, it may take some time before all end users are classified.
+This method requires one of the following identity modules to be enabled: OIDC SSO, SCIM, or SAML. A key advantage of this approach is that it does not require any modifications to your existing app. Classification can begin immediately by setting a constant. However, because users are only classified when they log in, it may take some time before all end-users are classified.
 
 ### Userrole-Based User Classification
 
@@ -80,7 +80,7 @@ Classification by the platform is not supported by using your email domains, nor
 If you prefer not to use the custom User Classification module, you can instead create the user classification logic entirely from scratch using custom microflows. This approach provides maximum control and flexibility, allowing you to define any classification rules and processes according to your specific requirements. 
 
 {{% alert color="info" %}}
-This approach is for end users who are already set up in your app. For new end users onboarding into your app, you can implement a similar logic to set the `UserType` attribute during initial end user creation.
+This approach is for end-users who are already set up in your app. For new end-users onboarding into your app, you can implement a similar logic to set the `UserType` attribute during initial end-user creation.
 {{% /alert %}}
 
 To update the `UserType` attribute of the `UserReportInfo` entity, refer to the [Domain Model Entities](#domain-model-entities) section for more details.
@@ -132,7 +132,7 @@ The following are entities and their attributes:
 
 2. `UserReportInfo`: The system module also features the `UserReportInfo`.
 
-    * `system.UserReportInfo.UserType`: `UserType` is used to classify end-users as `External` or `Internal` Users. Your application must set the attribute for all existing and new (external) end users. If it does not, Mendix will classify those users as `Internal`.
+    * `system.UserReportInfo.UserType`: `UserType` is used to classify end-users as `External` or `Internal` Users. Your application must set the attribute for all existing and new (external) end-users. If it does not, Mendix will classify those users as `Internal`.
 
     {{< figure src="/attachments/deployment/general/implementing-user-metering/user-type-enumeration.png" class="no-border" >}}
 
