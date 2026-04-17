@@ -132,9 +132,9 @@ Call `Unsubscribe` to end a subscription.
 
 #### SetupDevice
 
-Call this nanoflow to create and configures a device with the specified parameters. This action has the following parameters:
+Call this nanoflow to create and configure a device, and define the actions that should happen on connection, disconnection, or messages from the device. This action has the following parameters:
 
-* `name` 
+* `name`
 * `class` 
 * `initialize`
 * `createDevice` 
