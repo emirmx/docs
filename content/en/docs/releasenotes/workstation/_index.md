@@ -16,46 +16,34 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 ### Workstation Management
 
-* Testing improvements - We have enhanced the **Test Your Station** page by making it simpler to send messages to devices without enforcing strict validations. In addition, the page now displays the connection status for each device, as well as the last recorded error, if any.
-
 #### New Features
 
-test coverage
+* Testing improvements - We have enhanced the **Test Your Station** page by making it simpler to send messages to devices without enforcing strict validations. In addition, the page now displays the connection status for each device, as well as the last recorded error, if any.
 
 ### Workstation Client
 
 #### New Features
 
-SetupDevice
-SetupDevice(name, class, initialize, createDevice, entity, onConnect, onMessage, onDisconnect)
+* New app key-related API - We have added a new `/rest/stationconnector/publickey` API for future improvements to app key configuration.
+* New API for reusable modules - We have created a new high-level `SetupDevice` API to make the creation of reusable peripheral modules easier. The new API does not require the use of any subscription-related APIs.
+* Better organization for subscription-related actions - We have moved the subscription-related Java actions to the `_USE_ME/Subscriptions` in order to provide more clarity for the user.
+* New nanoflows, Java actions, and widgets - We have added a number of other new nanoflows, Java actions, and widgets that you can use to configure the behaviour of your application. For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
 
-A new high-level API makes creating reusable peripheral modules easier. Solves get/create race condition and doesn't require any use of subscription APIs.
-
-Other additions
-
-
-
-removes Station_User association
 
 fixes ParseTighteningResultRevision001 name
-
-moved all subscription JSAs into _USE_ME/Subscriptions
 
 adds /rest/stationconnector/publickey API for future app-key setup improvements
 
 ### Fixes
 
-fixes bug where not receiving devices list wouldn't trigger connection timeout - now using shared abort signal
-
-fixes bug where late discovered devices aren't added to internal device list
-
-fixes bug where callbacks fail after object arguments are garbage collected - now keeps subscriptions to all objects that we hold to prevent garbage collection
-
-fixes bug where new devices aren't connectable
-
+* We have fixed a bug where the connection timeout would not trigger if the devices list was not received. The timeout now uses a shared abort signal.
+* We have fixed a bug where devices were not added to the internal device list if they were added at a later time.
+* We have fixed a bug where callbacks would fail after the Object arguments were garbage collected.
+* We have fixes a bug where it was impossible to connect to new devices.
 
 ### Deprecations
 
+* We have removed the `Station_User` association.
 * We have removed support for named events using strings and string expressions instead of object attributes.
 * We have deprecated the following actions:
 

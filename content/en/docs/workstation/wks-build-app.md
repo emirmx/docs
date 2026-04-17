@@ -67,7 +67,7 @@ To change a user's role or remove them from the workspace, click the three-dot i
 
 Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and actions serve as the core building blocks for integrating devices into your Mendix applications and tailoring the functionality to your specific requirements.
 
-### Nanoflows
+### Nanoflows {#java-actions}
 
 The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
@@ -86,7 +86,7 @@ The following nanoflows and Java actions are essential for establishing connecti
 * **GetStation** - Retrieves the Station object.
 * **CreateStation**, **CommitStation**, **CreateDevice**, **CommitDevice** - Internal nanoflows, required to support the React strict mode.
 
-### Widgets
+### Widgets {#widgets}
 
 The following widgets allow you to specify when to execute an action:
 
