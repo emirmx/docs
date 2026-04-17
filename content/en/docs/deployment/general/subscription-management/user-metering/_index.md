@@ -59,7 +59,7 @@ The user classification and deduplication process determines the user type and t
 
 ### User Identification (Deduplication)
 
-Users are deduplicated based on common identifier values. A user who has different identifier values in the aggregated data cannot be recognized as the same user and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values exist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+Users are deduplicated based on common identifier values. A user who has different identifier values in the aggregated data cannot be recognized as the same user and is counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values exist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
 
 ### Classifying External Users
 
