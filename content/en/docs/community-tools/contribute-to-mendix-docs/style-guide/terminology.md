@@ -33,7 +33,7 @@ When using as a category title or heading, only capitalize "Add" and add an "s" 
 
 > Add-ons
 
-Note: this should not be used to describe APD, ATS, or QSM, as these are now referred to as [Partner Solutions](https://docs.mendix.com/appstore/partner-solutions/).
+Note: this should not be used to describe APD, ATS, or QSM, as these are now referred to as [Partner Solutions](/appstore/partner-solutions/).
 
 ## Agile
 
@@ -55,11 +55,11 @@ Use "app" or "application" when referring to apps in general. Do not capitalize 
 
 The full word "application" has a more well-rounded meaning to it (i.e., web and mobile apps), whereas "app" may connote just mobile app to the reader. Accordingly, it can be better to use "application" at the beginning of documents and then switch to "app" later on. We want to make it clear that Mendix is not just for building mobile apps, but all kinds of applications.
 
-In the context of development and project management, sometimes using "project" can significantly enhance the clarity of the concept, as demonstrated [here](https://docs.mendix.com/control-center/roles-and-permissions/#centralized-project-roles). In such cases, we can use "project" instead of "app" or "application". Note that such usage of "project" should be agreed upon between the Project Manager and the Technical Writer. For further guidelines, see [project](https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2510356519/Terminology#project).
+In the context of development and project management, sometimes using "project" can significantly enhance the clarity of the concept, as demonstrated in [Centralized Project Roles](/control-center/roles-and-permissions/#centralized-project-roles). In such cases, we can use "project" instead of "app" or "application". Note that such usage of "project" should be agreed upon between the Project Manager and the Technical Writer. For further guidelines, see [project](#project).
 
 ## app owner
 
-This is not a formalized/Mendix term (in comparison to [App Contact](https://docs.mendix.com/developerportal/company-app-roles/#app-contact)), so we cannot assume the user knows what this is. This should be defined in general terms and made clearer via context (for example, via the "Copyright" example in the [MindSphere module documentation](https://docs.mendix.com/partners/siemens/mindsphere-module-details#3-1-configuring-the-os-bar)) that it is the user's responsibility to define/interpret what an app owner is for their app.
+This is not a formalized/Mendix term (in comparison to [App Contact](/developerportal/company-app-roles/#app-contact)), so we cannot assume the user knows what this is. This should be defined in general terms and made clearer via context (for example, via the "Copyright" example in the [MindSphere module documentation](/partners/siemens/mindsphere-module-details#3-1-configuring-the-os-bar)) that it is the user's responsibility to define/interpret what an app owner is for their app.
 
 ## article, document, page
 
@@ -408,13 +408,13 @@ Use "their" instead of "his" or "her."
 
 Do not use "male" and "female" as data examples (in enumerations, for example) unless you are also adding "non-binary" and "unlisted." Due to changing terminology and discourse, it is best to avoid "male" and "female" as data examples altogether.
 
-## project
+## project {#project}
 
 Do not use generically. Use "app" instead.
 
 Only use when it appears in the UI.
 
-One exception where "project" can be used in explanatory or descriptive text is when it significantly enhances the clarity of the concept (in the context of development and project management), as demonstrated [here](https://docs.mendix.com/control-center/roles-and-permissions/#centralized-project-roles). Any such usage of "project" should be agreed upon between the Project Manager and the Technical Writer.
+One exception where "project" can be used in explanatory or descriptive text is when it significantly enhances the clarity of the concept (in the context of development and project management), as demonstrated in [Centralized Project Roles](/control-center/roles-and-permissions/#centralized-project-roles). Any such usage of "project" should be agreed upon between the Project Manager and the Technical Writer.
 
 ## quick start
 

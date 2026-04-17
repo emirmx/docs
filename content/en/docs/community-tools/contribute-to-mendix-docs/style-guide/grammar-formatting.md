@@ -5,8 +5,6 @@ weight: 20
 description: "Guidelines on grammar, formatting, capitalization, punctuation, lists, headings, and other writing conventions for Mendix documentation."
 ---
 
-## Introduction
-
 ## Acronyms and Initialisms
 
 Define technical or obscure acronyms and initialisms, and write them out fully the first time before using them throughout the rest of the document.
@@ -132,9 +130,9 @@ Use these phrases consistently when cross-referencing:
 
 > For details on microflow expressions, see Triggering Logic Using Microflows.
 
-> For more information, see the [Troubleshooting](https://docs.mendix.com/refguide/install/#troubleshooting) section of *Installing Mendix Studio Pro*.
+> For more information, see the [Troubleshooting](/refguide/install/#troubleshooting) section of *Installing Mendix Studio Pro*.
 >
-> For more information, see the [Installing Studio Pro Offline](https://docs.mendix.com/refguide/install/#offline) section below.
+> For more information, see the [Installing Studio Pro Offline](/refguide/install/#offline) section below.
 
 Do not use bold or italics on text that is hyperlinked for a cross-reference. The formatting for hyperlinking overrides the need to bold or italicize.
 
@@ -144,7 +142,7 @@ Only link to URLs that use HTTPS. If you're working with a URL that uses HTTP, c
 
 #### APIs
 
-When cross-referencing an API (like Client or Mendix Runtime) that is hosted on <http://apidocs.rnd.mendix.com> but you are only cross-referencing the index (meaning, the general API or the API in its entirety), use a relative link to our docs page for that API: <https://docs.mendix.com/apidocs-mxsdk/apidocs/> .
+When cross-referencing an API (like Client or Mendix Runtime) that is hosted on <http://apidocs.rnd.mendix.com> but you are only cross-referencing the index (meaning, the general API or the API in its entirety), use a relative link to our docs page for that API: <https://docs.mendix.com/apidocs-mxsdk/apidocs/>.
 
 When cross-referencing an API method or a specific element of the API that the user needs to be directed to, use a link to <http://apidocs.rnd.mendix.com> . These links need to be updated/maintained per Studio Pro major version (and thus API version).
 
@@ -176,7 +174,7 @@ You can download it for free at [Tortoise SVN](http://tortoisesvn.tigris.org/) (
 
 ## Dashes
 
-### En Dash
+### En Dash {#en-dash}
 
 Use an en dash (–) in definitions (do not capitalize the word after the en dash) and [number ranges](https://learn.microsoft.com/en-us/style-guide/punctuation/dashes-hyphens/enes).
 
@@ -186,7 +184,7 @@ Use the keyboard shortcut`ALT` + `0150` (or `Option` + `Minus sign` on a Mac)
 
 > 2015–2017
 
-Use an en dash to set off introductory text in list items. If you use introductory text in a list item, make sure all other items in that list have introductory text too. Bold the introductory text if it appears in the UI. For more guidance about list formatting, see <https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#Lists>.
+Use an en dash to set off introductory text in list items. If you use introductory text in a list item, make sure all other items in that list have introductory text too. Bold the introductory text if it appears in the UI. For more guidance about list formatting, see [Lists](#lists).
 
 > * **Decline** – Click this button to reject the request. You can also add a reason. After you decline the request, the submitter will receive a notification.
 > * **Download** – Click this button to download the MPK file of the component.
@@ -206,7 +204,7 @@ Use the keyboard shortcut `ALT` + `0151` (or `Option` + `Shift` + `Minus sign` o
 Dates should be written in the format **month day, year** where:
 
 * month is either the full month in English, or a three-letter abbreviation
-* [day is just the cardinal number](https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#Numbers) (16) not the ordinal number (16th)
+* [day is just the cardinal number](#numbers) (16) not the ordinal number (16th)
 * year is four digits
 
 > September 25, 2023
@@ -272,9 +270,9 @@ Using *italics* for emphasis was permissible in the past, but because italics is
 
 Do not use single or double quotation marks. You may use italics if a user needs to type the entity name or bold if the name is on the screenshot and you are referring to it.
 
-## File Formats
+## File Formats {#file-formats}
 
-Capitalize file formats for consistency. This should make file formats consistent with <https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#Languages> (while covering both options if necessary).
+Capitalize file formats for consistency. This should make file formats consistent with [Languages](#languages) (while covering both options if necessary).
 
 Note that file formats can differ from extensions, and file names and extensions are formatted differently (see below).
 
@@ -372,9 +370,9 @@ For unversioned content and for Studio Pro 10 and above, include Mac instruction
 
 > Press <kbd>Ctrl</kbd> + <kbd>G</kbd> (or <kbd>Command</kbd> + <kbd>G</kbd> on a Mac).
 
-## Languages
+## Languages {#languages}
 
-Capitalize languages. This should make languages consistent with <https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#File-Formats> (while covering both options if necessary).
+Capitalize languages. This should make languages consistent with [File Formats](#file-formats) (while covering both options if necessary).
 
 > HTML, XML, XSC, WSDL
 
@@ -388,7 +386,7 @@ Do not use "i.e." Use "That is,…", "Meaning,…", or "As in,…" instead.
 
 > These panes are dockable (that is, you can move a pane to a different position on the screen and place it there).
 
-## Lists
+## Lists {#lists}
 
 For technical guidance on lists, see Shortcodes, Markdown, and HTML.
 
@@ -428,7 +426,7 @@ In general, do not use periods at the end of bullet points, as bullet points sho
 
 You can use a colon at the end of a list item to introduce an image directly following the next step, helping to maintain the connection.
 
-If your list items contain introductory text, you can set the introductory text off with an en dash, with a space on either side (as shown in the <https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#En-Dash> section).
+If your list items contain introductory text, you can set the introductory text off with an en dash, with a space on either side (as shown in the [En Dash](#en-dash) section).
 
 Make all the items in a list consistent in structure. If one item in the list uses introductory text, all items in the list should have introductory text. If one item uses full sentences with periods, all of them should.
 
@@ -444,7 +442,7 @@ If you need to write text that includes Markdown symbols for bold or italics, wi
 
 > `\_propertyName\_`
 
-To render a URL without it being automatically turned into a clickable link, you can also use code formatting. For more details, see <https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#URLs>.
+To render a URL without it being automatically turned into a clickable link, you can also use code formatting. For more details, see [URLs](#urls).
 
 > `www.my-example-address.com`
 
@@ -454,7 +452,7 @@ Menu items should be capitalized.
 
 Menu items should be **bolded** in the documentation.
 
-## Numbers
+## Numbers {#numbers}
 
 Write out numbers 1–10 (for example, "five") unless you are providing an example of data that is being entered into the system (in which case you would also italicize the number).
 
@@ -484,11 +482,25 @@ Assume that the reader is the person who's doing the tasks that you're documenti
 
 Always use "Mendix" instead of "we" in the regular documentation. Use "we" only in the Studio Pro release notes, which are written from the perspective of PMs or developers.
 
+## Procedures and Examples
+
+Use imperative mood for direct user instructions in procedural steps.
+
+> Click **Save**.
+>
+> Enter the command `ollama pull model-id`.
+
+Use descriptive language when referring to examples that illustrate the instructions. Do not write examples as if they are instructions to the user.
+
+> This example uses DeepSeek-R1.
+
+Do not convert descriptive example statements into imperative instructions, and do not convert instructions into passive descriptions.
+
 ## Personal or Sensitive Information
 
 In text, screenshots, and code samples, do not show any personal or sensitive information, which includes, but is not limited to, real names, real email addresses, profile pictures of real users, API keys, and OpenIDs. Remove or blur out this information, or replace it with fake information. You can replace an OpenID with a random UUID that you generate using a [UUID generator](https://www.uuidtools.com/v4).
 
-## Placeholders
+## Placeholders {#placeholders}
 
 ### Placeholders In Sample Code
 
@@ -520,7 +532,7 @@ Do not put optional plurals in parentheses, for example "app(s)". Instead, use e
 
 Use double quotation marks (") instead of single quotation marks (') in the text when necessary to bring attention to certain terms or differentiate terms.
 
-Single quotation marks (')—otherwise known as apostrophes in Unicode—should only be used in code snippets where necessary (meaning, where they are *actually* in the code, and not used to just *identify* code). In that case, apply code formatting (using "`" or "```"). They can be used as ornaments around placeholders only if they appear in the product UI. For more information, see [Placeholders](https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2520678744/Grammar+Formatting#Placeholders).
+Single quotation marks (')—otherwise known as apostrophes in Unicode—should only be used in code snippets where necessary (meaning, where they are *actually* in the code, and not used to just *identify* code). In that case, apply code formatting (using "`" or "```"). They can be used as ornaments around placeholders only if they appear in the product UI. For more information, see [Placeholders](#placeholders).
 
 ## Serial Comma
 
@@ -530,7 +542,7 @@ We use the serial comma. (And we defend its usage when necessary!)
 
 Use a single space between a period and the first word of the next sentence.
 
-## URLs
+## URLs {#urls}
 
 Format an example URL (as in, one that does not need to be hyperlinked because it does not go to a Mendix or third-party site) with the Markdown code format. This is to avoid having the link appear as a broken third-party link during a link check.
 

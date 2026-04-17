@@ -7,7 +7,7 @@ description: "Guidelines on usage, capitalization, and spelling for Mendix produ
 
 ## Purpose of This Guide
 
-This guide presents the main Mendix product names, other Mendix terms, and partner terms currently being used in the Mendix Platform UI, the [Mendix Documentation](https://docs.mendix.com/), and the [Mendix Platform Evaluation Guide](https://www.mendix.com/evaluation-guide/welcome).
+This guide presents the main Mendix product names, other Mendix terms, and partner terms currently being used in the Mendix Platform UI, the [Mendix Documentation](/), and the [Mendix Platform Evaluation Guide](https://www.mendix.com/evaluation-guide/welcome).
 
 The purpose of this guide is to provide guidelines on usage, capitalization, and spelling as well as notes on important details and terminology history where necessary. The goal of providing and applying these guidelines is to reach company-wide consensus on usage.
 
@@ -21,10 +21,10 @@ A term may not already be included in this guide for the following reasons:
 * It is a generic term, not branded by Mendix (for example, "domain model," "page," "template," or "layout")
 * It is an internal-only term (for example, names of apps or technical terms only used on R&D teams)
 * The term does not feature uniquely enough in the UI to require usage guidelines (for example, on capitalization in documentation)
-* The term is outdated (meaning, usage of it has been decided against; for examples, see Terminology History)
+* The term is outdated (meaning, usage of it has been decided against)
 * The term should not be used in customer-facing resources
 
-This is a useful guide to reference when communicating about the Mendix Platform and especially when you want to [contribute to the Mendix documentation](https://docs.mendix.com/developerportal/community-tools/contribute-to-the-mendix-documentation).
+This is a useful guide to reference when communicating about the Mendix Platform and especially when you want to [contribute to the Mendix documentation](/developerportal/community-tools/contribute-to-the-mendix-documentation).
 
 This guide does not give insights into the product roadmap or internal company operations.
 
@@ -36,7 +36,7 @@ These are branded Mendix product names. However, they do not always need "Mendix
 
 Capitalize in all instances.
 
-This term replaces "Developer Portal", "Sprintr", "Platform Portal," and "Mendix App Platform." These terms are not to be used in the product UI or documentation. For more information, see Terminology History.
+This term replaces "Developer Portal", "Sprintr", "Platform Portal," and "Mendix App Platform." These terms are not to be used in the product UI or documentation.
 
 ### Mendix on Kubernetes
 
@@ -44,7 +44,7 @@ Capitalize in all instances.
 
 Always use with "Mendix," so always use "Mendix on Kubernetes."
 
-This term replaces "Mendix for Private Cloud", which is not to be used in the product UI or documentation. For more information, see Terminology History.
+This term replaces "Mendix for Private Cloud", which is not to be used in the product UI or documentation.
 
 ### Mendix Cloud
 
@@ -52,9 +52,7 @@ Capitalize in all instances.
 
 Always use with "Mendix," so always use "Mendix Cloud."
 
-Do not use "the Mendix Cloud."
-
-There is now only one version of Mendix Cloud, so it is not necessary to mention a version number when referring to Mendix Cloud.
+Do not use "the Mendix Cloud", and do not mention a version number when referring to Mendix Cloud.
 
 ### Mendix Cloud Dedicated
 
@@ -62,7 +60,7 @@ Capitalize in all instances.
 
 Always use with "Mendix," so always use "Mendix Cloud Dedicated."
 
-There is no separate documentation for this as it works as Mendix Cloud, but is dedicated to a single company.
+There is no separate documentation for this because it works as Mendix Cloud, but is dedicated to a single company.
 
 ### Mendix Catalog
 
@@ -102,8 +100,6 @@ The Mendix Portal includes Apps (which replaces "Developer Portal"), Control Cen
 
 ### Mendix Studio Pro
 
-The rebranded name for the Desktop Modeler as of Mendix 8.
-
 "Studio Pro" can be used where regular repetition is necessary in a doc. However, where possible, "Mendix" should be added to the product name.
 
 Capitalize in all instances.
@@ -133,7 +129,7 @@ An "application" or "app" can be one of the following:
 
 * A local application
 * A Free App
-* A licensed application hosted on the Mendix Cloud; another cloud such as AWS, SAP Cloud, or IBM Cloud Portal; or on the user's own server
+* A licensed application hosted on Mendix Cloud; another cloud such as AWS, SAP Cloud, or IBM Cloud Portal; or on the user's own server
 
 Do not capitalize (meaning, do not write "Mendix App").
 
@@ -167,7 +163,7 @@ Capitalize in all instances.
 
 Do not use just "Atlas."
 
-### Basic Package
+### Basic package
 
 Capitalize "Basic" but not package. Use "Basic package" rather than "Basic license".
 
@@ -177,11 +173,7 @@ Capitalize in all instances (to parallel "Team Server" and "Model Server").
 
 ### Builder
 
-This is a new way of creating XPath Expressions (or XPath Constraints) and was introduced in Mendix version 10.5.0 in beta.
-
-UX term is "Builder" but in the documentation it is called "visual Builder for XPath constraints".
-
-You can shorten this to "visual Builder", but do not capitalize "Visual Builder" except when beginning a sentence.
+See [visual builder for XPath constraints](#visual-builder).
 
 ### Business Engineer
 
@@ -199,7 +191,7 @@ Do not use "the Buzz" (unless the context demands it).
 
 Capitalize in all instances.
 
-### Custom Developer App
+### custom developer app
 
 For a definition of this term, see [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/).
 
@@ -223,17 +215,15 @@ Do not use "insta-deploy" or "instant redeploy."
 
 A Free App is an app that can be deployed to the Mendix Cloud without purchasing a specific license and is therefore free. There are restrictions on the resources available to a Free App. A Free App environment is a cloud environment, but it does not support complex or large applications. Free Apps are part of the Free Edition.
 
-This is different from an *Unlicensed App* which is an app deployed to an unlicensed environment on another cloud platform, such as SAP or Private Cloud.
+This is different from an *Unlicensed App*, which is an app deployed to an unlicensed environment on another cloud platform, such as SAP or Private Cloud.
 
 Capitalize in all instances.
 
-Do not use "Sandbox." For more information, see Terminology History.
+Do not use "Sandbox."
 
 ### Free Edition
 
 This is the package of offerings that users can employ without requiring a paid license.
-
-"Free Edition" replaced "Community Edition" in 2015, and was made a focus of the announcements at Mendix World 2019.
 
 Use to refer to the whole package of Mendix free offerings (Studio Pro, Studio, and Free Apps), not individual parts of the offering.
 
@@ -263,7 +253,7 @@ As with any acronym the user may not recognize at first, write out the term "med
 
 ### Maia (Mendix AI Assistance)
 
-The rebranded name for "Mendix Assist (MxAssist)" as of Mendix version 10.12.0. For more information on Mendix Assist and MxAssist, see Terminology History.
+The rebranded name for "Mendix Assist (MxAssist)" as of Mendix version 10.12.0.
 
 Use "Mendix AI Assistance (Maia)" for the whole product line when it is introduced for the first time. Use "Maia" subsequently for the whole product line. "Maia" is also the term that appears in the product UI.
 
@@ -295,7 +285,7 @@ Do not use "Mendix Administrator."
 
 "Mendix Developer App" is the name for the mobile app available for developers to test hybrid mobile apps.
 
-This term replaces "Mendix" and "Mendix Mobile app" (which are not to be used in the product UI or documentation – for more information, see Terminology History).
+This term replaces "Mendix" and "Mendix Mobile app" (which are not to be used in the product UI or documentation).
 
 Always use "the Mendix Developer App" and cross-reference [Getting the Mendix Developer App](/refguide8/getting-the-mendix-app/) where possible.
 
@@ -311,7 +301,7 @@ Capitalize in all instances.
 
 Capitalize in all instances.
 
-This term replaces "Mendix Forum" (which is not to be used in the product UI or documentation – for more information, see Terminology History).
+This term replaces "Mendix Forum" (which is not to be used in the product UI or documentation).
 
 ### Mendix level
 
@@ -333,13 +323,13 @@ Use the full name when referencing, not just "Evaluation Guide."
 
 ### Mendix Profile
 
-This term replaces "Developer Profile" (which is not to be used in the product UI or documentation – for more information, see Terminology History).
+This term replaces "Developer Profile" (which is not to be used in the product UI or documentation).
 
 Capitalize in all instances.
 
 ### Mendix Runtime
 
-This term replaces "Mendix Business Server" and "Business Engine" (which are not to be used in the product UI or documentation – for more information, see Terminology History).
+This term replaces "Mendix Business Server" and "Business Engine" (which are not to be used in the product UI or documentation).
 
 Capitalize in instances when referring to Runtime as part of the Mendix Platform. The best practice is to use a definite article for additional clarity: "the Mendix Runtime."
 
@@ -351,9 +341,7 @@ Do not capitalize when referring to the generic "runtime" concept.
 
 ### Mendix Server
 
-This term is still in use, even though "Mendix Business Server" is no longer used. It can be useful when contrasting with the Mendix Client. In addition, it can be used to cover more than Mendix Runtime.
-
-Capitalize in all instances.
+Capitalize in all instances. Don't use "Mendix Business Server".
 
 ### Mendix Service Console
 
@@ -441,13 +429,11 @@ Do not capitalize "private" and "public" as qualifiers.
 
 This is a generic term, so do not capitalize.
 
-This is different than Mendix for Private Cloud.
-
 ### Product Owner
 
 Capitalize in all instances of the [team role](/developerportal/collaborate/app-roles/#team-roles).
 
-### production, acceptance & test environments
+### production, acceptance, and test environments
 
 Do not capitalize.
 
@@ -501,9 +487,13 @@ Capitalize in all instances.
 
 Do not capitalize, as this is a generic term. **Atlas UI Resources** is an example of such a package, and the proper name of this package is capitalized in the Studio Pro UI.
 
-### Visual Builder
+### visual builder for XPath constraints {#visual-builder}
 
-See [Builder](#builder).
+This is a new way of creating XPath expressions (or XPath constraints) and was introduced in Mendix version 10.5.0 in beta.
+
+The UX term is "Builder" but in the documentation it is called "visual Builder for XPath constraints".
+
+You can shorten this to "visual builder", but do not capitalize "visual builder" except when beginning a sentence.
 
 ### Workflow Engine
 
