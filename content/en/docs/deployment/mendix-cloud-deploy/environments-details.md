@@ -350,7 +350,7 @@ On the **Connectivity** tab, you can manage the elements described below.
 
 ### Connections {#connections}
 
-You can connect from your applications on Mendix Cloud to resources on your own infrastructure using Mendix Cloud Private Connectivity.
+You can connect from your applications on Mendix Cloud to resources on your own infrastructure using [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
 
 The **Connections** tab contains the following information:
 
