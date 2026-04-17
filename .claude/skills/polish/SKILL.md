@@ -10,7 +10,7 @@ disable-model-invocation: false
 Improve clarity and readability without changing meaning, structure, or paragraph order:
 
 **Polish should**:
-* Read Mendix style guides first (in parallel): `grammar-formatting.md`, `terminology.md`, and `product-naming-guide.md` from `/community-tools/contribute-to-mendix-docs/style-guide/`
+* Read Mendix style guides first (in parallel): `grammar-formatting.md`, `terminology.md`, and `product-naming-guide.md` from `/content/en/docs/community-tools/contribute-to-mendix-docs/style-guide/`
 * Fix all spelling, grammar, and punctuation errors
 * Add missing alt text to images (use simple, factual descriptions)
 * Ensure required front matter fields are present (title, url, description) and make descriptions concise and action-oriented
