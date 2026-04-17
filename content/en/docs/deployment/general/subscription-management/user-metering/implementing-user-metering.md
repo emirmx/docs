@@ -7,8 +7,8 @@ description: "This document describes how to implement user metering."
 
 ## Introduction
 
-This document provides you with an overview of the user metering implimentation, including guidelines for unique user identification, how users are classified, and the process for deactivation of users. <!-- User metering provides complete visibility into the number and types of users accessing the application, ensuring compliance with the license agreement. You can see this data in the Usage Report of Control Center on the Mendix platform. --> 
-For accurate user metering, in-app user classification is a crucial first step. For more information, refer to [How User Metering Works](/developerportal/deploy/user-metering/#how-user-metering-works). To do this, the logic in your app models needs to cater to the following aspects, if applicable:
+This document provides you with an overview of the user metering implimentation, including guidelines for unique user identification, how users are classified, and the process for deactivation of users. <!-- User metering provides complete visibility into the number and types of users accessing the application, ensuring compliance with the subscription agreement. You can see this data in the Usage Report of Control Center on the Mendix platform. --> 
+For accurate user metering, user classification is a crucial first step. For more information, refer to [How User Metering Works](/developerportal/deploy/user-metering/#how-user-metering-works). To do this, you must consider the following aspects, if applicable:
 
 * [Unique user identification](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication)
 * [User classification](/developerportal/deploy/implementing-user-metering/#user-classification)
@@ -16,7 +16,7 @@ For accurate user metering, in-app user classification is a crucial first step. 
 
 ## Guidelines for Unique User Identification (Deduplication)
 
-Mendix offers two variants of multi-app user licenses, namely internal multi-app and external multi-app user licenses. These licenses allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
+Mendix offers two variants of Multi-App User Subscriptions, namely Multi-App Internal User and External User (multi-app) subscription. These subscriptions allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
 
 To ensure unique multi-app users are correctly identified and metered, you must maintain a consistent user identifier across all relevant applications.
 
@@ -48,7 +48,7 @@ For more information on user types and definitions, refer to the [User Types and
 
 ## User Classification
 
-In the Mendix pricing plan, a distinction is made between internal and external named users of a Mendix app. As a customer, you purchase a license for a specific number of internal users and, optionally, for external users (which are typically cheaper). For accurate user metering, external users must be correctly classified. If they are not, your company may exceed the licensed capacity for internal users, and Mendix may require you to acquire additional internal user licenses.
+In the Mendix pricing plan, a distinction is made between internal and external named users of a Mendix application. As a customer, you purchase a subscription for a specific number of internal users and, optionally, for external users (which are typically cheaper). For accurate user metering, external users must be correctly classified. If they are not, your company may exceed the subscription capacity for internal users, and Mendix may require you to acquire additional internal user subscriptions.
 
 To ensure accurate user metering, external users must be explicitly marked as `External`. If they are not marked accordingly, they will be counted as `Internal` users.
 
@@ -60,20 +60,20 @@ This method requires one of the following identity modules to be enabled: OIDC S
 
 ### Userrole-Based User Classification
 
-The user-role-based User Classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your app to include the User Classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. 
+The user-role-based User Classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your application to include the User Classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. 
 
 ### Custom User Classification
 
-This method can be implemented either by using the [User Classification](/appstore/modules/user-classification/) module or by creating fully custom microflows. The main advantage of this approach is the flexibility it provides. You can apply any classification logic you choose while still relying on the User Classification module as the base. However, this method requires developing custom logic and involves upgrading your app to a new version of your app to include the [User Classification](https://marketplace.mendix.com/link/component/245015) module.
+This method can be implemented either by using the [User Classification](/appstore/modules/user-classification/) module or by creating fully custom microflows. The main advantage of this approach is the flexibility it provides. You can apply any classification logic you choose while still relying on the User Classification module as the base. However, this method requires developing custom logic and involves upgrading your application to a new version of your application to include the [User Classification](https://marketplace.mendix.com/link/component/245015) module.
 
 {{% alert color="info" %}}
 In situations where there is ambiguity about the user classification, Mendix considers users as internal users. Ambiguity may happen in the following situations:
 
-* A multi-app user is marked as `External` in one app and `Internal` in another app.
+* A multi-app user is marked as `External` in one application and `Internal` in another application.
 * When applying userrole-based classification, and a user has both an `Internal` and an `External` userrole.
 {{% /alert %}}
 
-Classification by the platform is not supported by using your email domains, nor any other logic. Your app logic is responsible for classification.
+Classification by the platform is not supported by using your email domains, nor any other logic. Your application logic is responsible for classification.
 
 #### Custom Classification Using Your Own Microflow
 
@@ -87,15 +87,15 @@ To update the `UserType` attribute of the `UserReportInfo` entity, refer to the 
 
 ## (De)Activation of Users
 
-The `system.user.active` attribute controls active or inactive users in your application. Users with an ‘active’ state can log in to your app and are counted for user metering purposes, while non-active users cannot login are not counted for user metering.
+The `system.user.active` attribute controls active or inactive users in your application. Users with an ‘active’ state can log in to your application and are counted for user metering purposes, while non-active users cannot login are not counted for user metering.
 
 You can provision the user records (for example, created, updated, or deleted) using proprietary logic or via one of the following platforms supported modules: 
 
 * SAML and OIDC SSO modules can create users with active state. By nature of the SSO protocols, these modules do not deactivate or delete any user records in your application.
-* The SCIM module allows your app to be integrated with your IdP to create, update, or delete user records. Depending on the (configured) business logic in your IdP, users may be created, deactivated, or deleted
+* The SCIM module allows your application to be integrated with your IdP to create, update, or delete user records. Depending on the (configured) business logic in your IdP, users may be created, deactivated, or deleted
 
     * as a result of the Joiner, Mover, or Leaver processes.
-    * as a result of license optimization, users who have not logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
+    * as a result of subscription optimization, users who have not logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
 
 * The LDAP module allows you to synchronize users and their status (active=false/true) from your on-premises Active Directory to your application. This is a similar module to SCIM but using a different protocol.
 
@@ -121,14 +121,14 @@ If you have extended support on Mendix 8, contact your CSM for guidance on user 
 
 ## Domain Model Entities {#domain-model-entities}
 
-This section explains the entities and their attributes in your app domain model that are relevant for user metering.
+This section explains the entities and their attributes in your application domain model that are relevant for user metering.
 
 The following are entities and their attributes:
 
-1. `User`: Every Mendix app has a system module containing an entity `User`.
+1. `User`: Every Mendix application has a system module containing an entity `User`.
 
     * `system.user.name`: This field is used to identify users, unless a `UserCommons.namedUserIdentifier.value` is available for the same user.
-    * `system.User.Active`: A Boolean attribute, `Active`, is used to select the active user account for user metering. A user record that has `Active=true` during the metering period is counted as an active user during the billing period and reconciliated against one of the allocated user licenses.
+    * `system.User.Active`: A Boolean attribute, `Active`, is used to select the active user account for user metering. A user record that has `Active=true` during the metering period is counted as an active user during the billing period and reconciliated against one of the allocated user subscriptions.
 
 2. `UserReportInfo`: The system module also features the `UserReportInfo`.
 
@@ -138,7 +138,7 @@ The following are entities and their attributes:
 
 3. `namedUserIdentifier`(optional): Recent versions of the [UserCommons](https://marketplace.mendix.com/link/component/223053) module include a `namedUserIdentifier` entity.
 
-    * `UserCommons.namedUserIdentifier.value`: User commons modules in your app model assign the values to the `namedUserIdentifier.value` attribute to identify a user instead of `system.user.name`. The `namedUserIdentifier` overrides `user.name`.
+    * `UserCommons.namedUserIdentifier.value`: User commons modules in your application model assign the values to the `namedUserIdentifier.value` attribute to identify a user instead of `system.user.name`. The `namedUserIdentifier` overrides `user.name`.
 
 Note that one application may use `system.user.name` and not `userCommons.namedUserIdentifier.value`, or may exclude the UserCommons module, while another application may use `userCommons.namedUserIdentifier.value` instead. If the values in these different fields are the same for a multi-app user, the Mendix user metering mechanism correctly identifies the user as a single multi-app user (deduplication).
 
