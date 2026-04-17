@@ -1,11 +1,11 @@
 ---
-name: proofread
-description: Checks and fixes spelling, grammar, punctuation, basic Markdown formatting, and required front matter fields. Makes minimal corrections without rewording or restructuring. Use when the user asks to proofread, check for spelling and grammar errors, or fix typos.
+name: docs-proofread
+description: Checks a single documentation page and fixes spelling, grammar, punctuation, basic Markdown formatting, and required front matter fields. Makes minimal corrections without rewording or restructuring. Use when the user asks to proofread, check for spelling and grammar errors, or fix typos.
 user-invocable: true
 disable-model-invocation: false
 ---
 
-> **Skill progression:** This is the lightest touch. If more clarity and style guide work is needed, suggest `/polish`. For deeper restructuring, suggest `/enhance`.
+> **Skill progression:** This is the lightest touch. If more clarity and style guide work is needed, suggest `/docs-polish`. For deeper restructuring, suggest `/docs-enhance`.
 
 Do NOT rewrite, rephrase, or improve clarity. Proofread only:
 
@@ -29,4 +29,4 @@ Priority order for determining scope:
 3. If there are multiple open files, list them and ask which to process.
 4. If no files are open, ask for a file path.
 
-If you notice style or clarity issues that need improvement, finish proofreading first, then suggest the user run `/polish` for those improvements.
+If you notice style or clarity issues that need improvement, finish proofreading first, then suggest that the user run `/docs-polish` for those improvements.

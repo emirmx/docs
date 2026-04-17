@@ -1,15 +1,15 @@
 ---
-name: polish
-description: Proofreads documentation and improves clarity, readability, and word choice without changing meaning or reorganizing structure. Simplifies complex sentences, applies style guide standards, and converts passive voice to active voice. Use when the user wants to polish, improve language and clarity, make more readable, check style guide compliance, or clean up documentation while preserving its structure.
+name: docs-polish
+description: Proofreads a single documentation page and improves clarity, readability, and word choice without changing meaning or reorganizing structure. Simplifies complex sentences, applies style guide standards, and converts passive voice to active voice. Use when the user wants to polish, improve language and clarity, make more readable, check style guide compliance, or clean up documentation while preserving its structure.
 user-invocable: true
 disable-model-invocation: false
 ---
 
-> **Skill progression:** This does everything `/proofread` does plus clarity improvements and style guide enforcement. If only grammar and spelling fixes are needed, use `/proofread`. For deeper reorganization, suggest `/enhance`.
+> **Skill progression:** This does everything `/docs-proofread` does plus clarity improvements and style guide enforcement. If only grammar and spelling fixes are needed, use `/docs-proofread`. For deeper reorganization, suggest `/docs-enhance`.
 
 Improve clarity and readability without changing meaning, structure, or paragraph order:
 
-**Polish should**:
+**docs-polish should**:
 * Read Mendix style guides first (in parallel): `grammar-formatting.md`, `terminology.md`, and `product-naming-guide.md` from `/content/en/docs/community-tools/contribute-to-mendix-docs/style-guide/`
 * Fix all spelling, grammar, and punctuation errors
 * Add missing alt text to images (use simple, factual descriptions)
@@ -24,8 +24,8 @@ Improve clarity and readability without changing meaning, structure, or paragrap
 * Apply Mendix style guide standards (overrides the Microsoft Writing Style Guide)
 * Apply Microsoft Writing Style Guide standards, unless they conflict with the Mendix style guide standards
 
-**Polish should NOT**:
-* Move paragraphs or restructure sections (that's `/enhance`)
+**docs-polish should NOT**:
+* Move paragraphs or restructure sections (that's `/docs-enhance`)
 * Change technical meaning or accuracy
 * Significantly increase document length
 * Change command syntax, code identifiers, variable names, placeholders, or any other text that appears in code formatting (inline backticks or code blocks). Code-formatted text represents literal technical content that must remain unchanged. If you notice an issue with code-formatted text, flag it in the chat but don't edit it directly.
