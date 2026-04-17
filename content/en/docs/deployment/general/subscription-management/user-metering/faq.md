@@ -59,7 +59,7 @@ For more information, refer to [User Classification](/developerportal/deploy/imp
 
 Assign the Single-App User Subscription to your application in the Control Center. For more information, refer to Assigning Single-App Internal User Subscription. Link from the Control Center doc -->
 
-### How Do I Assign Single-App User Subscription to Multiple Applications With Unique User Bases?
+### How Do I Assign a Single-App User Subscription to Multiple Applications With Unique User Bases?
 
 You must purchase a separate Single-App User Subscription for each application and assign them individually. Contact your CSM or account team to purchase additional subscriptions, if needed.
 
@@ -73,7 +73,7 @@ Note that if the user has an active status during any moment in a month, they ar
 
 ### What Is the Best Practice for Deactivating Users Who Left the Organization?
 
-Deactivate users as soon as they no longer need access. This ensures that they are not counted in future usage reports and helps maintain security. Deactivate leavers before month-end to optimize subscription entitlements consumption.
+Deactivate users as soon as they no longer need access. This ensures that they are not counted in future usage reports and helps maintain security. Deactivate leavers before the month-end to optimize subscription entitlements consumption.
 
 ### Should I Delete or Deactivate Users To Save on Subscription Costs?
 

@@ -33,7 +33,7 @@ User metering in the Mendix cloud operates through a four-stage automated proces
 
 ### In-App User Classification
 
-A key component of in-app user classification is maintaining a consistent user identifier. This becomes especially important when customers are using multi-app subscriptions. In the Mendix Multi-App Internal User Subscription and External User Subscription, the same individual may access multiple apps under a single subscription agreement. A unique, persistent user identifier ensures accurate tracking and prevents duplication. You responsible for classifying users as `Internal` or `External`. For more detailed information, refer to the [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification). 
+A key component of in-app user classification is maintaining a consistent user identifier. This becomes especially important when customers are using multi-app subscriptions. In the Mendix Multi-App Internal User Subscription and External User Subscription, the same individual may access multiple apps under a single subscription agreement. A unique, persistent user identifier ensures accurate tracking and prevents duplication. You are responsible for classifying users as `Internal` or `External`. For more detailed information, refer to the [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification). 
 
 ### Data Collection
 
@@ -59,7 +59,7 @@ The user classification and deduplication process determines the user type and t
 
 ### User Identification (Deduplication)
 
-Users are deduplicated based on common identifier values. A user who has different identifier values in the aggregated data cannot be recognized as the same user, and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values exist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+Users are deduplicated based on common identifier values. A user who has different identifier values in the aggregated data cannot be recognized as the same user and will be counted as multiple users. The deduplication mechanism evaluates two user attributes. When different values exist, Mendix treats them as different users. For more information, refer to [Guidelines for Unique User Identification (Deduplication)](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
 
 ### Classifying External Users
 
@@ -70,7 +70,7 @@ The next step is to determine whether a user is an external user:
 
 Then the user is classified as an external user.
 
-Once classified, the user is licensed under the External User Subsciption and excluded from further classification steps. For more information, see the [User classification](/developerportal/deploy/implementing-user-metering/#user-classification) section of *Implementing User Metering*.
+Once classified, the user is licensed under the External User Subscription and excluded from further classification steps. For more information, see the [User classification](/developerportal/deploy/implementing-user-metering/#user-classification) section of *Implementing User Metering*.
 
 All remaining users are classified as `Internal` Users and further classified as described in the sections below.
 

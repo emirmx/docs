@@ -16,7 +16,7 @@ For accurate user metering, user classification is a crucial first step. For mor
 
 ## Guidelines for Unique User Identification (Deduplication)
 
-Mendix offers two variants of Multi-App User Subscriptions, namely Multi-App Internal User and External User (multi-app) subscription. These subscriptions allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
+Mendix offers two variants of Multi-App User Subscriptions, namely the Multi-App Internal User and External User (multi-app) subscription. These subscriptions allow a single user to access multiple applications while being counted only once for metering purposes. This applies to both internal and external users. Accurate user metering and correct multi-app user deduplication depend critically on consistent user identification across all your applications.
 
 To ensure unique multi-app users are correctly identified and metered, you must maintain a consistent user identifier across all relevant applications.
 
@@ -97,7 +97,7 @@ You can provision the user records (for example, created, updated, or deleted) u
     * as a result of the Joiner, Mover, or Leaver processes.
     * as a result of subscription optimization, users who have not logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
 
-* The LDAP module allows you to synchronize users and their status (active=false/true) from your on-premises Active Directory to your application. This is a similar module to SCIM but using a different protocol.
+* The LDAP module allows you to synchronize users and their status (active=false/true) from your on-premises Active Directory to your application. This is a similar module to SCIM, but using a different protocol.
 
 If you are considering deactivating or removing user records for optimization of user cost, you are advised to consider the following:  
 

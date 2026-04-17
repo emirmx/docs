@@ -101,7 +101,7 @@ In addition to the licenses for your apps, you will also need to license the Men
 
 #### Mendix on Kubernetes Connected
 
-You can add the subscription secret as part of creating an environment on Mendix on Kubernetes. You can also add or change the subscription secret on the **Environment Details** page of the environment you wish to license. For more information, see the [Change Subscription Secret](/developerportal/deploy/private-cloud-deploy/#license-mendix) section of *Deploying a Mendix App to a Mendix on Kubernetes Cluster*.
+You can add the subscription secret when creating an environment on Mendix on Kubernetes. You can also add or change the subscription secret on the **Environment Details** page of the environment you wish to license. For more information, see the [Change Subscription Secret](/developerportal/deploy/private-cloud-deploy/#license-mendix) section of *Deploying a Mendix App to a Mendix on Kubernetes Cluster*.
 
 #### Mendix on Kubernetes Standalone
 
@@ -120,7 +120,7 @@ cf set-env <YOUR_APP> LICENSE_ID <LicenseId>
 cf set-env <YOUR_APP> LICENSE_KEY <LicenseKey>
 ```
 
-Then restart the app so that the environment variables, are read and the license goes into effect.
+Then restart the app so that the environment variables are read, and the license goes into effect.
 
 ### Docker
 

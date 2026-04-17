@@ -58,7 +58,7 @@ While Mendix services continue to function normally, this is the critical period
 
 #### 7 Days Before Contract Expiry{#7-days-before-contract-expiry}
 
-* **Final impact emails** – You receive final detailed explanations about the impact of non-renewal
+* **Final impact emails** – You receive final, detailed explanations about the impact of non-renewal
 * **Data offboarding instructions** – Administrators and Technical Contacts receive tailored instructions for offboarding application data
 
 {{% alert color="warning" %}}
@@ -81,7 +81,7 @@ If your contract is not renewed by the expiry date, your account transitions to 
 #### 1 Day After Contract Expiry{#1-day-after-contract-expiry}
 
 * **Mendix Platform banner** – All Mendix Platform users see a banner clearly stating that the contract has expired
-* **Restricted access** –  Account access is downgraded and apps are transitioned to **Unlicensed** mode
+* **Restricted access** –  Account access is downgraded, and apps are transitioned to **Unlicensed** mode
 * **Deployment restrictions** – Application data is available for download for the next 60 days
 
 #### 60 Days After Contract Expiry{#60-days-after-contract-expiry}
