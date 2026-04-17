@@ -75,7 +75,7 @@ Once classified, the user is licensed under the External User Subscription and e
 All remaining users are classified as `Internal` Users and further classified as described in the sections below.
 
 {{% alert color="info" %}}
-A multi-app user who is marked as `Internal` in one app and `External` in another will be counted as an internal user. 
+A multi-app user who is marked as `Internal` in one app and `External` in another is counted as an internal user. 
 {{% /alert %}}
 
 ### Classifying Single-App Internal Users
