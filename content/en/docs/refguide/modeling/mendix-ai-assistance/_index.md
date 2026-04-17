@@ -39,6 +39,9 @@ Mendix AI Assistance (Maia) in Studio Pro has the following capabilities:
 Starting point for app creation:
 
 * **Start with Maia** - a starting point in Studio Pro that helps you to start the app development process. Based on a required text description and an optional image or PDF, it generates an app that includes a domain model, data management overview pages, test data, and a tailored homepage. For more information, see [Start with Maia](/refguide/start-with-maia/).
+* **Maia Make** - a unified conversational interface in Studio Pro that groups all AI-assisted development capabilities into a single chat experience. With this interface, everything happens in one place. Start a conversation, describe what you need, and Maia generates the necessary app artifacts, such as a new domain model, pages, and microflows. You can also ask it to explain documents for you, including your app logic and pages. 
+
+    This unified conversational interface is released in Studio Pro 11.8. For more information, see [Maia Make](/refguide/maia-make/).
 
 Guidance:
 
@@ -78,7 +81,9 @@ Various Maia features are available in Private Mendix Platform. For more informa
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
-The table below presents all the third-party services each Maia capability uses and what data are sent to the third-party services.
+[Maia Make](/refguide/maia-make/) introduced in Studio Pro 11.8 uses Claude Sonnet 4.5. Any Maia Make capability in Studio Pro 11.8 and above uses this model to generate Mendix models. 
+
+The table below presents all the third-party services each Maia capability uses for Studio Pro versions below 11.8, and what data are sent to the third-party services.
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
