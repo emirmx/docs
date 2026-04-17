@@ -9,7 +9,7 @@ disable-model-invocation: false
 
 Improve clarity and readability without changing meaning, structure, or paragraph order:
 
-**Polish should**:
+**docs-polish should**:
 * Read Mendix style guides first (in parallel): `grammar-formatting.md`, `terminology.md`, and `product-naming-guide.md` from `/content/en/docs/community-tools/contribute-to-mendix-docs/style-guide/`
 * Fix all spelling, grammar, and punctuation errors
 * Add missing alt text to images (use simple, factual descriptions)
@@ -24,7 +24,7 @@ Improve clarity and readability without changing meaning, structure, or paragrap
 * Apply Mendix style guide standards (overrides the Microsoft Writing Style Guide)
 * Apply Microsoft Writing Style Guide standards, unless they conflict with the Mendix style guide standards
 
-**Polish should NOT**:
+**docs-polish should NOT**:
 * Move paragraphs or restructure sections (that's `/docs-enhance`)
 * Change technical meaning or accuracy
 * Significantly increase document length
