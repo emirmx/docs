@@ -82,7 +82,7 @@ A multi-app user who is marked as `Internal` in one app and `External` in anothe
 
 After `External` users are classified, the classification process further classifies the single-app internal users.
 
-If the application is associated with a Single-App Internal User Subscription, the user of the application will be classified as a single-app internal user. This user will be counted against the Single-App Internal User Pack for that application.
+If the application is associated with a Single-App Internal User Subscription, the user of the application is classified as a single-app internal user. This user is then counted against the Single-App Internal User Pack for that application.
 <!-- *For more details on how to assign Single-App Internal User Pack to your apps, refer to the Assigning Single-App Internal User Packs section of the Control Center.* Link from the Control Center doc -->
 
 {{% alert color="info" %}}
