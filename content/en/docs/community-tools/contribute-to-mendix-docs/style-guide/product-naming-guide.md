@@ -34,7 +34,7 @@ These are branded Mendix product names. However, they do not always need "Mendix
 
 ### Apps
 
-Capitalize in all instances.
+Refers to a section of the Mendix Portal. Capitalize in all instances (when used in this context rather than as the plural of "app").
 
 This term replaces "Developer Portal", "Sprintr", "Platform Portal," and "Mendix App Platform." These terms are not to be used in the product UI or documentation.
 
