@@ -183,5 +183,8 @@
       }
     ]
   },
-  "statusline": ".claude/statusline.sh"
+  "statusLine": {
+    "type": "command",
+    "command": ".claude/statusline.sh"
+  }
 }
