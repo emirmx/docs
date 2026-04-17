@@ -29,11 +29,6 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 * Better organization for subscription-related actions - We have moved the subscription-related Java actions to the `_USE_ME/Subscriptions` in order to provide more clarity for the user.
 * New nanoflows, Java actions, and widgets - We have added a number of other new nanoflows, Java actions, and widgets that you can use to configure the behaviour of your application. For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
 
-
-fixes ParseTighteningResultRevision001 name
-
-adds /rest/stationconnector/publickey API for future app-key setup improvements
-
 ### Fixes
 
 * We have fixed a bug where the connection timeout would not trigger if the devices list was not received. The timeout now uses a shared abort signal.
