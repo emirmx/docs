@@ -60,7 +60,7 @@ This method requires one of the following identity modules to be enabled: OIDC S
 
 ### Userrole-Based User Classification
 
-The user-role-based User Classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your application to include the User Classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users. For more information, refer to [User-Role-Based Classification](developerportal/deploy/populate-user-type/#user-role-based-user-classification).
+The user-role-based User Classification module classifies users by using the roles already defined in your app. It can update all existing users in one run and works well if you already have separate roles for internal and external users. However, using this module requires upgrading your application to include the User Classification module. Userrole-based user classification is the recommended approach. It encourages and leverages application design with distinct userrole definitions for external and internal users.
 
 ### Custom User Classification
 
