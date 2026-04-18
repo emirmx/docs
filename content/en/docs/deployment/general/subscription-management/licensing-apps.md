@@ -23,13 +23,32 @@ Unlicensed apps, running outside Mendix Cloud, have some restrictions. These res
 
 ¹ More information on the capabilities of different license options is available on [Mendix Platform Pricing](https://www.mendix.com/pricing).
 
-² End-users of your app are classified as either internal or external. You will need to report this for licensing purposes using either the [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domain to distinguish between them) or by [populating the user type](/developerportal/deploy/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
+² End-users of your app are classified as either internal or external. You must report this classification for licensing purposes by [implementing User Metering](/developerportal/deploy/implementing-user-metering/) for each end user of your app. The [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) is deprecated and should no longer be used for user classification. Use User Metering instead to ensure accurate and consistent user classification across your application portfolio. Only end users whose Mendix accounts are marked as **Active** are counted towards the number of end users of the app.
 
 ³ Depending on the configuration of your chosen cloud, a container and runtime may be restarted if it appears unhealthy because the runtime has stopped.
 
 For each environment for which you want to remove the restrictions placed on an unlicensed app, you need a license. The method for applying a license differs depending on where you are deploying your app.
 
 The app checks for a license each time it is started. If the license expires while the app is running, it will continue to run until the next time it is started, when the license will be checked again.
+
+## User Types and Definitions
+
+Mendix licenses follow user-based pricing plans. This means customers pay based on how many users need access and what type of access they require for their Mendix applications.
+Customers can purchase user licenses in the following categories:
+
+### Multi-App Internal User
+
+These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications and are licensed under the  Multi-App Internal User Pack. Each internal user is counted as one unique user, regardless of how many apps they access.
+
+### Single-App Internal User
+
+An internal user (employee or contractor) licensed for only one specific application and counted as one user limited to a single designated app. They are licensed under the Single-App Internal User Pack.
+
+### External User
+
+A user who is not an employee or contractor of the customer or its affiliates, and is explicitly marked “External” within your Mendix application data. This is one unique user across all apps designated for external use and licensed under the External User Pack.
+
+For more information on legal definitions, refer to [Order Form Definitions](https://www.mendix.com/legal/platform-usage/order-form-definitions/).
 
 ## Obtaining a Mendix License{#get-license}
 
@@ -78,11 +97,11 @@ To license an Insights Hub app, you need to provide your **License ID** and **Li
 
 To license a Mendix app on Mendix on Kubernetes, you need to supply a **Subscription Secret** or license credentials for your app. See below for how it can be added to either a Connected or Standalone cluster.
 
-In addition to the licenses for your apps, you will also need to license the Mendix Operator which helps deploy your app to a Mendix on Kubernetes environment. For details on the Mendix Operator license, see [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing).
+In addition to the licenses for your apps, you will also need to license the Mendix Operator, which helps deploy your app to a Mendix on Kubernetes environment. For details on the Mendix Operator license, see [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing).
 
 #### Mendix on Kubernetes Connected
 
-You can add the subscription secret as part of creating an environment on Mendix on Kubernetes. You can also add or change the subscription secret on the **Environment Details** page of the environment you wish to license. For more information, see the [Change Subscription Secret](/developerportal/deploy/private-cloud-deploy/#license-mendix) section of *Deploying a Mendix App to a Mendix on Kubernetes Cluster*.
+You can add the subscription secret when creating an environment on Mendix on Kubernetes. You can also add or change the subscription secret on the **Environment Details** page of the environment you wish to license. For more information, see the [Change Subscription Secret](/developerportal/deploy/private-cloud-deploy/#license-mendix) section of *Deploying a Mendix App to a Mendix on Kubernetes Cluster*.
 
 #### Mendix on Kubernetes Standalone
 
@@ -101,7 +120,7 @@ cf set-env <YOUR_APP> LICENSE_ID <LicenseId>
 cf set-env <YOUR_APP> LICENSE_KEY <LicenseKey>
 ```
 
-Then restart the app so that the environment variables are read and the license goes into effect.
+Then restart the app so that the environment variables are read, and the license goes into effect.
 
 ### Docker
 
