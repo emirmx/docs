@@ -15,7 +15,7 @@ If you also enable CORS on a [published REST service](/refguide/published-rest-s
 
 {{% alert color="info" %}}
 
-This feature is only supported in Mendix 11.9 and later.
+This feature is only supported in Mendix 11.10 and later.
 
 {{% /alert %}}
 
