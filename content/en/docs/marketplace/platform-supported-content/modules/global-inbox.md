@@ -63,7 +63,7 @@ The **Global Inbox** consists of the following components:
 
 The Global Inbox operates with the following event flow:
 
-1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegisteredEvent**. This ensures the Global Inbox knows which apps are available to send task events. As part of this registration, the application’s workflow groups are synchronized with the Global Inbox for user task group targeting.
+1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegisteredEvent**. This ensures the Global Inbox knows which apps are available to send task events. As part of this registration, the application's workflow groups are synchronized with the Global Inbox.
 2. Task update and event publication: When a workflow or task is created, updated, or completed in a publisher application that includes the Global Inbox Connector, the connector publishes the following events:
     * **WorkflowUpdatedEvent** – triggered when the workflow is updated.
     * **UserTaskUpdatedEvent** – triggered when a user task is updated.
