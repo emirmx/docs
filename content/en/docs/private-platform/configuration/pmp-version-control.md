@@ -21,11 +21,22 @@ To select the repository type, perform the following steps:
 
 1. Switch to Admin Mode by clicking the profile picture in the top right corner of the screen and selecting **Switch to Admin Mode**.
 2. In the left navigation menu, open the **Settings** section. 
-3.Click **Version Control**. 
+3. Click **Version Control**. 
 
 ## GitLab
 
-This section describes the configuration of a GitLab repository.
+This section describes the configuration of a GitLab repository. Private Mendix Platform supports both GitLab SaaS and self‑managed GitLab instances.
+
+### Prerequisites
+
+Before configuring GitLab for Private Mendix Platform, ensure that you fulfill the following prerequisites:
+
+* You have access to a GitLab SaaS account or a self‑managed GitLab server.
+* A GitLab group exists to host applications created by the Private Mendix Platform.
+* You can generate Personal Access Tokens (PATs) with the required scopes.
+* For Automatic Access Provisioning, a GitLab administrator (root) Personal Access Token is available.
+
+### Configuration
 
 * **Host URL** - This is the host URL of your GitLab server. The format should be `https://<HOST>`. There is no slash in the end. For example, if your GitLab server host name is mygitlab.example.com, you should input `https://mygitlab.example.com` here.
 * **Group ID** - All the apps on Private Mendix Platform are created under a GitLab group. You need to create a group in GitLab and then input the *Group ID* in this field.
@@ -45,19 +56,41 @@ When the **Automatic Access Provisioning** is disabled, private platform users n
 Private Mendix Platform supports only the following predefined GitLab push rules:
 
 * Reject unverified users. 
+    
     Users can only push commits to this repository if the committer email is one of their own verified emails.
-* Reject inconsistent user names. 
+
+* Reject inconsistent user names.
+
     Users can only push commits to this repository if the commit author name is consistent with their GitLab account name.
+
 * Check whether the commit author is a GitLab user.
+
     Commits are restricted to existing GitLab users.
 
 ## GitHub
 
-This section describes the configuration of a GitHub repository.
+This section describes the configuration of a GitHub repository. Private Mendix Platform supports GitHub Enterprise Server and GitHub Enterprise Cloud.
 
-* **Host URL** - This is the host URL of your GitHub server. The format should be `https://<HOST>`. There is no slash in the end. For example, if your GitHub server host name is mygithub.example.com, you should input `https://mygithub.example.com` here.
+### Prerequisites
+
+Before configuring GitHub for Private Mendix Platform, ensure that you fulfill the following prerequisites:
+
+* You have access to GitHub Enterprise Server or GitHub Enterprise Cloud.
+* A GitHub organization exists to host applications created by the Private Mendix Platform.
+* You can generate Personal Access Tokens (PATs) with sufficient permissions to manage repositories and organization access.
+* For GitHub Enterprise Server with Automatic Access Provisioning enabled, a GitHub administrator‑level PAT is available.
+* For GitHub Enterprise Cloud with Data Residency enabled, an OAuth App can be created in the GitHub organisation.
+
+### Common Configuration
+
+The following configuration applies to all GitHub server types, unless stated otherwise.
+
 * **Organization Name** - All the apps on Private Mendix Platform are created under an organization. You need to create an organization to host all the Mendix apps. Type the organization name into this field.
 * **Organization Owner PAT** - Input the classic PAT of this organization owner into this field.  You need select at least these scopes: `repo admin:org user delete_repo`. The expiration date is set to **No Expiration**.
+
+### GitHub Enterprise Server
+
+* **Host URL** - This is the host URL of your GitHub server. The format should be `https://<HOST>`. There is no slash in the end. For example, if your GitHub server host name is mygithub.example.com, you should input `https://mygithub.example.com` here.
 * **Automatic Access Provisioning** - If you are running a self-managed GitHub enterprise server, you can enable this feature to automatically create GitHub user and PAT for private platform users. During logging in to the platform, the user email is used as unique key to search in GitHub server. If this email name is not registered in GitHub, Private Mendix Platform creates a GitHub user with this email. A PAT is then generated for this user. 
 * **AdminPAT** - This is the PAT of the GitHub enterprise instance administrator. When generating this PAT, all scopes should be selected.
 
