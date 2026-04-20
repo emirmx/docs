@@ -55,7 +55,7 @@ mxruntime:
         "Access-Control-Allow-Credentials": "true"
         "Access-Control-Allow-Headers": "Content-Type, x-csrf-token"
         "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
-        "Access-Control-Allow-Origin": YOUR_ORIGIN
+        "Access-Control-Allow-Origin": "YOUR_ORIGIN"
 ```
 
 ## Troubleshooting
