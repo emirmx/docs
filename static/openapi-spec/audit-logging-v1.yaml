@@ -295,7 +295,7 @@ components:
         timestamp:
           type: string
           format: date-time
-          description: Date time the event occurred, in ISO 8601 UTC format
+          description: Date and time the event occurred, in ISO 8601 UTC format
         ownerId:
           type: string
           description: The unique identifier of the owner
@@ -332,14 +332,14 @@ components:
       properties:
         userUuid:
           type: string
-          description: UserID of the logged in user
+          description: UserID of the logged-in user
         userAccountEmail:
           type: string
           format: email
           description: Email of the user who performed the action
         userName:
           type: string
-          description: Name of the logged in user
+          description: Name of the logged-in user
         ipAddress:
           type: string
           format: ipv4
@@ -426,7 +426,7 @@ components:
       properties:
         contextId:
           type: string
-          description:  Unique identifier for the affected resource context
+          description: Unique identifier for the affected resource context
         contextType: 
           $ref: "#/components/schemas/ContextAndResourceType"
           description: Type of Context

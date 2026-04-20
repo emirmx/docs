@@ -5,7 +5,7 @@ type: swagger
 restapi: true
 no_list: false
 description_list: true
-description: "Provides the documentation of Audit Logging API."
+description: "Provides the documentation for the Audit Logging API."
 linktitle: "Audit Logs"
 beta: true
 ---
@@ -16,7 +16,7 @@ This feature is in Public Beta. For more information, refer to [Release Status](
 
 ## Introduction
 
-You can use the Audit Logging API to manage and download audit logs. This API is particularly useful in scenarios where you want to download audit logs that are over 90 days old, but no more than one year old.
+You can use the Audit Logging API to integrate with security information and event management tools.
 
 ## Authentication
 

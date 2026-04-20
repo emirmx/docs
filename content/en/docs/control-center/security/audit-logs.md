@@ -12,8 +12,7 @@ This feature is in Public Beta. For more information, refer to [Release Status](
 
 ## Introduction
 
-Audit logs provide a record of changes that users and admins make to the system.     
-Audit logs are valuable for a variety of reasons:
+Audit logs provide a record of changes that users and admins make to the system. Audit logs are valuable for a variety of reasons:
 
 * They enable security monitoring and forensic analysis.
 * They support compliance with regulatory requirements.
@@ -22,8 +21,7 @@ Audit logs are valuable for a variety of reasons:
 
 ## Audit Logs
 
-The **Audit Logs** tab displays a list of all activities over the past 365 days.     
-Each list entry includes the following details:
+The **Audit Logs** tab displays a list of all activities over the past 365 days. Each list entry includes the following details:
 
 * **Date** – The date and time when the activity was logged.
 * **Email** – The email of the user who performed the activity.
@@ -43,7 +41,7 @@ Each list entry includes the following details:
 
     * **Success Action** – The activity was successfully completed as intended.
     * **Warning** – The activity succeeded with a warning. This also includes an explanation of the warning.
-    * **Error** – The activity failed with error, which is usually a data or functionality loss, or an unexpected error.
+    * **Error** – The activity failed with an error, which is usually a data or functionality loss, or an unexpected error.
     * **Success Audit** – A security access attempt was audited and was successful. 
     * **Failure Audit** – A security access attempt was audited and was not successful.
 
@@ -80,8 +78,8 @@ Each list entry includes the following details:
 
     * **Log ID** – The unique identifier of the log.
     * **Date** – The date and time when the log was generated.
-    * **Owner ID** – The unique identifier of the logged in user.
-    * **Owner ID Type** – The role of the logged in user.
+    * **Owner ID** – The unique identifier of the logged-in user.
+    * **Owner ID Type** – The role of the logged-in user.
     * **User Email** – The email address of the user who performed the action that generated the log.
     * **User Name** – The name of the user who performed the action that generated the log.
     * **User ID** – The unique identifier of the user who performed the action that generated the log.
@@ -113,8 +111,7 @@ When you search audit logs, only the first 100 results are displayed. To retriev
 
 ### Exporting Audit Logs {#export-logs}
 
-You can export audit logs in a CSV format. This is available for all logs, including those that are older than 90 days.     
-You can choose between these options:
+You can export audit logs in a CSV format. This is available for all logs, including those that are older than 90 days. You can choose between these options:
 
 * **Export from Selected Date Range** – Select the timeframe for which you want to export logs.
 * **Export All** – Export all logs.
@@ -123,8 +120,7 @@ Once the logs are ready for export, you are notified via email, and a download l
 
 ## Downloads {#downloads}
 
-When you export audit logs, a download link is displayed on this tab once the export CSV is ready for download. The download link is valid for seven days.    
-These are details available on the this tab:
+When you export audit logs, a download link is displayed on this tab once the export CSV is ready for download. The download link is valid for seven days. These are the details available on this tab:
 
 * **Submitted on** – The date and time when the export request was made.
 * **Requester** – The user who requested the export.
@@ -135,4 +131,4 @@ These are details available on the this tab:
 
 ## Retrieving Audit Logs via API
 
-You can use the [Audit Logging API](/apidocs-mxsdk/apidocs/apis-for-audit-logs/) to manage and download audit logs. This API is particularly useful in scenarios where you want to store audit logs in your own system for more than 365 days.
+You can use the [Audit Logging API](/apidocs-mxsdk/apidocs/apis-for-audit-logs/) to integrate with security information and event management tools. That way, you can manage all audit logs from all systems through one single central tool.
