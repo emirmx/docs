@@ -67,6 +67,52 @@ This example uses the Mendix Cloud GenAI Connector. Alternatively, you can insta
 
 Run the app, log in as administrator, and verify that you can navigate to the **Agent_Overview** and **Mendix Cloud GenAI Configuration** pages.
 
+## Create User Interface {#context-entity}
+
+To connect an agent with the rest of your application, it is helpful to create an entity that contains attributes for capturing user input. This will then be used to fill prompt variables.
+
+In this section, you will create both the entity and the user interface. The final page will look like this:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_user_interface.png" >}}
+
+1. In Studio Pro, go to your module's domain model. For new apps, this is **MyFirstModule**. 
+
+2. Create an entity with the name `Product`.
+
+3. Add the following attributes to the new entity:
+
+    * `ProductName` as *String*
+    * `NumberOfWords` as *Integer*
+    * `Language` as *String*
+    * `ProductDescription` as *String* and set length to `unlimited`
+
+4. Update the **Access rules** of the entity to grant read and write access to the attributes `ProductName`, `NumberOfWords`, and `ProductDescription` for both the **User** and **Administrator** roles. Ensure that both roles have the **Create objects** permission enabled. 
+
+5. Save the entity to apply the changes.
+
+6. Create a blank responsive web page called **Product_NewEdit**, and set the layout to **Atlas_Default**.
+
+7. Add a data view to the page. 
+    
+    1. Set the **Form orientation** to `Vertical`. 
+    2. Select your `Product` entity as data source **Context**. 
+    3. Click **OK**. Let Studio Pro automatically fill in the content of the data view.
+
+8. Remove the `Language` input field, because this will not be provided by users.
+
+9. Grant access to the page for both the **User** and **Administrator** roles by updating the **Visible for** property in the **Navigation** category of the page properties.
+
+10. Right before the `Product Description` input field, add a **Generate product description** button. You will configure this later to run the agent.
+
+11. Open your app’s navigation and add a new menu item called **Add Product**. 
+    1. Set the **On click** action to **Create object** of the `Product` entity.
+    2. Set the **On click page** to `Product_NewEdit`.
+    3. Choose an icon, such as `add` from the Atlas icon category.
+
+    Alternatively, you can add a button to a page and connect to the same page via the **Create object** event. 
+
+Now a user can create a new product in the UI, but the process is not yet enhanced with any AI.
+
 ## Create Your First Agent {#create-agent}
 
 You can now create your first agent in the user interface. The final agent will look like this:
@@ -99,24 +145,27 @@ You can now create your first agent in the user interface. The final agent will 
 
 To further improve your prompts and the user experience, you can add some placeholder variables.
 
-1. Once you have saved an agent version, you cannot edit its fields anymore. So, in the **Agent version** dropdown, click **Draft** to start a new version and edit the fields again. 
+1. Once you have saved an agent version, you cannot edit its fields anymore. So, in the **Agent version** dropdown, click **Draft** to start a new version and edit the fields again.
 
-2. Change the **User Prompt** to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words.`
+2. In the **Context entity** field, search for **Product** and select the entity you created previously.
 
+3. Change the **User Prompt** to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words.`
 
-<!-- Context entity selection is required to test when there are variables.-->
 <!-- Note: If I have a user prompt with variables and select a context entity, I can't reopen the context entity dropdown unless I first delete the variables (even if the context entity doesn't contain my variables) -->
-3. Notice that two variables have been created in the **Test Case** card on the right. These variables can later be used in your application to allow users to dynamically modify the user prompt without needing to understand what a prompt is, and without requiring any changes or restarts to the application. Enter the following values for the variables:
+4. Notice that two variables have appeared in the **Test Case** card on the right. These variables can later be used in your application to allow users to dynamically modify the user prompt without needing to understand what a prompt is, and without requiring any changes or restarts to the application. 
+
+  In the background, the system checks whether all prompt variables can be matched to attributes in the selected entity. If any variable names do not match the attribute names exactly, a warning message is displayed. Below the list of variables, you may see a message indicating that not all attributes are being used as variables. This is a helpful reminder in case you unintentionally missed a variable.
+
+5. Enter the following values for the variables:
 
     * `30` for **NumberOfWords**
     * `chair` for **ProductName**
 
     Click **Test** to see how the model adjusts the output based on the updated prompt.
 
-4. The values you entered for the variables are only available in the agent builder capability, and are not yet connected to your use case. To make them available for future test runs, use the **Save As** option. Enter `Chair 30 words` as the title for the test case.
+6. The values you entered for the variables are only available in the agent builder capability, and are not yet connected to your use case. To make them available for future test runs, use the **Save As** option. Enter `Chair 30 words` as the title for the test case.
 
-
-5. Click **Save as new version** ({{% icon name="floppy-disk" %}}) next to the **Agent version** field to save this version of the agent. Enter `Added user input` as the title. 
+7. Click **Save as new version** ({{% icon name="floppy-disk" %}}) next to the **Agent version** field to save this version of the agent. Enter `Added user input` as the title. 
 
 ### System Prompt and Multiple Test Cases
 
@@ -135,71 +184,19 @@ To further refine the agent's responses, add a system prompt that defines the as
 
 6. Once you are satisfied with your agent, save the version with the title `Added system prompt and language`.
 
-## Create User Interface {#context-entity}
-
-To connect an agent with the rest of your application, it is helpful to create an entity that contains attributes for capturing user input. This will then be used to fill the prompt variables.
-
-In this section, you will create both the entity and the user interface. The final page will look like this:
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_user_interface.png" >}}
-
-1. In Studio Pro, go to your module's domain model. For new apps, this is **MyFirstModule**. 
-
-<!-- Have to do steps 2-3 before choosing variables at runtime, right? -->
-2. Create an entity with the name `Product`.
-
-3. Add the following attributes to the new entity:
-
-    * `ProductName` as *String*
-    * `NumberOfWords` as *Integer*
-    * `Language` as *String*
-    * `ProductDescription` as *String* and set length to `unlimited`
-
-4. Update the **Access rules** of the entity to grant read and write access to the attributes `ProductName`, `NumberOfWords`, and `ProductDescription` for both the **User** and **Administrator** roles. Ensure that both roles have the **Create objects** permission enabled. 
-
-5. Save the entity to apply the changes.
-
-6. Create a blank responsive web page called **Product_NewEdit**, and set the layout to **Atlas_Default**.
-
-7. Add a data view to the page. 
-    
-    1. Set the **Form orientation** to `Vertical`. 
-    2. Select your `Product` entity as data source **Context**. 
-    3. Click **OK**. Let Studio Pro automatically fill in the content of the data view.
-
-8. Remove the `Language` input field, because this will not be provided by users.
-
-9. Grant access to the page for both the **User** and **Administrator** roles by updating the **Visible for** property in the **Navigation** category of the page properties.
-
-10. Right before the `Product Description` input field, add a **Generate product description** button. You will configure this later to run the agent.
-
-11. Open your app’s navigation and add a new menu item called **Add Product**. 
-
-    1. Set the **On click** action to **Create object** of the `Product` entity.
-    2. Set the **On click page** to `Product_NewEdit`.
-    3. Choose an icon, such as `add` from the Atlas icon category.
-
-    Alternatively, you can add a button to a page and connect to the same page via the **Create object** event. 
-
-Now a user can create a new product in the UI, but the process is not yet enhanced with any AI.
-
 ## Connect Your Agent to Your App
 
 In this section, you can connect the agent that was already created in the user interface to let an LLM create the product description.
 
-### Finalize Your Agent
+### Select the Active Agent Version
 
-You need to configure some additional settings for the agent before it can be used in your app.
+Before your agent can be used in your application logic, you must select which version to use.
 
-1. Run the app and navigate to your agent.
+1. Run the app and navigate to the **Agent Overview** page.
 
-2. Above the user prompt, you can select the context entity. Search for the **Product** entity that you created previously.
+2. Hover over **More Options** ({{% icon name="three-dots-menu-horizontal-small" %}}) for your agent and click **Select version in use**. Selecting a version for use means that the version is used for production and is selectable in your microflow logic.
 
-3. In the background, the system checks whether all prompt variables can be matched to attributes in the selected entity. If any variable names do not match the attribute names exactly, a warning message is displayed. Below the list of variables, you may see a message indicating that not all attributes are being used as variables. This is a helpful reminder in case you missed a variable. In this example, the `ProductDescription` attribute is a placeholder for the model's response, and thus not part of the user or system prompt.
-
-4. Navigate back to the **Agent Overview** through the breadcrumb.
-
-5. Hover over **More Options** ({{% icon name="three-dots-menu-horizontal-small" %}}) for your agent and click **Select version in use**. Selecting a version for use means that the version is used for production and is selectable in your microflow logic. Choose the latest version, `Added system prompt and language`, and click **Select**.
+3. Choose the latest version, `Added system prompt and language`, and click **Select**.
 
 ### Enable Generation Microflow {#generation-microflow}
 
