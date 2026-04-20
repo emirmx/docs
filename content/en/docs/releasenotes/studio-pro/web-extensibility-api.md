@@ -10,7 +10,7 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.10.0
 
-- We introduced a change for the Model API that makes it easier to create Import Mappings and Export Mappings based on JSON Structure documents. You can now use `addJsonStructure` to create a JSON Structure from JSON content, and `getElements` to see the elements inside a JSON Structure document. To build mappings,  the API now includes `addImportMapping` and `addExportMapping, which create mapping documents based on a JSON Structure. You can then refine or adjust those mappings using `setElementMapping` and `clearElementMapping`.
+- We introduced a change for the Model API that makes it easier to create Import Mappings and Export Mappings based on JSON Structure documents. You can now use `addJsonStructure` to create a JSON Structure from JSON content, and `getElements` to see the elements inside a JSON Structure document. To build mappings,  the API now includes `addImportMapping` and `addExportMapping`, which create mapping documents based on a JSON Structure. You can then refine or adjust those mappings using `setElementMapping` and `clearElementMapping`.
 
 ## Version 11.9.0
 
