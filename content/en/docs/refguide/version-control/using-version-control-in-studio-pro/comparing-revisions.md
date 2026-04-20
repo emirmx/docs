@@ -7,13 +7,15 @@ description: "How to compare a historical revision to your current state to unde
 
 ## Introduction
 
-The Comparison Pane allows you to compare any historical revision of your version-controlled app to your current working state. This helps you understand what has changed since a specific commit, see the impact of your recent edits, or review what would be affected if you reverted to a past revision.
+The **Comparison** pane allows you to compare any historical revision of your version-controlled app to your current working state. This helps you understand what has changed since a specific commit, see the impact of your recent edits, or review what would be affected if you reverted to a past revision.
 
 The comparison shows three levels of detail: which documents changed, which elements within those documents changed, and which property values differ between the revision and your current state.
 
-**Key limitation:** You can only compare a selected historical revision to your current working state. It is not possible to compare two arbitrary past revisions to each other.
+{{% alert color="warning" %}}
+The key limitation of the **Comparison** pane is that you can only compare a selected historical revision to your current working state. It is not possible to compare two arbitrary past revisions to each other.
+{{% /alert %}}
 
-This feature is similar to the [Changes Pane](/refguide/changes-pane/), but while the Changes Pane shows your local modifications since your last commit, the Comparison Pane shows differences between any historical revision and your current state.
+This feature is similar to the [Changes Pane](/refguide/changes-pane/), but while the **Changes** pane shows your local modifications since your last commit, the Comparison Pane shows differences between any historical revision and your current state.
 
 ## Starting a Comparison
 

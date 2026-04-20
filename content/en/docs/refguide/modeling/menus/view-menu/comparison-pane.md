@@ -85,15 +85,15 @@ The **Status** column shows one of the following types:
 
 The icon and text spacing is consistent with the History Pane style.
 
-## Level 2 and 3: Element and Property Diffs
+## Level 2 and 3: Element and Property Differences
 
 Double-clicking a document in Level 1 navigates to Level 2 and Level 3, which appear side by side. Level 2 shows changed elements, and Level 3 shows the property differences for the selected element.
 
 {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level2-3.png" alt="Comparison Pane Level 2 and Level 3 showing element and property differences" class="no-border" >}}
 
-### Task Bar
+#### Task Bar
 
-The task bar at Level 2/3 contains the following buttons:
+The task bar at Level 2 and 3 contains the following buttons:
 
 | Button | Action | When Enabled |
 |--------|--------|--------------|
@@ -103,11 +103,11 @@ The task bar at Level 2/3 contains the following buttons:
 | **Collapse all** | Collapses all expanded property tree rows in Level 3 | Always enabled when viewing Level 3 |
 | **Stop comparison** | Closes the comparison and returns to the blank state | Always enabled during an active comparison |
 
-### Context Menu
+#### Context Menu
 
 Right-click any cell in either the Level 2 or Level 3 grid to access the **Copy** option.
 
-### Level 2 Grid
+#### Level 2 Grid
 
 The Level 2 grid shows all changed elements within the selected document:
 
@@ -118,7 +118,7 @@ The Level 2 grid shows all changed elements within the selected document:
 
 Hover over any cell to see the full value in a tooltip.
 
-### Level 3 Grid
+#### Level 3 Grid
 
 The Level 3 grid shows the property-level differences for the element selected in Level 2:
 
@@ -130,27 +130,27 @@ The Level 3 grid shows the property-level differences for the element selected i
 
 Property paths are consolidated into a tree view. Grey rows represent intermediate path levels that do not have a direct value. The row order reflects the top-to-bottom, left-to-right order that the corresponding components appear in their dialog boxes.
 
-### Splitter
+#### Splitter
 
 A draggable splitter separates Level 2 and Level 3. Drag the splitter to adjust the space allocated to each level. By default, Level 3 (property differences) is given more space than Level 2 (element list).
 
 ## Opening Documents
 
-When you click **Go to** or double-click a document entry in Level 1, the document opens as it currently exists in your project. If the document no longer exists in your current state, Level 2/3 is shown but nothing opens in the editor.
+When you click **Go to** or double-click a document entry in Level 1, the document opens as it currently exists in your app. If the document no longer exists in your current state, Level 2 and 3 is shown but nothing opens in the editor.
 
 {{% alert color="info" %}}
-In a future release (Mendix 11.18), both versions of the document will be opened side by side for visual comparison. For now, only the current version opens.
+In future releases, both versions of the document will be opened side by side for visual comparison. For now, only the current version opens.
 {{% /alert %}}
 
 ## Refresh Behavior
 
-When you are comparing a revision to your current state and you save changes to your app, a **Refresh** button appears in the Comparison Pane. Click **Refresh** to update the comparison with your latest saved changes.
+When you are comparing a revision to your current state and you save changes to your app, a **Refresh** button appears in the **Comparison** pane. Click **Refresh** to update the comparison with your latest saved changes.
 
 ## Stopping a Comparison
 
-Click the **Stop comparison** button to close the comparison. This action closes the Comparison Pane and returns it to a blank state. Any documents that were opened as part of the comparison remain open in the editor.
+Click the **Stop comparison** button to close the comparison. This action closes the **Comparison** pane and returns it to a blank state. Any documents that were opened as part of the comparison remain open in the editor.
 
-In the blank state, the Comparison Pane displays a message with a link to start a new comparison. The **Go to** and **Stop comparison** buttons are disabled until a new comparison is started.
+In the blank state, the **Comparison** pane displays a message with a link to start a new comparison. The **Go to** and **Stop comparison** buttons are disabled until a new comparison is started.
 
 ## Read More
 
