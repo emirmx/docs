@@ -1,7 +1,7 @@
 ---
 title: "Native Template 19"
 url: /releasenotes/mobile/nt-19-rn/
-weight: 7
+weight: 6
 description: "Native Template 19"
 ---
 
