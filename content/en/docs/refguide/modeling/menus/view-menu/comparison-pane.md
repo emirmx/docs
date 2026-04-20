@@ -7,31 +7,29 @@ description: "Describes the Comparison Pane in Mendix Studio Pro for comparing a
 
 ## Introduction
 
-The **Comparison Pane** shows the differences between a selected historical revision and your current working state in a version-controlled app. This pane displays three levels of detail: which documents changed, which elements within those documents changed, and which property values differ.
+The **Comparison** pane shows the differences between a selected historical revision and your current working state in a version-controlled app. This pane displays three levels of detail: which documents have changed, which elements within those documents have been altered, and which property values now differ.
 
-This feature requires a version-controlled app. For apps without version control, the Comparison Pane is disabled.
+This feature requires a version-controlled app. For apps without version control, the **Comparison** pane is disabled.
 
-## Accessing the Comparison Pane
+## Accessing the Comparison Pane and Version Compatibility
 
-To compare a revision to your current state:
+To compare a revision to your current state, do the following:
 
-1. Open the History pane by clicking **View** > **History**.
-2. Right-click any revision in the list.
+1. Open the **History** dialog by clicking **View** > **History**.
+2. Choose a revision from the list by right-clicking it. 
 3. Select **Compare to current state**.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state option in History pane right-click menu" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state option in History pane right-click menu" class="no-border" >}}
 
-The Comparison Pane opens and shows all differences between the selected revision and your current working state, including any uncommitted changes.
-
-## Version Compatibility
+The **Comparison** pane opens and shows all differences between the selected revision and your current working state, including any uncommitted changes.
 
 {{% alert color="warning" %}}
-When comparing revisions created in older versions of Studio Pro, the models are converted on-the-fly to the current Studio Pro version format. Due to this automatic conversion, the displayed older revision may not be 100% identical to the original model. This is a normal part of the version upgrade process and does not affect your actual stored revisions.
+When comparing revisions created in older versions of Studio Pro, the models are automatically converted to the current Studio Pro version format. Due to this automatic conversion, the displayed older revision may not be 100% identical to the original model. This is a normal part of the version upgrade process and does not affect your actual stored revisions.
 {{% /alert %}}
 
-## Comparison Pane Structure
+## Comparison Pane Overview
 
-The Comparison Pane shows information at three levels:
+The **Comparison** pane shows information at three levels:
 
 * **Level 1** – A list of all documents that differ between the two revisions
 * **Level 2** – All elements within a selected document that have changed
@@ -39,35 +37,31 @@ The Comparison Pane shows information at three levels:
 
 You can navigate between levels by double-clicking a row or using the **Go to** button. Press <kbd>Backspace</kbd> or click **Back** to return to the previous level.
 
-## Unversioned App State
+### Unversioned App State
 
-If your app does not have version control enabled, all buttons in the Comparison Pane are disabled and a message indicates that version control is required.
+If your app does not have version control enabled, all buttons in the **Comparison** pane are disabled and a message indicates that version control is required.
 
-## Loading State
-
-When starting a comparison or performing other operations that take more than a few seconds, a spinner is displayed to indicate the comparison is loading.
-
-## Level 1: Document List
+### Level 1: Document List
 
 Level 1 displays all documents that differ between the selected revision and your current state.
 
 {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level1.png" alt="Comparison Pane Level 1 showing document list" class="no-border" >}}
 
-### Task Bar
+#### Task Bar
 
 The task bar contains the following buttons:
 
 | Button | Action | When Enabled |
 |--------|--------|--------------|
-| **Back** | Returns to the previous level | Always disabled at Level 1 (kept to prevent layout shift) |
-| **Go to** | Opens the selected document and navigates to Level 2/3 | Enabled when a document is selected |
+| **Back** | Returns to the previous level | Always disabled at Level 1 (to prevent layout shift) |
+| **Go to** | Opens the selected document and navigates to Level 2 or 3 | Enabled when a document is selected |
 | **Stop comparison** | Closes the comparison and returns to the blank state | Always enabled during an active comparison |
 
-### Context Menu
+#### Context Menu
 
 Right-click any cell in the grid to access the **Copy** option, which copies the cell value to your clipboard.
 
-### Grid Columns
+#### Grid Columns
 
 The document list grid contains the following columns:
 
@@ -79,9 +73,9 @@ The document list grid contains the following columns:
 
 All columns are sortable by clicking the column header. Column widths can be adjusted by dragging the column divider. Hover over any cell to see the full value in a tooltip.
 
-### Status Types
+#### Status Types
 
-The Status column shows one of the following types:
+The **Status** column shows one of the following types:
 
 | Status | Icon | Meaning | When It Appears |
 |--------|------|---------|-----------------|
