@@ -11,10 +11,10 @@ description: "Native Template 19"
 
 ### Improvements
 
-- We upgraded the core stack to React Native `0.83.4` and aligned related React dependencies.
-- We upgraded multiple React Native ecosystem dependencies for compatibility and stability, including CLI, navigation, animation, media, and platform modules.
-- We migrated from `react-native-vector-icons` to the scoped `@react-native-vector-icons/*` package set.
-- We updated `.gitignore` to more precisely exclude `node_modules` directories in specific locations.
-- We added `@shopify/flash-list` to support the migration from FlatList to FlashList.
-- We upgraded `react-native-tab-view` from `3.5.2` to `4.3.0`.
-- We fixed iOS builds crashing when building with Xcode 26.
+* We upgraded the core stack to React Native `0.83.4` and aligned related React dependencies.
+* We upgraded multiple React Native ecosystem dependencies for compatibility and stability, including CLI, navigation, animation, media, and platform modules.
+* We migrated from `react-native-vector-icons` to the scoped `@react-native-vector-icons/*` package set.
+* We updated `.gitignore` to more precisely exclude `node_modules` directories in specific locations.
+* We added `@shopify/flash-list` to support the migration from FlatList to FlashList.
+* We upgraded `react-native-tab-view` from `3.5.2` to `4.3.0`.
+* We fixed iOS builds crashing when building with Xcode 26.
