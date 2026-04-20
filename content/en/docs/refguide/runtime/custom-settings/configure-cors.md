@@ -27,7 +27,7 @@ To enable CORS, configure the following custom runtime settings. For general inf
 
 | Name | Value | Description |
 | --- | --- | --- |
-| `com.mendix.core.SameSiteCookies` | `None` | Allows cookie sharing between the runtime origin and the client origin. This is required for cross-origin authentication to work correctly. |
+| `com.mendix.core.SameSiteCookies` | `None` | Allows cookie sharing between the runtime origin and the client origin. This is required for cross-origin authentication to work correctly. The value needs to be set to "None", not left with no value. |
 
 ### Custom HTTP Response Headers
 
