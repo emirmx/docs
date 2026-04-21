@@ -2,7 +2,7 @@
 title: "Just-In-Time User Provisioning via SAML"
 url: /appstore/modules/saml/user-provisioning/
 linktitle: "User Provisioning via SAML"
-weight: 20
+weight: 30
 description: "Describes the configuration of the user provisioning in the SAML module."
 ---
 
@@ -58,7 +58,7 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * The IdP Attribute is one of the fixed claims supported by the [OIDC SSO](/appstore/modules/oidc/) module.
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
 
-3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning`. Starting from version 4.0.3 and 4.1.2 of the module, you can find a reference microflow (`SAML.UC_CustomProvisioning`) in the **MOVE ME** folder. The custom microflow requires the following parameters:
+3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning`. Starting from version 4.0.3 and 4.1.2 of the module, you can find a reference microflow (`SAML.UC_CustomProvisioning`) in the **MOVE ME** folder. To show custom user-facing error messages, call `SAML20.ThrowSAMLFeedbackException` from a custom microflow (`UC_CustomProvisioning`). The custom microflow requires the following parameters:
 
     1. **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this parameter to retrieve user provisioning configuration information.
     2. **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
@@ -89,7 +89,7 @@ It is possible to customize this microflow to determine the correct user. Whiche
 #### CustomUserProvisioning {#customuserprovisioning}
 
 {{% alert color="info" %}}
-Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated. To show custom user-facing error messages, call `SAML20.ThrowSAMLFeedbackException` from a custom microflow (`UC_CustomProvisioning`) configured in the **Custom UserProvisioning** field of the **UserProvisioning** tab. For more information, refer to the [Custom User Provisioning at Runtime](#custom-provisioning-rt) section above.
+Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated. Custom user provisioning is supported through the **Custom UserProvisioning** field in the **User Provisioning** tab. For more details, refer to the [Custom User Provisioning at Runtime](#custom-provisioning-rt) section above. As of version 4.2.0, the `CustomUserProvisioning` microflow has been removed and is no longer supported.
 {{% /alert %}}
 
 When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow in the parameter `AssertionAttributeList`, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.
