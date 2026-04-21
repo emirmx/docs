@@ -1,15 +1,13 @@
 ---
 title: "Comparing Revisions"
 url: /refguide/comparing-revisions/
-weight: 25
+weight: 65
 description: "How to compare a historical revision to your current state to understand what changed."
 ---
 
 ## Introduction
 
 You can compare any historical revision of your version-controlled app to your current working state via the **Comparison** pane. It can help you understand what has changed since a specific commit, see the impact of your recent edits, or review what is affected if you reverted to a past revision.
-
-The comparison shows three levels of detail: which documents changed, which elements within those documents changed, and which property values differ between the revision and your current state.
 
 The comparison shows differences between:
 
@@ -34,7 +32,7 @@ You can review all changes made since a specific commit, which helps you underst
 
 Before reverting to an older revision, you can compare your current changes to a revision you are considering reverting to and review what changes will be lost. This helps you make an informed decision about whether reverting is safe or if it would undo important work.
 
-### Did My Recent Changes Affect This Area?
+### Will My Recent Changes Affect a Specific Area?
 
 To check if your recent uncommitted changes affected a specific area of your app:
 

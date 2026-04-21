@@ -12,10 +12,12 @@ The **Comparison** pane shows the differences between a selected historical revi
 This feature requires a version-controlled app. For apps without version control, the **Comparison** pane is disabled.
 
 {{% alert color="warning" %}}
-The key limitation of the **Comparison** pane is that you can only compare a selected historical revision to your current working state. It is not possible to compare two arbitrary past revisions to each other.
+The key limitation of the **Comparison** pane is that you can only compare a selected historical revision to your current working state. It is not possible to compare two past revisions to each other.
 {{% /alert %}}
 
-This feature is similar to the [Changes Pane](/refguide/changes-pane/), but while the **Changes** pane shows your local modifications since your last commit, the **Comparison** pane shows differences between any historical revision and your current state.
+This feature is similar to the [Changes pane](/refguide/changes-pane/), but while the **Changes** pane shows your local modifications since your last commit, the **Comparison** pane shows differences between any historical revision and your current state.
+
+For more information on comparing scenarios, see [Comparing Revisions](/refguide/comparing-revisions/).
 
 ## Accessing the Comparison Pane and Version Compatibility
 
@@ -25,9 +27,9 @@ To compare a revision to your current state, do the following:
 2. Choose a revision from the list by right-clicking it. 
 3. Select **Compare to current state**.
 
-    {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state option in History pane right-click menu" class="no-border" >}}
-
 The **Comparison** pane opens and shows all differences between the selected revision and your current working state, including any uncommitted changes.
+
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/history-right-click-menu.png" alt="Compare to current state option in History pane right-click menu" class="no-border" >}}
 
 {{% alert color="warning" %}}
 When comparing revisions created in older versions of Studio Pro, the models are automatically converted to the current Studio Pro version format. Due to this automatic conversion, the displayed older revision may not be 100% identical to the original model. This is a normal part of the version upgrade process and does not affect your actual stored revisions.
@@ -37,9 +39,9 @@ When comparing revisions created in older versions of Studio Pro, the models are
 
 The **Comparison** pane shows information at three levels:
 
-* **Level 1** – A list of all documents that differ between the two revisions
-* **Level 2** – All elements within a selected document that have changed
-* **Level 3** – The specific property values that differ for a selected element
+* **Level 1** – A list of all documents that differ between the two revisions.
+* **Level 2** – All elements within a selected document that have changed.
+* **Level 3** – The specific property values that differ for a selected element.
 
 You can navigate between levels by double-clicking a row or using the **Go to** button. Press <kbd>Backspace</kbd> or click **Back** to return to the previous level.
 
@@ -71,13 +73,11 @@ Right-click any cell in the grid to access the **Copy** option, which copies the
 
 The document list grid contains the following columns:
 
-| Column | Description | What It Shows |
+| Column | Description | Elements It Shows |
 |--------|-------------|---------------|
-| **Status** | The type of change | An icon and label indicating whether the document was Added, Modified, or Deleted |
-| **Item** | The document name | The name of the changed document (for example, a page, microflow, or domain model) |
+| **Status** | The type of change | An icon and label indicating whether the document was **Added**, **Modified**, or **Deleted** |
+| **Item** | The document name | The name of the changed document (for example, a page, a microflow, or a domain model) |
 | **Module** | The module location | The module that contains the document |
-
-All columns are sortable by clicking the column header. Column widths can be adjusted by dragging the column divider. Hover over any cell to see the full value in a tooltip.
 
 #### Status Types
 
@@ -89,15 +89,13 @@ The **Status** column shows one of the following types:
 | **Modified** | Yellow circle | Changes were made to an existing document | The document exists in both revisions but has differences |
 | **Deleted** | Red circle with minus | A document was removed | The document existed in the selected revision but not in the current state |
 
-The icon and text spacing is consistent with the History Pane style.
-
 ## Level 2 and 3: Element and Property Differences
 
 Double-clicking a document in Level 1 navigates to Level 2 and Level 3, which appear side by side. Level 2 shows changed elements, and Level 3 shows the property differences for the selected element.
 
 {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level2-3.png" alt="Comparison Pane Level 2 and Level 3 showing element and property differences" class="no-border" >}}
 
-#### Task Bar
+### Task Bar
 
 The task bar at Level 2 and 3 contains the following buttons:
 
@@ -109,11 +107,11 @@ The task bar at Level 2 and 3 contains the following buttons:
 | **Collapse all** | Collapses all expanded property tree rows in Level 3 | Always enabled when viewing Level 3 |
 | **Stop comparison** | Closes the comparison and returns to the blank state | Always enabled during an active comparison |
 
-#### Context Menu
+### Context Menu
 
 Right-click any cell in either the Level 2 or Level 3 grid to access the **Copy** option.
 
-#### Level 2 Grid
+### Level 2 Grid
 
 The Level 2 grid shows all changed elements within the selected document:
 
@@ -124,7 +122,7 @@ The Level 2 grid shows all changed elements within the selected document:
 
 Hover over any cell to see the full value in a tooltip.
 
-#### Level 3 Grid
+### Level 3 Grid
 
 The Level 3 grid shows the property-level differences for the element selected in Level 2:
 
@@ -135,10 +133,6 @@ The Level 3 grid shows the property-level differences for the element selected i
 | **Newer** | The value in the current state | The property value as it is in your current working state |
 
 Property paths are consolidated into a tree view. Grey rows represent intermediate path levels that do not have a direct value. The row order reflects the top-to-bottom, left-to-right order that the corresponding components appear in their dialog boxes.
-
-#### Splitter
-
-A draggable splitter separates Level 2 and Level 3. Drag the splitter to adjust the space allocated to each level. By default, Level 3 (property differences) is given more space than Level 2 (element list).
 
 ## Opening Documents
 
