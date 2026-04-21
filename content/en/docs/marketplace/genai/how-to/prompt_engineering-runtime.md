@@ -151,7 +151,6 @@ To further improve your prompts and the user experience, you can add some placeh
 
 3. Change the **User Prompt** to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words.`
 
-<!-- Note: If I have a user prompt with variables and select a context entity, I can't reopen the context entity dropdown unless I first delete the variables (even if the context entity doesn't contain my variables) -->
 4. Notice that two variables have appeared in the **Test Case** card on the right. These variables can later be used in your application to allow users to dynamically modify the user prompt without needing to understand what a prompt is, and without requiring any changes or restarts to the application. 
 
   In the background, the system checks whether all prompt variables can be matched to attributes in the selected entity. If any variable names do not match the attribute names exactly, a warning message is displayed. Below the list of variables, you may see a message indicating that not all attributes are being used as variables. This is a helpful reminder in case you unintentionally missed a variable.
