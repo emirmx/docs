@@ -11,6 +11,12 @@ The **Comparison** pane shows the differences between a selected historical revi
 
 This feature requires a version-controlled app. For apps without version control, the **Comparison** pane is disabled.
 
+{{% alert color="warning" %}}
+The key limitation of the **Comparison** pane is that you can only compare a selected historical revision to your current working state. It is not possible to compare two arbitrary past revisions to each other.
+{{% /alert %}}
+
+This feature is similar to the [Changes Pane](/refguide/changes-pane/), but while the **Changes** pane shows your local modifications since your last commit, the **Comparison** pane shows differences between any historical revision and your current state.
+
 ## Accessing the Comparison Pane and Version Compatibility
 
 To compare a revision to your current state, do the following:
