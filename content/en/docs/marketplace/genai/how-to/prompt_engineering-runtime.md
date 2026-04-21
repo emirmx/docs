@@ -35,7 +35,7 @@ This document also explains how you can integrate Agent Commons capabilities to 
 
 This use case is a simplified version of the *Generate Product Description* example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
-## Integrate Agent Commons {#integrate-agent-commons}
+## Integrating Agent Commons {#integrate-agent-commons}
 
 Agent Commons enables users to create powerful agents at runtime, enriching requests to an LLM with tools, knowledge bases, prompts and more. This example focuses mainly on prompt engineering at runtime.
 
@@ -55,7 +55,7 @@ If you are using a GenAI starter app such as the Blank GenAI app, you can skip a
 
    {{% alert color="info" %}}Alternatively, you can use an Open page button to let users navigate to the **Agent_Overview** page.{{% /alert %}}
 
-## Configure a GenAI Connector {#configuration}
+## Configuring a GenAI Connector {#configuration}
 
 To enable generative AI capabilities, install and configure the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) and its dependencies from the Mendix Marketplace. If you are using a GenAI starter app such as the Blank GenAI app, you can skip the installation and just follow the [configuration instructions](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 
@@ -63,17 +63,17 @@ To enable generative AI capabilities, install and configure the [Mendix Cloud Ge
 This example uses the Mendix Cloud GenAI Connector. Alternatively, you can install and configure an [external connector](/appstore/modules/genai/reference-guide/external-connectors/) for any provider with a connector that is compatible with [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/). This includes [OpenAI](/appstore/modules/genai/reference-guide/external-connectors/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). 
 {{% /alert %}}
 
-## Verify Setup {#verification}
+## Verifying Setup {#verification}
 
 Run the app, log in as administrator, and verify that you can navigate to the **Agent_Overview** and **Mendix Cloud GenAI Configuration** pages.
 
-## Create User Interface {#context-entity}
+## Creating a User Interface {#context-entity}
 
 To connect an agent with the rest of your application, it is helpful to create an entity that contains attributes for capturing user input. This will then be used to fill prompt variables.
 
 In this section, you will create both the entity and the user interface. The final page will look like this:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_user_interface.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_user_interface.png" alt="Product creation form with fields for product name, number of words, generate button, and AI-generated product description" >}}
 
 1. In Studio Pro, go to your module's domain model. For new apps, this is **MyFirstModule**. 
 
@@ -113,13 +113,13 @@ In this section, you will create both the entity and the user interface. The fin
 
 Now a user can create a new product in the UI, but the process is not yet enhanced with any AI.
 
-## Create Your First Agent {#create-agent}
+## Creating an Agent {#create-agent}
 
 You can now create your first agent in the user interface. The final agent will look like this:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_details.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_details.png" alt="Product Description Generator agent configuration page showing version, model, test case variables, system and user prompts, and context entity settings" >}}
 
-### Initial Agent {#initial-agent}
+### Creating the Initial Agent {#initial-agent}
 
 1. In the running app, open the **Agent_Overview** page.
 
@@ -141,7 +141,7 @@ You can now create your first agent in the user interface. The final agent will 
 
 8. Click **Save as new version** ({{% icon name="floppy-disk" %}}) next to the **Agent version** field to save this version of the agent. For the title, use `Simple product description agent`.
 
-### Iteration and First Test Case
+### Iterating and Creating First Test Case
 
 To further improve your prompts and the user experience, you can add some placeholder variables.
 
@@ -167,7 +167,7 @@ To further improve your prompts and the user experience, you can add some placeh
 
 7. Click **Save as new version** ({{% icon name="floppy-disk" %}}) next to the **Agent version** field to save this version of the agent. Enter `Added user input` as the title. 
 
-### System Prompt and Multiple Test Cases
+### Adding System Prompt and Multiple Test Cases
 
 To further refine the agent's responses, add a system prompt that defines the assistant's role and create an additional test case for comparison.
 
@@ -184,11 +184,11 @@ To further refine the agent's responses, add a system prompt that defines the as
 
 6. Once you are satisfied with your agent, save the version with the title `Added system prompt and language`.
 
-## Connect Your Agent to Your App
+## Connecting Your Agent to Your App
 
 In this section, you can connect the agent that was already created in the user interface to let an LLM create the product description.
 
-### Select the Active Agent Version
+### Selecting the Active Agent Version
 
 Before your agent can be used in your application logic, you must select which version to use.
 
@@ -198,11 +198,11 @@ Before your agent can be used in your application logic, you must select which v
 
 3. Choose the latest version, `Added system prompt and language`, and click **Select**.
 
-### Enable Generation Microflow {#generation-microflow}
+### Enabling a Generation Microflow {#generation-microflow}
 
 Create the microflow that is called when a user clicks the button. This microflow will execute a call to the LLM and set the `ProductDescription` attribute value to the model's response. The microflow, which can also be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in **ExampleMicroflows** > **Prompt Engineering** > **ACT_Product_GenerateProductDescription**, will look like this:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt-engineering-microflow.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt-engineering-microflow.png" alt="Microflow with four sequential steps: change Product Language, retrieve Agent from database, call Agent Without History, and update ProductDescription with response" >}}
 
 1. In Studio Pro, go to the `Product_NewEdit` page.
 
