@@ -37,7 +37,7 @@ Currently, Mendix does not support pull or merge requests through the Team Serve
 
 Use the [Comparison pane](/refguide/comparison-pane/) to compare any historical revision to your current working state. This helps you understand what has changed since a specific revision, see the impact of your recent edits, or review what would be affected if you reverted to a past revision.
 
-For more information, see [Comparing Revisions](/refguide/comparing-revisions/).
+For more information, refer to [Comparing Revisions](/refguide/comparing-revisions/).
 
 ## Frequently Asked Questions
 
