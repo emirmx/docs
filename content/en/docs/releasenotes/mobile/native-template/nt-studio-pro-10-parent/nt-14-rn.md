@@ -9,7 +9,7 @@ description: "Native Template 14"
 
 **Release date: Feb 25, 2026**
 
-- We updated `.gitignore` to more precisely exclude `node_modules` directories in specific locations.
+* We updated `.gitignore` to more precisely exclude `node_modules` directories in specific locations.
 
 ## 14.1.13 {#1423}
 
