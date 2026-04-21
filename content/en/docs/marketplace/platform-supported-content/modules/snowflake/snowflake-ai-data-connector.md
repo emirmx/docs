@@ -315,7 +315,7 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
    
  {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/CortexAnalystRequestExample.png" >}}
 
- ## Configuring Snowflake Cortex Search {#cortex-search}
+## Configuring Snowflake Cortex Search {#cortex-search}
 
 Snowflake Cortex Search is a fully-managed, ML-powered Snowflake Cortex feature that helps you retrieve data relevant to a prompt to help an LLM generate informed answers (Retrieval Augmented Generation).
 
