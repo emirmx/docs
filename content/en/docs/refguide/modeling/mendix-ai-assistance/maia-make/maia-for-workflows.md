@@ -32,7 +32,7 @@ Maia for Workflows can analyze a BPMN image representing employee onboarding, re
 
 Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a photo, BPMN schema, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
-Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
+Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated workflow:
 
 * Can you explain this workflow to me?
 * Can you give me suggestions to improve this workflow?
