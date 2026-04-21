@@ -1,7 +1,7 @@
 ---
 title: "Mendix Pipelines"
 url: /developerportal/deploy/mendix-pipelines/
-weight: 80
+weight: 20
 description: "Describes how to design, implement, and review pipelines using the Pipelines feature in the Mendix Portal"
 aliases:
     - /developerportal/deploy/pipelines/
@@ -169,38 +169,11 @@ Build a deployment package based on the latest major, minor, or patch version of
 
 ##### GET Request
 
-Use the **GET request** step to retrieve data from an external API and use the response to inform or control the next steps in the pipeline.
-
-The **GET request** step has the following configuration fields:
-
-| Field | Required? | Description |
-| --- | :---: | --- |
-| **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/app`). |
-| **Additional URL path** | No | Path appended to the Request URL (for example, `$GET Request.Result1 or 123` ). |
-| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, set `Authorization` to `$API_Key`). |
-| **Success Condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default. |
-| **Failure Condition (in jQuery)** | No | Defines failure of the API output. If empty, the step passes if the success condition is met; otherwise the step keeps polling until maximum wait time is reached. |
-| **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
-| **Initial Delay (seconds)** | Yes | Delay before the first call. Range must be between 0 and 10800. |
-| **Polling Interval (seconds)** | Yes | Time between retries. Range must be between 5 and 300. |
-| **Maximum Wait Time (seconds)** | Yes | Total time to wait before timing out. Range must be between 0 and 10800. |
-
-{{% alert color="info" %}}
-To learn more about jq, refer to the [jQuery manual](https://jqlang.org/manual).
-{{% /alert %}}
+Use the **GET request** step to retrieve data from an external API and use the response to inform or control the next steps in the pipeline. For information about configuring GET Request steps, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
 
 ##### POST Request
 
-Use the **POST request** step to send structured data to an external API to trigger an action or update a system. The POST request step has the following configuration fields:
-
-| Field | Required? | Description |
-| --- | :---: | --- |
-| **Request URL** | Yes | Base endpoint to call (for example, `https://api.com/1/apps`). |
-| **Additional URL path** | No | Path appended to the Request URL (for example, `$POST Request.Result1 or 123`). |
-| **Header 1–5 Key / Value** | No | Up to five request headers. You can reference pipeline variables in header values (for example, `x-api-key: $API_Key`). |
-| **Request body (JSON)** | No | JSON payload to send. Default: `{}`. |
-| **Success condition (in jQuery)** | No | Defines success of the API output. Set a jq expression that must evaluate to `true` (for example, `.Result == "Success"`). If empty, the step passes by default. |
-| **Result 1–3 (parsing logic to extract output in jQuery)** | No | jq expressions to extract values from the response and store them as step outputs (for example, `.JobId`). |
+Use the **POST request** step to send structured data to an external API to trigger an action or update a system. For information about configuring POST Request steps, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
 
 ##### Maia Best Practice Recommender{##recommender}
 

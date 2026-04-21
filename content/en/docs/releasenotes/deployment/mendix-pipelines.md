@@ -12,11 +12,11 @@ To see the current status of the Mendix Pipelines, see [Mendix Status](https://s
 
 ## 2026
 
-### March 12, 2026
+### April 23, 2026
 
 #### New Features
 
-* We have added two new steps, [GET request](/developerportal/deploy/mendix-pipelines/#get-request) and [POST request](/developerportal/deploy/mendix-pipelines/#post-request), to Mendix Pipelines. These new steps allow Mendix Pipelines to retrieve and send structured data to external APIs.
+* We have added two new steps, [GET request](/developerportal/deploy/mendix-pipelines/#get-request) and [POST request](/developerportal/deploy/mendix-pipelines/#post-request), to Mendix Pipelines. These new steps allow Mendix Pipelines to retrieve and send structured data to external APIs. For information about how to configure these steps, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
 
 ### February 26, 2026
 
