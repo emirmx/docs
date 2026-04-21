@@ -70,7 +70,7 @@ This pane has two levels, so when you zoom into a changed document, you can revi
 
 ### Comparison
 
-The [Comparison pane](/refguide/comparison-pane/) shows the differences between a selected historical revision and your current working state, allowing you to see what documents, elements, and properties changed.
+The [Comparison pane](/refguide/comparison-pane/) shows the differences between a selected historical revision and your current working state, which allows you to see what documents, elements, and properties changed.
 
 ### History {#history-pane}
 

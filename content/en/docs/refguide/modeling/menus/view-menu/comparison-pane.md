@@ -12,19 +12,19 @@ The **Comparison** pane shows the differences between a selected historical revi
 This feature requires a version-controlled app. For apps without version control, the **Comparison** pane is disabled.
 
 {{% alert color="warning" %}}
-The key limitation of the **Comparison** pane is that you can only compare a selected historical revision to your current working state. It is not possible to compare two past revisions to each other.
+You can only compare a selected historical revision to your current working state. It is not possible to compare two past revisions to each other.
 {{% /alert %}}
 
 This feature is similar to the [Changes pane](/refguide/changes-pane/), but while the **Changes** pane shows your local modifications since your last commit, the **Comparison** pane shows differences between any historical revision and your current state.
 
-For more information on comparing scenarios, see [Comparing Revisions](/refguide/comparing-revisions/).
+For more information on comparing scenarios, refer to [Comparing Revisions](/refguide/comparing-revisions/).
 
 ## Accessing the Comparison Pane and Version Compatibility
 
 To compare a revision to your current state, do the following:
 
 1. Open the **History** dialog by clicking **View** > **History**.
-2. Choose a revision from the list by right-clicking it. 
+2. Right-click a revision from the list. 
 3. Select **Compare to current state**.
 
 The **Comparison** pane opens and shows all differences between the selected revision and your current working state, including any uncommitted changes.
@@ -39,11 +39,11 @@ When comparing revisions created in older versions of Studio Pro, the models are
 
 The **Comparison** pane shows information at three levels:
 
-* **Level 1** – A list of all documents that differ between the two revisions.
-* **Level 2** – All elements within a selected document that have changed.
-* **Level 3** – The specific property values that differ for a selected element.
+* **Level 1** – a list of all documents that differ between the two revisions
+* **Level 2** – all elements within a selected document that have changed
+* **Level 3** – the specific property values that differ for a selected element
 
-You can navigate between levels by double-clicking a row or using the **Go to** button. Press <kbd>Backspace</kbd> or click **Back** to return to the previous level.
+Navigate between levels by double-clicking a row or clicking **Go to**. Press <kbd>Backspace</kbd> or click **Back** to return to the previous level.
 
 ### Unversioned App State
 
@@ -91,7 +91,7 @@ The **Status** column shows one of the following types:
 
 ## Level 2 and 3: Element and Property Differences
 
-Double-clicking a document in Level 1 navigates to Level 2 and Level 3, which appear side by side. Level 2 shows changed elements, and Level 3 shows the property differences for the selected element.
+Double-click a document in Level 1 to navigate to Level 2 and Level 3, which appear side by side. Level 2 shows changed elements, and Level 3 shows the property differences for the selected element.
 
 {{< figure src="/attachments/refguide/modeling/menus/view-menu/comparison-pane/comparison-pane-level2-3.png" alt="Comparison Pane Level 2 and Level 3 showing element and property differences" class="no-border" >}}
 
@@ -117,7 +117,7 @@ The Level 2 grid shows all changed elements within the selected document:
 
 | Column | Description | What It Shows |
 |--------|-------------|---------------|
-| **Status** | The type of change | An icon and label indicating whether the element was Added, Modified, or Deleted |
+| **Status** | The type of change | An icon and label indicating whether the element was added, modified, or deleted |
 | **Item** | The element name | The name of the changed element (for example, a widget, entity, or activity) |
 
 Hover over any cell to see the full value in a tooltip.
@@ -144,11 +144,11 @@ In future releases, both versions of the document will be opened side by side fo
 
 ## Refresh Behavior
 
-When you are comparing a revision to your current state and you save changes to your app, a **Refresh** button appears in the **Comparison** pane. Click **Refresh** to update the comparison with your latest saved changes.
+When you are comparing a revision to your current state and save changes to your app, a **Refresh** button appears in the **Comparison** pane. Click **Refresh** to update the comparison with your latest saved changes.
 
 ## Stopping a Comparison
 
-Click the **Stop comparison** button to close the comparison. This action closes the **Comparison** pane and returns it to a blank state. Any documents that were opened as part of the comparison remain open in the editor.
+Click **Stop comparison** to close the comparison. This action closes the **Comparison** pane and returns it to a blank state. Any documents that were opened as part of the comparison remain open in the editor.
 
 In the blank state, the **Comparison** pane displays a message with a link to start a new comparison. The **Go to** and **Stop comparison** buttons are disabled until a new comparison is started.
 
