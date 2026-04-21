@@ -36,7 +36,7 @@ The Snowflake AI Data Connector supports the following:
         * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) – Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
         * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) – Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text.
           
-    * Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) – This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
+    * Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) – This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql. Cortex Analyst works with semantic models or semantic model views that define how your data should be interpreted.
     * Synchronous execution of calls
     * Query your Cortex Search services
 
@@ -301,13 +301,15 @@ This statement returns data from a Snowflake table with the columns named as spe
 [Snowflake Cortex Analyst](/appstore/modules/genai/snowflake-cortex/) is a fully-managed, LLM-powered Snowflake Cortex feature that helps you create applications capable of reliably answering business questions based on your structured data in Snowflake.
 
 {{% alert color="info" %}}
-Snowflake Cortex Analyst is currently in open preview. For more information, refer to the [Snowflake Cortex Analyst documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst).
+Snowflake Cortex Analyst is now generally available. For more information, refer to the [Snowflake Cortex Analyst documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst).
 {{% /alert %}}
 
 ### Prerequisites
 
 * Make sure that you have access to Cortex Analyst. For more information, refer to the [Snowflake Cortex Analyst documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst).
-* Create the semantic model for Cortex Analyst. For more information, refer to [Creating Semantic Models for Snowflake Cortex Analyst](https://developers.snowflake.com/solution/creating-semantic-models-for-snowflakes-cortex-analyst/) in the Snowflake Cortex Analyst documentation.
+* Create a semantic model, semantic model view, or inline semantic model for Cortex Analyst. For more information, refer to:
+  * [Creating Semantic Models for Snowflake Cortex Analyst](https://developers.snowflake.com/solution/creating-semantic-models-for-snowflakes-cortex-analyst/)
+  * [Using Semantic Model Views](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst#understanding-semantic-views)
 * Set up one of the following supported authentication methods for Cortex Analyst:
     * OAUTH
     * KEYPAIR_JWT
@@ -321,7 +323,19 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
 2. Configure authentication based on the authentication type set in **ConnectionDetails**:
    * When using **KEYPAIR_JWT**, use the **Generate JWT** action from the **Toolbox** to generate a JWT token.
    * When using **OAuth** or **PAT**, use the **BearerToken_GetCreate** microflow from the **Utils** folder to get or create a **BearerToken** object. Set the **Token** and **ExpirationDate** attributes accordingly.
-3. Add the **Cortex Analyst: Create Request** action from the **Toolbox**, and then configure the **Request** to contain the path to the Snowflake semantic model file and your question/prompt for the model.
+3. Add the **Cortex Analyst: Create Request** action from the **Toolbox**, and configure the **Request**.
+   The request is based on the **AbstractCortexAnalystRequest** entity, which has two implementations depending on whether you want to use a single semantic model or multiple models:
+
+   * **CortexAnalystRequest** – Use this for single-model requests. Configure one of the following attributes:
+     * **Semantic_Model_File** – Provide the path to a semantic model YAML file stored in Snowflake.
+     * **Semantic_View** – Provide the name of the semantic model view that Cortex Analyst should use. For more information, refer to the [Using Semantic Model Views](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst#understanding-semantic-views) section of the Snowflake documentation.
+     * **Semantic_Model** – Provide the semantic model definition as a YAML string. This allows you to define the semantic model inline instead of uploading it to Snowflake.
+   * **CortexAnalystMultiModelRequest** – Use this when working with multiple semantic models. This allows Cortex Analyst to select the most relevant model when answering a question.
+     Each **SemanticModel** object can contain one of the following:
+     * **Semantic_Model_File** – Provide the path to a semantic model YAML file stored in Snowflake.
+     * **Semantic_View** – Provide the name of the semantic model view that Cortex Analyst should use. For more information, refer to the [Using Semantic Model Views](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst#understanding-semantic-views) section of the Snowflake documentation.
+     * **Inline_Semantic_Model** – Provide the semantic model definition as a YAML string. This allows you to define the semantic model inline instead of uploading it to Snowflake.
+   The user prompt is stored in the **CortexAnalystMessage** object. Set the question for Cortex Analyst in the **Content** attribute of this entity.
 4. Add the **Snowflake Cortex Analyst** action from the Toolbox and provide the following information:
     * **ConnectionDetails** – The connection details that you configured
     * **Request** – The request that you configured for the **Cortex Analyst: Create Request** action
@@ -331,8 +345,6 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
     * **SQLText** – The returned SQL suggestion
 6. To get the Cortex Analyst Response entity, add the **Response: Get Cortex Analyst Response** action from the Toolbox, and then add the **Response** entity as a parameter. The response contains the following information:
     * **Request_ID** – The returned *RequestId*
-   
- {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-ai-data-connector/CortexAnalystRequestExample.png" >}}
 
  ## Configuring Snowflake Cortex Search {#cortex-search}
 
@@ -342,7 +354,7 @@ Snowflake Cortex Search is a fully-managed, ML-powered Snowflake Cortex feature 
 
 * Make sure that you have access to Cortex Search. For more information, refer to the [Snowflake Cortex Search documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview).
 * Create the Cortex Search service. For more information, refer to [Creating Snowflake Cortex Search service](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview#create-the-service) in the Snowflake Cortex Search documentation.
-* Set up one of the following supported authentication methods for Cortex Analyst:
+* Set up one of the following supported authentication methods for Cortex Search:
     * OAUTH
     * KEYPAIR_JWT
     * PAT (Programmatic Access Token)
