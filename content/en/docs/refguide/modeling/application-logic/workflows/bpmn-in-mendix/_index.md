@@ -17,20 +17,26 @@ BPMN diagrams are organized into four categories of elements:
 - **Gateways:** Control how the flow splits or merges. For example, a gateway takes one path based on a condition or fires multiple paths in parallel.
 - **Sequence Flows:** The arrows connecting everything. They define the order in which elements execute.
 
-BPMN gives teams a shared language for describing processes. Analysts model, developers build, and stakeholders review — all from the same diagram. Pure BPMN platforms execute that diagram directly. Mendix takes a different approach.
+BPMN gives teams a shared language for describing processes. Analysts model, developers build, and stakeholders review — all from the same diagram.
 
 
 ## How Mendix Supports BPMN
 
-Real processes need user interfaces, validation logic, Application Programming Interface (API) calls, and data. In a pure BPMN platform, you build those things separately and connect them.
+Pure Business Process Model and Notation (BPMN) platforms give you notation to model processes. Mendix goes further. It combines process orchestration with complete execution capabilities in one unified environment. You define the process flow in workflows, then implement the execution logic using the full power of Studio Pro. There's no gap between design and build.
 
-In Mendix, they're part of the same model.
+Workflows orchestrate your process. They define when things happen and in what sequence. The rest of the Mendix platform provides unlimited execution options for how those steps are implemented:
 
 - **[Pages](/refguide/pages/)** are your forms.
-- **[Microflows](/refguide/microflows/)** run your business rules.
+- **[Microflows](/refguide/microflows/)** run your business rules, call APIs, and handle errors.
 - **[Domain model](/refguide/domain-model/)** holds your data.
+- **[Integrations](/refguide/integration/)** connect to external systems via REST, SOAP, OData, or messaging.
+- **[Scheduled events](/refguide/scheduled-events/)** trigger processes on a timer.
 
-When a workflow step needs custom behavior, you attach a [microflow](/refguide/microflows/) or open a [page](/refguide/pages/) for the user to act on. The user completes their task, and the workflow continues from where it left off.
+This integrated approach gives you flexibility that rigid BPMN engines can't match. When a standard workflow element doesn't fit your exact need, you compose a solution using platform capabilities. The BPMN Coverage page shows many examples of composable patterns. These aren't workarounds. They demonstrate the power to handle real-world complexity.
+
+{{% alert color="info" %}}Example: Consider a user task that requires approval with validation logic. In the workflow, you define a user task that opens a page showing the request details. The page uses the domain model to display data and validate user input. When the user submits their decision, a microflow evaluates the business rules, handles any errors, updates the data, and returns the outcome to the workflow. The workflow then continues based on that decision. Every piece, orchestration, UI, validation, business logic, and data, works together.{{% /alert %}}
+
+Mendix continues to expand native BPMN coverage in the Workflow editor. But the integrated platform approach is the real differentiator. It enables you to build any process you need, not just the ones that fit neatly into standard BPMN notation.
 
 
 ### Same Process. Different Canvas.
@@ -55,6 +61,8 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
 {{% /alert %}}
 
 ## BPMN Coverage Overview
+
+For a full breakdown of every supported and unsupported BPMN element, see the Full [BPMN Coverage](/refguide/bpmn-coverage/#artifacts) page.
 
 ### Gateways
 
@@ -131,7 +139,7 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td>n/a</td>
       <td>n/a</td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#none-events">🔴 Not Supported</a></td>
+      <td><a href="/refguide/bpmn-coverage/#none-events">🟢 Supported</a></td>
     </tr>
     <!-- MESSAGE -->
     <tr>
@@ -139,9 +147,9 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#message-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#message-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#message-events">🟢 Supported</a></td>
-      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#message-events">🔵 Planned</a></td>
       <td><a href="/refguide/bpmn-coverage/#message-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#message-events">🟢 Supported</a></td>
     </tr>
@@ -149,8 +157,8 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
     <tr>
       <td style="background-color:#d9d9d9;"><strong>Timer</strong></td>
       <td><a href="/refguide/bpmn-coverage/#timer-events">🟢 Supported</a></td>
-      <td><a href="/refguide/bpmn-coverage/#timer-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#timer-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#timer-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#timer-events">🔵 Planned</a></td>
       <td><a href="/refguide/bpmn-coverage/#timer-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#timer-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#timer-events">🟢 Supported</a></td>
@@ -164,7 +172,7 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#error-events">🟢 Supported</a></td>
       <td>n/a</td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#error-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#error-events">🔵 Planned</a></td>
       <td>n/a</td>
       <td>n/a</td>
       <td><a href="/refguide/bpmn-coverage/#error-events">🟢 Supported</a></td>
@@ -176,8 +184,8 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#signal-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#signal-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#signal-events">🟢 Supported</a></td>
-      <td><a href="/refguide/bpmn-coverage/#signal-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#signal-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#signal-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#signal-events">🔵 Planned</a></td>
       <td><a href="/refguide/bpmn-coverage/#signal-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#signal-events">🟢 Supported</a></td>
     </tr>
@@ -188,8 +196,8 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#conditional-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#conditional-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#conditional-events">🟢 Supported</a></td>
-      <td><a href="/refguide/bpmn-coverage/#conditional-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#conditional-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#conditional-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#conditional-events">🔵 Planned</a></td>
       <td>n/a</td>
       <td>n/a</td>
     </tr>
@@ -200,8 +208,8 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#escalation-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#escalation-events">🟢 Supported</a></td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#escalation-events">🔵 Planned (11.12)</a></td>
-      <td><a href="/refguide/bpmn-coverage/#escalation-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#escalation-events">🔵 Planned</a></td>
+      <td><a href="/refguide/bpmn-coverage/#escalation-events">🔵 Planned</a></td>
       <td><a href="/refguide/bpmn-coverage/#escalation-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#escalation-events">🟢 Supported</a></td>
     </tr>
@@ -212,7 +220,7 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td><a href="/refguide/bpmn-coverage/#compensation-events">🟢 Supported</a></td>
       <td>n/a</td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#compensation-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#compensation-events">🔵 Planned</a></td>
       <td>n/a</td>
       <td><a href="/refguide/bpmn-coverage/#compensation-events">🟢 Supported</a></td>
       <td><a href="/refguide/bpmn-coverage/#compensation-events">🟢 Supported</a></td>
@@ -224,7 +232,7 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td>n/a</td>
       <td>n/a</td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#cancel-events">🔵 Planned (11.12)</a></td>
+      <td><a href="/refguide/bpmn-coverage/#cancel-events">🔵 Planned</a></td>
       <td>n/a</td>
       <td>n/a</td>
       <td><a href="/refguide/bpmn-coverage/#cancel-events">🟢 Supported</a></td>
@@ -239,7 +247,7 @@ Maia only accepts images and PDFs. If you have a BPMN XML file, convert it to an
       <td>n/a</td>
       <td>n/a</td>
       <td>n/a</td>
-      <td><a href="/refguide/bpmn-coverage/#terminate-events">🟢 Supported</a></td>
+      <td><a href="/refguide/bpmn-coverage/#terminate-events">🔴 Not Supported</a></td>
     </tr>
     <!-- LINK -->
     <tr>
