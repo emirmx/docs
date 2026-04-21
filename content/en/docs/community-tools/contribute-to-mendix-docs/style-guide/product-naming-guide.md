@@ -24,7 +24,7 @@ A term may not already be included in this guide for the following reasons:
 * The term is outdated (meaning, usage of it has been decided against)
 * The term should not be used in customer-facing resources
 
-This is a useful guide to reference when communicating about the Mendix Platform and especially when you want to [contribute to the Mendix documentation](/developerportal/community-tools/contribute-to-the-mendix-documentation).
+This is a useful guide to reference when communicating about the Mendix Platform and especially when you want to [contribute to the Mendix documentation](/community-tools/contribute-to-mendix-docs/).
 
 This guide does not give insights into the product roadmap or internal company operations.
 
@@ -153,7 +153,7 @@ Do not use "starter app."
 
 ### App User
 
-For a definition of this term, see the [Access Management](/developerportal/collaborate/general-settings/#managing-app-users) section of the *Developer Portal Guide*.
+For a definition of this term, see [Access Management](/developerportal/portfolio-management/access-management/).
 
 Capitalize in all instances.
 
@@ -431,7 +431,7 @@ This is a generic term, so do not capitalize.
 
 ### Product Owner
 
-Capitalize in all instances of the [team role](/developerportal/collaborate/app-roles/#team-roles).
+Capitalize in all instances of the [team role](/developerportal/general/app-roles/#team-roles).
 
 ### production, acceptance, and test environments
 
