@@ -130,10 +130,10 @@ When you work on an object in memory, Mendix records whether the object has been
     1. An error occurs in an activity after the **Commit object(s)** activity has successfully sent changes to the database – the microflow ends and data in the database is rolled back to the savepoint.
     1. You perform a **Commit object(s)** on the object again, but the changes are not written to the database because:
 
-        * The object in memory still has your changes but it was marked as unchanged after your previous commit
+        * The object in memory still has the updated values but the attributes were marked as unchanged after your previous commit
         * The **Commit object(s)** activity does not see the changed marker and so does not recognize that your object in memory has changes which need to be written.
 
-    If you want to keep the changes in the version which is in memory, you will have to work around this behavior by creating a new object which contains the changes.
+    If you want to keep the changes in the version which is in memory, you will have to work around this behavior by changing the attributes of the object again.
 
 * Deleting an object and then committing it has different outcomes depending on whether the object has already been committed or not:
 
@@ -142,14 +142,11 @@ When you work on an object in memory, Mendix records whether the object has been
 
 #### Committing Non-Persistable Entities
 
-Mendix mimics this behavior for non-persistable entities. This means that:
-
-* Performing a commit on a non-persistable entity means that you cannot use a **Rollback object** activity to go back to the previous values
-* If an error occurs in a microflow, and you have error handling which does a rollback, the values roll back to the state a the previous savepoint.
+Mendix mimics this behavior for non-persistable entities. This means that performing a commit on a non-persistable entity means that you cannot use a **Rollback object** activity to go back to the previous values.
 
 ### Autocommit and Associated Objects {#autocommit-and-associated-objects}
 
-When an object in memory is committed through a default **Save** button, a commit activity, or web services, it always triggers the commit events. The platform also evaluates all associated objects. To guarantee data consistency, the platform may also autocommit associated objects.
+When an object in memory is committed through a default **Save** button, a commit activity, or web services, it always triggers the commit events. To guarantee data consistency, the platform may also autocommit associated objects.
 
 An autocommit is an automatic commit from the platform, which is done to keep the domain model in sync. If your application ends up having autocommitted objects, then you will have a modeling error. Since an association is also a member of an object, the association is stored in the database as well. This means that if you create an order line inside an order and the order line is the parent of the association, when you commit the order line, the order is autocommitted.
 
