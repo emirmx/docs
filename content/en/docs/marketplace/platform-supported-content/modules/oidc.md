@@ -86,7 +86,7 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 * Helps you build an OAuth client that initiates the Authorization Code grant flow to sign the end-user in via the browser.
 * Uses the `nonce` parameter to defend against replay attacks.
 * Validates ID-token signatures.
-* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. If your IdP’s well-known endpoint indicates *S256* as the value for `code_challenge_methods_supported`, the OIDC Module will automatically apply the PKCE feature. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature for better protection against hackers who try to get access to your app. PKCE is enabled by default.
+* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature for better protection against hackers who try to get access to your app. PKCE is enabled by default.
 * When authenticating APIs, it validates access tokens in one of two ways:
 
     * If the IdP supports token introspection, exposing the `/introspect` endpoint of the IdP, the OIDC module will introspect the access token to see if it is valid.
