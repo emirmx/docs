@@ -71,11 +71,11 @@ Now that you are ready to start using Mendix Workstation, you can implement your
 
 The domain model contains the following entities:
 
-* **Station** - Includes the station name, computer name, the workspace name and the client version (non-persistent entities).
-* **Device** - A list of devices associated with the station; includes device names and properties required to achieve a connection (non-persistent entities).
+* **Station** - A non-persistent entity representing the Workstation Client configuration.
+* **Device** - A non-persistent entity representing a connectable peripheral device. Includes the name, class and state (Available, Connected, or Error). Specialize this to maintain your device specific state.
 * **AppKeyPair** - A persistent entity to store the app's key pair. The public key needs to be entered in the corresponding app in the Workstation Management. 
 
-### Using the Nanoflows and Actions {#java-actions}
+### Using the Nanoflows and Actions {#javascript-actions}
 
 The following section provides more information about using the nanoflows and Java actions in your Mendix application.
 
@@ -100,6 +100,37 @@ Call `WaitForObjectChange` to wait for changes in the attributes of the specifie
 * `objectToObserve`
 * `attributes`
 * `timeout`
+
+#### GetCreateDevice
+
+Call this nanoflow to create and configure a device, and define the actions that should happen on connection, disconnection, or messages from the device. This action has the following parameters:
+
+* `name`
+* `class` 
+* `initialize`
+* `createDevice` 
+* `entity`
+* `onConnect`
+* `onMessage` 
+* `onDisconnect`
+
+#### ConnectDevice
+
+Call this action to connect to a specific device.
+
+#### DisconnectDevice
+
+Call this action to disconnect from a specific device.
+
+#### Initialize
+
+Call this action to initialize a peripheral module without creating a station or device.
+
+#### GetStation
+
+Call `GetStation` to retrieve configuration of the current Client computer by using the Workstation Client. `GetStation` can be used multiple times, but it queries the Workstation Client only the first time. The following calls return the current object loaded in the session. If connection with Workstation Client does not work, `GetStation` returns an empty object.
+
+If your microflow references a peripheral module (that is, a reusable module which supports a specific peripheral device), you do not need to call `GetStation` to reference it. Instead, you can initialize the peripheral module by calling `Initialize`.
 
 #### SubscribeToObjectChanges
 
@@ -129,37 +160,6 @@ Call `SubscribeToDeviceErrors` to trigger a nanoflow on device connection error.
 #### Unsubscribe
 
 Call `Unsubscribe` to end a subscription.
-
-#### SetupDevice
-
-Call this nanoflow to create and configure a device, and define the actions that should happen on connection, disconnection, or messages from the device. This action has the following parameters:
-
-* `name`
-* `class` 
-* `initialize`
-* `createDevice` 
-* `entity`
-* `onConnect`
-* `onMessage` 
-* `onDisconnect`
-
-#### ConnectDevice
-
-Call this action to connect to a specific device.
-
-#### DisconnectDevice
-
-Call this action to unsubscribe and completely disconnect from a specific device.
-
-#### Initialize
-
-Call this action to initialize a peripheral module without creating a station or device.
-
-#### GetStation
-
-Call `GetStation` to retrieve configuration of the current Client computer by using the Workstation Client. `GetStation` can be used multiple times, but it queries the Workstation Client only the first time. The following calls return the current object loaded in the session. If connection with Workstation Client does not work, `GetStation` returns an empty object.
-
-If your microflow references a peripheral module (that is, a reusable module which supports a specific peripheral device), you do not need to call `GetStation` to reference it. Instead, you can initialize the peripheral module by calling `Initialize`.
 
 #### Private Nanoflows
 
