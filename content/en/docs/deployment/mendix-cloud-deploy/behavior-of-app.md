@@ -59,6 +59,7 @@ Apps running in Mendix Cloud are subject to certain limitations. These behaviors
 Therefore, do not assume that an established WebSocket connection will remain open indefinitely. To ensure connection stability and prevent unexpected disconnections:
     * Enable periodic keepalive checks (for example, every 25–30 seconds). This ensures the connection remains active and prevents Network Address Translators (NATs) and firewalls from dropping long-idle tunnels.
     * Implement robust reconnection logic to gracefully handle connectivity loss and automatically reestablish dropped connections.
+* For websocket connections, a specific client always talks to the same application instances. Different connections (i.e. multiple browsers or after a refresh of the page) can go to different application instances.
 
 ## Move to Kubernetes
 
