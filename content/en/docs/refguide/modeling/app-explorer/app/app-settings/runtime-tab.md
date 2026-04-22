@@ -91,15 +91,18 @@ You can select a microflow that is automatically run immediately after the appli
 {{% alert color="warning" %}}
 After startup is designed to initialize the app and therefore runs before the app is able to respond to incoming service requests (for example, published REST services).
 
-There is a timeout set on the after startup microflow. If your after startup microflow exceeds this, your whole app will fail to start. The duration of this timeout will depend on the environment you are deploying to. The table below lists the timeouts for common deployment options.
+There is a timeout set on the after startup microflow. If your after startup microflow exceeds this, your whole app will fail to start. This applies to all instances of a multi-instance app—if one instance times out then the whole app will not start.
+
+The duration of the timeout will depend on the environment you are deploying to. The table below lists the timeouts for common deployment options.
 
 | Deployment Target | Timeout | Comment |
 | --- | ---: | --- |
-| Mendix Cloud | 15 minutes | This can be changed—contact [support](https://support.mendix.com/) |
+| Mendix Cloud | 15 minutes | This can be changed¹—discuss with [support](https://support.mendix.com/) |
 | Cloud Foundry | 11 minutes | Also for older Mendix versions running on Mendix Cloud |
 | Mendix on Kubernetes | Configurable | See [Customize Liveness Probe](/developerportal/deploy/private-cloud-cluster/#customize-liveness) for more information
 | SAP BTP | 60 seconds | This is [configurable](/developerportal/deploy/sap-cloud-platform/#DeployPackage) |
 
+¹ If your after startup microflow is timing out, reassess what it is doing. Extending the timeout is not usually the best solution.
 {{% /alert %}}
 
 ### Before Shutdown
