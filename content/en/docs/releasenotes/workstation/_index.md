@@ -12,41 +12,67 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 ## 3.6.0
 
-### Release date: April ??, 2026
+### Release date: April 23, 2026
 
 ### Workstation Management
 
 #### New Features
 
-* Testing improvements - We have enhanced the **Test Your Station** page by making it simpler to send messages to devices without enforcing strict validations. In addition, the page now displays the connection status for each device, as well as the last recorded error, if any.
+* We have enhanced the **Test Tour Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
+* Single computer registration keys are now valid for one hour from the last time it was. The keys are displayed and visible to all authorized users.
+* The maximum time window for bulk registration keys is limited to three months.
+* We have improved the **Station management** user interface for a more intuitive use experience.
+
+#### Fixes
+
+* To support advanced use cases when preparing station configurations on multiple computers, we have fixed an issue which prevented stations from being edited when multiple stations shared the same computer name. Computer names for stations within the same workspace are no longer required to be unique.
+
+{{% alert color="info" %}}
+If more than one station is found for a given computer name during bulk registration, the system now automatically creates an *Unassigned computer* instead of attempting an automatic assignment. This ensures that you can manually select the correct station configuration, preventing unintended assignments.
+{{% /alert %}}
+
+* We have fixed an issue where users were not redirected to the right workspace or station page using URL (for example, when clicking on a station or workspace name in Workstation Client).
+* We have fixed an issue where the login dialogue was opened after a session time-out.
+
+### Workstation Client
+
+#### Fixes
+
+* We have addressed ddressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
+* We have fixed a crash that could occur during window movement if the client configuration was not writable, improving the application stability.
+* We have updated the underlying dependencies for the Smart Card reader functionality, enhancing stability and compatibility.
 
 ### Workstation Connector
 
 #### New Features
 
-* New API for reusable modules - We have created a new high-level `SetupDevice` API to simplify the creation of custom, reusable peripheral modules for your organization. The new API does not require the use of any subscription-related APIs.
-* Better organization for subscription-related actions - We have moved the subscription-related Java actions to the `_USE_ME/Subscriptions` in order to provide more clarity for the user.
-* New nanoflows, Java actions, and widgets - We have added a number of other new nanoflows, Java actions, and widgets that you can use to configure the behaviour of your application. For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
-* Strict mode compatibility - We have changed certain APIs used by the Workstation Connector, so that it is now compatible with [strict mode](/refguide/strict-mode/), increasing the security. Previously, the connector used some APIs that were restricted in strict mode.
-* New app key-related API - We have added a new `/rest/stationconnector/publickey` API for future improvements to app key configuration.
+* We have added a number of other new nanoflows, Java actions, and widgets to simplify the creation of custom, reusable peripheral modules for your organization: 
 
-### Fixes
+    *  Manage peripheral object creation and initialize peripheral objects using the new `GetCreateDevice` action. You can configure callbacks on connection, on message, and on disconnection.
+    * Trigger application level logic on device events with new widgets. Handling peripheral events no longer requires changing peripheral modules.
+    * Manage events in a nanoflow with the new `SubscribeToObjectChanges` and `WaitForObjectChanges` nanoflow actions.
+    * Benefit from easier configuration of common use cases with the new `ConnectDevice`, `SendDeviceMessage` and `WaitForDeviceMessage` nanoflow actions.
 
-* We have fixed a bug where the connection timeout would not trigger if the devices list was not received. The timeout now uses a shared abort signal.
-* We have fixed a bug where devices were not added to the internal device list if they were added at a later time.
-* We have fixed a bug where callbacks would fail after the Object arguments were garbage collected.
-* We have fixes a bug where it was impossible to connect to new devices.
+For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
 
-### Deprecations
+#### Improvement
 
-* We have removed the `Station_User` association.
-* We have removed support for named events using strings and string expressions instead of object attributes.
+* The **Model Peripheral** entity is now a specialization of the **Device** entity and no longer requires association.
+* Calling `GetStation` is no longer required to initiate the Workstation Connector. It is only required to read the station configuration.
+
+#### Fixes
+
+* We have removed the `Station_User` association. Object garbage collection is now handled internally, leading to more robust object management.
+* We have fixed an issue related to the timing of initial connections.
+* We have fixed an issue where devices were sometimes discovered with a delay.
+
+#### Deprecations
+
 * We have deprecated the following actions:
 
-    * `SendMessage` and `WaitForResponse` - Deprecated in favor of `SendDeviceMessage` and `WaitForDeviceMessage`
-    * `SubscribeToMessages` (with `subscribeOnce` and implicit connection) - Deprecated in favor of `SubscribeToDeviceMessages`, `Unsubscribe`, and `ConnectDevice`
-    * `SubscribeToErrors` (with `subscribeOnce` and implicit connection) - Deprecated in favor of `SubscribeToDeviceErrors`, `Unsubscribe`, and `ConnectDevice`
-    * `UnsubscribeByDevice` and `UnsubscribeByContext` - Deprecated in favor of `Unsubscribe`
+    * `SendMessage` - Deprecated in favor of `SendDeviceMessage` and `WaitForDeviceMessage`
+    * `SubscribeToMessages` - Deprecated in favor of `GetCreateDevice`
+    * `SubscribeToErrors` - Deprecated in favor of `GetCreateDevice`
 
     The deprecated actions are longer exposed as nanoflows and have been moved to the `_USE_ME/Deprecated` folder.
 
