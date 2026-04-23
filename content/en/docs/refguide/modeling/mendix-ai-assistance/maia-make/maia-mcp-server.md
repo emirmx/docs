@@ -12,10 +12,10 @@ description: "Describes the features in Maia MCP Server."
 {{% alert color="info" %}}
 This feature is available in Studio Pro 11.10 and above. 
 
-To use Maia MCP Client, an internet connection and signing in to Studio Pro are required.
+To use Maia MCP Server, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-The Maia MCP Server in Studio Pro enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools.
+Maia MCP Server in Studio Pro enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools.
 
 It has the following key highlights:
 

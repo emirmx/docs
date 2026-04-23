@@ -138,6 +138,12 @@ The **Best Practice Recommender** section contains the following settings:
 
 * **Automatically run an inspection after opening an app** – when enabled, [Best Practice Recommender](/refguide/best-practice-recommender/) automatically runs an inspection when an app is opened. If the app contains errors, the inspection will not run. It is enabled by default.
 
+### MCP Server
+
+* **Enable MCP Server** - When enabled, you can use the [Maia MCP Server](/refguide/maia-mcp-server/) in Studio Pro, which enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools. It is disabled by default.
+
+    **Port** (Default: 7782) - With this setting, you can configure the port of the server. 
+
 ## Model Tab
 
 ### Pages
