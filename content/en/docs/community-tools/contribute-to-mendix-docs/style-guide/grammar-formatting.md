@@ -45,7 +45,7 @@ For more information, see [ampersand (&)](https://docs.microsoft.com/en-us/style
 
 Use bold for UI text (for example, button names and column names). Do not put UI text in quotation marks.
 
-> If you can't find the toolbox, you can reopen it from the **View** menu.
+> If you cannot find the toolbox, you can reopen it from the **View** menu.
 >
 > Select **From database** as the **Source**.
 >
@@ -126,7 +126,7 @@ Use these phrases consistently when cross-referencing:
 
 Do not bold or italicize text in cross-reference hyperlinks. Hyperlink formatting eliminates the need for additional emphasis.
 
-Only link to URLs that use HTTPS. If you're working with a URL that uses HTTP, check if there's an HTTPS version available instead. If not, consider linking to a different site.
+Only link to URLs that use HTTPS. If you are working with a URL that uses HTTP, check if there is an HTTPS version available instead. If not, consider linking to a different site.
 
 ### Cross-Referencing Examples
 
@@ -181,7 +181,7 @@ Use an en dash with spaces around it to set off introductory text in list items.
 
 ### Em Dash
 
-Use an em dash (`—`) to set off a parenthetical phrase with more emphasis than parentheses provide. Don't add spaces around an em dash.
+Use an em dash (`—`) to set off a parenthetical phrase with more emphasis than parentheses provide. Do not add spaces around an em dash.
 
 To insert an em dash, use the keyboard shortcut <kbd>Alt</kbd> + <kbd>0151</kbd> (or <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Minus sign</kbd> on a Mac).
 
@@ -191,7 +191,7 @@ To insert an em dash, use the keyboard shortcut <kbd>Alt</kbd> + <kbd>0151</kbd>
 
 ## Dates {#dates}
 
-Write dates in the format **month day, year** where:
+Write dates in the format **month day, year**, where:
 
 * Month is the full month or a three-letter abbreviation
 * [Day is the cardinal number](#numbers) (16), not the ordinal number (16th)
@@ -253,7 +253,7 @@ Refer to the various parts of the reference guide as "topics."
 
 Do not use bold for emphasis in regular documentation. An exception is that bold can be used to emphasize product names and technical terms in release notes.
 
-Italics is reserved for user input and strings (which should always be in English). Do not use italics in other contexts, such as emphasis; because machine translation tools may not translate italicized words.
+Italics are reserved for user input and strings (which should always be in English). Do not use italics in other contexts, such as emphasis, because machine translation tools may not translate italicized words.
 
 ## Entity Names
 
@@ -463,7 +463,7 @@ Do not use ordinal numbers for dates (see [Dates](#dates)).
 
 Address the reader of your documents using the second person instead of the first person: use "you" or "your" instead of "we", "our", or "us".
 
-Assume your reader is the person doing the tasks that you're documenting. Use "you" instead of "user", or use "end-user" when referring to the user of a Mendix app built on the Mendix Platform.
+Assume your reader is the person doing the tasks that you are documenting. Use "you" instead of "user", or use "end-user" when referring to the user of a Mendix app built on the Mendix Platform.
 
 Always use "Mendix" instead of "we" in the regular documentation. Use "we" only in the Studio Pro release notes, which are written from the perspective of PMs or developers.
 
@@ -493,13 +493,13 @@ You can replace an OpenID with a random UUID that you generate using a [UUID gen
 
 Placeholders in sample code represent values that the user must replace when they use the sample code. For inline code placeholders, use code formatting, italics, and all caps. For code blocks, use all caps and add text instructions explaining what to replace.
 
-Follow [Google's placeholder guidance](https://developers.google.com/style/placeholders): Use a short but descriptive name for the placeholder. Don't use generic text such as "input" or "placeholder". Use uppercase characters with underscore delimiters, unless that doesn't make sense in context.
+Follow [Google's placeholder guidance](https://developers.google.com/style/placeholders): Use a short but descriptive name for the placeholder. Do not use generic text such as "input" or "placeholder". Use uppercase characters with underscore delimiters, unless that does not make sense in context.
 
 > When using the following command, replace `*NAMESPACE\_NAME`* with the name of your namespace.
 >
 > kubectl create namespace NAMESPACE\_NAME
 
-Don't add ornaments around sample code placeholders unless the ornaments appear in the code.
+Do not add ornaments around sample code placeholders unless the ornaments appear in the code.
 
 ### Placeholders in Non-Code Elements
 
@@ -511,7 +511,7 @@ For non-code placeholders (such as in the Studio Pro UI), add ornaments like quo
 
 ## Plurals in Parentheses
 
-Do not put optional plurals in parentheses, for example "app(s)". Instead, use either the singular form or the plural form. If you must show both forms, write the singular form, then "or" and the plural form in parentheses.
+Do not put optional plurals in parentheses, for example, "app(s)". Instead, use either the singular form or the plural form. If you must show both forms, write the singular form, then "or" and the plural form in parentheses.
 
 > Register the app environment (or environments).
 
