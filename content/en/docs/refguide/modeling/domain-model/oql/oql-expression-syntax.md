@@ -1040,20 +1040,22 @@ DATEPARSE ( expression , pattern )
 
 `pattern` is a pattern used to convert `expression` to a Date and time value. Only string literals are allowed.
 
-#### Pattern syntax
+#### Pattern Syntax
 
-`DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls).
+The `DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls).
 
-#### Limitations and database-specific differences
+#### Limitations and Database-Specific Differences
 
 When an OQL query is executed, `DATEPARSE` is converted to the corresponding database function. Due to implementation specifics of database engines, different limitations apply:
 
 1. Format letters `u`, `F`, `G`, `k`, `K` are not supported.
-2. Additionally, format letters `S` and `W` are not supported in MySQL and MariaDB.
+2. MySQL and MariaDB do not support format letters `S` and `W`.
 3. For SQL Server, `DATEPARSE` accepts only patterns that match SQL Server styles 0 to 7, 9 to 13, 100 to 107, 109 to 113, 120 and 121. See [SQL Server documentation](https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles) for the list of supported styles.
 4. Format letter `h` accepts different ranges of values per database:
-	1. HSQLDB accepts values `0` to `11`
-	2. Other databases accept values `1` to `12`
+
+    1. HSQLDB accepts values `0` to `11`
+    2. Other databases accept values `1` to `12`
+    
 5. In addition to listed limitations, there are other implementation differences between database engines.
 
 {{% alert color="warning" %}}
