@@ -124,7 +124,7 @@ Call this action to disconnect from a specific device.
 
 #### Initialize
 
-Call this action to initialize a peripheral module without creating a station or device.
+This action sets up communication with the Workstation Client. It should be automatically called through the `initialize` parameter of `GetStation` or `GetCreateDevice`.
 
 #### GetStation
 
