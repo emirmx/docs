@@ -2,7 +2,7 @@
 title: "Maia MCP Server"
 linktitle: "MCP Server"
 url: /refguide/maia-mcp-server/
-weight: 80
+weight: 85
 description: "Describes the features in Maia MCP Server."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
