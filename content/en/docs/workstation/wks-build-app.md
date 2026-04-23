@@ -130,6 +130,8 @@ This action sets up communication with the Workstation Client. It should be auto
 
 Call `GetStation` to retrieve the current Workstation Client configuration and devices. This action creates and returns a station object with a linked device object per peripheral.
 
+To interact with a specific device, it is better to use `GetCreateDevice` instead. `GetCreateDevice` has a more convenient API, allows specialization, and does not create station and device objects which may not be needed.
+
 #### SubscribeToObjectChanges
 
 Call `SubscribeToObjectChanges` to trigger a nanoflow when the specified object changes.  This action has the following parameters:
