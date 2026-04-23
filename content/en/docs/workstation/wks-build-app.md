@@ -128,9 +128,7 @@ This action sets up communication with the Workstation Client. It should be auto
 
 #### GetStation
 
-Call `GetStation` to retrieve configuration of the current Client computer by using the Workstation Client. `GetStation` can be used multiple times, but it queries the Workstation Client only the first time. The following calls return the current object loaded in the session. If connection with Workstation Client does not work, `GetStation` returns an empty object.
-
-If your microflow references a peripheral module (that is, a reusable module which supports a specific peripheral device), you do not need to call `GetStation` to reference it. Instead, you can initialize the peripheral module by calling `Initialize`.
+Call `GetStation` to retrieve the current Workstation Client configuration and devices. This action creates and returns a station object with a linked device object per peripheral.
 
 #### SubscribeToObjectChanges
 
