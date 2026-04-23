@@ -18,8 +18,8 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 #### New Features
 
-* We have enhanced the **Test Tour Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
-* Single computer registration keys are now valid for one hour from the last time it was. The keys are displayed and visible to all authorized users.
+* We have enhanced the **Test Your Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
+* Single computer registration keys are now valid for one hour. The keys are displayed and visible to all authorized users.
 * The maximum time window for bulk registration keys is limited to three months.
 * We have improved the **Station management** user interface for a more intuitive use experience.
 
