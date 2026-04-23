@@ -483,7 +483,7 @@ If you absolutely must use the subnets on which Mendix operates, configure [4via
 1. Generate the IPv6 subnet route – Run `tailscale debug via 100 <Your IPv4 range>` in your terminal.
 2. Advertise the IPv6 subnet route – Run `tailscale set --advertise-routes=<Newly generated IPv6 range>` in your terminal.    
 
-You can then continue with the steps in the [Enabling and Disabling Resources](/control-center/configure-private-connectivity/#private-connectivity-resources-enable-disable) section.
+You can then continue with the steps in the [Enabling and Disabling Resources](/control-center/configure-private-connectivity/#private-connectivity-resources-enable-disable) section. Once you expose resources, make sure to use the generated IPv6 route to connect from your app to the resource, not the original IPv4 route.
 
 ### Restricted IP Ranges
 
