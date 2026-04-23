@@ -15,9 +15,11 @@ This feature is available in Studio Pro 11.10 and above.
 To use Maia Web Fetch, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia can fetch and read content from public websites and APIs. This allows Maia to retrieve documentation, access API endpoints, read configuration files, and gather information from the web to assist with your development tasks.
+Maia can fetch and read content from public websites and APIs. It can retrieve documentation, access API endpoints, read configuration files, and gather information from the web to assist with your development tasks.
 
-When Maia wants to fetch content from the web, it will ask for your permission first. You can approve or deny each request.
+When Maia wants to fetch content from the web, it asks for your permission first. You can approve or deny each request. The permission dialog looks like this:
+
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-make/maia-web-fetch/maia-web-fetch-permission-dialog.png" alt="Maia Web Fetch permission dialog" max-width=80% >}}
 
 ## What Maia Can Fetch
 
