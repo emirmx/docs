@@ -63,13 +63,13 @@ The **Global Inbox** consists of the following components:
 
 The Global Inbox operates with the following event flow:
 
-1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegisteredEvent**. This ensures the Global Inbox knows which apps are available to send task events. As part of this registration, the application's workflow groups are synchronized with the Global Inbox.
+1. Publisher App registration: Each publisher application registers with the Global Inbox by publishing a **PublisherAppRegistered**. This ensures the Global Inbox knows which apps are available to send task events. As part of this registration, the application's workflow groups are synchronized with the Global Inbox.
 2. Task update and event publication: When a workflow or task is created, updated, or completed in a publisher application that includes the Global Inbox Connector, the connector publishes the following events:
-    * **WorkflowUpdatedEvent** – triggered when the workflow is updated.
-    * **UserTaskUpdatedEvent** – triggered when a user task is updated.
-    * **UserTaskEndedEvent** – triggered when a user task is completed or aborted.
-    * **UserTaskOutcomeSelectedEvent** – triggered when a user completes a task by selecting an outcome.
-    * **WorkflowGroupUpdatedEvent** – triggered when a workflow group is updated.
+    * **WorkflowUpdated** – triggered when the workflow is updated.
+    * **UserTaskUpdated** – triggered when a user task is updated.
+    * **UserTaskEnded** – triggered when a user task is completed or aborted.
+    * **UserTaskOutcomeSelected** – triggered when a user completes a task by selecting an outcome.
+    * **WorkflowGroupUpdated** – triggered when a workflow group is updated.
 3. Event consumption: The Global Inbox consumes these events and updates or creates the corresponding task entries in the central task list.
 4. Task visibility and navigation: Tasks become visible in the Global Inbox. Users can click a button to navigate directly to the corresponding task page in the Publisher Application to take action.
 
@@ -84,7 +84,7 @@ The Global Inbox operates with the following event flow:
 
 3. Add the User module roles to the required App roles.
 4. Deploy and configure constants:
-    * The **CleanupEventsAfterDays** constant can be configured at: **UseMe** > **Configuration** > **CleanupEventsAfterDays**. All business events use their own entities to store data for consumption. For example, **CBE_UserTaskUpdatedEvent** stores data for the User Task Updated event. The **CleanupEventsAfterDays** setting is configurable and determines how long event data is retained. Data older than the specified number of days is automatically cleaned up. The default value is set to 30 days.
+    * The **CleanupEventsAfterDays** constant can be configured at: **UseMe** > **Configuration** > **CleanupEventsAfterDays**. All business events use their own entities to store data for consumption. For example, **CBE_UserTaskUpdated** stores data for the User Task Updated event. The **CleanupEventsAfterDays** setting is configurable and determines how long event data is retained. Data older than the specified number of days is automatically cleaned up. The default value is set to 30 days.
     * The **DueDateExpirationInDays** constant defines the period in days for which the user tasks are to be considered almost due with visual indicators in the **Global Task Inbox** page. The default value is set to 2 days. You should set the value based on your business needs.
 
 {{% alert color="info" %}}
