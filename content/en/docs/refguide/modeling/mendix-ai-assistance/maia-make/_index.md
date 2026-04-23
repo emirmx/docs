@@ -67,6 +67,14 @@ The conversational interface includes the following options:
 * **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
 * **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
+#### Support for Folder Structure
+
+In Studio Pro 11.10 and above, Maia understands and leverages the existing folder structure within your Mendix applications for all documents except for pages. This enables Maia to:
+
+* Organize documents into folders: When creating new documents, Maia can place them directly into relevant folders, respecting your project's organization.
+* Follow existing folder structures: Maia works within your established folder hierarchy, making it easier to maintain consistency.
+* Adhere to Mendix best practices: Maia can help organize documents according to the standard Mendix best practices for folder structure. For detailed guidance on optimal organization of folders, refer to the [Folder Structure](/refguide/naming-convention-best-practices/#folder-structure) section in *Naming Convention Best Practices*.
+
 For more information on how each Maia Make capability work, refer to the following documents:
 
 * [Maia Chat](/refguide/maia-chat/)
