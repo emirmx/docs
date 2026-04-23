@@ -154,7 +154,7 @@ When cross-referencing a section of the same document, include "section" outside
 
 When cross-referencing a section of another document, add the link to the section name and include the italicized name of the document you are linking to. Do not include the section number.
 
-> For details, see the [Section Name](/path/to/page/#anchor-id) section in *Document Title*.
+> For details, see the `[Section Name](/path/to/page/#anchor-id)` section in *Document Title*.
 
 ### Hyperlinks
 
