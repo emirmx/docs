@@ -18,8 +18,8 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 #### New Features
 
-* We have enhanced the **Test Tour Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
-* Single computer registration keys are now valid for one hour from the last time it was. The keys are displayed and visible to all authorized users.
+* We have enhanced the **Test Your Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
+* Single computer registration keys are now valid for one hour. The keys are displayed and visible to all authorized users.
 * The maximum time window for bulk registration keys is limited to three months.
 * We have improved the **Station management** user interface for a more intuitive use experience.
 
@@ -31,14 +31,13 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 If more than one station is found for a given computer name during bulk registration, the system now automatically creates an *Unassigned computer* instead of attempting an automatic assignment. This ensures that you can manually select the correct station configuration, preventing unintended assignments.
 {{% /alert %}}
 
-* We have fixed an issue where users were not redirected to the right workspace or station page using URL (for example, when clicking on a station or workspace name in Workstation Client).
 * We have fixed an issue where the login dialogue was opened after a session time-out.
 
 ### Workstation Client
 
 #### Fixes
 
-* We have addressed ddressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
+* We have addressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
 * We have fixed a crash that could occur during window movement if the client configuration was not writable, improving the application stability.
 * We have updated the underlying dependencies for the Smart Card reader functionality, enhancing stability and compatibility.
 
@@ -46,14 +45,14 @@ If more than one station is found for a given computer name during bulk registra
 
 #### New Features
 
-* We have added a number of other new nanoflows, Java actions, and widgets to simplify the creation of custom, reusable peripheral modules for your organization: 
+* We have added a number of other new nanoflows, JavaScript actions, and widgets to simplify the creation of custom, reusable peripheral modules for your organization: 
 
     *  Manage peripheral object creation and initialize peripheral objects using the new `GetCreateDevice` action. You can configure callbacks on connection, on message, and on disconnection.
     * Trigger application level logic on device events with new widgets. Handling peripheral events no longer requires changing peripheral modules.
     * Manage events in a nanoflow with the new `SubscribeToObjectChanges` and `WaitForObjectChanges` nanoflow actions.
     * Benefit from easier configuration of common use cases with the new `ConnectDevice`, `SendDeviceMessage` and `WaitForDeviceMessage` nanoflow actions.
 
-For more information, see [Nanoflows](/mendix-workstation/build-app/#java-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
+For more information, see [Nanoflows](/mendix-workstation/build-app/#javascript-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
 
 #### Improvement
 
