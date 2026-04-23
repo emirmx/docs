@@ -32,16 +32,16 @@ Maia can retrieve the following types of content:
 
 ## Limitations
 
-Maia cannot access:
+Maia cannot access the following:
 
-* **Internal or private addresses** — Maia will not fetch from localhost, private IP ranges (like 192.168.x.x or 10.0.0.x), or your local machine's internal services.
-* **Binary content** — Images, videos, PDFs, and archives cannot be fetched. If a URL serves binary content, Maia will not be able to read it.
-* **Very large responses** — Responses larger than 1 MB will be rejected.
+* **Internal or private addresses** — Maia does not fetch from localhost, private IP ranges (like 192.168.x.x or 10.0.0.x), or your local machine's internal services.
+* **Binary content** — Images, videos, PDFs, and archives cannot be fetched. If a URL serves binary content, Maia is not able to read it.
+* **Very large responses** — Responses larger than 1 MB are rejected.
 * **Non-HTTPS URLs** — Only secure HTTPS connections are supported.
 
 ## Troubleshooting {#troubleshooting}
 
-If Maia says it cannot fetch a URL, check:
+If Maia says it cannot fetch a URL, check the following:
 
 * **Is it a public URL?** — The URL must be accessible without authentication and must point to a public server, not an internal service.
 * **Does the server block automated access?** — Some servers reject requests from automated clients. Maia may not be able to bypass these restrictions.
@@ -50,5 +50,6 @@ If Maia says it cannot fetch a URL, check:
 
 ## Read More
 
+* [Maia Make Capabilities](/refguide/maia-make/)
 * [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
 * [Maia Chat](/refguide/maia-chat/)
