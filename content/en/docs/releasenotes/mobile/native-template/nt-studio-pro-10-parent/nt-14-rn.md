@@ -5,9 +5,11 @@ weight: 6
 description: "Native Template 14"
 ---
 
-## 14.1.15
+## 14.1.15 {#1425}
 
 **Release date: Apr 22, 2026**
+
+### Improvements
 
 - We updated `@mendix/native` to v9.3.1, strengthening Android cookie encryption by migrating from `AES/CBC/PKCS7Padding` to `AES/GCM/NoPadding`.
 
