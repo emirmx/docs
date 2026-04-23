@@ -31,14 +31,13 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 If more than one station is found for a given computer name during bulk registration, the system now automatically creates an *Unassigned computer* instead of attempting an automatic assignment. This ensures that you can manually select the correct station configuration, preventing unintended assignments.
 {{% /alert %}}
 
-* We have fixed an issue where users were not redirected to the right workspace or station page using URL (for example, when clicking on a station or workspace name in Workstation Client).
 * We have fixed an issue where the login dialogue was opened after a session time-out.
 
 ### Workstation Client
 
 #### Fixes
 
-* We have addressed ddressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
+* We have addressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
 * We have fixed a crash that could occur during window movement if the client configuration was not writable, improving the application stability.
 * We have updated the underlying dependencies for the Smart Card reader functionality, enhancing stability and compatibility.
 
