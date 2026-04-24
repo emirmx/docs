@@ -128,7 +128,7 @@ The **In-Editor Recommender** section contains the following settings:
 
 * **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide/logic-recommender/) in the microflow, nanoflow, and rule editors. It is enabled by default. 
 * **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide/workflow-recommender/) in the workflow editor. It is enabled by default.
-* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide/ui-recommender/). It is enabled by default.
+* **Enable for page editor** - this allows you to enable and disable the [UI Recommender](/refguide/ui-recommender/). It is enabled by default.
 
 ### Best Practice Recommender
 
@@ -140,7 +140,7 @@ The **Best Practice Recommender** section contains the following settings:
 
 ### MCP Server
 
-* **Enable MCP Server** - When enabled, you can use the [Maia MCP Server](/refguide/maia-mcp-server/) in Studio Pro, which enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools. It is disabled by default.
+* **Enable MCP Server** - When enabled, you can use the [Studio Pro MCP Server](/refguide/studio-pro-mcp-server/), which enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools. It is disabled by default.
 
     **Port** (Default: 7782) - With this setting, you can configure the port of the server. 
 
