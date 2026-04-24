@@ -11,8 +11,8 @@ Mendix supports a broad range of BPMN constructs, either directly on the Workflo
 
 Each BPMN element is marked with a support level indicator:
 
-* 🟢 Workflow Native – Directly available as a dedicated element in the Workflow editor with zero extra effort
-* 🟡 Composable – Achieved by combining Workflow editor constructs and/or platform features
+* 🟢 Workflow Native – Directly available as a dedicated element in the workflow editor with zero extra effort
+* 🟡 Composable – Achieved by combining workflow editor constructs and/or platform features
 * 🔵 Planned – Support is planned for an upcoming release
 * 🔴 Not Supported – Not currently supported in Mendix
 * N/A – Concept does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.

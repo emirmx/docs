@@ -38,11 +38,11 @@ The following example illustrates how different parts of the platform work toget
 
 Consider a user task that requires approval with validation logic. In the workflow, you define a user task that opens a page showing the request details. The page uses the domain model to display data and validate user input. When the user submits their decision, a microflow evaluates the business rules, handles any errors, updates the data, and returns the outcome to the workflow. The workflow then continues based on that decision. Every piece, orchestration, UI, validation, business logic, and data, works together.
 
-Mendix continues to expand native BPMN support in the Workflow editor. Its integrated platform approach distinguishes it from pure BPMN modeling tools. It enables you to implement processes beyond what can be expressed using standard BPMN notation alone.
+Mendix continues to expand native BPMN support in the workflow editor. Its integrated platform approach distinguishes it from pure BPMN modeling tools. It enables you to implement processes beyond what can be expressed using standard BPMN notation alone.
 
 ### Same Process on Different Canvases
 
-The following example shows a leave request process modeled in two ways: as a BPMN diagram and in the Mendix Workflow editor.
+The following example shows a leave request process modeled in two ways: as a BPMN diagram and in the Mendix workflow editor.
 
 **Process in BPMN**
 
@@ -65,6 +65,15 @@ Maia only accepts images or PDFs. If you have a BPMN XML file, convert it to an 
 ## BPMN Coverage Overview
 
 The following sections provide a brief overview of supported and unsupported BPMN elements in Mendix. For detailed information on how each element is supported, see [BPMN Coverage](/refguide/bpmn-coverage/).
+
+### Support Levels
+
+Each BPMN element is marked with a support level indicator:
+
+* 🟢 Supported – Directly supported in the workflow editor or composable by combining workflow editor constructs and/or platform features
+* 🔵 Planned – Support is planned for an upcoming release
+* 🔴 Not Supported – Not currently supported in Mendix
+* N/A – Concept does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.
 
 ### Gateways
 
