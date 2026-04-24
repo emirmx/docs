@@ -1053,8 +1053,8 @@ When an OQL query is executed, `DATEPARSE` is converted to the corresponding dat
 3. For SQL Server, `DATEPARSE` accepts only patterns that match SQL Server styles 0 to 7, 9 to 13, 100 to 107, 109 to 113, 120 and 121. See [SQL Server documentation](https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles) for the list of supported styles.
 4. Format letter `h` accepts different ranges of values per database:
 
-    1. HSQLDB accepts values `0` to `11`
-    2. Other databases accept values `1` to `12`
+    1. HSQLDB uses zero-based indexing and accepts values `0` to `11`
+    2. Other databases use one-based indexing and accept values `1` to `12`
     
 5. In addition to listed limitations, there are other implementation differences between database engines.
 
