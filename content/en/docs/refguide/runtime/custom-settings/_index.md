@@ -350,13 +350,14 @@ The `https.` part of the names of these settings does not imply anything about w
 
 ### Non-proxy hosts {#non-proxy-hosts}
 
-The setting `http.nonProxyHosts` defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '&#x007C;'.
-
-This settings applies to both http(s) connections and the license server:
-
-1. For http(s) connections the patterns may start or end with a '*' for wildcards.
-2. For the license server the runtime ignores wildcards.
-
 {{% alert color="info" %}}
 Using `http.nonProxyHosts` for http(s) connections was introduced in Mendix 11.10.0.
 {{% /alert %}}
+
+The `http.nonProxyHosts` setting defines a list of hosts that should be reached directly, bypassing the proxy. This is a list of patterns separated by '&#x007C;'.
+
+This setting applies to both http(s) connections and the license server:
+
+* Http(s) connections – the patterns may start or end with a '*' for wildcards
+* License server – the runtime ignores wildcards
+
