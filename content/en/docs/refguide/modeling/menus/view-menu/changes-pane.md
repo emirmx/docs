@@ -9,6 +9,10 @@ description: "Describes the Changes pane in Mendix Studio Pro."
 
 For version control enabled apps (apps with Team Server or other Git servers), the **Changes** pane shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from it. 
 
+{{% alert color="info" %}}
+The **Changes** pane shows your local changes since the last commit. To compare any historical revision to your current state, use the [Comparison pane](/refguide/comparison-pane/) instead. For more information, see [Comparing Revisions](/refguide/comparing-revisions/).
+{{% /alert %}}
+
 This pane consists of the following:
 
 * The [top bar](#top-bar) contains various buttons, such as **Back**, **Go to**, **Tasks**. 
@@ -141,4 +145,6 @@ The left and right panes will contain the same information as in [Zoomed-In Leve
 ## Read More
 
 * [Studio Pro Overview](/refguide/studio-pro-overview/)
-* [Version Control](/refguide/version-control/) 
+* [Version Control](/refguide/version-control/)
+* [Comparison Pane](/refguide/comparison-pane/)
+* [Comparing Revisions](/refguide/comparing-revisions/) 

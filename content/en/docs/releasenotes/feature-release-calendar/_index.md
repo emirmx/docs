@@ -28,7 +28,14 @@ General Availability means that a feature is available for all users. This type 
 | Mendix Cloud GenAI Resource Packs Guardrails | Private Beta: Mx 11.15 |
 | Agent Editor in Studio Pro<sup>1</sup> | General Availability: Mx 11.9 |
 | Agent Observability | General Availability: Mx 11.5 + Mx 10.24 |
-| Model Mendix Agents as part of your Workflow | General Availability: Mx 11.9 |
+| Model Agents as part of your Workflow | General Availability: Mx 11.9 |
+| Dynamic Case Management | Private Beta: Mx 11.3 <br/>Limited Availability: Mx 11.12 |
+| Global Inbox Workflow Tasks | General Availability: Mx 11.9 |
+| Global Inbox Other Tasks | General Availability: Mx 11.12 |
+| Workflow Non-interrupting Event Subprocesses (Message trigger) | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
+| Workflow Interrupting Event Subprocesses (Message trigger) | General Availability: Mx 11.12 |
+| Workflow Interrupting Event Subprocesses (Timer trigger) | General Availability: Mx 11.12 |
+| Workflow Message Events | General Availability: Mx 11.12 |
 
 {{% alert color="info" %}}
  ¹Limitations: Initially only Mendix Cloud GenAI Resources as provider, and only design-time modification of prompts & other agent settings. Incrementally, we will remove these limitations.
@@ -77,7 +84,7 @@ General Availability means that a feature is available for all users. This type 
 | Multilingual Studio Pro and Platform: Portuguese | Public Beta: Mx 11.0 |
 | Module updates while retaining customizations | Public Beta: Mx 11.21 |
 | Easy comparison of revisions (textual diffing) | General Availability: Mx 11.9 |
-| Easy comparison of revisions (visual diffing) | Public Beta: Mx 11.18 |
+| Easy comparison of revisions (visual diffing) | Public Beta: Mx 11.12 |
 | Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
 | Merge Requests (aka Pull requests) | Public Beta: Mx 12.x |
 | OpenTelemetry Tracing | General Availability: Mx 11.12 |
@@ -99,17 +106,6 @@ General Availability means that a feature is available for all users. This type 
 | Marketplace Component management:<ul><li>Uploading via API</li><li>Content API extended</li></ul> | General Availability: Mx 11.12 |
 | Improved Marketplace notifications | General Availability: Mx 11.15 |
 | Primitive parameters | General Availability: Mx 11.6 (Pages) & <br/>Mx 11.9 (Snippets) |
-
-### Process Orchestration
-
-| Capability or Feature | Expected Release |
-| --- | --- |
-| Dynamic Case Management | Private Beta: Mx 11.3 <br/>Limited Availability: Mx 11.12 |
-| Global Inbox Workflow Tasks | Public Beta: Mx 11.9 <br/>General Availability: Mx 11.12 |
-| Workflow non-interrupting Event Subprocesses (Message trigger) | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
-| Workflow Interrupting Event Subprocesses (Message trigger) | General Availability: Mx 11.12 |
-| Workflow Interrupting Event Subprocesses (Timer trigger) | General Availability: Mx 11.12 |
-| Workflow Message Events | General Availability: Mx 11.12 |
 
 ### Governance
 
