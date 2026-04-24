@@ -84,11 +84,14 @@ In the **POST_v1_ExecuteStatement** and **CortexAnalyst** operations, the token 
 
 #### Configuring Programmatic Access Token (PAT) Authentication {#setup-pat-snowflake}
 
-Programmatic Access Tokens (PATs) can be used to authenticate Snowflake REST API calls without configuring OAuth or key-pair authentication.
+You can use Programmatic Access Tokens (PATs) to authenticate Snowflake REST API calls without configuring OAuth or key-pair authentication.
+
 Use the **BearerToken_GetCreate** microflow from the *Utils* folder to get or create a **BearerToken** object. Set the PAT value on the **Token** attribute and configure the **ExpirationDate** according to the lifetime of the token.
+
 The token is retrieved from **ConnectionDetails** during execution of operations such as **POST_v1_ExecuteStatement** and **CortexAnalyst** and is used as a bearer token for Snowflake API authentication.
 
-{{% alert color="info" %}} Snowflake enforces a **maximum validity period for authentication tokens**. Even if you configure a longer expiration when generating or storing a token, Snowflake will enforce its own upper limit and the token will not remain valid beyond that limit.
+{{% alert color="info" %}} Snowflake enforces a maximum validity period for authentication tokens. Even if you configure a longer expiration when generating or storing a token, Snowflake will enforce its own upper limit and the token will not remain valid beyond that limit.
+
 Because this limit is defined by Snowflake and may change over time, you should always verify the current maximum supported token lifetime in the official Snowflake documentation. For more information, see the Snowflake documentation on [Authenticating to the SQL API](https://docs.snowflake.com/en/developer-guide/sql-api/authenticating). {{% /alert %}}
 
 When configuring the **ExpirationDate** of a **BearerToken**, make sure it aligns with the token lifetime supported by Snowflake to avoid authentication failures caused by expired tokens.
