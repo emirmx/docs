@@ -8,6 +8,11 @@ numberless_headings: true
 
 These release notes cover changes to the [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/extensibility-api/).
 
+## Version 11.10.0
+
+* We added a Show button to the Element Selector API, allowing users to navigate to the selected element in the editor.
+* WWe added visual highlighting to the Element Selector API. You can now pass a `selectedElementId` to highlight a previously selected element in the selector dialog, making it easier for users to identify their last selection when reopening the selector.
+
 ## Version 11.9.0
 
 * We introduced a new Runtime Configuration API under `studioPro.runtime.configuration`, which allows you to retrieve runtime constants from the active configuration. For more information, see [Access Runtime Constants Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/runtime-configuration-api/).
