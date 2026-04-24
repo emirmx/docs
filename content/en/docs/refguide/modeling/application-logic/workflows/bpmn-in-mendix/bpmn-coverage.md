@@ -15,6 +15,7 @@ Each BPMN element is marked with a support level indicator:
 * 🟡 Composable — Achieved by combining Workflow Editor constructs and/or Platform features
 * 🔵 Planned — Support is planned for an upcoming release
 * 🔴 Not Supported — Not currently supported in Mendix
+* N/A — Concept does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.
 
 ## Gateways {#gateways}
 
@@ -72,8 +73,6 @@ Each BPMN element is marked with a support level indicator:
 ## Events {#events}
 
 Mendix supports a broad range of BPMN event types. Some are available directly as elements on the Workflow canvas. Others are achieved through [microflows](/refguide/microflows/) that contain workflow-related activities.
-
-*  **N/A** — this combination does not exist in the BPMN 2.0 specification. It is not a Mendix limitation.
 
 ### None Events {#none-events}
 
