@@ -12,7 +12,7 @@ Tool calling (also known as function calling) enables LLMs (Large Language Model
 
 The LLM (e.g. OpenAI ChatGPT, Anthropic Claude) does not call the function. The model returns a tool call JSON structure that is used to build the input of the functions so that they can be executed as part of the chat completions operation.
 
-## High-level flow {#high-level}
+## High-Level Flow {#high-level}
 
 If you use the `Chat Completions (without history)` or `Chat Completions (with history)` actions for text generation with tool calling, the LLM connector will handle the whole process for you in just one step:
 
@@ -31,7 +31,7 @@ For more general information on this topic, see [OpenAI: Function Calling](https
 
 ### User Control {#user-control}
 
-Sometimes it is required that tool calls are not executed immediately, but first need confirmation from the user, for example if actions are taken on behalf of the user such as sending an email or triggering a workflow. In such cases, tools can be configured for [User Access and Approval](/appstore/modules/genai/genai-for-mx/commons/#enum-useraccessapproval) to stop the function execution until the user takes a decision. If the user rejects the call, the LLM gets informed about the decision and might find another way to fulfill the user's request.
+Sometimes, tool calls should not be executed immediately, and should first require confirmation from the user, for example, if actions are taken on behalf of the user such as sending an email or triggering a workflow. In such cases, tools can be configured for [User Access and Approval](/appstore/modules/genai/genai-for-mx/commons/#enum-useraccessapproval) to stop the function execution until the user takes a decision. If the user rejects the call, the LLM gets informed about the decision and might find another way to fulfill the user's request.
 
 ## Tool Calling with the GenAI Commons Module and the LLM Connectors {#llm-connector}
 
@@ -54,23 +54,22 @@ A helper operation is available in GenAI Commons to define the Tool Choice:
 
 {{% alert color="warning" %}}
 
-Function calling is a very powerful capability, but may be used with caution. Please note that function microflows run in the context of the current user without enforcing entity-access. You can use `$currentUser` in XPath queries to ensure you retrieve and return only information that the end-user is allowed to view; otherwise confidential information may become visible to the current end-user in the assistant's response.
+Function calling is a very powerful capability, but may be used with caution. Note that function microflows run in the context of the current user without enforcing entity-access. You can use `$currentUser` in XPath queries to ensure you retrieve and return only information that the end-user is allowed to view; otherwise confidential information may become visible to the current end-user in the assistant's response.
 
-We also strongly advise that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user, for example sending an email, posting online, or making a purchase, see [user control](#user-control) above.
+Mendix also strongly advises that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user, for example, sending an email, posting online, or making a purchase, see [user control](#user-control) above.
 {{% /alert %}}
 
-### Supported OpenAI models {#supported-models-openai}
+### Supported OpenAI Models {#supported-models-openai}
 
-OpenAI's latest GPT-3.5 Turbo, GPT-4 Turbo and GPT-4o models are trained with tool calling (function calling) data. Older model versions may not support parallel tool calls. For more details, see [OpenAI Documentation](https://platform.openai.com/docs/guides/function-calling/supported-models).
+OpenAI's latest GPT-3.5 Turbo, GPT-4 Turbo, and GPT-4o models are trained with tool calling (function calling) data. Older model versions may not support parallel tool calls. For more details, see [OpenAI Documentation](https://platform.openai.com/docs/guides/function-calling/supported-models).
 
 For models used through Microsoft Foundry, feature availability is currently different depending on method of input and deployment type. For details, see [Microsoft Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#differences-between-openai-and-azure-openai-gpt-4-turbo-ga-models).
 
-### Supported Amazon Bedrock models {#supported-models-bedrock}
+### Supported Amazon Bedrock Models {#supported-models-bedrock}
 
-Multiple models available on Amazon Bedrock support tool calling. In the Bedrock documentation, tool calling is often addressed as *Tool Use*, which describes the same concept.
-A detailed overview showing which models support tool calling (tool use) can be found [here](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
+Multiple models available on Amazon Bedrock support tool calling. In the Bedrock documentation, tool calling is often addressed as *Tool Use*, which describes the same concept. For a detailed overview showing which models support tool calling (tool use), refer to [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
  
-## Use cases {#use-cases}
+## Use Cases {#use-cases}
 
 Tool calling can be used for a variety of use cases including the following:
 
@@ -91,11 +90,12 @@ The first diagram shows a simple process where the user is interested in the sta
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/function-calling/function-calling.png" >}}
 
-In the second diagram, the user did not provide the required input for the function. The model was instructed in the system prompt to not assume parameters and ask for clarification if needed: `Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous. If a tool call was not successful, give this information to the user and ask for clarification.`
-The second user prompt contains the identifier and the whole message history is sent as part of the request. With this information, the model is now able to answer the initial question of the user.
+In the second diagram, the user does not provide the required input for the function. The model is instructed in the system prompt not to assume parameters and ask for clarification if needed: `Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous. If a tool call was not successful, give this information to the user and ask for clarification.`
+
+The second user prompt contains the identifier, and the whole message history is sent as part of the request. With this information, the model is now able to answer the initial question of the user.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/function-calling/function-calling-with-clarification.png" >}}
 
-In the last diagram, the *Ticket_CreateNew* function was registered with `UserConfirmationRequired`, so it only gets executed after the user confirmed it. The tool call will be shown to the user who can decide to confirm or reject it. If rejected, the microflow will not be executed and the LLM gets informed about the decision. If confirmed, the microflow gets executed and returns the response as usual to the LLM.
+In the last diagram, the `Ticket_CreateNew` function is registered with `UserConfirmationRequired`, so it is only executed when user confirms it. The tool call is shown to the user, who can decide to confirm or reject it. If rejected, the microflow will not be executed, and the LLM gets informed about the decision. If confirmed, the microflow gets executed and returns the response as usual to the LLM.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/function-calling/function-calling-with-user-control.png" >}}
