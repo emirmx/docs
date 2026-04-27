@@ -289,11 +289,11 @@ You may need to use the following classes when building a more complex custom pa
 | `chat-page--fullheight` | To be added to the container of a full-screen chat to ensure it fills available space and maintains proper flex layout with wrapping and padding | 
 | `chat-page--fullheight-centered` | To be added to a full-screen chat container to center it on the page with a maximum width, while preserving the full-height flex layout and wrapping | 
 
-#### Markdown rendering
+#### Markdown Rendering
 
-Many modern LLMs generate their responses in markdown format to make it more appealing to users. By default, the text in the chat interface is rendered using the [MarkdownViewer](https://marketplace.mendix.com/link/component/230248) widget. This can be disabled by setting the constant `EnableMarkdownViewer` to false, which will show the response in plain text.
+Many modern LLMs generate their responses in Markdown format to make it more appealing to users. By default, the text in the chat interface is rendered using the [MarkdownViewer](https://marketplace.mendix.com/link/component/230248) widget. You can disable it by setting the constant `EnableMarkdownViewer` to *False*, which will show the response in plain text.
 
-Additionally, sometimes it is helpful to manipulate the markdown styling, for example if the available space is limited. In those cases, you can adjust certain settings using the `widget-markdown` class and apply your custom styling, e.g., removing the spacing from headers or lists.
+Sometimes it is helpful to manipulate the Markdown styling. For example, if the available space is limited, you can adjust certain settings using the `widget-markdown` class and apply your custom styling, for example, removing space from headers or lists.
 
 #### Using a Custom Layout
 
