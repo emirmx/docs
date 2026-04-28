@@ -1,7 +1,7 @@
 ---
 title: "Update Assistant (Beta)"
 url: /refguide/update-assistant/
-weight: 60
+weight: 70
 description: "Describes the Update Assistant (Beta) pane for scanning Java deprecations in Mendix Studio Pro."
 ---
 
