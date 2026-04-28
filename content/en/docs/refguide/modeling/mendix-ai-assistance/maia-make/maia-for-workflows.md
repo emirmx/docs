@@ -63,10 +63,6 @@ Below are some examples of prompts you can use to ask Maia for further explanati
 
 Maia for Workflows currently has some limitations.
 
-### Supported Workflow Elements
-
-Currently, [Multi-user task](/refguide/multi-user-task/) is not supported. However, most of the other workflow elements are supported.
-
 ### Not All Properties Can Be Configured
 
 Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
