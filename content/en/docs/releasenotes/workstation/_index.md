@@ -10,6 +10,16 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.6.1
+
+### Release date: April 28, 2026
+
+### Workstation Management
+
+#### Fixes
+
+* We have fixed an issue where, due to security hardening, it was not possible to refresh the configuration of a Workstation Client which was originally registered with an earlier version of Workstation Management.
+
 ## 3.6.0
 
 ### Release date: April 23, 2026
