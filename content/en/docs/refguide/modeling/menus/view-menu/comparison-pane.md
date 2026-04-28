@@ -23,7 +23,7 @@ For more information on comparing scenarios, refer to [Comparing Revisions](/ref
 
 To compare a revision to your current state, do the following:
 
-1. Open the **History** dialog by clicking **View** > **History**.
+1. Open the **History** pane by clicking **View** > **History**.
 2. Right-click a revision from the list. 
 3. Select **Compare to current state**.
 
