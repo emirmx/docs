@@ -13,7 +13,7 @@ To open the **Update Assistant (Beta)** pane, select **View** > **Update Assista
 
 The pane consists of a top bar and a results table.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/update-assistant/update-assistant-pane.png" alt="Update Assistant pane showing Java deprecations in a results table" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/update-assistant/update-assistant-pane.png" alt="Update Assistant pane showing Java deprecations in a results table" >}}
 
 ## Top Bar {#top-bar}
 
