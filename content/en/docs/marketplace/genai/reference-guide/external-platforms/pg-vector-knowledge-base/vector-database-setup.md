@@ -8,7 +8,7 @@ aliases:
    - /appstore/modules/genai/pgvector-setup/
 ---
 
-## Introduction {#introduction}
+## Introduction
 
 Vector databases play an important role in embeddings-based AI use cases. They efficiently store, retrieve, and manipulate high-dimensional vectors that represent text or semantic information. A crucial step in these use cases, such as semantic search and retrieval-augmented generation (RAG), is to find the most similar pieces of information to a given input. Standard databases cannot perform these similarity and distance calculations between high-dimensional vectors efficiently, so a vector database is needed.
 
@@ -18,9 +18,13 @@ This page describes how to set up a PostgreSQL vector database to explore use ca
 This page describes a setup using a PostgreSQL database with the pgvector extension to query embedding vectors. However, there are also other vector database types which may better fit your use case.
 {{% /alert %}}
 
-## Managing a PostgreSQL Database with Amazon RDS {#aws-database}
+## Creating a PostgreSQL Database
 
-Amazon RDS PostgreSQL databases include the `pgvector` extension preinstalled. When you connect using the [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) module, the extension activates automatically, allowing the database to function as a vector database for knowledge bases.
+Start by creating a PostgreSQL database as described in the following sections. You can use Amazon RDS, Microsoft Azure, or an alternative such as a local database.
+
+{{% alert color="info" %}}
+Amazon RDS and Microsoft Azure PostgreSQL databases include the `pgvector` extension by default. When you connect using the [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) module, the extension activates automatically, allowing the database to function as a vector database for knowledge bases.
+{{% /alert %}}
 
 ### Creating a PostgreSQL Database with Amazon RDS {#aws-database-create}
 
@@ -28,7 +32,7 @@ Amazon RDS PostgreSQL databases include the `pgvector` extension preinstalled. W
 For AWS documentation on this topic, see [Creating and connecting to a PostgreSQL DB instance](https://aws.amazon.com/getting-started/hands-on/create-connect-postgresql-db/).
 {{% /alert %}}
 
-You can use the values in the steps below for experimental purposes:
+The following steps use sample values suitable for experimentation:
 
 1. Sign in to the AWS console. 
 
@@ -54,7 +58,7 @@ You can use the values in the steps below for experimental purposes:
 
 6. When the database is created, click the database name to view it.
    
-    By default, the database only accepts incoming traffic from your current IPv4 address. Optionally, if the database must be accessible from other locations, scroll down to the **Security group rules** section of the **Connectivity & security** tab. Click the inbound security group rule,  go to the **Inbound rules** tab, and add the following rule:
+    By default, the database only accepts incoming traffic from your current IPv4 address. Optionally, if the database must be accessible from other locations, scroll down to the **Security group rules** section of the **Connectivity & security** tab. Click the inbound security group rule, go to the **Inbound rules** tab, and add the following rule:
       1. For **Type**, select *PostgreSQL*.
       
       2. Set **Port** to *5432*.
@@ -71,17 +75,13 @@ You can use the values in the steps below for experimental purposes:
 AWS resources remain active indefinitely unless you delete them. To avoid unnecessary charges, delete resources when you finish using them.
 {{% /alert %}}
 
-## Managing a PostgreSQL Database with Microsoft Azure {#azure-database}
-
-Azure PostgreSQL databases include the `pgvector` extension (called *vector*) preinstalled. The steps below describe how to enable it for use. When you connect using the [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) module, the extension activates automatically, allowing the database to function as a vector database for knowledge bases.
-
 ### Creating a PostgreSQL Database with Microsoft Azure {#azure-database-create}
 
 {{% alert color="info" %}}
-For detailed steps for creating a PostgreSQL Database with Azure and enabling the *pgVector* extension, see [Quickstart: Create an Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal) and [How to enable and use pgvector on Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector) in the *Azure Documentation*.
+For Azure documentation on this topic, see [Quickstart: Create an Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal) and [How to enable and use pgvector on Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector)
 {{% /alert %}}
 
-You can use the values in the steps below for experimental purposes:
+The following steps use sample values suitable for experimentation:
 
 1. Create a new resource from the home page of the Azure Portal. 
 
@@ -110,17 +110,29 @@ You can use the values in the steps below for experimental purposes:
 
 7. Wait for the database to be created. This can take some time. Once the server is running, click **Go to resource**.
 
-8. Add the pgVector extension to the allowed extensions list (see [How to enable and use pgvector on Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector) in the *Azure documentation*) or see the following steps:
+8. [Add the pgVector extension to the allowed extensions list](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector):
    1. Search for **Server parameters** in the search bar on the left. A list of parameters is loaded.
    2. Search for **azure.extensions**.
    3. In the column *VALUE*, search in the dropdown for **VECTOR** (this is the extension name in Azure, not *pgVector*).
    4. Save the changes.
    
-9. Search for **Databases** in the search bar on the left. Verify that there is already a database that you can use. Alternatively, create a new database by clicking **Add** at the top.
+9. Search for **Databases** in the search bar on the left. Verify that you have a PostgreSQL database with schema type "User", or create a new database by clicking **Add**.
 
 {{% alert color="warning" %}}
 Azure resources remain active indefinitely unless you delete them. To avoid unnecessary charges, delete resources when you finish using them.
 {{% /alert %}}
+
+### Setting Up a PostgreSQL Database Locally {#local-database}
+
+Setting up a cloud database with the pgvector extension is a straightforward option for using a vector database for this sample implementation. However, it is not the only option. For example, you can also run a PostgreSQL database locally, as described in this section. This is useful for familiarizing yourself with PostgreSQL and tooling like pgAdmin.
+
+Complete the following steps:
+
+1. [Install PostgreSQL](https://www.postgresql.org/download/). The installation prompts you to install pgAdmin 4, which is recommended for creating the local server and database. You can use other tools if you prefer.
+2. Create a local database that you can connect to. Use the tool from step 1 (for example, pgAdmin) to do the following:
+   1. Register your new PostgreSQL server. The port is typically 5432. Use the credentials you entered during the PostgreSQL installation. You will need them later.
+   2. Create a database and choose a unique name for it (for example, *myVectorDatabase*).
+3. Install the pgvector extension. Installation steps vary depending on your hardware and operating system. Follow the [installation instructions](https://github.com/pgvector/pgvector?tab=readme-ov-file#installation) on GitHub and check the [installation notes](https://github.com/pgvector/pgvector?tab=readme-ov-file#installation-notes).
 
 ## Configuring the Database Connection Details in Your Application {#configure-database-connection}
 
@@ -128,7 +140,7 @@ Azure resources remain active indefinitely unless you delete them. To avoid unne
 
 2. Include the page **DatabaseConfiguration_Overview** in the navigation or use the snippet **Snippet_DatabaseConfigurations** on an existing page.
 
-3. Run the app, sign in as admin and navigate to the database configuration page you linked in the previous step.
+3. Run the app, sign in as admin, and navigate to the database configuration page you linked in the previous step.
 
 4. Create a new configuration.
 
@@ -144,9 +156,14 @@ Azure resources remain active indefinitely unless you delete them. To avoid unne
       
       **For Azure:**
       
-      1. Search for your newly created resource.
+      1. Search for your newly created resource in Azure.
       2. On the **Overview** page, the `{endpoint}` value is next to **Endpoint name**.
       3. In the search bar on the left, search for **Databases**. The `{vectorDatabaseName}` is the value in the **Name** column. Use a database with schema type "User".
+
+      **For a local database:**
+      
+      1. The `{endpoint}` value is `localhost`.
+      2. The `{vectorDatabaseName}` is the database name you chose [during setup](#local-database).
 
    2. Format the Jdbc URL:
       
@@ -165,24 +182,6 @@ Azure resources remain active indefinitely unless you delete them. To avoid unne
    3. Enter the username and password that you set when you [created the PostgreSQL Database with Amazon RDS](#aws-database-create) or [created the PostgreSQL Database with Microsoft Azure](#azure-database-create).
 
    4. Save, select, and test the configuration. This activates the `pgvector` extension so the vector database is ready to be used.
-
-## Setup Alternatives {#setup-alternatives}
-
-Setting up a cloud database with the pgvector extension is a straightforward option for using a vector database for this sample implementation. However, there are also alternatives and general considerations, which are described in this section.
-
-### Running a PostgreSQL Database Locally {#local-database}
-
-You can run a PostgreSQL database locally. This is useful for familiarizing yourself with PostgreSQL and tooling like pgAdmin.
-
-Make sure that you have completed the prerequisites:
-
-1. [Install PostgreSQL](https://www.postgresql.org/download/). The installation prompts you to install pgAdmin 4, which is recommended for creating the local server and database. You can use other tools if you prefer.
-2. Create a local database that you can connect to. Use the tool from step 1 (for example, pgAdmin) to do the following:
-   1. Register your new PostgreSQL server. The port is typically 5432. Use the credentials you entered during the PostgreSQL installation. You will need them later.
-   2. Create a database (for example, *myVectorDatabase*). You will need this name later.
-3. Install the pgvector extension. Installation steps vary depending on your hardware and operating system. Follow the [installation instructions](https://github.com/pgvector/pgvector?tab=readme-ov-file#installation) on GitHub and check the [installation notes](https://github.com/pgvector/pgvector?tab=readme-ov-file#installation-notes).
-
-Configure the database connection details as described in [Configuring the Database Connection Details in Your Application](#configure-database-connection). Your Jdbc URL will look like `jdbc:postgresql://localhost:5432/{vectorDatabaseName}`, where `{vectorDatabaseName}` is the database name you chose.
 
 ## Troubleshooting {#troubleshooting}
 
