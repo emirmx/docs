@@ -1042,7 +1042,7 @@ DATEPARSE ( expression , pattern )
 
 #### Pattern Syntax
 
-The `DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls).
+The `DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/).
 
 #### Limitations and Database-Specific Differences
 
