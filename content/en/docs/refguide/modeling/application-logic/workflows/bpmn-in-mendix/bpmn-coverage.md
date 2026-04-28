@@ -46,7 +46,7 @@ Each BPMN element is marked with a support level indicator:
 |---|---|---|
 | Embedded Subprocess | 🔴 Not Supported | Not supported. |
 | Call Activity (Reusable Subprocess) | 🟢 Workflow Native | [Call Workflow](/refguide/call-workflow/) |
-| Event Subprocess | 🟢 Workflow Native | [Event Subprocess](/refguide/event-sub-processes/) |
+| Event Subprocess | 🟢 Workflow Native | [Event Subprocess](/refguide/workflow-event-sub-processes/) |
 | Transaction Subprocess | 🔴 Not Supported | Not supported. |
 | Ad-hoc Subprocess | 🔴 Not Supported | Not supported. |
 
