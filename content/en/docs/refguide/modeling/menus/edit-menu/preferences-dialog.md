@@ -169,7 +169,7 @@ This is the pattern from which the arguments are derived that are passed to the 
 
 #### History {#history-pane}
 
-Select this option to use the blocking History dialog instead of the non-blocking, searchable History pane.
+Select this option to use the blocking **History** dialog instead of the non-blocking, searchable History pane.
 
 #### Solution Warning
 
