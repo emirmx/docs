@@ -7,7 +7,7 @@ description: "Describes how to configure the POST and GET request steps in Mendi
 
 ## Introduction
 
-POST and GET request steps let Mendix Pipelines call external systems over HTTPS to trigger actions, send data, or retrieve status information or results. Typical use cases include:
+[POST](/developerportal/deploy/mendix-pipelines/#post-request) and [GET](/developerportal/deploy/mendix-pipelines/#get-request) request steps let Mendix Pipelines call external systems over HTTPS to trigger actions, send data, or retrieve status information or results. Typical use cases include:
 
 * triggering an action in an external system
 * sending data to an external API
