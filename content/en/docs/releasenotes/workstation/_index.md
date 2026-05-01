@@ -10,6 +10,105 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.6.1
+
+### Release date: April 28, 2026
+
+### Workstation Management
+
+#### Fixes
+
+* We have fixed an issue where, due to security hardening, it was not possible to refresh the configuration of a Workstation Client which was originally registered with an earlier version of Workstation Management.
+
+## 3.6.0
+
+### Release date: April 23, 2026
+
+### Workstation Management
+
+#### New Features
+
+* We have enhanced the **Test Your Station** page with more granular functions to test, validate and troubleshoot communication with devices. This includes more connection states, a **Connect** and **Disconnect** button, and communication logs. You can also switch between devices to test multiple devices.
+* Single computer registration keys are now valid for one hour. The keys are displayed and visible to all authorized users.
+* The maximum time window for bulk registration keys is limited to three months.
+* We have improved the **Station management** user interface for a more intuitive use experience.
+
+#### Fixes
+
+* To support advanced use cases when preparing station configurations on multiple computers, we have fixed an issue which prevented stations from being edited when multiple stations shared the same computer name. Computer names for stations within the same workspace are no longer required to be unique.
+
+{{% alert color="info" %}}
+If more than one station is found for a given computer name during bulk registration, the system now automatically creates an *Unassigned computer* instead of attempting an automatic assignment. This ensures that you can manually select the correct station configuration, preventing unintended assignments.
+{{% /alert %}}
+
+* We have fixed an issue where the login dialogue was opened after a session time-out.
+
+### Workstation Client
+
+#### Fixes
+
+* We have addressed some minor issues within the Bluetooth functionality, including improved handling of Bluetooth protocol errors to prevent unexpected behavior.
+* We have fixed a crash that could occur during window movement if the client configuration was not writable, improving the application stability.
+* We have updated the underlying dependencies for the Smart Card reader functionality, enhancing stability and compatibility.
+
+### Workstation Connector
+
+#### New Features
+
+* We have added a number of other new nanoflows, JavaScript actions, and widgets to simplify the creation of custom, reusable peripheral modules for your organization: 
+
+    *  Manage peripheral object creation and initialize peripheral objects using the new `GetCreateDevice` action. You can configure callbacks on connection, on message, and on disconnection.
+    * Trigger application level logic on device events with new widgets. Handling peripheral events no longer requires changing peripheral modules.
+    * Manage events in a nanoflow with the new `SubscribeToObjectChanges` and `WaitForObjectChanges` nanoflow actions.
+    * Benefit from easier configuration of common use cases with the new `ConnectDevice`, `SendDeviceMessage` and `WaitForDeviceMessage` nanoflow actions.
+
+For more information, see [Nanoflows](/mendix-workstation/build-app/#javascript-actions) and [Widgets](/mendix-workstation/build-app/#widgets).
+
+#### Improvement
+
+* The **Model Peripheral** entity is now a specialization of the **Device** entity and no longer requires association.
+* Calling `GetStation` is no longer required to initiate the Workstation Connector. It is only required to read the station configuration.
+
+#### Fixes
+
+* We have removed the `Station_User` association. Object garbage collection is now handled internally, leading to more robust object management.
+* We have fixed an issue related to the timing of initial connections.
+* We have fixed an issue where devices were sometimes discovered with a delay.
+
+#### Deprecations
+
+* We have deprecated the following actions:
+
+    * `SendMessage` - Deprecated in favor of `SendDeviceMessage` and `WaitForDeviceMessage`
+    * `SubscribeToMessages` - Deprecated in favor of `GetCreateDevice`
+    * `SubscribeToErrors` - Deprecated in favor of `GetCreateDevice`
+
+    The deprecated actions are longer exposed as nanoflows and have been moved to the `_USE_ME/Deprecated` folder.
+
+## 3.5.0
+
+### Release date: March 12, 2026
+
+### Workstation Management
+
+#### New Features
+
+* Updated access controls for Computer Admin role - The Computer Admin role now has updated access permissions, allowing them only to read and view existing bulk registration tokens and their associated details.
+
+* Improved UI for bulk registration token management - We have updated the user interface for managing bulk registration tokens, enhancing the overall user experience and making it more intuitive to work with.
+
+#### Fixes
+
+* Unassigned computers excluded from station export - We have fixed an issue where unassigned computers were incorrectly included in station exports. Now, unassigned computers are no longer exportable as stations and will not appear in the list of stations available for download, ensuring cleaner and more accurate exports.
+
+* Duplicate station naming in single import - The single import behavior has been updated to accept duplicate names by automatically adding a numeric suffix when a station with the same name is imported, ensuring unique identification and smoother workflow. We have addressed an issue where empty stations were unintentionally created.
+
+### Workstation Client
+
+#### Fixes
+
+* Robust remote deregistration error handling - We have fixed an issue where an uncaught error pop-up could occasionally appear if Workstation Management crashed immediately after a remote deregistration of a station. This ensures a more stable and resilient client experience.
+
 ## 3.4.0
 
 ### Release date: February 12, 2026
@@ -71,7 +170,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 #### Fixes
 
-* Enhanced eport and import experience - We have revised the UI for the import and export process for a better user experience.
+* Enhanced export and import experience - We have revised the UI for the import and export process for a better user experience.
     * The **Select individual stations** dropdown has been reworked for better usability.
     * The **Import summary** now provides clearer insights into your import operations.
 * Runtime error prevention - We have addressed and fixed several issues that were causing runtime errors, leading to a more stable experience.
@@ -185,7 +284,7 @@ This is a Limited Availability release of Mendix Workstation.
 
 Mendix Workstation is available for all Mendix users for development use. 
 
-Mendix Workstation is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take Mendix Workstation into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation for development, but workspaces are individual and cannot be shared.
+Mendix Workstation is [Limited Availability](/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take Mendix Workstation into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation for development, but workspaces are individual and cannot be shared.
 {{% /alert %}}
 
 ### Improvements

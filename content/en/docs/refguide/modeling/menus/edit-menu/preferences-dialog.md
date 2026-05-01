@@ -128,7 +128,7 @@ The **In-Editor Recommender** section contains the following settings:
 
 * **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide/logic-recommender/) in the microflow, nanoflow, and rule editors. It is enabled by default. 
 * **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide/workflow-recommender/) in the workflow editor. It is enabled by default.
-* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide/ui-recommender/). It is enabled by default.
+* **Enable for page editor** - this allows you to enable and disable the [UI Recommender](/refguide/ui-recommender/). It is enabled by default.
 
 ### Best Practice Recommender
 
@@ -137,6 +137,12 @@ The **Best Practice Recommender** section contains the following settings:
 * **Show recommendation in editors** – when enabled, [Best Practice Recommender](/refguide/best-practice-recommender/) highlights elements that contain anti-patterns in visual editors. It is enabled by default.
 
 * **Automatically run an inspection after opening an app** – when enabled, [Best Practice Recommender](/refguide/best-practice-recommender/) automatically runs an inspection when an app is opened. If the app contains errors, the inspection will not run. It is enabled by default.
+
+### MCP Server
+
+* **Enable MCP Server** - When enabled, you can use the [Studio Pro MCP Server](/refguide/studio-pro-mcp-server/), which enables you to leverage Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools. It is disabled by default.
+
+    **Port** (Default: 7782) - With this setting, you can configure the port of the server. 
 
 ## Model Tab
 
@@ -169,7 +175,7 @@ This is the pattern from which the arguments are derived that are passed to the 
 
 #### History {#history-pane}
 
-Select this option to use the blocking History dialog instead of the non-blocking, searchable History pane.
+Select this option to use the blocking **History** dialog instead of the non-blocking, searchable History pane.
 
 #### Solution Warning
 
@@ -321,6 +327,10 @@ This setting is enabled by default. The editor allows the user to write rich tex
 
 You can publish data as a GraphQL service. When you enable this feature, you can indicate that a published OData service [also supports GraphQL](/refguide/published-odata-services/#supports-graphql).
 
+### JavaScript Action Editor
+
+Select this option to use the modernized version of the JavaScript action Editor. You must close all open JavaScript actions to use this feature.
+
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
@@ -333,7 +343,9 @@ If Translation Generator is also enabled, you can use it in this editor as well.
 
 ### Workflow
 
-Select this option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+In Studio Pro 11.8, select the **Enable workflow event sub-processes (beta)** option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+
+In Studio Pro 11.9 and above, this option is removed. Workflow event sub-processes are in general availability and are enabled by default.
 
 ## Read More
 
