@@ -5,6 +5,22 @@ weight: 6
 description: "Native Template 19"
 ---
 
+## 19.0.2 {#1902}
+
+**Release date: April 22, 2026**
+
+### Improvements
+
+- We updated `mendix-native` to v0.4.1, strengthening Android cookie encryption by migrating from `AES/CBC/PKCS7Padding` to `AES/GCM/NoPadding`.
+
+## 19.0.1 {#1901}
+
+**Release date: April 22, 2026**
+
+### Fixes
+
+- We fixed an iOS build issue introduced by the React Native `0.83.4` upgrade by removing the incorrect `override` keyword from AppDelegate application lifecycle methods.
+
 ## 19.0.0 {#1900}
 
 **Release date: April 20, 2026**

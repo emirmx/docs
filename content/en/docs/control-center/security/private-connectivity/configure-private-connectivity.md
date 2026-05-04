@@ -8,7 +8,7 @@ beta: true
 ---
 
 {{% alert color="warning" %}}
-This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
+Private Connectivity is currently in Public Beta, and will be out of Public Beta on May 31, 2026. After that date, the service will no longer be available, and Mendix will start preparing it for General Availability (GA). Check the [Feature Release Calendar](/releasenotes/feature-release-calendar/) for details on the GA release date.
 {{% /alert %}}
 
 ## Introduction
@@ -478,7 +478,12 @@ The Mendix internal systems operate on the following subnets:
 * 172.20.0.0/16
 
 As such, when you expose a subnet or a single IP address, it must not conflict with our private IP ranges.     
-If you absolutely must use the subnets on which Mendix operates, please configure [Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation) on your infrastructure.
+If you absolutely must use the subnets on which Mendix operates, configure [4via6 subnet routers](https://tailscale.com/docs/features/subnet-routers/4via6-subnets) on your infrastructure. Follow these steps to do that:
+
+1. Generate the IPv6 subnet route – Run `tailscale debug via 100 <Your IPv4 range>` in your terminal.
+2. Advertise the IPv6 subnet route – Run `tailscale set --advertise-routes=<Newly generated IPv6 range>` in your terminal.    
+
+You can then continue with the steps in the [Enabling and Disabling Resources](/control-center/configure-private-connectivity/#private-connectivity-resources-enable-disable) section. Once you expose resources, make sure to use the generated IPv6 route to connect from your app to the resource, not the original IPv4 route.
 
 ### Restricted IP Ranges
 
