@@ -1,6 +1,6 @@
 ---
 title: "Connect a Mendix AI Agent to a Snowflake-Managed MCP Server"
-linktitle: "AI Agents for a Snowflake MCP Server"
+linktitle: "Connect Mendix to a Snowflake MCP Server"
 url: /appstore/modules/snowflake/connect-ai-agent-to-snowflake-mcp/
 description: "Describes the steps required to use a Snowflake-managed MCP server with a Mendix AI ageint."
 weight: 80
@@ -8,7 +8,7 @@ weight: 80
 
 ## Introduction
 
-The Model Context Protocol (MCP) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an MCP Server module to facilitate an MCP server from a Mendix app, as well as an MCP Client module to facilitate connections from a Mendix app to an MCP server. For more information, see [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/).
+The Model Context Protocol (MCP) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an MCP Server module to facilitate an MCP server from a Mendix app, as well as an MCP Client module. For more information, see [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/).
 
 [Snowflake-managed MCP servers](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp) let AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. Mendix users can configure the [MCP Client Module](/appstore/modules/genai/mcp-modules/mcp-client/) to enable the connection from a Mendix AI agent to a Snowflake MCP server.
 
