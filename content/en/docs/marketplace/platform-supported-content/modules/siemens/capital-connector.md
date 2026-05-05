@@ -74,3 +74,13 @@ Some operations take an object ID as parameter. Many Capital objects have a `Bas
 ## Resources
 
 For information about the Capital REST API, please refer to the REST API documentation of your Capital instance. This is available by accessing `{protocol}://{host}:{port}/restapidocs/`.
+
+## Compatibility Matrix
+
+|Capital Connector | Studio Pro version | Supported Capital versions
+| :--- | :--- | :--- |
+| 2512.0.0 | 10.24.8 or above* | 2512, 2408 |
+| 1.1 | 10.24.3 or above* | 2408 |
+| 1.0 | 10.24.3 or above* | 2408 |
+
+<sub>* Latest Mendix 10 LTS version recommended</sub>
