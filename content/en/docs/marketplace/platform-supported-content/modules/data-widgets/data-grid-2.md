@@ -146,6 +146,10 @@ Here is an example of column properties:
 
 **Custom Content** allows users to drop widgets into the data grid and use the column attribute value to show custom content. After selecting this option you will be given drop-zones in which to drop your widgets.
 
+{{% alert color="info" %}}
+Placing widgets within custom content which use the row object will automatically set the [network optimization mode](/refguide/datasource-runtime/#network-optimization-modes) to **Optimize for Network Round Trips**.
+{{% /alert %}}
+
 Here is an example of custom content using new Badge widget in **Structure mode**:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/column-custom-content.png" alt="Example of custom content using new Badge widget in Structure mode" class="no-border" >}}
@@ -246,6 +250,10 @@ The new data grid can trigger some events while iterating with it.
 ### On Click Action
 
 Triggers an action (such as a nanoflow, microflow, or Show page action) when the end-user clicks in one of the rows. It also adds a pointer cursor to signal that it is clickable. This function also complies with accessibility features and can be reached using only the keyboard.
+
+### On Selection Change Action
+
+Triggers an action (such as a nanoflow, microflow, or client action) when the end-user changes selection in the data grid. This includes selecting or deselecting individual rows, using the **Select all** toggle, or clearing the selection. The action provides a way to respond to selection state changes and implement custom logic based on the current selection.
 
 ## Filters {#filters}
 
@@ -592,6 +600,36 @@ The setting for action triggers is related to the selection method and can somet
 | Row              | Double-click on the row | <kbd>Ctrl</kbd> + click on the row (or <kbd>Command</kbd> + click on the row on Mac)                        | Yes       |
 
 To achieve this behavior, set the **On click trigger** to **Double click**. When a data grid is configured this way, the user may select a row by double-clicking it.
+
+### Selection and Header Actions
+
+When the button is placed in a grid header, the assigned action can receive the currently selected rows as a parameter.
+
+#### How Selection is Passed to Actions
+
+When a button placed in header triggers a **microflow** or **nanoflow**, the selected rows are passed as input:
+
+- If **Single Selection** is enabled:
+  - The action receives a **single object**.
+- If **Multiple Selection** is enabled:
+  - The action receives a **list of objects**.
+
+This allows developers to build logic that operates on one or several items.
+
+#### Example Use Cases
+
+- **Mark as Done**: A button triggers a microflow that updates the status of selected tasks.
+- **Delete Selected**: A button deletes all selected records.
+- **Export Selected**: A button triggers a microflow or nanoflow that exports the selected list to a file.
+
+#### Configuration
+
+To configure selection, do the following:
+
+1. Enable **Selection** in the data grid 2 widget.
+1. Insert an **Action Button** into the **Header**.
+1. Configure the button to trigger a microflow or nanoflow.
+1. Set the input parameter of the flow to match the selection type (single object or list).
 
 ## Keyboard Support {#keyboard-support}
 
