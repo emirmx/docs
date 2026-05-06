@@ -24,7 +24,6 @@ The [Administration](https://marketplace.mendix.com/link/component/23513) module
 * [Combo Box](https://marketplace.mendix.com/link/component/219304): required for the Administration module versions 4.0.0 and above
 * [Atlas UI Resources](https://marketplace.mendix.com/link/component/104730): required for the Administration module versions 3.0.0 and below
 * [Mendix SSO](https://marketplace.mendix.com/link/component/111349): required for the Administration module versions 1.3.X (for example 1.3.2) and 2.1.X (for example 2.1.2). However, this module is deprecated as of May 1, 2026. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/).
-{{% /alert %}}
 
 ## Installation
 
