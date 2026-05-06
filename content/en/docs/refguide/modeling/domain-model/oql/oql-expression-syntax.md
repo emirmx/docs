@@ -1336,6 +1336,10 @@ This query can no longer take advantage of an index for `LastName` for compariso
 
 Removes leading characters from a `string`. If no `character` is specified for trimming, space is used.
 
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.11.0.
+{{% /alert %}}
+
 #### Syntax
 
 The syntax is as follows:
@@ -1354,6 +1358,10 @@ LTRIM ( expression [, character ] )
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
 {{% /alert %}}
 
 #### Examples
@@ -1549,6 +1557,10 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 
 Removes trailing characters from a `string`. If no `character` is specified for trimming, space is used.
 
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.11.0.
+{{% /alert %}}
+
 #### Syntax
 
 The syntax is as follows:
@@ -1567,6 +1579,10 @@ RTRIM ( expression [, character ] )
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
 {{% /alert %}}
 
 #### Examples
@@ -1636,6 +1652,10 @@ ORDER BY LastName LIMIT 1
 
 Removes leading and trailing characters from a `string`. If no `character` is specified for trimming, space is used.
 
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.11.0.
+{{% /alert %}}
+
 #### Syntax
 
 The syntax is as follows:
@@ -1654,6 +1674,10 @@ TRIM ( expression [, character ] )
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
 {{% /alert %}}
 
 #### Examples
