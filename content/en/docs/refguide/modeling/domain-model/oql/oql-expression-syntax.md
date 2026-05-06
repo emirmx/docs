@@ -1334,7 +1334,7 @@ This query can no longer take advantage of an index for `LastName` for compariso
 
 ### LTRIM{#ltrim}
 
-Removes leading characters from a `string`. If no `character` is specified for trimming, space is used.
+Removes one or more leading characters from a `string`. If no character is specified for trimming, space is used.
 
 {{% alert color="info" %}}
 This function was introduced in Mendix version 11.11.0.
@@ -1354,7 +1354,7 @@ LTRIM ( expression [, character ] )
 
 ##### character
 
-`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+`character` is an optional single character string expression containing the character to remove from the start of the string. If omitted, the space character is used instead.
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
@@ -1555,7 +1555,7 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 
 ### RTRIM{#rtrim}
 
-Removes trailing characters from a `string`. If no `character` is specified for trimming, space is used.
+Removes one or more trailing characters from a `string`. If no `character` is specified for trimming, space is used.
 
 {{% alert color="info" %}}
 This function was introduced in Mendix version 11.11.0.
@@ -1575,7 +1575,7 @@ RTRIM ( expression [, character ] )
 
 ##### character
 
-`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+`character` is an optional single character string expression containing the character to remove from the end of the string. If omitted, the space character is used instead.
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
@@ -1650,7 +1650,7 @@ ORDER BY LastName LIMIT 1
 
 ### TRIM{#trim}
 
-Removes leading and trailing characters from a `string`. If no `character` is specified for trimming, space is used.
+Removes one or more leading and trailing characters from a `string`. If no `character` is specified for trimming, space is used.
 
 {{% alert color="info" %}}
 This function was introduced in Mendix version 11.11.0.
@@ -1670,7 +1670,7 @@ TRIM ( expression [, character ] )
 
 ##### character
 
-`character` is an optional single character string expression containing the character to trim. If omitted, the space character is used instead.
+`character` is an optional single character string expression containing the character which will be removed from the beginning and end of the string. If omitted, the space character is used.
 
 {{% alert color="info" %}}
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
