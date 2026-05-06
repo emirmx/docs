@@ -5,6 +5,15 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.16
+
+**Release date: Apr 29, 2026**
+
+### Fixes
+
+- We fixed an issue where version logs events were not recorded in Firebase for Android.
+- We fixed an issue which occurred when building apps in Xcode 26.4 and above.
+
 ## 14.1.15 {#1425}
 
 **Release date: Apr 22, 2026**
