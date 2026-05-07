@@ -1360,9 +1360,7 @@ LTRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
-{{% /alert %}}
+If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
@@ -1581,9 +1579,7 @@ RTRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
-{{% /alert %}}
+If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
@@ -1676,9 +1672,7 @@ TRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-Like with other String functions, case sensitivity of the `LOCATE` function depends on the database. See [Behavior of Case Sensitivity by Database Type](/refguide/case-sensitive-database-behavior/#behavior-of-case-sensitivity-by-database-type) for details.
-{{% /alert %}}
+If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
