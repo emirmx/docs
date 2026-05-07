@@ -2,16 +2,16 @@
 title: "Enrich Your Mendix App with GenAI Capabilities"
 url: /appstore/modules/genai/
 linktitle: "GenAI Capabilities of Mendix"
-description: "Describes the general properties and common concepts of generative AI in the context of developing Mendix applications and illustrates the preferred way of leveraging platform-supported connectors in applications following the GenAI Commons patterns."
+description: "Describes the general properties and common concepts of generative AI in the context of developing Mendix applications. Illustrates the preferred way of leveraging platform-supported connectors in applications following the GenAI Commons patterns."
 weight: 7
 ---
 
-## Introduction {#introduction}
+## Introduction
 
-With the Mendix GenAI capabilities, you can create engaging, intelligent experiences with a variety of AI models and your own data.
+With Mendix generative AI (GenAI) capabilities, you can create engaging, intelligent experiences with a variety of AI models and your own data.
 
 {{% alert color="info" %}}
-These pages cover modules that integrate with generative AI tools. For running pre-trained Machine Learning (ML) models using the Mendix Runtime, please see the [Machine Learning Kit](/refguide/machine-learning-kit/).
+These pages focus on building agentic applications with Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
 {{% /alert %}}
 
 ### Typical Use Cases
@@ -28,7 +28,7 @@ To familiarize yourself with the GenAI capabilities of Mendix, explore the secti
 
 #### Familiar with GenAI
 
-If you are already familiar with GenAI and want to start building, refer to [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guide to start building your first GenAI-powered application and access further supportive resources.
+If you are already familiar with GenAI and want to start building, refer to the [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guide to start building your first GenAI-powered application and access further supportive resources.
 
 #### New to GenAI
 
@@ -40,7 +40,7 @@ If you are new to GenAI, follow the steps below:
 
 ## Architecture and Components {#architecture}
 
-Supercharge your applications with Mendix's Agents Kit. This powerful set of components puts cutting-edge GenAI capabilities at your fingertips, helping you make your Mendix apps smarter. Explore our collection of components and models as listed on this page. Please note that the toolkit supports the full spectrum of generative AI implementations, from straightforward text generation to complex agentic AI.
+Build AI-powered applications with Mendix Agents Kit, a set of components for integrating generative AI capabilities. The toolkit supports implementations ranging from simple text generation to complex multi-step agentic workflows.
 
 ### Mendix Components 
 
@@ -49,10 +49,10 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
 | [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) (formerly known as Support Assistant Starter App) | See an example of how to build an agentic Mendix application. Use the Agent Builder from Agent Commons to build your support assistant. | 10.24 |
-| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | 10.24 |
-| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create a new application with GenAI capabilities and without any dependencies. | 10.24 |
+| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Kickstart the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | 10.24 |
+| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create an application with GenAI capabilities and no dependencies. | 10.24 |
 | [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. | 10.24 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | 10.24 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | 10.24 |
 
 #### Connector Modules
@@ -61,11 +61,11 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | --- | --- | --- |
 | [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve and Generate or Bedrock agents. | 10.24 |
 | [Google Gemini Connector](/appstore/modules/genai/reference-guide/external-connectors/gemini/) | Connect to Google Gemini. | 10.24 |
-| [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) | Access tools and prompts available via MCP (Model Context Protocol) inside of your Mendix app and add them to LLM requests. | 10.24 |
-| [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | 10.24 |
+| [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) | Access tools and prompts available via MCP inside your Mendix app and add them to LLM requests. | 10.24 |
+| [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and use Mendix Cloud GenAI resource packs directly within your Mendix application. | 10.24 |
 | [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | 10.24 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | 10.24 |
-| [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | 10.24 |
+| [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL PgVector knowledge base. | 10.24 |
 
 #### Other Modules
 
@@ -73,10 +73,10 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | --- | --- | --- |
 | [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | 10.24 |
 | [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | 10.24 |
-| [GenAI Commons](/appstore/modules/genai/commons/) | Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | 10.24 |
-| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
+| [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | 10.24 |
+| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
 
-Older versions of the marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
+Older versions of the Marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
 
 ### Available Models {#models}
 
@@ -123,4 +123,4 @@ In addition to the models listed above, you can also connect to other models by 
 
 * To connect to other [foundation models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html) and implement them in your app, use the [Amazon Bedrock connector](/appstore/modules/aws/amazon-bedrock/).
 * To connect to [Snowflake Cortex LLM](https://docs.snowflake.com/en/sql-reference/functions/complete-snowflake-cortex) functions, [configure the Snowflake AI Data Connector for Snowflake Cortex Analyst](/appstore/connectors/snowflake/snowflake-ai-data-connector/#cortex-analyst).
-* To implement your connector compatible with the other components, use the [GenAI Commons](/appstore/modules/genai/commons/) interface and follow the how-to [Build Your Own GenAI Connector](/appstore/modules/genai/how-to/byo-connector/).
+* To implement your own connector that is compatible with the other components, use the [GenAI Commons](/appstore/modules/genai/commons/) interface and see [How to Build Your Own GenAI Connector](/appstore/modules/genai/how-to/byo-connector/).
