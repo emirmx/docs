@@ -1360,7 +1360,7 @@ LTRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
+If the expression string consists entirely of `character`, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
@@ -1579,7 +1579,7 @@ RTRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
+If the expression string consists entirely of `character`, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
@@ -1672,7 +1672,7 @@ TRIM ( expression [, character ] )
 Only a single character is supported. `character` parameters with more than one character may not work in all supported databases.
 {{% /alert %}}
 
-If the expression string consists entirely of the character, everything will be trimmed and the function will return a zero-length string.
+If the expression string consists entirely of `character`, everything will be trimmed and the function will return a zero-length string.
 
 #### Examples
 
