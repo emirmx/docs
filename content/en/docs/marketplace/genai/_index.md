@@ -44,25 +44,37 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 
 ### Mendix Components 
 
-| Asset |  Description | Type | Studio Pro Version |
-|-------------------|---------------------------------------------------|----------------------------------|------------|
-| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) (formerly known as Support Assistant Starter App) | See an example of how to build an agentic Mendix application. Use the Agent Builder from Agent Commons to build your support assistant. | Starter App | 10.24 |
-| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | Common Module | 10.24 |
-| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | Starter App | 10.24 |
-| [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve and Generate or Bedrock agents. | Connector Module | 10.24 |
-| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create a new application with GenAI capabilities and without any dependencies. | Starter App | 10.24 |
-| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | UI Module | 10.24 |
-| [GenAI Commons](/appstore/modules/genai/commons/) | Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 10.24 |
-| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. | Showcase App | 10.24 |
-| [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) | Access tools and prompts available via MCP (Model Context Protocol) inside of your Mendix app and add them to LLM requests. | Connector Module | 10.24 |
-| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | Module | 10.24 |
-| [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.24 |
-| [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | Connector Module | 10.24 |
-| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | Connector Module | 10.24 |
-| [Google Gemini Connector](/appstore/modules/genai/reference-guide/external-connectors/gemini/) | Connect to Google Gemini. | Connector Module | 10.24 |
-| [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.24 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | Starter App | 10.24 |
-| [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.24 |
+#### Starter Apps and Showcase Apps
+
+| Asset | Description | Studio Pro Version |
+| --- | --- | --- |
+| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) (formerly known as Support Assistant Starter App) | See an example of how to build an agentic Mendix application. Use the Agent Builder from Agent Commons to build your support assistant. | 10.24 |
+| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | 10.24 |
+| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create a new application with GenAI capabilities and without any dependencies. | 10.24 |
+| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. | 10.24 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | 10.24 |
+| [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | 10.24 |
+
+#### Connector Modules
+
+| Asset | Description | Studio Pro Version |
+| --- | --- | --- |
+| [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve and Generate or Bedrock agents. | 10.24 |
+| [Google Gemini Connector](/appstore/modules/genai/reference-guide/external-connectors/gemini/) | Connect to Google Gemini. | 10.24 |
+| [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) | Access tools and prompts available via MCP (Model Context Protocol) inside of your Mendix app and add them to LLM requests. | 10.24 |
+| [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | 10.24 |
+| [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | 10.24 |
+| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | 10.24 |
+| [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | 10.24 |
+
+#### Other Modules
+
+| Asset | Description | Studio Pro Version |
+| --- | --- | --- |
+| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | 10.24 |
+| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | 10.24 |
+| [GenAI Commons](/appstore/modules/genai/commons/) | Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | 10.24 |
+| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
 
 Older versions of the marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
 
