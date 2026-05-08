@@ -48,6 +48,16 @@ Integrate generative AI into your applications with Agents Kit, a collection of 
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Demonstrates a time-saving GenAI pattern for answering similar-but-different questions. Upload RFP documents, generate responses from a historical knowledge base of question-answer pairs, edit with AI assistance, and continuously update the knowledge base to create a self-learning system. | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to use Snowflake connectors to read and write data, leverage Snowflake Cortex ML and LLM capabilities, chat with structured data using Cortex Analyst, and implement role-based access control. | 10.24 |
 
+#### Core Modules {#core-modules}
+
+| Asset | Description | Studio Pro Version |
+| --- | --- | --- |
+| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality by defining, testing, and evaluating agents at runtime. Iterate on prompts and agent configurations without app redeployment through the integrated Agent Builder UI. | 10.24 |
+| [Agent Editor](/appstore/modules/genai/genai-for-mx/agent-editor/) | Define agents as version-controlled documents in Studio Pro at design time. Author prompts, configure tools and knowledge bases, test locally, and deploy agents as part of your app model. | 11.9 |
+| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create chat interfaces for full-screen, sidebar, or modal GenAI conversations. Monitor token consumption and trace interactions with UI features built on GenAI Commons. | 10.24 |
+| [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this module. | 10.24 |
+| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
+
 #### Connector Modules {#connectors}
 
 | Asset | Description | Studio Pro Version |
@@ -59,16 +69,6 @@ Integrate generative AI into your applications with Agents Kit, a collection of 
 | [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | 10.24 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL PgVector knowledge base. | 10.24 |
-
-#### Core Modules {#core-modules}
-
-| Asset | Description | Studio Pro Version |
-| --- | --- | --- |
-| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality by defining, testing, and evaluating agents at runtime. Iterate on prompts and agent configurations without app redeployment through the integrated Agent Builder UI. | 10.24 |
-| [Agent Editor](/appstore/modules/genai/genai-for-mx/agent-editor/) | Define agents as version-controlled documents in Studio Pro at design time. Author prompts, configure tools and knowledge bases, test locally, and deploy agents as part of your app model. | 11.9 |
-| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create chat interfaces for full-screen, sidebar, or modal GenAI conversations. Monitor token consumption and trace interactions with UI features built on GenAI Commons. | 10.24 |
-| [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this module. | 10.24 |
-| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
 
 Older versions of the Marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
 
