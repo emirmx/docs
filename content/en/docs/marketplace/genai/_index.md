@@ -74,42 +74,62 @@ Older versions of the Marketplace modules and GenAI Showcase App are available i
 
 ### Available Models {#models}
 
-Mendix connectors offer direct support for the following models:
+Mendix [connectors](#connectors) offer direct support for the following models.
 
-| Architecture | Models | Category | Input | Output | Additional capabilities |
-| -------------- | --------------------- | --------------------- | ------------------- | ----------- | ----------------------- |
-| Mendix Cloud GenAI | [Anthropic Claude Sonnet Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Chat completions | text, image, document | text | Function calling |
-| | [Cohere Embed Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Embeddings | text | embeddings | |
-| Microsoft Foundry (OpenAI) / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano, gpt-5.1, gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
-| | DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
-| | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large | Embeddings | text | embeddings | |
-| Mistral | Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat Completions | text, image | text | Function calling |
-| | Codestral, Devstral (Small, Medium), Open Mistral 7B, Mistral Nemo 12B | Chat Completions | text | text | Function calling |
-| | Mistral Embed, Codestral Embed | Embeddings | text | embeddings | |
-| Google Gemini | Gemini 2.5 Flash (+ Preview Sep 2025), Gemini 2.5 Flash-Lite (+ Preview Sep 2025), Gemini 2.5 Pro, Gemini Flash Latest, Gemini Flash-Lite Latest, Gemini Pro Latest| Chat Completions | text, image | text | Function calling |
-| | Gemini 3 Flash Preview, Gemini 3 Pro Preview | Chat Completions | text, image | text | |
-| Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text, document (except Titan Premier) | text | |
-| | AI21 Jamba-Instruct | Chat Completions | text | text | |
-| | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text | |
-| | Amazon Nova Pro, Amazon Nova Lite | Chat Completions | text, image, document | text | Function calling |
-| | Amazon Titan Image Generator G1 | Image generation | text | image | |
-| | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings | |
-| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.5 Sonnet, Anthropic Claude 4.5 Haiku, Anthropic Claude 4.5 Opus | Chat Completions | text, image, document | text | Function calling |
-| | Cohere Command | Chat Completions | text, document | text | |
-| | Cohere Command Light | Chat Completions | text | text | |
-| | Cohere Command R, Cohere Command R+ | Chat Completions | text, document | text | Function calling |
-| | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
-| | DeepSeek, DeepSeek-R1 | Text | text | document | |
-| | Meta Llama 2, MetaLlama 3 | Chat Completions | text, document | text | |
-| | Meta Llama 3.1 | Chat Completions | text, document | text | Function calling |
-| | Mistral AI Instruct | Chat Completions | text, document | text | |
-| | Mistral Large, Mistral Large 2 | Chat Completions | text, document | text | Function calling |
-| | Mistral Small | Chat Completions | text | text | Function calling |
-| | OpenAI gpt-oss-20B, gpt-oss-120b | Chat Completions | text | text | |
+#### Mendix Cloud GenAI
+
+| Models | Category | Input | Output | Additional Capabilities |
+| --- | --- | --- | --- | --- |
+| [Anthropic Claude Sonnet Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Chat completions | text, image, document | text | Function calling |
+| [Cohere Embed Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Embeddings | text | embeddings | |
+
+#### Microsoft Foundry (OpenAI) / OpenAI
+
+| Models | Category | Input | Output | Additional Capabilities |
+| --- | --- | --- | --- | --- |
+| gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano, gpt-5.1, gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
+| DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
+| text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large | Embeddings | text | embeddings | |
+
+#### Mistral
+
+| Models | Category | Input | Output | Additional Capabilities |
+| --- | --- | --- | --- | --- |
+| Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat completions | text, image | text | Function calling |
+| Codestral, Devstral (Small, Medium), Open Mistral 7B, Mistral Nemo 12B | Chat completions | text | text | Function calling |
+| Mistral Embed, Codestral Embed | Embeddings | text | embeddings | |
+
+#### Google Gemini
+
+| Models | Category | Input | Output | Additional Capabilities |
+| --- | --- | --- | --- | --- |
+| Gemini 2.5 Flash (+ Preview Sep 2025), Gemini 2.5 Flash-Lite (+ Preview Sep 2025), Gemini 2.5 Pro, Gemini Flash Latest, Gemini Flash-Lite Latest, Gemini Pro Latest | Chat completions | text, image | text | Function calling |
+| Gemini 3 Flash Preview, Gemini 3 Pro Preview | Chat completions | text, image | text | |
+
+#### Amazon Bedrock
+
+| Models | Category | Input | Output | Additional Capabilities |
+| --- | --- | --- | --- | --- |
+| Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat completions | text, document (except Titan Premier) | text | |
+| AI21 Jamba-Instruct | Chat completions | text | text | |
+| AI21 Labs Jurassic-2 (Text) | Chat completions | text | text | |
+| Amazon Nova Pro, Amazon Nova Lite | Chat completions | text, image, document | text | Function calling |
+| Amazon Titan Image Generator G1 | Image generation | text | image | |
+| Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings | |
+| Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.5 Sonnet, Anthropic Claude 4.5 Haiku, Anthropic Claude 4.5 Opus | Chat completions | text, image, document | text | Function calling |
+| Cohere Command | Chat completions | text, document | text | |
+| Cohere Command Light | Chat completions | text | text | |
+| Cohere Command R, Cohere Command R+ | Chat completions | text, document | text | Function calling |
+| Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
+| DeepSeek, DeepSeek-R1 | Text | text | document | |
+| Meta Llama 2, MetaLlama 3 | Chat completions | text, document | text | |
+| Meta Llama 3.1 | Chat completions | text, document | text | Function calling |
+| Mistral AI Instruct | Chat completions | text, document | text | |
+| Mistral Large, Mistral Large 2 | Chat completions | text, document | text | Function calling |
+| Mistral Small | Chat completions | text | text | Function calling |
+| OpenAI gpt-oss-20B, gpt-oss-120b | Chat completions | text | text | |
 
 For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) in the AWS documentation.
-
-The available showcase applications offer implementation inspiration for many of the listed models.
 
 #### Connecting to Other Models
 
