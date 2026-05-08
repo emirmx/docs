@@ -48,12 +48,12 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
-| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) (formerly known as Support Assistant Starter App) | See an example of how to build an agentic Mendix application. Use the Agent Builder from Agent Commons to build your support assistant. | 10.24 |
-| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Kickstart the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | 10.24 |
-| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create an application with GenAI capabilities and no dependencies. | 10.24 |
-| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. | 10.24 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | 10.24 |
-| [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | 10.24 |
+| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) (formerly known as Support Assistant Starter App) | Build agentic apps with this starter app that includes Agent Commons and all its required dependencies. Includes a working conversational support agent that you can customize with prompts, tool calling, knowledge base integration, and human-in-the-loop capabilities. | 10.24 |
+| [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Build your own enterprise-grade ChatGPT-like app. Connect to a supported model and write custom instructions to create a chatbot that can support use cases such as brainstorming, copywriting, document analysis, or coding support. | 10.24 |
+| [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start building with Mendix GenAI capabilities using this blank starter app that comes preloaded with connectors for Mendix Cloud GenAI, OpenAI, Amazon Bedrock, and Mistral, plus Agent Commons and all its required dependencies. | 10.24 |
+| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Explore example use cases for Agents Kit connectors and modules, including multi-agent patterns, exposing and consuming tools via MCP, interactive chatbots, RAG, function calling, image generation, and semantic search. | 10.24 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Demonstrates a time-saving GenAI pattern for answering similar-but-different questions. Uses RFPs as an example: upload RFP documents, generate responses from a historical knowledge base of question-answer pairs, edit with AI assistance, and continuously update the knowledge base to create a self-learning system. | 10.24 |
+| [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to use Snowflake connectors to read and write data, leverage Snowflake Cortex ML and LLM capabilities, chat with structured data using Cortex Analyst, and implement role-based access control. | 10.24 |
 
 #### Connector Modules {#connectors}
 
@@ -71,10 +71,9 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
-| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | 10.24 |
-| [Agent Editor](/appstore/modules/genai/genai-for-mx/agent-editor/) | Define agents at design time in Studio Pro and manage their lifecycle using platform capabilities such as version control and deployment.
-| 11.9 |
-| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | 10.24 |
+| [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality by defining, testing, and evaluating agents at runtime. Iterate on prompts and agent configurations without app redeployment through the integrated Agent Builder UI. | 10.24 |
+| [Agent Editor](/appstore/modules/genai/genai-for-mx/agent-editor/) | Define agents as version-controlled documents in Studio Pro at design time. Author prompts, configure tools and knowledge bases, test locally, and deploy agents as part of your app model. | 11.9 |
+| [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create chat interfaces for full-screen, sidebar, or modal GenAI conversations. Monitor token consumption and trace interactions with UI features built on GenAI Commons. | 10.24 |
 | [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this module. | 10.24 |
 | [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
 
