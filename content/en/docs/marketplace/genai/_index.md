@@ -2,7 +2,7 @@
 title: "Enrich Your Mendix App with GenAI Capabilities"
 url: /appstore/modules/genai/
 linktitle: "GenAI Capabilities of Mendix"
-description: "Describes the general properties and common concepts of generative AI in the context of developing Mendix applications. Illustrates the preferred way of leveraging platform-supported connectors in applications following the GenAI Commons patterns."
+description: "Describes how to integrate generative AI into Mendix applications using Agents Kit components and provides a catalog of available starter apps, connectors, modules, and models."
 weight: 7
 ---
 
@@ -11,7 +11,7 @@ weight: 7
 With Mendix generative AI (GenAI) capabilities, you can create engaging, intelligent experiences with a variety of AI models and your own data.
 
 {{% alert color="info" %}}
-These pages focus on building agentic applications with Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
+These pages focus on integrating generative AI into applications using Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
 {{% /alert %}}
 
 ### Typical Use Cases
@@ -35,7 +35,7 @@ If you are already familiar with GenAI and want to start building, refer to the 
 If you are new to GenAI, follow the steps below:
 
 1. Familiarize yourself with the [concepts](/appstore/modules/genai/get-started/) such as prompt engineering, Retrieval Augmented Generation (RAG), and function calling (ReAct).
-2. Select the right architecture to support your use case. For a full list of possibilities, see the [Components and Modules](#architecture) section below.
+2. Select the right architecture to support your use case. For a full list of possibilities, see the [Components and Models](#architecture) section below.
 3. Obtain the required credentials for your selected architecture.
 
 ## Components and Models {#architecture}
@@ -44,7 +44,7 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 
 ### Agents Kit Components 
 
-#### Starter Apps and Showcase Apps
+#### Starter Apps and Showcase Apps {#starter-apps}
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | 10.24 |
 
-#### Connector Modules
+#### Connector Modules {#connectors}
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL PgVector knowledge base. | 10.24 |
 
-#### Other Modules
+#### Other Modules {#other-modules}
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
