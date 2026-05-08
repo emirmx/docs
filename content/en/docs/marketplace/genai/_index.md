@@ -35,14 +35,14 @@ If you are already familiar with GenAI and want to start building, refer to the 
 If you are new to GenAI, follow the steps below:
 
 1. Familiarize yourself with the [concepts](/appstore/modules/genai/get-started/) such as prompt engineering, Retrieval Augmented Generation (RAG), and function calling (ReAct).
-2. Select the right architecture to support your use case. For a full list of possibilities, see the [Architecture and Components](#architecture) section below.
+2. Select the right architecture to support your use case. For a full list of possibilities, see the [Components and Modules](#architecture) section below.
 3. Obtain the required credentials for your selected architecture.
 
-## Architecture and Components {#architecture}
+## Components and Models {#architecture}
 
-Build AI-powered applications with Mendix Agents Kit, a set of components for integrating generative AI capabilities. The toolkit supports implementations ranging from simple text generation to complex multi-step agentic workflows.
+Integrate generative AI into your applications with Mendix Agents Kit, a collection of starter apps, connectors, and modules that support implementations from simple text generation to complex multi-step agentic workflows. The following sections describe the components available in the kit as well as the available models.
 
-### Mendix Components 
+### Agents Kit Components 
 
 #### Starter Apps and Showcase Apps
 
