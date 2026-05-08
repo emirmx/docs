@@ -72,8 +72,10 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
 | [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | 10.24 |
+| [Agent Editor](/appstore/modules/genai/genai-for-mx/agent-editor/) | Define agents at design time in Studio Pro and manage their lifecycle using platform capabilities such as version control and deployment.
+| 11.9 |
 | [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | 10.24 |
-| [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | 10.24 |
+| [GenAI Commons](/appstore/modules/genai/commons/) | Use common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this module. | 10.24 |
 | [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | 10.24 |
 
 Older versions of the Marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
