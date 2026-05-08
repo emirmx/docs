@@ -49,7 +49,7 @@ For recommendations on operating system tweaks and machine sizing for the main c
 
 Suitable infrastructure for agents includes EC2 instances, VMs, and containers with privileged access on EKS or AKS.
 
-### How Many Agents Do You Need? 
+### Recommended Number of Agents
 
 It is more efficient to use one agent with multiple advertised subnets. You can advertise as wide a CIDR range as you need, or as many subnets as necessary on one agent. Using one agent requires less effort to install and is cheaper in both time and maintenance cost.
 
