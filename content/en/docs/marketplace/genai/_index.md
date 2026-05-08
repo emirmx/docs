@@ -8,39 +8,32 @@ weight: 7
 
 ## Introduction
 
-With Mendix generative AI (GenAI) capabilities, you can create engaging, intelligent experiences with a variety of AI models and your own data.
+With Mendix generative AI (GenAI) capabilities, you can build AI-powered features into your applications using leading AI models and your own data.
+
+Mendix supports a variety of generative AI capabilities that you can integrate into your applications. Some typical use cases include the following:
+
+* Create AI agents that autonomously interact with your Mendix app's data, logic, and external systems.
+* Build conversational UIs and embed AI-powered interactions directly into your Mendix applications.
+* Connect application data and enterprise knowledge bases to provide grounded, context-aware AI responses.
 
 {{% alert color="info" %}}
 These pages focus on integrating generative AI into applications using Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
 {{% /alert %}}
 
-### Typical Use Cases
-
-Mendix supports a variety of generative AI tasks by integrating with tools such as Amazon Bedrock or Microsoft Foundry. Typical use cases include the following:
-
-* Create conversational UIs for AI-powered chatbots and integrate those UIs into your Mendix applications.
-* Connect any model through our GenAI connectors, or by integrating your connector into our GenAI commons interface.
-* Connect your data to ground GenAI systems with data from inside your application and the rest of your IT landscape.
-
 ### Getting Started
 
-To familiarize yourself with the GenAI capabilities of Mendix, explore the sections below based on your experience level:
+Start using Mendix GenAI capabilities based on your experience level:
 
-#### Familiar with GenAI
+* **Familiar with GenAI?** Start building with the [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guides.
+* **New to GenAI?** Follow these steps:
 
-If you are already familiar with GenAI and want to start building, refer to the [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guide to start building your first GenAI-powered application and access further supportive resources.
-
-#### New to GenAI
-
-If you are new to GenAI, follow the steps below:
-
-1. Familiarize yourself with the [concepts](/appstore/modules/genai/get-started/) such as prompt engineering, Retrieval Augmented Generation (RAG), and function calling (ReAct).
-2. Select the right architecture to support your use case. For a full list of possibilities, see the [Components and Models](#architecture) section below.
-3. Obtain the required credentials for your selected architecture.
+    1. Familiarize yourself with the [core concepts](/appstore/modules/genai/get-started/), including prompt engineering, retrieval augmented generation (RAG), and function calling (ReAct).
+    2. Choose an architecture for your use case. See the [Components and Models](#architecture) section for available options.
+    3. Obtain the required credentials for your selected architecture.
 
 ## Components and Models {#architecture}
 
-Integrate generative AI into your applications with Mendix Agents Kit, a collection of starter apps, connectors, and modules that support implementations from simple text generation to complex multi-step agentic workflows. The following sections describe the components available in the kit as well as the available models.
+Integrate generative AI into your applications with Agents Kit, a collection of Mendix starter apps, connectors, and modules that support implementations from simple text generation to complex multi-step agentic workflows. The following sections describe the components available in the kit as well as the available models.
 
 ### Agents Kit Components 
 
@@ -52,7 +45,7 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 | [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Build your own enterprise-grade ChatGPT-like app. Connect to a supported model and write custom instructions to create a chatbot that can support use cases such as brainstorming, copywriting, document analysis, or coding support. | 10.24 |
 | [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start building with Mendix GenAI capabilities using this blank starter app that comes preloaded with connectors for Mendix Cloud GenAI, OpenAI, Amazon Bedrock, and Mistral, plus Agent Commons and all its required dependencies. | 10.24 |
 | [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Explore example use cases for Agents Kit connectors and modules, including multi-agent patterns, exposing and consuming tools via MCP, interactive chatbots, RAG, function calling, image generation, and semantic search. | 10.24 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Demonstrates a time-saving GenAI pattern for answering similar-but-different questions. Uses RFPs as an example: upload RFP documents, generate responses from a historical knowledge base of question-answer pairs, edit with AI assistance, and continuously update the knowledge base to create a self-learning system. | 10.24 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | Demonstrates a time-saving GenAI pattern for answering similar-but-different questions. Upload RFP documents, generate responses from a historical knowledge base of question-answer pairs, edit with AI assistance, and continuously update the knowledge base to create a self-learning system. | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to use Snowflake connectors to read and write data, leverage Snowflake Cortex ML and LLM capabilities, chat with structured data using Cortex Analyst, and implement role-based access control. | 10.24 |
 
 #### Connector Modules {#connectors}
@@ -67,7 +60,7 @@ Integrate generative AI into your applications with Mendix Agents Kit, a collect
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL PgVector knowledge base. | 10.24 |
 
-#### Other Modules {#other-modules}
+#### Core Modules {#core-modules}
 
 | Asset | Description | Studio Pro Version |
 | --- | --- | --- |
@@ -85,7 +78,7 @@ Mendix connectors offer direct support for the following models:
 
 | Architecture | Models | Category | Input | Output | Additional capabilities |
 | -------------- | --------------------- | --------------------- | ------------------- | ----------- | ----------------------- |
-| Mendix Cloud GenAI | [Anthropic Claude Sonnet Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Chat Completions | text, image, document | text | Function calling |
+| Mendix Cloud GenAI | [Anthropic Claude Sonnet Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Chat completions | text, image, document | text | Function calling |
 | | [Cohere Embed Models](/appstore/modules/genai/mx-cloud-genai/resource-packs/#supported-models) | Embeddings | text | embeddings | |
 | Microsoft Foundry (OpenAI) / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano, gpt-5.1, gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
 | | DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
