@@ -199,7 +199,7 @@ Alternatively, you can configure the Mendix Runtime by using a configuration fil
   "RuntimePort": 8080,
   "RuntimeAdminPort": 8090
 }
-````
+```
 
 ### Using the Configuration File
 

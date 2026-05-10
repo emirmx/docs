@@ -145,12 +145,10 @@ Alternatively, you can configure the Mendix Runtime by using a configuration fil
 
 ### Using the Configuration File
 
-To use the configuration file, you can upload the configuration file to the configuration path:
+To use the configuration file, set the `MENDIX_CONFIG_FILE` environment variable to the path of the configuration file:
 
-`docker run --rm -it -p 8080:8080 -e M2EE_ADMIN_PASS=<your password> <your-registry>/<your-image-name>:<tag> \ -v host_path/config.conf:container_path/config.conf`
+`export MENDIX_CONFIG_FILE=/path/to/config.json`
  
-You must also mount the volume so that Docker can find it.
-
 ## Logging
 
 The Mendix Runtime logs to a standard output by default. You can configure the log level using the `MX_LOG_LEVEL` environment variable.
