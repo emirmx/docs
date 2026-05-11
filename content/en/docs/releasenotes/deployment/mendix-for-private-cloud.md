@@ -12,6 +12,18 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### May 7, 2026
+
+#### Portal Improvements
+
+* We have fixed an issue where an error pop-up would appear when opening Grafana for Logs and Metrics. (Ticket 277132)
+
+### May 1, 2026
+
+#### Mendix Ops CLI
+
+* We have released a new mx-ops-cli tool for configuring namespaces and performing base installations by using Helm charts. For more information, see [Installing Components through the Helm Chart UI](/developerportal/deploy/helm-charts/).
+
 ### April 9, 2026
 
 #### Mendix Operator v2.26.1 {#2.26.1}
