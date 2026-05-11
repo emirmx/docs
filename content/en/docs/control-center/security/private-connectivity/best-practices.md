@@ -68,7 +68,7 @@ For more information, refer to [Subnet Router High Availability](https://tailsca
 
 ## Using Containers
 
-Containerized platforms are common, and you may want to keep your agent deployment consistent with the rest of your infrastructure. Tailscale can run in containers, but there are some important considerations.
+Containerized platforms are common, and help keep your agent deployment consistent with the rest of your infrastructure. Tailscale can run in containers, but Mendix recommends you keep in mind the following important considerations.
 
 ### State Persistence 
 
@@ -83,7 +83,7 @@ Use these parameters to avoid authentication failure issues:
 
 ### Privilege Requirements 
 
-Tailscale typically runs in kernel (TUN) mode. If your environment permits privileged containers or host networking, that is the better choice for a subnet router. If it does not, you can run the subnet router in userspace mode, but this is better suited for lighter-duty use and is not the first recommendation for higher-throughput production routing.
+Tailscale typically runs in kernel (TUN) mode. If your environment allows privileged containers or host networking, that is the better choice for a subnet router. If it does not, you can run the subnet router in userspace mode, but this is better suited for lighter-duty use, and is not the first recommendation for higher-throughput production routing.
 
 For example, Azure Container Apps do not have privileged container access, so you need to enable userspace mode. For more information, refer to the following pages in the Tailscale documentation:
 
