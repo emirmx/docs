@@ -33,6 +33,7 @@ This module allows Mendix developers with little or no experience in building wo
 
 ### Dependencies
 
+* [Administration](https://marketplace.mendix.com/link/component/23513)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540)
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Atlas Web Content](https://marketplace.mendix.com/link/component/117183)
