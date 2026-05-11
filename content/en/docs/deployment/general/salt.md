@@ -27,7 +27,7 @@ SALT Licenses can only be used with the following Mendix versions:
 * **Mendix 10**: 10.24.4 and above
 * **Mendix 11**: 11.2.0 and above
 
-Each SALT license is tied to a specific major Mendix version, for example MXP11 for Mendix 11. The license permits use of that version and all prior major versions. To use a newer major version, you must have an active maintenance contract and can request a renewed license when the new major version is released.
+Each SALT license is tied to a specific major Mendix version, for example MXP11 for Mendix 11. The license permits use of that version and all earlier major versions. To use a newer major version, you must have an active maintenance contract and can request a renewed license when the new major version is released.
 
 ### Deployment Restrictions
 
@@ -79,7 +79,9 @@ Mendix applications connect to the license server during startup to retrieve the
 
 ### What Happens If the License Server Is Unavailable?
 
-If the license server becomes unavailable while a Mendix application is running, the application's current operation will not be affected. However, if the license server is unavailable during startup, the Mendix application will launch in trial mode, which limits the application to a limited number of users and stop execution after a few hours. To resolve this, restart the Mendix application once the license server is available.
+If the license server becomes unavailable while a Mendix application is running, the application's current operation will not be affected. However, if the license server is unavailable during startup, the Mendix application will launch in trial mode. In trial mode, usage is limited to a specific number of users and the application stops running after a few hours.
+
+To resolve this, restart the Mendix application once the license server is available.
 
 ### Does the License Server Require Internet Access?
 
