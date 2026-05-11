@@ -28,6 +28,74 @@ The [Administration](https://marketplace.mendix.com/link/component/23513) module
 ## Installation
 
 Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Administration module into your app.
+Module Roles and Access Control
+
+## Overview of Module Roles
+
+The Administration module provides a set of fine-grained module roles that control access to user-related data. These roles can be combined to allow only the permissions required for a specific use case.
+
+* Administrator: Allows full management of user accounts:
+   * Create new user accounts 
+   * Delete existing user accounts 
+   * Read and write access to FullName and Email of the Administration.Account objects 
+   * Change passwords of other accounts
+
+* User:  Allows write access to the FullName and Email attributes of the Administration.Account object for the current user, and allows read access to the FullName and Email attributes of other users’ Account objects.
+
+{{% alert color="warning" %}}This module role has been superseded by granular module roles, which offer improved flexibility and control. See the following user roles for detailed instructions and examples.{{% /alert %}}
+
+* ReadOwnDetails: Allows read access to the FullName and Email attributes of the Administration.Account object for the current user.
+* EditOwnDetails: Allows read and write access to the FullName and Email attributes of the Administration.Account object for the current user, where write access inherently includes read access.
+* EditOwnPassword: Allows permission for the current user to change their own password. Note that either ReadOwnDetails or EditOwnDetails is required when applying this module role.
+* ReadOthersFullName: Allows read access to the FullName attribute of other users’ Administration.Account objects 
+* ReadOthersEmail: Allows read access to the Email attribute of other users’ Administration.Accountobjects.
+
+{{% alert color="info" %}}The fine-grained module roles mentioned above were introduced in version 4.5.0 of the Administration module, enabling enhanced control over permissions and access. If these roles are not available in your environment, it is recommended to upgrade to the latest version in order to benefit from these improvements.{{% /alert %}}
+
+## Combining Module Roles Depending on Use Case
+
+The module roles described above can be combined to configure access to user account data based on the needs of the application. Instead of assigning broad access, select only the module roles required for each app role.
+
+{{% alert color="info" %}}Users with edit access automatically have read access. Edit permissions therefore include the ability to view and modify data.{{% /alert %}}
+
+The following examples illustrate common role combinations:
+
+### Default end user 
+
+* Allows users to read and edit their own details and change their password. 
+
+* EditOwnDetails 
+* EditOwnPassword 
+
+### Read-only user profile
+
+Allows users to read their own personal details and change their password.
+Profile updates and password management are handled externally through the configured Identity Provider (IdP) / Single Sign-On (SSO) solution.
+
+* ReadOwnDetails
+
+### Users who need visibility of other users’ names
+
+Required only when user’s full names  must be displayed. For example, when using the [Workflow Commons](https://docs.mendix.com/appstore/modules/workflow-commons/) module, users with access to the Task Inbox must be able to view other users’ full names, as the Assignee column uses this to display who is assigned to each task.
+
+* ReadOwnDetails
+* EditOwnPassword
+* ReadOthersFullName
+
+### User profile with email visibility
+
+Allows users to view their own personal details, the names of other users, and other users’ email addresses.
+
+* ReadOwnDetails
+* EditOwnPassword
+* ReadOthersFullName
+* ReadOthersEmail
+
+### Administrative users
+
+Allows full management of user accounts.
+
+* Administrator
 
 ## Usage
 
