@@ -33,7 +33,7 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 
 ### Overview of Module Roles
 
-The Administration module provides a set of fine-grained module roles that provide enhanced control over permissions and access.
+The Administration module provides a set of fine-grained module roles that provide enhanced control over permissions and access. These roles can be combined to allow only the permissions required for a specific use case.
 
 * **Administrator**: Allows full management of user accounts:
    * Create new user accounts 
