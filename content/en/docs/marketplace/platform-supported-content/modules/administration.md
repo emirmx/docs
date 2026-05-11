@@ -53,7 +53,7 @@ The Administration module provides a set of fine-grained module roles that provi
 
 * **ReadOthersFullName**: Allows read access to the FullName attribute of other users’ Administration.Account objects 
 
-* **ReadOthersEmail**: Allows read access to the Email attribute of other users’ Administration.Accountobjects.
+* **ReadOthersEmail**: Allows read access to the Email attribute of other users’ Administration.Account objects.
 
 {{% alert color="info" %}}The fine-grained module roles mentioned above were introduced in version 4.5.0 of the Administration module, enabling enhanced control over permissions and access. If these roles are not available in your environment, it is recommended to upgrade to the latest version in order to benefit from these improvements.{{% /alert %}}
 
