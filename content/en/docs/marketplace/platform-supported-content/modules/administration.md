@@ -28,9 +28,10 @@ The [Administration](https://marketplace.mendix.com/link/component/23513) module
 ## Installation
 
 Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Administration module into your app.
-Module Roles and Access Control
 
-## Overview of Module Roles
+## Module Roles and Access Control
+
+### Overview of Module Roles
 
 The Administration module provides a set of fine-grained module roles that control access to user-related data. These roles can be combined to allow only the permissions required for a specific use case.
 
