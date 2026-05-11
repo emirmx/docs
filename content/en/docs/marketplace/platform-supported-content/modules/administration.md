@@ -78,8 +78,7 @@ Allows users to read and edit only their own details and change only their own p
 
 ### Read-only user profile
 
-Allows users to read only their own personal details.
-Profile updates and password management are handled externally through the configured Identity Provider (IdP) / Single Sign-On (SSO) solution.
+Allows users to read only their own personal details. Profile updates and password management are handled externally through the configured Identity Provider (IdP) / Single Sign-On (SSO) solution.
 
 * ReadOwnDetails
 
