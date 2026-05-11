@@ -35,23 +35,31 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 
 The Administration module provides a set of fine-grained module roles that control access to user-related data. These roles can be combined to allow only the permissions required for a specific use case.
 
-* Administrator: Allows full management of user accounts:
+* **Administrator**: Allows full management of user accounts:
    * Create new user accounts 
    * Delete existing user accounts 
    * Read and write access to FullName and Email of the Administration.Account objects 
    * Change passwords of other accounts
 
-* User:  Allows write access to the FullName and Email attributes of the Administration.Account object for the current user, and allows read access to the FullName and Email attributes of other users’ Account objects.
+* **User**:  Allows write access to the FullName and Email attributes of the Administration.Account object for the current user, and allows read access to the FullName and Email attributes of other users’ Account objects.
 
 {{% alert color="warning" %}}This module role has been superseded by granular module roles, which offer improved flexibility and control. See the following user roles for detailed instructions and examples.{{% /alert %}}
 
-* ReadOwnDetails: Allows read access to the FullName and Email attributes of the Administration.Account object for the current user.
-* EditOwnDetails: Allows read and write access to the FullName and Email attributes of the Administration.Account object for the current user, where write access inherently includes read access.
-* EditOwnPassword: Allows permission for the current user to change their own password. Note that either ReadOwnDetails or EditOwnDetails is required when applying this module role.
-* ReadOthersFullName: Allows read access to the FullName attribute of other users’ Administration.Account objects 
-* ReadOthersEmail: Allows read access to the Email attribute of other users’ Administration.Accountobjects.
+* **ReadOwnDetails**: Allows read access to the FullName and Email attributes of the Administration.Account object for the current user.
+
+* **EditOwnDetails**: Allows read and write access to the FullName and Email attributes of the Administration.Account object for the current user, where write access inherently includes read access.
+
+* **EditOwnPassword**: Allows permission for the current user to change their own password. Note that either ReadOwnDetails or EditOwnDetails is required when applying this module role.
+
+* **ReadOthersFullName**: Allows read access to the FullName attribute of other users’ Administration.Account objects 
+
+* **ReadOthersEmail**: Allows read access to the Email attribute of other users’ Administration.Accountobjects.
 
 {{% alert color="info" %}}The fine-grained module roles mentioned above were introduced in version 4.5.0 of the Administration module, enabling enhanced control over permissions and access. If these roles are not available in your environment, it is recommended to upgrade to the latest version in order to benefit from these improvements.{{% /alert %}}
+
+### Default Access Rules
+
+* **Default rights for new members** are set to **None** for all access rules.
 
 ## Combining Module Roles Depending on Use Case
 
@@ -63,7 +71,7 @@ The following examples illustrate common role combinations:
 
 ### Default end user 
 
-* Allows users to read and edit their own details and change their password. 
+Allows users to read and edit their own details.
 
 * EditOwnDetails 
 * EditOwnPassword 
