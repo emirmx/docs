@@ -33,11 +33,11 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 
 ### Overview of Module Roles
 
-The Administration module provides a set of fine-grained module roles that control access to user-related data. These roles can be combined to allow only the permissions required for a specific use case.
+The Administration module provides a set of fine-grained module roles that provide enhanced control over permissions and access.
 
 * **Administrator**: Allows full management of user accounts:
    * Create new user accounts 
-   * Delete existing user accounts 
+   * Delete existing user accounts
    * Read and write access to FullName and Email of the Administration.Account objects 
    * Change passwords of other accounts
 
@@ -71,14 +71,14 @@ The following examples illustrate common role combinations:
 
 ### Default end user 
 
-Allows users to read and edit their own details.
+Allows users to read and edit only their own details and change only their own password.
 
 * EditOwnDetails 
 * EditOwnPassword 
 
 ### Read-only user profile
 
-Allows users to read their own personal details and change their password.
+Allows users to read only their own personal details.
 Profile updates and password management are handled externally through the configured Identity Provider (IdP) / Single Sign-On (SSO) solution.
 
 * ReadOwnDetails
