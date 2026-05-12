@@ -10,7 +10,7 @@ description: "Describes the features in Maia MCP Client."
 ## Introduction
 
 {{% alert color="info" %}}
-This feature is released as part of [Make Make](/refguide/maia-make/) capabilities in Studio Pro 11.8. 
+This feature is released as part of [Maia Make](/refguide/maia-make/) capabilities in Studio Pro 11.8. 
 
 To use Maia MCP Client, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
@@ -21,11 +21,14 @@ For information on the current limitations, see the [Limitations](#limitations) 
 
 ## Using MCP Client {#using-mcp-client}
 
-To open the MCP Client panel, click the **Configure MCP Connections** ({{% icon name="plug" %}}) icon under the **Maia Chat** tab.
+There are two ways to open the MCP Client panel:
+
+* Click the **Configure MCP Connections** ({{% icon name="plug" %}}) icon under the **Maia Chat** tab.
+* Go to the **View** menu and click **MCP Settings**.
 
 ### Adding an MCP Server {#adding-server}
 
-To add a server, fill in the following fields and click **Add**:
+To add a server, click **+ Add MCP Server**, fill in the following fields, and click **OK**:
 
 * **Server Name** — A display name. Must be unique among your configured servers.
 * **URL** — The server endpoint. Must use `https://` or `http://`.
