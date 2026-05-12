@@ -692,10 +692,12 @@ These are the currently supported functions:
 * LENGTH
 * LOCATE
 * LOWER
+* LPAD
 * RANGEBEGIN
 * RANGEEND
 * REPLACE
 * ROUND
+* RPAD
 * UPPER
 
 ### CAST{#cast}
@@ -1329,6 +1331,61 @@ SELECT * FROM Sales.Customer WHERE LOWER(LastName) = 'doe'
 This query can no longer take advantage of an index for `LastName` for comparison, resulting in a performance decrease.
 {{% /alert %}}
 
+### LPAD {#lpad-function}
+
+#### Description
+
+Pads a string on the left side with a specified character to reach a target length.
+
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.11.0.
+{{% /alert %}}
+
+#### Syntax
+
+```sql
+LPAD ( expression , length_expression [, pad_expression ] )
+```
+
+#### expression
+
+`expression` specifies the expression of type `string` to pad.
+
+#### length_expression
+
+`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`
+
+{{% alert color="info" %}}
+If `length_expression` is smaller than the length of `expression`, this function truncates it. This behavior is database specific.
+{{% /alert %}}
+
+#### pad_expression
+
+`pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
+
+{{% alert color="info" %}}
+If `pad_expression` has more than one character, the behavior of this function is database dependent.
+{{% /alert %}}
+
+#### Examples
+
+```sql
+SELECT LPAD('hello', 10) AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+|      hello |
+
+
+```sql
+SELECT LPAD('hello', 10, 'x') AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+| xxxxxhello |
+
 ### Ranges in Datasets
 
 {{% alert color="info" %}}
@@ -1506,6 +1563,61 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 | 0.21         | 0.21428571 |
 | 0.33         | 3.33333333 |
 | 1.17         | 1.17142857 |
+
+### RPAD {#rpad-function}
+
+#### Description
+
+Pads a string on the right side with a specified character to reach a target length.
+
+{{% alert color="info" %}}
+This function was introduced in Mendix version 11.11.0.
+{{% /alert %}}
+
+#### Syntax
+
+```sql
+RPAD ( expression , length_expression [, pad_expression ] )
+```
+
+#### expression
+
+`expression` specifies the expression of type `string` to pad.
+
+#### length_expression
+
+`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`
+
+{{% alert color="info" %}}
+If `length_expression` is smaller than the length of `expression`, this function truncates it.
+{{% /alert %}}
+
+#### pad_expression
+
+`pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
+
+{{% alert color="info" %}}
+If `pad_expression` has more than one character, the behavior of this function is database dependent.
+{{% /alert %}}
+
+#### Examples
+
+```sql
+SELECT RPAD('hello', 10) AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+| hello      |
+
+
+```sql
+SELECT RPAD('hello', 10, 'x') AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+| helloxxxxx |
 
 ### SUBSTRING{#substring-function}
 
