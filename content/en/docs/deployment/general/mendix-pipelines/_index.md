@@ -169,11 +169,11 @@ Build a deployment package based on the latest major, minor, or patch version of
 
 ##### GET Request
 
-Use the **GET request** step to retrieve data from an external API and use the response to inform or control the next steps in the pipeline. For information about configuring GET Request steps, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
+Use the **GET request** step to retrieve data from an external API and use the response to inform or control the next steps in the pipeline. For configuration details, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
 
 ##### POST Request
 
-Use the **POST request** step to send structured data to an external API to trigger an action or update a system. For information about configuring POST Request steps, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
+Use the **POST request** step to send structured data to an external API to trigger an action or update a system. For configuration details, refer to [Configuring POST and GET Request Steps](/developerportal/deploy/configuring-post-get-request-steps/).
 
 ##### Maia Best Practice Recommender{##recommender}
 
