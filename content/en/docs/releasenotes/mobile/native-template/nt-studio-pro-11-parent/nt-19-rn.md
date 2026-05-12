@@ -5,6 +5,12 @@ weight: 6
 description: "Native Template 19"
 ---
 
+## 19.0.5
+
+**Release date: May 12, 2026**
+
+- We fixed the CocoaPods installation issue that was caused by object version 70.
+
 ## 19.0.2 {#1902}
 
 **Release date: April 22, 2026**
