@@ -91,6 +91,10 @@ On the tab, you can only see the environments that satisfy the following require
 * [Mendix Single Sign-On](/developerportal/deploy/mendix-sso/) is implemented in the app using the [Mendix SSO](/appstore/modules/mendix-sso/) module. For more information, refer to [Mendix Single Sign-On](/developerportal/deploy/mendix-sso/). Note that the Mendix SSO module is deprecated as of May 1, 2026. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/).
 * You are currently assigned a user role in the app which allows you to manage other users. For more information, refer to the [User Management Properties](/refguide/user-roles/#user-management) section of *User Roles*.
 
+{{% alert color="warning" %}}
+Note that the Mendix SSO module has been deprecated as of May 1, 2026. As part of this deprecation, **Access Management** is also deprecated. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/) for Mendix SSO. For **Access Management**, use user groups or roles configured within your Identity Provider (IdP) of choice.
+{{% /alert %}}
+
 {{% alert color="info" %}}
 When deploying your application to a non-production environment, the deploying user and the Technical Contact are always assigned the Administrator user role.
 

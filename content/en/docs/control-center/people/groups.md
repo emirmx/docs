@@ -15,7 +15,7 @@ A member in Control Center means a user of the Mendix platform who participates 
 A Mendix Admin can set up **App Access Groups**, which consist of end-users (who are active users of Mendix Platform in your company) who will have access to [Mendix SSO](/appstore/modules/mendix-sso/)-enabled apps with specific environments and roles.
 
 {{% alert color="warning" %}}
-Note that the Mendix SSO module is deprecated as of May 1, 2026. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/).
+Note that the Mendix SSO module has been deprecated as of May 1, 2026. As part of this deprecation, **App Access Groups** are also deprecated. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/) for Mendix SSO. For **App Access Groups**, use user groups or roles configured within your Identity Provider (IdP) of choice.
 {{% /alert %}}
 
 ## Adding Access Group
