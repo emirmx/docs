@@ -66,6 +66,8 @@ This setup provides a simple active/passive failover, not load balancing. When T
 
 For more information, refer to [Subnet Router High Availability](https://tailscale.com/docs/how-to/set-up-high-availability#subnet-router-high-availability).
 
+To monitor agent health, access the **Agents** tab of the **Private Connectivity** page in Control Center. You can find details about this tab in the [Agents](/control-center/configure-private-connectivity/#private-connectivity-agents) section of the *Configuring and Using Private Connectivity* page.
+
 ## Using Containers
 
 Containerized platforms are common, and help keep your agent deployment consistent with the rest of your infrastructure. Tailscale can run in containers, but Mendix recommends you keep in mind the following important considerations.
