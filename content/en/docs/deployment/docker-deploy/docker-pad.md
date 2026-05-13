@@ -238,8 +238,11 @@ These endpoints are especially useful when integrating with orchestration platfo
 
 ## Reverse Proxy
 
-This section serves as a reference guide and starting point for configuring a reverse proxy on Docker. The configurations provided are intended for illustrative purposes only, as the appropriate settings will vary depending on your specific network environment and infrastructure setup.
-Please note that this example implementation is provided "as-is" and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
+This section serves as a reference guide and starting point for configuring a reverse proxy on Docker. The configurations provided are intended for illustrative purposes only, as the required settings vary depending on your specific network environment and infrastructure setup.
+
+{{% alert color="info" %}}
+This example implementation is provided "as-is" and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
+{{% /alert %}}
 
 ### Nginx Configuration
 
@@ -285,7 +288,7 @@ http {
 
 This setup exposes only port 80 publicly while proxying to your app on internal port 8080.
 
-### Traefik configuration
+### Traefik Configuration
 
 To set up Traefik as a reverse proxy for your app running in a Docker container, use Docker Compose for simplicity. This configuration exposes Traefik on ports 80/8080, automatically discovers your app container via labels, and routes traffic to it.
 Traefik uses two networks: frontend (public) and backend (internal). Add Traefik labels to the app service.
@@ -346,7 +349,6 @@ No static config files—Traefik auto-configures via labels.
 Dashboard at `http://localhost:8080` shows routes.
 
 Scale easily: duplicate `app service` with unique router rules (e.g., Host(app2.local)).​
-
 
 ## High Availability (sample)
 
