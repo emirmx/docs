@@ -244,49 +244,50 @@ This section serves as a reference guide and starting point for configuring a re
 This example implementation is provided "as-is" and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
 {{% /alert %}}
 
-### Nginx Configuration
+### Configuring Nginx
 
-Define services for the app and Nginx reverse proxy.
+To configure Nginx, perform the following steps:
 
-```
-services:
-  app:
-    build: .
-    ports:
-      - "127.0.0.1:8080:8080"  # Bind only localhost
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - app
-```
+1. Define services for the app and Nginx reverse proxy:
 
-Run with `docker-compose up --build`.​
+    ```
+    services:
+      app:
+        build: .
+        ports:
+          - "127.0.0.1:8080:8080"  # Bind only localhost
+        environment:
+          - SPRING_PROFILES_ACTIVE=docker
+      nginx:
+        image: nginx:alpine
+        ports:
+          - "80:80"
+        volumes:
+          - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        depends_on:
+          - app
+    ```
 
-Create `nginx.conf` for proxying requests to the app.
+2. Run the following command: `docker-compose up --build`.​
+3. Create the following `nginx.conf` file to proxy requests to the app:
 
-```
-events {}
-http {
-  server {
-    listen 80;
-    location / {
-      proxy_pass http://app:8080;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header X-Forwarded-Proto $scheme;
+    ```
+    events {}
+    http {
+      server {
+        listen 80;
+        location / {
+          proxy_pass http://app:8080;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+        }
+      }
     }
-  }
-}
-```
+    ```
 
-This setup exposes only port 80 publicly while proxying to your app on internal port 8080.
+This configuration exposes only port 80 publicly while acting as a proxy to your app on the internal port 8080.
 
 ### Traefik Configuration
 
