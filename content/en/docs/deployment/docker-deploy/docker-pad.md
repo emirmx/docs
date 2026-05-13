@@ -289,67 +289,71 @@ To configure Nginx, perform the following steps:
 
 This configuration exposes only port 80 publicly while acting as a proxy to your app on the internal port 8080.
 
-### Traefik Configuration
+### Configuring Traefik
 
-To set up Traefik as a reverse proxy for your app running in a Docker container, use Docker Compose for simplicity. This configuration exposes Traefik on ports 80/8080, automatically discovers your app container via labels, and routes traffic to it.
-Traefik uses two networks: frontend (public) and backend (internal). Add Traefik labels to the app service.
+To simplify setting up Traefik as a reverse proxy for your app running in a Docker container, use Docker Compose. This configuration exposes Traefik on ports `80/8080`, automatically discovers your app container through labels, and routes traffic to it.
 
-```
-services:
-  traefik:
-    image: traefik:v3.0
-    ports:
-      - "80:80"
-      - "8080:8080"  # Traefik dashboard
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    command:
-      - --api.dashboard=true
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-      - --entrypoints.web.address=:80
+Traefik uses two networks: *frontend* (public) and *backend* (internal). 
+
+1. Add Traefik labels to the app service:
+
+    ```
+    services:
+      traefik:
+        image: traefik:v3.0
+        ports:
+          - "80:80"
+          - "8080:8080"  # Traefik dashboard
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+        command:
+          - --api.dashboard=true
+          - --providers.docker=true
+          - --providers.docker.exposedbydefault=false
+          - --entrypoints.web.address=:80
+        networks:
+          - frontend
+          - backend
+        restart: unless-stopped
+      app:
+        build: .
+        networks:
+          - backend
+        labels:
+          - traefik.enable=true
+          - traefik.docker.network=backend
+          - traefik.http.routers.app.rule=Host(`localhost`) || PathPrefix(`/api`)
+          - traefik.http.routers.app.entrypoints=web
+          - traefik.http.services.app.loadbalancer.server.port=8080
+        restart: unless-stopped
     networks:
-      - frontend
-      - backend
-    restart: unless-stopped
-  app:
-    build: .
-    networks:
-      - backend
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=backend
-      - traefik.http.routers.app.rule=Host(`localhost`) || PathPrefix(`/api`)
-      - traefik.http.routers.app.entrypoints=web
-      - traefik.http.services.app.loadbalancer.server.port=8080
-    restart: unless-stopped
-networks:
-  frontend:
-    external: false
-  backend:
-    external: false
-```
-Run with `docker compose up -d --build`. 
+      frontend:
+        external: false
+      backend:
+        external: false
+    ```
 
-Access your app at `http://localhost` (Traefik proxies to app:8080 internally).
+2. Run the following command:  `docker compose up -d --build`. 
 
-**Key Traefik Labels Explained**
+You can now access your app at `http://localhost`. Traefik proxies to `app:8080` internally.
 
-`traefik.enable=true`: Enables Traefik for this container.
+#### Key Traefik Labels Explained
 
-`traefik.http.routers.java-app.rule=Host(yourapp.example.com)`: Routes requests matching the host to this service.
+This section explains the main labels used by Traefik.
 
-`traefik.http.services.java-app.loadbalancer.server.port=8080`: Forwards to your app's internal port.
+* `traefik.enable=true` - Enables Traefik for this container.
+* `traefik.http.routers.java-app.rule=Host(yourapp.example.com)` - Routes requests matching the host to this service.
+* `traefik.http.services.java-app.loadbalancer.server.port=8080` - Forwards to your app's internal port.
 
-Traefik auto-detects changes via Docker socket; no restarts needed for label updates.
+Traefik automatically detects changes through a Docker socket. You do not need to restart it to update the labels.
 
-**Key Differences from Nginx**
+#### Main Differences between Traefik and Nginx
 
-No static config files—Traefik auto-configures via labels.
+This section explains how Traefik proxies differ from Nginx.
 
-Dashboard at `http://localhost:8080` shows routes.
-
-Scale easily: duplicate `app service` with unique router rules (e.g., Host(app2.local)).​
+* Traefik does not use static config files. Instead, the configuration is automatic through the use of labels.
+* A dashboard available at `http://localhost:8080` shows the routes.
+* You can easily scale by duplicating the `app service` with unique router rules (for example, `Host(app2.local)`).​
 
 ## High Availability (sample)
 
