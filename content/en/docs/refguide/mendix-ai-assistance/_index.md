@@ -1,7 +1,7 @@
 ---
 title: "Mendix AI Assistance (Maia)"
 url: /refguide/mendix-ai-assistance/
-weight: 45
+weight: 17
 description: "Describes Mendix AI Assistance (Maia) in Studio Pro."
 aliases:
     - /refguide/mx-assist-studio-pro/
