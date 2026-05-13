@@ -1,7 +1,7 @@
 ---
 title: "Mendix AI Assistance (Maia)"
 url: /refguide/mendix-ai-assistance/
-weight: 45
+weight: 17
 description: "Describes Mendix AI Assistance (Maia) in Studio Pro."
 aliases:
     - /refguide/mx-assist-studio-pro/
@@ -24,6 +24,10 @@ This setting does not prevent data from being sent to third-party services used 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
 For more information on how to ensure optimal performance of Maia, see the [Best Practice for Maia Performance](#maia-performance-best-practice) section below.
+
+## Fair Use Policy {#fair-use}
+
+Mendix applies fair use limits to maintain a reliable experience for all users. If usage exceeds these limits, your Maia access may be paused for one week.
 
 ## Network Configuration Requirements {#maia-network-requirement}
 
