@@ -766,10 +766,10 @@ You can use the `defaultType` and `defaultValue` attributes to configure default
 
 The format of `defaultValue` depends on the chosen `defaultType`:
 
-| Data source type         | Format      | Example                                                               |
-|--------------------------|-------------|-----------------------------------------------------------------------|
-| `Database` `Association` | Entity Path | `ModuleName.EntityName` or `ModuleName.A/ModuleName.A_B/ModuleName.B` |
-| `Microflow` `Nanoflow`   | Document ID | `ModuleName.DocumentName`                                             |
+| Data source type         | Format      | Example                                                               | Supported for                      |
+|--------------------------|-------------|-----------------------------------------------------------------------|------------------------------------|
+| `Database` `Association` | Entity Path | `ModuleName.EntityName` or `ModuleName.A/ModuleName.A_B/ModuleName.B` | List data source                   |
+| `Microflow` `Nanoflow`   | Document ID | `ModuleName.DocumentName`                                             | List and single object data source |
 
 #### List Data Source {#list-datasource}
 
