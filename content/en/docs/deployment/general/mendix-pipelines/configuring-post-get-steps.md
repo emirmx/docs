@@ -38,8 +38,8 @@ The following table summarizes the available configuration fields.
 | **Additional URL path** | No | String or variable to append to the **Base URL Path**. Can reference a stored variable. | `$POST Request.Result1` or `a12f3` |
 | **HTTP header key-value pairs** | No | HTTP headers to include with the request as metadata. Values can reference stored variables. | `Authorization` = `$API_Key` |
 | **Variable extraction** | No | Expressions to extract values from the response body and store them as reusable output variables. | `.JobId` |
-| **Success condition** | No | Success condition that must evaluate to `true` to continue to the next pipeline step. Must be a jQuery expression. | `.Result == "Success"` |
-| **Failure condition** | No (GET only) | Failure condition that must evaluate to `true` to stop polling and fail the pipeline. Must be a jQuery expression. | `.Result == "Failed"` |
+| **Success condition** | No | Success condition that must evaluate to `true` to continue to the next pipeline step. Must be a [jq expression](https://jqlang.org/manual/). | `.Result == "Success"` |
+| **Failure condition** | No (GET only) | Failure condition that must evaluate to `true` to stop polling and fail the pipeline. Must be a jq expression. | `.Result == "Failed"` |
 | **Polling delay** | Yes (GET only) | Time in seconds before the first GET request runs. Range: 0–10800. | `30` |
 | **Polling interval** | Yes (GET only) | Time in seconds between GET retries. Range: 5–300. | `10` |
 | **Polling duration** | Yes (GET only) | Maximum time in seconds to poll before timing out and failing. Range: 0–10800. | `600` |
@@ -95,7 +95,7 @@ If the external API requires dynamic values, such as identifiers or environment-
 
 Success and failure conditions define how Mendix Pipelines interprets the response returned by an external system and decides whether a pipeline step should continue or stop.
 
-Conditions are evaluated against the JSON response body using jQuery-style expressions (for example, `.Result == "Success"`). These expressions can:
+Conditions are evaluated against the JSON response body using [jq-style expressions](https://jqlang.org/manual/) (for example, `.Result == "Success"`). These expressions can:
 
 * check whether fields exist
 * compare values
@@ -141,7 +141,7 @@ A use case is chaining a POST request and a GET request. For example, a POST req
 
 Each POST or GET request step can define up to three extracted output variables.
 
-Each output slot is populated by a jQuery-style expression evaluated against the response body returned by the external system. The expression determines which value is stored. For example, an expression can reference a specific value such as `.JobID` or use JQuery logic to extract an outcome value as a reusable variable.
+Each output slot is populated by a [jq-style expression](https://jqlang.org/manual/) evaluated against the response body returned by the external system. The expression determines which value is stored. For example, an expression can reference a specific value such as `.JobID` or use jq logic to extract an outcome value as a reusable variable.
 
 Output variables are automatically named and you cannot assign custom name or change the names. Mendix Pipelines exposes extracted values using a fixed naming pattern such as:
 
