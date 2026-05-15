@@ -70,7 +70,7 @@ To monitor agent health, access the **Agents** tab of the **Private Connectivity
 
 ## Using Containers
 
-Containerized platforms are common, and help keep your agent deployment consistent with the rest of your infrastructure. Tailscale can run in containers, but Mendix recommends you keep in mind the following important considerations.
+Containerized platforms are common, and help keep your agent deployment consistent with the rest of your infrastructure. Tailscale can run in containers, which you can read more about in Tailscale's [Docker](https://tailscale.com/docs/features/containers/docker) documentation page. However, Mendix recommends you keep in mind the following important considerations.
 
 ### State Persistence 
 
