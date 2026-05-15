@@ -775,17 +775,6 @@ The format of `defaultValue` depends on the chosen `defaultType`:
 
 A list data source (`isList="true"`) allows a widget to work with a collection of objects. The client component receives a prop of type [`ListValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listvalue). See [Data Sources](/refguide/data-sources/#list-widgets) for available data source types.
 
-A list data source may be linked to [`action`](#action), [`attribute`](#attribute), [`association`](#association), [`expression`](#expression), [`text template`](#texttemplate), and [`widgets`](#widgets) properties using the `dataSource` attribute on those properties. When linked to a list data source, those properties receive their list-aware counterparts in the client component:
-
-| Property type   | Client type when linked to list data source                                                                                                                          |
-|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `action`        | [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue)                                                               |
-| `attribute`     | [`ListAttributeValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listattributevalue)                                                      |
-| `association`   | [`ListReferenceValue` or `ListReferenceSetValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listassociationvalue)                             |
-| `expression`    | [`ListExpressionValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listexpressionvalue)                                                    |
-| `textTemplate`  | [`ListExpressionValue<string>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listexpressionvalue)                                               |
-| `widgets`       | [`ListWidgetValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listwidgetvalue)                                                               |
-
 ##### Studio Pro UI
 
 When the property is defined as follows:
@@ -818,21 +807,6 @@ The available source types differ from list data sources:
 | Web      | Context, Microflow, Nanoflow, Listen to widget            |
 | Native   | Context, Microflow, Nanoflow                              |
 
-A single object data source may be linked to [`action`](#action), [`attribute`](#attribute), [`association`](#association), [`expression`](#expression), [`text template`](#texttemplate), and [`widgets`](#widgets) properties using the `dataSource` attribute on those properties. When linked to a single object data source, those properties receive the same types as unlinked properties — there are no list-aware variants:
-
-| Property type   | Client type when linked to single object data source      |
-|-----------------|-----------------------------------------------------------|
-| `action`        | [`ActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#action-value)                        |
-| `attribute`     | [`EditableValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-value)                 |
-| `association`   | `ReferenceValue` or `ReferenceSetValue`                   |
-| `expression`    | [`DynamicValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value)                   |
-| `textTemplate`  | [`DynamicValue<string>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value)              |
-| `widgets`       | `ReactNode`                                               |
-
-{{% alert color="warning" %}}
-[`selection`](#selection) properties may only be linked to a list data source, not a single object data source.
-{{% /alert %}}
-
 ##### Studio Pro UI
 
 When the property is defined as follows:
@@ -847,6 +821,20 @@ When the property is defined as follows:
 Then the Studio Pro UI for the property appears like this:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/datasource-single-object.png" class="no-border" >}}
+
+#### Linking Properties to Data Sources {#datasource-linking}
+
+The [`action`](#action), [`attribute`](#attribute), [`association`](#association), [`expression`](#expression), [`text template`](#texttemplate), [`widgets`](#widgets), and [`selection`](#selection) properties can be linked to a data source using the `dataSource` attribute on those properties. The client type received by the component depends on the data source type:
+
+| Property type  | List data source client type | Single object data source client type |
+|:---------------|:-----------------------------|:--------------------------------------|
+| `action`       | [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue) | [`ActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#action-value) |
+| `attribute`    | [`ListAttributeValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listattributevalue) | [`EditableValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-value) |
+| `association`  | [`ListReferenceValue` or `ListReferenceSetValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listassociationvalue) | `ReferenceValue` or `ReferenceSetValue` |
+| `expression`   | [`ListExpressionValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listexpressionvalue) | [`DynamicValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value) |
+| `textTemplate` | [`ListExpressionValue<string>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listexpressionvalue) | [`DynamicValue<string>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value) |
+| `widgets`      | [`ListWidgetValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listwidgetvalue) | `ReactNode` |
+| `selection`    | `SelectionSingleValue` or `SelectionMultiValue` | *Not supported* |
 
 ### Selection {#selection}
 
