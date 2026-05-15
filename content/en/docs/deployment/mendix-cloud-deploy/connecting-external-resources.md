@@ -29,7 +29,7 @@ Before requesting a connection, the following conditions must be met:
 
 Mendix Cloud Connect Connections allow applications on Mendix Cloud to connect to Mendix Cloud Connect Resources over Mendix Cloud Connect Networks. Each connection request must be initiated by a Technical Contact and approved by a Mendix Admin before the application on Mendix Cloud can connect to the resource.
 
-Connections use a private Tailscale network called [Tailnet](https://tailscale.com/docs/concepts/tailnet). Within this Tailnet, a subnet router advertises a subnet/CIDR range, enabling your Mendix Cloud application to securely route traffic to specific applications on your organization’s network. All connectivity remains within the private Tailnet.
+Connections use a private Tailscale network called [Tailnet](https://tailscale.com/docs/concepts/tailnet). Within this Tailnet, a subnet router provides access to a subnet/CIDR range, enabling your Mendix Cloud application to securely route traffic to specific applications on your organization’s network. All connectivity remains within the private Tailnet.
 
 An application on Mendix Cloud can establish multiple connections to different resources. You can view and manage all connections and their statuses on the [Connectivity](/developerportal/deploy/environments-details/#connections) or [Change Requests](/developerportal/deploy/connecting-to-external-resource/#view-connection-details) tab.
 
