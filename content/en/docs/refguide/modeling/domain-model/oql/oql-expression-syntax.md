@@ -1338,7 +1338,7 @@ This query can no longer take advantage of an index for `LastName` for compariso
 Pads a string on the left side with a specified character to reach a target length.
 
 {{% alert color="info" %}}
-This function was introduced in Mendix version 11.11.0.
+This function was introduced in Mendix version 11.12.0.
 {{% /alert %}}
 
 #### Syntax
@@ -1362,10 +1362,6 @@ If `length_expression` is smaller than the length of `expression`, this function
 #### pad_expression
 
 `pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
-
-{{% alert color="info" %}}
-If `pad_expression` has more than one character, the behavior of this function is database dependent.
-{{% /alert %}}
 
 #### Examples
 
@@ -1571,7 +1567,7 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 Pads a string on the right side with a specified character to reach a target length.
 
 {{% alert color="info" %}}
-This function was introduced in Mendix version 11.11.0.
+This function was introduced in Mendix version 11.12.0.
 {{% /alert %}}
 
 #### Syntax
@@ -1595,10 +1591,6 @@ If `length_expression` is smaller than the length of `expression`, this function
 #### pad_expression
 
 `pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
-
-{{% alert color="info" %}}
-If `pad_expression` has more than one character, the behavior of this function is database dependent.
-{{% /alert %}}
 
 #### Examples
 
