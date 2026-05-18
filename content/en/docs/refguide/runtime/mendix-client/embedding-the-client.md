@@ -178,6 +178,10 @@ unmount();
 
 If the host app and the Mendix runtime use different origins, make sure the Mendix runtime accepts requests from the host origin. This is required because the host app loads the embedded bundle and subsequent client resources from the Mendix runtime. For more information, see [Configure CORS](/refguide/configure-cors/).
 
+## Content Security Policy
+
+If the host app uses Content Security Policy (CSP), make sure its policy allows JavaScript to load from the Mendix runtime domain. This is required because the host app loads the embedded bundle and other client resources from that domain. For more information, see [Content Security Policy](/howto/security/csp/).
+
 ## Read More
 
 * [Mendix Client](/refguide/mendix-client/)
