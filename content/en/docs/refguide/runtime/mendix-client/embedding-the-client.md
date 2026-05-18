@@ -174,6 +174,20 @@ const unmount = await mountEmbeddedMendix(container);
 unmount();
 ```
 
+## CSS Behavior
+
+The embedded client runs inside a shadow root so that its styles stay isolated from the host app.
+
+To make common app styling keep working, Mendix rewrites CSS selectors that target `:root`, `html`, or `body` so they target `:host` instead. This allows CSS variables and other top-level styles to keep applying inside the embedded app.
+
+If a selector depends on attributes on `html` or `body`, those attributes are mirrored to the shadow root so those selectors can still work when the app is embedded.
+
+`@font-face` declarations are handled differently. Because shadow roots do not support font declarations in the same way, Mendix moves those declarations to a `style` tag in the host page's `head`.
+
+{{% alert color="info" %}}
+Not all custom CSS will behave exactly the same when an app is embedded. However, Atlas styling is supported.
+{{% /alert %}}
+
 ## Cross-Origin Requests
 
 If the host app and the Mendix runtime use different origins, make sure the Mendix runtime accepts requests from the host origin. This is required because the host app loads the embedded bundle and subsequent client resources from the Mendix runtime. For more information, see [Configure CORS](/refguide/configure-cors/).
