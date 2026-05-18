@@ -35,7 +35,10 @@ Mendix applications using a SALT License cannot be deployed to the Mendix Public
 
 ### User Limits
 
-SALT licenses specify a maximum number of named users. This limit is enforced independently by each application and is defined at the time of purchase. Limiting concurrent users is not supported.
+SALT licenses distinguish between internal and external users:
+
+* **Internal users**: SALT licenses specify a maximum number of named internal users. This limit is enforced independently by each application and is defined at the time of purchase. Limiting concurrent users is not supported.
+* **External users**: Unlimited external users can optionally be purchased. When purchased, external users are no longer counted against the internal user limit. To take advantage of this, users must be explicitly flagged as external in your application using the [User Classification](/appstore/modules/user-classification/) module or by setting the `UserType` attribute directly. If external users are not flagged, they are counted as internal users.
 
 ## Obtaining the SALT-based License
 
