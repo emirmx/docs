@@ -64,8 +64,8 @@ On the template details page, you can define the template with the following ite
  
     {{% alert color="info" %}} When sanitization is enabled, the exporter prepends a apostrophe (`'`) to any string value starting with these
   characters. This forces Excel and CSV applications to treat the value as literal text rather than a formula.
-    Formula sanitization is **disabled by default** for backward compatibility.
-    Only enable this feature if your exported data may contain user-generated content.
+    Formula sanitization is **disabled by default**.
+    Enable this feature if your exported data may contain user-generated content.
     This setting applies to both Excel (.xlsx, .xls, .xlsm) and CSV exports. {{% /alert %}}
     
 * **Worksheets**: contains the following items that you can use to define sheets in an exported document:
