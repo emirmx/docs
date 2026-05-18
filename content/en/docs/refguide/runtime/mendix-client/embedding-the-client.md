@@ -22,7 +22,6 @@ This page describes how to do the following:
 * Load the embedded client from a host application
 * Pass page parameters to the embedded home page
 * Mount and unmount the client at the correct lifecycle moment
-* Handle common integration issues
 
 ## Prerequisites
 
@@ -69,6 +68,8 @@ For example, if your runtime URL is `http://localhost:8081`, the embedded bundle
 
 The Embedded profile defines the starting page for the embedded app. It also defines which page is shown if the embedded app reaches an error state during startup or navigation.
 
+If you configure an error page, it is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page. It is also shown when the selected home page is not accessible for the signed-in user.
+
 ## Configuring the Embedded Home Page
 
 The Embedded profile uses its own home page. This is the first page shown when the host calls `render(...)`.
@@ -85,8 +86,7 @@ For example:
 const DEFAULT_REMOTE_URL = "https://your-mendix-runtime.example.com";
 
 export async function mountEmbeddedMendix(container) {
-    const configuredRemoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
-    const remoteUrl = configuredRemoteUrl.replace(/\/+$/, "");
+    const remoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
 
     const embeddedModule = await import(`${remoteUrl}/dist/embedded-index.js`);
 
@@ -128,8 +128,7 @@ The embedded bundle exposes a `render(...)` function. A minimal framework-agnost
 const DEFAULT_REMOTE_URL = "https://your-mendix-runtime.example.com";
 
 export async function mountEmbeddedMendix(container) {
-    const configuredRemoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
-    const remoteUrl = configuredRemoteUrl.replace(/\/+$/, "");
+    const remoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
 
     const embeddedModule = await import(`${remoteUrl}/dist/embedded-index.js`);
 
@@ -174,34 +173,6 @@ const unmount = await mountEmbeddedMendix(container);
 // Call this when the host view is removed.
 unmount();
 ```
-
-## Handling Errors
-
-The most common integration failure is that the Mendix runtime is not serving `embedded-index.js`. Wrap the load and render steps in a `try/catch` block.
-
-```js
-const remoteUrl = "https://your-mendix-runtime.example.com";
-
-try {
-    const embeddedModule = await import(`${remoteUrl}/dist/embedded-index.js`);
-    const unmount = await embeddedModule.render(container, {
-        remoteUrl: `${remoteUrl}/`,
-        minHeight: "620px",
-        parameters: {
-            customerId: "12345"
-        }
-    });
-} catch (error) {
-    console.error(error);
-    showError(`Unable to load the embedded Mendix bundle from ${remoteUrl}/dist/embedded-index.js.`);
-}
-```
-
-At minimum, the host should do the following:
-
-* Log the technical error
-* Show a visible error message in the host UI
-* Keep the surrounding page intact
 
 ## Cross-Origin Requests
 
