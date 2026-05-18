@@ -87,6 +87,7 @@ For more information on how each Maia Make capability work, refer to the followi
 * [Maia MCP Client](/refguide/maia-mcp/)
 * [Studio Pro MCP Server](/refguide/studio-pro-mcp-server/)
 * [Maia Web Fetch](/refguide/maia-web-fetch/)
+* [Maia Agent Skills](/refguide/maia-agent-skills/)
 
 In Studio Pro 11.8 and above, most of the features described in the documents above are available only through the chat interface. There are no separate entry points to these features in their respective editors. [Maia Explain](/refguide/maia-explain/) is an exception. You can still access this feature by right-clicking the documents (for example, microflows or pages) in the **App Explorer** and the **Maia Explain** option is in the context menu.
 
