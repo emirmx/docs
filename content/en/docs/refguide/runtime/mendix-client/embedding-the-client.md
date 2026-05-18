@@ -12,24 +12,17 @@ This feature is in Public Beta. For more information, see [Release Status](/rele
 
 ## Introduction
 
-The embedded client lets you load a Mendix web app inside another web application without using the standard Mendix shell page.
+The embedded client lets you use a Mendix web app as a component inside another web application, without using the standard Mendix shell page. This makes it easier to add Mendix capabilities to broader digital experiences, support micro-frontend architectures, and integrate Mendix seamlessly with existing portals, products, or custom frontends. In this setup, the host application owns the surrounding page and browser-level experience, while the Mendix app owns the region where it is mounted.
 
-In this setup, the host application owns the surrounding page and the Mendix app owns the region where it is mounted.
-
-This page describes how to do the following:
+This page describes the following:
 
 * Configure an Embedded navigation profile in your Mendix app
 * Load the embedded client from a host application
 * Pass page parameters to the embedded home page
+* Understand how CSS behaves in an embedded app
+* Understand how navigation behaves in an embedded app
+* Configure host app requirements such as CORS and CSP
 * Mount and unmount the client at the correct lifecycle moment
-
-## Prerequisites
-
-Before you start, make sure you have the following:
-
-* A Mendix version that supports the embedded client
-* A Mendix web app that you can run locally or deploy
-* A host web app that can create a DOM element and load JavaScript by using a dynamic import
 
 ## How the Embedded Client Works
 
@@ -46,7 +39,7 @@ Your host application is responsible for the following:
 
 The same integration pattern works in React, Vue, plain JavaScript, and other frontend frameworks.
 
-## Configuring the Embedded Navigation Profile
+## Configuring the Embedded App
 
 To enable the embedded client for your Mendix app, do the following:
 
@@ -55,7 +48,7 @@ To enable the embedded client for your Mendix app, do the following:
 3. Click **Add navigation profile**.
 4. Select **Embedded**.
 5. Configure the **Default home page** for the Embedded profile.
-6. Configure the error page for the Embedded profile (optional).
+6. Configure an error page for the Embedded profile (optional).
 7. Run or deploy the app.
 
 After you add the Embedded profile, the Mendix runtime serves the following bundle:
@@ -66,39 +59,7 @@ After you add the Embedded profile, the Mendix runtime serves the following bund
 
 For example, if your runtime URL is `http://localhost:8081`, the embedded bundle is served from `http://localhost:8081/dist/embedded-index.js`.
 
-The Embedded profile defines the starting page for the embedded app. It also defines which page is shown if the embedded app reaches an error state during startup or navigation.
-
-If you configure an error page, it is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page. It is also shown when the selected home page is not accessible for the signed-in user.
-
-## Configuring the Embedded Home Page
-
-The Embedded profile uses its own home page. This is the first page shown when the host calls `render(...)`.
-
-If your embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(...)` configuration.
-
-## Passing Parameters to the Embedded Home Page
-
-You can pass page parameters for the embedded home page in the `parameters` object.
-
-For example:
-
-```js
-const DEFAULT_REMOTE_URL = "https://your-mendix-runtime.example.com";
-
-export async function mountEmbeddedMendix(container) {
-    const remoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
-
-    const embeddedModule = await import(`${remoteUrl}/dist/embedded-index.js`);
-
-    return embeddedModule.render(container, {
-        remoteUrl: `${remoteUrl}/`,
-        minHeight: "620px",
-        parameters: {
-            customerId: "12345"
-        }
-    });
-}
-```
+The Embedded profile defines the starting page for the embedded app, which is the first page shown when the host calls `render(...)`, and it can also define an error page for startup or navigation failures. When the embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(...)` configuration. The configured error page is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page or when the selected home page is not accessible for the signed-in user.
 
 The parameter names in `parameters` must match the page parameters expected by the embedded home page.
 
