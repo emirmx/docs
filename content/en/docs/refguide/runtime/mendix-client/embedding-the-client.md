@@ -3,7 +3,12 @@ title: "Embedding the Client"
 url: /refguide/mendix-client/embedding-the-client/
 description: "Describes how to load a Mendix web app into another web application by using the embedded client."
 weight: 30
+beta: true
 ---
+
+{{% alert color="warning" %}}
+This feature is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
 
 ## Introduction
 
