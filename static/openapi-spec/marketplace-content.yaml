@@ -94,7 +94,7 @@ paths:
     get:
       tags:
         - content
-      summary: Downloads the sourcefile of a specific version.
+      summary: Downloads the source file of a specific version.
       description: "Downloads the original source file associated with the specified version"
       operationId: getVersionDownload
       parameters:
@@ -155,7 +155,7 @@ components:
     isCompanyApproved:
       name: isCompanyApproved
       in: query
-      description: "Allows you to filter on company-approved content. This filter is only applicable if the company has enabled the company-approved badge functionality. See more information, https://docs.mendix.com/control-center/company-approved/. Supported values are `true` or `false`. If the value is `true`, it returns only the last published versions of the company-approved content. If the value is `false`, it returns only the last published versions of the non-company-approved content. If no value is passed, then it returns the last published versions of both company-approved and non-company-approved content."
+      description: "Allows you to filter on company-approved content. This filter is only applicable if the company has enabled the company-approved badge functionality. For more information, refer to https://docs.mendix.com/control-center/company-approved/. Supported values are `true` or `false`. If the value is `true`, it returns only the last published versions of the company-approved content. If the value is `false`, it returns only the last published versions of the non-company-approved content. If no value is passed, it returns the last published versions of both company-approved and non-company-approved content."
       required: false
       schema:
         type: string
@@ -348,7 +348,7 @@ components:
           description: "This indicates whether the content is public or private."
         isCompanyApproved:
               type: boolean
-              description: "This indicates whether the content is company-approved. This attribute is only returned if the company has enabled the company-approved badge functionality. See more information, https://docs.mendix.com/control-center/company-approved/."
+              description: "This indicates whether the content is company-approved. This attribute is only returned if the company has enabled the company-approved badge functionality. For more information, refer to https://docs.mendix.com/control-center/company-approved/."
         latestVersion:
           $ref: '#/components/schemas/version'
     content:
@@ -412,7 +412,7 @@ components:
           type: string
           pattern: "^\\b((?:\\d{1,3}|1000)(?:\\.\\d{1,3}|\\.1000){0,2})(?:-[a-zA-Z]+)?\\b$"
           example: '10.1.1'
-          description: "This is the version number. The format of the version number is major.minor.patch, for example: `1.0.0`."
+          description: "This is the version number. The format of the version number is major.minor.patch; for example, `1.0.0`."
         minSupportedMendixVersion:
           type: string
           pattern: "^\\b((?:\\d{1,3}|1000)(?:\\.\\d{1,3}|\\.1000){0,2})\\b$"
