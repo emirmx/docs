@@ -188,6 +188,12 @@ If a selector depends on attributes on `html` or `body`, those attributes are mi
 Not all custom CSS will behave exactly the same when an app is embedded. However, Atlas styling is supported.
 {{% /alert %}}
 
+## Embedded Navigation
+
+An embedded app does not react to changes in the browser address bar or to the browser's back and forward buttons. This is because the embedded app runs as a component inside the host app, and the host app should control browser navigation.
+
+The embedded Mendix app can still navigate internally. For example, it can open other pages by using [Show Page](/refguide/show-page/) actions or buttons that open a page.
+
 ## Cross-Origin Requests
 
 If the host app and the Mendix runtime use different origins, make sure the Mendix runtime accepts requests from the host origin. This is required because the host app loads the embedded bundle and subsequent client resources from the Mendix runtime. For more information, see [Configure CORS](/refguide/configure-cors/).
