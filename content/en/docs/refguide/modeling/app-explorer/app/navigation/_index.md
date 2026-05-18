@@ -25,8 +25,9 @@ The core of Mendix's navigation model is founded on the following profiles:
 * Phone web
     * Phone web offline
 * Native mobile (tablet & phone)
+* Embedded (Beta)
 
-Users that access the app via a particular device type are automatically redirected to the homepage of the appropriate profile based on the profile type (for details, see the [Redirection to Profiles](#redirection) section below).
+Users that access the app via a particular device type are automatically redirected to the homepage of the appropriate browser or mobile profile based on the profile type (for details, see the [Redirection to Profiles](#redirection) section below). The Embedded profile is not selected through device detection. It is used when a host application loads the embedded client.
 
 The device type of the currently logged-in user is available in [microflows](/refguide/microflows/) as the `$currentDeviceType` variable. The type of this variable is the [enumeration](/refguide/enumerations/) `System.DeviceType`, which has the values `Phone`, `Tablet`, and `Desktop`. You can use `$currentDeviceType` to perform different actions based on the device type. A typical example is to show different pages based on the device type.
 
@@ -55,6 +56,12 @@ The Mendix app will run in [offline-first](/refguide/offline-first/) mode. This 
 {{% alert color="info" %}}
 You are required to enable anonymous users in your app's security settings and include anonymous user roles on native login pages. This is because there is no built-in login screen in the native profile; login pages are modeled as regular native pages. 
 {{% /alert %}}
+
+### Embedded
+
+The Embedded profile lets you use a Mendix web app as a component inside another web application. The host application loads the embedded client and owns browser-level navigation, while the Mendix app renders and navigates inside its mounted region.
+
+The Embedded profile defines a default home page and can also define an error page. When the configured home page expects page parameters, the host application can pass them through the `parameters` object in `render(...)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 ## Redirection to Profiles {#redirection}
 
@@ -98,6 +105,8 @@ The default home page indicates which [page](/refguide/page/) or [microflow](/re
 The default home page is visible to all unauthenticated users.
 {{% /alert %}}
 
+For the Embedded profile, the default home page is the first page shown when the host application calls `render(...)`.
+
 #### Role-Based Home Pages{#role-based}
 
 By using role-based home pages, you can show different home pages for different users. If a user logs in, the first role-based home page of which the user role matches the user role of the user is displayed. If no match is found, the default home page is used.
@@ -107,6 +116,10 @@ For each role-based home page, you can specify the user role it applies to and t
 #### Fallback Page
 
 The fallback page is a page or microflow that can be used to customize the application's behavior when trying to access a [microflow](/refguide/microflow/#url) or [page](/refguide/page-properties/#url) URL that does not exist. For more information, see [Setting a Fallback Page](/refguide/setting-up-the-navigation-structure/#fallback) in *Setting Up Navigation*.
+
+#### Error Page
+
+For Embedded profiles, you can configure an error page. This page is shown when the embedded app cannot open the configured home page during startup or navigation. Examples include page parameter values passed through `render(...)` that do not match the expected parameter types, or a configured home page that is not accessible for the signed-in user. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 ### Authentication {#authentication}
 
@@ -145,4 +158,5 @@ For more details on the settings and when to use them, see the [Offline-First Re
 ## Read More
 
 * [App Explorer](/refguide/app-explorer/)
+* [Embedding the Client](/refguide/mendix-client/embedding-the-client/)
 * [Navigation Tree](/refguide/navigation-tree/)
