@@ -27,6 +27,7 @@ If you want to deploy your app to Amazon EKS, consider using the Mendix for Amaz
 * [minikube](https://minikube.sigs.k8s.io/docs/)
 * [Google Cloud Platform](https://cloud.google.com/)
 * [Google Kubernetes Engine- Autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview). For more information, see [Mendix on Kubernetes Cluster: GKE Autopilot Workarounds](/developerportal/deploy/private-cloud-cluster/#gke-autopilot-workarounds)
+* [Stackit Kubernetes Engine](https://stackit.com/en/products/runtime/stackit-kubernetes-engine)
 
 {{% alert color="warning" %}}
 If deploying to Red Hat OpenShift, you need to specify that specifically when creating your deployment. All other cluster types use generic Kubernetes operations.
@@ -160,6 +161,10 @@ Mendix Operator supports registry authentication with [workload identity](https:
 
 When used together with an [Azure Kubernetes Service](https://azure.microsoft.com/en-us/products/kubernetes-service), Mendix Operator can use [managed identity authentication](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity) assigned to the Mendix Operator's Kubernetes service account.
 
+### Stackit Container Registry
+
+[Stackit Container Registry](https://docs.stackit.cloud/products/developer-platform/container-registry/) is a cloud-native registry that enables you to store, manage and deploy container images securely and efficiently within the STACKIT Cloud. With this tool, you can easily manage the entire lifecycle of your container images (if static credential authentication is used).
+
 ## Databases{#databases}
 
 The following databases are supported, and provide the features listed.
@@ -208,6 +213,7 @@ The following managed PostgreSQL databases are supported:
 * [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/).
 * [Google Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres).
 * [Amazon RDS Aurora for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraPostgreSQL.html)
+* [Stackit Postgres Flex](https://stackit.com/en/products/database/stackit-postgresql-flex)
 
 Amazon PostgreSQL instances require additional firewall configuration to allow connections from the Kubernetes cluster.
 
@@ -241,6 +247,10 @@ If Strict TLS is enabled, Mendix on Kubernetes will connect to the PostgreSQL se
 The Mendix Operator allows you to specify custom Certificate Authorities to trust. This allows you to enable Strict TLS even for databases with self-signed certificates.
 
 Strict TLS mode should only be used with apps created in Mendix 8.15.2 (or later versions), earlier Mendix versions will fail to start when validating the TLS certificate.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+The Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the CREATEROLE privilege, which is necessary for Mendix to automatically create database users via SQL commands. Hence, a databaser user needs to be created per environment before deployment.
 {{% /alert %}}
 
 ### Microsoft SQL Server
@@ -345,6 +355,9 @@ Mendix Operator will need the endpoint, access key, and secret key to access the
 ### Ceph
 
 [Ceph](https://ceph.io/en/) is supported with the S3-compatible interface [Ceph Object Gateway](https://docs.ceph.com/en/mimic/radosgw/). The Mendix Operator will need the endpoint, access key, and secret key to access the storage. Please check the Ceph documentation for information on how to get the credentials.
+
+### STACKIT Object Storage (S3 compatible)
+STACKIT's S3-compatible object storage does not implement APIs such as CreateUser, CreatePolicy, CreateBucket. Hence, a bucket needs to be created beforehand which will be shared with multiple environments or seperate buckets can be created per environment.
 
 ## Networking
 
