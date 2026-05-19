@@ -90,6 +90,14 @@ To add an **Event sub-process** to a workflow, follow these steps:
 * The flow can contain the same types of activities as the main process flow (for example, **User Task**, **Call Microflow**, **Decision**).
 * It must start with a **Start** event (triggered by a notification) and end with at least one **End** event.
 
+### Rearranging Event Sub-Processes
+
+You can rearrange event sub-processes by right-clicking an event sub-process to open its context menu and clicking **Move event sub-process left** or **Move event sub-process right**, or using the <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Left arrow or <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Right arrow shortcut keys.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/arrange-in-editor.png" width="400px" alt="Event sub-process arrange in editor" >}}
+
+{{% alert color="info" %}}This does not change the order of execution of the sub-processes, as this is dependent on when the sub-process was triggered.{{% /alert %}}
+
 ## Execution
 
 To start an event sub-process, create a **Notify workflow** microflow activity and point it to the event sub-process start event.
