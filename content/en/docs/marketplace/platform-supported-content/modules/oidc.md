@@ -205,6 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.5.0 | - | `Anonymous` user role has beed removed. |
 | 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to the `OIDC.Encryptionkey` constant. | Dependencies on the Encryption and Nanoflow Commons modules have been removed. <br> **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
 | 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path. |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
@@ -248,7 +249,7 @@ If multiple IdPs are configured in the OIDC module, the following two mechanisms
 2. In this mechanism, your end users make the selection. Your app logic can use the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. End users will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
 
 {{% alert color="info" %}}
-In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. Additionally, check whether `Anonymous` user role can be removed from the app. If your application does not require anonymous access, removing the role is recommended as a security best practice.
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. From version 4.5.0, the `Anonymous` user role has been removed from the module and is no longer available.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
@@ -976,9 +977,7 @@ For more information, see the [URL](/refguide/microflow/#url) section of the *Mi
 
 ##### Steps for OIDC SSO Version v4.1.0 and above
 
-In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users.
-
-You can disable this setting by navigating to **Security > Anonymous users** and setting **Allow anonymous users** to **No**.
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users. You can disable this setting by navigating to **Security > Anonymous users** and setting **Allow anonymous users** to **No**. However, from version 4.5.0 of the module, this role has been removed from the module. 
 
 1. To use the Page URL functionality, replace the content of `login.html` with the content of `login-with-mendixsso-automatically.html` (located in the `resources\mendixsso\templates` folder) and save it as `login.html`.
 
