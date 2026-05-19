@@ -21,6 +21,10 @@ When Maia wants to fetch content from the web, it asks for your permission first
 
 {{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-web-fetch/maia-web-fetch-permission-dialog.png" alt="Maia Web Fetch permission dialog" max-width=80% >}}
 
+## Enable/Disable Web Tools
+
+To toggle ON or OFF this feature, navigate to Preferences > Maia and check Enable web tools. This requires studio pro to be restarted in order to take effect.
+
 ## What Maia Can Fetch
 
 Maia can retrieve the following types of content:
