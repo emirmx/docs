@@ -17,17 +17,30 @@ If a conflict is detected—meaning someone else has modified the data since you
 
 You can decide whether optimistic locking is enabled or disabled for your app.
 
-## Behavior of App with Optimistic Locking Disabled
+### Support Status by App Type
+
+Optimistic locking is supported in the following types of Mendix apps:
+
+| App Type | Support Status | Lowest Supported Version | 
+| --- | --- | --- | 
+| Online | Supported | [Studio Pro 11.5](/releasenotes/studio-pro/11.5/) | 
+| Offline | Supported | [Studio Pro 11.11](/releasenotes/studio-pro/11.11/) | 
+
+Additional information on optimistic locking behavior:
+* In online Mendix apps, ___
+* In offline Mendix apps, offline changes are synchronized to the server without being blocked by optimistic locking version checks
+
+## App Behavior: Optimistic Locking Disabled
 
 When two modifications are saved, they are applied in the order of processing. Only changed attributes are written to the database. This means that if the two commits change different attributes or associations of an object, the changes are not overwritten.
 
 For example, if one user commits changes for `AttributeA` and `AttributeB` and another user commits changes for `AttributeB` and `AttributeC` for the same object, then both `AttributeA` and `AttributeC` are committed according to both users' changes. `AttributeB` is committed based on whichever change was committed later.
 
-## Behavior of App with Optimistic Locking Enabled
+## App Behavior: Optimistic Locking Enabled
 
 The Mendix runtime implements optimistic locking by tracking the version of all objects using the attribute `MxObjectVersion` with type `Long`. Although the `MxObjectVersion` attribute is not write-protected, setting this value does not result in it being saved to the database. Its current value is compared with the value for the same object in the database.
 
-### How to Enable and Use Optimistic Locking
+### Enabling and Using Optimistic Locking
 
 You can enable optimistic locking for your Mendix application in the `Runtime` tab in the **App Settings** dialog:
 
