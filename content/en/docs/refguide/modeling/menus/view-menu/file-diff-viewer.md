@@ -1,0 +1,48 @@
+---
+title: "File Differences Viewer"
+url: /refguide/file-diff-viewer/
+weight: 27
+description: "Describes the built-in File Differences Viewer dialog in Studio Pro for comparing text and file differences."
+---
+
+## Introduction
+
+The **File Differences Viewer** is a built-in dialog in Studio Pro that displays text differences between two versions of a file or two text values. It opens as a modal dialog and shows additions, deletions, and modifications with color-coded highlighting.
+
+The File Differences Viewer is available on all platforms supported by Studio Pro, including Windows and macOS.
+
+## Accessing the File Differences Viewer
+
+The File Differences Viewer opens automatically in the following scenarios:
+
+* **Changes pane** – When you are viewing changes at the object level and double-click a text property row, the File Differences Viewer opens to show the old and new values of that property.
+* **Comparison pane** – When comparing property values or files in the [Comparison pane](/refguide/comparison-pane/), clicking a compare action opens the File Differences Viewer to show the differences.
+* **Changes pane** – When reviewing disk changes (for example, Java source code or widget files), you can right-click a modified file and select **Compare with original**, or double-click it, to open the File Differences Viewer showing the differences between your working copy and the last committed version.
+
+## Toolbar
+
+The File Differences Viewer toolbar contains the following buttons:
+
+| Button | Action |
+|--------|--------|
+| **Refresh** | Reloads the file contents from disk. This is useful if you make changes to the file while the dialog is open. This button is disabled when comparing text values. |
+| **Split/Inline toggle** | Switches between split view (side-by-side) and inline view (unified). |
+
+## Reading the Diff
+
+The File Differences Viewer uses the following visual indicators to show differences:
+
+* **Green background** – Lines or words that were added in the newer version.
+* **Red background** – Lines or words that were removed from the older version.
+* **Word-level highlighting** – Within changed lines, individual words that differ are highlighted with a darker shade to pinpoint exact changes.
+
+In **split view**, the older version is shown on the left and the newer version is shown on the right, with column headers **Older** and **Newer**. In **inline view**, both versions are merged into a single column with the header **Differences**, where removed lines appear above added lines.
+
+Line numbers are displayed for both sides to help you locate changes in the file.
+
+## Read More
+
+* [Changes Pane](/refguide/changes-pane/)
+* [Comparison Pane](/refguide/comparison-pane/)
+* [Comparing Revisions](/refguide/comparing-revisions/)
+* [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/)
