@@ -241,7 +241,7 @@ These endpoints are especially useful when integrating with orchestration platfo
 This section serves as a reference guide and starting point for configuring a reverse proxy on Docker. The configurations provided are intended for illustrative purposes only, as the required settings vary depending on your specific network environment and infrastructure setup.
 
 {{% alert color="info" %}}
-This example implementation is provided "as-is" and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
+This example implementation is provided as-is, and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
 {{% /alert %}}
 
 ### Configuring Nginx
@@ -250,7 +250,7 @@ To configure Nginx, perform the following steps:
 
 1. Define services for the app and Nginx reverse proxy:
 
-    ```
+    ```text
     services:
       app:
         build: .
@@ -271,7 +271,7 @@ To configure Nginx, perform the following steps:
 2. Run the following command: `docker-compose up --build`.​
 3. Create the following `nginx.conf` file to proxy requests to the app:
 
-    ```
+    ```text
     events {}
     http {
       server {
@@ -297,7 +297,7 @@ Traefik uses two networks: *frontend* (public) and *backend* (internal).
 
 1. Add Traefik labels to the app service:
 
-    ```
+    ```text
     services:
       traefik:
         image: traefik:v3.0
@@ -355,52 +355,57 @@ This section explains how Traefik proxies differ from Nginx.
 * A dashboard available at `http://localhost:8080` shows the routes.
 * You can easily scale by duplicating the `app service` with unique router rules (for example, `Host(app2.local)`).​
 
-## High Availability (sample)
+## Example High Availability Implementation
 
-High availability requires redundancy, health checks, and restarts to handle failures. Scale for HA with Docker Compose (for local/dev) or Kubernetes:
-Again, this section serves as a reference guide and starting point for configuring high availability on Docker. The configurations provided are intended for illustrative purposes only, as the appropriate settings will vary depending on your specific network environment and infrastructure setup.
-Please note that this example implementation is provided "as-is" and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
+High availability (HA) requires redundancy, health checks, and restarts to handle failures. Scale for HA with Docker Compose (for local or development environments) or Kubernetes.
 
-**docker-compose.yml:**
+This section serves as a reference guide and starting point for configuring high availability on Docker. The configurations provided are intended for illustrative purposes only, as the settings will vary depending on your specific network environment and infrastructure setup.
 
-```
-services:
-  myapp:
-    image: myapp
-    ports:
-      - "8080:8080"
-    deploy:
-      replicas: 3  # Run 3 instances
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-```
+{{% alert color="info" %}}
+This example implementation is provided as-is, and is not covered under official support. Support requests related to this specific configuration cannot be addressed.
+{{% /alert %}}
 
-Start with 'docker-compose up --scale myapp=3'. 
+1. Configure the *docker-compose.yml* as in the following example:
 
-Add a load balancer like Traefik or NGINX reverse proxy in front:
-```
-services:
-  traefik:
-    image: traefik:v3.0
-    command: --providers.docker --entrypoints.web.address=:80
-    ports: ["80:80"]
-  myapp:
-    # No ports exposed; Traefik load balances
-```
-This creates redundancy—kill one container, and traffic shifts automatically.
+    ```text
+    services:
+      myapp:
+        image: myapp
+        ports:
+          - "8080:8080"
+        deploy:
+          replicas: 3  # Run 3 instances
+        healthcheck:
+          test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+          interval: 30s
+          timeout: 10s
+          retries: 3
+    ```
 
-**Manual Build and Run**
+2. Start the process by running the following command: `docker-compose up --scale myapp=3`. 
+3. Add a load balancer like Traefik or an NGINX reverse proxy in the front:
 
-```
-# Build image 
-docker build -t myapp:latest .
-# Test single instance
-docker run -p 8080:8080 myapp:latest
-# For HA: Run 3 replicas (use docker-compose.yml for production)
-docker run -d -p 8081:8080 --name app1 myapp:latest
-docker run -d -p 8082:8080 --name app2 myapp:latest  
-docker run -d -p 8083:8080 --name app3 myapp:latest
-``` 
+    ``` text
+    services:
+      traefik:
+        image: traefik:v3.0
+        command: --providers.docker --entrypoints.web.address=:80
+        ports: ["80:80"]
+      myapp:
+        # No ports exposed; Traefik load balances
+    ```
+
+    This creates a redundancy—kill container, and traffic shifts automatically.
+
+4. Build and run manually by running the following script:
+
+    ``` text
+    # Build image 
+    docker build -t myapp:latest .
+    # Test single instance
+    docker run -p 8080:8080 myapp:latest
+    # For HA: Run 3 replicas (use docker-compose.yml for production)
+    docker run -d -p 8081:8080 --name app1 myapp:latest
+    docker run -d -p 8082:8080 --name app2 myapp:latest  
+    docker run -d -p 8083:8080 --name app3 myapp:latest
+    ``` 
