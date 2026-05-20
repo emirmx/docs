@@ -22,7 +22,7 @@ The properties of anonymous users are described in the table below:
 | Anonymous user role   | The user role that end-users of your application have when they are not signed in. This tells the application which role should be automatically applied to anonymous users who access the app. The **Allow anonymous users** property should be set to **Yes** to select an anonymous user role. |
 
 {{% alert color="warning" %}}
-Enabling anonymous users allows anyone to start using your app without signing in. If you do not secure your data with appropriate entity access rules for the anonymous user role, this can lead to unintended data exposure.
+Enabling anonymous users allows anyone to use your app without signing in. To prevent unintended data exposure, ensure that the anonymous user role has limited access across your app by configuring appropriate entity and microflow access rules.
 {{% /alert %}}
 
 ## Read More
