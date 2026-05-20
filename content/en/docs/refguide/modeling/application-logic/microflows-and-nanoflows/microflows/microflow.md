@@ -52,6 +52,8 @@ In the **Edit Microflow URL** dialog box, the configured URL is shown together w
 URLs are not supported for microflows that have non-persistable entities or lists as parameters.
 {{%/alert %}}
 
+For recommendations on structuring URLs and avoiding conflicts, see [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls).
+
 ### Common Section {#common}
 
 #### Name

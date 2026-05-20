@@ -106,6 +106,8 @@ In simple e-commerce applications, the URLs can be configured as follows:
 Mendix does not recommend configuring page URLs for pages that are displayed as a pop-up. Navigating to such a URL will result in layout issues.
 {{%/alert %}}
 
+For recommendations on structuring URLs and avoiding conflicts, see [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls).
+
 ### Common Section {#common}
 
 {{% snippet file="/static/_includes/refguide/common-section-link.md" %}}

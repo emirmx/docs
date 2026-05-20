@@ -30,6 +30,29 @@ Applications exceeding these guidelines may still function, depending on your sy
 App size impacts IDE performance. Choose a development strategy that aligns with your system's capabilities and Mendix's recommended guidelines.
 {{% /alert %}}
 
+## Page and Microflow URLs {#page-and-microflow-urls}
+
+When designing page and microflow URLs, prefer clear path segments over compact patterns:
+
+* Use `/` to divide the URL into meaningful parts
+* Prefer putting a parameter in its own segment, for example, `product/{Product/Name}` instead of `product-{Product/Name}`
+* Use static segments to make the structure explicit, for example, `category/{Category/Code}/product/{Product/Name}`
+
+This makes URLs easier to read, easier to maintain, and less likely to conflict with other URLs.
+
+URL conflicts are checked per path segment. Two URLs are considered conflicting when they have the same number of segments and Studio Pro cannot determine that at least one corresponding segment is always different.
+
+Common conflict cases include the following:
+
+* Two parameters in the same position, such as `product/{Product/Name}` and `product/{Product/Code}`
+* A static segment that can also be matched by a parameter, such as `product/{Product/Name}` and `product/sale`
+* A numeric static segment that overlaps with an `Id` parameter, such as `order/{Order/Id}` and `order/123`
+* Mixed segments where neither the static prefix nor the static suffix makes the segment unique, such as `product-{Product/Name}-details` and `product-sale-details`
+
+If either the prefix or the suffix is unique, the segments do not conflict.
+
+Using separate segments reduces ambiguity. For example, `product/{Product/Name}` and `product-sale` do not conflict because they have a different number of segments.
+
 ## Model SDK
 
 The Mendix Model SDK enforces a strict limit of 20,000 units per working copy.
