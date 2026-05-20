@@ -53,11 +53,11 @@ Custom authentication can be done with the microflow where the authentication va
 
 #### Authenticating with Mendix SSO {#authenticate-mendix-sso}
 
-Publishers can set up [custom authentication](/refguide/published-odata-services/#authentication-microflow) using [Mendix SSO](/appstore/modules/mendix-sso/) module. For more information, see the [Mendix SSO](/refguide/published-odata-services/#authentication-mendix-sso) section of *Published OData Services*. 
-
-{{% alert color="info" %}}
-Note that the Mendix SSO module is deprecated as of May 1, 2026. For new implementations, it is recommended to configure custom authentication using [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/) modules.
+{{% alert color="warning" %}}
+The Mendix SSO module is deprecated as of May 1, 2026. For new implementations, it is recommended to configure custom authentication using [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/) modules.
 {{% /alert %}}
+
+Publishers can set up [custom authentication](/refguide/published-odata-services/#authentication-microflow) using [Mendix SSO](/appstore/modules/mendix-sso/) module. For more information, see the [Mendix SSO](/refguide/published-odata-services/#authentication-mendix-sso) section of *Published OData Services*. 
 
 Consumers of an OData service that is set up with Mendix SSO authentication can use the **CreateAccessTokenAuthorizationHeaderList**.
 

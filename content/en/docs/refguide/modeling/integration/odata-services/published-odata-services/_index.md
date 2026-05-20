@@ -213,16 +213,16 @@ There are three possible outcomes of the authentication microflow:
 
 ###### Mendix SSO {#authentication-mendix-sso}
 
+{{% alert color="warning" %}}
+The Mendix SSO module is deprecated as of May 1, 2026. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/).
+{{% /alert %}}
+
 You can configure a published OData/GraphQL service to authenticate with the [Mendix SSO](/appstore/modules/mendix-sso/) module. This is a form of [Custom](#authentication-microflow) authentication.
 
 To set up authentication with Mendix SSO, do the following:
 
 1. Ensure the [Mendix SSO](/appstore/modules/mendix-sso/) module has been installed and configured in your app.
 2. In the published OData/GraphQL service, choose **Custom** authentication and select the **AuthorizeRequestWithAccessTokenFrom Request** microflow.
-
-{{% alert color="warning" %}}
-Note that the Mendix SSO module is deprecated as of May 1, 2026. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/).
-{{% /alert %}}
 
 #### Allowed Roles
 
