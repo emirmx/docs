@@ -25,7 +25,7 @@ Some examples of such container registries are:
 * Docker Hub
 * Azure ACR [admin account](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
 * Self-hosted registries such as [Sonartype Nexus](https://www.sonatype.com/products/nexus-repository)
-* Stackit container registry
+* STACKIT container registry
 
 However, static credentials are often considered insecure, and cloud providers offer alternative authentication methods based on short-lived tokens. For example, pushing an image to ECR requires getting a short-lived token from the AWS API. For more details about specific container registries, see the [Configuring the Registry](#configure-registry) section.
 
@@ -280,7 +280,7 @@ To access quay.io, you will need to create a robot account, and give this accoun
 Check your image registry documentation to see if repositories can be created automatically (on push) or need to be pre-created.
 Some registries impose limitations on repository names, for example the repository path cannot have more than three parts.
 
-**Stackit container registry**
+**STACKIT container registry**
 
 | Field               | Value                                                                                          |
 | ------------------- | -----------------------------------------------------------------------------------------------|
