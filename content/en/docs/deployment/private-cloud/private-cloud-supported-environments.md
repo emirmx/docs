@@ -357,7 +357,8 @@ Mendix Operator will need the endpoint, access key, and secret key to access the
 [Ceph](https://ceph.io/en/) is supported with the S3-compatible interface [Ceph Object Gateway](https://docs.ceph.com/en/mimic/radosgw/). The Mendix Operator will need the endpoint, access key, and secret key to access the storage. Please check the Ceph documentation for information on how to get the credentials.
 
 ### STACKIT Object Storage (S3 compatible)
-STACKIT's S3-compatible object storage does not implement APIs such as CreateUser, CreatePolicy, CreateBucket. Hence, a bucket needs to be created beforehand which will be shared with multiple environments or seperate buckets can be created per environment.
+
+STACKIT's S3-compatible object storage does not implement APIs such as `CreateUser`, `CreatePolicy`, or `CreateBucket`. Because of that, you must first create a bucket which will be shared with your environments. You can also create separate buckets for each environment.
 
 ## Networking
 
