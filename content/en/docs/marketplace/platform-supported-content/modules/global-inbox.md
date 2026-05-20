@@ -103,7 +103,7 @@ Make sure the Global Inbox app is deployed and running before deploying the Publ
 
 ### Setting up Business Events Locally
 
-For local development and testing, the Event Broker can be deployed using the [Local Setup Tool](https://github.com/mendix/event-broker-tools). For more information, see [Deployment](/appstore/services/business-events-deployment/#deployment). In both the **Global Inbox** and **Global Inbox Connector** modules, configure the following application constants:
+For local development and testing, the Event Broker can be deployed using the [Local Setup Tool](https://github.com/mendix/event-broker-tools). For more information, see the [Deployment](/appstore/services/business-events-deployment/#deployment) section in *Deploy a Business Event*. In both the **Global Inbox** and **Global Inbox Connector** modules, configure the following application constants:
 
 * **ServerUrl**:  the URL of the local broker instance
 
