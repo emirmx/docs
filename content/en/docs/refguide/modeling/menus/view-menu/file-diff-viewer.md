@@ -11,6 +11,8 @@ The **File Differences Viewer** is a built-in dialog in Studio Pro that displays
 
 The File Differences Viewer is available on all platforms supported by Studio Pro, including Windows and macOS.
 
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/file-diff-viewer/file-diff-viewer-split.png" alt="File Differences Viewer showing a side-by-side comparison with color-coded additions and deletions" class="no-border" >}}
+
 ## Accessing the File Differences Viewer
 
 The File Differences Viewer opens automatically in the following scenarios:
