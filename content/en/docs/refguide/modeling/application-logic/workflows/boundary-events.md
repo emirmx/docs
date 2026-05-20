@@ -6,7 +6,7 @@ weight: 20
 
 ## Introduction
 
-Based on Business Process Model and Notation (BPMN) 2.0, boundary events are a type of event that is attached to the boundary of an activity (such as a task or a sub-process) to handle exceptional situations or are triggered by certain behaviors. 
+Boundary events are a type of event that is attached to the boundary of an activity (such as a task or a sub-process) to handle exceptional situations or are triggered by certain behaviors. 
 
 Boundary events have two key characteristics: a **type** that determines what triggers the event, and an **interrupting behavior** that determines what happens to the parent activity when the event is triggered.
 
@@ -21,9 +21,9 @@ The boundary event type determines what triggers the event. The icon inside the 
 
 Each boundary event has an interrupting behavior that can be set to either interrupting or non-interrupting:
 
-* **Non-interrupting**: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in parallel. For example, after 2 days, a reminder should be sent to the assigned user. As per BPMN 2.0 specification, non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
+* **Non-interrupting**: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in parallel. For example, after 2 days, a reminder should be sent to the assigned user. Non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
 
-* **Interrupting**: When these events are triggered, they interrupt the activity they are attached to, meaning that this activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. Use interrupting boundary events in situations where further execution of the activity (and other following activities) is not required and an alternative path should be taken. For example, use an interrupting boundary event to start an escalation or a fast-track path when an activity is not completed 2 days after the due date. Or when the assigned user does not make a decision within 5 days, you want to abort the user task and continue the process with a pre-set decision. As per BPMN 2.0 specification, interrupting boundary events are visualized as two solid circles.
+* **Interrupting**: When these events are triggered, they interrupt the activity they are attached to, meaning that this activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. Use interrupting boundary events in situations where further execution of the activity (and other following activities) is not required and an alternative path should be taken. For example, use an interrupting boundary event to start an escalation or a fast-track path when an activity is not completed 2 days after the due date. Or when the assigned user does not make a decision within 5 days, you want to abort the user task and continue the process with a pre-set decision. Interrupting boundary events are visualized as two solid circles.
 
 Boundary events are always displayed by 2 circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the boundary event type. For example, a clock indicates that it is a timer boundary event, and an envelope indicates that it is a notification boundary event.
 
@@ -85,7 +85,7 @@ After you confirm the change:
     * If the changed boundary event was non-interrupting, you will get the [Non-interrupting Boundary Event Path Removed](/refguide/workflow-versioning/#non-interrupting-boundary-event-path-removed) conflict.
     * If the changed boundary event was interrupting, you will get the [Current Activity Removed](/refguide/workflow-versioning/#current-activity-removed) conflict.
 
-Boundary events are re-created upon interrupting behavior change because in-place conversion can result in states that contradict BPMN 2.0 concepts. According to BPMN, an interrupting boundary event must abort its parent activity when triggered, meaning an activity cannot have more than one active interrupting boundary event. Converting an already-triggered non-interrupting boundary event to interrupting in place violates this rule: the parent activity remains in progress, resulting in an interrupting boundary event whose parent is never aborted. Conversely, converting an already-triggered interrupting boundary event to non-interrupting in place leaves it active on an already-aborted parent activity, contradicting the BPMN rule that a non-interrupting boundary event must not abort its parent.
+Boundary events are re-created upon interrupting behavior change because in-place conversion can result in invalid states. An interrupting boundary event must abort its parent activity when triggered, meaning an activity cannot have more than one active interrupting boundary event. Converting an already-triggered non-interrupting boundary event to interrupting in place violates this rule: the parent activity remains in progress, resulting in an interrupting boundary event whose parent is never aborted. Conversely, converting an already-triggered interrupting boundary event to non-interrupting in place leaves it active on an already-aborted parent activity, contradicting the rule that a non-interrupting boundary event must not abort its parent.
 
 ### Rearranging Boundary Events
 
