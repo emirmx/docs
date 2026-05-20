@@ -2,7 +2,7 @@
 title: "Maia Agent Skills"
 linktitle: "Agent Skills"
 url: /refguide/maia-agent-skills/
-weight: 88
+weight: 95
 description: "Describes how to create and manage agent skills that equip Maia with domain-specific knowledge, applied automatically whenever relevant."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -10,7 +10,7 @@ description: "Describes how to create and manage agent skills that equip Maia wi
 ## Introduction
 
 {{% alert color="info" %}}
-This feature is released as part of [Maia Make](/refguide/maia-make/) capabilities in Studio Pro 11.11 and above.
+This feature was released as part of [Maia Make](/refguide/maia-make/) capabilities in Studio Pro 11.11.
 
 To use Maia Agent Skills, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}

@@ -10,7 +10,7 @@ description: "Describes Maia's web fetch capability for retrieving content from 
 ## Introduction
 
 {{% alert color="info" %}}
-This feature is available in Studio Pro 11.10 and above. 
+This feature was released as part of [Maia Make](/refguide/maia-make/) capabilities in Studio Pro 11.10. 
 
 To use Maia Web Fetch, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
