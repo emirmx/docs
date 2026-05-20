@@ -7,9 +7,11 @@ description: "Provides practical examples of common JSLT transformation patterns
 
 ## Introduction
 
-These how-tos provide practical, example-driven walkthroughs of common JSLT transformation patterns. Each guide focuses on a specific use case you may encounter when working with real-world API responses, such as restructuring nested data, renaming fields, or combining metadata with data. Rather than covering every detail of the JSLT language, the guides are designed to be hands-on and immediately applicable, showing a concrete input, the expected output, and the transformation that connects the two.
+How-tos separate page
 
-## Filtering Out Unused Fields {#filtering-unused-fields}
+These how-tos provide practical, example-driven walkthroughs of common JSLT transformation patterns. Each guide focuses on a specific use-case you may encounter when working with real-world API responses, such as restructuring nested data, renaming fields, or combining metadata with data. Rather than covering every detail of the JSLT language, the guides are designed to be hands-on and immediately applicable, showing a concrete input, the expected output, and the transformation that connects the two.
+
+## 1 Filtering out unused fields
 
 It is common for an API to return payloads that contain more fields than your Mendix app or a downstream system need. Rather than passing the entire payload along, this transformation selects only the fields that are relevant, effectively dropping everything else. This keeps the output clean, reduces payload size, and avoids exposing unnecessary data.
 
@@ -25,10 +27,6 @@ It is common for an API to return payloads that contain more fields than your Me
   "shippingAddress": "456 Elm Street, Berlin, Germany",
   "totalAmount": 149.99,
   "currency": "EUR",
-  "paymentMethod": "credit_card",
-  "paymentGatewayReference": "PGW-REF-88821",
-  "internalFraudScore": 12,
-  "warehouseId": "WH-03",
   "status": "shipped"
 }
 ```
@@ -39,10 +37,6 @@ It is common for an API to return payloads that contain more fields than your Me
 {
   "orderId": .orderId,
   "customerId": .customerId,
-  "orderDate": .orderDate,
-  "shippingAddress": .shippingAddress,
-  "totalAmount": .totalAmount,
-  "currency": .currency,
   "status": .status
 }
 ```
@@ -53,19 +47,17 @@ It is common for an API to return payloads that contain more fields than your Me
 {
   "orderId": "ORD-4521",
   "customerId": "CUST-001",
-  "orderDate": "2024-05-10T09:15:00Z",
-  "shippingAddress": "456 Elm Street, Berlin, Germany",
-  "totalAmount": 149.99,
-  "currency": "EUR",
   "status": "shipped"
 }
 ```
 
 ### Explanation
 
-In JSLT, the output object is always constructed explicitly: only the fields you name in the query will appear in the output, just like SQL or OQL. This means that dropping fields requires no special syntax; any field from the input that is simply not referenced in the JSLT is automatically excluded from the result. In this example, fields such as `paymentMethod`, `paymentGatewayReference`, `internalFraudScore`, and `warehouseId` are dropped by simply not being referred to in the query. The seven relevant fields are carried over directly from the input.
+In JSLT, the output object is always constructed explicitly: only the fields you name in the query will appear in the output, just like SQL or OQL. This means that dropping fields requires no special syntax; any field from the input that is simply not referenced in the JSLT is automatically excluded from the result. In this example, fields such as orderDate and shippingAddress are dropped by simply not being referenced in the query. The three relevant fields are carried over directly from the input.
 
-## Simplifying Nested Structures {#simplifying-nested}
+Read more about constructing JSLT queries: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
+
+## 2 Simplifying nested structures
 
 Sometimes a JSON structure contains nested sub-objects that group related fields together, but you just need a simpler, flat representation. This transformation moves fields from nested sub-objects up to the top level, merging them into a single flat object.
 
@@ -122,9 +114,11 @@ Sometimes a JSON structure contains nested sub-objects that group related fields
 
 ### Explanation
 
-The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (for example, `.profileImage.url`) and assigned to a new top-level key that reflects their origin (for example, `profileImageUrl`). The result is a flat object where all fields sit at the same level.
+The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (e.g. .profileImage.url) and assigned to a new top-level key that reflects their origin (e.g. profileImageUrl). The result is a flat object where all fields sit at the same level.
 
-## Normalising Objects to Arrays (Working with Dynamic Keys) {#normalising-objects}
+Read more about dot accessors: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
+
+## 3 Normalising objects to arrays (working with dynamic keys)
 
 Some APIs return collections of records as a keyed object, where each key acts as a unique identifier for that record. Mendix works more naturally with lists of objects, so this transformation converts that keyed structure into a flat, normalised array that can be directly mapped to a Mendix entity list.
 
@@ -191,19 +185,21 @@ Some APIs return collections of records as a keyed object, where each key acts a
 
 ### Explanation
 
-When you use a `for` expression to iterate over an object, JSLT converts each key-value pair into:
+When you use a for expression to iterate over an object, JSLT converts each key-value pair into:
 
 ```json
 { "key": "<the key>", "value": <the value> }
 ```
 
-So `for (.data)` iterates over each entry, exposing `.key` (for example, `"Tag1"`) and `.value` (for example, `{ "TagName": "...", "Value": ... }`). We then construct a new flat object per entry, promoting `.key` into its own `"TagId"` field alongside the fields from `.value`.
+So for (.data) iterates over each entry, exposing .key (e.g., "Tag1") and .value (e.g., { "TagName": "...", "Value": ... }). We then construct a new flat object per entry, promoting .key into its own "TagId" field alongside the fields from .value.
 
-## Zipping Metadata with Data {#zipping-metadata}
+Read more about for expression and constructing lists in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions 
 
-Some APIs return data and its metadata separately: the metadata describes the structure (for example, column names), while the data is returned as raw arrays. This is the case with, for example, Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
+## 4 Zipping metadata with data
 
-In this example, a Snowflake SQL REST API response (with input fields irrelevant to this use case omitted) contains employee records returned as arrays, alongside a separate metadata block that defines the column names. The transformation zips these together to produce a list of objects.
+Some APIs return data and its metadata separately: the metadata describes the structure (e.g. column names), while the data is returned as raw arrays. This is the case with, for example, Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
+
+In this example, a Snowflake SQL REST API response (with input fields irrelevant to this use-case omitted) contains employee records returned as arrays, alongside a separate metadata block that defines the column names. The transformation zips these together to produce a list of objects.
 
 ### Example
 
@@ -274,7 +270,7 @@ let cols = .resultSetMetaData.rowType
 
 ### Explanation
 
-The transformation starts by storing the column definitions in a variable `$cols` for later use inside the loops. It then iterates over each row in `.data`, capturing the current row as `$row`. For each row, `zip($cols, $row)` pairs every column definition with its corresponding value by position, producing two-element arrays like:
+The transformation starts by storing the column definitions in a variable $cols for later use inside the loops. It then iterates over each row in .data, capturing the current row as $row. For each row, zip($cols, $row) pairs every column definition with its corresponding value by position, producing two-element arrays like:
 
 ```json
 [
@@ -284,16 +280,17 @@ The transformation starts by storing the column definitions in a variable `$cols
 ]
 ```
 
-These pairs are then fed into an object `for` expression, which builds the output object by using the column name (`.[0].name`) as the key and the row value (`.[1]`) as the value.
+These pairs are then fed into an object for expression, which builds the output object by using the column name (.[0].name) as the key and the row value (.[1]) as the value.
 
-## Flattening Bill of Materials (BOM) {#flattening-bom}
+Read more about declaring variables: https://github.com/schibsted/jslt/blob/master/tutorial.md#variables
 
-A Bill of Materials (BOM) is naturally represented as a tree structure, where each assembly can contain child sub-assemblies, which can themselves contain further children. While this hierarchical format is intuitive for authoring, it can be difficult to work with downstream: for example, when loading data into a flat table, a database, or a reporting tool.
+Read more about zip and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#ziparray1-array2---array
 
-This transformation flattens the nested BOM tree into a flat array of assembly objects. Each entry in the flat list is enriched with two new fields:
+## 5 Flattening Bill of Materials (BOM)
 
-* `parentSubassembly` – the `partNumber` of the direct parent, or `null` if the assembly is a top-level root.
-* `childrenSubassemblies` – an array of `partNumber` values of the direct children.
+A Bill of Materials (BOM) is naturally represented as a tree structure, where each assembly can contain child sub-assemblies, which can themselves contain further children. Flattening such a structure into a simple list is sometimes needed when feeding data into downstream systems that expect a flat, tabular format. This transformation also helps in simplifying the Import Mapping process of the BOM to Mendix entities.
+
+In this example, a Bicycle BOM is represented as a nested tree. The transformation flattens it into a list of assemblies, where each entry records its own ID and name, its direct parent (parentSubAssembly), and its direct children (childrenSubAssemblies).
 
 ### Example
 
@@ -301,45 +298,37 @@ This transformation flattens the nested BOM tree into a flat array of assembly o
 
 ```json
 {
-  "name": "HDM Auto Process A",
+  "name": "Bicycle",
   "rootSubAssemblies": [
     {
       "attributes": {
         "baseID": "UID-001",
-        "name": "Derivative Electrical",
-        "partNumber": "PN183",
+        "name": "Back Wheel",
         "children": [
           {
             "attributes": {
               "baseID": "UID-002",
-              "name": "Fuse ATO 10A",
-              "partNumber": "Fuse-ATO-10A",
+              "name": "Rubber Tire",
               "children": []
-            },
-            "properties": { "value_1": 2, "value_2": "string", "value_3": true }
+            }
           },
           {
             "attributes": {
               "baseID": "UID-003",
-              "name": "Derivative Final Assembly",
-              "partNumber": "PN184",
+              "name": "Rim",
               "children": [
                 {
                   "attributes": {
                     "baseID": "UID-004",
-                    "name": "C-13",
-                    "partNumber": "C-012-SASP-Y",
+                    "name": "Spoke",
                     "children": []
-                  },
-                  "properties": {}
+                  }
                 }
               ]
-            },
-            "properties": {}
+            }
           }
         ]
-      },
-      "properties": { "value_1": 2, "value_2": "string", "value_3": true }
+      }
     }
   ]
 }
@@ -348,30 +337,19 @@ This transformation flattens the nested BOM tree into a flat array of assembly o
 **JSLT:**
 
 ```jslt
-def object-to-key-value-array(obj)
-  if ($obj)
-    [for (array($obj)) {
-      "key": .key,
-      "value": string(.value)
-    }]
-  else
-    []
-
 def flatten-assemblies(assemblies, parentAssembly)
   [for ($assemblies)
     let parentWithoutChildren = if ($parentAssembly)
-      $parentAssembly.attributes.partNumber
+      $parentAssembly.attributes.baseID
     else null
     let childrenWithoutGrandchildren = [for (.attributes.children)
-      .attributes.partNumber
+      .attributes.baseID
     ]
     let currentAssembly = {
       "baseID": .attributes.baseID,
       "name": .attributes.name,
-      "partNumber": .attributes.partNumber,
       "parentSubassembly": $parentWithoutChildren,
-      "childrenSubassemblies": $childrenWithoutGrandchildren,
-      "properties": object-to-key-value-array(.properties),
+      "childrenSubassemblies": $childrenWithoutGrandchildren
     }
     let childAssemblies = if (.attributes.children and size(.attributes.children) > 0)
                             flatten-assemblies(.attributes.children, .)
@@ -390,70 +368,40 @@ def flatten-assemblies(assemblies, parentAssembly)
 
 ```json
 {
-  "name" : "HDM Auto Process A",
+  "name" : "Bicycle",
   "flattenedAssemblies" : [ {
     "baseID" : "UID-001",
-    "name" : "Derivative Electrical",
-    "partNumber" : "PN183",
+    "name" : "Back Wheel",
     "parentSubassembly" : null,
-    "childrenSubassemblies" : [ "Fuse-ATO-10A", "PN184" ],
-    "properties" : [ {
-      "key" : "value_1",
-      "value" : "2"
-    }, {
-      "key" : "value_2",
-      "value" : "string"
-    }, {
-      "key" : "value_3",
-      "value" : "true"
-    } ]
+    "childrenSubassemblies" : [ "UID-002", "UID-003" ]
   }, {
     "baseID" : "UID-002",
-    "name" : "Fuse ATO 10A",
-    "partNumber" : "Fuse-ATO-10A",
-    "parentSubassembly" : "PN183",
-    "childrenSubassemblies" : [ ],
-    "properties" : [ {
-      "key" : "value_1",
-      "value" : "2"
-    }, {
-      "key" : "value_2",
-      "value" : "string"
-    }, {
-      "key" : "value_3",
-      "value" : "true"
-    } ]
+    "name" : "Rubber Tire",
+    "parentSubassembly" : "UID-001",
+    "childrenSubassemblies" : [ ]
   }, {
     "baseID" : "UID-003",
-    "name" : "Derivative Final Assembly",
-    "partNumber" : "PN184",
-    "parentSubassembly" : "PN183",
-    "childrenSubassemblies" : [ "C-012-SASP-Y" ],
-    "properties" : [ ]
+    "name" : "Rim",
+    "parentSubassembly" : "UID-001",
+    "childrenSubassemblies" : [ "UID-004" ]
   }, {
     "baseID" : "UID-004",
-    "name" : "C-13",
-    "partNumber" : "C-012-SASP-Y",
-    "parentSubassembly" : "PN184",
-    "childrenSubassemblies" : [ ],
-    "properties" : [ ]
+    "name" : "Spoke",
+    "parentSubassembly" : "UID-003",
+    "childrenSubassemblies" : [ ]
   } ]
 }
 ```
 
 ### Explanation
 
-The transformation relies on two helper functions working together. The first, `object-to-key-value-array(obj)`, converts each assembly's properties object into an array of `{ "key": ..., "value": ... }` entries, with all values cast to strings. If properties is `null` or absent, it safely returns an empty array. See [Normalising Objects to Arrays](#normalising-objects) for a detailed explanation of this helper.
+The transformation defines a recursive function flatten-assemblies that takes a list of assemblies and the parent assembly of that list. For each assembly it processes, it first resolves the parent's baseID (or null if there is no parent) and collects the baseID of each direct child, without descending further. It then constructs a flat object for the current assembly containing its ID, name, parent reference, and list of child IDs. If the current assembly has children, the function calls itself recursively on those children, passing the current assembly as the new parent. The results for the current assembly and all its descendants are concatenated into a single array, and flatten is applied at the end of each recursive level to collapse the nested arrays into a flat list.
 
-The second and central function, `flatten-assemblies(assemblies, parentAssembly)`, is a recursive function that walks the BOM tree and builds the flat output list. For each node it visits, it first determines the parent's `partNumber` (`parentWithoutChildren`), or `null` if the node is a root assembly. It then collects the `partNumber` values of the node's direct children only, without descending further (`childrenWithoutGrandchildren`). Using these, it constructs a flat entry object (`currentAssembly`) for the current node, combining all extracted fields with the normalized properties array.
+The root of the transformation kicks this off by calling flatten-assemblies on rootSubAssemblies with null as the initial parent, producing a fully flattened list that preserves the parent-child relationships without any nesting.
 
-After building the current entry, the function checks whether the node has any children. If it does, it calls itself recursively on those children, passing the current node as the new parent. If there are no children, it simply returns an empty array, which is the base case that stops the recursion.
+Read more about declaring functions in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations
 
-Because each iteration produces a nested array structure (`[$currentAssembly] + $childAssemblies`), `flatten(.)` is applied at the end to collapse everything into a single, flat list of assemblies.
-
-The main expression ties everything together. It constructs the output object by passing `.rootSubAssemblies` — the top-level array of root nodes — into `flatten-assemblies`, with `null` as the initial parent since root nodes have no parent. The function then traverses the entire tree from there, and the resulting flat list is assigned to `flattenedAssemblies`. The `name` field is carried over from the input as-is.
-
-## Extracting Information from a String {#extracting-string}
+## 6 Extracting information from a string
 
 Sometimes multiple pieces of information are encoded within a single structured string, such as a file path, an identifier, or a URL, and you need to extract a specific piece of that information for use downstream or in your own Mendix app. JSLT's string functions allow you to extract each component into its own dedicated field. This makes the data easier to consume, filter, and process without placing any additional burden on the downstream step. In this example, a file path string is broken down into its individual components: the root folder, department, year, and file name, each mapped to a dedicated output field.
 
@@ -491,12 +439,12 @@ Sometimes multiple pieces of information are encoded within a single structured 
 
 ### Explanation
 
-The `split` function breaks the file path string into an array of segments using `/` as the separator, producing the following array:
+The split function breaks the file path string into an array of segments using / as the separator, producing the following array:
 
 ```json
 ["reports", "finance", "2024", "annual-report.pdf"]
 ```
 
-Each segment is then accessed by its index: `[0]` for the first element, `[1]` for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
+Each segment is then accessed by its index: [0] for the first element, [1] for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
 
-For other useful built-in functions, refer to the [JSLT functions documentation](https://github.com/schibsted/jslt/blob/master/functions.md).
+For other useful built-in functions, refer to: https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions
