@@ -119,10 +119,16 @@ If your company does not have company-approved components, Maia returns the foll
 
 After you click **Start Building**, the **Start Development** window is displayed, showing the following options:
 
-* **Prioritize in Planning Board** – Click this button to open the **Planning** window of the new app, which includes all stories organized in sprints. You can reorganize the sprints as needed.     
-    Only the stories in the active sprint are taken into Studio Pro.    
+* **Prioritize** – Click the **Connect Planning Tool** button in the **Prioritize** section to select the project management tool you want to use for organizing and planning your work. This opens the **Connect Planning Tool** window, where you can select one of these options:
+
+    * **Mendix Planning Board (default)** – Use the Mendix planning board, where you can reorganize the sprints as needed.     
+    * **Jira** – Use Jira to organize and prioritize your work. To do that, you need to follow the [steps described on the Jira page](/developerportal/project-management/jira-connector/#procedure) in the *Apps* section.    
+        Make sure that the [prerequisites for using Jira](/developerportal/project-management/jira-connector/#prerequisites) are met.
     
-   If you click **Prioritize in Planning Board** before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window.
-* **Open in Studio Pro** – Click this button to open Studio Pro, where you can continue working on the new app. Studio Pro does not currently take into account [recommended components](#recommender).
+   {{% alert color="info" %}}
+   If you start prioritizing your work before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window.
+   {{% /alert %}}
+
+* **Build** – Click the **Open in Studio Pro** button in the **Build** section to open Studio Pro, where you can continue working on the new app. Studio Pro does not currently take into account [recommended components](#recommender).
     
     For details, refer to [Maia Make](/refguide/maia-make/) in the Studio Pro documentation.    
