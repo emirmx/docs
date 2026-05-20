@@ -94,7 +94,7 @@ To add an **Event sub-process** to a workflow, follow these steps:
 
 In Studio Pro 11.11 and above, you can rearrange event sub-processes by right-clicking an event sub-process to open its context menu and clicking **Move event sub-process left** or **Move event sub-process right**, or you can use the <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Left arrow or <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Right arrow shortcut keys.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/arrange-in-editor.png" max-width=80% alt="Event sub-process arrange in editor" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/arrange-in-editor.png" max-width=90% alt="Event sub-process arrange in editor" >}}
 
 {{% alert color="info" %}}
 This does not change the order of execution of the sub-processes, as this is dependent on when the sub-process is triggered.
@@ -104,7 +104,7 @@ This does not change the order of execution of the sub-processes, as this is dep
 
 To start an event sub-process, create a **Notify workflow** microflow activity and point it to the event sub-process start event.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/notify-workflow.png" alt="Notify workflow example" width="400" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/notify-workflow.png" alt="Notify workflow example" max-width=90% >}}
 
 ### Operational Lifecycle Management
 
