@@ -101,13 +101,13 @@ Make sure the Global Inbox app is deployed and running before deploying the Publ
     * **AppBaseUrl**: Must include the protocol (http:// or https://) and must not end with a trailing slash. It is used as the base URL when redirecting users to the publisher apps.
 5. When a user opens a task from the **Global Inbox**, they are redirected to the corresponding task page in the Publisher Application through a deeplink. Because the user entered the application through the Global Inbox instead of the normal navigation flow, developers must decide how the application should behave when the user completes the user task and/or closes the page. Developers can either change show page action in the deeplink microflow **DL_WorkflowUserTask_ShowUserTaskPage** to redirect to another page or adjust the default deeplink landing page in **UseMe** > **Deeplink** > **Deeplink Landing Page** to meet their business needs. If further customization is required, it is possible to adjust the logic for the outcome buttons in each of the task pages.
 
-### Setup Business Events Locally
+### Setting up Business Events Locally
 
-For local development and testing, the Event Broker can be deployed using the [Local Setup Tool](https://github.com/mendix/event-broker-tools) (see [Deployment](https://docs.mendix.com/appstore/services/business-events-deployment/#deployment)). In both the **Global Inbox** and **Global Inbox Connector** modules, configure the following application constants:
+For local development and testing, the Event Broker can be deployed using the [Local Setup Tool](https://github.com/mendix/event-broker-tools). For more information, see [Deployment](/appstore/services/business-events-deployment/#deployment). In both the **Global Inbox** and **Global Inbox Connector** modules, configure the following application constants:
 
-**ServerUrl**:  the URL of the local broker instance
+* **ServerUrl**:  the URL of the local broker instance
 
-**ChannelName**: the name of the event channel used for publishing and subscribing to Business Events
+* **ChannelName**: the name of the event channel used for publishing and subscribing to Business Events
 
 These settings ensure that Business Events are correctly routed between Publisher Applications and the Global Inbox during local testing.
 
@@ -117,7 +117,7 @@ For instructions on setting up a local test environment, refer to the Mendix Aca
 
 #### Mendix Public Cloud
 
-For deployment, the Global Inbox requires the Mendix Event Broker or [Bring Your Own Kafka](https://docs.mendix.com/appstore/services/business-events-deployment/#byok). For more information, see [Production Deployment](https://docs.mendix.com/appstore/services/business-events-deployment/#production-deployment) of the Mendix Business Events documentation.
+For deployment, the Global Inbox requires the Mendix Event Broker or [Bring Your Own Kafka](/appstore/services/business-events-deployment/#byok). For more information, see the [Production Deployment](/appstore/services/business-events-deployment/#production-deployment) section in *Deploy a Business Event*.
 
 Ensure the Mendix Event Broker is enabled for all apps and environments, and deploy applications in the correct order: Global Inbox application must be running before the publisher applications.
 
@@ -129,9 +129,9 @@ Ensure the **Global Inbox Connector** constants are configured in each Publisher
 
 #### Mendix Free Cloud
 
-When deploying to the Mendix Free Cloud, the [Mendix Event Broker](https://docs.mendix.com/appstore/services/event-broker/) is provided as a shared, multi-tenant service. 
+When deploying to the Mendix Free Cloud, the [Mendix Event Broker](/appstore/services/event-broker/) is provided as a shared, multi-tenant service. 
 
-Within this set-up no additional configuration or license is required. The Event Broker is automatically available after deploying your app and enabling business events.
+Within this setup, no additional configuration or license is required. The Event Broker is automatically available after deploying your app and enabling business events.
 
 ## Security
 
