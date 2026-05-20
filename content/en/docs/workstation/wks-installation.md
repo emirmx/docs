@@ -96,7 +96,7 @@ The **Stations** page now shows your station's status as **Computer Registered**
 
     {{< figure src="/attachments/workstation/wks-install10.png" class="no-border" >}}
 
-Any changes that you make in Workstation Management (such as adding new devices, or setting the **Detect Card Readers** toggle to **Off**) will be immediately displayed in the Workstation Client. To change this behavior, see [Client's Auto-Refresh](#auto-refresh).
+Any changes that you make in Workstation Management (such as adding new devices, or setting the **Detect Card Readers** toggle to **Off**) will be immediately synchronized with the Workstation Client. To change this behavior, see [Client's Auto-Refresh](#auto-refresh).
 
 ### Configuring and Testing Virtual Devices
 
@@ -169,6 +169,8 @@ Navigate to the **Settings** page in a workspace to configure settings that are 
 
 #### Log Settings
 
+Log settings are available in Workstation Management at **Settings > Log Settings**.
+
 The Workstation Client always stores logs to the file system it is installed on (c.f. [Troubleshooting - Workstation Client](/mendix-workstation/troubleshooting/#workstation-client)). No logs are send to the Workstation Management. However, you can configure the log level and retention policy of all the Workstation Clients that are registered to stations in the workspace.
 
 ##### Log Level
@@ -190,15 +192,19 @@ Modify these settings to the needs of your logging policy, especially if you req
 
 #### Client's Auto-Refresh {#auto-refresh}
 
+Auto-refresh settings are available in Workstation Management at **Settings > Client's Auto-Refresh**.
+
 By default, the Workstation Client operates in auto-refresh mode. That is, any changes made to the configuration in Workstation Management are immediately reflected in the Client. 
 
-To change this behavior, set the **Auto-Refresh Mode** toggle to **Off**, and then force the configuration to refresh by clicking **Refresh on Computer** in Workstation Management.
+To change this behavior, set the **Auto-Refresh Mode** toggle to **Off**. You can then force the configuration to refresh by clicking **Refresh on Computer** in Workstation Management, or by clicking **Refresh** in the Workstation Client.
 
-You can also **Adjust the Check Interval** to specify how often a disconnected Workstation Client should automatically refresh its configuration by polling Workstation Management. By default, this happens every 60 minutes.
+The **Check Interval** setting is only available when the auto-refresh mode is enabled. It specifies how often a Workstation Client that is disconnected due to a web socket failure should automatically refresh its configuration by polling Workstation Management. By default, this happens every 60 minutes.
 
 #### Local Device Testing
 
-By default, the Workstation Management is pre-configured as an allowed app to connect to the Workstation Client on the **Test your Station** page in a workspace. To disable this, navigate to the tab "Local Device Testing" on the **Settings** page and toggle it off. 
+Local device testing settings are available in Workstation Management at **Settings > Local Device Testing**.
+
+By default, the Workstation Management is pre-configured as an allowed app to connect to the Workstation Client on the **Test your Station** page in a workspace. To disable this setting, toggle it off. 
 
 ### Workspace Team and Collaboration {#collaboration}
 
