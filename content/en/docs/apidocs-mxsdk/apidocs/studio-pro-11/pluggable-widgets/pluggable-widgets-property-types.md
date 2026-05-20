@@ -766,14 +766,14 @@ You can use the `defaultType` and `defaultValue` attributes to configure default
 
 The format of `defaultValue` depends on the chosen `defaultType`:
 
-| Data source type         | Format      | Example                                                               | Supported for                      |
+| Data source type         | Format      | Example                                                               | Supported For                      |
 |--------------------------|-------------|-----------------------------------------------------------------------|------------------------------------|
 | `Database` `Association` | Entity Path | `ModuleName.EntityName` or `ModuleName.A/ModuleName.A_B/ModuleName.B` | List data source                   |
 | `Microflow` `Nanoflow`   | Document ID | `ModuleName.DocumentName`                                             | List and object data source |
 
 #### List Data Source {#list-datasource}
 
-A list data source (`isList="true"`) allows a widget to work with a collection of objects. The client component receives a prop of type [`ListValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listvalue). See [Data Sources](/refguide/data-sources/#list-widgets) for available data source types.
+A list data source (`isList="true"`) allows a widget to work with a collection of objects. The client component receives a prop of type [`ListValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listvalue). For more information on available data source type, see [Data Sources](/refguide/data-sources/#list-widgets).
 
 ##### Studio Pro UI
 
@@ -798,11 +798,11 @@ The object data source was introduced in Mendix [11.11](/releasenotes/studio-pro
 
 An object data source (`isList="false"`) allows a widget to work with a single object. The client component receives a prop of type [`DynamicValue<ObjectItem>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value).
 
-A widget may have at most one object data source property.
+A widget may have, at maximum, **one** object data source property.
 
 The available source types differ from list data sources:
 
-| Platform | Available source types                                    |
+| Platform | Available Source Types                                    |
 |----------|-----------------------------------------------------------|
 | Web      | Context, Microflow, Nanoflow, Listen to widget            |
 | Native   | Context, Microflow, Nanoflow                              |
