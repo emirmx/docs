@@ -449,7 +449,7 @@ Each segment is then accessed by its index: [0] for the first element, [1] for t
 
 For other useful built-in functions, refer to: https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions
 
-## 7 Working with SPARQL query results
+## Working with SPARQL query results
 
 SPARQL is a query language for RDF data, commonly used with knowledge graphs and semantic web APIs. Its query results follow a standard JSON format where the column names (called variables) are declared separately in a head block, and the actual result rows are returned as bindings, a list of objects where each key maps to a typed value wrapper rather than a plain value. This structure is precise and interoperable, but verbose. Transforming it into a simple flat list of objects makes it far easier to work with in Import Mappings.
 
