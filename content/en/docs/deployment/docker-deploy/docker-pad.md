@@ -35,7 +35,7 @@ Portable App Distribution offers a more agile, user-centric, and efficient deplo
 
 Before you begin, ensure you have the following:
 
-* Mendix Studio Pro version 11.19, 11.6.5, or above
+* Mendix Studio Pro version 10.24.19, 11.19, 11.6.5, or above
 * A Mendix app that you want to deploy
 * Docker installed on your system (for building and running Docker images)
 * Access to a container registry (for pushing and pulling Docker images)
@@ -176,9 +176,9 @@ You can configure the Mendix Runtime by using environment variables. For example
 
 | Environment Variable | Description |
 | --- | --- |
-| `DATABASE_TYPE` | The type of the database (for example, PostgreSQL, MySQL)|
-| `DATABASE_HOST` | The host name and port of the database server |
-| `DATABASE_NAME` |The name of the database |
+| `RUNTIME_PARAMS_DATABASE_TYPE` | The type of the database (for example, PostgreSQL, MySQL)|
+| `RUNTIME_PARAMS_DATABASE_HOST` | The host name and port of the database server |
+| `RUNTIME_PARAMS_DATABASE_NAME` |The name of the database |
 
 For more information, see [Runtime Customization](/refguide/custom-settings/#introduction).
 
