@@ -58,9 +58,13 @@ To add a boundary event to the [above-listed activities](#supported-activities),
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/edit-dialog.png" alt="Adding boundary events through edit dialog" width="450" >}}
 
-    * In the **Select Event** dialog that opens, choose the type of boundary event you want to add:
+3. Right-click one of the above-listed activities to open its context menu, and click **Add boundary event**:
 
-        {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/select-event.png" alt="Select Event dialog" width="450" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/context-menu.png" alt="Adding boundary events through context menu" width="450" >}}
+
+In both cases (options 2 and 3), the **Select Event** dialog appears where you choose the type of boundary event you want to add:
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/select-event.png" alt="Select Event dialog" width="450" >}}
 
 To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure boundary event properties, see [Timer – Boundary Properties](/refguide/timer/#boundary-properties) or [Notification – Boundary Properties](/refguide/notification/#boundary-properties).
 
