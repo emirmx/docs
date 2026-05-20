@@ -11,7 +11,7 @@ How-tos separate page
 
 These how-tos provide practical, example-driven walkthroughs of common JSLT transformation patterns. Each guide focuses on a specific use-case you may encounter when working with real-world API responses, such as restructuring nested data, renaming fields, or combining metadata with data. Rather than covering every detail of the JSLT language, the guides are designed to be hands-on and immediately applicable, showing a concrete input, the expected output, and the transformation that connects the two.
 
-## 1 Filtering out unused fields
+## Filtering out unused fields
 
 It is common for an API to return payloads that contain more fields than your Mendix app or a downstream system need. Rather than passing the entire payload along, this transformation selects only the fields that are relevant, effectively dropping everything else. This keeps the output clean, reduces payload size, and avoids exposing unnecessary data.
 
@@ -57,7 +57,7 @@ In JSLT, the output object is always constructed explicitly: only the fields you
 
 Read more about constructing JSLT queries: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
 
-## 2 Simplifying nested structures
+## Simplifying nested structures
 
 Sometimes a JSON structure contains nested sub-objects that group related fields together, but you just need a simpler, flat representation. This transformation moves fields from nested sub-objects up to the top level, merging them into a single flat object.
 
@@ -118,7 +118,7 @@ The transformation is straightforward. Each field in the output is explicitly ma
 
 Read more about dot accessors: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
 
-## 3 Normalising objects to arrays (working with dynamic keys)
+## Normalising objects to arrays (working with dynamic keys)
 
 Some APIs return collections of records as a keyed object, where each key acts as a unique identifier for that record. Mendix works more naturally with lists of objects, so this transformation converts that keyed structure into a flat, normalised array that can be directly mapped to a Mendix entity list.
 
@@ -195,7 +195,7 @@ So for (.data) iterates over each entry, exposing .key (e.g., "Tag1") and .value
 
 Read more about for expression and constructing lists in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions 
 
-## 4 Zipping metadata with data
+## Zipping metadata with data
 
 Some APIs return data and its metadata separately: the metadata describes the structure (e.g. column names), while the data is returned as raw arrays. This is the case with, for example, Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
 
@@ -286,7 +286,7 @@ Read more about declaring variables: https://github.com/schibsted/jslt/blob/mast
 
 Read more about zip and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#ziparray1-array2---array
 
-## 5 Flattening Bill of Materials (BOM)
+## Flattening Bill of Materials (BOM)
 
 A Bill of Materials (BOM) is naturally represented as a tree structure, where each assembly can contain child sub-assemblies, which can themselves contain further children. Flattening such a structure into a simple list is sometimes needed when feeding data into downstream systems that expect a flat, tabular format. This transformation also helps in simplifying the Import Mapping process of the BOM to Mendix entities.
 
@@ -401,7 +401,7 @@ The root of the transformation kicks this off by calling flatten-assemblies on r
 
 Read more about declaring functions in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations
 
-## 6 Extracting information from a string
+## Extracting information from a string
 
 Sometimes multiple pieces of information are encoded within a single structured string, such as a file path, an identifier, or a URL, and you need to extract a specific piece of that information for use downstream or in your own Mendix app. JSLT's string functions allow you to extract each component into its own dedicated field. This makes the data easier to consume, filter, and process without placing any additional burden on the downstream step. In this example, a file path string is broken down into its individual components: the root folder, department, year, and file name, each mapped to a dedicated output field.
 
@@ -448,3 +448,59 @@ The split function breaks the file path string into an array of segments using /
 Each segment is then accessed by its index: [0] for the first element, [1] for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
 
 For other useful built-in functions, refer to: https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions
+
+## 7 Working with SPARQL query results
+
+SPARQL is a query language for RDF data, commonly used with knowledge graphs and semantic web APIs. Its query results follow a standard JSON format where the column names (called variables) are declared separately in a head block, and the actual result rows are returned as bindings, a list of objects where each key maps to a typed value wrapper rather than a plain value. This structure is precise and interoperable, but verbose. Transforming it into a simple flat list of objects makes it far easier to work with in Import Mappings.
+
+In this example, a SPARQL query returns customer records. The transformation extracts the variable names from the head block and uses them to map each binding into a plain object, pulling the value field out of each typed wrapper.
+
+### Example
+
+**Input:**
+
+```json
+{
+  "head": { "vars": ["customer", "customerId", "customerName"] },
+  "results": {
+    "bindings": [
+      {
+        "customer":     { "type": "uri",     "value": "http://.../Customer/0000000" },
+        "customerId":   { "type": "literal", "value": "CUST001" },
+        "customerName": { "type": "literal", "value": "Global Tech Solutions Inc." }
+      }
+    ]
+  }
+}
+```
+
+**JSLT:**
+
+```jslt
+let vars = .head.vars
+
+([for (.results.bindings)
+  let binding = .
+  {for ($vars)
+    . : fallback(get-key($binding, .).value, "")
+  }
+])
+```
+
+**Output:**
+
+```json
+[
+  {
+    "customer" : "http://.../Customer/0000000",
+    "customerId" : "CUST001",
+    "customerName" : "Global Tech Solutions Inc."
+  }
+]
+```
+
+### Explanation
+
+The variable names are captured into vars at the root level before any looping begins. The transformation then iterates over each binding in the results. Because .will be rebound inside the inner loop, the current binding is saved into binding immediately. The inner for loop iterates over the variable names, using each variable name as both the key and the lookup argument — get-key($binding, .) retrieves the typed value wrapper for that variable from the saved binding, and .value extracts the plain value from it. fallback ensures that if a variable is missing from a binding, an empty string is used instead of null. The result is a clean, flat list of objects with no type wrappers that you can easily use as source for Import Mapping.
+
+Read more about get-key, fallback, and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#get-keyobject-key-fallback---value
