@@ -291,7 +291,7 @@ Some registries impose limitations on repository names, for example the reposito
 | User                | Username for the registry robot account                                                        |
 | Password            | Token (password) for the robot account                                                         |
 
-Before pushing images to container registry, you will need to create the repository first.
+Before pushing images to container registry, you must first create the repository.
 
 In order to fetch the container images from container registry, make sure to patch the default service accounts with the registry credentials.
 
