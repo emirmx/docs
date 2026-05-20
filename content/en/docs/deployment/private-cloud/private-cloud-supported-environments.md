@@ -27,7 +27,7 @@ If you want to deploy your app to Amazon EKS, consider using the Mendix for Amaz
 * [minikube](https://minikube.sigs.k8s.io/docs/)
 * [Google Cloud Platform](https://cloud.google.com/)
 * [Google Kubernetes Engine- Autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview). For more information, see [Mendix on Kubernetes Cluster: GKE Autopilot Workarounds](/developerportal/deploy/private-cloud-cluster/#gke-autopilot-workarounds)
-* [Stackit Kubernetes Engine](https://stackit.com/en/products/runtime/stackit-kubernetes-engine)
+* [STACKIT Kubernetes Engine](https://stackit.com/en/products/runtime/stackit-kubernetes-engine)
 
 {{% alert color="warning" %}}
 If deploying to Red Hat OpenShift, you need to specify that specifically when creating your deployment. All other cluster types use generic Kubernetes operations.
@@ -161,9 +161,9 @@ Mendix Operator supports registry authentication with [workload identity](https:
 
 When used together with an [Azure Kubernetes Service](https://azure.microsoft.com/en-us/products/kubernetes-service), Mendix Operator can use [managed identity authentication](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity) assigned to the Mendix Operator's Kubernetes service account.
 
-### Stackit Container Registry
+### STACKIT Container Registry
 
-[Stackit Container Registry](https://docs.stackit.cloud/products/developer-platform/container-registry/) is a cloud-native registry that enables you to store, manage and deploy container images securely and efficiently within the STACKIT Cloud. With this tool, you can easily manage the entire lifecycle of your container images (if static credential authentication is used).
+[STACKIT Container Registry](https://docs.stackit.cloud/products/developer-platform/container-registry/) is a cloud-native registry that enables you to store, manage and deploy container images securely and efficiently within the STACKIT Cloud. With this tool, you can easily manage the entire lifecycle of your container images (if static credential authentication is used).
 
 ## Databases{#databases}
 
