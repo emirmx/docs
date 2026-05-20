@@ -96,6 +96,8 @@ The **Stations** page now shows your station's status as **Computer Registered**
 
     {{< figure src="/attachments/workstation/wks-install10.png" class="no-border" >}}
 
+Any changes that you make in Workstation Management (such as adding new devices, or setting the **Detect Card Readers** toggle to **Off**) will be immediately displayed in the Workstation Client. To change this behavior, see [Client's Auto-Refresh](#auto-refresh).
+
 ### Configuring and Testing Virtual Devices
 
 After registering your computer, test your connectivity by creating a pair of virtual devices: a TCP/IP server that will emulate a device, and a TCP/IP client that will connect to the emulated device.
@@ -103,7 +105,7 @@ After registering your computer, test your connectivity by creating a pair of vi
 #### Creating a TCP/IP Server
 
 1. Go to [Mendix Workstation Management](https://workstation.home.mendix.com/).
-2. In the **Station** page, click **Add Device**.
+2. In the **Station Details** page, click **Add Device**.
 3. Select **TCP/IP Server** as the **Device Type**, and then click **Next**.
 4. In the **Device Name** field, enter **Test Server**
 5. In the **Device Class** field, select or create a class (for example, *Virtual*), and then click **Next**.
@@ -119,7 +121,7 @@ The emulated device, a local TCP/IP server listening on port 1705, is added to t
 #### Creating a TCP/IP Client
 
 1. Go to [Mendix Workstation Management](https://workstation.home.mendix.com/).
-2. In the **Station** page, click **Add Device**.
+2. In the **Station Details** page, click **Add Device**.
 3. Select **TCP/IP Client** as the **Device Type**, and then click **Next**.
 4. In the **Device Name** field, enter **Test Client**, and then click **Next**.
 5. In the **Device Class** field, select or create a class (for example, *Virtual*), and then click **Next**.
@@ -153,7 +155,7 @@ Different device types have different requirements for the message syntax. For m
 
 ### Quitting the Workstation Client
 
-The **Close** button closes the Client window but does not terminate the application; it continues to run in the background. To completely quit the Client, right-click its icon in the Windows systray and select **Quit**. This action is only available if [Developer Mode](#developer-mode) is enabled. Alternatively, the Workstation Client process can always be stopped via Windows Task Manager.
+The Workstation Client runs automatically at system startup. The **Close** button closes the Client window but does not terminate the application; it continues to run in the background. To completely quit the Client, right-click its icon in the Windows systray and select **Quit**. This action is only available if [Developer Mode](#developer-mode) is enabled. Alternatively, the Workstation Client process can always be stopped via Windows Task Manager.
 
 ## Advanced Configurations
 
@@ -185,6 +187,14 @@ By default, the unregistered Workstation Client is set to the Debug log level. A
 Verbosity and thus log file size increases with each log level. To constrain this, the logs are limited to 10 MB in size and stored for 7 days by default. 
 
 Modify these settings to the needs of your logging policy, especially if you require to keep debug level logs in production for retrospective troubleshooting.
+
+#### Client's Auto-Refresh {#auto-refresh}
+
+By default, the Workstation Client operates in auto-refresh mode. That is, any changes made to the configuration in Workstation Management are immediately reflected in the Client. 
+
+To change this behavior, set the **Auto-Refresh Mode** toggle to **Off**, and then force the configuration to refresh by clicking **Refresh on Computer** in Workstation Management.
+
+You can also **Adjust the Check Interval** to specify how often a disconnected Workstation Client should automatically refresh its configuration by polling Workstation Management. By default, this happens every 60 minutes.
 
 #### Local Device Testing
 
