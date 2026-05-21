@@ -43,6 +43,7 @@ The app list is sorted based on the number of findings and their severity, from 
 * **Environment** — The name of the environment.
 * **Runtime** — The Mendix Runtime version.
 * **Findings** — The number of findings of each type, color-coded according to severity level.
+* **Policy Status** – The number of policies that the app violates. For details on each policy, click this line item, then go to the **Policy Status** tab of the app. 
 * **Technical Contact** — The Technical Contact of the app.
 * **Target Cloud** — The type of cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
     * Mendix Free Cloud
@@ -105,7 +106,7 @@ The finding list contains the following information:
 * **Deprecated since version publish date** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-### Component Usage {#overviw-component-usage}
+### Component Usage {#overview-component-usage}
 
 The **Component Usage** tab displays a detailed view of all components used within the app.
 
@@ -140,3 +141,27 @@ The component usage list contains the following information:
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 To export the information corresponding to selected items in the list to an Excel file, select the checkboxes of the items in the list, then click **Selection Export** that appears at the bottom of the page.
+
+## Policy Status
+
+The **Policy Status** tab displays a list of the policies that the app violates, with the following information for each:
+
+* **Status** – The status of the violation.
+* **Policy Name** – The name of the violated policy.
+* **View Details** – Details about the violated policy:
+
+    * **Policy ID** – The unique ID of the policy.
+    * **Policy Name** – The name of the policy.
+    * **Description** – A short description of the policy, which includes the reason why it is violated.
+    * **Status** – Whether the policy is active or not.
+    * **Scope** – The apps that the policy applies to.
+    * **Created by** – The unique ID of the user who created the policy.
+    * **Created on** – The date when the policy was created.
+    * **Last modified by** – The unique ID of the user who most recently updated the policy.
+    * **Last modified on** – The date when the policy was most recently updated.
+    * **Failure Condition(s)** – The conditions under which the policy is considered violated.
+    * **Checkpoints & Action(s)** – The trigger which causes the policy to be checked, and the action that is taken if the policy is violated.
+
+* Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
+
+You can search a policy by its name, and export all information on this tab to an Excel file.

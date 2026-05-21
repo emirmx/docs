@@ -3,7 +3,7 @@ title: "Scoring Criteria Tab"
 linktitle: "Scoring Criteria Tab"
 url: /control-center/scoring-criteria-tab/
 description: "Describes the Scoring Criteria tab on the Software Composition page of the Mendix Control Center."
-weight: 3
+weight: 4
 ---
 
 ## Introduction
