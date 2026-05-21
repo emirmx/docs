@@ -191,11 +191,11 @@ When you use a for expression to iterate over an object, JSLT converts each key-
 { "key": "<the key>", "value": <the value> }
 ```
 
-So for (.data) iterates over each entry, exposing .key (e.g., "Tag1") and .value (e.g., { "TagName": "...", "Value": ... }). We then construct a new flat object per entry, promoting .key into its own "TagId" field alongside the fields from .value.
+So for (`.data`) iterates over each entry, exposing .key (e.g., "Tag1") and `.value` (e.g., { "TagName": "...", "Value": ... }). We then construct a new flat object per entry, promoting `.key` into its own "TagId" field alongside the fields from `.value`.
 
 Read more about for expression and constructing lists in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions 
 
-## Zipping metadata with data
+## Zipping Metadata with Data
 
 Some APIs return data and its metadata separately: the metadata describes the structure (e.g. column names), while the data is returned as raw arrays. This is the case with, for example, Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
 
@@ -270,7 +270,7 @@ let cols = .resultSetMetaData.rowType
 
 ### Explanation
 
-The transformation starts by storing the column definitions in a variable $cols for later use inside the loops. It then iterates over each row in .data, capturing the current row as $row. For each row, zip($cols, $row) pairs every column definition with its corresponding value by position, producing two-element arrays like:
+The transformation starts by storing the column definitions in a variable `$cols` for later use inside the loops. It then iterates over each row in .data, capturing the current row as `$row`. For each row, zip(`$cols`, `$row`) pairs every column definition with its corresponding value by position, producing two-element arrays like:
 
 ```json
 [
@@ -280,7 +280,7 @@ The transformation starts by storing the column definitions in a variable $cols 
 ]
 ```
 
-These pairs are then fed into an object for expression, which builds the output object by using the column name (.[0].name) as the key and the row value (.[1]) as the value.
+These pairs are then fed into an object for expression, which builds the output object by using the column name (`.[0].name`) as the key and the row value (`.[1]`) as the value.
 
 Read more about declaring variables: https://github.com/schibsted/jslt/blob/master/tutorial.md#variables
 
@@ -395,9 +395,9 @@ def flatten-assemblies(assemblies, parentAssembly)
 
 ### Explanation
 
-The transformation defines a recursive function flatten-assemblies that takes a list of assemblies and the parent assembly of that list. For each assembly it processes, it first resolves the parent's baseID (or null if there is no parent) and collects the baseID of each direct child, without descending further. It then constructs a flat object for the current assembly containing its ID, name, parent reference, and list of child IDs. If the current assembly has children, the function calls itself recursively on those children, passing the current assembly as the new parent. The results for the current assembly and all its descendants are concatenated into a single array, and flatten is applied at the end of each recursive level to collapse the nested arrays into a flat list.
+The transformation defines a recursive function `flatten-assemblies` that takes a list of assemblies and the parent assembly of that list. For each assembly it processes, it first resolves the parent's baseID (or null if there is no parent) and collects the baseID of each direct child, without descending further. It then constructs a flat object for the current assembly containing its ID, name, parent reference, and list of child IDs. If the current assembly has children, the function calls itself recursively on those children, passing the current assembly as the new parent. The results for the current assembly and all its descendants are concatenated into a single array, and flatten is applied at the end of each recursive level to collapse the nested arrays into a flat list.
 
-The root of the transformation kicks this off by calling flatten-assemblies on rootSubAssemblies with null as the initial parent, producing a fully flattened list that preserves the parent-child relationships without any nesting.
+The root of the transformation kicks this off by calling `flatten-assemblies` on `rootSubAssemblies` with null as the initial parent, producing a fully flattened list that preserves the parent-child relationships without any nesting.
 
 Read more about declaring functions in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations
 
@@ -445,11 +445,11 @@ The split function breaks the file path string into an array of segments using /
 ["reports", "finance", "2024", "annual-report.pdf"]
 ```
 
-Each segment is then accessed by its index: [0] for the first element, [1] for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
+Each segment is then accessed by its index: `[0]` for the first element, `[1]` for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
 
 For other useful built-in functions, refer to: https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions
 
-## Working with SPARQL query results
+## Working with SPARQL Query Results
 
 SPARQL is a query language for RDF data, commonly used with knowledge graphs and semantic web APIs. Its query results follow a standard JSON format where the column names (called variables) are declared separately in a head block, and the actual result rows are returned as bindings, a list of objects where each key maps to a typed value wrapper rather than a plain value. This structure is precise and interoperable, but verbose. Transforming it into a simple flat list of objects makes it far easier to work with in Import Mappings.
 
@@ -501,6 +501,6 @@ let vars = .head.vars
 
 ### Explanation
 
-The variable names are captured into vars at the root level before any looping begins. The transformation then iterates over each binding in the results. Because .will be rebound inside the inner loop, the current binding is saved into binding immediately. The inner for loop iterates over the variable names, using each variable name as both the key and the lookup argument — get-key($binding, .) retrieves the typed value wrapper for that variable from the saved binding, and .value extracts the plain value from it. fallback ensures that if a variable is missing from a binding, an empty string is used instead of null. The result is a clean, flat list of objects with no type wrappers that you can easily use as source for Import Mapping.
+The variable names are captured into vars at the root level before any looping begins. The transformation then iterates over each binding in the results. Because .will be rebound inside the inner loop, the current binding is saved into binding immediately. The inner for loop iterates over the variable names, using each variable name as both the key and the lookup argument — `get-key($binding, .)` retrieves the typed value wrapper for that variable from the saved binding, and .value extracts the plain value from it. fallback ensures that if a variable is missing from a binding, an empty string is used instead of null. The result is a clean, flat list of objects with no type wrappers that you can easily use as source for Import Mapping.
 
-Read more about get-key, fallback, and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#get-keyobject-key-fallback---value
+Read more about `get-key`, `fallback`, and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#get-keyobject-key-fallback---value
