@@ -7,13 +7,15 @@ description: "Describes Data Transformers in Mendix Studio Pro."
 
 ## Introduction
 
-Data Transformer can be used for transforming data of certain structure into another structure, basically a message-to-message transformation within Mendix Studio Pro. With this feature, you can pre-process an incoming message (for example, from an API response, MQTT message, etc.) before an Import Mapping. Additionally, you can also use it to transform a message before passing it on to a downstream system that expects the data in a certain structure.
+Data Transformers can be used to transform data of a certain structure into another data of another structure. In practice, basically a message-to-message transformation within Mendix Studio Pro. 
+
+Using this feature, you can pre-process an incoming message (for example, from an API response or MQTT message) before an import mapping. Additionally, you can also use it to transform a message before passing it on to a downstream system that expects the data in a certain structure.
 
 {{% alert color="info" %}}
-This feature is in beta and at the moment we only support JSON-to-JSON transformation with JSLT, a JSON transformation language.
+This feature is in beta. 
 {{% /alert %}}
 
-### Example
+### Usage Example
 
 Consider an API that returns customer data with many fields, but you only need a few specific fields for your Mendix app:
 
@@ -58,11 +60,13 @@ Consider an API that returns customer data with many fields, but you only need a
 }
 ```
 
-In this example, the Data Transformer extracts only the needed fields, combines the first and last name into a single field, and creates a location string from the city and country. This simplified output can then be easily mapped to your Mendix entities.
+In this example, the data transformer extracts only the required fields, combines the first and last name into a single field, and creates a location string from the city and country. This simplified output can then be easily mapped to your Mendix entities.
 
 ## Limitations
 
-At the moment we only support JSON-to-JSON transformation with JSLT, a JSON transformation language.
+Data transformers currently have the following limitations:
+
+* We only support JSON-to-JSON transformation with JSLT, a JSON transformation language.
 
 ## Prerequisites
 
@@ -73,31 +77,31 @@ At the moment we only support JSON-to-JSON transformation with JSLT, a JSON tran
 You can add the Data Transformer document to your app, by following these steps:
 
 1. Right-click the module you want to add the Data Transformer document to.
-2. Select **Add other** > **Data Transformer**.
-3. Name the data transformer.
+1. Select **Add other** > **Data Transformer**.
+1. Name the data transformer:
 
-{{< figure src="/attachments/refguide/modeling/integration/data-transformers/add-data-transformer.png" alt="Add Data Transformer dialog" >}}
+  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/add-data-transformer.png" alt="Add Data Transformer dialog" >}}
 
-4. In the **Input JSON** editor you can paste a JSON snippet that you would like to transform.
-5. Define the transformation in **JSLT transformation** editor.
-6. Click the **Test Transformation** button below the JSLT transformation editor to preview the transformation result in the **Output JSON**.
+1. In the **Input JSON** editor you can paste a JSON snippet that you would like to transform.
+1. Define the transformation in **JSLT transformation** editor.
+1. Click the **Test Transformation** button below the JSLT transformation editor to preview the transformation result in the **Output JSON**:
 
-{{< figure src="/attachments/refguide/modeling/integration/data-transformers/define-transformation.png" alt="Data Transformer interface showing Input JSON, JSLT transformation, and Output JSON editors" >}}
+  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/define-transformation.png" alt="Data Transformer interface showing Input JSON, JSLT transformation, and Output JSON editors" >}}
 
 ## Use the Data Transformer in a Microflow
 
 To perform a transformation in a microflow, complete the following steps:
 
-1. Drag the **Transform JSON** activity into a microflow, preferably after a REST call or anything that provides input for the transformation.
+1. Drag the **Transform JSON** activity into a microflow, preferably after a REST call or anything that provides input for the transformation:
 
-{{< figure src="/attachments/refguide/modeling/integration/data-transformers/transform-json-dialog.png" alt="Add Transform JSON activity" >}}
+  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/transform-json-dialog.png" alt="Add Transform JSON activity" >}}
 
-2. Double-click the activity and click **Select** to choose an existing Data Transformer document or create a new one.
-3. Click on the dropdown **Variable (String)** and select the input string variable from the list.
-4. Specify the name of the output in the **Variable name** text field.
-5. Click **OK**.
+1. Double-click the activity and click **Select** to choose an existing Data Transformer document or create a new one.
+1. Click on the dropdown **Variable (String)** and select the input string variable from the list.
+1. Specify the name of the output in the **Variable name** text field.
+1. Click **OK**:
 
-{{< figure src="/attachments/refguide/modeling/integration/data-transformers/configure-transformer-activity.png" alt="Configure Transform JSON activity dialog" >}}
+  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/configure-transformer-activity.png" alt="Configure Transform JSON activity dialog" >}}
 
 ## Using the output of Data Transformer
 
@@ -120,11 +124,13 @@ Use the Data Transformer document to do the following:
 * [Extracting information from a string](/refguide/data-transformer-how-tos/#extracting-information-from-a-string)
 * [Working with SPARQL query results](/refguide/data-transformer-how-tos/#working-with-sparql-query-results)
 
-For detailed examples, see [Data Transformer How-Tos](/refguide/data-transformer-how-tos/).
-
 ## JSLT
 
 You can find more information about JSLT below:
 
 * A short [introduction](https://github.com/schibsted/jslt/blob/master/README.md#jslt) and [tutorial](https://github.com/schibsted/jslt/blob/master/tutorial.md#jslt-tutorial) on how to use JSLT
 * A complete list of [functions available in JSLT](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions)
+
+## Read More
+
+* For detailed examples of Data Transformers in action, see [Data Transformer How-Tos](/refguide/data-transformer-how-tos/).
