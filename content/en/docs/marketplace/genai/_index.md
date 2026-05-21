@@ -1,31 +1,31 @@
 ---
-title: "Enrich Your Mendix App with GenAI Capabilities"
+title: "Enrich Your Mendix App with Agentic Capabilities"
 url: /appstore/modules/genai/
-linktitle: "GenAI Capabilities of Mendix"
-description: "Describes how to integrate generative AI into Mendix applications using Agents Kit components and provides a catalog of available starter apps, connectors, modules, and models."
+linktitle: "Agents"
+description: "Describes how to integrate agentic and generative AI into Mendix applications using Agents Kit components. Provides a catalog of available starter apps, showcase apps, connectors, modules, and models."
 weight: 7
 ---
 
 ## Introduction
 
-With Mendix generative AI (GenAI) capabilities, you can build AI-powered features into your applications using leading AI models and your own data.
+With Mendix's agentic capabilities, you can build AI-powered features into your applications using leading AI models and your own data.
 
-Mendix supports a variety of generative AI capabilities that you can integrate into your applications. Some typical use cases include the following:
+Mendix supports a variety of agentic and generative AI capabilities that you can integrate into your applications. Some typical use cases include the following:
 
 * Create AI agents that autonomously interact with your Mendix app's data, logic, and external systems.
 * Build conversational UIs with human-in-the-loop controls and embed AI-powered interactions directly into your Mendix applications.
 * Connect application data and enterprise knowledge bases to provide grounded, context-aware AI responses.
 
 {{% alert color="info" %}}
-These pages focus on integrating generative AI into applications using Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
+These pages focus on integrating agentic and generative AI into applications using Agents Kit. For AI assistance while building apps, see [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/). For pretrained machine learning models, see [Mendix Runtime](/refguide/runtime/).
 {{% /alert %}}
 
 ### Getting Started
 
-Start using Mendix GenAI capabilities based on your experience level:
+Start using AI capabilities based on your experience level:
 
-* **Familiar with GenAI?** Start building with the [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guides.
-* **New to GenAI?** Follow these steps:
+* **Familiar with generative AI?** Start building with the [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guides.
+* **New to generative AI?** Follow these steps:
 
     1. Familiarize yourself with the [core concepts](/appstore/modules/genai/get-started/), including prompt engineering, retrieval augmented generation (RAG), and function calling (ReAct).
     2. Choose an architecture for your use case. See the [Components and Models](#architecture) section for available options.
@@ -33,7 +33,7 @@ Start using Mendix GenAI capabilities based on your experience level:
 
 ## Components and Models {#architecture}
 
-Integrate generative AI into your applications with Agents Kit, a collection of Mendix starter apps, connectors, and modules that support implementations from simple text generation to complex multi-step agentic workflows. The following sections describe the components available in the kit as well as the available models.
+Integrate AI capabilities into your applications with Agents Kit, a collection of Mendix starter apps, connectors, and modules that support implementations from simple text generation to complex multi-step agentic workflows. The following sections describe the components available in the kit as well as the available models.
 
 ### Agents Kit Components 
 
