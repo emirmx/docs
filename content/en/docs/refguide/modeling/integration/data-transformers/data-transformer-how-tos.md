@@ -7,11 +7,11 @@ description: "Provides practical examples of common JSLT transformation patterns
 
 ## Introduction
 
-How-tos separate page
+This document will show you a variety of use cases [Data Transformer documents](/refguide/data-transformers/) can address. Specifically, it contains practical, example-driven walkthroughs of common JSLT transformation patterns. 
 
-These how-tos provide practical, example-driven walkthroughs of common JSLT transformation patterns. Each guide focuses on a specific use-case you may encounter when working with real-world API responses, such as restructuring nested data, renaming fields, or combining metadata with data. Rather than covering every detail of the JSLT language, the guides are designed to be hands-on and immediately applicable, showing a concrete input, the expected output, and the transformation that connects the two.
+Each walkthrough focuses on a specific use-case you may encounter when working with real-world API responses: such as restructuring nested data, renaming fields, or combining metadata with data. Rather than covering every detail of the JSLT language, the walkthroughs are hands-on and immediately applicable. They show a concrete input, the expected output, and the transformation that connects the two.
 
-## Filtering out unused fields
+## Filtering Out Unused Fields
 
 It is common for an API to return payloads that contain more fields than your Mendix app or a downstream system need. Rather than passing the entire payload along, this transformation selects only the fields that are relevant, effectively dropping everything else. This keeps the output clean, reduces payload size, and avoids exposing unnecessary data.
 
@@ -53,7 +53,7 @@ It is common for an API to return payloads that contain more fields than your Me
 
 ### Explanation
 
-In JSLT, the output object is always constructed explicitly: only the fields you name in the query will appear in the output, just like SQL or OQL. This means that dropping fields requires no special syntax; any field from the input that is simply not referenced in the JSLT is automatically excluded from the result. In this example, fields such as orderDate and shippingAddress are dropped by simply not being referenced in the query. The three relevant fields are carried over directly from the input.
+In JSLT, the output object is always constructed explicitly: only the fields you name in the query will appear in the output, just like SQL or OQL. This means that dropping fields requires no special syntax; any field from the input that is simply not referenced in the JSLT is automatically excluded from the result. In this example, fields such as `orderDate` and `shippingAddress` are dropped by simply not being referenced in the query. The three relevant fields are carried over directly from the input.
 
 Read more about constructing JSLT queries: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
 
@@ -114,13 +114,13 @@ Sometimes a JSON structure contains nested sub-objects that group related fields
 
 ### Explanation
 
-The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (e.g. .profileImage.url) and assigned to a new top-level key that reflects their origin (e.g. profileImageUrl). The result is a flat object where all fields sit at the same level.
+The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (e.g. `.profileImage.url`) and assigned to a new top-level key that reflects their origin (e.g. `profileImageUrl`). The result is a flat object where all fields sit at the same level.
 
 Read more about dot accessors: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
 
-## Normalising objects to arrays (working with dynamic keys)
+## Normalizing Objects to Arrays
 
-Some APIs return collections of records as a keyed object, where each key acts as a unique identifier for that record. Mendix works more naturally with lists of objects, so this transformation converts that keyed structure into a flat, normalised array that can be directly mapped to a Mendix entity list.
+Some APIs return collections of records as a keyed object, where each key acts as a unique identifier for that record (also known as dynamic keys). Mendix works more naturally with lists of objects, so this transformation converts that keyed structure into a flat, normalized array that can be directly mapped to a Mendix entity list.
 
 ### Example
 

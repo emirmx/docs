@@ -2,7 +2,7 @@
 title: "Data Transformers"
 url: /refguide/data-transformers/
 weight: 50
-description: "Describes Data Transformers in Mendix Studio Pro."
+description: "Describes Data Transformer documents in Mendix Studio Pro."
 beta: true
 ---
 
