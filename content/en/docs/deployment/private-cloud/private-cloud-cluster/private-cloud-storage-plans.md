@@ -216,7 +216,7 @@ If your provider is AWS, [Postgres IAM authentication](#database-postgres-iam) c
 If your provider is Azure, [Postgres managed identity authentication](#database-postgres-azwi) can be used instead to increase security.
 
 {{% alert color="info" %}}
-The Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the CREATEROLE privilege, which is necessary for Mendix to automatically create database users via SQL commands. In order to facilitate the use of Postgres, switch to [JDBC plan](#database-jdbc) and create a dedicated database user for the new Mendix environment using the STACKIT CLI or API.
+The Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the `CREATEROLE` privilege, which is necessary for Mendix to automatically create database users with SQL commands. In order to facilitate the use of Postgres, switch to [JDBC plan](#database-jdbc) and create a dedicated database user for the new Mendix environment using the STACKIT CLI or API.
 {{% /alert %}}
 
 
