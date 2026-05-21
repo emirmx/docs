@@ -216,10 +216,8 @@ If your provider is AWS, [Postgres IAM authentication](#database-postgres-iam) c
 If your provider is Azure, [Postgres managed identity authentication](#database-postgres-azwi) can be used instead to increase security.
 
 {{% alert color="info" %}}
-The Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the `CREATEROLE` privilege, which is necessary for Mendix to automatically create database users with SQL commands. In order to facilitate the use of Postgres, switch to [JDBC plan](#database-jdbc) and create a dedicated database user for the new Mendix environment using the STACKIT CLI or API.
+In case of STACKIT PostgreSQL Flex, the Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the `CREATEROLE` privilege, which is necessary for Mendix to automatically create database users with SQL commands. In order to facilitate the use of Postgres, switch to [JDBC plan](#database-jdbc) and create a dedicated database user for the new Mendix environment using the STACKIT CLI or API.
 {{% /alert %}}
-
-
 
 ##### Prerequisites
 
@@ -1902,7 +1900,7 @@ Another option is to use a dedicated object storage bucket for each environment.
 
 #### Prerequisites
 
-* A Ceph or S3-compatible bucket.
+* A S3-compatible bucket.
 * An Access and Secret key with permissions to access the bucket.
 
 #### Limitations
@@ -1913,7 +1911,7 @@ Another option is to use a dedicated object storage bucket for each environment.
 
 #### Environment Isolation
 
-* The Ceph or S3-compatible bucket and credentials (access and secret keys) are shared between all environments using this plan.
+* The S3-compatible bucket and credentials (access and secret keys) are shared between all environments using this plan.
 * An environment can access data from other environments using this Storage Plan.
 * By creating dedicated bucket for all the environment, isolation between the environment can be achieved.
 
@@ -1932,9 +1930,9 @@ When an existing environment is deleted, the Mendix Operator performs the follow
 
 #### Configuring the Plan
 
-In the Ceph plan configuration, enter the following details:
+In the S3 plan configuration, enter the following details:
 
-* **Endpoint** - The Ceph bucket's endpoint address, for example `https://ceph-instance.local:9000/<bucket-name>`.
+* **Endpoint** - The S3-compatible bucket's endpoint address, for example `https://object.storage.eu01.onstackit.cloud`.
 * **Access Key** and **Secret Key** - Credentials to access the bucket.
 * **Type** - Specifies if the container can be shared between environments (create an on-demand storage plan); or that the container can only be used by one environment (create a dedicated storage plan). To increase security and prevent environments from being able to access each other's data, select **Dedicated**.
 

@@ -291,15 +291,15 @@ Some registries impose limitations on repository names, for example the reposito
 | User                | Username for the registry robot account                                                        |
 | Password            | Token (password) for the robot account                                                         |
 
-Before pushing images to container registry, you must first create the repository.
-
-In order to fetch the container images from container registry, make sure to patch the default service accounts with the registry credentials.
+Before pushing images to container registry, you must first create the registry.
 
 Example:
 
    ```shell
    kubectl patch serviceaccount default -n <namespace> -p '{"imagePullSecrets": [{"name": "<secret-name>"}]}'
    ```
+In order to fetch the container images from container registry, make sure to patch the `default` service account with the registry credentials.
+Both mxpc-cli and mx-ops-cli automatically generate a secret named mendix-generic-registry-secret. This secret holds the necessary registry credentials, enabling pods to pull images.
 
 ### Existing Docker Registry Secret
 

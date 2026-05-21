@@ -250,7 +250,7 @@ Strict TLS mode should only be used with apps created in Mendix 8.15.2 (or later
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the CREATEROLE privilege, which is necessary for Mendix to automatically create database users via SQL commands. Hence, a databaser user needs to be created per environment before deployment.
+When using STACKIT PostgreSQL Flex, the Mendix on-demand PostgreSQL provisioner cannot be used directly. STACKIT PostgreSQL Flex does not expose the CREATEROLE privilege, which is necessary for Mendix to automatically create database users via SQL commands. Hence, a database user needs to be created per environment before deployment.
 {{% /alert %}}
 
 ### Microsoft SQL Server

@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### May 20, 2026
+
+#### StackIt support
+
+* We now officially support app deployments in Stackit kubernetes environments.
+
 ### May 7, 2026
 
 #### Portal Improvements
