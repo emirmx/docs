@@ -21,6 +21,7 @@ This page describes the following:
 * Pass page parameters to the embedded home page
 * Understand how CSS behaves in an embedded app
 * Understand how navigation behaves in an embedded app
+* Understand authentication options for an embedded app
 * Configure host app requirements such as CORS and CSP
 * Mount and unmount the client at the correct lifecycle moment
 
@@ -134,6 +135,10 @@ const unmount = await mountEmbeddedMendix(container);
 // Call this when the host view is removed.
 unmount();
 ```
+
+## Authentication
+
+In the current Public Beta, embedded apps require [anonymous users](/refguide/anonymous-users/) to be enabled. The embedded client does not include a platform-level mechanism to pass the host application's authentication context to the embedded Mendix app. If your embedded scenario requires signed-in access, implement a custom authentication approach that fits your architecture and security requirements.
 
 ## CSS Behavior
 
