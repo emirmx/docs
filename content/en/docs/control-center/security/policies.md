@@ -12,7 +12,7 @@ This feature is in Public Beta. For more information, refer to [Release Status](
 
 ## Introduction
 
-Policies help ensure that your app landscape is secure, compliant, and consistent. On the **Policies** page, you can define policies that your apps need to adhere to. If they do not, violations are automatically detected and reported in Software Composition, allowing you to react accordingly.
+Policies help ensure that your app landscape is secure, compliant, and consistent. On the **Policies** page, you can define policies that your apps need to adhere to. If they do not, violations are automatically detected and reported in Software Composition, allowing you to react accordingly. For details on how policy violations are displayed in Software Composition, refer to [Policy Status](/control-center/policy-status/).
 
 The **Policies** page allows you to create new policies, lists all of your existing policies, and displays a **Help & Support** pane with useful information about creating policies.
 

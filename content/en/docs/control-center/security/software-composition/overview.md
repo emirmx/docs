@@ -165,3 +165,5 @@ The **Policy Status** tab displays a list of the policies that the app violates,
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 You can search a policy by its name, and export all information on this tab to an Excel file.
+
+For details on defining policies, refer to [Policies](/control-center/policies/).

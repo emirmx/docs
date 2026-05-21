@@ -141,6 +141,8 @@ The **Policy Status** tab at the deployment package level displays a list of the
 
 You can search a policy by its name, and export all information on this tab to an Excel file.
 
+For details on defining policies, refer to [Policies](/control-center/policies/).
+
 ## Components {#all-components}
 
 The **Components** tab gives an overview of all the unique components deployed in all the combined app environments. 
