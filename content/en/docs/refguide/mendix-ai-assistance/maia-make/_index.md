@@ -25,21 +25,21 @@ You can also ask Maia to provide explanations of your existing documents, such a
 
 Maia Make can generate new documents, modify existing documents, and explain app documents and structures through a unified conversational interface. The following table lists all document types that Maia Make can work with and the Studio Pro version in which support for each document type was introduced:
 
-| Document Type | Description | Available in Maia Make from | Remarks |
-| --- | --- | --- | --- |
-| [Domain model](/refguide/maia-for-domain-model/) | Generates, modifies, and explains domain models. | Studio Pro 11.8 | |
-| [Pages](/refguide/maia-for-pages/) | Generates, modified, and explains pages | Studio Pro 11.8 | |
-| [Microflows](/refguide/maia-for-microflows/) | Generates, modifies, and explains microflows | Studio Pro 11.8 | |
-| [Workflows](/refguide/maia-for-workflows/) | Generates, modifies, and explains workflows | Studio Pro 11.9 | |
-| [OQL](/refguide/maia-for-oql/) | Generates and manages OQL queries | Studio Pro 11.9 | |
-| View entities | Generates and manages view entities. | Studio Pro 11.9 | |
-| Enumerations | Generates and manages enumerations. | Studio Pro 11.9 | |
-| Constants | Generates and manages constants. | Studio Pro 11.9 | |
-| Modules | Creates and structures modules. | Studio Pro 11.9 | |
-| Java actions | Uses Java actions in microflows and explains them. | Studio Pro 11.9 | Read-only; Java actions cannot be generated. |
-| JavaScript actions | Generates and explains JavaScript actions. | Studio Pro 11.9 | Explain-only in Studio Pro 11.9. Generation, adding parameters, and updating the associated JavaScript file available from Studio Pro 11.10. |
-| Navigation | Generates and updates app-level navigation. | Studio Pro 11.11 | |
-| Menu | Generates and updates menu documents. | Studio Pro 11.11 | |
+| Document Type | Available in Maia Make from | Remarks |
+| --- | --- | --- |
+| [Domain model](/refguide/maia-for-domain-model/) | Studio Pro 11.8 | |
+| [Pages](/refguide/maia-for-pages/) | Studio Pro 11.8 | |
+| [Microflows](/refguide/maia-for-microflows/) | Studio Pro 11.8 | |
+| [Workflows](/refguide/maia-for-workflows/) | Studio Pro 11.9 | |
+| [OQL](/refguide/maia-for-oql/) | Studio Pro 11.9 | |
+| View entities | Studio Pro 11.9 | |
+| Enumerations | Studio Pro 11.9 | |
+| Constants | Studio Pro 11.9 | |
+| Modules | Studio Pro 11.9 | |
+| Java actions | Studio Pro 11.9 | Read-only; Java actions cannot be generated. |
+| JavaScript actions | Studio Pro 11.9 | Explain-only in Studio Pro 11.9. Generation, adding parameters, and updating the associated JavaScript file available from Studio Pro 11.10. |
+| Navigation | Studio Pro 11.11 | |
+| Menu | Studio Pro 11.11 | |
 
 ### Maia Make Standalone Capabilities
 
