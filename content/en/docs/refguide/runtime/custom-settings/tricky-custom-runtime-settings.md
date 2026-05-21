@@ -28,7 +28,6 @@ The following custom settings can be configured:
 | Name | Description | Default value |
 | --- | --- | --- |
 | `SessionTimeout` | Defines after how much time the session becomes invalid (in milliseconds). After that timeout, a session becomes applicable for removal. The session won't be destroyed until the next time the cluster manager evaluates the active sessions. | 600000 (10 minutes) |
-| `com.mendix.offline.DeleteAutoCommittedObjectsAfterSync` | Defines if auto-committed created during offline synchronization will be deleted from the database immediately. | true |
 | `ClusterManagerActionInterval` | The interval (in milliseconds) used for performing all cluster manager actions. These actions include unblocking users and removing invalid sessions. See the constraints section below for default value details. | |
 | `SessionKeepAliveUpdatesInterval` | Defines how often a runtime writes session LastActive dates in its memory back to the database. See the constraints section below for default value details. | |
 

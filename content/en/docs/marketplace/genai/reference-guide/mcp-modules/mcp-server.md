@@ -23,7 +23,6 @@ The current version has the following limitations:
 
 * Tools can only return String values, either directly as a String type or using the `TextContent` entity.
 * Prompts can only return a single message.
-* Running an MCP Server is currently only supported on single-instance environments.
 
 {{% alert color="info" %}}
 Note that the MCP Server module is still in its early version, and the latest version may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
@@ -46,6 +45,8 @@ Based on your use case, this action can be triggered manually by an admin if wra
 For example, see the `Example Implementations` folder inside the module, which contains logic to create a server, add an authentication microflow, and expose a tool and prompt.
 
 #### Enable Authentication
+
+The MCP Server can be publicly accessed unless you specify [path-based restrictions](/developerportal/deploy/environments-details/#path-based-restrictions) on the endpoint when running on Mendix Cloud or on your own infrastructure.
 
 If no authentication is enabled for the MCP Server, it can be accessed by any service without being authorized specifically. Be aware that this is not recommended for applications running on the public cloud. Currently, selecting a microflow is required. For test purposes, however, you can just delete the content of the attribute after setting up the MCP Server if you do not want to enable authentication. There is a corresponding example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475), where the `ACT_MCPServerConfiguration_InitializeMCPServer` microflow shows how this can be done. 
 
