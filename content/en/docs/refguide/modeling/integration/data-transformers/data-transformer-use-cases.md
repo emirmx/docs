@@ -57,7 +57,7 @@ In JSLT, the output object is always constructed explicitly: only the fields you
 
 Read more about constructing JSLT queries: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
 
-## Simplifying nested structures
+## Simplifying Nested Structures
 
 Sometimes a JSON structure contains nested sub-objects that group related fields together, but you just need a simpler, flat representation. This transformation moves fields from nested sub-objects up to the top level, merging them into a single flat object.
 
@@ -114,9 +114,10 @@ Sometimes a JSON structure contains nested sub-objects that group related fields
 
 ### Explanation
 
-The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (e.g. `.profileImage.url`) and assigned to a new top-level key that reflects their origin (e.g. `profileImageUrl`). The result is a flat object where all fields sit at the same level.
+The transformation is straightforward. Each field in the output is explicitly mapped from the input using its full path. Fields that were previously nested inside a sub-object are accessed using dot notation (for example, `.profileImage.url`) and assigned to a new top-level key that reflects their origin (for example, `profileImageUrl`). The result is a flat object where all fields sit at the same level.
 
-Read more about dot accessors: https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors 
+For more information about dot accessors, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors).
+
 
 ## Normalizing Objects to Arrays
 
@@ -191,13 +192,13 @@ When you use a for expression to iterate over an object, JSLT converts each key-
 { "key": "<the key>", "value": <the value> }
 ```
 
-So for (`.data`) iterates over each entry, exposing .key (e.g., "Tag1") and `.value` (e.g., { "TagName": "...", "Value": ... }). We then construct a new flat object per entry, promoting `.key` into its own "TagId" field alongside the fields from `.value`.
+So for (`.data`) iterates over each entry, exposing `.key` (for example, `"Tag1"`) and `.value` (for example, { `"TagName": "...", "Value": ... }`). We then construct a new flat object per entry, promoting `.key` into its own "TagId" field alongside the fields from `.value`.
 
-Read more about for expression and constructing lists in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions 
+For more information on expressions and constructing lists in JSLT, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions).
 
 ## Zipping Metadata with Data
 
-Some APIs return data and its metadata separately: the metadata describes the structure (e.g. column names), while the data is returned as raw arrays. This is the case with, for example, Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
+Some APIs return data and its metadata separately: the metadata describes the structure (for example, column names), while the data is returned as raw arrays. This is the case with Snowflake SQL REST APIs. To make the data meaningful and easy to consume, the two need to be combined so that each value is associated with its corresponding column name.
 
 In this example, a Snowflake SQL REST API response (with input fields irrelevant to this use-case omitted) contains employee records returned as arrays, alongside a separate metadata block that defines the column names. The transformation zips these together to produce a list of objects.
 
@@ -270,7 +271,7 @@ let cols = .resultSetMetaData.rowType
 
 ### Explanation
 
-The transformation starts by storing the column definitions in a variable `$cols` for later use inside the loops. It then iterates over each row in .data, capturing the current row as `$row`. For each row, zip(`$cols`, `$row`) pairs every column definition with its corresponding value by position, producing two-element arrays like:
+The transformation starts by storing the column definitions in a variable `$cols` for later use inside the loops. It then iterates over each row in `.data`, capturing the current row as `$row`. For each row, zip (`$cols`, `$row`) pairs every column definition with its corresponding value by position, producing two-element arrays like:
 
 ```json
 [
@@ -282,15 +283,15 @@ The transformation starts by storing the column definitions in a variable `$cols
 
 These pairs are then fed into an object for expression, which builds the output object by using the column name (`.[0].name`) as the key and the row value (`.[1]`) as the value.
 
-Read more about declaring variables: https://github.com/schibsted/jslt/blob/master/tutorial.md#variables
+For more information about declaring variables, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#variables).
 
-Read more about zip and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#ziparray1-array2---array
+For more information about zip and other functions, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/functions.md#ziparray1-array2---array).
 
 ## Flattening Bill of Materials (BOM)
 
 A Bill of Materials (BOM) is naturally represented as a tree structure, where each assembly can contain child sub-assemblies, which can themselves contain further children. Flattening such a structure into a simple list is sometimes needed when feeding data into downstream systems that expect a flat, tabular format. This transformation also helps in simplifying the Import Mapping process of the BOM to Mendix entities.
 
-In this example, a Bicycle BOM is represented as a nested tree. The transformation flattens it into a list of assemblies, where each entry records its own ID and name, its direct parent (parentSubAssembly), and its direct children (childrenSubAssemblies).
+In this example, a Bicycle BOM is represented as a nested tree. The transformation flattens it into a list of assemblies, where each entry records its own ID and name, its direct parent (`parentSubAssembly`), and its direct children (`childrenSubAssemblies`).
 
 ### Example
 
@@ -399,11 +400,13 @@ The transformation defines a recursive function `flatten-assemblies` that takes 
 
 The root of the transformation kicks this off by calling `flatten-assemblies` on `rootSubAssemblies` with null as the initial parent, producing a fully flattened list that preserves the parent-child relationships without any nesting.
 
-Read more about declaring functions in JSLT: https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations
+For more information on declaring functions in JSL, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations).
 
-## Extracting information from a string
+## Extracting Information from a String
 
-Sometimes multiple pieces of information are encoded within a single structured string, such as a file path, an identifier, or a URL, and you need to extract a specific piece of that information for use downstream or in your own Mendix app. JSLT's string functions allow you to extract each component into its own dedicated field. This makes the data easier to consume, filter, and process without placing any additional burden on the downstream step. In this example, a file path string is broken down into its individual components: the root folder, department, year, and file name, each mapped to a dedicated output field.
+Sometimes multiple pieces of information are encoded within a single structured string, such as a file path, an identifier, or a URL, and you need to extract a specific piece of that information for use downstream or in your own Mendix app. JSLT's string functions allow you to extract each component into its own dedicated field. This makes the data easier to consume, filter, and process without placing any additional burden on the downstream step. 
+
+In this example, a file path string is broken down into its individual components: the root folder, department, year, and file name, each mapped to a dedicated output field.
 
 ### Example
 
@@ -447,7 +450,7 @@ The split function breaks the file path string into an array of segments using /
 
 Each segment is then accessed by its index: `[0]` for the first element, `[1]` for the second, and so on. This allows each component of the path to be mapped to a clearly named output field.
 
-For other useful built-in functions, refer to: https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions
+For more information on useful built-in functions, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions).
 
 ## Working with SPARQL Query Results
 
@@ -503,4 +506,5 @@ let vars = .head.vars
 
 The variable names are captured into vars at the root level before any looping begins. The transformation then iterates over each binding in the results. Because .will be rebound inside the inner loop, the current binding is saved into binding immediately. The inner for loop iterates over the variable names, using each variable name as both the key and the lookup argument — `get-key($binding, .)` retrieves the typed value wrapper for that variable from the saved binding, and .value extracts the plain value from it. fallback ensures that if a variable is missing from a binding, an empty string is used instead of null. The result is a clean, flat list of objects with no type wrappers that you can easily use as source for Import Mapping.
 
-Read more about `get-key`, `fallback`, and other functions: https://github.com/schibsted/jslt/blob/master/functions.md#get-keyobject-key-fallback---value
+For more information on `get-key`, `fallback`, and other functions, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/functions.md#get-keyobject-key-fallback---value).
+
