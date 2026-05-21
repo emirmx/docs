@@ -127,7 +127,7 @@ Use the Data Transformer document to do the following:
 ## Read More
 
 * Mendix resources:
-  * For detailed examples of Data Transformers in action, see [Data Transformer How-Tos](/refguide/data-transformer-how-tos/).
+  * For detailed examples of Data Transformers in action, see [Data Transformer Use Cases](/refguide/data-transformer-use-cases/).
 * GitHub resources on JSLT:
   * A short [introduction](https://github.com/schibsted/jslt/blob/master/README.md#jslt) and [tutorial](https://github.com/schibsted/jslt/blob/master/tutorial.md#jslt-tutorial) on how to use JSLT
   * A complete list of [functions available in JSLT](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions)

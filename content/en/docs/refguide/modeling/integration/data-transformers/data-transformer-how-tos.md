@@ -1,6 +1,6 @@
 ---
-title: "Data Transformer How-Tos"
-url: /refguide/data-transformer-how-tos/
+title: "Data Transformer Use Cases"
+url: /refguide/data-transformer-use-cases/
 weight: 60
 description: "Provides practical examples of common JSLT transformation patterns for Data Transformers."
 ---
