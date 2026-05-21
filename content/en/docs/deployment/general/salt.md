@@ -24,8 +24,8 @@ This section explains the limitations for using SALT-based licenses.
 
 SALT Licenses can only be used with the following Mendix versions:
 
-* **Mendix 10**: 10.24.4 and above
-* **Mendix 11**: 11.2.0 and above
+* **Mendix 10** – 10.24.4 and above
+* **Mendix 11** – 11.2.0 and above
 
 Each SALT license is tied to a specific major Mendix version, for example MXP11 for Mendix 11. The license permits use of that version and all earlier major versions. To use a newer major version, you must have an active maintenance contract and can request a renewed license when the new major version is released.
 
@@ -37,8 +37,8 @@ Mendix applications using a SALT License cannot be deployed to the Mendix Public
 
 SALT licenses distinguish between internal and external users:
 
-* **Internal users**: SALT licenses specify a maximum number of named internal users. This limit is enforced independently by each application and is defined at the time of purchase. Limiting concurrent users is not supported.
-* **External users**: Unlimited external users can optionally be purchased. When purchased, external users are no longer counted against the internal user limit. To take advantage of this, users must be explicitly flagged as external in your application using the [User Classification](/appstore/modules/user-classification/) module or by setting the `UserType` attribute directly. If external users are not flagged, they are counted as internal users.
+* **Internal users** – SALT licenses specify a maximum number of named internal users. This limit is enforced independently by each application and is defined at the time of purchase. Limiting concurrent users is not supported.
+* **External users** – Unlimited external users can optionally be purchased. When purchased, external users are no longer counted against the internal user limit. To take advantage of this, users must be explicitly flagged as external in your application using the [User Classification](/appstore/modules/user-classification/) module or by setting the `UserType` attribute directly. If external users are not flagged, they are counted as internal users.
 
 ## Obtaining the SALT-based License
 
@@ -69,8 +69,8 @@ Each Mendix application that uses a SALT license must be configured with the fol
 License.SaltLicenseLocation = port@host
 ```
 
-* `port`: The port number specified during the license server installation.
-* `host`: The hostname or IP address of the machine running the license server.
+* `port` – The port number specified during the license server installation.
+* `host` – The hostname or IP address of the machine running the license server.
 
 After you configure the runtime setting and start the Mendix application, the application connects to the Siemens License Server to validate the SALT license.
 
