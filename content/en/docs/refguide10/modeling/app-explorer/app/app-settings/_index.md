@@ -46,8 +46,8 @@ This setting is available in Mendix 10.24.21 LTS. It is only available for appli
 
 The available options are listed below:
 
-* **Rspack**: Use Rspack to bundle the React client app as a faster, more memory-efficient bundler
-* **Rollup**: Use Rollup to bundle the React client app (default)
+* **Rspack**: Use Rspack to bundle the React client application for faster build times and lower memory usage.
+* **Rollup**: Use Rollup to bundle the React client application (default)
 
 For more information about Rspack, see the [official documentation](https://www.rspack.dev/).
 

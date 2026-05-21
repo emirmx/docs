@@ -27,8 +27,8 @@ This setting was introduced in [Mendix 11.9.0](/releasenotes/studio-pro/11.9/) a
 
 The available options are listed below:
 
-* **Rspack**: Use Rspack to bundle the React client app as a faster, more memory-efficient bundler
-* **Rollup**: Use Rollup to bundle the React client app (default)
+* **Rspack**: Use Rspack to bundle the React client application for faster build times and lower memory usage.
+* **Rollup**: Use Rollup to bundle the React client application (default)
 
 For more information about Rspack, see the [official documentation](https://www.rspack.dev/).
 
