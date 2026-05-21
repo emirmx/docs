@@ -18,13 +18,13 @@ This feature is in beta.
 
 ### Prerequisites
 
-* [Studio Pro 11.11](https://marketplace.mendix.com/link/studiopro/11.11.0) and above
+* [Studio Pro 11.11](https://marketplace.mendix.com/link/studiopro/11.11.0) or higher
 
 ### Limitations
 
 Data transformers currently have the following limitations:
 
-* We only support JSON-to-JSON transformation with JSLT, a JSON transformation language.
+* We only support JSON-to-JSON transformation with JSLT, a JSON transformation language
 
 ### Usage Example
 
@@ -81,13 +81,13 @@ You can add the data transformer document to your app, by following these steps:
 1. Select **Add other** > **Data Transformer**.
 1. Name the data transformer:
 
-  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/add-data-transformer.png" alt="Add Data Transformer dialog" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/data-transformers/add-data-transformer.png" alt="Add Data Transformer dialog" >}}
 
 1. In the **Input JSON** editor, paste a JSON snippet that you would like to transform.
 1. Define the transformation in **JSLT transformation** editor.
 1. Click the **Test Transformation** button below the JSLT transformation editor to preview the transformation result in the **Output JSON**:
 
-  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/define-transformation.png" alt="Data Transformer interface showing Input JSON, JSLT transformation, and Output JSON editors" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/data-transformers/define-transformation.png" alt="Data Transformer interface showing Input JSON, JSLT transformation, and Output JSON editors" >}}
 
 ## Use the Data Transformer in a Microflow
 
@@ -95,14 +95,14 @@ To perform a transformation in a microflow, complete the following steps:
 
 1. Drag the **Transform JSON** activity into a microflow, preferably after a REST call or anything that provides input for the transformation:
 
-  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/transform-json-dialog.png" alt="Add Transform JSON activity" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/data-transformers/transform-json-dialog.png" alt="Add Transform JSON activity" >}}
 
 1. Double-click the activity and click **Select** to choose an existing data transformer document or create a new one.
 1. Click on the dropdown **Variable (String)**, and select the input string variable from the list.
 1. Specify the name of the output in the **Variable name** text field.
 1. Click **OK**:
 
-  {{< figure src="/attachments/refguide/modeling/integration/data-transformers/configure-transformer-activity.png" alt="Configure Transform JSON activity dialog" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/data-transformers/configure-transformer-activity.png" alt="Configure Transform JSON activity dialog" >}}
 
 ## Data Transformer Output Uses
 
