@@ -23,29 +23,29 @@ You can also ask Maia to provide explanations of your existing documents, such a
 
 ### Supported Document Types
 
-The following table lists all document types that Maia can work with, and the Studio Pro version in which support was introduced:
+Maia Make can generate new documents, modify existing documents, and explain app documents and structures through a unified conversational interface. The following table lists all document types that Maia Make can work with and the Studio Pro version in which support for each document type was introduced:
 
-| Document Type | Description | Available from | Remarks |
+| Document Type | Description | Available in Maia Make from | Remarks |
 | --- | --- | --- | --- |
-| [Domain model](/refguide/maia-for-domain-model/) | Generates and explains domain models. | Studio Pro 11.8 | |
-| [Pages](/refguide/maia-for-pages/) | Generates pages and widgets from text or image input. | Studio Pro 11.8 | |
-| [Microflows](/refguide/maia-for-microflows/) | Generates microflow logic from natural language descriptions. | Studio Pro 11.8 | |
-| [Workflows](/refguide/maia-for-workflows/) | Generates workflows from natural language descriptions. | Studio Pro 11.9 | |
-| [OQL](/refguide/maia-for-oql/) | Generates OQL queries from natural language descriptions. | Studio Pro 11.9 | |
-| View entities | Generates view entities. | Studio Pro 11.9 | |
-| Enumerations | Generates enumerations. | Studio Pro 11.9 | |
+| [Domain model](/refguide/maia-for-domain-model/) | Generates, modifies, and explains domain models. | Studio Pro 11.8 | |
+| [Pages](/refguide/maia-for-pages/) | Generates, modified, and explains pages | Studio Pro 11.8 | |
+| [Microflows](/refguide/maia-for-microflows/) | Generates, modifies, and explains microflows | Studio Pro 11.8 | |
+| [Workflows](/refguide/maia-for-workflows/) | Generates, modifies, and explains workflows | Studio Pro 11.9 | |
+| [OQL](/refguide/maia-for-oql/) | Generates and manages OQL queries | Studio Pro 11.9 | |
+| View entities | Generates and manages view entities. | Studio Pro 11.9 | |
+| Enumerations | Generates and manages enumerations. | Studio Pro 11.9 | |
 | Constants | Generates and manages constants. | Studio Pro 11.9 | |
 | Modules | Creates and structures modules. | Studio Pro 11.9 | |
 | Java actions | Uses Java actions in microflows and explains them. | Studio Pro 11.9 | Read-only; Java actions cannot be generated. |
-| JavaScript actions | Explains and generates JavaScript actions. | Studio Pro 11.9 | Explain-only in Studio Pro 11.9. Generation, adding parameters, and updating the associated JavaScript file available from Studio Pro 11.10. |
+| JavaScript actions | Generates and explains JavaScript actions. | Studio Pro 11.9 | Explain-only in Studio Pro 11.9. Generation, adding parameters, and updating the associated JavaScript file available from Studio Pro 11.10. |
 | Navigation | Generates and updates app-level navigation. | Studio Pro 11.11 | |
 | Menu | Generates and updates menu documents. | Studio Pro 11.11 | |
 
-### Maia Features
+### Maia Make Standalone Capabilities
 
-The following table lists the standalone Maia features available as part of Maia Make:
+The following table lists Maia Make Standalone Capabilities and the Studio Pro version in which each capability was introduced:
 
-| Feature | Description | Available from | Remarks |
+| Capability | Description | Available in Maia Make from | Remarks |
 | --- | --- | --- | --- |
 | [Maia Chat](/refguide/maia-chat/) | Answers questions about all aspects of Mendix development. | Studio Pro 11.8 | |
 | [Maia Explain](/refguide/maia-explain/) | Explains the purpose and logic of existing documents. | Studio Pro 11.8 | |
@@ -54,9 +54,11 @@ The following table lists the standalone Maia features available as part of Maia
 | [Maia Web Fetch](/refguide/maia-web-fetch/) | Fetches and reads content from public websites and APIs. | Studio Pro 11.10 | |
 | [Maia Agent Skills](/refguide/maia-agent-skills/) | Extends Maia with reusable knowledge. | Studio Pro 11.11 | |
 
-In addition to the capabilities listed above, Maia Make includes the following features:
+### Maia Make General Capabilities
 
-| Capability | Description | Available from | Remarks |
+The following table lists the general capabilities of Maia Make and the Studio Pro version in which support for each capability was introduced:
+
+| Capability | Description | Available in Maia Make from | Remarks |
 | --- | --- | --- | --- |
 | Story-based development | Generates app artifacts based on existing user stories to support story-driven development workflows. | Studio Pro 11.8 | |
 | PDF/image support | Allows you to provide PDFs and images as input to help Maia better understand your requirements. | Studio Pro 11.8 | |
