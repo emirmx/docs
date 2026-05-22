@@ -21,14 +21,9 @@ You can decide whether optimistic locking is enabled or disabled for your app.
 
 Optimistic locking is supported in the following types of Mendix apps:
 
-| App Type | Support Status | Lowest Supported Version | 
-| --- | --- | --- | 
-| Online | Supported | [Studio Pro 11.5](/releasenotes/studio-pro/11.5/) | 
-| Offline | Supported | [Studio Pro 11.11](/releasenotes/studio-pro/11.11/) | 
-
-Additional information on optimistic locking behavior:
-* In online Mendix apps, ___
-* In offline Mendix apps, offline changes are synchronized to the server without being blocked by optimistic locking version checks
+* Online apps: supported since [Studio Pro 11.5](/releasenotes/studio-pro/11.5/)
+* Offline apps: supported since [Studio Pro 11.11](/releasenotes/studio-pro/11.11/)
+    * **Additional Information on Optimistic Locking in Offline Apps** — As data can live for a long time in offline apps, changes based on that data that are synchronized from offline apps to the Mendix Runtime Server are committed to the database without optimistic locking to avoid conflicts. As such, offline data synchronization may overwrite changes.
 
 ## App Behavior: Optimistic Locking Disabled
 
