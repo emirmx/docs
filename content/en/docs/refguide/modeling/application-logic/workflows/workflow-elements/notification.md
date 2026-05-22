@@ -1,7 +1,8 @@
 ---
 title: "Notification"
 url: /refguide/notification/
-weight: 95
+description: "Describes the Notification workflow element that suspends a workflow path until the workflow receives a notification."
+weight: 93
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -11,7 +12,7 @@ weight: 95
 
 It can be used in the following two ways:
 
-* **Notification** can be used as a standalone event on a workflow path. It suspends the workflow path until the workflow receives a notification. Use it as a standalone event when you want the path to be blocked until the notification is received. For example, when a workflow needs to wait for an external system to confirm that a payment has been processed before continuing.
+* **Notification** can be used as a standalone event on a workflow path. It suspends the workflow path until the workflow receives a notification. Use it as a standalone event when you want the path to be blocked until the notification is received. For example, when a workflow needs to wait for an external system to confirm that a payment is processed before continuing.
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/notification/standalone-notification-event.png" alt="Standalone Notification event" width="250" >}}
 
@@ -20,13 +21,13 @@ It can be used in the following two ways:
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/notification/notification-boundary-event.png" alt="Notification boundary event" width="300" >}}
 
 {{% alert color="info" %}}
-The **Notification** element is an event and is represented as a circle in the workflow editor. This distinguishes it from the [Wait for Notification](/refguide/wait-for-notification/) activity, which is represented as a rounded square. Additionally, unlike **Wait for Notification**, it is not possible to attach boundary events to the **Notification** event.
+The **Notification** element is an event and is represented as a circle in the workflow editor. This distinguishes it from the [Wait for Notification](/refguide/wait-for-notification/) activity, which is represented as a rounded square. Additionally, unlike **Wait for Notification**, it is not possible to attach boundary events to a **Notification** event.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-If you have this element in one of the parallel split paths, then only the path which has this element will suspend and all the other paths will continue with their own activities.
+If you have this element in one of the parallel split paths, only the path containing this element is suspended, while the other paths continue with their own activities.
 
-However, the whole parallel split will still suspend on the merge of the split until the notification is received.
+However, the entire parallel split remains suspended at the merge until the notification is received.
 {{% /alert %}}
 
 ## Properties
@@ -61,7 +62,7 @@ This section is only applicable when **Notification** is used as a standalone ev
 
 ## Sending Notification
 
-To trigger the **Notification** event and resume the workflow path, use the [Notify Workflow](/refguide/notify-workflow/) microflow action.
+To trigger the **Notification** event and resume the workflow path, use the [Notify Workflow](/refguide/notify-workflow/) microflow activity.
 
 ## Read More
 

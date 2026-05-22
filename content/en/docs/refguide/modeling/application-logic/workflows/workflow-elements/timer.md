@@ -13,7 +13,7 @@ aliases:
 
 It can be used in the following two ways:
 
-* **Timer** can be used as a standalone event on a workflow path. It suspends the workflow path for a configurable duration or until a set date and time. Use it as a standalone event when you want the path to be blocked until the timer fires. For example, when a new salary legislation is about to take effect, a timer can be set until the date of effect to actually adjust the values in the system.
+* **Timer** can be used as a standalone event on a workflow path. It suspends the workflow path for a configurable duration or until a set date and time. Use it as a standalone event when you want the path to be blocked until the timer is triggered. For example, when a new salary legislation is about to take effect, a timer can be set until the date of effect to actually adjust the values in the system.
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/timer/standalone-timer-activity.png" alt="Standalone Timer activity" width="250" >}}
 

@@ -8,7 +8,10 @@ weight: 20
 
 Boundary events are a type of event that is attached to the boundary of an activity (such as a task or a sub-process) to handle exceptional situations or are triggered by certain behaviors. 
 
-Boundary events have two key characteristics: a **type** that determines what triggers the event, and an **interrupting behavior** that determines what happens to the parent activity when the event is triggered.
+Boundary events have the following two key characteristics: 
+
+* A **type** that determines what triggers the event
+* An **interrupting behavior** that determines what happens to the parent activity when the event is triggered
 
 ### Boundary Event Types
 
@@ -21,11 +24,11 @@ The boundary event type determines what triggers the event. The icon inside the 
 
 Each boundary event has an interrupting behavior that can be set to either interrupting or non-interrupting:
 
-* **Non-interrupting**: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in parallel. For example, after 2 days, a reminder should be sent to the assigned user. Non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
+* **Non-interrupting**: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in parallel. For example, after two days, a reminder should be sent to the assigned user. Non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
 
-* **Interrupting**: When these events are triggered, they interrupt the activity they are attached to, meaning that this activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. Use interrupting boundary events in situations where further execution of the activity (and other following activities) is not required and an alternative path should be taken. For example, use an interrupting boundary event to start an escalation or a fast-track path when an activity is not completed 2 days after the due date. Or when the assigned user does not make a decision within 5 days, you want to abort the user task and continue the process with a pre-set decision. Interrupting boundary events are visualized as two solid circles.
+* **Interrupting**: When these events are triggered, they interrupt the activity they are attached to, meaning that this activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. Use interrupting boundary events in situations where further execution of the activity (and other following activities) is not required and an alternative path should be taken. For example, use an interrupting boundary event to start an escalation or a fast-track path when an activity is not completed two days after the due date. Or when the assigned user does not make a decision within five days, you want to abort the user task and continue the process with a pre-set decision. Interrupting boundary events are visualized as two solid circles.
 
-Boundary events are always displayed by 2 circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the boundary event type. For example, a clock indicates that it is a timer boundary event, and an envelope indicates that it is a notification boundary event.
+Boundary events are always displayed by two circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the boundary event type. For example, a clock indicates that it is a timer boundary event, and an envelope indicates that it is a notification boundary event.
 
 Below is an example of what a non-interrupting timer boundary event looks like:
 
@@ -50,23 +53,23 @@ When a boundary event is added to an activity, this activity is also referred to
 
 To add a boundary event to the [above-listed activities](#supported-activities), choose one of the following ways:
 
-1. Select an event from the **Events** section in the workflow **Toolbox** and drag it onto one of the activities listed above:
+* Select an event from the **Events** section in the workflow **Toolbox** and drag it onto one of the activities listed above:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" width="200" >}}
 
-2. Double-click one of the above-listed activities to open its properties dialog box, go to the **Events** tab, and in the **Boundary events** section, click **Add**:
+* Double-click one of the above-listed activities to open its properties dialog box, go to the **Events** tab, and in the **Boundary events** section, click **Add**:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/edit-dialog.png" alt="Adding boundary events through edit dialog" width="450" >}}
 
-3. Right-click one of the above-listed activities to open its context menu, and click **Add boundary event**:
+* Right-click one of the above-listed activities to open its context menu, and click **Add boundary event**:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/context-menu.png" alt="Adding boundary events through context menu" width="450" >}}
 
-In both cases (options 2 and 3), the **Select Event** dialog appears where you choose the type of boundary event you want to add:
+In the latter two cases, the **Select Event** dialog appears where you choose the type of boundary event you want to add:
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/select-event.png" alt="Select Event dialog" width="450" >}}
 
-To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure boundary event properties, see [Timer – Boundary Properties](/refguide/timer/#boundary-properties) or [Notification – Boundary Properties](/refguide/notification/#boundary-properties).
+To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure boundary event properties, see the [Boundary Properties](/refguide/timer/#boundary-properties) section in *Timer* or the [Boundary Properties](/refguide/notification/#boundary-properties) in *Notification*.
 
 #### Adding a Boundary Event to an Ongoing Activity
 
@@ -95,7 +98,7 @@ You can rearrange boundary events in the following ways:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-editor.png" width="400px" alt="Timer Event arrange in editor" >}}
 
-* Double-click the parent activity to open its properties dialog box and click **Move up** or **Move down**  to change the order of the boundary events' paths.
+* Double-click the parent activity to open its properties dialog box and click **Move up** or **Move down** to change the order of the boundary events' paths.
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-dialog.png" width="400px" alt="Arrange non-interrupting boundary event in dialog" >}}
 

@@ -39,7 +39,7 @@ Boundary events can be attached to this element and are triggered by certain eve
 
 ## Sending Notification
 
-To trigger the **Wait for notification** activity and resume the workflow path, use the [Notify Workflow](/refguide/notify-workflow/) microflow action.
+To trigger the **Wait for notification** activity and resume the workflow path, use the [Notify Workflow](/refguide/notify-workflow/) microflow activity.
 
 ## Read More
 
