@@ -32,7 +32,7 @@ Boundary events are always displayed by two circles (either solid or dashed) and
 
 Below is an example of what a non-interrupting timer boundary event looks like:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" width="200" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" max-width=80% >}}
 
 ## Getting started
 
@@ -55,19 +55,19 @@ To add a boundary event to the [above-listed activities](#supported-activities),
 
 * Select an event from the **Events** section in the workflow **Toolbox** and drag it onto one of the activities listed above:
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" width="200" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" max-width=80%  >}}
 
 * Double-click one of the above-listed activities to open its properties dialog box, go to the **Events** tab, and in the **Boundary events** section, click **Add**:
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/edit-dialog.png" alt="Adding boundary events through edit dialog" width="450" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/edit-dialog.png" alt="Adding boundary events through edit dialog" max-width=80%  >}}
 
 * Right-click one of the above-listed activities to open its context menu, and click **Add boundary event**:
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/context-menu.png" alt="Adding boundary events through context menu" width="450" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/context-menu.png" alt="Adding boundary events through context menu" max-width=80%  >}}
 
 In the latter two cases, the **Select Event** dialog appears where you choose the type of boundary event you want to add:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/select-event.png" alt="Select Event dialog" width="450" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/select-event.png" alt="Select Event dialog" max-width=80%  >}}
 
 To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure boundary event properties, see the [Boundary Properties](/refguide/timer/#boundary-properties) section in *Timer* or the [Boundary Properties](/refguide/notification/#boundary-properties) in *Notification*.
 
@@ -79,7 +79,7 @@ When a boundary event is added to an ongoing activity, any workflow instances cu
 
 For an existing boundary event, when you change its interrupting behavior from non-interrupting to interrupting or vice versa, you will be presented with a warning dialog. For example, when you change a boundary event from non-interrupting to interrupting, you will see the following warning dialog:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/security-dialog.png" alt="Security Dialog when changing type" width="450">}}
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/security-dialog.png" alt="Security Dialog when changing type" max-width=80% >}}
 
 After you confirm the change:
 
@@ -96,11 +96,11 @@ You can rearrange boundary events in the following ways:
 
 * Right-click a boundary event to open its context menu and click **Move boundary event left** or **Move boundary event right**, or use the <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Left arrow or <kbd>Ctrl</kbd>/<kbd>Command</kbd> + Right arrow shortcut keys.
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-editor.png" width="400px" alt="Timer Event arrange in editor" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-editor.png" max-width=80%  alt="Timer Event arrange in editor" >}}
 
 * Double-click the parent activity to open its properties dialog box and click **Move up** or **Move down** to change the order of the boundary events' paths.
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-dialog.png" width="400px" alt="Arrange non-interrupting boundary event in dialog" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/arrange-in-dialog.png" max-width=80%  alt="Arrange non-interrupting boundary event in dialog" >}}
 
     {{% alert color="info" %}}This does not change the order of execution of the paths, as this is dependent on when the boundary event is triggered.{{% /alert %}}
 
