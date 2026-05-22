@@ -78,7 +78,7 @@ If customers configure HTTP without encryption, they must understand and accept 
 
 For more information about configuring TLS for HTTPS-encrypted access through Ingress, see [Network Ingress Settings in Mendix on Kubernetes](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/).
 
-Mendix provides [OIDC](appstore/modules/oidc/) and [SAML SSO](/appstore/modules/saml/) modules, allowing customers to easily integrate their Identity Provider (IdP) into Mendix applications.
+Mendix provides [OIDC](/appstore/modules/oidc/) and [SAML SSO](/appstore/modules/saml/) modules, allowing customers to easily integrate their Identity Provider (IdP) into Mendix applications.
 
 Private Mendix Platform supports OIDC and SAML configuration.
 

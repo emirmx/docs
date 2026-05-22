@@ -121,12 +121,12 @@ For more information about CVE, refer to the following documents:
 
 The following screenshots shows an example of a Private Mendix Platform FIPS scan CI:
 
-{{< figure src="/attachments/private-platform/nist-ia/nist-ra-05-1.png" class="no-border" >}}
+{{< figure src="/attachments/private-platform/nist-ra/nist-ra-05-1.png" class="no-border" >}}
 
 The following screenshots shows an example of a Runtime scan:
 
-{{< figure src="/attachments/private-platform/nist-ia/nist-ra-05-2.png" class="no-border" >}}
+{{< figure src="/attachments/private-platform/nist-ra/nist-ra-05-2.png" class="no-border" >}}
 
 The following screenshots shows an example of a Studio Pro scan:
 
-{{< figure src="/attachments/private-platform/nist-ia/nist-ra-05-3.png" class="no-border" >}}
+{{< figure src="/attachments/private-platform/nist-ra/nist-ra-05-3.png" class="no-border" >}}
