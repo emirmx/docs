@@ -45,3 +45,8 @@ Customer should identify and automatically process the events of interest from t
 ## Proof and Remarks
 
 Private Mendix Platform does not currently support automatically processing audit events. Customers must use third-party tools to automatically process audit records.
+
+For more information, see the following documents:
+
+* [Private Mendix Platform Functionalities - Activity Logs](/private-mendix-platform/reference-guide/admin/company/#activity-logs)
+* [Private Mendix Platform Functionalities - Log Settings](/private-mendix-platform/reference-guide/admin/company/#log-settings)
