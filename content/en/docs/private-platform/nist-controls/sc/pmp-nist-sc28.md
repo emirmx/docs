@@ -1,5 +1,6 @@
 ---
 title: "SC-28 System and Communications Protection - Protection of Information at Rest"
+linktitle: "SC-28"
 url: /private-mendix-platform/nist-controls/sc-28/
 description: "Documents the Private Mendix Platform's compliance with the SC-28 control of the NIST 800-53 framework."
 weight: 20
@@ -143,61 +144,33 @@ This covers VCS PATs, build cluster tokens, registry passwords, SMTP passwords, 
 
 ### External Secret Management: HashiCorp Vault
 
-PMP 1.24.2 introduced HashiCorp Vault as an external secret management backend. The public release note states:
+Since version 1.24.2 Private Mendix Platform supports Hashicorp Vault as an external secret management solution alongside the traditional database storage option.
 
-▎ "Private Mendix Platform now supports Hashicorp Vault as an external secret management solution alongside the traditional database storage option."
+The integration uses Vault's KV version 2 secrets engine with Kubernetes Auth Method (that is, password-less OIDC-based pod authentication). All Platform credentials (such as VCS PATs, build tokens, registry passwords, storage keys, SMTP passwords) can be stored externally in Vault, where they are protected by Vault's transit encryption at rest.
 
-The integration uses Vault's KV Version 2 secrets engine with Kubernetes Auth Method (passwordless OIDC-based pod authentication). All platform credentials (VCS PATs, build tokens, registry passwords, storage keys, SMTP passwords) can be externalized to Vault, where they are protected by Vault's transit encryption at rest.
+For more information, see the following documents:
 
-The public docs reference for the integration setup:
-https://docs.mendix.com/developerportal/deploy/secret-store-credentials/#hashicorp
+* [Configuring a Secret Store with HashiCorp Vault](/developerportal/deploy/secret-store-credentials/#hashicorp)
+* [Private Mendix Platform 1.24.2 Release Notes](/releasenotes/private-platform/1-24/#1242)
 
-PMP release note section: 1.24.2 New Features — #1242
+### External Secret Management: AWS Secrets Manager
 
-URL: https://docs.mendix.com/releasenotes/private-platform/1-24/#1242
+Private Mendix Platform supports AWS Secrets Manager as an alternative credential storage backend, accessed through IRSA (IAM Roles for Service Accounts). No static AWS credentials stored at rest. Credentials such as VCS PATs, build cluster tokens, and registry passwords are stored in AWS Secrets Manager (encrypted by AWS KMS) and fetched at runtime using the pod's assigned IAM role identity.
 
-External Secret Management: AWS Secrets Manager
+For more information, see [Retrieve Environment-Sensitive Data from a Secret Store](/developerportal/deploy/secret-store-credentials/).
 
-PMP supports AWS Secrets Manager as an alternative credential storage backend, accessed via IRSA (IAM Roles for Service Accounts) — no static AWS credentials stored at rest:
+### Read-Only Root Filesystem: Prevents Malicious Code from Writing to Storage
 
-▎ "AWS Secrets Manager: Credentials are stored in AWS Secrets Manager and accessed securely via
-▎ IAM roles"
+Starting in Mendix Operator 2.21.0, all system containers mount `readOnlyRootFilesystem: true` by default. Mendix app container images are locked down by default - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths.
 
-Credentials such as VCS PATs, build cluster tokens, and registry passwords are stored in Secrets
-Manager (encrypted by AWS KMS) and fetched at runtime using the pod's assigned IAM role identity.
+This is an integrity protection control for information at rest inside the container filesystem, directly referenced in NIST SC-28 supplemental guidance as a *Write-Once-Read-Many* equivalent mechanism. Malicious code cannot modify the container's stored filesystem state.
 
-Public docs reference: https://docs.mendix.com/developerportal/deploy/secret-store-credentials/
+For more information, see [Read-only RootFS](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
 
-Read-Only Root Filesystem: Prevents Malicious Code from Writing to Storage
+### EnableFileDocumentCaching Security Guard for Sensitive Data at Rest
 
-From Mendix Operator v2.21.0+, all system containers mount readOnlyRootFilesystem: true by default:
+The Mendix Runtime provides the [EnableFileDocumentCaching](/refguide/custom-settings/#EnableFileDocumentCaching) setting to prevent sensitive file documents from being cached to local disk. By default, caching is set to `false`. Customers are advised to only enable caching if they are sure that the file documents will not contain any sensitive information. This direct data-at-rest protection control at the runtime layer prevents sensitive `System.FileDocument` data from being written to the local container filesystem where it would exist at rest without encryption.
 
-▎ "Mendix app container images are locked down by default — they run as a non-root user, cannot
-▎ request elevated permissions, and file ownership and permissions prevent modification of system
-▎ and critical paths."
+### SC-28(1) - FIPS Mode: AES-256 and FIPS 140-2 Validated Cryptography
 
-This is an integrity protection control for information at rest inside the container filesystem — directly referenced in NIST SC-28 supplemental guidance as a "Write-Once-Read-Many" equivalent mechanism. Malicious code cannot modify the container's stored filesystem state.
-
-Section: Read-only RootFS — #read-only-rootfs
-
-URL: https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#read-only-rootfs
-
-EnableFileDocumentCaching Security Guard for Sensitive Data at Rest
-
-The Mendix Runtime provides an explicit control to prevent sensitive file documents from being
-cached to local disk:
-
-▎ "EnableFileDocumentCaching — Defines whether file documents should be cached. Only enable this
-▎ if you are sure that the file documents will not contain sensitive information."
-
-Default is off. This prevents sensitive System.FileDocument data from being written to the local
-container filesystem where it would exist at rest without encryption — a direct data-at-rest
-protection control at the runtime layer.
-
-Section: General Settings — #general-settings
-
-URL: https://docs.mendix.com/refguide/custom-settings/#general-settings
-
-SC-28(1) / FIPS Mode: AES-256 and FIPS 140-2 Validated Cryptography
-
-The sibling control SC-28(1) documents the cryptographic protection mechanisms available in PMP, including support for FIPS 140-2 validated modules when deployed in FIPS mode. PMP supports FIPS-compliant deployments on supported Kubernetes distributions, ensuring AES-256 is used for data at rest.
+The sibling control SC-28 (1) documents the cryptographic protection mechanisms available in Private Mendix Platform, including support for FIPS 140-2 validated modules when deployed in FIPS mode. Private Mendix Platform supports FIPS-compliant deployments on supported Kubernetes distributions, ensuring that AES-256 is used for data at rest.
