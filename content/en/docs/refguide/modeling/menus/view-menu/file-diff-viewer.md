@@ -18,7 +18,7 @@ The File Differences Viewer opens automatically in the following scenarios:
 * **Changes pane**: 
     * When you view changes at the object level and double-click a text property row, the File Differences Viewer opens to show the old and new values of that property.
     * When you review disk changes (such as Java source code or widget files), you can right-click a modified file and select **Compare with original**, or double-click it, to open the File Differences Viewer showing the differences between your working copy and the last committed version.
-* **Comparison pane** – When you compare property values or files in the [Comparison pane](/refguide/comparison-pane/), clicking a compare action opens the File Differences Viewer to show the differences.
+* **Comparison pane** – When you compare property values or files in the [Comparison pane](/refguide/comparison-pane/), clicking the **Compare** button opens the File Differences Viewer to show the differences.
 
 ## Toolbar
 
