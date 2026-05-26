@@ -12,6 +12,7 @@ Portable App Distribution refers to packaging applications in a self-contained f
 This documentation provides guidance for deploying Portable App Distribution in a Linux environment and serves as a helpful reference rather than official implementation support.
 
 {{% alert color="info" %}}
+Unlike the M2EE-based deployment, where Mendix provides full end-to-end tooling support, the Portable App Distribution approach only requires Java to run, with Mendix's support strictly limited to the Portable App Distribution package itself. All implementation, configuration, and deployment activities, including Linux deployment, remain the customer's sole responsibility.
 For information about the scope of support, see [Support for Different Deployment Strategies](/support/deployment-strategy-support/).
 {{% /alert %}}
 
