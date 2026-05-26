@@ -43,6 +43,7 @@ OQL is under constant development so some expressions and features are not avail
 | Feature | Mendix Version |
 | --- | --- |
 | DATEADD | 11.9.0 |
+| DATEFORMAT | 11.12.0 |
 | DATEPARSE | 11.10.0 |
 | DATETRUNC | 11.9.0 |
 | LOCATE | 11.9.0 |
