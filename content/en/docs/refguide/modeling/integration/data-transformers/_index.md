@@ -8,9 +8,9 @@ beta: true
 
 ## Introduction
 
-Data Transformer documents can be used to transform data of a certain structure into another data of another structure. In practice, basically a message-to-message transformation within Mendix Studio Pro. 
+Data Transformer documents transform data from one structure into another structure. In practice, this is a message-to-message transformation within Studio Pro. 
 
-Using this feature, you can pre-process an incoming message (for example, from an API response or MQTT message) before an import mapping. Additionally, you can also use it to transform a message before passing it on to a downstream system that expects the data in a certain structure.
+You can use this feature to pre-process an incoming message (for example, from an API response or MQTT message) before an import mapping. You can also use it to transform a message before passing it on to a downstream system that expects the data in a specific structure.
 
 {{% alert color="info" %}}
 This feature is in beta. 
@@ -24,7 +24,7 @@ This feature is in beta.
 
 Data transformers currently have the following limitations:
 
-* We only support JSON-to-JSON transformation with JSLT, a JSON transformation language
+* Only JSON-to-JSON transformation with JSLT (a JSON transformation language) is supported
 
 ### Usage Example
 
@@ -75,7 +75,7 @@ In this example, the data transformer extracts only the required fields, combine
 
 ## Add the Data Transformer Document
 
-You can add the data transformer document to your app, by following these steps:
+To add a data transformer document to your app, follow these steps:
 
 1. Right-click the module you want to add the data transformer document to.
 1. Select **Add other** > **Data Transformer**.
@@ -83,9 +83,9 @@ You can add the data transformer document to your app, by following these steps:
 
     {{< figure src="/attachments/refguide/modeling/integration/data-transformers/add-data-transformer.png" alt="Add Data Transformer dialog" >}}
 
-1. In the **Input JSON** editor, paste a JSON snippet that you would like to transform.
-1. Define the transformation in **JSLT transformation** editor.
-1. Click the **Test Transformation** button below the JSLT transformation editor to preview the transformation result in the **Output JSON**:
+1. In the **Input JSON** editor, paste a JSON snippet that you want to transform.
+1. Define the transformation in the **JSLT transformation** editor.
+1. Click **Test Transformation** below the JSLT transformation editor to preview the transformation result in **Output JSON**:
 
     {{< figure src="/attachments/refguide/modeling/integration/data-transformers/define-transformation.png" alt="Data Transformer interface showing Input JSON, JSLT transformation, and Output JSON editors" >}}
 
@@ -97,8 +97,8 @@ To perform a transformation in a microflow, complete the following steps:
 
     {{< figure src="/attachments/refguide/modeling/integration/data-transformers/transform-json-dialog.png" alt="Add Transform JSON activity" >}}
 
-1. Double-click the activity and click **Select** to choose an existing data transformer document or create a new one.
-1. Click on the dropdown **Variable (String)**, and select the input string variable from the list.
+1. Double-click the activity and click **Select** to choose an existing data transformer document or to create a new one.
+1. Click the **Variable (String)** drop-down and select the input string variable from the list.
 1. Specify the name of the output in the **Variable name** text field.
 1. Click **OK**:
 
@@ -110,11 +110,11 @@ You can use your transformed JSON snippet in the following ways:
 
 * Create a new JSON structure for import mapping
 * Pass the transformed JSON to downstream systems
-* Use it as input for further processing in your microflow
+* Use it as input for further processing in a microflow
 
 ## Use Cases
 
-Use the Data Transformer document to do the following:
+You can use Data Transformer documents for the following use cases:
 
 * [Filter out unused fields](/refguide/data-transformer-how-tos/#filtering-out-unused-fields)
 * [Simplify nested structures](/refguide/data-transformer-how-tos/#simplifying-nested-structures)
@@ -127,7 +127,7 @@ Use the Data Transformer document to do the following:
 ## Read More
 
 * Mendix resources:
-  * For detailed examples of Data Transformers in action, see [Data Transformer Use Cases](/refguide/data-transformer-use-cases/).
-* GitHub resources on JSLT:
-  * A short [introduction](https://github.com/schibsted/jslt/blob/master/README.md#jslt) and [tutorial](https://github.com/schibsted/jslt/blob/master/tutorial.md#jslt-tutorial) on how to use JSLT
-  * A complete list of [functions available in JSLT](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions)
+    * For detailed examples of Data Transformers in action, see [Data Transformer Use Cases](/refguide/data-transformer-use-cases/)
+* GitHub resources on JSLT
+    * A short [introduction](https://github.com/schibsted/jslt/blob/master/README.md#jslt) and [tutorial](https://github.com/schibsted/jslt/blob/master/tutorial.md#jslt-tutorial) on how to use JSLT:
+    * A complete list of [functions available in JSLT](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions)
