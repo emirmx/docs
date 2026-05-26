@@ -37,8 +37,9 @@ The File Differences Viewer uses the following visual indicators to show differe
 * **Red background** – Lines or words that were removed from the older version.
 * **Word-level highlighting** – Within changed lines, individual words that differ are highlighted with a darker shade to pinpoint exact changes.
 
-In split view, the older version is shown on the left and the newer version is shown on the right, with column headers **Older** and **Newer**. 
-In inline view, both versions are merged into a single column with the header **Differences**, where removed lines appear above added lines.
+In the split view, the older version is shown on the left and the newer version is shown on the right, with column headers **Older** and **Newer**. 
+
+In the inline view, both versions are merged into a single column with the header **Differences**, where removed lines appear above added lines.
 
 Line numbers are displayed for both sides to help you locate changes in the file.
 
