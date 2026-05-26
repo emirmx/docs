@@ -7,9 +7,7 @@ description: "Describes the built-in File Differences Viewer dialog in Studio Pr
 
 ## Introduction
 
-The **File Differences Viewer** is a built-in dialog in Studio Pro that displays text differences between two versions of a file or two text values. It opens as a modal dialog and shows additions, deletions, and modifications with color-coded highlighting.
-
-The File Differences Viewer is available on all platforms supported by Studio Pro, including Windows and macOS.
+The **File Differences Viewer** is a dialog in Studio Pro that displays text differences between two versions of a file or two text values. It opens as a modal dialog and shows additions, deletions, and modifications with color-coded highlighting.
 
 {{< figure src="/attachments/refguide/modeling/menus/view-menu/file-diff-viewer/file-diff-viewer-split.png" alt="File Differences Viewer showing a side-by-side comparison with color-coded additions and deletions" class="no-border" >}}
 
@@ -17,9 +15,10 @@ The File Differences Viewer is available on all platforms supported by Studio Pr
 
 The File Differences Viewer opens automatically in the following scenarios:
 
-* **Changes pane** – When you are viewing changes at the object level and double-click a text property row, the File Differences Viewer opens to show the old and new values of that property.
+* **Changes pane**: 
+    * When you are viewing changes at the object level and double-click a text property row, the File Differences Viewer opens to show the old and new values of that property.
+    * When reviewing disk changes (for example, Java source code or widget files), you can right-click a modified file and select **Compare with original**, or double-click it, to open the File Differences Viewer showing the differences between your working copy and the last committed version.
 * **Comparison pane** – When comparing property values or files in the [Comparison pane](/refguide/comparison-pane/), clicking a compare action opens the File Differences Viewer to show the differences.
-* **Changes pane** – When reviewing disk changes (for example, Java source code or widget files), you can right-click a modified file and select **Compare with original**, or double-click it, to open the File Differences Viewer showing the differences between your working copy and the last committed version.
 
 ## Toolbar
 
