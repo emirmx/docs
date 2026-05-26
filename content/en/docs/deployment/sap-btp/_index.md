@@ -18,7 +18,7 @@ This document describes two ways of managing the SAP BTP:
 * Create a new environment for an existing app: see the section [Create a New Environment](#NewEnvironment)
 
 {{% alert color="info" %}}
-Mendix applications can be deployed to Cloud Foundry regions on SAP Business Technology Platform, not to Neo regions.
+You can deploy Mendix applications to Cloud Foundry regions on SAP Business Technology Platform, not to Neo regions.
 {{% /alert %}}
 
 ## Setting Up SAP BTP for the First Time {#FirstTime}
@@ -71,7 +71,7 @@ Currently supported regions are:
 * US Central (IA) Beta 
 * US East (VA)
 
-Please contact Mendix Support if you have a requirement for an additional region.
+Contact Mendix Support if you have a requirement for an additional region.
 {{% /alert %}}
 
 Make sure that you have enough quota in this region for your organization to run a Mendix app. You will need enough quota to create the following:
@@ -80,30 +80,28 @@ Make sure that you have enough quota in this region for your organization to run
 * Route
 * Binding to XSUAA
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/01-sap-select-region.png" class="no-border" >}}
-
 If you have already logged on to SAP and your SAP session has not expired, you will only have to choose the region. If you do not have a current SAP session you will be asked for your SAP credentials as well. Providing your credentials will grant the Deployment Portal access to manage your SAP BTP account.
 
 You may be asked to provide your credentials in one of two ways:
 
 * You will be taken to the SAP authentication page to enter your credentials – in this case, your SAP user name (email address) must be the same as your Mendix user name
-* The Mendix Portal will ask for your credentials, which it will then use to obtain an access token from SAP – the Mendix Portal will then use the access token, but it will not store your credentials (⚠ please note this method is being deprecated)
+* The Mendix Portal asks for your credentials, which it will then use to obtain an access token from SAP – the Mendix Portal will then use the access token, but it will not store your credentials (⚠ Note that this method is being deprecated)
 
 {{% alert color="info" %}}
-If you have issues using SAP authentication, please refer to the reference [SAP Single Sign-On](/developerportal/deploy/sap-cloud-platform/sap-single-sign-on/).
+If you have issues using SAP authentication, refer to [SAP Single Sign-On](/developerportal/deploy/sap-cloud-platform/sap-single-sign-on/).
 {{% /alert %}}
 
-You will now be asked to provide the final details for the SAP BTP development environment.
+Provide the final details for the SAP BTP development environment.
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-development.png" class="no-border" >}}
 
-You will be able to choose a Domain, Organization, and Space which is configured for you in this region.
+Choose a **Domain**, **Organization**, and **Space** which is configured for you in this region.
 
-If you do not choose a Custom database, you will still be able to choose from a range of different databases, PostgreSQL, Hyperscaler Option and SAP HANA for example. Please ensure that the database you choose is supported by your quota plan for this region and organization. See [Databases in SAP BTP](#databases), below, for important information on selecting the correct database for your app.
+If you do not choose a **Custom database**, you can still choose it from a range of different databases, PostgreSQL, Hyperscaler Option, and SAP HANA, for example. Ensure that the database you choose is supported by your quota plan for this region and organization. See [Databases in SAP BTP](#databases) below for important information on selecting the correct database for your app.
 
-If you select **Yes** for **Custom database?**, you will be asked for the **Name** and the **Plan**.
+If you select **Yes** for **Custom database**, provide the details for the **Name** and the **Plan**.
 
-After the environment has been created successfully, you will see a confirmation message. Your development environment is now configured and you ca develop your app.
+After the environment has been created successfully, you will see a confirmation message. Your development environment is now configured and you can develop your app.
 
 ## Creating a New Environment {#NewEnvironment}
 
@@ -111,75 +109,65 @@ You can create several environments for your app. For example, you may have crea
 
 You can do this in the **Environments** page after opening your app in [Apps](https://sprintr.home.mendix.com/).
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/environments-page.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/finish-environment.png">}}
 
-Your Environments page will show you the following:
+The **Environments** page shows you the following tabs:
 
-* a list of **deployment packages** for this app
-* a list of **environments** for this app
-* all the deployment **activities** which have been performed on this app
+* an **Oerview** of environments for this app
+* a list of **Deployment Packages** for this app
+* an overview of deployment **Activity** which have been performed on this app
 
 To create a new environment, perform the following steps:
 
 1. Click **Add Environment** to start the wizard.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-environment.png" class="no-border" >}}
+2. Select the region where you want your app to be deployed. If no session is active for that region, or the current session does not have access to that region, you may need to enter your SAP credentials for that region.
 
-2. Select the region where you want your app to be deployed.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/sap-env-0.png" class="no-border" >}}
-
-    If no session is active for that region, or the current session does not have access to that region, you will be asked for your SAP credentials for that region.
-
-3. Select the **Domain**, **Organization**, and **Space** of your app. The URL of the domain will form part of the application's URL. The URL of the application will be this:
+3. Select the **CF Domain**, **Organization**, and **Space** of your app. The URL of the domain forms part of the application's URL. The URL of the application will be:
 
     ```text
     {appname}-{environment name}.{domain}
     ```
 
-    This is an example URL:
+    An example URL is:
 
     ```http
-    https://myapp-development.cfapps.eu10.ondemand.com
+    https://myapp-development.cfapps.eu20.ondemand.com
     ```
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/07-sap-env-1.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-environment.png">}}
 
 4. Click **Next**.
 
-5. Enter the name of the environment. This can be anything you choose: for example Test, Acceptance, or Production.
+5. Enter the name of the environment. This can be anything you choose, for example, Test, Acceptance, or Production.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/08-sap-env-2.png" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/new-environment.png" >}}
 
 6. Set the size of the memory that the app needs in order to run. This can also be changed later.
 
-7. Set **Development Mode** to Yes if you want the application to run with the Mendix security level of Prototype/demo, or Off (no security). This is not recommended for acceptance or production environments.
+7. Set **Development Mode** to *Yes* if you want the application to run with the Mendix security level of Prototype/demo, or *No* (no security). This is not recommended for acceptance or production environments.
 
-8. Select the database you would like to use. Be aware that even if a specific database is part of the Marketplace it could still be unavailable because of limitations imposed by the quota of your Organization. See [Databases in SAP BTP](#databases), below, for important information on selecting the correct database for your app.
+8. Select the database you would like to use. Be aware that even if a specific database is part of the Marketplace, it could still be unavailable because of limitations imposed by the quota of your organization. See [Databases in SAP BTP](#databases) below for information on selecting the correct database for your app.
 
-    If you choose **Custom database** you will need to enter a name for the database and the plan.
+    If you choose **Custom Database**, enter a **Name** for the database and the **Plan**.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/custom-database.png" class="no-border" >}}
+9. Enable **ObjectStore** if your application makes use of file document or image objects. Other sorts of objects do not need File Store to be enabled.
 
-9. Select **File Store Enabled** if your application makes use of FileDocument or Image objects. Other sorts of object do not need File Store to be enabled.
+10. To configure logging, select the **Logging** service from the dropdown.
 
-10. To configure logging, select the **Logging** service you would like to use from the dropdown.
+    {{% alert color="info" %}} **application-logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older environments still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Logging](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
 
-    {{% alert color="info" %}} **Application Logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older environments still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Logging](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
+11. Set a **Subscription Secret** (required). This secret is associated with your Mendix production license. By entering the subscription secret, your application runs in this environment as production. If the subscription secret is invalid, your app will still run, but will restart every 2-4 hours and have a limitation of six concurrent users.
 
-11. Set a **Subscription Secret** (required). This secret is associated with your Mendix production license. By entering the subscription secret, your application will run in this environment as production. If the subscription secret is invalid, your app will still run, but will restart every 2-4 hours and have a limitation of six concurrent users.
+    {{% alert color="info" %}}If you do not have a subscription secret, refer to [Obtaining a Mendix License](/developerportal/deploy/licensing-apps-outside-mxcloud/#get-license) of *Licensing Apps* for details on submitting a request to Mendix Support.{{% /alert %}}
 
-    {{% alert color="info" %}}If you do not have a subscription secret, refer to our documentation on [Obtaining a Mendix License](/developerportal/deploy/licensing-apps-outside-mxcloud/#get-license) in *Licensing Apps* for details on submitting a request to Mendix Support.{{% /alert %}}
-
-12. If you want the user to be redirected to a custom URL after they have logged in using XSUAA then, optionally, add **Redirect URLs**. 
+12. Optionally, you can add **Redirect URLs**, if you want the user to be redirected to a custom URL after they have logged in using XSUAA.
 
 13. Click **Next** to create the environment and finish the setup.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/09-sap-env-3.png" class="no-border" >}}
+An environment is created. With more than one environment created, you transport your application between environments. See [Transport App Between Environments](#TransportApp) below.
 
-An environment is created; with more than one environment it is possible to transport your application between environments (see [Transport App Between Environments](#TransportApp), below).
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/10-sap-env-tap.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/finish-environment.png">}}
 
 ## Preparing Packages for Deployment
 
