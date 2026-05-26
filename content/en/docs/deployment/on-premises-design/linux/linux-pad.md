@@ -18,7 +18,7 @@ For information about the scope of support, see [Support for Different Deploymen
 
 ## Prerequisites
 
-To deploy your app to an on-premises Cloud Foundry configuration using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/), ensure that you fulfill the following prerequisites:
+To deploy your app to an on-premises Linux configuration using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/), ensure that you fulfill the following prerequisites:
 
 * A Linux environment. This can be a virtual machine, a physical server, or a cloud instance (for example, AWS EC2, Azure VM, Google Cloud VM). You will need `sudo` or `root` privileges for some commands.
 * Java Development Kit (JDK). Your application requires a compatible Java runtime. For installation instructions, refer to the following sections. 
