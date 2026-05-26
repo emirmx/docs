@@ -41,13 +41,15 @@ This setting enables the new React version of the Mendix Client. This React clie
 ### App Bundler {#app-bundler}
 
 {{% alert type="info" %}}
-This setting is available in Mendix 10.24.21 LTS. It is only available for applications using React client.
+This setting is only for applications using [Mendix React Client](/refguide10/mendix-client/react/).
+
+This setting was introduced in [Mendix 10.24.21](/releasenotes/studio-pro/10.24/#102421).
 {{% /alert %}}
 
 The available options are listed below:
 
-* **Rspack**: Use Rspack to bundle the React client application for faster build times and lower memory usage.
-* **Rollup**: Use Rollup to bundle the React client application (default)
+* **Rspack**: Use the Rspack application bundler for faster build times and lower memory usage.
+* **Rollup**: Use Rollup application bundler (default).
 
 For more information about Rspack, see the [official documentation](https://www.rspack.dev/).
 
