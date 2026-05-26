@@ -847,7 +847,7 @@ spec:
 Alternatively, for Standalone clusters, pod annotations can be specified in the `MendixApp` CR for a specific app.
 
 {{% alert color="warning" %}}
-The Mendix Operator uses some labels for internal use. To avoid conflicts with these internal pod annotations, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
+The Mendix Operator uses some annotations for internal use. To avoid conflicts with these internal pod annotations, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
 {{% /alert %}}
 
 ### Node selector {#node-selector}
