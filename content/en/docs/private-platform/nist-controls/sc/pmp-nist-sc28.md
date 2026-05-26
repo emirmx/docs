@@ -118,7 +118,7 @@ The Mendix Runtime supports encrypted connections to databases via DatabaseUseSs
 
 This protects database credentials and data-in-transit to the storage backend, complementing at-rest encryption configured at the infrastructure layer.
 
-For more information, see the relevant sections of [Storage Plans](/developerportal/deploy/private-cloud-storage-plans/#postgres).
+For more information, see the relevant sections of [Storage Plans](/developerportal/deploy/private-cloud-storage-plans/#database-postgres).
 
 ### Database Authentication: Short-Lived Tokens Replace Static Passwords (IRSA or Managed Identity)
 
@@ -130,7 +130,7 @@ For Azure Managed Identity (Operator 2.17 and newer), static passwords are repla
 
 No static credentials are stored at rest when IRSA/Managed Identity is configured. The credential material exists only as a short-lived token in memory.
 
-For more information, see the relevant sections of [Storage Plans](/developerportal/deploy/private-cloud-storage-plans/#postgres).
+For more information, see the relevant sections of [Storage Plans](/developerportal/deploy/private-cloud-storage-plans/#database-postgres).
 
 ### Private Mendix Platform Credential Storage: AES Encryption in Database
 
