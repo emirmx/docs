@@ -78,7 +78,7 @@ The fallback page will only be used for URLs that start with a [URL Prefix](/ref
 
 ## Setting an Error Page for an Embedded Profile
 
-The Embedded profile can use an error page when the configured home page cannot be opened during startup or navigation. This can happen when the values passed in `render(...)` do not match the expected page parameter types or when the signed-in user does not have access to the configured home page.
+The Embedded profile can use an error page when the configured home page cannot be opened during startup or navigation. This can happen when the values passed in `render(...)` do not match the expected page parameter types or when the signed-in user does not have access to the configured home page. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 To configure an error page, open the Embedded profile in the **Navigation** editor and select the page you want to use.
 
