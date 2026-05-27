@@ -1,5 +1,5 @@
 ---
-title: "Portable App Distribution for Linux"
+title: "Portable App Distribution on Linux"
 url: /developerportal/deploy/linux-pad/
 description: "How to install and configure Mendix on a Linux system using Portable App Distribution."
 weight: 20
