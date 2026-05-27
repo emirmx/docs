@@ -42,14 +42,23 @@ When designing page and microflow URLs, prefer clear path segments over compact 
 
 This makes URLs easier to read, easier to maintain, and less likely to conflict with other URLs.
 
-URL conflicts are checked per path segment. Two URLs are considered conflicting when they have the same number of segments and Studio Pro cannot determine that at least one corresponding segment is always different.
+URL conflicts are checked per path segment. Two URLs are considered conflicting when they have the same number of segments and Studio Pro cannot tell, from the URL structure alone, which page or microflow should handle the request. A conflict can be full or partial.
 
-Common conflict cases include the following:
+A full conflict means the patterns overlap for all matching values. In other words, every URL that matches one pattern also matches the other. For example, `product/{Product/Name}` and `product/{Product/Code}` always conflict because both patterns accept any value in the second segment, so Studio Pro cannot use the URL itself to tell them apart. This means there is no single possible URL that will not be conflicting. For example, `https://example.com/p/product/chair` matches both patterns.
+
+A partial conflict means the patterns overlap only for specific values. Most URLs are still unique, but some URLs can match both patterns. For example, `product-{Name}` and `product-overview` only conflict for the URL `product-overview`, because `Name` can be `overview`. In that case, Studio Pro cannot tell whether `overview` is meant to be a fixed URL or a parameter value. For example, `https://example.com/p/product-overview` matches both patterns, while `https://example.com/p/product-chair` only matches `product-{Name}`.
+
+When a request matches conflicting URL patterns, the runtime picks one pattern and tries to open it. Which pattern is chosen is undefined. This can lead to unexpected behavior or a not-found page. For example, `https://example.com/p/product-overview` matches both `product-{Name}` and `product-overview`. If the selected pattern does not resolve to valid values, the request can fail even though the other pattern would have worked.
+
+Common full conflict cases include the following:
 
 * Two parameters in the same position, such as `product/{Product/Name}` and `product/{Product/Code}`. Resolve this by adding distinct static segments, for example, `product/name/{Product/Name}` and `product/code/{Product/Code}`.
+
+Common partial conflict cases include the following:
+
 * A static segment that can also be matched by a parameter, such as `product/{Product/Name}` and `product/sale`. Resolve this by making the parameter route more explicit, for example, `product/name/{Product/Name}` and `product/sale`.
 * A numeric static segment that overlaps with an `Id` parameter, such as `order/{Order/Id}` and `order/123`. Resolve this by using a different static pattern, for example, `order/{Order/Id}` and `order-123`.
-* Mixed segments where neither the static prefix nor the static suffix makes the segment unique, such as `product-{Product/Name}-details` and `product-sale-details`
+* Mixed segments where neither the static prefix nor the static suffix makes the segment unique, such as `product-{Product/Name}-details` and `product-sale-details`. Resolve this by putting the parameter in its own segment, for example, `product/{Product/Name}/details` and `product-sale-details`.
 
 If either the prefix or the suffix is unique, the segments do not conflict.
 
