@@ -36,74 +36,7 @@ To configure a Snowflake-managed MCP server, follow these steps:
     
 2. Create the stored procedures which the MCP server will expose as tools.
       
-    The following is an example of a generic stored procdure which returns metadata:
-      
-    ```sql
-    -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
-    CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.GET_SCHEMA_METADATA(
-          db_name VARCHAR,
-          schema_name VARCHAR
-    )
-    RETURNS VARIANT
-    LANGUAGE PYTHON
-    RUNTIME_VERSION = '3.11'
-    PACKAGES = ('snowflake-snowpark-python')
-    HANDLER = 'run'
-    AS
-    $$
-    import json
-    def run(session, db_name, schema_name):
-          rows = session.sql(f"""
-              SELECT
-                  c.TABLE_CATALOG,
-                  c.TABLE_SCHEMA,
-                  c.TABLE_NAME,
-                  t.TABLE_TYPE,
-                  t.ROW_COUNT,
-                  t.COMMENT AS TABLE_COMMENT,
-                  c.COLUMN_NAME,
-                  c.ORDINAL_POSITION,
-                  c.DATA_TYPE,
-                  c.IS_NULLABLE,
-                  c.COLUMN_DEFAULT,
-                  c.CHARACTER_MAXIMUM_LENGTH,
-                  c.NUMERIC_PRECISION,
-                  c.NUMERIC_SCALE,
-                  c.COMMENT AS COLUMN_COMMENT
-              FROM {db_name}.INFORMATION_SCHEMA.COLUMNS c
-              JOIN {db_name}.INFORMATION_SCHEMA.TABLES t
-                  ON c.TABLE_CATALOG = t.TABLE_CATALOG
-                  AND c.TABLE_SCHEMA = t.TABLE_SCHEMA
-                  AND c.TABLE_NAME = t.TABLE_NAME
-              WHERE c.TABLE_SCHEMA = '{schema_name}'
-              ORDER BY c.TABLE_NAME, c.ORDINAL_POSITION
-          """).collect()
-          tables = {}
-          for row in rows:
-              tname = row["TABLE_NAME"]
-              if tname not in tables:
-                  tables[tname] = {
-                      "database": row["TABLE_CATALOG"],
-                      "schema": row["TABLE_SCHEMA"],
-                      "table_type": row["TABLE_TYPE"],
-                      "row_count": row["ROW_COUNT"],
-                      "comment": row["TABLE_COMMENT"],
-                      "columns": []
-                  }
-              tables[tname]["columns"].append({
-                  "name": row["COLUMN_NAME"],
-                  "position": row["ORDINAL_POSITION"],
-                  "data_type": row["DATA_TYPE"],
-                  "nullable": row["IS_NULLABLE"],
-                  "default": row["COLUMN_DEFAULT"],
-                  "max_length": row["CHARACTER_MAXIMUM_LENGTH"],
-                  "precision": row["NUMERIC_PRECISION"],
-                  "scale": row["NUMERIC_SCALE"],
-                  "comment": row["COLUMN_COMMENT"]
-              })
-          return tables
-      $$;
-    ```
+   
 
 
       <summary>Expand for example code for a generic stored procdure for retrieving records</summary>
@@ -355,7 +288,7 @@ To configure a Snowflake-managed MCP server, follow these steps:
 In this section, you can find sample code to help you configure a Snowflake-managed MCP server.
 
 {{% alert color="info" %}}
-The scripts are intended to show the range of available deployment options. They are presented as examples only, and may require significant adaptation to work in your own environment.
+The code samples are intended to show the range of available options. They are presented as examples only, and may require significant adaptation to work in your own environment.
 {{% /alert %}}
 
 #### Database and Schema Setup {#code-db-schema}
@@ -382,6 +315,77 @@ VALUES
    ('Low', 'Request for additional monitor'),
    ('High', 'Database connection timeout on checkout page'),
    ('Medium', 'Email notifications not being sent');    
+```
+
+#### Procedure to Return Metadata {#code-metadata}
+
+The following is an example of a generic stored procedure which returns metadata:
+      
+```sql
+-- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
+CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.GET_SCHEMA_METADATA(
+    db_name VARCHAR,
+    schema_name VARCHAR
+)
+RETURNS VARIANT
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.11'
+PACKAGES = ('snowflake-snowpark-python')
+HANDLER = 'run'
+AS
+$$
+import json
+def run(session, db_name, schema_name):
+    rows = session.sql(f"""
+        SELECT
+            c.TABLE_CATALOG,
+            c.TABLE_SCHEMA,
+            c.TABLE_NAME,
+            t.TABLE_TYPE,
+            t.ROW_COUNT,
+            t.COMMENT AS TABLE_COMMENT,
+            c.COLUMN_NAME,
+            c.ORDINAL_POSITION,
+            c.DATA_TYPE,
+            c.IS_NULLABLE,
+            c.COLUMN_DEFAULT,
+            c.CHARACTER_MAXIMUM_LENGTH,
+            c.NUMERIC_PRECISION,
+            c.NUMERIC_SCALE,
+            c.COMMENT AS COLUMN_COMMENT
+        FROM {db_name}.INFORMATION_SCHEMA.COLUMNS c
+        JOIN {db_name}.INFORMATION_SCHEMA.TABLES t
+            ON c.TABLE_CATALOG = t.TABLE_CATALOG
+            AND c.TABLE_SCHEMA = t.TABLE_SCHEMA
+            AND c.TABLE_NAME = t.TABLE_NAME
+        WHERE c.TABLE_SCHEMA = '{schema_name}'
+        ORDER BY c.TABLE_NAME, c.ORDINAL_POSITION
+    """).collect()
+        tables = {}
+        for row in rows:
+            tname = row["TABLE_NAME"]
+              if tname not in tables:
+                  tables[tname] = {
+                      "database": row["TABLE_CATALOG"],
+                      "schema": row["TABLE_SCHEMA"],
+                      "table_type": row["TABLE_TYPE"],
+                      "row_count": row["ROW_COUNT"],
+                      "comment": row["TABLE_COMMENT"],
+                      "columns": []
+                  }
+            tables[tname]["columns"].append({
+                "name": row["COLUMN_NAME"],
+                "position": row["ORDINAL_POSITION"],
+                "data_type": row["DATA_TYPE"],
+                "nullable": row["IS_NULLABLE"],
+                "default": row["COLUMN_DEFAULT"],
+                "max_length": row["CHARACTER_MAXIMUM_LENGTH"],
+                "precision": row["NUMERIC_PRECISION"],
+                "scale": row["NUMERIC_SCALE"],
+                "comment": row["COLUMN_COMMENT"]
+            })
+        return tables
+    $$;
 ```
 
 ## Connecting a Mendix Agent to the MCP Server
