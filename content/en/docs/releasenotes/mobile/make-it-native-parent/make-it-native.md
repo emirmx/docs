@@ -15,8 +15,8 @@ Depending on the Mendix version your app is developed in and the device you want
 ### Fixes 
 
 * We upgraded the core stack to React Native 0.83.4 and aligned related React dependencies.
-* We fixed the CocoaPods installation issue that was caused by xcodeproj object version 70.
-* We fixed an issue where version logs events were not recorded in Firebase for Android.
+* We fixed a CocoaPods installation issue that was caused by xcodeproj object version 70.
+* We fixed an issue where version log events were not recorded in Firebase for Android.
 * We fixed an issue which occurred when building apps in Xcode 26.4 and above.
 
 ## Android 11.9.0 / iOS 11.9.0
@@ -25,7 +25,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes 
 
-* We fixed an issue where Debug builds crashed with a `SIGABRT` error on Xcode 26 when passing data through F14 hash maps under the New Architecture.
+* We fixed an issue where debug builds crashed with a `SIGABRT` error on Xcode 26 when passing data through F14 hash maps under the new architecture.
 
 ## Android 11.8.0 / iOS 11.8.0
 
