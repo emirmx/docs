@@ -34,9 +34,11 @@ App size impacts IDE performance. Choose a development strategy that aligns with
 
 When designing page and microflow URLs, prefer clear path segments over compact patterns:
 
-* Use `/` to divide the URL into meaningful parts
-* Prefer putting a parameter in its own segment, for example, `product/{Product/Name}` instead of `product-{Product/Name}`
+* Use `/` to divide the URL into meaningful segments
+* Put a parameter in its own segment, for example, `product/{Product/Name}` instead of `product-{Product/Name}`
+* Do not start the URL with a parameter. Use a static segment first, for example, `user/{User/Id}` instead of `{User/Id}`
 * Use static segments to make the structure explicit, for example, `category/{Category/Code}/product/{Product/Name}`
+* Use `-` to separate words within a static segment, for example, `orders/request-return-label`
 
 This makes URLs easier to read, easier to maintain, and less likely to conflict with other URLs.
 
@@ -44,9 +46,9 @@ URL conflicts are checked per path segment. Two URLs are considered conflicting 
 
 Common conflict cases include the following:
 
-* Two parameters in the same position, such as `product/{Product/Name}` and `product/{Product/Code}`
-* A static segment that can also be matched by a parameter, such as `product/{Product/Name}` and `product/sale`
-* A numeric static segment that overlaps with an `Id` parameter, such as `order/{Order/Id}` and `order/123`
+* Two parameters in the same position, such as `product/{Product/Name}` and `product/{Product/Code}`. Resolve this by adding distinct static segments, for example, `product/name/{Product/Name}` and `product/code/{Product/Code}`.
+* A static segment that can also be matched by a parameter, such as `product/{Product/Name}` and `product/sale`. Resolve this by making the parameter route more explicit, for example, `product/name/{Product/Name}` and `product/sale`.
+* A numeric static segment that overlaps with an `Id` parameter, such as `order/{Order/Id}` and `order/123`. Resolve this by using a different static pattern, for example, `order/{Order/Id}` and `order-123`.
 * Mixed segments where neither the static prefix nor the static suffix makes the segment unique, such as `product-{Product/Name}-details` and `product-sale-details`
 
 If either the prefix or the suffix is unique, the segments do not conflict.
