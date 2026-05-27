@@ -32,29 +32,7 @@ To configure a Snowflake-managed MCP server, follow these steps:
 
 1. In Snowflake, set up the database and schemas which will be used by the server.
 
-    The following is a code sample including test data:
-      
-    ```sql
-    -- You can run this example under the Sysadmin role. For real production screnarios, use proper authorisation.
-    CREATE DATABASE IF NOT EXISTS SNOWFLAKE_MCP_DEMO;
-    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TOOLS;
-    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.MCPSERVERS;
-    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TESTDATA;
-      
-    CREATE OR REPLACE TABLE SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (
-    TICKETID NUMBER AUTOINCREMENT START 1 INCREMENT 1,
-    PRIORITY VARCHAR(10),
-    TEXT VARCHAR(500)
-    );
-      
-    INSERT INTO SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (PRIORITY, TEXT)
-    VALUES
-       ('High', 'Server is down in production environment'),
-       ('Medium', 'User unable to reset password'),
-       ('Low', 'Request for additional monitor'),
-       ('High', 'Database connection timeout on checkout page'),
-       ('Medium', 'Email notifications not being sent');    
-    ```
+    For a code sample with test data, see [Database and Schema Setup](#code-db-schema)
     
 2. Create the stored procedures which the MCP server will expose as tools.
       
@@ -371,6 +349,40 @@ To configure a Snowflake-managed MCP server, follow these steps:
            COMMENT = 'PAT for MCP demo';
          ```
       </details>
+
+### Sample Code
+
+In this section, you can find sample code to help you configure a Snowflake-managed MCP server.
+
+{{% alert color="info" %}}
+The scripts are intended to show the range of available deployment options. They are presented as examples only, and may require significant adaptation to work in your own environment.
+{{% /alert %}}
+
+#### Database and Schema Setup {#code-db-schema}
+
+The following is a code sample including test data:
+      
+```sql
+-- You can run this example under the Sysadmin role. For real production screnarios, use proper authorisation.
+CREATE DATABASE IF NOT EXISTS SNOWFLAKE_MCP_DEMO;
+CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TOOLS;
+CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.MCPSERVERS;
+CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TESTDATA;
+
+CREATE OR REPLACE TABLE SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (
+TICKETID NUMBER AUTOINCREMENT START 1 INCREMENT 1,
+PRIORITY VARCHAR(10),
+TEXT VARCHAR(500)
+);
+      
+INSERT INTO SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (PRIORITY, TEXT)
+VALUES
+   ('High', 'Server is down in production environment'),
+   ('Medium', 'User unable to reset password'),
+   ('Low', 'Request for additional monitor'),
+   ('High', 'Database connection timeout on checkout page'),
+   ('Medium', 'Email notifications not being sent');    
+```
 
 ## Connecting a Mendix Agent to the MCP Server
 
