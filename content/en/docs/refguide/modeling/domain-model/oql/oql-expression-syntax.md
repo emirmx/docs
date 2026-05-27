@@ -1335,7 +1335,7 @@ This query can no longer take advantage of an index for `LastName` for compariso
 
 #### Description
 
-Pads a string on the left side with a specified character to reach a target length.
+Pads a string on the left side with a specified character to reach a target length. If no character is specified for padding, the space character is used.
 
 {{% alert color="info" %}}
 This function was introduced in Mendix version 11.12.0.
@@ -1574,7 +1574,7 @@ SELECT ROUND((Price : 7), 2) as RoundedPrice, Price : 7 FROM Sales.Order
 
 #### Description
 
-Pads a string on the right side with a specified character to reach a target length.
+Pads a string on the right side with a specified character to reach a target length. If no character is specified for padding, the space character is used.
 
 {{% alert color="info" %}}
 This function was introduced in Mendix version 11.12.0.
