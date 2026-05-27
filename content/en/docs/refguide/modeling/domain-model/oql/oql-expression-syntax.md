@@ -1371,7 +1371,9 @@ SELECT LPAD('hello', 10) AS padded FROM Sales.Order
 
 | padded     |
 |:-----------|
-|      hello |
+| ·····hello |
+
+Where `·` represents the space character.
 
 
 ```sql
@@ -1381,6 +1383,14 @@ SELECT LPAD('hello', 10, 'x') AS padded FROM Sales.Order
 | padded     |
 |:-----------|
 | xxxxxhello |
+
+```sql
+SELECT LPAD('hello', 10, 'abc') AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+| abcabhello |
 
 ### Ranges in Datasets
 
@@ -1600,8 +1610,9 @@ SELECT RPAD('hello', 10) AS padded FROM Sales.Order
 
 | padded     |
 |:-----------|
-| hello      |
+| hello····· |
 
+Where `·` represents the space character.
 
 ```sql
 SELECT RPAD('hello', 10, 'x') AS padded FROM Sales.Order
@@ -1610,6 +1621,14 @@ SELECT RPAD('hello', 10, 'x') AS padded FROM Sales.Order
 | padded     |
 |:-----------|
 | helloxxxxx |
+
+```sql
+SELECT RPAD('hello', 10, 'abc') AS padded FROM Sales.Order
+```
+
+| padded     |
+|:-----------|
+| helloabcab |
 
 ### SUBSTRING{#substring-function}
 
