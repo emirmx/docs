@@ -1,5 +1,5 @@
 ---
-title: "Portable App Distribution for Cloud Foundry"
+title: "Portable App Distribution on Cloud Foundry"
 url: /developerportal/deploy/cloud-foundry-pad/
 weight: 20
 description: "Describes how to deploy to a Cloud Foundry environment by using Portable App Distribution."
