@@ -23,7 +23,7 @@ To establish a connection between a Mendix AI Agent and a Snowflake-managed MCP 
 
 Alternatively, to start from scratch or to add the capability to an exsiting application, you must also install the following modules and their prerequisites:
 
-* [MCP Client](https://marketplace.mendix.com/link/component/244893) (version 3.1.0 or higher)
+* [MCP Client](https://marketplace.mendix.com/link/component/244893) (version 3.1.0 or newer)
 * [Conversational UI](https://marketplace.mendix.com/link/component/239450)
 
 ## Preparing a Snowflake-Managed MCP Server
@@ -32,117 +32,15 @@ To configure a Snowflake-managed MCP server, follow these steps:
 
 1. In Snowflake, set up the database and schemas which will be used by the server.
 
-    For a code sample with test data, see [Database and Schema Setup](#code-db-schema)
+    For a code sample, see [Database and Schema Setup](#code-db-schema)
     
 2. Create the stored procedures which the MCP server will expose as tools.
       
-   
+    For code samples, see the following:
 
-
-      <summary>Expand for example code for a generic stored procdure for retrieving records</summary>
-      
-      ```sql
-      -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
-      CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.RETRIEVE_RECORDS(
-          fully_qualified_table VARCHAR,
-          filter_column VARCHAR,
-          filter_value VARCHAR
-      )
-      RETURNS VARCHAR
-      LANGUAGE PYTHON
-      RUNTIME_VERSION = '3.11'
-      PACKAGES = ('snowflake-snowpark-python')
-      HANDLER = 'run'
-      AS
-      $$
-      import json
-      def run(session, fully_qualified_table, filter_column, filter_value):
-          parts = fully_qualified_table.split('.')
-          if len(parts) != 3:
-              return json.dumps({"status": "error", "message": "Table must be fully qualified: DATABASE.SCHEMA.TABLE"})
-          try:
-              if filter_column and filter_value:
-                  escaped = filter_value.replace("'", "''")
-                  sql = f"SELECT * FROM {fully_qualified_table} WHERE {filter_column} = '{escaped}'"
-              else:
-                  sql = f"SELECT * FROM {fully_qualified_table}"
-              rows = session.sql(sql).collect()
-              results = [row.as_dict() for row in rows]
-              for r in results:
-                  for k, v in r.items():
-                      if not isinstance(v, (str, int, float, bool, type(None))):
-                          r[k] = str(v)
-              return json.dumps({"status": "success", "row_count": len(results), "data": results})
-          except Exception as e:
-              return json.dumps({"status": "error", "message": str(e)})
-      $$;
-      ```
-   </details>
-   <details>
-      <summary>Expand for example code for a generic stored procdure for inserting records</summary>
-      
-      ```sql
-      -- inputs can be for example:
-      -- fully_qualified_table = 'SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS'
-      -- column_values: '{"PRIORITY": "Low", "TEKST": "text here"}'
-      
-      -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
-      CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.INSERT_RECORD(
-          fully_qualified_table VARCHAR,
-          column_values VARCHAR
-      )
-      RETURNS VARCHAR
-      LANGUAGE PYTHON
-      RUNTIME_VERSION = '3.11'
-      PACKAGES = ('snowflake-snowpark-python')
-      HANDLER = 'run'
-      AS
-      $$
-      import json
-      def run(session, fully_qualified_table, column_values):
-          parts = fully_qualified_table.split('.')
-          if len(parts) != 3:
-              return json.dumps({"status": "error", "message": "Table must be fully qualified: DATABASE.SCHEMA.TABLE"})
-          db, schema, table = parts
-          cols_rows = session.sql(f"""
-              SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
-              FROM {db}.INFORMATION_SCHEMA.COLUMNS
-              WHERE TABLE_SCHEMA = '{schema}' AND TABLE_NAME = '{table}'
-              ORDER BY ORDINAL_POSITION
-          """).collect()
-          if not cols_rows:
-              return json.dumps({"status": "error", "message": f"Table {fully_qualified_table} not found or has no columns"})
-          schema_info = {row["COLUMN_NAME"]: row["DATA_TYPE"] for row in cols_rows}
-          try:
-              values = json.loads(column_values)
-          except json.JSONDecodeError as e:
-              return json.dumps({"status": "error", "message": f"Invalid JSON in column_values: {str(e)}", "expected_columns": list(schema_info.keys())})
-          for col_name in values:
-              if col_name not in schema_info:
-                  return json.dumps({"status": "error", "message": f"Column '{col_name}' does not exist in {fully_qualified_table}", "valid_columns": list(schema_info.keys())})
-          col_names = list(values.keys())
-          val_parts = []
-          for col in col_names:
-              val = values[col]
-              if val is None:
-                  val_parts.append("NULL")
-              elif isinstance(val, (int, float)):
-                  val_parts.append(str(val))
-              else:
-                  escaped = str(val).replace("'", "''")
-                  val_parts.append(f"'{escaped}'")
-          col_list = ", ".join(col_names)
-          val_list = ", ".join(val_parts)
-          sql = f"INSERT INTO {fully_qualified_table} ({col_list}) VALUES ({val_list})"
-          try:
-              session.sql(sql).collect()
-              return json.dumps({"status": "success", "message": f"Record inserted into {fully_qualified_table}", "columns_inserted": col_names})
-          except Exception as e:
-              return json.dumps({"status": "error", "message": str(e)})
-      $$;
-      ```
-   </details>
-    
+    * [Procedure to Return Metadata](#code-metadata)
+    * [Procedure to Retrieve Records](#code-records)
+    * [Procedure to Insert Records](#code-records-insert)
 
 3. Create the Snowflake MCP server exposing the stored procedures as tools. 
    For more information, see [Create an MCP Server object](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp#create-an-mcp-server-object) in Snowflake documentation.
@@ -387,6 +285,114 @@ def run(session, db_name, schema_name):
         return tables
     $$;
 ```
+
+#### Procedure to Retrieve Records {#code-records}
+
+The following is an example of a generic stored procedure which retrieves records:
+      
+```sql
+-- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
+CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.RETRIEVE_RECORDS(
+    fully_qualified_table VARCHAR,
+    filter_column VARCHAR,
+    filter_value VARCHAR
+)
+RETURNS VARCHAR
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.11'
+PACKAGES = ('snowflake-snowpark-python')
+HANDLER = 'run'
+AS
+    $$
+    import json
+        def run(session, fully_qualified_table, filter_column, filter_value):
+            parts = fully_qualified_table.split('.')
+            if len(parts) != 3:
+                return json.dumps({"status": "error", "message": "Table must be fully qualified: DATABASE.SCHEMA.TABLE"})
+            try:
+                if filter_column and filter_value:
+                    escaped = filter_value.replace("'", "''")
+                    sql = f"SELECT * FROM {fully_qualified_table} WHERE {filter_column} = '{escaped}'"
+                else:
+                    sql = f"SELECT * FROM {fully_qualified_table}"
+            rows = session.sql(sql).collect()
+            results = [row.as_dict() for row in rows]
+                for r in results:
+                    for k, v in r.items():
+                        if not isinstance(v, (str, int, float, bool, type(None))):
+                            r[k] = str(v)
+                return json.dumps({"status": "success", "row_count": len(results), "data": results})
+          except Exception as e:
+              return json.dumps({"status": "error", "message": str(e)})
+$$;
+```
+
+#### Procedure to Insert Records {#code-records-insert}
+
+   <details>
+      <summary>Expand for example code for a generic stored procedure for inserting records</summary>
+      
+      ```sql
+      -- inputs can be for example:
+      -- fully_qualified_table = 'SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS'
+      -- column_values: '{"PRIORITY": "Low", "TEKST": "text here"}'
+      
+      -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
+      CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.INSERT_RECORD(
+          fully_qualified_table VARCHAR,
+          column_values VARCHAR
+      )
+      RETURNS VARCHAR
+      LANGUAGE PYTHON
+      RUNTIME_VERSION = '3.11'
+      PACKAGES = ('snowflake-snowpark-python')
+      HANDLER = 'run'
+      AS
+      $$
+      import json
+      def run(session, fully_qualified_table, column_values):
+          parts = fully_qualified_table.split('.')
+          if len(parts) != 3:
+              return json.dumps({"status": "error", "message": "Table must be fully qualified: DATABASE.SCHEMA.TABLE"})
+          db, schema, table = parts
+          cols_rows = session.sql(f"""
+              SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
+              FROM {db}.INFORMATION_SCHEMA.COLUMNS
+              WHERE TABLE_SCHEMA = '{schema}' AND TABLE_NAME = '{table}'
+              ORDER BY ORDINAL_POSITION
+          """).collect()
+          if not cols_rows:
+              return json.dumps({"status": "error", "message": f"Table {fully_qualified_table} not found or has no columns"})
+          schema_info = {row["COLUMN_NAME"]: row["DATA_TYPE"] for row in cols_rows}
+          try:
+              values = json.loads(column_values)
+          except json.JSONDecodeError as e:
+              return json.dumps({"status": "error", "message": f"Invalid JSON in column_values: {str(e)}", "expected_columns": list(schema_info.keys())})
+          for col_name in values:
+              if col_name not in schema_info:
+                  return json.dumps({"status": "error", "message": f"Column '{col_name}' does not exist in {fully_qualified_table}", "valid_columns": list(schema_info.keys())})
+          col_names = list(values.keys())
+          val_parts = []
+          for col in col_names:
+              val = values[col]
+              if val is None:
+                  val_parts.append("NULL")
+              elif isinstance(val, (int, float)):
+                  val_parts.append(str(val))
+              else:
+                  escaped = str(val).replace("'", "''")
+                  val_parts.append(f"'{escaped}'")
+          col_list = ", ".join(col_names)
+          val_list = ", ".join(val_parts)
+          sql = f"INSERT INTO {fully_qualified_table} ({col_list}) VALUES ({val_list})"
+          try:
+              session.sql(sql).collect()
+              return json.dumps({"status": "success", "message": f"Record inserted into {fully_qualified_table}", "columns_inserted": col_names})
+          except Exception as e:
+              return json.dumps({"status": "error", "message": str(e)})
+      $$;
+      ```
+   </details>
 
 ## Connecting a Mendix Agent to the MCP Server
 
