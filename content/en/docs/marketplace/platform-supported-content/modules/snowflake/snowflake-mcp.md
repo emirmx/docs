@@ -15,15 +15,13 @@ The Model Context Protocol (MCP) is an open protocol that standardizes how Large
 ### Typical Use Cases
 
 * A chat interface where the user can retrieve and modify data in Snowflake Cloud by requesting in natural language.
-* Reusing existing functionality of stored procedures in Snowflake Cloud by task oriented AI agents.
+* Reusing existing functionality of stored procedures in Snowflake Cloud by task-oriented AI agents.
 
 ### Prerequisites {#prerequisites}
 
-[Any specific versions of Studio Pro? Other prereqs?]
-
 To establish a connection between a Mendix AI Agent and a Snowflake-managed MCP server, you can either start with the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) or [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369), but make sure to update the [MCP Client](https://marketplace.mendix.com/link/component/244893) module to version 3.1.0 (or higher) when its version is lower.
 
-Or when you want to start from scratch or you want add to an exsiting application, you must also install the following modules and their prerequisites:
+Alternatively, to start from scratch or to add the capability to an exsiting application, you must also install the following modules and their prerequisites:
 
 * [MCP Client](https://marketplace.mendix.com/link/component/244893) (version 3.1.0 or higher)
 * [Conversational UI](https://marketplace.mendix.com/link/component/239450)
@@ -32,7 +30,7 @@ Or when you want to start from scratch or you want add to an exsiting applicatio
 
 To configure a Snowflake-managed MCP server, follow these steps: 
 
-1. In Snowflake, set up the database and schema's which will be used by the server.
+1. In Snowflake, set up the database and schemas which will be used by the server.
    <details>
       <summary>Expand for example code including some testdata</summary>
       
