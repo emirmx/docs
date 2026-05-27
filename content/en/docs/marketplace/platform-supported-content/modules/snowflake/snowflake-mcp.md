@@ -31,52 +31,50 @@ Alternatively, to start from scratch or to add the capability to an exsiting app
 To configure a Snowflake-managed MCP server, follow these steps: 
 
 1. In Snowflake, set up the database and schemas which will be used by the server.
-   <details>
-      <summary>Expand for example code including some testdata</summary>
+
+    The following is a code sample including test data:
       
-      ```sql
-      -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
-      CREATE DATABASE IF NOT EXISTS SNOWFLAKE_MCP_DEMO;
-      CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TOOLS;
-      CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.MCPSERVERS;
-      CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TESTDATA;
+    ```sql
+    -- You can run this example under the Sysadmin role. For real production screnarios, use proper authorisation.
+    CREATE DATABASE IF NOT EXISTS SNOWFLAKE_MCP_DEMO;
+    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TOOLS;
+    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.MCPSERVERS;
+    CREATE SCHEMA   IF NOT EXISTS   SNOWFLAKE_MCP_DEMO.TESTDATA;
       
-      CREATE OR REPLACE TABLE SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (
-       TICKETID NUMBER AUTOINCREMENT START 1 INCREMENT 1,
-       PRIORITY VARCHAR(10),
-       TEXT VARCHAR(500)
-      );
+    CREATE OR REPLACE TABLE SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (
+    TICKETID NUMBER AUTOINCREMENT START 1 INCREMENT 1,
+    PRIORITY VARCHAR(10),
+    TEXT VARCHAR(500)
+    );
       
-      INSERT INTO SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (PRIORITY, TEXT)
-      VALUES
+    INSERT INTO SNOWFLAKE_MCP_DEMO.TESTDATA.TICKETS (PRIORITY, TEXT)
+    VALUES
        ('High', 'Server is down in production environment'),
        ('Medium', 'User unable to reset password'),
        ('Low', 'Request for additional monitor'),
        ('High', 'Database connection timeout on checkout page'),
        ('Medium', 'Email notifications not being sent');    
-      ```
-   </details>
+    ```
     
-
 2. Create the stored procedures which the MCP server will expose as tools.
-   <details>
-      <summary>Expand for example code for a generic stored procdure returning meta data</summary>
       
-      ```sql
-      -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
-      CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.GET_SCHEMA_METADATA(
+    The following is an example of a generic stored procdure which returns metadata:
+      
+    ```sql
+    -- You can run this example/demo under sysadmin role, for real production screnario's use proper authorisation
+    CREATE OR REPLACE PROCEDURE SNOWFLAKE_MCP_DEMO.TOOLS.GET_SCHEMA_METADATA(
           db_name VARCHAR,
           schema_name VARCHAR
-      )
-      RETURNS VARIANT
-      LANGUAGE PYTHON
-      RUNTIME_VERSION = '3.11'
-      PACKAGES = ('snowflake-snowpark-python')
-      HANDLER = 'run'
-      AS
-      $$
-      import json
-      def run(session, db_name, schema_name):
+    )
+    RETURNS VARIANT
+    LANGUAGE PYTHON
+    RUNTIME_VERSION = '3.11'
+    PACKAGES = ('snowflake-snowpark-python')
+    HANDLER = 'run'
+    AS
+    $$
+    import json
+    def run(session, db_name, schema_name):
           rows = session.sql(f"""
               SELECT
                   c.TABLE_CATALOG,
@@ -127,9 +125,9 @@ To configure a Snowflake-managed MCP server, follow these steps:
               })
           return tables
       $$;
-      ```
-   </details>   
-   <details>
+    ```
+
+
       <summary>Expand for example code for a generic stored procdure for retrieving records</summary>
       
       ```sql
