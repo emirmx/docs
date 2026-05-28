@@ -46,7 +46,7 @@ User identification strategies can vary across application portfolios, particula
 
 4. Integrating with existing application logic: If your current applications use varying `system.user.name` values or different provisioning methods, you can implement `UserCommons.namedUserIdentifier.value` without altering existing logic. Continue using your existing application logic for `system.user.name` if necessary, but additionally implement logic to populate `UserCommons.namedUserIdentifier.value` with your chosen consistent cross-app identifier (for example, email address or `oid` claim). This ensures the metering mechanism has a reliable, consistent identifier to use. If your applications are already consistently storing the same identifier for a multi-app user in `system.user.name`, you do not have to use the `UserCommons.namedUserIdentifier.value`.
 
-For more information on user types and definitions, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps/#user-types-and-definitions) section of *Licensing Apps*.
+For more information on user types and definitions, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions) section of *Licensing Apps*.
 
 ## User Classification
 

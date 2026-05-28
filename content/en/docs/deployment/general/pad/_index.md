@@ -27,9 +27,9 @@ Portable App Distribution offers the following benefits:
 
 ## Licensing
 
-You can test Portable App Distribution on a [Free App](/developerportal/deploy/mendix-cloud-deploy/#free-app). For more information about Free Apps and their limitations, as well as licensing apps outside of the Mendix Cloud, see [Licensing Apps](/developerportal/deploy/licensing-apps/).
+You can test Portable App Distribution on a [Free App](/developerportal/deploy/mendix-cloud-deploy/#free-app). For more information about Free Apps and their limitations, as well as licensing apps outside of the Mendix Cloud, see [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
 
-To license a Mendix app on the Portable App Distribution, add it to your configuration. For more information, see [Obtaining a Mendix License](/developerportal/deploy/licensing-apps/#get-license).
+To license a Mendix app on the Portable App Distribution, add it to your configuration. For more information, see [Obtaining a Mendix License](/developerportal/deploy/licensing-apps-outside-mxcloud/#get-license).
 
 ## Prerequisites
 

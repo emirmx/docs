@@ -19,7 +19,7 @@ Mendix subscriptions include user-based pricing plans. With user-based pricing, 
 * Single-App Internal User
 * External User
 
-For more information, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps/#user-types-and-definitions) section of *Licensing apps*.
+For more information, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions) section of *Licensing apps*.
 
 ### Key Features
 
@@ -97,4 +97,4 @@ These users are licensed under the Multi-App Internal User Subscription, and no 
 
 ## Read More
 
-* [Licensing Apps](/developerportal/deploy/licensing-apps/)
+* [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/)

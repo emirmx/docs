@@ -14,7 +14,7 @@ However, several topics relate to multiple platforms. These topics are covered i
 
 The subjects covered in this documentation section are as follows:
 
-* [Licensing Apps](/developerportal/deploy/licensing-apps/)
+* [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/)
 * [Secure Outgoing Connections from your Application](/developerportal/deploy/securing-outgoing-connections-from-your-application/)
 * [Two-Factor Authentication](/developerportal/deploy/two-factor-authentication/)
 * [Version Downgrade Protection](/developerportal/deploy/version-downgrade-prevention/)

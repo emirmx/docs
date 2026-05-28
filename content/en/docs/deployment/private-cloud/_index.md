@@ -137,7 +137,7 @@ You can run the Mendix Operator in trial mode for evaluation purposes. When the 
 
 ### Runtime License
 
-A runtime license per environment is required. In addition to that, the Operator license is independent of a Mendix Runtime license. The Mendix Runtime license removes [trial restrictions](/developerportal/deploy/licensing-apps/) from a Mendix App itself. You need both types of licenses to manage and run an application through Mendix on Kubernetes.
+A runtime license per environment is required. In addition to that, the Operator license is independent of a Mendix Runtime license. The Mendix Runtime license removes [trial restrictions](/developerportal/deploy/licensing-apps-outside-mxcloud/) from a Mendix App itself. You need both types of licenses to manage and run an application through Mendix on Kubernetes.
 
 You can request a Runtime license by doing the following:
 
