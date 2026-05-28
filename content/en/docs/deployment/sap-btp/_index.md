@@ -181,7 +181,7 @@ There are two ways of getting a package ready to deploy to SAP.
 At any time, you can create a new deployment package from a committed version of the project. If you are working with Mendix Studio Pro, you will first have to commit the project.
 
 {{% alert color="info" %}}
-You can also deploy your app (the steps in sections 4 and 5.1 of this How-To) automatically from Studio Pro. However, you will then have less control over the deployment.
+You can also deploy your app automatically from Studio Pro. However, you have less control over the deployment.
 
 If you click **Run** or **Publish** in Studio Pro, this will automatically do the following:
 
@@ -194,44 +194,29 @@ If you click **Run** or **Publish** in Studio Pro, this will automatically do th
 You will still have to deploy your app in [Apps](https://sprintr.home.mendix.com/) the very first time to ensure that all the services are bound correctly.
 {{% /alert %}}
 
-1. Open the app in [Apps](https://sprintr.home.mendix.com/).
-2. Go to the **Environments** page.
+1. Open the app in [Apps](https://sprintr.home.mendix.com/). In the **Environments** page, select **Deployment Packages** tab. It shows the list of built packages. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/environments-page.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/deployment-packages.png">}}
 
-3. Click **Create package from Team Server** to start the wizard.
+2. Click **Create a Package** and select the **Branch** on the Team server which you want to use.
 
-4. Select the branch on the Team server which you want to use.
+3. Select the **Revision** of the branch you want to build and go **Next**.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/03-sap-select-branch.png" class="no-border" >}}
+4. Add a **New version** number and **Tag description** as required. The revision number will be added to the version number automatically.
 
-5. Select the revision of the branch you want to build.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/04-sap-select-revision.png" class="no-border" >}}
-
-6. Add a version number and Tag description as required. The revision number will be added to the version number automatically.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/05-sap-define-tag.png" class="no-border" >}}
-
-7. Click **Build this revision** to build the package.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/06-sap-build-revision.png" class="no-border" >}}
-
-When the package is ready to be deployed, a green tick will be shown next to the deployment package. To deploy your package, follow the instructions in the [Deploy Package](#DeployPackage) section, below.
+5. Click **Build this revision** to build the package.
 
 ### Uploading an MDA
 
-Alternatively, you can upload an MDA which has already been created from the app model, for example using [Create Deployment Package](/refguide/create-deployment-package-dialog/) from the App menu in Studio Pro.
+Alternatively, you can upload an MDA which has already been created from the app model, for example, using [Create Deployment Package](/refguide/create-deployment-package-dialog/) from the App menu in Studio Pro.
 
-1. Click **Upload** in the **Deployment Package Repository**.
+1. Click **Upload a Package** in the **Deployment Packages** tab.
 
 2. Select the package accessible to your local machine.
 
 3. Click **Upload** to upload the MDA.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/upload-mda.png" alt="Upload button and dialog for uploading MDAs" class="no-border" >}}
-
-The package will be added to the list of packages in the **Deployment Package Repository**. To deploy your package, follow the instructions in the [Deploy Package](#DeployPackage) section, below.
+The package will be added to the list of packages in the **Deployment Packages**. To deploy your package, follow the instructions in the [Deploy Package](#DeployPackage) section below.
 
 {{% alert color="info" %}}
 There is a limit of 200 MB on the size of the MDA file you can upload to the Mendix Portal for SAP BTP deployment.
@@ -245,19 +230,15 @@ SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc10
 
 ### Deploying to an Environment
 
-1. A green tick indicates that the build has finished. Click **Deploy** to deploy the package to SAP BTP.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/sap-revision-built.png" class="no-border" >}}
+1. A green tick indicates that the build has finished. Click deploy icon to deploy the package to SAP BTP.
 
 2. Change the deployment environment if required.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/sap-transport.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport.png">}}
 
-3. The **Timeout** value indicates how long (in seconds) Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value using the **Change timeout** option.
+3. The **Timeout (seconds)** value indicates how long Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/sap-change-timeout.png"   width="60%"  class="no-border" >}}
-
-4. Click **Transport** to deploy the package to the SAP environment. This will replace any current app deployed to this environment. If the app is already running, you will be asked to stop it so that your new app can be deployed.
+4. Click **Transport** to deploy the package to the SAP environment. This will replace any current app deployed to this environment. If the app is already running, you need to stop it so that your new app can be deployed.
 
 ### Configuring the Application {#ConfigureTheApplication}
 
@@ -269,7 +250,7 @@ SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc10
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-constants.png" class="no-border" >}}
 
-3. Toggle any scheduled events in the Scheduled Events tab: select the scheduled event you want to enable or disable and click **Toggle**.
+3. Toggle any scheduled events in the Scheduled Events tab. select the scheduled event you want to enable or disable and click **Toggle**.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-events.png" class="no-border" >}}
 
@@ -295,7 +276,7 @@ SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc10
 
 If you want to remove a service instance from your environment, you can do it is follows:
 
-1. Click the three-dot menu for the service and select **Unbind Service** or **Delete Service**.
+1. Click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/unbind-service.png" class="no-border" >}}
 
@@ -310,11 +291,11 @@ If you want to remove a service instance from your environment, you can do it is
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-environments.png" class="no-border" >}}
 
-2. Change the deployment environment if required by clicking **Change environment**.
+2. Change the deployment **Environment** if required. 
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-from-to.png" class="no-border" >}}
 
-3. The **Timeout** value indicates how long (in seconds) Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value using the **Change timeout** option.
+3. The **Timeout (seconds)** value indicates how long Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/sap-change-timeout.png"   width="60%"  class="no-border" >}}
 
@@ -351,7 +332,7 @@ Most of this page shows information about the app, but there are several options
 
 If the application is running, click **Stop Application** and confirm when asked to stop the application.
 
-The button will change to **Start Application** which you can click to (re)start the application.
+The button will change to **Start Application** which you can click to start or restart the application.
 
 {{% alert color="info" %}}
 You may need to use this option to stop and start your app after changing one of the settings on this page.
