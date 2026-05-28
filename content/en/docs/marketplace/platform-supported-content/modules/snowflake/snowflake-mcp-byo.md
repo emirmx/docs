@@ -50,7 +50,7 @@ Because Snowflake conforms to the API specification of OpenAI, you can use the O
 
     1. Hover over the **three dots** icon and select **Manage deployed models** from the pop-up menu.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-byok/managed-deployed-models.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-byok/manage-deployed-models.png" >}}
 
     2. Click **Add new model** to add an LLM from the list of available LLMs in your Snowflake account.
 
