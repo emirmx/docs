@@ -250,7 +250,7 @@ You can configure the widget for certain actions in your app. All the configurat
 
     * **MendixSSO**:
 
-    {{% alert color="info" %}}The Mendix SSO module is deprecated as of May 1, 2026. **Custom Authentication** is the recommended approach going forward. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](appstore/modules/ldap/) modules for authentication integration.{{% /alert %}}
+    {{% alert color="info" %}}The Mendix SSO module is deprecated as of May 1, 2026. **Custom Authentication** is the recommended approach going forward. You may alternatively use [OIDC SSO](/appstore/modules/oidc/), [SAML](/appstore/modules/saml/), or [LDAP](/appstore/modules/ldap/) modules for authentication integration.{{% /alert %}}
     
     If Mendix SSO is applied and the following settings are configured correctly, the end-user can leave feedback without having to enter their name and mail address.
       * **ID token microflow** – recommended that you select the **DS_GetCurrentIdToken** microflow from the Mendix SSO module.
