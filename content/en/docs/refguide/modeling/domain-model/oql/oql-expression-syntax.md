@@ -1350,10 +1350,13 @@ LPAD ( expression , length_expression [, pad_expression ] )
 #### expression
 
 `expression` specifies the expression of type `string` to pad.
+This function returns `NULL` if `expression` is `NULL`.
+The behavior for the empty string is database specific.
 
 #### length_expression
 
-`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`
+`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`.
+This function returns `NULL` if `length_expression` is `NULL`.
 
 {{% alert color="info" %}}
 If `length_expression` is smaller than the length of `expression`, this function truncates it. This behavior is database specific.
@@ -1362,6 +1365,7 @@ If `length_expression` is smaller than the length of `expression`, this function
 #### pad_expression
 
 `pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
+If `pad_expression` is `NULL` or the empty string, the behavior is database specific.
 
 #### Examples
 
@@ -1589,10 +1593,13 @@ RPAD ( expression , length_expression [, pad_expression ] )
 #### expression
 
 `expression` specifies the expression of type `string` to pad.
+This function returns `NULL` if `expression` is `NULL`.
+The behavior for the empty string is database specific.
 
 #### length_expression
 
-`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`
+`length_expression` specifies the length of the resulting string. The expression must be of type `integer` or `long`.
+This function returns `NULL` if `length_expression` is `NULL`.
 
 {{% alert color="info" %}}
 If `length_expression` is smaller than the length of `expression`, this function truncates it.
@@ -1601,6 +1608,7 @@ If `length_expression` is smaller than the length of `expression`, this function
 #### pad_expression
 
 `pad_expression` is an optional parameter that specifies the character or string to pad with. If not specified, the space character is used.
+If `pad_expression` is `NULL` or the empty string, the behavior is database specific.
 
 #### Examples
 
