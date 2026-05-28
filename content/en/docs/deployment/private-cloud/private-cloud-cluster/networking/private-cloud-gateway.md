@@ -11,7 +11,7 @@ weight: 20
 Gateway API is the successor to the Ingress API. Gateway API splits configuration across different roles:
 
 * _cluster operators_ manage **Gateway** resources, configuring central rules and policies such as TLS and IP filtering;
-* _application developers_ manage **HTTPRoute** resources, specifying confuguration relevant for a specific destination, such as a Mendix app environment.
+* _application developers_ manage **HTTPRoute** resources, specifying configuration relevant for a specific destination, such as a Mendix app environment.
 
 {{% alert color="info" %}}
 Gateway API is supported by Mendix Operator version 2.27.0 and newer.

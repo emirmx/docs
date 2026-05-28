@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added an option to load client certificates from Kubernetes secrets created on the cluster side.
 * We have added an option to specify default `nodeSelectors` for pods created and managed by the Operator.
 * We have added an option to specify default labels for pods created and managed by the Operator.
-* We have addressed and issue where enabling OpenTelemetry auto-instrumentation would show a "processing" spinner on the Runtime status.
+* We have addressed an issue where enabling OpenTelemetry auto-instrumentation would show a "processing" spinner on the Runtime status.
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 * We have updated the list of supported platforms to include Kubernetes 1.36.
 
