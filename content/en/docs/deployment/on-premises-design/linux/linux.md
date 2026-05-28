@@ -30,5 +30,5 @@ To activate your license key, follow these steps:
 
 1. Open the interactive m2ee console.
 2. Use the command `show_license_information` to display a generated server ID.
-3. Use the server ID to obtain a license key from Mendix (see [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/) for information on requesting a license key).
+3. Use the server ID to obtain a license key from Mendix (see [Licensing Apps](/developerportal/deploy/licensing-apps/) for information on requesting a license key).
 4. Activate your license on the server using the `activate_license` m2ee command.

@@ -32,7 +32,7 @@ The following roles are required for the user to be able to configure the SAP En
 
 This connector is available as a free download from the Mendix Marketplace, but the SAP service to which is connects may incur a usage cost. For more information, refer to SAP documentation.
 
-Depending on your use case, your deployment environment, and the type of app that you want to build, you may also need a license for your Mendix app. For more information, refer to [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
+Depending on your use case, your deployment environment, and the type of app that you want to build, you may also need a license for your Mendix app. For more information, refer to [Licensing Apps](/developerportal/deploy/licensing-apps/).
 
 ## Installation
 

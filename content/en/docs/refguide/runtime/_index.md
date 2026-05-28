@@ -78,7 +78,7 @@ Every Mendix app needs static content to be served in order to load the Mendix c
 
 ## Licensing
 
-You need a license to run an application in production mode. Without a license, the Runtime Server goes to sleep after a couple of hours. Information on licensing Mendix apps can be found in [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
+You need a license to run an application in production mode. Without a license, the Runtime Server goes to sleep after a couple of hours. Information on licensing Mendix apps can be found in [Licensing Apps](/developerportal/deploy/licensing-apps/).
 
 ## APIs
 

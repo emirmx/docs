@@ -110,4 +110,4 @@ To prevent any disruptions to your Mendix services and avoid data loss, follow t
 
 ## Read More
 
-* [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/)
+* [Licensing Apps](/developerportal/deploy/licensing-apps/)

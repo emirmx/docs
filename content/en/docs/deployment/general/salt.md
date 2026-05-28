@@ -9,7 +9,7 @@ aliases:
 ---
 
 {{% alert color="info" %}}
-SALT-based licenses are issued only to selected customers. If you received an email explicitly referencing a SALT license and directing you to this page, follow this guide. Otherwise, refer to the [guide for non-SALT Mendix licenses](/developerportal/deploy/licensing-apps-outside-mxcloud/).
+SALT-based licenses are issued only to selected customers. If you received an email explicitly referencing a SALT license and directing you to this page, follow this guide. Otherwise, refer to the [guide for non-SALT Mendix licenses](/developerportal/deploy/licensing-apps/).
 {{% /alert %}}
 
 ## Introduction

@@ -39,7 +39,7 @@ Mendix differentiates between these types of users:
 * External user – A user who is not an employee or a contractor of the customer or of the affiliated company or group.    
   The associated licensing model is **External User Subscription**.
 
-For details on user types, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps-outside-mxcloud/#user-types-and-definitions) section of *Licensing Apps*.
+For details on user types, refer to the [User Types and Definitions](/developerportal/deploy/licensing-apps/#user-types-and-definitions) section of *Licensing Apps*.
 
 ## Overview Tab
 
