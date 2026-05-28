@@ -16,7 +16,7 @@ Each walkthrough focuses on a specific use case you may encounter when working w
 The [Data Transformer document](/refguide/data-transformers/) feature is in beta. 
 {{% /alert %}}
 
-## Filtering Out Unused Fields
+## Filtering Out Unused Fields {#filtering-out-unused-fields}
 
 It is common for an API to return payloads that contain more fields than your app or a downstream system needs. Rather than passing the entire payload along, this transformation selects only the fields that are relevant, effectively dropping everything else. This keeps the output clean, reduces payload size, and avoids exposing unnecessary data.
 
@@ -62,7 +62,7 @@ In JSLT, the output object is always constructed explicitly. Only the fields you
 
 For more information about constructing JSLT queries, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors). 
 
-## Simplifying Nested Structures
+## Simplifying Nested Structures {#simplifying-nested-structures}
 
 Sometimes a JSON structure contains nested sub-objects that group related fields together, but you just need a simpler, flat representation. This transformation moves fields from nested sub-objects up to the top level, merging them into a single flat object.
 
@@ -124,7 +124,7 @@ The transformation is straightforward. Each field in the output is explicitly ma
 For more information about dot accessors, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#dot-accessors).
 
 
-## Normalizing Objects to Arrays
+## Normalizing Objects to Arrays {#normalizing-objects-to-arrays}
 
 Some APIs return collections of records as a keyed object, where each key acts as a unique identifier for that record (also known as dynamic keys). Mendix works more naturally with lists of objects, so this transformation converts that keyed structure into a flat, normalized array that can be directly mapped to a Mendix entity list.
 
@@ -201,7 +201,7 @@ So for (`.data`) iterates over each entry, exposing `.key` (for example, `"Tag1"
 
 For more information on expressions and constructing lists in JSLT, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#for-expressions).
 
-## Zipping Metadata with Data
+## Zipping Metadata with Data {#zipping-metadata-with-data}
 
 Some APIs return data and its metadata separately. The metadata describes the structure (for example, column names), while the data is returned as raw arrays. This is the case with Snowflake SQL REST APIs. To make the data meaningful and easy to consume, combine the two so that each value is associated with its corresponding column name.
 
@@ -292,7 +292,7 @@ For more information about declaring variables, see this [GitHub resource](https
 
 For more information about zip and other functions, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/functions.md#ziparray1-array2---array).
 
-## Flattening Bill of Materials (BOM)
+## Flattening Bill of Materials (BOM) {#flattening-bill-of-materials}
 
 A Bill of Materials (BOM) is naturally represented as a tree structure, where each assembly can contain child sub-assemblies, which can themselves contain further children. Flattening such a structure into a simple list is sometimes needed when feeding data into downstream systems that expect a flat, tabular format. This transformation also simplifies the import mapping process of the BOM to Mendix entities.
 
@@ -407,7 +407,7 @@ The root of the transformation starts this by calling `flatten-assemblies` on `r
 
 For more information about declaring functions in JSLT, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/tutorial.md#function-declarations).
 
-## Extracting Information from a String
+## Extracting Information from a String {#extracting-information-from-a-string}
 
 Sometimes multiple pieces of information are encoded within a single structured string, such as a file path, an identifier, or a URL, and you need to extract a specific piece of that information for use downstream or in your own app. JSLT string functions allow you to extract each component into its own dedicated field. This makes the data easier to consume, filter, and process without placing any additional burden on the downstream step. 
 
@@ -457,7 +457,7 @@ Each segment is then accessed by its index: `[0]` for the first element, `[1]` f
 
 For more information about useful built-in functions, see this [GitHub resource](https://github.com/schibsted/jslt/blob/master/functions.md#jslt-functions).
 
-## Working with SPARQL Query Results
+## Working with SPARQL Query Results {#working-with-sparql-query-results}
 
 SPARQL is a query language for RDF data, commonly used with knowledge graphs and semantic web APIs. Its query results follow a standard JSON format where the column names (called variables) are declared separately in a head block, and the actual result rows are returned as bindings, a list of objects where each key maps to a typed value wrapper rather than a plain value. This structure is precise and interoperable, but verbose. Transforming it into a simple flat list of objects makes it far easier to work with in import mappings.
 
