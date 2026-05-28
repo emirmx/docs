@@ -13,6 +13,7 @@ A workflow is composed of elements that you can drag on a path from the **Toolbo
 * [User tasks](#user-tasks)
 * [Events](#events)
 * [System actions](#system)
+* [Sub-processes](#sub-processes)
 
 ## Workflow Parameters {#parameters}
 
@@ -69,3 +70,11 @@ The elements of this category are described in the table below:
 | ----------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------ |
 | {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/call-microflow.png" alt="Call Microflow" class="no-border" >}} | [Call microflow](/refguide/call-microflow/) | Calls a selected microflow. |
 | {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/call-workflow.png" alt="Call Workflow" class="no-border" >}} | [Call workflow](/refguide/call-workflow/) | Calls a selected workflow. |
+
+## Sub-processes {#sub-processes}
+
+The elements of this category are described in the table below:
+
+| Graphic                                                                                                                                                           | Element                                       | Description                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------| ----------------------------------------------------------- |
+| {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/event-sub-process.png" alt="Event Sub-process" class="no-border" >}} | [Event Sub-Process](/refguide/workflow-event-sub-processes/) | Allows you to define a separate execution flow inside a workflow that is triggered by a specific event and can run independently from the main process flow. |
