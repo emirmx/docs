@@ -52,7 +52,7 @@ Because Snowflake conforms to the API specification of OpenAI, you can use the O
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-byok/manage-deployed-models.png" >}}
 
-    2. Click **Add new model** to add an LLM from the list of available LLMs in your Snowflake account.
+    2. Click **Add new model** to add an LLM from the [list of available LLMs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-rest-api#model-availability) in your Snowflake account.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-byok/new-deployed-model.png" >}}
 
