@@ -118,7 +118,7 @@ You can use Data Transformer documents for the following use cases:
 
 * [Filter out unused fields](/refguide/data-transformer-use-cases/#filtering-out-unused-fields)
 * [Simplify nested structures](/refguide/data-transformer-use-cases/#simplifying-nested-structures)
-* [Normalize objects to arrays (working with dynamic keys)](/refguide/refguide/data-transformer-use-cases/#normalizing-objects-to-arrays)
+* [Normalize objects to arrays (working with dynamic keys)](/refguide/data-transformer-use-cases/#normalizing-objects-to-arrays)
 * [Zip metadata with data](/refguide/data-transformer-use-cases/#zipping-metadata-with-data)
 * [Flatten bill of materials (BOM)](/refguide/data-transformer-use-cases/#flattening-bill-of-materials)
 * [Extract information from a string](/refguide/data-transformer-use-cases/#extracting-information-from-a-string)
