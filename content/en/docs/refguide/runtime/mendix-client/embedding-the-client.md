@@ -87,15 +87,13 @@ The host only needs to provide a real DOM node.
 The embedded bundle exposes a `render(...)` function. A minimal framework-agnostic integration looks like this:
 
 ```js
-const DEFAULT_REMOTE_URL = "https://your-mendix-runtime.example.com";
+const REMOTE_URL = "https://your-mendix-runtime.example.com/";
 
 export async function mountEmbeddedMendix(container) {
-    const remoteUrl = window.__MENDIX_REMOTE_URL__ ?? DEFAULT_REMOTE_URL;
-
-    const embeddedModule = await import(`${remoteUrl}/dist/embedded-index.js`);
+    const embeddedModule = await import(`${REMOTE_URL}dist/embedded-index.js`);
 
     return embeddedModule.render(container, {
-        remoteUrl: `${remoteUrl}/`,
+        remoteUrl: REMOTE_URL,
         minHeight: "620px",
         parameters: {
             customerId: "12345"
