@@ -152,23 +152,6 @@ This setting defines the default response to the question whether to automatical
 
 ### General
 
-#### Executable
-
-This is the path and name of the program that is used to view the details of file changes in the [commit dialog box](/refguide/commit-dialog/).
-
-For example, this is how to set up file comparison for Visual Studio Code: 
-
-```text
-{path to VS Code}/Code.exe --wait --diff "{0}" "{1}"
-```
-
-#### Argument Pattern
-
-This is the pattern from which the arguments are derived that are passed to the file comparison program. The following two placeholders can be used in this pattern:
-
-* `{0}` – this is replaced with the name of the original file before the arguments are passed to the file comparison program
-* `{1}` – this is replaced with the name of the changed file before the arguments are passed to the file comparison program
-
 #### History {#history-pane}
 
 Select this option to use the blocking **History** dialog instead of the non-blocking, searchable History pane.

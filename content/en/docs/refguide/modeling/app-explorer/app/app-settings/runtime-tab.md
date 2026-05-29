@@ -22,7 +22,9 @@ The available configuration options are as follows:
 ### App bundler {#app-bundler}
 
 {{% alert type="info" %}}
-This setting was introduced in [Mendix 11.9.0](/releasenotes/studio-pro/11.9/). It is only available for applications using React client.
+This setting is only for applications using [Mendix React Client](/refguide/mendix-client/react/).
+
+This setting was introduced in [Mendix 11.9.0](/releasenotes/studio-pro/11.9/). It is also available in Mendix 11.6 MTS, patch release 11.6.7 and above.
 {{% /alert %}} 
 
 The available options are listed below:
