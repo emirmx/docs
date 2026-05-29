@@ -43,13 +43,11 @@ For details on user types, refer to the [User Types and Definitions](/developerp
 
 ## Overview Tab
 
-The **Overview** tab displays end-user entitlements, and named user details. It also allows you to assign Internal single-app user subscriptions.
+The **Overview** tab displays end-user entitlements, and [named user](https://www.mendix.com/legal/platform-usage/order-form-definitions/#named-user) details. It also allows you to assign Internal single-app user subscriptions.
 
 ### User Entitlements – Active Today
 
 The cards in this section display end-user subscription entitlements, grouped by user type, and valid as of the current date. Each card also includes the expiration date of that subscription.
-
-The information is refreshed in real time.
 
 ### Named User Consumption
 
@@ -60,13 +58,13 @@ This section includes a list of apps and their corresponding number of named use
 * **Environment Name** – The name of the production environment to which the app is deployed.
 * **Env ID** – The unique ID of the environment to which the app is deployed.
 * **Deployment Type** – The target platform to which the app is deployed.
-* **Usage Extracted On** – The date and time when usage information was recorded.
-* **Named Users** – The number of named users who hold a subscription for the app.
+* **Usage Extracted On** – The date and time when usage information was last recorded.
+* **Named Users** – The number of named users as seen in the app.
 * **Actions** – This option is only relevant for single-app internal user subscriptions, and it allows you to assign such a subscription to the app. For details, refer to [Assigning Single-App Internal User Subscriptions](#assign-subscriptions). 
 
 ### Assigning Single-App Internal User Subscriptions {#assign-subscriptions}
 
-If you have single-app internal user subscriptions in your account, you must assign them to apps deployed to production. Follow these steps to do that:
+If you have single-app internal user subscriptions in your account, you must assign them to an app environment deployed to production. Follow these steps to do that:
 
 1. In the **Named Users** list, identify the app to which you want to assign a single-app internal user subscription, and click **Assign** at the end of its row.
 2. In the **Assign Internal Single-App User Subscription** dialog box, select a subscription from the **Select Single-App User Subscription** list.
