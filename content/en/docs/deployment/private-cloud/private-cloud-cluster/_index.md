@@ -822,13 +822,11 @@ Alternatively, for Standalone clusters, pod labels can be specified in the `Mend
 The Mendix Operator uses some labels for internal use. To avoid conflicts with these internal pod labels, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
 {{% /alert %}}
 
-### Pod annotations {#pod-annotations}
+### Pod Annotations (General) {#pod-annotations}
 
-#### General Pod Annotations
+Mendix Operator version 2.27.0 or above allows you to specify default pod annotations for task pods (build and storage provisioners) and runtime (app) pods.
 
-Mendix Operator version 2.27.0 or above allows you to specify default pod annotations for app-related pods: task pods (build and storage provisioners) and runtime (app) pods.
-
-To specify default pod annotations for a namespace, specify them in `customPodAnnotations.general` in `OperatorConfiguration`:
+To specify the default pod annotations for a namespace, specify them in `customPodAnnotations.general` in `OperatorConfiguration`:
 
 ```yaml
 apiVersion: privatecloud.mendix.com/v1alpha1
@@ -844,19 +842,17 @@ spec:
       kubernetes.azure.com/set-kube-service-host-fqdn: "true"
 ```
 
-Alternatively, for Standalone clusters, pod annotations can be specified in the `MendixApp` CR for a specific app.
+Alternatively, for Standalone clusters, pod annotations for an app can be specified in the `MendixApp` CR.
 
 {{% alert color="warning" %}}
 The Mendix Operator uses some annotations for internal use. To avoid conflicts with these internal pod annotations, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
 {{% /alert %}}
 
-### Node selector {#node-selector}
+### Node Selector (General) {#node-selector}
 
-#### General Node Selector
+Mendix Operator version 2.27.0 or above allows you to specify the default `nodeSelector` for task pods (build and storage provisioners) and runtime (app) pods.
 
-Mendix Operator version 2.27.0 or above allows you to specify default `nodeSelector` for app-related pods: task pods (build and storage provisioners) and runtime (app) pods.
-
-To specify default pod `nodeSelector` configuration for a namespace, specify them in `customPodNodeSelector.general` in `OperatorConfiguration`:
+To configure the default pod `nodeSelector` for a namespace, specify them in `customPodNodeSelector.general` in `OperatorConfiguration`:
 
 ```yaml
 apiVersion: privatecloud.mendix.com/v1alpha1
