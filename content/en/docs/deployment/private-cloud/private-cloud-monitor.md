@@ -55,7 +55,7 @@ Each mode requires a separate dashboard.
 {{% alert color="warning" %}}
 Mendix Operator v2.27.0 removed support for `compatibility` metrics.
 
-If you're planning to upgrade to Mendix Operator v2.27.0 (or a later version), switch environments to `native` mode, and update your dashboards accordingly.
+If you are planning to upgrade to Mendix Operator v2.27.0 (or a later version), switch environments to `native` mode, and update your dashboards accordingly.
 {{% /alert %}}
 
 ## Installing Monitoring Tools{#install-grafana-loki}
