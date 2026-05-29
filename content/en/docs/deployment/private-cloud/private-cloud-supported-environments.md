@@ -422,36 +422,35 @@ Starting from Mendix Operator v1.11.0, Mendix app environments can use a [Linker
 
 Starting from Mendix Operator v2.27.0, the [Gateway API](https://gateway-api.sigs.k8s.io/) is supported.
 
-For each environment, the Mendix Operator will create and manage an [HTTPRoute](https://gateway-api.sigs.k8s.io/reference/api-types/httproute/) resource.
+For each environment, the Mendix Operator creates and manages an [HTTPRoute](https://gateway-api.sigs.k8s.io/reference/api-types/httproute/) resource.
 
-Mendix Operator only uses API features that are defined in the official Gateway API [v1.4 standard](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/), and doesn't rely on any other features.
-Any implementation complint with the Gateway API v1.4 spec should be compatible with HTTPRoute objects created and managed by the Mendix Operator.
+Mendix Operator only uses API features that are defined in the official Gateway API [v1.4 standard](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/), and does not rely on any other features.
+
+Any implementation compliant with the Gateway API v1.4 spec should be compatible with HTTPRoute objects created and managed by the Mendix Operator.
+
 For more information, refer to the documentation of your Gateway API implementation, or check the status on the [Gateway API Implementations list](https://gateway-api.sigs.k8s.io/docs/implementations/list/).
+
+#### Using the Gateway API
 
 When using the Gateway API, it is possible to do the following:
 
-* Enable TLS (use the `https://` schema in app URLs)
-* Add service annotations
-* Speficy the HTTPRoute [parentRefs](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/#httproutespec), to specify which Gateway to use
-* Provide a domain name (for example, mendix.example.com)
-* Configure request and response [HTTPHeaderFilters](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/#httpheaderfilter)
+* Enable TLS (use the `https://` schema in app URLs).
+* Add service annotations.
+* Specify the HTTPRoute [parentRefs](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/#httproutespec), to specify which Gateway to use.
+* Provide a domain name (for example, `mendix.example.com`).
+* Configure request and response [HTTPHeaderFilters](https://gateway-api.sigs.k8s.io/reference/api-spec/1.4/spec/#httpheaderfilter).
 
-For each environment, the URL will be automatically generated based on the domain name.
-For example, if the domain name is set to mendix.example.com, then apps will have URLs such as myapp1-dev.mendix.example.com, myapp1-prod.mendix.example.com and so on.
+For each environment, the URL is automatically generated based on the domain name. For example, if the domain name is set to `mendix.example.com`, the apps will have URLs such as `myapp1-dev.mendix.example.com`, `myapp1-prod.mendix.example.com`, and so on.
 
 The DNS server should be configured to route all subdomains (the `*` subdomain, for example, `*.mendix.example.com`) to the ingress/load balancer.
 
 {{% alert color="warning" %}}
-HTTPRoute resources don't provide any APIs to manage or set TLS configuration.
-In the Gateway API resource model, TLS certificates are managed by the _cluster operator_ persona, usually via the Gateway resource.
-
-This is intentional, allowing Cluster Operators to manage security policies and settings from a central location.
+HTTPRoute resources do not provide any APIs to manage or set TLS configuration. In the Gateway API resource model, TLS certificates are managed by the *cluster operator* persona, usually through the Gateway resource. This is allows Cluster Operators to manage security policies and settings from a central location.
 {{% /alert %}}
 
 ### Service Only
 
-Mendix on Kubernetes can create Services without an Ingress.
-In this way, the Ingress objects can be managed separately from Mendix on Kubernetes.
+Mendix on Kubernetes can create Services without an Ingress. In this way, the Ingress objects can be managed separately from Mendix on Kubernetes.
 
 Mendix on Kubernetes can create Services that are compatible with:
 
