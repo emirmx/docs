@@ -216,7 +216,7 @@ If an app's MDA was built using a newer Java version, Mendix Operator 2.15.0 (an
 
 ### Endpoint (network) Configuration {#advanced-network-settings}
 
-Documentation how to use advanced network configuration settings has moved into the [Network Ingress Settings section](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/).
+For information on using advanced network configuration settings, see [Network Ingress Settings section](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/).
 
 {{% alert color="info" %}}
 When switching between Ingress and OpenShift Routes, you need to [restart the Mendix Operator](#restart-after-changing-network-cr) for the changes to be fully applied.
