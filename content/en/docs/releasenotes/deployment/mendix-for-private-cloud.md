@@ -12,7 +12,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
-### June ???, 2026
+### June 1, 2026
 
 #### Mendix Operator v2.27.0 {#2.27.0}
 
@@ -20,13 +20,13 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added an option to load client certificates from Kubernetes secrets created on the cluster side.
 * We have added an option to specify default `nodeSelectors` for pods created and managed by the Operator.
 * We have added an option to specify default labels for pods created and managed by the Operator.
-* We have addressed an issue where enabling OpenTelemetry auto-instrumentation would show a "processing" spinner on the Runtime status.
-* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* We have addressed an issue where enabling OpenTelemetry auto-instrumentation would show a **processing** spinner on the Runtime status.
+* We have updated the components to use the latest dependency versions in order to improve security score ratings for container images.
 * We have updated the list of supported platforms to include Kubernetes 1.36.
 
 #### Deprecations
 
-* We removed support for the **compatibility** Prometheus metrics mode. Any environments still using **compatibility** metrics should be switched into **native** metrics mode.
+* We have removed support for the **compatibility** Prometheus metrics mode. Any environments still using **compatibility** metrics should be switched into **native** metrics mode.
 
 ### May 21, 2026
 
