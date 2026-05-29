@@ -67,7 +67,7 @@ After you confirm the change:
 * The sub-process is re-created with a start event of the specified type, along with all the event sub-process activities. The new start event can be triggered after the workflow is redeployed and is in progress.
 * The workflow becomes incompatible if the changed event sub-process is already being executed in one of the ongoing workflow instances.
 
-The event sub-process is re-created upon type switch because in-place conversion can result in states that contradict BPMN 2.0 concepts. According to BPMN, an interrupting event sub-process cancels the parent process scope and all other active sub-processes when triggered, while a non-interrupting one runs in parallel without affecting them. These are mutually exclusive execution models: an event sub-process instance belongs to exactly one of them from the moment it starts. Changing the type in place for an already-active instance would leave it in a state that is neither valid interrupting nor valid non-interrupting behavior, violating the fundamental BPMN distinction between the two.
+The event sub-process is re-created upon type switch because in-place conversion can result in invalid states. An interrupting event sub-process cancels the parent process scope and all other active sub-processes when triggered, while a non-interrupting one runs in parallel without affecting them. These are mutually exclusive execution models: an event sub-process instance belongs to exactly one of them from the moment it starts. Changing the type in place for an already-active instance would leave it in a state that is neither valid interrupting nor valid non-interrupting behavior.
 
 #### Concurrency Limitation
 

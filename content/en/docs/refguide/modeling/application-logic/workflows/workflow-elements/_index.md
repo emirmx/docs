@@ -56,9 +56,10 @@ The elements of this category are described in the table below:
 
 The elements of this category are described in the table below:
 
-| Graphic                                                     | Element                           | Description                                                  |
-| ----------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------ |
-{{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/timer.png" width="50px" alt="timer activity" class="no-border" >}} | [Timer](/refguide/timer/)             | Allows you to configure a certain duration or a specific date and time in a workflow. It can be used as a standalone activity on a workflow path or as a [Boundary Event](/refguide/workflow-boundary-events/) attached to another workflow activity.|
+| Graphic                                                     | Element                           | Description                                                                                                                                                                                                                                        |
+| ----------------------------------------------------------- | --------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/timer.png" width="50px" alt="timer activity" class="no-border" >}} | [Timer](/refguide/timer/)             | Allows you to configure a certain duration or a specific date and time in a workflow. It can be used as a standalone event on a workflow path or as a [Boundary Event](/refguide/workflow-boundary-events/) attached to another workflow activity. |
+| {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/notification.png" width="50px" alt="notification event" class="no-border" >}} | [Notification](/refguide/notification/)             | Allows you to suspend a workflow path until the workflow is notified. It can be used as a standalone event on a workflow path or as a [Boundary Event](/refguide/workflow-boundary-events/) attached to another workflow activity.                 |
 
 ## System Actions {#system}
 
