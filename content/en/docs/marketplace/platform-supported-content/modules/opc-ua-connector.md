@@ -144,7 +144,7 @@ If the `MessageSecurityMode` attribute of the `ServerConfiguration` object is se
 * The `ClientCertificate` must be an X509 formatted PEM file.
 * The `ClientCertificatePrivateKey` must be an encrypted PKCS8 or PKCS1 formatted PEM file.
 
-The `CONST_ApplicationURI` constant is used to check against the client certificate. Therefore make sure these match.
+The `CONST_ApplicationURI` constant is used to check against the client certificate. Make sure that their values match.
 
 ### Trusting the Server Certificate {#server-certificate}
 
