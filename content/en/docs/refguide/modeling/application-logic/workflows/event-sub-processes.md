@@ -127,8 +127,8 @@ Event sub-processes have specific restrictions regarding [Jump activity](/refgui
 
 * Between processes: It is not possible to jump into a sub-process from the main process (or vice versa), nor between different sub-processes.
 * Within a sub-process: Jumps within the same sub-process are permitted.
-    * **Jump to Start Event**: Aborts the current sub-process instance and returns it to a waiting state.
-    * **Jump to End Event**: Completes the sub-process instance immediately.
+    * **Jump to Start Event**: Aborts the current sub-process instance and returns it to a waiting state. If no other activities are in progress in the workflow instance after the jump, the workflow is aborted.
+    * **Jump to End Event**: Completes the sub-process instance immediately. If no other activities are in progress in the workflow instance after the jump to the sub-process end event, the workflow is completed.
 
 ## Domain Model Structure
 
