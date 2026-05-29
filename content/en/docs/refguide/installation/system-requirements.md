@@ -126,17 +126,6 @@ For more information on ports and modifying Studio Pro's default ports, see [Con
 
 For information on how to ensure the smooth operation of Mendix AI Assistance (Maia), see the [Network Configuration Requirements](/refguide/mendix-ai-assistance/#maia-network-requirement) section in *Mendix AI Assistance (Maia)*.
 
-### File Comparison
-
-{{% alert color="info" %}}
-Comparing files on disk with the original is currently not supported on macOS.
-{{% /alert %}}
-
-By default, Studio Pro points to an executable shipped with TortoiseGit for file comparison. To customize this, navigate to **Preferences** > **Version control** > **General** > **File comparison** > **Executable** and choose your preferred tool. 
-
-The default path for the binary when installing Studio Pro on a new device is `C:\Program Files\TortoiseGit\bin\TortoiseGitMerge.exe`.
-
-You can download the latest version of TortoiseGitMerge from the [TortoiseGit](https://tortoisegit.org/download/) website. 
 
 ### File Locations
 
