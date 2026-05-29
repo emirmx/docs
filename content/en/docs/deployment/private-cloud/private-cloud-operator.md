@@ -250,7 +250,7 @@ You must make the following changes:
     * `leaderless` - A mode where the nodes dynamically choose a leader. This feature is in preview mode. It requires Mendix Runtime 10.24 or newer, and Mendix Operator 2.23 or newer.
 * **customPodLabels** - Specify additional pod labels. Avoid using labels that start with the `privatecloud.mendix.com/` prefix.
     * **general** - Specify additional labels for all pods of the app.
-* **customPodNodeSelector** - Specify pod `nodeSelector` configuration.
+* **customPodNodeSelector** - Specify the pod `nodeSelector` configuration.
     * **general** - Specify `nodeSelector` configuration for all pods of the app.
 * **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the [reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/#deployment-strategy-in-standalone) documentation.
 * **podDisruptionBudget** - Specify parameters for the pod disruption budget. For more information, see the [reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/#pod-disruption-budget-in-standalone) documentation.
@@ -309,37 +309,38 @@ spec:
 
 The **MyScheduledEvents** value should be removed from **customConfiguration** if **ScheduledEventExecution** is set to `ALL` or `NONE`.
 
-#### Loading client certificates from a Kubernetes secret{#client-cert-from-k8s-secret}
+#### Loading Client Certificates from a Kubernetes Secret {#client-cert-from-k8s-secret}
 
 Instead of providing a client certificate directly in the MendixApp CR, Mendix Operator 2.27.0 (and newer versions) can load the client certificate from an existing Kubernetes secret.
 
-First, create a Kubernetes secret with the following contents:
+1. Create a Kubernetes secret with the following contents:
 
-```yaml
-kind: Secret
-apiVersion: v1
-metadata:
-  # Specify the secret name
-  name: example-api-secret
-  annotations:
-    # Specify that this secret is safe to use as a Mendix app environment client cert
-    privatecloud.mendix.com/environment-client-cert: 'true'
-stringData:
-  # base64-encoded PKCS12 certificate
-  key: Q0VSVElGSUNBVEU=
-  # base64-encoded password for the certificate, cannot be empty
-  password: Q2hhbmdlLW1lNDI=
-  # Optional, list of web services or domain names where this certificate should be used
-  pinTo: "www.example.com,service.www.example.com"
-```
+    ```yaml
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      # Specify the secret name
+      name: example-api-secret
+      annotations:
+        # Specify that this secret is safe to use as a Mendix app environment client cert
+        privatecloud.mendix.com/environment-client-cert: 'true'
+    stringData:
+      # base64-encoded PKCS12 certificate
+      key: Q0VSVElGSUNBVEU=
+      # base64-encoded password for the certificate, cannot be empty
+      password: Q2hhbmdlLW1lNDI=
+      # Optional, list of web services or domain names where this certificate should be used
+      pinTo: "www.example.com,service.www.example.com"
+    ```
 
-To allow an application to use the secret, it needs a `privatecloud.mendix.com/environment-client-cert: true` annotation. For security reasons, any secret referenced by a MendixApp CR but without this annotation cannot be attached to environments.
+2. To allow an application to use the secret, ensure that it has the `privatecloud.mendix.com/environment-client-cert: true` annotation. For security reasons, any secret referenced by a MendixApp CR but without this annotation cannot be attached to environments.
 
 {{% alert color="info" %}}
 This example provides contents of a Kubernetes secret as a `stringData`, and Kubernetes will base64-encode the contents again when viewing the secret contents.
+
 If you read the secret and see `data` instead of `stringData`, the values of the `key` and `password` fields will be base64-encoded twice.
 
-This is done on purpose: to ensure a binary PKCS12 file can be safely stored and edited as a plaintext string.
+This ensures that a binary PKCS12 file can be safely stored and edited as a plaintext string.
 {{% /alert %}}
 
 
@@ -356,6 +357,7 @@ spec:
 ```
 
 The **MyScheduledEvents** value should be removed from **customConfiguration** if **ScheduledEventExecution** is set to `ALL` or `NONE`.
+
 ### Building and Deploying Your App
 
 You now need to supply the CR you have just created to the platform so that the Mendix Operator can use it to build and deploy the app.
