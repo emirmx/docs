@@ -532,7 +532,7 @@ After enabling multi-domain support, configure the `AllowedHosts` constant to sp
 The `AllowedHosts` constant accepts a comma-separated or space-separated list of hostnames in the following formats:
 
 * Exact match – `example.com` allows only that specific domain
-* Subdomain wildcard – `.example.com` allows any subdomain of example.com
+* Subdomain wildcard – `.example.com` allows any subdomain of `example.com`
 * Full wildcard – `*` allows any domain
 
 ## User Provisioning (End-User Onboarding)
