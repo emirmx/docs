@@ -88,5 +88,4 @@ The Gateway API standardized typical use cases, and the Mendix Operator only use
 
 * Some application load balancer firewall rules can block file uploads or other Mendix app features.
 * Linkerd does not work correctly with AWS Application Load Balancer and Azure Gateway Ingress Controller.
-* Some Gateway API implementations don't fully implement the base v1.4 spec, or are experimental (unsupported)
-
+* Some Gateway API implementations do not fully implement the base v1.4 spec, or are experimental (unsupported).
