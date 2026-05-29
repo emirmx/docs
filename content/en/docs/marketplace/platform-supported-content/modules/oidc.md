@@ -249,7 +249,7 @@ If multiple IdPs are configured in the OIDC module, the following two mechanisms
 2. In this mechanism, your end users make the selection. Your app logic can use the same URL (`<your-app-url>/oauth/v2/login`) to initiate authentication. End users will first be redirected to an IdP selection page, where they can choose the IdP they want to use for authentication.
 
 {{% alert color="info" %}}
-In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users for multiple IdPs. From version 4.5.0, the `Anonymous` user role has been removed from the module and is no longer available.
+From version 4.5.0, the `Anonymous` user role has been removed from the module and is no longer available.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
