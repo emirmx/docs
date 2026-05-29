@@ -828,7 +828,7 @@ The [`action`](#action), [`attribute`](#attribute), [`association`](#association
 
 | Property type  | List data source client type | Object data source client type |
 |:---------------|:-----------------------------|:--------------------------------------|
-| `action`       | [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue) | [`ActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#action-value) |
+| `action`       | [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue) | [`ActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#actionvalue) |
 | `attribute`    | [`ListAttributeValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listattributevalue) | [`EditableValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-value) |
 | `association`  | [`ListReferenceValue` or `ListReferenceSetValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listassociationvalue) | `ReferenceValue` or `ReferenceSetValue` |
 | `expression`   | [`ListExpressionValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listexpressionvalue) | [`DynamicValue<T>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#dynamic-value) |
