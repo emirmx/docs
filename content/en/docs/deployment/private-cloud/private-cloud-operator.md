@@ -239,8 +239,10 @@ You must make the following changes:
 * **jettyOptions** and **customConfiguration** - If you have any custom Mendix Runtime parameters, you must add them to this section. Otions for the Mendix runtime must be provided in JSON format. See the examples in the CR for the correct format and the information below for more information on [setting app constants](#set-app-constants) and [configuring scheduled events](#configure-scheduled-events).
 * **environmentVariables** - Set the environment variables for the Mendix app container, and JVM arguments through the `JAVA_TOOL_OPTIONS` environment variable.
 * **clientCertificates** - Specify client certificates to be used for TLS calls to Web Services and REST services.
+   
    * When **key** and **password** are specified, will use the client TLS certificate specified directly in the **MendixApp** CR.
-   * When **certificateSecret** is specified without **key** and **password**, will load a client TLS certificate from the specified Kubernetes Secret. This feature requires Mendix Operator 2.27 or newer.
+   * When **certificateSecret** is specified without a **key** and **password**, will load a client TLS certificate from the specified Kubernetes Secret. This feature requires Mendix Operator 2.27 or newer.
+
 * **runtimeMetricsConfiguration** - Specify how metrics should be collected. Any non-empty values override the [default values](/developerportal/deploy/private-cloud-cluster/#customize-runtime-metrics) from `OperatorConfiguration`. Refer to [Monitoring Environments in Mendix on Kubernetes](/developerportal/deploy/private-cloud-monitor/) for details on how to monitor your environment.
 * **runtimeLeaderSelection** - Specify how the leader replica should be selected. The following options are available:
     * `assigned` (default mode) - The `master` deployment runs one leader replica, while the `worker` deployment runs all additional replicas.
