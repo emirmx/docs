@@ -205,6 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.x.x | - | Supporting multi-domain using constant. See [Configuring Multi-Domain](#multi-domain) for more information. |
 | 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to the `OIDC.Encryptionkey` constant. | Dependencies on the Encryption and Nanoflow Commons modules have been removed. <br> **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
 | 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path. |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
@@ -521,7 +522,7 @@ Example: `OIDC.Default_SAM_TokenProcessing_CustomATP`
 When the `IsClientGrantOnly` constant is set to *true*, the OIDC SSO module considers the configuration as Client Credential grant configuration.
 {{% /alert %}}
 
-## Configuring Multi-Domain
+## Configuring Multi-Domain {#multi-domain}
 
 The OIDC SSO module supports multi-domain, enabling flexible deployment in multi-app or shared domain environments. When you enable multi-domain support, the module resolves the application URL from request headers rather than relying solely on the ApplicationRootUrl, allowing users to access the application through their custom domains.
 
