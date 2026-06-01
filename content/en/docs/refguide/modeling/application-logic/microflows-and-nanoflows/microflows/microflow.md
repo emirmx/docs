@@ -52,7 +52,9 @@ In the **Edit Microflow URL** dialog box, the configured URL is shown together w
 URLs are not supported for microflows that have non-persistable entities or lists as parameters.
 {{%/alert %}}
 
-For recommendations on structuring URLs and avoiding conflicts, see [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls).
+{{% alert color="info" %}}
+Page and microflow URL patterns must be unambiguous. If two patterns could match the same URL, the runtime has no way to resolve which one to open. For recommendations on structuring URLs and resolving conflicts, see [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls).
+{{% /alert %}}
 
 ### Common Section {#common}
 
