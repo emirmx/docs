@@ -39,6 +39,7 @@ When designing page and microflow URLs, prefer clear path segments over compact 
 * Do not start the URL with a parameter. Use a static segment first, for example, `user/{User/Id}` instead of `{User/Id}`
 * Use static segments to make the structure explicit, for example, `category/{Category/Code}/product/{Product/Name}`
 * Use `-` to separate words within a static segment, for example, `orders/request-return-label`
+* Use a strong unique prefix to ensure uniqueness of the URL
 
 This makes URLs easier to read, easier to maintain, and less likely to conflict with other URLs.
 
