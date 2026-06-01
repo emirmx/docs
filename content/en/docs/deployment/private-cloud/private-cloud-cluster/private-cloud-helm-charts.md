@@ -78,7 +78,7 @@ To install the solution, perform the following steps:
 
 11. In the **Ingress** tab, specify your network ingress settings. For more information about the available options, see [Network Ingress Settings in Mendix on Kubernetes](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/).
 
-    With the new release of mx-ops-cli (2.27.0), its now possible to add Ingress Annotation in the Helm Chart UI.
+    With the new release of mx-ops-cli (2.27.0), it is now possible to add Ingress Annotation in the Helm Chart UI.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/helm-chart-wizard5.png" >}}
 
