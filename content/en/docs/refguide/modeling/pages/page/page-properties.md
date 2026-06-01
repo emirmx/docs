@@ -107,7 +107,7 @@ Mendix does not recommend configuring page URLs for pages that are displayed as 
 {{%/alert %}}
 
 {{% alert color="info" %}}
-Page and microflow URL patterns must be unambiguous. If two patterns could match the same URL, the runtime has no way to resolve which one to open. For recommendations on structuring URLs and resolving conflicts, see [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls).
+Page and microflow URL patterns must be unambiguous. If two patterns match the same URL, the Mendix Runtime cannot determine which page or microflow to open. For best practices on structuring URLs and resolving conflicts, see the [Page and Microflow URLs](/refguide/general-best-practices/#page-and-microflow-urls) section in *General Development Best Practices*.
 {{% /alert %}}
 
 ### Common Section {#common}

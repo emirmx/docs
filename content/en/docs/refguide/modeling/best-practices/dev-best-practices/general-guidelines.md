@@ -41,15 +41,15 @@ When designing page and microflow URLs, prefer clear path segments over compact 
 * Use `-` to separate words within a static segment, for example, `orders/request-return-label`
 * Use a strong unique prefix to ensure uniqueness of the URL
 
-This makes URLs easier to read, easier to maintain, and less likely to conflict with other URLs.
+Following these best practices makes URLs easier to read and maintain, and helps prevent conflict with other URLs.
 
 URL conflicts are checked per path segment. Two URLs are considered conflicting when they have the same number of segments and Studio Pro cannot tell, from the URL structure alone, which page or microflow should handle the request. A conflict can be full or partial.
 
-A full conflict means the patterns overlap for all matching values. In other words, every URL that matches one pattern also matches the other. For example, `product/{Product/Name}` and `product/{Product/Code}` always conflict because both patterns accept any value in the second segment, so Studio Pro cannot use the URL itself to tell them apart. This means there is no single possible URL that will not be conflicting. For example, `https://example.com/p/product/chair` matches both patterns.
+A full conflict means that the patterns overlap for all matching values. In other words, every URL that matches one pattern also matches the other. For example, `product/{Product/Name}` and `product/{Product/Code}` always conflict because both patterns accept any value in the second segment. Therefore, Studio Pro cannot use the URL itself to tell them apart. This means that there is no URL that does not conflict. For example, `https://example.com/p/product/chair` matches both patterns.
 
-A partial conflict means the patterns overlap only for specific values. Most URLs are still unique, but some URLs can match both patterns. For example, `product-{Name}` and `product-overview` only conflict for the URL `product-overview`, because `Name` can be `overview`. In that case, Studio Pro cannot tell whether `overview` is meant to be a fixed URL or a parameter value. For example, `https://example.com/p/product-overview` matches both patterns, while `https://example.com/p/product-chair` only matches `product-{Name}`.
+A partial conflict means that the patterns overlap only for specific values. Most URLs remain unique, but some can match both patterns. For example, `product-{Name}` and `product-overview` only conflict for the URL `product-overview`, because `Name` can be `overview`. In that case, Studio Pro cannot tell whether `overview` is meant to be a fixed URL or a parameter value. For example, `https://example.com/p/product-overview` matches both patterns, whereas `https://example.com/p/product-chair` only matches `product-{Name}`.
 
-When a request matches conflicting URL patterns, the runtime picks one pattern and tries to open it. Which pattern is chosen is undefined. This can lead to unexpected behavior or a not-found page. For example, `https://example.com/p/product-overview` matches both `product-{Name}` and `product-overview`. If the selected pattern does not resolve to valid values, the request can fail even though the other pattern would have worked.
+When a request matches conflicting URL patterns, the Mendix Runtime selects one of them to open. Which pattern is selected is undefined. This can lead to unexpected behavior or a not-found page. For example, `https://example.com/p/product-overview` matches both `product-{Name}` and `product-overview`. If the selected pattern does not resolve to valid values, the request can fail even though the other pattern would have worked.
 
 Common full conflict cases include the following:
 
