@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### June 4, 2026
+
+#### Portal Improvements
+
+* We have added a check to prevent setting compatibility mode for Operator version 2.27.0 and above.
+
 ### May 21, 2026
 
 #### License Manager CLI v0.10.10 {#0.10.10}

@@ -520,6 +520,10 @@ In this mode, all other `runtimeMetricsConfiguration` attributes are ignored.
 
 #### Enable Compatibility Metrics in Connected Mode
 
+{{% alert color="info" %}}
+Compatibility mode is only available for Operator versions below 2.27.0. If you attempt to set compatibility mode for Operator version 2.27.0 or above, an error message will be displayed.
+{{% /alert %}}
+
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
 2. Go to the **Environments** page.
 3. Click **Details** next to the environment where compatibility mode should be used.
@@ -541,6 +545,10 @@ In this mode, all other `runtimeMetricsConfiguration` attributes are ignored.
 7. Set **Mode** to **compatibility** and click **Save and Apply**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-monitor/environment-metrics-mode-compatibility.png" class="no-border" >}}
+
+    If your Operator version is 2.27.0 or above, you will see an error message indicating that compatibility mode cannot be set:
+
+    {{< figure src="/attachments/deployment/private-cloud/compatibility_mode_warning.png" alt="Error message when attempting to set compatibility mode for Operator 2.27.0 and above" >}}
 
 #### Enable Compatibility Metrics in Standalone Mode
 
