@@ -1,16 +1,16 @@
 ---
-title: "SC-28 System and Communications Protection - Protection of Information at Rest"
-linktitle: "SC-28"
-url: /private-mendix-platform/nist-controls/sc-28/
-description: "Documents the Private Mendix Platform's compliance with the SC-28 control of the NIST 800-53 framework."
+title: "SC-28 (01) System and Communications Protection - Protection of Information at Rest - Cryptographic Protection"
+linktitle: "SC-28 (01)"
+url: /private-mendix-platform/nist-controls/sc-2801/
+description: "Documents the Private Mendix Platform's compliance with the SC-28 (01) control of the NIST 800-53 framework."
 weight: 20
 ---
 
 ## Introduction
 
-This document describes how Private Mendix Platform fulfills the SC-28 control.
+This document describes how Private Mendix Platform fulfills the SC-28 (01) control.
 
-| Control ID | SC-28 |
+| Control ID | SC-28 (01) |
 | --- | --- |
 | Control category | SC - System and Communications Protection |
 | Requirement baseline | FEDRAMP MODERATE |
@@ -18,27 +18,16 @@ This document describes how Private Mendix Platform fulfills the SC-28 control.
 
 ## Control
 
-The information system protects the confidentiality and/or integrity of organization-defined information at rest.
+The information system implements cryptographic mechanisms to prevent unauthorized disclosure and modification of organization-defined information on organization-defined information system components.
 
 ### Supplemental Guidance
 
-This control addresses the confidentiality and integrity of information at rest and covers user information and system information. Information at rest refers to the state of information when it is located on storage devices as specific components of information systems. System-related information requiring protection includes, for example, configurations or rule sets for firewalls, gateways, intrusion detection or prevention systems, filtering routers, and authenticator content. Organizations may employ different mechanisms to achieve confidentiality and integrity protections, including the use of cryptographic mechanisms and file share scanning. Integrity protection can be achieved, for example, by implementing Write-Once-Read-Many (WORM) technologies. Organizations may also employ other security controls including, for example, secure off-line storage in lieu of online storage when adequate protection of information at rest cannot otherwise be achieved and/or continuous monitoring to identify malicious code at rest. 
+Selection of cryptographic mechanisms is based on the need to protect the confidentiality and integrity of organizational information. The strength of mechanism is commensurate with the security category and/or classification of the information. This control enhancement applies to significant concentrations of digital media in organizational areas designated for media storage and also to limited quantities of media generally associated with information system components in operational environments (for example, portable storage devices, mobile devices). Organizations have the flexibility to either encrypt all information on storage devices (that is, full disk encryption) or encrypt specific data structures (for example, files, records, or fields). Organizations employing cryptographic mechanisms to protect information at rest also consider cryptographic key management solutions.
 
 The following controls are related to this control:
 
-* AC-3
-* AC-6
-* CA-7
-* CM-3
-* CM-5
-* CM-6
-* PE-3
-* SC-8
-* SC-13
-* SI-3
-* SI-7
-
-For more information, refer to the NIST Special Publications 800-56, 800-57, and 800-111.
+* AC-19
+* SC-12
 
 ## Responsibility
 
