@@ -269,12 +269,12 @@ Follow the instructions to [set an encryption key in the Encryption module](/app
 While upgrading from V4.3.0 to V4.4.0 or above, ensure that any value currently stored in the `Encryption.Encryptionkey` is moved to the `OIDC.Encryptionkey` constant, otherwise, existing IdP client authentication will fail.  
 {{% /alert %}}
 
-## IdP Configuration {#idpconfiguration}
+## Configuring IdP{#idpconfiguration}
 
 To connect your App with your IdP, you need to configure both your IdP (as described in the [Configure your App at your IdP](#configure_app_idp) section below) and your Mendix application. For the Mendix application setup, you can choose between two methods:
 
-* [Deploytime configuration of your IdP at your App](#deploytime-idp-configuration)
 * [Runtime configuration of your IdP at your App](#runtime-idp-app)
+* [Deploytime configuration of your IdP at your App](#deploytime-idp-configuration)
 
 ### Configure Your App at Your IdP {#configure_app_idp}
 
@@ -306,10 +306,11 @@ For information about configuring Amazon Cognito for the OIDC SSO module, see [A
 
 ### Runtime Configuration of Your IdP at Your App {#runtime-idp-app}
 
-This section describes how you can configure your IdP in your Mendix app using the Admin UIs provided by the OIDC SSO module. These screens offer two tabs:
+This section describes how you can configure your IdP in your Mendix app using the Admin UIs provided by the OIDC SSO module. The **IdP Integration (OIDC)** screen offers three tabs:
 
 * **IdPs for SSO and API security**: Use this more extensive configuration screen if you are implementing SSO and optionally API security.
 * **IdPs for API security only**: Use this simpler configuration screen if you are configuring an IdP that is only used for API security (i.e., Client Credential grant). For more information, see the [API Security Configuration for Client Credential Grant](#client-credential-grant) section below.
+* **Maintenance**: Use this to cleanup old auth attempts.
 
 You can configure your OIDC client using the app pages – see [General OIDC Clients](#general-oidc), [Microsoft Entra ID Client Configuration for APIs](#azure), and [Amazon Cognito](/appstore/modules/aws/amazon-cognito/). In version 2.3.0 and above, you can also use constants to configure your app at deployment time – see [Automated Deploy-time SSO Configuration](#deploy-time), below.
 
@@ -318,22 +319,30 @@ You can configure your OIDC client using the app pages – see [General OIDC Cli
 In this case, the OIDC client is the app you are making.
 
 1. Start your app, log in as an administrator, for example *demo_administrator*, and access the **IdPs for SSO and API security** setup page.
-2. Add a new client configuration and give it an **Alias** so you can identify it if you have more than one client configuration.
-3. Add the **Client ID**.
+2. Add a **New** client configuration and give it an **Alias** so you can identify it if you have more than one client configuration. You can also **Edit**, **View**, **Delete**, **Toggle Active**, or **Make Default** the existing alias. 
+3. On **Step 1 Endpoints**, add the well-known endpoint at **Automatic configuration URL** and click **Import IdP-metadata** to auto-fill the rest endpoints. Click **Next**.
+
+    {{% alert color="info" %}} If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`. {{% /alert %}}
+
+    If you do not have an automatic configuration URL, you can fill in the other endpoints manually and click **Next**.
 
    **Client assertion** is automatically set to *Client ID and Secret*.
 
-4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/step1_endpoints.png" >}}
+
+4. On the **Step 2 General Configuration**, add **Client ID**.
+
+5. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
     * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication (also known as key pair based authentication). This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
-        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the **JWKS URI** from the **Public Key Exchange** configure the following fields:
-            * Key Pair Expiration Days: (default 90)
-            * JWT (Signing Algorithm): (default RS256)
+        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the *JWKS URI* from the **Exchange of public key**, configure the following fields:
+            * **Key pair expiration days**: (default 90)
+            * **JWT signing algorithm**: (default RS256)
 
-        Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
+        Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix app, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
         * X. 509 Certificate: This will use a certificate to transfer the public key of your application to the IdP. Choose this method if you are using Entra ID as your IdP. Once the configuration is ready, download the certificate in the `pre`, `cer`, or `cer` format. You can also download it by editing the configuration and clicking **Download**. It is supported from version 4.3.0 of the OIDC module.
 
@@ -343,21 +352,14 @@ In this case, the OIDC client is the app you are making.
 
     {{% alert color="info" %}}After a key renewal, some SSO requests may fail if your IdP does not immediately refresh its key cache. {{% /alert %}}
 
-5. Add the **Client Secret** if you choose `client_secret_basic` or `client_secret_post` as client authentication method.
-6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
+6. Add the **Client secret** if you choose `client_secret_basic` or `client_secret_post` as **Client authentication method**.
 
-    {{% alert color="info" %}} If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`. {{% /alert %}}
+7. Select the **Scopes** expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
 
-    * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
-7. Click **Save**
-
-    {{% alert color="info" %}} Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information. {{% /alert %}}
-
-8. Select your client configuration and click **Edit**.
-9. Select the scopes expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
     * If you need refresh tokens for your end-users, you also need the `offline_access` scope.
     * Add other scopes as needed.
-10. Select your user parsing. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses thin tokens. You can set up user provisioning by setting the following standard flows:
+
+8. On **Step 3 Creating User**, select your **User Parsing**. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses thin tokens. You can set up user provisioning by setting the following standard flows:
 
     | Default Microflow | Use |
     | --- | --- |
@@ -371,30 +373,32 @@ In this case, the OIDC client is the app you are making.
 
     {{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the timezone and language for newly created users, these settings will be set according to default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
 
-11. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
+9. Click **Next** to open **Step 4 Assigning Role**. Optionally, you can select the **Custom AccessToken Processing microflow** if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
 
     {{% alert color="info" %}}Starting from version 4.0.0 of the OIDC SSO, the default user roles in the UserProvisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
 
 Once you have completed these steps, the SSO-configuration is ready for testing. For more information, see the [Testing and troubleshooting](#testing) section.
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/idp_sso_api_security.png" >}}
+
 See the section [Optional Features](#optional) information on additional optional features you may want to implement.
 
 #### API Security Configuration for Client Credential Grant {#client-credential-grant}
 
-1. Start your app, log in as an administrator, for example *demo_administrator*, and access the Client Credential setup page.
-2. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
+1. Start your app, log in as an administrator, for example, *demo_administrator*, and access the Client Credential setup page.
+2. If you have the **Automatic Configuration URL** (also known as the well-known endpoint), enter it and click **Import Configuration** to automatically fill the other endpoints.
 
     {{% alert color="info" %}}If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`.{{% /alert %}}
 
-    * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
-3. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
-4. Click Save. Once you have completed these steps, the Client Credential Configuration is ready for testing.
+    If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
+3. Optionally, you can select the **Custom AccessToken Parsing** microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
+4. Click **Save**. Once you have completed these steps, the Client Credential Configuration is ready for testing.
 
 #### Microsoft Entra ID Client Configuration for APIs {#azure}
 
-For Entra ID access to APIs through an access token, in addition to the configuration described above, we can request the scope [configured in Azure portal](#azure-portal), described above, from the OIDC SSO UI configuration.
+For Entra ID access to APIs through an access token, in addition to the configuration described above, you can request the scope [configured in Azure portal](#azure-portal), described above, from the OIDC SSO UI configuration.
 
-1. Start your app, log in as an administrator, for example *demo_administrator*, and access the **IdPs for API security only** Setup page.
+1. Start your app, log in as an administrator, for example *demo_administrator*, and access the **IdPs for API security only** setup page.
 1. Add the custom scope which you [configured in Azure](#azure-portal) in **Available scopes**.
 1. Save the configuration.
 1. Edit the Entra ID configuration and add the custom scope to **Selected scopes**.
@@ -409,21 +413,21 @@ For more information about configuring your app for OIDC with Amazon Cognito, se
 
 #### Automated Deploy-Time SSO Configuration{#deploy-time}
 
-In version 2.3.0 and above, you can configure the OIDC SSO module using app [constants](/refguide/constants/) rather than using the app administration pages. As the developer of an app using OIDC SSO, you can set default values. These values can be overridden using the app constants.
+In version 2.3.0 and above, you can configure the OIDC SSO module using app [constants](/refguide/constants/) rather than [using the app administration pages](#general-oidc). As the developer of an app using OIDC SSO, you can set default values. These values can be overridden using the app constants.
 
-To enable the use of app constants to configure the OIDC SSO module, configure your app to run the Startup microflow in the OIDC module (OIDC.ASU_OIDC_Startup) as (part of) the [after startup](/refguide/runtime-tab/#after-startup) microflow.
+To enable the use of app constants to configure the OIDC SSO module, configure your app to run the Startup microflow in the OIDC module (`OIDC.ASU_OIDC_Startup`) as (part of) the [after startup](/refguide/runtime-tab/#after-startup) microflow.
 
 Use the following security best-practices when setting up your constants:
 
 * Set the [Export level](/refguide/configure-add-on-and-solution-modules/#export-level) for these constants to `Hidden` for security reasons.
-* Mask your client_secret so the value is not visible in the Mendix Portal – [constants](/developerportal/deploy/environments-details/#constants) in the *Environment Details* documentation for more information.
+* Mask your client_secret so the value is not visible in the Mendix Portal. For more information, see [constants](/developerportal/deploy/environments-details/#constants) of *Environment Details*.
 
 The configuration you set through constants will mirror the configuration described in [General OIDC Clients](#general-oidc), above.
 
 {{% alert color="info" %}}
-SSO configurations created using constants will be shown as read only on the **IdPs for SSO and API security** and **IdPs for API security only** Setup page in the app.
+SSO configurations created using constants will be shown as read only on the **IdPs for SSO and API security** and **IdPs for API security only** setup page in the app.
 
-The following error messages will be displayed when you try to edit/delete.
+The following error messages will be displayed when you try to edit or delete.
 
 * error at edit: You cannot modify as it is created from deployment.
 * error at delete: You cannot delete as it is created from deployment.
