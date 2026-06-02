@@ -47,9 +47,12 @@ OQL is under constant development so some expressions and features are not avail
 | DATETRUNC | 11.9.0 |
 | LOCATE | 11.9.0 |
 | LPAD | 11.12.0 |
+| LTRIM | 11.11.0 |
 | RPAD | 11.12.0 |
+| RTRIM | 11.11.0 |
 | STRING_AGG in View Entities and Datasets | 11.2.0 |
 | SUBSTRING | 11.9.0 |
+| TRIM | 11.11.0 |
 
 ### [OQL Statements](/refguide/oql-statements/){#statement-versions}
 
