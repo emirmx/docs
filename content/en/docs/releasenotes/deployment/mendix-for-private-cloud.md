@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Portal Improvements
 
-* We have added a check to prevent setting Compatibility Metrics Mode in Runtime Metrics Configuration for Operator version 2.27.0 and above.
+* We have added a check to prevent enabling **Compatibility Metrics Mode** in **Runtime Metrics Configuration** for Operator version 2.27.0 and above.
 
 ### May 21, 2026
 
