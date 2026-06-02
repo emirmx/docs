@@ -527,7 +527,11 @@ When you manually select compatibility mode for a specific environment (overridi
 #### Enable Compatibility Metrics in Connected Mode
 
 {{% alert color="info" %}}
-Compatibility mode is only available for Operator versions older than 2.27.0. If you attempt to set compatibility mode for Operator version 2.27.0 or newer, an error message will be displayed.
+Compatibility mode is only available for Operator versions older than 2.27.0. If you attempt to set compatibility mode for Operator version 2.27.0 or newer, an error message will be displayed:
+
+{{< figure src="/attachments/deployment/private-cloud/compatibility_mode_warning.png" alt="Error message when attempting to set compatibility mode for Operator 2.27.0 and above" >}}
+
+In this case, you must use native mode instead. See [Enable Native Metrics in Connected Mode](#enable-native-metrics-connected-mode) for instructions.
 {{% /alert %}}
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
@@ -551,12 +555,6 @@ Compatibility mode is only available for Operator versions older than 2.27.0. If
 7. Set **Mode** to **compatibility** and click **Save and Apply**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-monitor/environment-metrics-mode-compatibility.png" class="no-border" >}}
-
-    If your Operator version is 2.27.0 or newer, you will see an error message indicating that compatibility mode cannot be set:
-
-    {{< figure src="/attachments/deployment/private-cloud/compatibility_mode_warning.png" alt="Error message when attempting to set compatibility mode for Operator 2.27.0 and above" >}}
-
-    In this case, you must use native mode instead. See [Enable Native Metrics in Connected Mode](#enable-native-metrics-connected-mode) for instructions.
 
 #### Enable Compatibility Metrics in Standalone Mode
 
