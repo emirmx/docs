@@ -200,12 +200,12 @@ To use Google Artifact registry with the Mendix Operator, perform the following 
 2. Assign the *Artifact Registry Writer* (`roles/artifactregistry.writer`) role to the GCR Service Account.
 3. Allow the Mendix Operator to use the GCR Service Account by running the following command, where `PROJECT_ID` is the Google Cloud project ID, `K8S_NAMESPACE` is the Kubernetes namespace name where the Operator is installed, `KSA_NAME` is the Kubernetes Service Account name, and `GSA_NAME` is the GCP Service Account name from step 1:
 
-        ```shell
-        gcloud iam service-accounts add-iam-policy-binding \
-            --role roles/iam.workloadIdentityUser \
-            --member "serviceAccount:PROJECT_ID.svc.id.goog[K8S_NAMESPACE/KSA_NAME]" \
-            GSA_NAME@PROJECT_ID.iam.gserviceaccount.com
-        ```
+    ```shell
+    gcloud iam service-accounts add-iam-policy-binding \
+        --role roles/iam.workloadIdentityUser \
+        --member "serviceAccount:PROJECT_ID.svc.id.goog[K8S_NAMESPACE/KSA_NAME]" \
+        GSA_NAME@PROJECT_ID.iam.gserviceaccount.com
+    ```
 
 On the Kubernetes side, the Mendix Operator will use a Kubernetes Service Account to authenticate. On the GCP side, there should be a matching GCP Service Account. For simplicity, Mendix recommends using the `mendix-builder` for the service account name, on both GCP and Kubernetes sides. For more details, see the Google documentation on [using workload identities](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#authenticating_to).
 
@@ -285,8 +285,8 @@ Some registries impose limitations on repository names, for example the reposito
 | Field               | Value                                                                                          |
 | ------------------- | -----------------------------------------------------------------------------------------------|
 | Push URL            | registry.onstackit.cloud                                                                       |
-| Pull URL            | registry.onstackit.cloud                                                                       |         
-| Registry name       | `<stackitregistry>/<repository>`, where `<stackitregistry>` is the registry created in stackit |
+| Pull URL            | registry.onstackit.cloud                                                                       |
+| Registry name       | `<stackitregistry>/<repository>`, where `<stackitregistry>` is the registry you created in STACKIT |
 | With authentication | enabled                                                                                        |
 | User                | Username for the registry robot account                                                        |
 | Password            | Token (password) for the robot account                                                         |

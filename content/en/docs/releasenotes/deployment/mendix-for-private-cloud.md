@@ -14,9 +14,13 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ### May 20, 2026
 
-#### StackIt support
+#### STACKIT support
 
-* We now officially support app deployments in Stackit kubernetes environments.
+* We now officially support deploying Mendix apps to [STACKIT Kubernetes Engine (SKE)](https://stackit.com/en/products/runtime/stackit-kubernetes-engine), with support for [STACKIT PostgreSQL Flex](https://stackit.com/en/products/database/stackit-postgresql-flex), [STACKIT Object Storage](https://docs.stackit.cloud/products/storage/object-storage/) (S3-compatible), and the [STACKIT Container Registry](https://docs.stackit.cloud/products/developer-platform/container-registry/).
+* Customers provision the SKE cluster, PostgreSQL Flex database(s), and Object Storage bucket(s) themselves before deploying Mendix. For configuration details, see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) and [Storage Plans](/developerportal/deploy/private-cloud-storage-plans/).
+* **Known limitations on STACKIT:**
+    * STACKIT PostgreSQL Flex does not expose the `CREATEROLE` privilege, so the on-demand PostgreSQL provisioner cannot create users automatically. Use the [Dedicated JDBC plan](/developerportal/deploy/private-cloud-storage-plans/#database-jdbc) and create a dedicated database user per environment using the STACKIT CLI or API.
+    * STACKIT Object Storage does not implement `CreateUser`, `CreatePolicy`, or `CreateBucket`, so buckets must be created up front. You can either share one bucket across environments or pre-create a bucket per environment.
 
 ### May 7, 2026
 

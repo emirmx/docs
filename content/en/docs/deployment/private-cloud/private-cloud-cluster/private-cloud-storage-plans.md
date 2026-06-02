@@ -1907,13 +1907,13 @@ Another option is to use a dedicated object storage bucket for each environment.
 
 * Access/Secret keys used by existing environments can only be rotated manually.
 * No isolation between environments using the storage plan if using same bucket for all environments
-* Configuration parameters will not be validated and will be provided to the Mendix app as-is. If the arguments are not valid or there is an issue with permissions, the Mendix Runtime will fail to start the and deployment will appear to hang with **Replicas running** and **Runtime** showing a spinner.
+* Configuration parameters will not be validated and will be provided to the Mendix app as-is. If the arguments are not valid or there is an issue with permissions, the Mendix Runtime will fail to start, and the deployment will appear to hang with **Replicas running** and **Runtime** showing a spinner.
 
 #### Environment Isolation
 
 * The S3-compatible bucket and credentials (access and secret keys) are shared between all environments using this plan.
 * An environment can access data from other environments using this Storage Plan.
-* By creating dedicated bucket for all the environment, isolation between the environment can be achieved.
+* By creating a dedicated bucket per environment, isolation between the environments can be achieved.
 
 #### Create Workflow
 
@@ -1932,17 +1932,13 @@ When an existing environment is deleted, the Mendix Operator performs the follow
 
 In the S3 plan configuration, enter the following details:
 
-* **Endpoint** - The S3-compatible bucket's endpoint address, for example `https://object.storage.eu01.onstackit.cloud`.
-* **Access Key** and **Secret Key** - Credentials to access the bucket.
-* **Type** - Specifies if the container can be shared between environments (create an on-demand storage plan); or that the container can only be used by one environment (create a dedicated storage plan). To increase security and prevent environments from being able to access each other's data, select **Dedicated**.
-
 * **IRSA Authentication** - Set to **no**.
 * **Create bucket per environment** - Set to **No**.
 * **Create account (IAM user) per environment** - Set to **No**.
 * **Endpoint** - The S3 bucket's endpoint address.
 * **Access Key** and **Secret Key** - The credentials for the environment user account.
 * **Autogenerate prefix** - Leave it empty
-* **Share bucket between environments** - Specifies if the bucket can be shared between environments (create an on-demand storage plan); Enable this option and  the bucket will be shared between multiple environments. 
+* **Share bucket between environments** - Specifies if the bucket can be shared between environments (create an on-demand storage plan); Enable this option and the bucket will be shared between multiple environments. 
 
 ## Walkthroughs
 

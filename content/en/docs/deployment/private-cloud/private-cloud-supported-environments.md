@@ -29,6 +29,10 @@ If you want to deploy your app to Amazon EKS, consider using the Mendix for Amaz
 * [Google Kubernetes Engine- Autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview). For more information, see [Mendix on Kubernetes Cluster: GKE Autopilot Workarounds](/developerportal/deploy/private-cloud-cluster/#gke-autopilot-workarounds)
 * [STACKIT Kubernetes Engine](https://stackit.com/en/products/runtime/stackit-kubernetes-engine)
 
+For STACKIT Kubernetes Engine, customers provision the SKE cluster, PostgreSQL Flex database(s), and Object Storage bucket(s) themselves before deploying Mendix.
+
+Any Kubernetes version offered by SKE that falls within the [Supported Versions](#supported-versions) range is supported.
+
 {{% alert color="warning" %}}
 If deploying to Red Hat OpenShift, you need to specify that specifically when creating your deployment. All other cluster types use generic Kubernetes operations.
 {{% /alert %}}
@@ -213,7 +217,7 @@ The following managed PostgreSQL databases are supported:
 * [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/).
 * [Google Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres).
 * [Amazon RDS Aurora for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraPostgreSQL.html)
-* [Stackit Postgres Flex](https://stackit.com/en/products/database/stackit-postgresql-flex)
+* [STACKIT PostgreSQL Flex](https://stackit.com/en/products/database/stackit-postgresql-flex)
 
 Amazon PostgreSQL instances require additional firewall configuration to allow connections from the Kubernetes cluster.
 
