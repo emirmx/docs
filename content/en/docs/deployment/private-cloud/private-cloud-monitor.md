@@ -546,10 +546,6 @@ Compatibility mode is only available for Operator versions older than 2.27.0. If
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-monitor/environment-metrics-mode-compatibility.png" class="no-border" >}}
 
-    If your Operator version is 2.27.0 or above, you will see an error message indicating that compatibility mode cannot be set:
-
-    {{< figure src="/attachments/deployment/private-cloud/compatibility_mode_warning.png" alt="Error message when attempting to set compatibility mode for Operator 2.27.0 and above" >}}
-
 #### Enable Compatibility Metrics in Standalone Mode
 
 {{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Mendix on Kubernetes section of the Mendix Portal.{{% /alert %}}
