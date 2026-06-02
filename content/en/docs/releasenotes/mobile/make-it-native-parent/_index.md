@@ -11,13 +11,13 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ## Make It Native Versions
 
-It is possible to get MiN version suppored by latest SP versions from the stores:
+It is possible to get Make it Native version supported by latest Studio Pro versions from the stores:
 
 * [Make It Native](/releasenotes/mobile/make-it-native/)
 
-For older variant that is compatible with SP 10 versions, please use corresponding .apk from the releases list:
+For older version that is compatible with Studio Pro 10 versions, please use corresponding .apk from the release list:
 
 * For Android - [Make It Native GH releases](https://github.com/mendix/make-it-native/releases)
 * For iOS - [Test Flight releases](https://apps.apple.com/tr/app/make-it-native/id6450037464)
 
-For the variants compatible with older SP versions, please visit our [Github page for more info](https://github.com/mendix/make-it-native#introduction).
+For versions compatible with older Studio Pro versions, please visit our [GitHub page](https://github.com/mendix/make-it-native#introduction).

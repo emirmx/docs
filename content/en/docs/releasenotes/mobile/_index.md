@@ -11,7 +11,7 @@ Welcome to the mobile release notes. For details on support windows and maintain
 
 This category includes the following release notes: 
 
-* [Make It Native App](/releasenotes/mobile/make-it-native/): Use this app for projects in Mendix Studio Pro 11.6 and above
+* [Make It Native App](/releasenotes/mobile/make-it-native/): use this Make it Native app for apps in Mendix Studio Pro 11.6 and above
 * [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/)
 * [Native Builder](/releasenotes/mobile/native-builder/)
 * [Native Template](/releasenotes/mobile/native-template/)
