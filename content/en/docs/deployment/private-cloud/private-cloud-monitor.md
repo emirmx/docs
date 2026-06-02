@@ -521,7 +521,7 @@ In this mode, all other `runtimeMetricsConfiguration` attributes are ignored.
 #### Enable Compatibility Metrics in Connected Mode
 
 {{% alert color="info" %}}
-Compatibility mode is only available for Operator versions below 2.27.0. If you attempt to set compatibility mode for Operator version 2.27.0 or above, an error message will be displayed.
+Compatibility mode is only available for Operator versions older than 2.27.0. If you attempt to set compatibility mode for Operator version 2.27.0 or newer, an error message will be displayed.
 {{% /alert %}}
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
