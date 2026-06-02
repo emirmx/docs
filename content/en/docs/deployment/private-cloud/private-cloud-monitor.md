@@ -518,6 +518,12 @@ This way, upgrading an older Mendix Operator will not change the way it generate
 To enable `compatibility` metrics mode, set the `mode` attribute to `compatibility`.
 In this mode, all other `runtimeMetricsConfiguration` attributes are ignored.
 
+{{% alert color="info" %}}
+For Operator versions older than 2.27.0 that were upgraded from older versions, the metrics mode in `OperatorConfiguration` is set to `compatibility` to maintain backward compatibility. For new installations with Operator 2.27.0 and newer, the metrics mode in `OperatorConfiguration` is set to `native` by default, and the `m2ee-metrics` sidecar is disabled.
+
+When you manually select compatibility mode for a specific environment (overriding the default mode from `OperatorConfiguration`), it becomes your responsibility to manually switch the environment back to native or default mode when needed. This is particularly important when upgrading to Operator version 2.27.0 or newer, as compatibility mode is no longer supported.
+{{% /alert %}}
+
 #### Enable Compatibility Metrics in Connected Mode
 
 {{% alert color="info" %}}
@@ -545,6 +551,12 @@ Compatibility mode is only available for Operator versions older than 2.27.0. If
 7. Set **Mode** to **compatibility** and click **Save and Apply**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-monitor/environment-metrics-mode-compatibility.png" class="no-border" >}}
+
+    If your Operator version is 2.27.0 or newer, you will see an error message indicating that compatibility mode cannot be set:
+
+    {{< figure src="/attachments/deployment/private-cloud/compatibility_mode_warning.png" alt="Error message when attempting to set compatibility mode for Operator 2.27.0 and above" >}}
+
+    In this case, you must use native mode instead. See [Enable Native Metrics in Connected Mode](#enable-native-metrics-connected-mode) for instructions.
 
 #### Enable Compatibility Metrics in Standalone Mode
 
