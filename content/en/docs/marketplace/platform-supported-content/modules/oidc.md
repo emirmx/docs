@@ -577,11 +577,11 @@ You can set up just-in-time user provisioning as follows:
 
 1. Sign in to the running app with an administrator account.
 2. Navigate to the `OIDC.OIDC_Client_Overview` page, which is set up in the app navigation.
-3. In the **IdPs for SSO and API security** tab, click **New** and access the **UserProvisioning** tab.
+3. In the **IdPs for SSO and API security** tab, click **New** and access the **Step 3 Creating User** tab.
 
-Fields below are available in the **UserProvisioning** tab for the User Provisioning configuration.
+The following fields are available for the User Provisioning configuration.
 
-* **Custom user Entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
+* **Custom user entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
 * **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user.
 * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
     * By default, the value is set to ***Yes***.
