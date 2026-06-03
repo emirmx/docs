@@ -32,11 +32,11 @@ Vale is configured but not yet installed. This guide walks you through setup.
    mkdir $HOME\.local\bin -Force
    
    # Move vale.exe there (adjust the path if you extracted it elsewhere)
-   Move-Item $HOME\Downloads\vale_*_Windows_64-bit\vale.exe $HOME\bin\
+   Move-Item $HOME\Downloads\vale_*_Windows_64-bit\vale.exe $HOME\.local\bin
    
    # Add to PATH
    $currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
-   [Environment]::SetEnvironmentVariable("Path", "$currentPath;$HOME\bin", "User")
+   [Environment]::SetEnvironmentVariable("Path", "$currentPath;$HOME\.local\bin", "User")
    ```
 
 ## Post-Installation
