@@ -14,6 +14,7 @@ This directory contains custom Vale rules specific to Mendix documentation.
 * **Directions.yml**: Enforces upper/lower instead of top/bottom for directional terms
 * **HeadingPunctuation.yml**: Prohibits end punctuation in headings (except question marks)
 * **HeadingTitleCase.yml**: Enforces title case in headings
+* **IconShortcodes.yml**: Suggests using icon shortcodes with tooltips instead of plain text icon descriptions
 * **Inclusive.yml**: Flags non-inclusive language
 * **LinkText.yml**: Prohibits generic link text like "click here"
 * **ListIntroductions.yml**: Enforces en dashes in list item introductions (≤40 chars)
