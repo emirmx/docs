@@ -2,13 +2,12 @@
 title: "Optimistic Locking"
 url: /refguide/optimistic-locking/
 description: "Describes optimistic locking support."
-beta: true
 ---
 
 ## Introduction
 
 {{% alert color="info" %}}
-This feature is Generally Available starting with Mendix version 11.11.0.
+This feature is Generally Available in Mendix version 11.11.0 and above.
 This feature was available as Beta since Mendix version 11.5.0.
 {{% /alert %}}
 
