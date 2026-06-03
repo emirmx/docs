@@ -35,10 +35,12 @@ Portable App Distribution offers a more agile, user-centric, and efficient deplo
 
 Before you begin, ensure you have the following:
 
-* Mendix Studio Pro version 11.19, 11.6.5, or above
+* Mendix Studio Pro version 10.24.19, 11.6.5, 11.19, or above
 * A Mendix app that you want to deploy
 * Docker installed on your system (for building and running Docker images)
 * Access to a container registry (for pushing and pulling Docker images)
+* Any Kubernetes cluster (for example, AKS, EKS, GKE, or on-premises)
+* `Kubectl` configured and connected to your cluster
 
 ## Deploying an App with Portable App Distribution
 
@@ -53,8 +55,7 @@ To create a Portable Package from your Mendix app, perform the following steps:
 1. Open your app in Studio Pro.
 2. Go to **App** > **Create Deployment Package**.
 3. In the **Create Deployment Package** dialog, select **Portable package**.
-4. Select the target runtime platform (**linux-x64** or **linux-arm64**).
-5. Click **Create Package**.
+4. Click **OK**.
 
 The Portable Package is saved to the **releases** folder of your app.
 
@@ -64,7 +65,16 @@ For more information about Portable Packages, see [Portable App Distribution](/d
 
 To build a Docker image from the Portable Package, perform the following steps:
 
-1. Extract the Portable Package to a directory of your choice.
+1. Extract the Portable Package to a directory of your choice
+
+```text
+# Create a working directory
+mkdir mendix-docker && cd mendix-docker
+
+# Extract the portable package (it's a zip file)
+unzip /path/to/releases/YourApp.zip -d .
+```
+
 2. Create a Dockerfile in the extracted directory with contents like the following.
 
     ```text
