@@ -23,13 +23,13 @@ Vale is configured but not yet installed. This guide walks you through setup.
 
 ### For Windows
 
-1. On https://github.com/vale-cli/vale/releases, download the Windows version from Assets
-2. Right-click the zip file and select **Extract All**
+1. On https://github.com/vale-cli/vale/releases, download the Windows version from Assets.
+2. Right-click the zip file and select **Extract All**.
 3. Open PowerShell and run:
 
    ```powershell
    # Create a bin directory for your tools
-   mkdir $HOME\bin -Force
+   mkdir $HOME\.local\bin -Force
    
    # Move vale.exe there (adjust the path if you extracted it elsewhere)
    Move-Item $HOME\Downloads\vale_*_Windows_64-bit\vale.exe $HOME\bin\
