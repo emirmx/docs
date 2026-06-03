@@ -118,7 +118,26 @@ To push the Docker image to a container registry, perform the following steps:
 
 ### Deploying the Docker Image
 
-Once the Docker image is available in your container registry, you can deploy it to your target environment. For more information, see [Portable App Distribution for Docker: Deploying the Docker Image](/developerportal/deploy/docker-deploy-pad/#deploy).
+Once the Docker image is available in your container registry, you can deploy it to Kubernetes by applying the following .yaml files. The .yaml files must be organized in a folder, for example, *k8s/*. You must apply them in the same order as below.
+
+#### Creating a Namespace
+
+Create a namespace by performing the following steps:
+
+1. Create a file named, for example, *k8s/namespace.yaml*, with the following contents:
+
+    ```yaml
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+        name: mendix-app
+    ```
+
+2. Apply the file by running the following command: `kubectl apply -f k8s/namespace.yaml`.
+
+    Replace the name and path of the file as required.
+
+
 
 ## Environment Variables {#env-variables}
 
