@@ -57,7 +57,7 @@ The selected microflow must adhere to the following principles:
 * The Input type should be `MCPServer` and/or `System.HttpRequest`, to extract required values, such as HttpHeaders, from the request.
 * The return value needs to be a `System.User` object which represents the user who sent the request.
 
-Within your microflow, you can implement your custom logic to authenticate the user. For example, you can use username and password (basic auth), Mendix SSO, or external identity providers (IdP) as long as a `User` is returned. Note that the example authentication microflow within the module only implements basic authentication.
+Within your microflow, you can implement your custom logic to authenticate the user. For example, you can use username and password (basic auth) or external identity providers (IdP) as long as a `User` is returned. Note that the example authentication microflow within the module only implements basic authentication.
 
 The `User` returned in the microflow is used for all subsequent prompt and tool microflows within the same session. This makes the `currentUser` and `currentSession` variables available, allowing you to apply entity access for user-based access control based on the default Mendix entity access settings.
 
@@ -90,7 +90,7 @@ Mendix strongly recommends keeping the user in the loop (such as by using confir
 
 After the [Create MCP Server](#create-server) action, you can add one or multiple [Prompts](https://modelcontextprotocol.io/docs/concepts/prompts) to be exposed using the `Add Prompt` action. Prompts let servers define reusable prompt templates and workflows, and they are a powerful way to standardize and share common LLM interactions. For more information, see [Prompt Engineering](/appstore/modules/genai/prompt-engineering/). Connecting MCP Clients can discover the prompts and make them selectable for users to start or continue a conversation. If your prompt (and microflow) requires any input parameters that the user should pass, you need to use the `Populate Prompt Argument List` action for each parameter to describe how the input is used.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mcpserver/mcp_addprompt_example.png" >}}
+{{< figure src="/attachments/genai/mcpserver/mcp_addprompt_example.png" alt="" >}}
 
 The selected microflow needs to apply to the following principles:
 
@@ -108,7 +108,7 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" alt="" >}}
 
 ## Troubleshooting
 
@@ -134,3 +134,11 @@ If you encounter an error caused by conflicting Java libraries, such as `java.la
 * The official [MCP docs](https://modelcontextprotocol.io/introduction)
 * The [MCP Java SDK GitHub Repository](https://github.com/modelcontextprotocol/java-sdk)
 * A blog post on [How to use MCP to bring Mendix Business Logic into Claude for Desktop](https://www.mendix.com/blog/how-to-use-mcp-to-bring-mendix-business-logic-into-claude-for-desktop/)
+
+### Missing Jackson Core Dependency
+
+This applies to cases where your app fails to compile and throws the following error: `Missing dependencies: com.fasterxml.jackson.core:jackson-core:2.22.0`.
+
+This dependency is advertised in Maven repositories but does not actually exist. When you build your app, the automated dependency management attempts to download it and fails because the version is unavailable.
+
+To resolve this issue, download and install [GenAI Commons 6.2.2](https://marketplace.mendix.com/link/component/239448) from Mendix Marketplace. This module includes a fixed Jackson Core dependency configuration and will allow your app to compile successfully. Once Maven resolves the issue, dependency ranges will be used again to re-enable automated dependency management, including automatic vulnerability fixes.
