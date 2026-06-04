@@ -420,7 +420,7 @@ The following is a list of available required and optional environment variables
 You must configure the following required variables:
 
 * `RUNTIME_PARAMS_DATABASEJDBCURL` - The URL of the database
-* `RUNTIME_PARAMS_MENDIX_DATABASE_TYPE` - The type of the database (PostgreSQL, MySQL, and so on)
+* `RUNTIME_PARAMS_MENDIX_DATABASE_TYPE` - The type of the database (for example, PostgreSQL or MySQL)
 * `RUNTIME_PARAMS_MENDIX_DATABASE_HE` - The hostname of the database server
 * `RUNTIME_PARAMS_MENDIX_DATABASE_PORT` - The port of the database server
 * `RUNTIME_PARAMS_MENDIX_DATABASE_NAME` - The name of the database 
@@ -438,7 +438,7 @@ The following variables are optional:
 
 * `RUNTIME_PARAMS_LICENSE_LICENSE_ID` - License ID
 * `RUNTIME_PARAMS_LICENSE_LICENSE_KEY` - License key
-* `MENDIX_LOG_LEVEL` - Log level, for example, `INFO`, `DEBUG`, `ERROR`, and so on
+* `MENDIX_LOG_LEVEL` - Log level, for example, `INFO`, `DEBUG`, or `ERROR`
 
 ### Health Check Endpoints
 
