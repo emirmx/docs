@@ -413,5 +413,58 @@ kubectl get ingress -n mendix-app
 
 ### Environment Variables
 
-The following is a list of available environment variables that you can use.
+The following is a list of available required and optional environment variables.
 
+#### Required
+
+You must configure the following required variables:
+
+* `RUNTIME_PARAMS_DATABASEJDBCURL` - The URL of the database
+* `RUNTIME_PARAMS_MENDIX_DATABASE_TYPE` - The type of the database (PostgreSQL, MySQL, and so on)
+* `RUNTIME_PARAMS_MENDIX_DATABASE_HE` - The hostname of the database server
+* `RUNTIME_PARAMS_MENDIX_DATABASE_PORT` - The port of the database server
+* `RUNTIME_PARAMS_MENDIX_DATABASE_NAME` - The name of the database 
+* `RUNTIME_PARAMS_MENDIX_DATABASE_PASSWORD` - Database password
+* `RUNTIME_PARAMS_ADMIN_PASSWORD` - The password of the Mendix admin user
+* `RUNTIME_PARAMS_MENDIX_CORE_STORAGESERVICE` - Storage type:
+
+    * `localfilesystem`
+    * `com.mendix.storage.s3`
+    * `com.mendix.storage.azure`
+ 
+#### Optional
+
+The following variables are optional:
+
+* `RUNTIME_PARAMS_LICENSE_LICENSE_ID` - License ID
+* `RUNTIME_PARAMS_LICENSE_LICENSE_KEY` - License key
+* `MENDIX_LOG_LEVEL` - Log level, for example, `INFO`, `DEBUG`, `ERROR`, and so on
+
+### Health Check Endpoints
+
+The following endpoints are available to perform health checks on your app:
+
+* `/health` - General health status
+* `/health/live` - Liveness probe to check if the app is running
+* `/health/ready` - Readiness probe to check if the app is ready to serve traffic
+
+## Troubleshooting
+
+The following commands can help you troubleshoot your app:
+
+```text
+# Pod not starting?
+kubectl describe pod <pod-name> -n mendix-app
+
+# View logs
+kubectl logs <pod-name> -n mendix-app
+
+# Check secrets are correct
+kubectl get secret mendix-secret -n mendix-app -o yaml
+
+# Check service endpoints
+kubectl get endpoints -n mendix-app
+
+# Check ingress
+kubectl describe ingress mendix-app-ingress -n mendix-app
+```
