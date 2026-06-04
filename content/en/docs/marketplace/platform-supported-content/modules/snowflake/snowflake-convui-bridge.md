@@ -51,8 +51,8 @@ Easily implement chat interfaces for Cortex Analyst using Conversational UI with
 
 #### Microflows
 
-* The **ChatCompletions_CallLLM** action microflow for **CortexAnalystDeployedModel**, set in **CortexAnalystDeployedModel_Create**, handles calls to Cortex Analyst and maps GenAICommons requests and responses to Cortex Analyst requests and responses.
-* The **ChatContext_ChatWithHistory** action microflow for **ConversationalUI.ProviderConfig**, set in **SnowflakeConversationalUIBridge.ProviderConfig_GetCreate**, handles pre- and post-processing for the creation of Conversational UI messages, references, and other objects.
+* The **ChatCompletions_CallLLM** action microflow for **CortexAnalystDeployedModel**, used in **CortexAnalystDeployedModel_Create**, handles calls to Cortex Analyst and maps GenAICommons requests and responses to Cortex Analyst requests and responses.
+* The **ChatContext_ChatWithHistory** action microflow for **ConversationalUI.ProviderConfig**, used in **SnowflakeConversationalUIBridge.ProviderConfig_GetCreate**, handles pre- and post-processing for the creation of Conversational UI messages, references, and other objects.
 
 ## Example Implementation
 
