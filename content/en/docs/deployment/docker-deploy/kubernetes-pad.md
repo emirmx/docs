@@ -261,26 +261,26 @@ Configure deployment settings by performing the following steps:
                   cpu: "500m"
 
               # Health checks
-              livenessProbe:
-                httpGet:
-                  path: /health/live
-                  port: 8080
-                initialDelaySeconds: 60
-                periodSeconds: 10
-                failureThreshold: 3
+              # livenessProbe:
+                # httpGet:
+                  # path: /health/live
+                  # port: 8080
+                # initialDelaySeconds: 60
+                # periodSeconds: 10
+                # failureThreshold: 3
 
-              readinessProbe:
-                httpGet:
-                  path: /health/ready
-                  port: 8080
-                initialDelaySeconds: 30
-                periodSeconds: 10
-                failureThreshold: 3
+              # readinessProbe:
+                # httpGet:
+                  # path: /health/ready
+                  # port: 8080
+                # initialDelaySeconds: 30
+                # periodSeconds: 10
+                # failureThreshold: 3
 
-          volumes:
-            - name: mendix-storage
-              persistentVolumeClaim:
-                claimName: mendix-storage
+          # volumes:
+            # - name: mendix-storage
+              # persistentVolumeClaim:
+                # claimName: mendix-storage
     ```
 
 2. Apply the file by running the following command: `kubectl apply -f k8s/deployment.yaml`.
@@ -442,11 +442,13 @@ The following variables are optional:
 
 ### Health Check Endpoints
 
-The following endpoints are available to perform health checks on your app:
+The Mendix Runtime exposes health check endpoints that can be used to monitor the status of your app:
 
 * `/health` - General health status
 * `/health/live` - Liveness probe to check if the app is running
 * `/health/ready` - Readiness probe to check if the app is ready to serve traffic
+
+These endpoints are especially useful when integrating with orchestration platforms such as Kubernetes, which rely on liveness and readiness probes to manage container lifecycle.
 
 ## Troubleshooting
 
