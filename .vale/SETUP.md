@@ -2,17 +2,17 @@
 
 <!-- vale off -->
 
-Vale is configured but not yet installed. This guide walks you through setup.
+Vale is configured but needs to be installed locally before you can use it in VS Code. This guide walks you through setup.
 
 ## Why Install Locally?
 
 * **Immediate feedback** - See violations as you write, not after pushing
 * **Faster iteration** - Fix issues before creating a PR
-* **More feedback** - See suggestions and warnings locally; the GitHub Action is configured to only show errors
+* **More feedback** - See suggestions and warnings locally on the entire file; the GitHub Action is configured to show only errors on changed lines.
 
 **Note:** Even without local installation, your PRs will be checked automatically by a GitHub Action: [.github/workflows/vale.yml](../.github/workflows/vale.yml).
 
-## Installation (Choose One)
+## Installation
 
 ### For macOS
 
@@ -70,6 +70,6 @@ After installing Vale:
       - Violations show as squiggly underlines in the file and appear in the **Problems** tab in the bottom pane.
       - Many Vale rules support automatic fixes—hover over an underlined issue and click **Quick Fix** or click the lightbulb icon next to flagged text in the **Problems** tab.
       - Save changes to rerun the linter.
-   - If desired, you can adjust the extension's settings in VS Code to show a different minimum alert level. For example, if you set `minAlertLevel` to `warning`, it will only report warnings and errors, not suggestions.
+   - If desired, you can adjust the extension's settings in VS Code to show a different minimum alert level. For example, if you set `minAlertLevel` to `warning`, it will report only warnings and errors, not suggestions.
 
-4. **If you have open PRs:** Merge `development` into your branch to get the Vale configuration files.
+4. **If you have open PRs without the Vale configuration files:** Merge `development` into your branch.
