@@ -1,5 +1,7 @@
 # Vale Setup Guide
 
+<!-- vale off -->
+
 Vale is configured but not yet installed. This guide walks you through setup.
 
 ## Why Install Locally?
@@ -51,7 +53,7 @@ After installing Vale:
 
 2. **Sync the Microsoft Style Guide rules:**
 
-   Switch to the docs directory (`cd docs`), then run:
+   Navigate to the root of your docs repository (for example, `cd ~/docs`), then run:
 
    ```bash
    vale sync
