@@ -1107,16 +1107,16 @@ When an OQL query is executed, `DATEPARSE` is converted to the corresponding dat
 
 1. Format letters `u`, `F`, `G`, `k`, `K` are not supported.
 2. MySQL and MariaDB do not support format letters `S` and `W`.
-2. SAP HANA does not support format letters `Y` and `w`.
-3. For SQL Server, `DATEPARSE` accepts only patterns that match SQL Server styles 0 to 7, 9 to 13, 100 to 107, 109 to 113, 120 and 121. See [SQL Server documentation](https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles) for the list of supported styles.
-4. Format letter `h` accepts different ranges of values per database:
+3. SAP HANA does not support format letters `Y` and `w`.
+4. For SQL Server, `DATEPARSE` accepts only patterns that match SQL Server styles 0 to 7, 9 to 13, 100 to 107, 109 to 113, 120 and 121. See [SQL Server documentation](https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles) for the list of supported styles.
+5. Format letter `h` accepts different ranges of values per database:
 
     1. HSQLDB uses zero-based indexing and accepts values `0` to `11`
     2. Other databases use one-based indexing and accept values `1` to `12`
     
-5. The date format should contain enough information to derive the date. For example, `dd/yyyy` is not allowed, but `dd/MM/yyyy` is allowed.
-6. If the format contains a unit of time, all units of time of greater magnitude should also be included. For example, `dd/MM/yyyy mm` is not allowed, but `dd/MM/yyyy HH:mm` is allowed.
-6. In addition to listed limitations, there are other implementation differences between database engines related to corner cases such as format strings where the same information is included more than once (for example, if the format string contains both `YYYY` and `yyyy`) or format strings where there is enough information to derive the date, but that information is not of the usual format (`DATEPARSE('365/12/13', 'DD/MM/yy')` would lead to an exception in SAP HANA).
+6. The date format should contain enough information to derive the date. For example, `dd/yyyy` is not allowed, but `dd/MM/yyyy` is allowed.
+7. If the format contains a unit of time, all units of time of greater magnitude should also be included. For example, `dd/MM/yyyy mm` is not allowed, but `dd/MM/yyyy HH:mm` is allowed.
+8. In addition to listed limitations, there are other implementation differences between database engines related to corner cases such as format strings where the same information is included more than once (for example, if the format string contains both `YYYY` and `yyyy`) or format strings where there is enough information to derive the date, but that information is not of the usual format (`DATEPARSE('365/12/13', 'DD/MM/yy')` would lead to an exception in SAP HANA).
 
 {{% alert color="warning" %}}
 Always test usages of `DATEPARSE` with the database engine on which your app runs. OQL queries with `DATEPARSE` may return different results in HSQLDB and in the production database.
