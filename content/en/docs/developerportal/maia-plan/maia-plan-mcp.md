@@ -7,7 +7,7 @@ weight: 10
 
 ## Introduction
 
-Maia Plan MCP Server provides read-only access to selected Maia Plan artifacts through the Model Context Protocol (MCP). External MCP clients can retrieve plan content in markdown format, including project scope and project solution with epics and stories.
+The Maia Plan MCP Server provides read-only access to selected Maia Plan artifacts through the Model Context Protocol (MCP). External MCP clients can retrieve plan content in Markdown format, including project scope and project solution with epics and stories.
 
 The MCP server has the following key characteristics:
 
@@ -16,8 +16,8 @@ The MCP server has the following key characteristics:
 * **Focused tool set** – Three tools are available:
 
     * Find a plan using search terms (returns a plan UUID for follow-up calls).
-    * Get project scope as markdown.
-    * Get project solution as markdown.
+    * Get project scope as Markdown.
+    * Get project solution as Markdown.
 * **Per-project retrieval** – Each call targets a specific project identified by UUID.
 
 ## Prerequisites
@@ -68,7 +68,7 @@ The steps to configure your MCP client depend on the client you are using. The f
 
 #### Configuring Claude Code
 
-To configure Claude Code to connect to the Maia Plan MCP Server:
+To configure Claude Code to connect to the Maia Plan MCP Server, follow these steps:
 
 1. Open your Claude Code configuration file.
 2. Add the Maia Plan MCP Server to the list of available MCP servers.
@@ -110,7 +110,7 @@ The tool only returns plans for projects you have permission to view. If you do 
 
 ### Get Plan Scope {#get-scope}
 
-Use this tool to retrieve the project scope as markdown. The project scope includes the project goal, success criteria, target users, and requirements.
+Use this tool to retrieve the project scope as Markdown. The project scope includes the project goal, success criteria, target users, and requirements.
 
 Tool specifics:
 
@@ -125,11 +125,11 @@ Tool specifics:
 
 * Returns:
 
-    * The project scope in markdown format.
+    * The project scope in Markdown format.
 
 ### Get Plan Solution {#get-solution}
 
-Use this tool to retrieve the project solution as markdown. The project solution includes all epics and stories defined in the plan.
+Use this tool to retrieve the project solution as Markdown. The project solution includes all epics and stories defined in the plan.
 
 Tool specifics:
 
@@ -144,17 +144,17 @@ Tool specifics:
 
 * Returns:
 
-    * The project solution in markdown format, including all epics and their associated stories.
+    * The project solution in Markdown format, including all epics and their associated stories.
 
 ## How It Works {#how-it-works}
 
 The following steps describe how the Maia Plan MCP Server processes requests:
 
 1. An MCP client calls one of the available tools and includes an `Authorization` header with your personal access token.
-2. The server validates the token and identifies the user.
-3. The server uses the user context to filter plans based on access permissions.
+2. The server validates the token and identifies you.
+3. The server filters plans based on your access permissions.
 4. If you called the [Find Plans](#find-plans) tool, the server returns a list of plan UUIDs for projects you can access.
-5. If you called the [Get Plan Scope](#get-scope) or [Get Plan Solution](#get-solution) tool, the server validates that you have access to the specified project and returns the requested markdown content.
+5. If you called the [Get Plan Scope](#get-scope) or [Get Plan Solution](#get-solution) tool, the server validates that you have access to the specified project and returns the requested Markdown content.
 
 ## Security and Access Control {#security}
 
