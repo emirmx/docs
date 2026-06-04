@@ -124,7 +124,7 @@ Once the Docker image is available in your container registry, you can deploy it
 
 Create a namespace by performing the following steps:
 
-1. Create a file named, for example, *k8s/namespace.yaml*, with the following contents:
+1. Create a file named, for example, *k8s/namespace.yaml*, with the contents like the following:
 
     ```yaml
     apiVersion: v1
@@ -137,70 +137,185 @@ Create a namespace by performing the following steps:
 
     Replace the name and path of the file as required.
 
+#### Creating a Kubernetes Secret
 
+Store all sensitive values in a Kubernetes Secret by performing the following steps:
 
-## Environment Variables {#env-variables}
+1. Create a file named, for example, *k8s/secret.yaml*, with the contents like the following:
 
-You can configure the Mendix Runtime by using environment variables. The following environment variables are supported:
+    ```yaml
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: mendix-secret
+      namespace: mendix-app
+    type: Opaque
+    stringData:
+      RUNTIME_PARAMS_DATABASEJDBCURL: "postgresql://mendix:mendix@postgres:5432/mendix" # Defines the JDBC URL to use for the database connection (which overrides the other database connection settings).
+      RUNTIME_PARAMS_DATABASE_TYPE: "PostgreSQL"
+      RUNTIME_PARAMS_DATABASE_HOST: "postgresEndpointURL" #This will be overridden if you supply DatabaseJdbcUrl.
+      RUNTIME_PARAMS_DATABASE_PORT: "5432"
+      RUNTIME_PARAMS_DATABASE_NAME: "<your-database-name>"
+      RUNTIME_PARAMS_DATABASE_USERNAME: "<your-database-username>"
+      RUNTIME_PARAMS_DATABASE_PASSWORD: "<your-database-password>"
+      RUNTIME_PARAMS_ADMIN_PASSWORD: "<your-admin-password>"
+      RUNTIME_PARAMS_LICENSE_LICENSE_ID: "<your-license-id>"
+      RUNTIME_PARAMS_LICENSE_LICENSE_KEY: "<your-license-key>"
+    ```
 
-| Environment Variable | Description |
-| --- | --- |
-| `MENDIX_DATABASE_URL` | The URL of the database|
-| `MENDIX_DATABASE_TYPE` | The type of the database (for example, PostgreSQL, MySQL)|
-| `MENDIX_DATABASE_HOST` | The host name of the database server |
-| `MENDIX_DATABASE_PORT` | The port of the database server |
-| `MENDIX_DATABASE_NAME` |The name of the database |
+2. Apply the file by running the following command: `kubectl apply -f k8s/secret.yaml`.
 
-For more information, see [Runtime Customization](/refguide/custom-settings/#introduction).
+    Replace the name and path of the file as required.
 
-## Configuration File {#config-file}
+    {{% alert color="info" %}}
+    For production environments, consider using a secrets manager like Azure Key Vault, AWS Secrets Manager, or HashiCorp Vault with a CSI driver instead of plain Kubernetes Secrets.
+    {{% /alert %}}
 
-Alternatively, you can configure the Mendix Runtime by using a configuration file. The configuration file is a JSON file that contains the same settings as the environment variables.
+#### Creating a Persistent Volume Claim for Storage
 
-### Example Configuration File
+Mendix requires persistent storage for uploaded files. Create a Persistent Volume Claim (PVC) by performing the following steps:
 
-```json
-{
-  "DatabaseType": "PostgreSQL",
-  "DatabaseHost": "localhost:5432",
-  "DatabaseName": "mendix",
-  "DatabaseUserName": "mendix",
-  "DatabasePassword": "mendix",
-  "AdminPassword": "Admin1234!",
-  "RuntimePort": 8080,
-  "RuntimeAdminPort": 8090
-}
-```
+1. Create a file named, for example, *k8s/pvc.yaml*, with the contents like the following:
 
-### Using the Configuration File
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: mendix-storage
+      namespace: mendix-app
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+    ```
 
-To use the configuration file, set the `MENDIX_CONFIG_FILE` environment variable to the path of the configuration file:
+2. Apply the file by running the following command: `kubectl apply -f k8s/pvc.yaml`.
 
-`export MENDIX_CONFIG_FILE=/path/to/config.json`
- 
-## Logging
+    Replace the name and path of the file as required.
 
-The Mendix Runtime logs to a standard output by default. You can configure the log level using the `MX_LOG_LEVEL` environment variable.
+    {{% alert color="info" %}}
+    For multi-replica deployments or cloud-native setups, use S3-compatible storage instead. For more information, see [Configuring Deployment: S3 Storage](#s3-storage).
+    {{% /alert %}}
 
-The following log levels are supported (in order of verbosity):
+#### Configuring Deployment
 
-| Log Level | Description |
-| --------- | ----------- |
-| `TRACE` | Most verbose — logs all internal operations |
-| `DEBUG` | Detailed diagnostic information |
-| `INFO` | General operational messages (default) |
-| `WARNING` | Potentially harmful situations |
-| `ERROR` | Error events that may still allow the app to continue |
-| `CRITICAL` | Severe errors that may cause the app to stop |
+Configure deployment settings by performing the following steps:
 
-## Health Checks
+1. Create a file named, for example, *k8s/deployment.yaml*, with the contents like the following:
 
-The Mendix Runtime exposes health check endpoints that can be used to monitor the status of your app:
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mendix-app
+      namespace: mendix-app
+      labels:
+        app: mendix-app
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: mendix-app
+      template:
+        metadata:
+          labels:
+            app: mendix-app
+        spec:
+          containers:
+            - name: mendix-app
+              image: <your-registry>/mendix-app:1.0.0
+              ports:
+                - name: http
+                  containerPort: 8080
+            - name: admin
+              containerPort: 8090
 
-| EndPoint | Description |
-| -------- | ----------- |
-| `/health` | Returns the overall health status of the app |
-| `/health/live` | Returns the liveness status — indicates if the app is running |
-| `/health/ready` | Returns the readiness status — indicates if the app is ready to serve traffic |
+              # Load sensitive config from Secret
+              envFrom:
+                - secretRef:
+                    name: mendix-secret
 
-These endpoints are especially useful when integrating with orchestration platforms such as Kubernetes, which rely on liveness and readiness probes to manage container lifecycle.
+              # Non-sensitive environment variables
+              env:
+                - name: RUNTIME_PARAMS_MENDIX_CORE_STORAGESERVICE
+                  value: "localfilesystem"
+                - name: RUNTIME_PARAMS_MENDIX_STORAGE_PATH
+                  value: "/data"
+                - name: RUNTIME_PARAMS_MENDIX_LOG_LEVEL
+                  value: "INFO"
+
+              # Mount persistent storage
+              volumeMounts:
+                - name: mendix-storage
+                  mountPath: /data
+
+              # Resource limits
+              resources:
+                requests:
+                  memory: "512Mi"
+                  cpu: "250m"
+                limits:
+                  memory: "1Gi"
+                  cpu: "500m"
+
+              # Health checks
+              livenessProbe:
+                httpGet:
+                  path: /health/live
+                  port: 8080
+                initialDelaySeconds: 60
+                periodSeconds: 10
+                failureThreshold: 3
+
+              readinessProbe:
+                httpGet:
+                  path: /health/ready
+                  port: 8080
+                initialDelaySeconds: 30
+                periodSeconds: 10
+                failureThreshold: 3
+
+          volumes:
+            - name: mendix-storage
+              persistentVolumeClaim:
+                claimName: mendix-storage
+    ```
+
+2. Apply the file by running the following command: `kubectl apply -f k8s/deployment.yaml`.
+
+    Replace the name and path of the file as required.
+
+##### S3 Storage {#s3-storage}
+
+If you are using S3 instead of local storage, make the following changes to the above example file:
+
+* Remove the `volumeMounts` and `volumes` sections.
+* Replace the `env` section with the following:
+
+    ```yaml
+    env:
+    env:
+      - name: RUNTIME_PARAMS_MENDIX_CORE_STORAGESERVICE
+        value: "com.mendix.storage.s3"
+      - name: RUNTIME_PARAMS_MENDIX_STORAGE_S3_ENDPOINT
+        value: "<your-s3-endpoint>"
+      - name: RUNTIME_PARAMS_MENDIX_STORAGE_S3_BUCKETNAME
+        value: "<your-s3-bucket>"
+      - name: RUNTIME_PARAMS_MENDIX_STORAGE_S3_REGION
+        value: "<your-s3-region>" 
+        ...
+      - name: RUNTIME_PARAMS_MENDIX_STORAGE_S3_ACCESS_KEYID
+        valueFrom:
+          secretKeyRef:
+            name: mendix-secret
+            key: RUNTIME_PARAMS_MENDIX_STORAGE_S3_ACCESS_KEYID
+      - name: RUNTIME_PARAMS_MENDIX_STORAGE_S3_SECRETACCESSKEY
+        valueFrom:
+          secretKeyRef:
+            name: mendix-secret
+            key: RUNTIME_PARAMS_MENDIX_STORAGE_S3_SECRETACCESSKEY
+    ```
+
+  
