@@ -109,7 +109,7 @@ Users can create two types of agents:
 
 * **Task Agent**: Designed for isolated agentic patterns such as background processes, subagents in an Agent-as-Tool setup, or any use case that doesn't require a conversational interface with historical context.
 
- {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/agentbuilderUI.png" >}}
+ {{< figure src="/attachments/genai/agentcommons/agentbuilderUI.png" alt="" >}}
 
 #### Defining Context Entity {#define-context-entity}
 
@@ -229,7 +229,7 @@ Each time a new version of the agent is created, a decision must be made regardi
 
 When importing new agents into other environments, selecting the in-use version is always a manual step, requiring a conscious decision. The user will be prompted to choose the version to be used as part of the import user flow. Later, you can manage the active version directly from the Agent Overview.
 
- {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/Select_in_use.png" >}}
+ {{< figure src="/attachments/genai/agentcommons/Select_in_use.png" alt="" >}}
 
 ## Technical Reference
 
@@ -240,7 +240,7 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" alt="" >}}
 
 ## Troubleshooting
 
@@ -251,3 +251,7 @@ If you encounter an error stating that an attribute or a reference is required a
 ### Conflicted Lib Error After Module Import
 
 If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
+
+### String Comparison Errors with Oracle Database
+
+When using Oracle Database, Mendix maps unlimited string values (such as user prompt and system prompt attributes) to data types that may not support string comparisons (for example, in a rule). This can lead to errors. To fix the errors, edit the attribute types in the domain model and specify a string length.

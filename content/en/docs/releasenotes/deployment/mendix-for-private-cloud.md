@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### June 4, 2026
+
+#### Portal Improvements
+
+* We have added a check to prevent enabling **Compatibility Metrics Mode** in **Runtime Metrics Configuration** for Operator version 2.27.0 and above.
+
 ### June 2, 2026
 
 #### Mendix Operator v2.27.0 {#2.27.0}
