@@ -142,7 +142,7 @@ In the current Public Beta, embedded apps require [anonymous users](/refguide/an
 
 The embedded client runs inside a shadow root so that its styles stay isolated from the host app.
 
-To make common app styling keep working, Mendix rewrites CSS selectors that target `:root`, `html`, or `body` so they target `:host` instead. This allows CSS variables and other top-level styles to keep applying inside the embedded app.
+To make common app styling keep working, Mendix rewrites CSS selectors that target `:root`, `html`, or `body` so they target `mx-app-container` instead. `mx-app-container` is the element that wraps the embedded client inside the shadow root. This allows CSS variables and other top-level styles to keep applying inside the embedded app.
 
 If a selector depends on attributes on `html` or `body`, those attributes are mirrored to the shadow root so those selectors can still work when the app is embedded.
 
