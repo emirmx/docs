@@ -167,8 +167,6 @@ To create a new environment, perform the following steps:
 
 An environment is created. With more than one environment created, you transport your application between environments. See [Transport App Between Environments](#TransportApp) below.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/finish-environment.png">}}
-
 ## Preparing Packages for Deployment
 
 There are two ways of getting a package ready to deploy to SAP.
@@ -198,7 +196,7 @@ You will still have to deploy your app in [Apps](https://sprintr.home.mendix.com
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/deployment-packages.png">}}
 
-2. Click **Create a Package** and select the **Branch** on the Team server which you want to use.
+2. Click **Create a Package** and select the **Branch** on the Team server which you want to use. Click **Next**.
 
 3. Select the **Revision** of the branch you want to build and go **Next**.
 
@@ -228,68 +226,60 @@ There is a limit of 200 MB on the size of the MDA file you can upload to the Men
 SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9c7092c7b7ae4d49bc8ae35fdd0e0b18.html#loio9809fa4f02cb4696baea5c23d6eaac94) on the size of a deployment package.
 {{% /alert %}}
 
-### Deploying to an Environment
+A green tick indicates that the build has finished. Click deploy [icon] to deploy the package to SAP BTP.
 
-1. A green tick indicates that the build has finished. Click deploy icon to deploy the package to SAP BTP.
+### Trasnporting to an Environment
 
-2. Change the deployment environment if required.
+1. In the **Transport** tab, change the deployment **Environment** if required.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport.png">}}
 
-3. The **Timeout (seconds)** value indicates how long Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value.
+2. The **Timeout (seconds)** value indicates how long Cloud Foundry will wait between starting an app and the first healthy response from the app before deciding that the application has failed to start. For some apps, the default (60 seconds) is too short. If your app is failing to start you can try increasing this value.
 
-4. Click **Transport** to deploy the package to the SAP environment. This will replace any current app deployed to this environment. If the app is already running, you need to stop it so that your new app can be deployed.
+3. Click **Transport** to deploy the package to the SAP environment. This will replace any current app deployed to this environment. If the app is already running, you need to stop it so that your new app can be deployed.
 
-### Configuring the Application {#ConfigureTheApplication}
+Environments without deployed apps do not have the transport option available and cannot be transported.
 
-1. You will see confirmation of the package which has been transported.
+You can also transport to the required environment from the **Overview** tab of the **Environment** page. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-deploy.png" class="no-border" >}}
+### Configuring an Environment {#ConfigureTheApplication}
 
-2. Change any constants in the Constants tab: select the constant you want to edit and then click **Edit**.
+1. Once your package is transported, you will be redirected to the **Configure Environment** tab.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-constants.png" class="no-border" >}}
+2. To change any constants from the **Constants** list, select the constant you want to edit and click edit icon ({{% icon name="pencil" %}}).
 
-3. Toggle any scheduled events in the Scheduled Events tab. select the scheduled event you want to enable or disable and click **Toggle**.
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/edit-constants.png" class="no-border" >}}
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-events.png" class="no-border" >}}
+3. In the **Scheduled Events** section, select the scheduled event you want to *Enable* or *Disable* and click **Next**.
 
-4. Select any additional services you need for your app. For more information see [Binding Services](#binding-services), below.
+### Unbinding and Deleting Service Instances    
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-services.png"   width="75%"  class="no-border" >}}
+1. In the **Services** tab, select any additional services you need for your app. For more information, see [Services tab](#binding-services).
 
-    {{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Services To Be Bound**. For a new app, these services are all required for the correct deployment of the app.{{% /alert %}}
+    {{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Bound Services**. For a new app, these services are all required for the correct deployment of the app.{{% /alert %}}
 
-5. Click **Continue** to continue to the Start Application confirmation page.
+2. If you want to remove a service instance from your environment, click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
 
-6. Click **Start Application** to start the application on SAP BTP.
+    The options do the following:
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/start-application.png" class="no-border" >}}
+    * **Unbind Service** – unbind the service instance and move it to the **Services To Be Bound** section. The service will be bound next time your app is restarted
+    * **Delete Service** – unbind the service instance from the application and delete it from your environment
+
+    {{% alert color="info" %}}Once the service is deleted, it is deleted from the app environment and returned to the list of **Available Services**. If the service is unbound but not deleted, it is returned to the list of **Services To Be Bound** , and will be rebound next time the app is restarted.{{% /alert %}}
+
+3. Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit({{% icon name="pencil" %}}), or delete([icon]) custom runtime settings and environment variables. For more information, refer to [Runtime](). Click **Next**.
+
+4. On the **Start Application** tab, you can see the application details. Click **Start Application** to start the application on SAP BTP.
+
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/start-application.png" >}}
 
     {{% alert color="info" %}}This will bind any services which are in the status **Services To Be Bound**.{{% /alert %}}
 
-7. When the application has been started you will receive a confirmation message. Click **OK** and you will be taken to the Environment Details page for the selected environment. See [Environment Details](#EnvironmentDetails), below.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/application-started.png" class="no-border" >}}
-
-### Unbinding and Deleting Service Instances
-
-If you want to remove a service instance from your environment, you can do it is follows:
-
-1. Click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/unbind-service.png" class="no-border" >}}
-
-    The options will do the following:
-
-    * **Unbind Service** – unbind the service instance and move it to the **Services To Be Bound** section — the service will be bound next time your app is restarted
-    * **Delete Service** – unbind the service instance from the application and delete the service instance from your environment
+5. When the application has been started, you will be taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails) below.
 
 ## Transporting an App Between Environments {#TransportApp}
 
-1. Click **Transport** on the source environment you want to transport to another environment. Environments without deployed apps will have the transport button grayed out and cannot be transported.
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/transport-environments.png" class="no-border" >}}
+1. Click transport icon [icon](add) on the source environment you want to transport to another environment. Environments without deployed apps will have the transport button grayed out and cannot be transported. [check]You can also transport to another environment while deploying the package 
 
 2. Change the deployment **Environment** if required. 
 
