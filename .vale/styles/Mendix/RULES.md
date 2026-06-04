@@ -1,5 +1,7 @@
 # Mendix Custom Vale Rules
 
+<!-- vale off -->
+
 This directory contains custom Vale rules specific to Mendix documentation.
 
 ## Current Rules
