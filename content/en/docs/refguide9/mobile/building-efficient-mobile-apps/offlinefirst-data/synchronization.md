@@ -69,7 +69,8 @@ The upload phase executes the following operations:
 
 3. <a id="upload-step-three"></a>If there are any changed or new file objects their content is uploaded to the server and stored there temporarily. Each file is uploaded in a separate network request.
 
-    File uploads are not incremental — the full file content is uploaded whenever a file object has been modified in the local database, regardless of whether the file content itself has changed. If a file upload fails, the whole sync is aborted without causing any changes to the server or device database.
+    File uploads are not incremental—the full file content is uploaded whenever a file object has been modified in the local database, regardless of whether the file content itself has changed. If a file upload fails, the whole sync is aborted without causing any changes to the server or device database.
+    
 4. <a id="upload-step-four"></a>All the changed and new objects are sent to the server, and the content of the files is linked to the objects. The server performs referential integrity validation of the objects (for more information, see the [Dangling References](#dangling-references) section below). The objects are committed to the server database. Information about deleted objects is also sent to the server so the server can delete them from its database too. This step is performed in a single network request.
 5. <a id="upload-step-five"></a>Any configured before- or after-commit or before- or after-delete event handlers on these objects will run on the server as usual: after the data has been uploaded and before the device database is updated.
 
