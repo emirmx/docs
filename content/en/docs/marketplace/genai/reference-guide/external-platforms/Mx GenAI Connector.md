@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
+The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you use [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
 ### Features
 
@@ -20,7 +20,7 @@ Typical use cases for generative AI are described in more detail in the [Typical
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so you can generate keys yourself. 
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so that you can generate keys yourself. 
 
 {{% alert color="info" %}}
 
@@ -36,7 +36,7 @@ The Mendix Cloud GenAI Connector module generates embeddings internally when int
 
 ## Installation
 
-Add the [dependencies](#dependencies) listed above from the Marketplace. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [dependencies](#dependencies) listed above from the Marketplace. To import this module into your app, follow the instructions in [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
@@ -55,7 +55,7 @@ When using an Embeddings Model Resource together with a Knowledge Base Resource,
 
 ## Operations
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-configuration.png" >}}
+{{< figure src="/attachments/genai/mxgenAI-connector/mxgenaiconnector-configuration.png" alt="" >}}
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
@@ -93,7 +93,7 @@ The microflow activity [Chat completions (with history)](/appstore/modules/genai
 
 To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Knowledge Base` action. The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. The (optional) `Description` helps the model to understand the knowledge base content and decide whether it should be called in the current chat context. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-rag.png" >}}
+{{< figure src="/attachments/genai/mxgenAI-connector/mxgenaiconnector-rag.png" alt="" >}}
 
 The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retrieved chunk from the knowledge base. 
 
@@ -152,7 +152,7 @@ A Knowledge Base resource can comprise several collections. Each collection is s
 
 Below is a diagram showing how resources are organized into separate collections. This approach allows multiple use cases to share a common resource while the option to only add the required collections to the conversation context is preserved. For example, both employee onboarding and IT ticket support require information about IT setup and equipment. However, only onboarding needs knowledge about the company culture and values, while only IT support requires access to historical support ticket data.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
+{{< figure src="/attachments/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" alt="" >}}
 
 While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. 
 
@@ -170,7 +170,7 @@ key: `Category`, value: `Ticket`
 
 The model then generates its response using the specified metadata instead of solely the input text. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKBMetadataSeparation.png" >}}
+{{< figure src="/attachments/genai/navigate_mxgenai/GenAIKBMetadataSeparation.png" alt="" >}}
 
 Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata, such as
 
@@ -180,13 +180,13 @@ Using metadata, even more fine-grained filtering becomes feasible. Each ticket m
 
 Instead of relying solely on similarity-based searches of ticket descriptions, users can then filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'. You can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the respective key to each chunk during insertion. 
 
-#### How to get data into a knowledge base 
+#### How to Get Data Into a Knowledge Base 
 
-If you are looking for a step-by-step guide on how to get your application data into a collection inside of a Mendix Cloud Knowledge Base Resource, refer to [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from inside a Mendix application and using the connector. 
+If you are looking for a step-by-step guide on how to get your application data into a collection inside a Mendix Cloud Knowledge Base Resource, refer to [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from inside a Mendix application and using the connector. 
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [DeployedKnowledgeBase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base) of type `Collection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [DeployedKnowledgeBase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base) of type `Collection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object, and it must be associated with a `Configuration` object. Note that for Mendix Cloud GenAI, a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
@@ -209,7 +209,7 @@ To add data to the knowledge base, you need discrete pieces of information and c
 
 Dividing data into chunks is crucial for model accuracy, as it helps optimize the relevance of the content. The best chunking strategy is to keep a balance between reducing noise by keeping chunks small and retaining enough content within a chunk to get relevant results. Creating overlapping chunks can help preserve more context while maintaining a fixed chunk size. It is recommended to experiment with different chunking strategies to decide the best strategy for your data. In general, if chunks are logical and meaningful to humans, they will also make sense to the model. A chunk size of approximately 1500 characters with overlapping chunks has been proven to be effective for longer texts in the past.
 
-Since embeddings operations have a maximum character limit of 2048 characters per chunk, you must ensure that your chunks do not exceed this limit before submitting them for embedding. Chunks exceeding this limit will cause the embedding operation to fail, so validate your input data accordingly.
+Because embeddings operations have a maximum character limit of 2048 characters per chunk, you must ensure that your chunks do not exceed this limit before submitting them for embedding. Chunks exceeding this limit will cause the embedding operation to fail, so validate your input data accordingly.
 
 The chunk collection can then be stored in the knowledge base using one of the following operations:
 
@@ -218,28 +218,28 @@ The chunk collection can then be stored in the knowledge base using one of the f
 Use the following toolbox actions inside the **Mendix Cloud Knowledge Base** toolbox category to populate knowledge data into a collection:
 
 1. `Embed & Insert` embeds a list of chunks (passed via a [ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection)) and inserts them into the knowledge base.
-2. `Embed & repopulate KB` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
-3. `Embed & Replace` replaces existing chunks in the knowledge base that match the associated Mendix object which was passed via [Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) action at the insertion stage.
+2. `Embed & Repopulate KB` is similar to `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
+3. `Embed & Replace` replaces existing chunks in the knowledge base that match the associated Mendix object that was passed via the [Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) action at the insertion stage.
 
 Additionally, use the following toolbox actions to delete chunks:
 
 * `Delete for Object` deletes all chunks (and related metadata) from the collection that was associated with a passed Mendix object at the insertion stage.
-* `Delete for List` is similar to the `Delete for Object`, but a list of Mendix objects is passed instead.
+* `Delete for List` is similar to `Delete for Object`, but a list of Mendix objects is passed instead.
 
-When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Embed & Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
+When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix object changes, the affected chunks must be updated. Depending on your use case, `Embed & Replace` and `Delete for Objects` can be used in event handler microflows.
 
 ##### Knowledge Base Retrieval{#knowledge-base-retrieval}
 
 The following toolbox actions can be used to retrieve knowledge data from a collection (and associate it with your Mendix data):
 
 1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. 
-2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
+2. `Retrieve & Associate` is similar to `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
     {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which is associated with the entity that was used to pass a MendixObject during the [insertion stage](#knowledge-base-insertion).
     {{% /alert %}}
 
 3. `Embed & Retrieve Nearest Neighbors` retrieves a list of type [KnowledgeBaseChunk](/appstore/modules/genai/genai-for-mx/commons/#knowledgebasechunk-entity) from the knowledge base that are most similar to a given `Content` by calculating the cosine similarity of its vectors.
-4. `Embed & Retrieve Nearest Neighbors & Associate` combines the above actions `Retrieve & Associate` and `Embed & Retrieve Nearest Neighbors`.
+4. `Embed & Retrieve Nearest Neighbors & Associate` combines the above actions, `Retrieve & Associate` and `Embed & Retrieve Nearest Neighbors`.
 
 ### Embedding Operations
 
@@ -268,7 +268,7 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" alt="" >}}
 
 ### Tool Choice
 
@@ -307,6 +307,15 @@ To check your JDK version and update it if necessary, follow these steps:
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
 
+
+### Missing Jackson Core Dependency
+
+This applies to cases where your app fails to compile and throws the following error: `Missing dependencies: com.fasterxml.jackson.core:jackson-core:2.22.0`.
+
+This dependency is advertised in Maven repositories but does not actually exist. When you build your app, the automated dependency management attempts to download it and fails because the version is unavailable.
+
+To resolve this issue, download and install [GenAI Commons 6.2.2](https://marketplace.mendix.com/link/component/239448) from Mendix Marketplace. This module includes a fixed Jackson Core dependency configuration and will allow your app to compile successfully. Once Maven resolves the issue, dependency ranges will be used again to re-enable automated dependency management, including automatic vulnerability fixes.
+
 ### Migrating From Add-on Module to App Module
 
 Since the module has been changed with version 3.0.0 from an add-on to an app module, updating it via the marketplace will require a migration to ensure it works properly with your application.
@@ -324,7 +333,7 @@ To do this, follow the steps below:
 
 ### Attribute or Reference Required Error Message After Upgrade 
 
-If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
+If you encounter an error stating that an attribute or reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
 
 ### Conflicted Lib Error After Module Import
 
