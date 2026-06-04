@@ -318,4 +318,100 @@ If you are using S3 instead of local storage, make the following changes to the 
             key: RUNTIME_PARAMS_MENDIX_STORAGE_S3_SECRETACCESSKEY
     ```
 
-  
+#### Configuring the Service
+
+Configure the Service settings by performing the following steps:
+
+1. Create a file named, for example, *k8s/service.yaml*, with the contents like the following:
+
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: mendix-app-service
+      namespace: mendix-app
+    spec:
+      selector:
+        app: mendix-app
+      ports:
+        - name: http
+          protocol: TCP
+          port: 80
+          targetPort: 8080
+        - name: admin
+          protocol: TCP
+          port: 8090
+          targetPort: 8090
+      type: ClusterIP
+    ```
+
+2. Apply the file by running the following command: `kubectl apply -f k8s/service.yaml`.
+
+    Replace the name and path of the file as required.
+
+#### Configuring the Ingress
+
+Configure the Ingress settings by performing the following steps:
+
+1. Create a file named, for example, *k8s/ingress.yaml*, with the contents like the following:
+
+    ```yaml
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: mendix-app-ingress
+      namespace: mendix-app
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
+    spec:
+      rules:
+        - host: your-app.your-domain.com
+          http:
+            paths:
+              - path: /
+                pathType: Prefix
+                backend:
+                  service:
+                    name: mendix-app-service
+                    port:
+                      number: 80
+    ```
+
+2. Optional: To use HTTPS, add a `tls` section to the `spec` of the above example, and reference a TLS secret (for example, from **cert-manager**):
+
+    ```yaml
+    spec:
+      tls:
+        - hosts:
+            - your-app.your-domain.com
+          secretName: mendix-tls-secret
+    ```
+
+3. Apply the file by running the following command: `kubectl apply -f k8s/ingress.yaml`.
+
+    Replace the name and path of the file as required.
+
+### Verifying the Deployment
+
+Verify the deployment by running the following commands:
+
+```text
+# Check all resources in the namespace
+kubectl get all -n mendix-app
+
+# Watch pod startup
+kubectl get pods -n mendix-app -w
+
+# View app logs
+kubectl logs -f deployment/mendix-app -n mendix-app
+
+# Check ingress
+kubectl get ingress -n mendix-app
+```
+
+## Reference
+
+### Environment Variables
+
+The following is a list of available environment variables that you can use.
+
