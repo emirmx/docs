@@ -2,7 +2,7 @@
 # Reference: content/en/docs/community-tools/contribute-to-mendix-docs/icon-demo.md
 # Known issue: Only matches plaintext
 extends: substitution
-message: "Use '%s' instead of '%s'"
+message: "Use the icon shortcode and tooltip: '%s' instead of '%s'"
 link: https://docs.mendix.com/icons/
 level: warning
 ignorecase: false
@@ -13,87 +13,19 @@ scope:
 action:
   name: replace
 swap:
-  # play icon
-  'click the play icon': 'click **Run** ({{% icon name="controls-play-filled" %}})'
-  'Click the play icon': 'Click **Run** ({{% icon name="controls-play-filled" %}})'
-  'click play icon': 'click **Run** ({{% icon name="controls-play-filled" %}})'
-  'Click play icon': 'Click **Run** ({{% icon name="controls-play-filled" %}})'
-  'clicking the play icon': 'clicking **Run** ({{% icon name="controls-play-filled" %}})'
-  'Clicking the play icon': 'Clicking **Run** ({{% icon name="controls-play-filled" %}})'
-  # ellipsis icon
-  'click the ellipsis icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click the ellipsis icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click ellipsis icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click ellipsis icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'clicking the ellipsis icon': 'clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Clicking the ellipsis icon': 'Clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  # three dots variations
-  'click the three dots icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click the three dots icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click three dots icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click three dots icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click the three dot icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click the three dot icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click three dot icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click three dot icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click the three-dot icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click the three-dot icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'click three-dot icon': 'click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Click three-dot icon': 'Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'hover over the three dots icon': 'hover over **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Hover over the three dots icon': 'Hover over **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'hovering over the three dots icon': 'hovering over **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  'Hovering over the three dots icon': 'Hovering over **More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
-  # edit icon
-  'click the edit icon': 'click **Edit** ({{% icon name="pencil" %}})'
-  'Click the edit icon': 'Click **Edit** ({{% icon name="pencil" %}})'
-  'click edit icon': 'click **Edit** ({{% icon name="pencil" %}})'
-  'Click edit icon': 'Click **Edit** ({{% icon name="pencil" %}})'
-  'clicking the edit icon': 'clicking **Edit** ({{% icon name="pencil" %}})'
-  'Clicking the edit icon': 'Clicking **Edit** ({{% icon name="pencil" %}})'
-  # trash can icon
-  'click the trash can icon': 'click **Delete** ({{% icon name="trash-can" %}})'
-  'Click the trash can icon': 'Click **Delete** ({{% icon name="trash-can" %}})'
-  'clicking the trash can icon': 'clicking **Delete** ({{% icon name="trash-can" %}})'
-  'Clicking the trash can icon': 'Clicking **Delete** ({{% icon name="trash-can" %}})'
-  'click trash can icon': 'click **Delete** ({{% icon name="trash-can" %}})'
-  'Click trash can icon': 'Click **Delete** ({{% icon name="trash-can" %}})'
-  # delete icon
-  'click the delete icon': 'click **Delete** ({{% icon name="trash-can" %}})'
-  'Click the delete icon': 'Click **Delete** ({{% icon name="trash-can" %}})'
-  'click delete icon': 'click **Delete** ({{% icon name="trash-can" %}})'
-  'Click delete icon': 'Click **Delete** ({{% icon name="trash-can" %}})'
-  # copy icon
-  'click the copy icon': 'click **Copy** ({{% icon name="copy" %}})'
-  'Click the copy icon': 'Click **Copy** ({{% icon name="copy" %}})'
-  'click copy icon': 'click **Copy** ({{% icon name="copy" %}})'
-  'Click copy icon': 'Click **Copy** ({{% icon name="copy" %}})'
-  # information icon
-  'click the information icon': 'click **Information** ({{% icon name="info-circle" %}})'
-  'Click the information icon': 'Click **Information** ({{% icon name="info-circle" %}})'
-  'click information icon': 'click **Information** ({{% icon name="info-circle" %}})'
-  'Click information icon': 'Click **Information** ({{% icon name="info-circle" %}})'
-  # alert icon
-  'click the alert icon': 'click **Alert** ({{% icon name="alert-circle" %}})'
-  'Click the alert icon': 'Click **Alert** ({{% icon name="alert-circle" %}})'
-  'click alert icon': 'click **Alert** ({{% icon name="alert-circle" %}})'
-  'Click alert icon': 'Click **Alert** ({{% icon name="alert-circle" %}})'
-  # error icon
-  'click the error icon': 'click **Error** ({{% icon name="remove-circle-filled" %}})'
-  'Click the error icon': 'Click **Error** ({{% icon name="remove-circle-filled" %}})'
-  'click error icon': 'click **Error** ({{% icon name="remove-circle-filled" %}})'
-  'Click error icon': 'Click **Error** ({{% icon name="remove-circle-filled" %}})'
-  # paperclip icon
-  'click the paperclip icon': 'click **Attach** ({{% icon name="paperclip" %}})'
-  'Click the paperclip icon': 'Click **Attach** ({{% icon name="paperclip" %}})'
-  'click paperclip icon': 'click **Attach** ({{% icon name="paperclip" %}})'
-  'Click paperclip icon': 'Click **Attach** ({{% icon name="paperclip" %}})'
-  # checkmark icon
-  'click the checkmark icon': 'click **Save** ({{% icon name="checkmark-circle" %}})'
-  'Click the checkmark icon': 'Click **Save** ({{% icon name="checkmark-circle" %}})'
-  'click checkmark icon': 'click **Save** ({{% icon name="checkmark-circle" %}})'
-  'Click checkmark icon': 'Click **Save** ({{% icon name="checkmark-circle" %}})'
-  'click the check mark icon': 'click **Save** ({{% icon name="checkmark-circle" %}})'
-  'Click the check mark icon': 'Click **Save** ({{% icon name="checkmark-circle" %}})'
-  'click check mark icon': 'click **Save** ({{% icon name="checkmark-circle" %}})'
-  'Click check mark icon': 'Click **Save** ({{% icon name="checkmark-circle" %}})'
+  'the play icon': '**Run** ({{% icon name="controls-play-filled" %}})'
+  'the ellipsis icon': '**More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
+  'the three dots icon': '**More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
+  'three dot icon': '**More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
+  'the three-dot icon': '**More Options** ({{% icon name="three-dots-menu-horizontal" %}})'
+  'the edit icon': '**Edit** ({{% icon name="pencil" %}})'
+  'the pencil icon': '**Edit** ({{% icon name="pencil" %}})'
+  'the trash can icon': '**Delete** ({{% icon name="trash-can" %}})'
+  'the delete icon': '**Delete** ({{% icon name="trash-can" %}})'
+  'the copy icon': '**Copy** ({{% icon name="copy" %}})'
+  'the information icon': '**Information** ({{% icon name="info-circle" %}})'
+  'the alert icon': '**Alert** ({{% icon name="alert-circle" %}})'
+  'the error icon': '**Error** ({{% icon name="remove-circle-filled" %}})'
+  'the paperclip icon': '**Attach** ({{% icon name="paperclip" %}})'
+  'the checkmark icon': '**Save** ({{% icon name="checkmark-circle" %}})'
+  'the check mark icon': '**Save** ({{% icon name="checkmark-circle" %}})'
