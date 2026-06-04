@@ -66,7 +66,7 @@ The following are bulk update features.
 | OQL `INSERT` associations *beta* | 11.7.0 |
 | OQL bulk update *GA* | 11.8.0 |
 
-## Syntax basics
+## Syntax Basics
 
 An OQL statement consists of [keywords](#reserved-oql-words), identifiers, [value literals](/refguide/oql-expression-syntax/#oql-literals) and [operators](/refguide/oql-expression-syntax/#oql-operators).
 

@@ -1045,7 +1045,7 @@ DATEFORMAT ( expression , pattern )
 
 #### Pattern Syntax
 
-The `DATEFORMAT` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/).
+The `DATEFORMAT` OQL function uses the same pattern syntax, with the differences noted below, as date parsing functions in Studio Pro. See [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/) for more information.
 
 #### Limitations and Database-Specific Differences
 
@@ -1062,8 +1062,8 @@ When an OQL query is executed, `DATEFORMAT` is converted to the corresponding da
     
 6. In addition to listed limitations, there are minor implementation differences between database engines such as:
 
-	1. Casing (`SUN 3:12 PM` in PostgreSQL, `Sun 3:12 PM` in SQL Server and `Sun 3:12 pm` in HSQLDB)
-	2. Year formatting (`YY` is formatted as `2026` in MySQL, as `26` in HSQLDB and PostgreSQL, and is not supported at all in SQL Server and SAP HANA).
+    1. Casing (`SUN 3:12 PM` in PostgreSQL, `Sun 3:12 PM` in SQL Server and `Sun 3:12 pm` in HSQLDB)
+    2. Year formatting (`YY` is formatted as `2026` in MySQL, as `26` in HSQLDB and PostgreSQL, and is not supported at all in SQL Server and SAP HANA).
 
 {{% alert color="warning" %}}
 Always test usages of `DATEFORMAT` with the database engine on which your app runs. OQL queries with `DATEFORMAT` may return different results in HSQLDB and in the production database.
@@ -1099,7 +1099,7 @@ DATEPARSE ( expression , pattern )
 
 #### Pattern Syntax
 
-The `DATEPARSE` OQL function uses the same pattern syntax as date parsing functions in Studio Pro, see [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/).
+The `DATEPARSE` OQL function uses the same pattern syntax, with the differences noted below, as date parsing functions in Studio Pro. See [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/) for more information.
 
 #### Limitations and Database-Specific Differences
 
