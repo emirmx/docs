@@ -6,7 +6,7 @@ description: "These release notes showcase each release of the iOS and Android M
 ---
 
 {{% alert color="warning" %}}
-Make It Native 9 is no longer available. For building Make It Native 9, please contact Mendix Support.
+Make It Native 9 is no longer available in Mendix Marketplace and is not supported. For still building Make It Native 9, please refer to [the GitHub Make it Native App repository](https://github.com/mendix/make-it-native).
 {{% /alert %}}
 
 {{% alert color="info" %}}
