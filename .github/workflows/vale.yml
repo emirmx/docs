@@ -37,6 +37,7 @@ jobs:
         uses: vale-cli/vale-action@v2
         with:
           files: ${{ steps.changed-files.outputs.files }}
+          separator: ','
           version: 3.14.2
           fail_on_error: false
           reporter: github-pr-review
