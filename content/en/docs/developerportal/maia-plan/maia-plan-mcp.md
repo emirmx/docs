@@ -7,18 +7,18 @@ weight: 10
 
 ## Introduction
 
-The Maia Plan MCP Server provides read-only access to selected Maia Plan artifacts through the Model Context Protocol (MCP). External MCP clients can retrieve plan content in Markdown format, including project scope and project solution with epics and stories.
+The Maia Plan MCP Server provides read-only access to selected Maia Plan artifacts through the Model Context Protocol (MCP). External MCP clients can retrieve plan content in Markdown format, including project scope and project solution, including epics and stories.
 
 The MCP server has the following key characteristics:
 
-* **Read-only interface** – No create, update, or delete operations are supported.
-* **Project-level access control** – Each request is validated against user permissions, so users can only retrieve data for projects they are allowed to view.
-* **Focused tool set** – Three tools are available:
+* Read-only interface – No create, update, or delete operations are supported.
+* Project-level access control – Each request is validated against user permissions, so users can only retrieve data for projects they are allowed to view.
+* Focused tool set – Three tools are available:
 
     * Find a plan using search terms (returns a plan UUID for follow-up calls).
     * Get project scope as Markdown.
     * Get project solution as Markdown.
-* **Per-project retrieval** – Each call targets a specific project identified by UUID.
+* Per-project retrieval – Each call targets a specific project identified by UUID.
 
 ## Prerequisites
 
@@ -91,7 +91,7 @@ Use this tool to search for plans using search terms. The tool returns a plan UU
 
 Tool specifics:
 
-* When to use this tool:
+* When to use:
 
     * You know the project name or other identifying information, but you do not have the project UUID.
     * You want to discover available plans before retrieving plan content.
@@ -114,7 +114,7 @@ Use this tool to retrieve the project scope as Markdown. The project scope inclu
 
 Tool specifics:
 
-* When to use this tool:
+* When to use:
 
     * You want to review the high-level project objectives and requirements.
     * You need to document or share the project scope outside of Maia Plan.
@@ -133,7 +133,7 @@ Use this tool to retrieve the project solution as Markdown. The project solution
 
 Tool specifics:
 
-* When to use this tool:
+* When to use:
 
     * You want to review the detailed implementation plan with epics and stories.
     * You need to export the project solution for documentation, reporting, or integration with other systems.
