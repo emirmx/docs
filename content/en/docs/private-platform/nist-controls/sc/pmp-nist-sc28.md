@@ -173,4 +173,4 @@ The Mendix Runtime provides the [EnableFileDocumentCaching](/refguide/custom-set
 
 ### SC-28(1) - FIPS Mode: AES-256 and FIPS 140-2 Validated Cryptography
 
-The sibling control SC-28 (1) documents the cryptographic protection mechanisms available in Private Mendix Platform, including support for FIPS 140-2 validated modules when deployed in FIPS mode. Private Mendix Platform supports FIPS-compliant deployments on supported Kubernetes distributions, ensuring that AES-256 is used for data at rest.
+The sibling control SC-28 (01) documents the cryptographic protection mechanisms available in Private Mendix Platform, including support for FIPS 140-2 validated modules when deployed in FIPS mode. Private Mendix Platform supports FIPS-compliant deployments on supported Kubernetes distributions, ensuring that AES-256 is used for data at rest.
