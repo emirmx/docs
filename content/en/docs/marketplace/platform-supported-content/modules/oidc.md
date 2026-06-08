@@ -580,20 +580,23 @@ You can set up just-in-time user provisioning as follows:
 
 1. Sign in to the running app with an administrator account.
 2. Navigate to the `OIDC.OIDC_Client_Overview` page, which is set up in the app navigation.
-3. In the **IdPs for SSO and API security** tab, click **New**,  or **Edit** the existing alias, and access the **Step 3 Creating User** tab.
+3. In the **IdPs for SSO and API security** tab, click **New**,  or **Edit** the existing alias, and access the **Creating User** tab.
 
 The following fields are available for the user provisioning configuration.
 
 * **Allow the module to create users?** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
-    * By default, the value is set to ***Yes***.
-* **Custom user entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
-* **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user.
-* **User role** (optional) – the role that will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use the Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
-    * By default, the value is set to ***User***.
-* **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in. It is a setting configured per IdP. If two IdPs are connected, one IdP may have the user type set to ***Internal*** while the other may have the user type set to ***External***.
-    * By default, the value is set to ***Internal***.
+    * By default, the value is set to *Yes*.
 
-* Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
+* **User Provisioning Extension** – Optionally, you can select the microflow in the **User Provisioning Extension** field to use custom logic for user provisioning. For more information, see the [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
+
+* **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in. It is a setting configured per IdP. If two IdPs are connected, one IdP may have the user type set to *Internal* while the other may have the user type set to *External*.
+    * By default, the value is set to *Internal*.
+
+* **Custom user entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
+
+* **User metering named identifier** – To facilitate upcoming enhancements to the platform, you need to perform some configuration so that Mendix can correctly identify end users. Correct identification is crucial for ensuring consistent and accurate end user metering and deduplication of end users across multiple applications in your landscape. For this reason, the UserCommons module features the **User Metering Named Identifier** entity in version 2.2.0 and above. If you have a multi-app internal user license or an external user license, you must persist the same value for the same end user across different apps, regardless of which modules you use. In most cases, the end user's email address is a good choice. Currently, Mendix uses the `system.user.name` to identify users, it will use the **User Metering Named Identifier** instead, unless it is not populated. For accurate user metering, you do not need to change what value is persisted in the `system.user.name`. You can continue to persist whatever value you are using there today. The `system.user.name` is often used for technical user identifiers, for example, the `oid` value when using the OIDC SSO module. For more information, see [Guidance on User Identifier](#guidance-user-identifier). Both `system.user.name` and `userCommons.NamedUserIdentifier.value` has a uniqueness constraint for the named user identifier. This means an app cannot have two users who share the same identifier value. Also, both fields are case sensitive. For more information on case sensitivity, refer to [Best Practices for Choosing and Implementing a Cross-App User Identifier](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+
+* **Attribute Mapping** – Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
 
     Note the following:
 
@@ -602,15 +605,13 @@ The following fields are available for the user provisioning configuration.
     * The **IdP Attribute** is one of the fixed claims supported by the OIDC SSO module.
     * IdP Attributes(Claims) cannot be of type enum, autonumber, or an association.
 
-* Optionally, you can select the microflow in the **Custom UserProvisioning** field to use custom logic for user provisioning. For more information, see the [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
+* **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user.
+* **Default user role** (optional) – the role that will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use the Custom AccessToken processing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
+    * By default, the value is set to *User*.
 
-* To facilitate upcoming enhancements to the platform, you need to perform some configuration so that Mendix can correctly identify end users. Correct identification is crucial for ensuring consistent and accurate end user metering and deduplication of end users across multiple applications in your landscape. For this reason, the UserCommons module features the **User Metering Named Identifier** entity in version 2.2.0 and above. If you have a multi-app internal user license or an external user license, you must persist the same value for the same end user across different apps, regardless of which modules you use. In most cases, the end user's email address is a good choice. Currently, Mendix uses the `system.user.name` to identify users, it will use the **User Metering Named Identifier** instead, unless it is not populated. For accurate user metering, you do not need to change what value is persisted in the `system.user.name`. You can continue to persist whatever value you are using there today. The `system.user.name` is often used for technical user identifiers, for example, the `oid` value when using the OIDC SSO module. For more information, see [Guidance on User Identifier](#guidance-user-identifier). Both `system.user.name` and `userCommons.NamedUserIdentifier.value` has a uniqueness constraint for the named user identifier. This means an app cannot have two users who share the same identifier value. Also, both fields are case sensitive. For more information on case sensitivity, refer to [Best Practices for Choosing and Implementing a Cross-App User Identifier](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+Click **Next** to save the configuration. 
 
-    * If you want to use a user attribute other than email address for the **User Metering Named Identifier**, you can configure it on the **UserProvisioning** tab:
-
-    * Select the identifier in the **User Metering Named Identifier** field to be used for metering. Click **Save** to save the configuration.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default-user-provisioning.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-provisioning.png" >}}
 
 {{% alert color="info" %}}
 If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
@@ -618,7 +619,7 @@ If you are using module version 3.2.0 and below, you will need to refresh the mo
 
 ##### Default User Provisioning Configuration{#default}
 
-If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
+If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default user provisioning.
 
 In the default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
 
@@ -633,14 +634,14 @@ In the default configuration, the custom user entity is set as `Administration.A
 You may need a different or custom attribute mapping, for example, if you are configuring OIDC SSO and SCIM together and need a common identifier. For more information, see the [User Identifiers in the OIDC and SCIM Protocols](#user-identifiers-in-the-oidc-and-scim-protocols) section below.
 
 In this case, you can modify the default attribute mapping.
-To do so, change the default **IdP Attribute** or the **Configured Entity Attribute** by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab. 
+To do so, change the default **IdP Attribute** or the **Configured Entity Attribute** by editing the mapping.
 
 ##### Creating IdP Attribute Manually
 
 IdP attributes will be automatically created from the list of `claims_supported` at the well-known endpoint. The module also allows manual creation of IdP attributes through the following steps:
 
-1. In the **Attribute Mapping** of the **UserProvisioning** tab, click **New** to add a new mapping.
-2. In the **Edit Claim Map** dialog, click **Search**.
+1. In the **Creating Users** tab, click **Add Claim** to add a new mapping.
+2. In the **Add Claim Map** dialog, click **Search**.
 3. Under the **Claims for claim entity attribute**, click **New** to create a new claim.
 4. In the **IdP Attribute**, select the newly created claim from the dropdown, and click **Save**.
 
@@ -663,11 +664,11 @@ If you want to use a custom user entity that is not a specialization of the `Sys
 * Configure a subclass of `System.User` as the Just In Time Provisioning entity.
 * Build a custom microflow (e.g., `UC_CustomProvisioning`) to create or handle your user provisioning logic based on your specific requirements.
 
-Select it in the **Custom UserProvisioning** field. The custom microflow name must begin with the string `UC_CustomProvisioning` and requires the following parameters:
+Select it in the **Creating Users** tab. The custom microflow name must begin with the string `UC_CustomProvisioning` and requires the following parameters:
 
 * **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this parameter to retrieve user provisioning configuration information.
 * **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
-* The microflow must return a **System.User** object to ensure proper user provisioning and updates. It will be executed after user creation or the update of the user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory.
+* The microflow must return a `System.User` object to ensure proper user provisioning and updates. It will be executed after user creation or the update of the user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory.
 * If you have added a new microflow, you need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/).
 
 ### Configuring User Provisioning for Version 2.4.0 and Below
@@ -741,9 +742,9 @@ The default behavior for the OIDC SSO module is to persist the value of the `sub
 
 #### Configuring `oid` Claim in the OIDC SSO
 
-By default, the `WellKnownendpoint` (Automatic configuration URL) does not include the `oid` claim in its metadata. You will need to manually configure the `oid` claim in the **UserProvisioning** tab of the OIDC SSO configuration using the steps below:
+By default, the well-known endpoint (**Automatic configuration URL**) does not include the `oid` claim in its metadata. You need to manually configure the `oid` claim in the **Creating Users** tab of the OIDC SSO configuration using the steps below:
 
-1. Go to **Attribute Mapping** and click **New**.
+1. Go to **Attribute Mapping** and click **Add Claim**.
 2. Select **Search**  and click **New**.
 3. Create an `oid` claim and map it to the Entity Attribute.
 
