@@ -166,6 +166,11 @@ If the host app and the Mendix runtime use different origins, make sure the Mend
 
 If the host app uses Content Security Policy (CSP), make sure its policy allows JavaScript to load from the Mendix runtime domain. This is required because the host app loads the embedded bundle and other client resources from that domain. For more information, see [Content Security Policy](/howto/security/csp/).
 
+## Known Issues
+
+### Optional parameters
+Omitting a parameter that is marked as optional from the `parameters` object will result in the error page being shown instead of the default value being passed.
+
 ## Read More
 
 * [Mendix Client](/refguide/mendix-client/)
