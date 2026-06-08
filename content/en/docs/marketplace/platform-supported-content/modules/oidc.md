@@ -160,15 +160,15 @@ Once the Mx Model Reflection module has been imported into your app, you need to
 
 1. In the **App Explorer**, add the page **MxObjects_Overview** from the **MxModelReflection** folder to the Navigation menu.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/add-model-reflection.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/add-model-reflection.png" alt="New Menu Item dialog with Model Reflection page configuration" class="no-border" >}}
 
 2. Run the app and click the newly-added navigation link to use Mx Model Reflection.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/model-reflection-button.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/model-reflection-button.png" alt="" class="no-border" >}}
 
 3. Select the modules **MxModelReflection** and **OIDC**  and click **Click to refresh** for both the modules and the entities. Starting from version 3.0.0 of the OIDC SSO module, additionally select and refresh the **Administration** and **System** modules in the **MxModelReflection.MxObjects_Overview** page to configure User Provisioning.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/select_modules.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/select_modules.png" alt="MxObjects_Overview page with MxModelReflection and OIDC modules selected" class="no-border" >}}
 
 ### Migrating from Community Edition to Platform Edition{#migration}
 
@@ -235,7 +235,7 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
 | User | OIDC.User |
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" alt="User roles tab showing Administrator and User roles with their assigned module roles" >}}
 
 ### End User Login When Using Single or Multiple IdPs
 
@@ -325,13 +325,13 @@ In this case, the OIDC client is the app you are making.
 
     If you do not have an automatic configuration URL, you can fill in the other endpoints manually and click **Next**.
 
-   {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/endpoints.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/endpoints.png" alt="Endpoints tab with automatic configuration URL and endpoint fields" >}}
 
 4. On the **General Configuration** tab, add **Client ID**. Client assertion is automatically set to **Client ID** and **Client secret**.
 
 5. **Enable PKCE** for the best security practice. It is enabled by default. To disable it, select **No**.
 
-6. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
+6. Choose the **Client authentication method** – make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
@@ -382,7 +382,7 @@ In this case, the OIDC client is the app you are making.
 
 Once you have completed these steps, the SSO-configuration is ready for testing. For more information, see the [Testing and troubleshooting](#testing) section.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/idp_config.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/idp_config.png" alt="IdP Integration page showing configured Azure, AzureCertificate, and Auth0 providers" >}}
 
 See the section [Optional Features](#optional) information on additional optional features you may want to implement.
 
@@ -594,7 +594,7 @@ The following fields are available for the user provisioning configuration.
 
 * **Custom user entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
 
-* **User metering named identifier** – To facilitate upcoming enhancements to the platform, you need to perform some configuration so that Mendix can correctly identify end users. Correct identification is crucial for ensuring consistent and accurate end user metering and deduplication of end users across multiple applications in your landscape. For this reason, the UserCommons module features the **User Metering Named Identifier** entity in version 2.2.0 and above. If you have a multi-app internal user license or an external user license, you must persist the same value for the same end user across different apps, regardless of which modules you use. In most cases, the end user's email address is a good choice. Currently, Mendix uses the `system.user.name` to identify users, it will use the **User Metering Named Identifier** instead, unless it is not populated. For accurate user metering, you do not need to change what value is persisted in the `system.user.name`. You can continue to persist whatever value you are using there today. The `system.user.name` is often used for technical user identifiers, for example, the `oid` value when using the OIDC SSO module. For more information, see [Guidance on User Identifier](#guidance-user-identifier). Both `system.user.name` and `userCommons.NamedUserIdentifier.value` has a uniqueness constraint for the named user identifier. This means an app cannot have two users who share the same identifier value. Also, both fields are case sensitive. For more information on case sensitivity, refer to [Best Practices for Choosing and Implementing a Cross-App User Identifier](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
+* **User metering named identifier** – To facilitate upcoming enhancements to the platform, you need to perform some configuration so that Mendix can correctly identify end-users. Correct identification is crucial for ensuring consistent and accurate end-user metering and deduplication of end-users across multiple applications in your landscape. For this reason, the UserCommons module features the **User Metering Named Identifier** entity in version 2.2.0 and above. If you have a multi-app internal user license or an external user license, you must persist the same value for the same end user across different apps, regardless of which modules you use. In most cases, the end user's email address is a good choice. Currently, Mendix uses the `system.user.name` to identify users, it will use the **User Metering Named Identifier** instead, unless it is not populated. For accurate user metering, you do not need to change what value is persisted in the `system.user.name`. You can continue to persist whatever value you are using there today. The `system.user.name` is often used for technical user identifiers, for example, the `oid` value when using the OIDC SSO module. For more information, see [Guidance on User Identifier](#guidance-user-identifier). Both `system.user.name` and `userCommons.NamedUserIdentifier.value` has a uniqueness constraint for the named user identifier. This means an app cannot have two users who share the same identifier value. Also, both fields are case sensitive. For more information on case sensitivity, refer to [Best Practices for Choosing and Implementing a Cross-App User Identifier](/developerportal/deploy/implementing-user-metering/#guidelines-for-unique-user-identification-deduplication).
 
 * **Attribute Mapping** – Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
 
@@ -611,7 +611,7 @@ The following fields are available for the user provisioning configuration.
 
 Click **Next** to save the configuration. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-provisioning.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-provisioning.png" alt="Creating User tab with user creation microflow, attribute mapping, and default user role settings" >}}
 
 {{% alert color="info" %}}
 If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
@@ -885,7 +885,7 @@ To parse of SAM access tokens you need to do the following when performing [Runt
 
 1. Select *OIDC.Default_SAM_TokenProcessing_CustomATP* as the **Custom AccessToken processing microflow**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/sam.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/sam.png" alt="Access Token Parsing configuration with SAM token processing microflow selected" >}}
 
 2. Add the scopes `sam_account`, `samauth.role`, `samauth.tier`, and `samauth.ten` to the **Selected Scopes** in the OIDC Client Configuration.
 3. Configure the user roles in your app to match the roles returned by SAM. End-users will be given the matching role when they sign into the app. If the role in the SAM token is not found in the Mendix app the end-user will be given the role `User`.
@@ -910,8 +910,6 @@ The OIDC SSO module version 2.3.0 and above provides a default access token pars
 To parse the OIDC Provider access tokens you need to do the following when performing OIDC Client Configuration:
 
 1. Select `OIDC.Default_OIDCProvider_TokenProcessing_CustomATP` as the **custom AccessToken processing microflow**.
-
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-provider-parsing.png" >}}
 
 2. Add the scopes `openid` and the ModelGUID or Name to the **Scopes** in the OIDC Client Configuration. The ModelGUID will look something like `53f5d6fa-6da9-4a71-b011-454ec052cce8`.
 
@@ -1047,7 +1045,7 @@ To configure the ACR value (or values) in the OIDC SSO module, follow these step
 
 When you have configured multiple ACR values for your IdP, the OIDC module shows the ACR values as additional ways to sign in on the default login page.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/login-acr-options.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/login-acr-options.png" alt="Login page showing three Okta sign-in options with different ACR values" class="no-border" >}}
 
 #### Customizing the Login Page
 
@@ -1086,7 +1084,7 @@ authentication in your Mendix App.
 
 The following diagram gives an overview of all endpoints that the OIDC SSO module exposes and consumes:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-endpoints.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-endpoints.png" alt="Architecture diagram showing OIDC SSO module endpoints and communication flow between Mendix app and IdP" class="no-border" >}}
 
 End-users can access your app through the following endpoints when using the OIDC SSO module:
 
@@ -1158,7 +1156,7 @@ If you have deployed your app on premises but did not configure a return URL for
 
 To resolve this, open the Mendix Service Console and ensure that the **Port number** for the **Public application root URL**, **Runtime server port**, and **Admin server port** match.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/service-console-ports.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/service-console-ports.png" alt="Service Console Configuration dialog highlighting matching port numbers for runtime and admin server" class="no-border" >}}
 
 ### `CommunityCommons.RandomStrongPassword` Microflow Does Not Match the Expected Parameters
 
@@ -1168,13 +1166,13 @@ This error indicates that new parameters must be synced with the microflow.
 
 To resolve this issue, either open the microflow used for the OIDC SSO module or refresh it before deploying your Mendix app again.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/Community Commons error.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/Community Commons error.png" alt="Studio Pro console showing parameter mismatch errors for CommunityCommons.RandomStrongPassword" class="no-border" >}}
 
 ### Endless Redirect Loop and Runtime Error (Mendix 10.9 to 10.12.2)
 
 When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may encounter an endless redirect loop to the login page or you can see a "Runtime operation failed" error message in the UI. This issue is related to the session cookie handling in these versions. To resolve these redirect loop and runtime error, Mendix recommends upgrading to Mendix version 10.12.3 or above.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/runtime-failed.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/runtime-failed.png" alt="Error dialog displaying runtime operation failed for security reasons message" class="no-border" >}}
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
 
