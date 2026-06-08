@@ -131,7 +131,7 @@ When you install the extension, you see a new menu item in Studio Pro.
 
 ### Understanding the Generated Files
 
-The generator creates a project with the following structure. Some files are boilerplate that you can leave untouched; others must be updated before you can build or debug.
+The generator creates a project with the following structure. Some files are boilerplate that you can leave untouched, while others must be updated with your changes before you can build or debug.
 
 #### Configuration files
 
