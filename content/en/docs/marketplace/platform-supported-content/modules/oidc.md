@@ -788,7 +788,7 @@ Access tokens have a short lifespan for security reasons, so you need to ensure 
 
 The OIDC SSO module contains microflows that do this for you. These microflows all make use of the `OIDC.Token` object that contains both the Access Token (from OAuth protocol) and the ID-token (from the OIDC specs).
 
-You can find the following microflows in the **USE_ME** > **3. Make Authorized API Calls** folder of the OIDC module.
+You can find the following microflows in the **USE_ME** > **Make Authorized API Calls** folder of the OIDC module.
 
 #### DELETE
 
@@ -871,10 +871,9 @@ To parse access tokens, you need to do the following:
 1. Create a secure REST API endpoint following the instructions in [API Authentication](#api-authentication), above.
 1. Run your app and sign in as an administrator, for example `Demo_administrator`.
 1. Configure the client information in the OIDC Client configuration screen.
-1. Check **Enable Access Token Parsing** to parse access tokens when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app).
-1. Select the appropriate microflow to parse the access token as described in the relevant section below. If you have added a new microflow, you will need to refresh the module containing your microflow as described in [Installing Mx Model Reflection](#mxmodelreflection).
+1. Select the appropriate microflow to parse the access token in the **Custom AccessToken processing microflow** when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app). If you have added a new microflow, you will need to refresh the module containing your microflow as described in [Installing Mx Model Reflection](#mxmodelreflection).
 
-{{% alert color="info" %}}Starting from version 4.0.0, the default user roles in UserProvisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
+{{% alert color="info" %}}Starting from version 4.0.0, the default user roles in user provisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
 
 #### Parsing SAM Access Tokens
 
@@ -884,9 +883,9 @@ This section is only relevant if you are a Mendix partner and you want to integr
 
 To parse of SAM access tokens you need to do the following when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app):
 
-1. Select *OIDC.Default_SAM_TokenProcessing_CustomATP* as the **custom AccessToken processing microflow**.
+1. Select *OIDC.Default_SAM_TokenProcessing_CustomATP* as the **Custom AccessToken processing microflow**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/enable-sam.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/sam.png" >}}
 
 2. Add the scopes `sam_account`, `samauth.role`, `samauth.tier`, and `samauth.ten` to the **Selected Scopes** in the OIDC Client Configuration.
 3. Configure the user roles in your app to match the roles returned by SAM. End-users will be given the matching role when they sign into the app. If the role in the SAM token is not found in the Mendix app the end-user will be given the role `User`.
@@ -914,7 +913,7 @@ To parse the OIDC Provider access tokens you need to do the following when perfo
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-provider-parsing.png" >}}
 
-2. Add the scopes `openid` and the ModelGUID or Name to the **Selected Scopes** in the OIDC Client Configuration. The ModelGUID will look something like `53f5d6fa-6da9-4a71-b011-454ec052cce8`.
+2. Add the scopes `openid` and the ModelGUID or Name to the **Scopes** in the OIDC Client Configuration. The ModelGUID will look something like `53f5d6fa-6da9-4a71-b011-454ec052cce8`.
 
     If any one of the selected scopes of OIDC SSO matches with OIDC Provider Scopes then the user role is created. If you specify extra scopes those scopes are ignored.
 
@@ -1038,11 +1037,11 @@ To configure the ACR value (or values) in the OIDC SSO module, follow these step
 
 1. Navigate to the screen where the OIDC configuration is managed.
 2. Select your client configuration and click **Edit**.
-3. Add the ACR values that are supported by your IdP to the OIDC Client Configuration.
+3. **Enable ACR** and click **Add Value** to add the ACR values that are supported by your IdP to the OIDC Client Configuration.
 
     For example, supported ACR Values for Okta IdP are: `urn:okta:loa:1fa:any` and `urn:okta:loa:2fa:any`.
 
-4. Save the configuration changes.
+4. Click **Next** to save the configuration changes.
 
 #### Selecting the ACR Value During Sign In
 
