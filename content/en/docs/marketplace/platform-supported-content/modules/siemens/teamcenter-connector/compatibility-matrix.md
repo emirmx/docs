@@ -15,8 +15,8 @@ This table showcases the compatibility between the Teamcenter Connector and vari
 | 2406.3.1 | 10.0.0 or above** | 2406 |N/A | N/A |
 | 3.7.0 | 9.24.41 or above*** | 14.x, 13.3 | N/A | TC SSO does not work for self-hosted TC 2506 and above |
 
-<sub>* Latest Mendix 10 LTS version recommended. Also compatible with Mendix 11</sub>
+<sub>* Latest Mendix 10 LTS version recommended. Also compatible with Mendix 11.</sub>
 
-<sub>** Latest Mendix 10 LTS version recommended</sub>
+<sub>** Latest Mendix 10 LTS version recommended.</sub>
 
-<sub>*** Latest Mendix 9 LTS version recommended</sub>
+<sub>*** Latest Mendix 9 LTS version recommended.</sub>
