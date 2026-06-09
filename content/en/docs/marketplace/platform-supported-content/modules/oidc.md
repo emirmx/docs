@@ -204,6 +204,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information |
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.5.0 | - | New Admin UI and new constants have been introduced |
 | 10.24.0 and above | 4.4.0 | Move the `Encryption.Encryptionkey` value to the `OIDC.Encryptionkey` constant. | Dependencies on the Encryption and Nanoflow Commons modules have been removed. <br> **Issued Tokens** tab has been removed from the OIDC Client Configuration page. |
 | 10.24.0 and above | 4.3.0 | - | Supporting multi-domain and sub-path. |
 | 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
@@ -508,6 +509,18 @@ when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not nee
 * **ACRValues** – selected ACRvalues — the selected Acr with multiple values separated by a space  
 
     Example: `acr1 acr2`
+
+* **JWKConnectTimeout** (*default: 1000*) –  sets the maximum amount of time (in milliseconds) an application waits to connect to a remote JWKS endpoint before timing out
+
+    Example: `1000`
+
+* **JWKReadTimeout** (*default: 2000*) – maximum time (in milliseconds) the HTTP client waits for a response from the token server before aborting the connection
+
+    Example: `1000`
+
+* **UseAuthenticationToken** (*default: false*) – set to `true` defines whether to generate an authentication token
+
+    Example: `true`
 
 ##### Deploy-Time IdP Configuration for API Security Only
 
