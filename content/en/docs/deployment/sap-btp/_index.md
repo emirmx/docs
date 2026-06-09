@@ -151,7 +151,7 @@ To create a new environment, perform the following steps:
 
     If you choose **Custom Database**, enter a **Name** for the database and the **Plan**.
 
-9. Enable **ObjectStore** if your application makes use of file document or image objects. Other sorts of objects do not need File Store to be enabled.
+9. Enable **ObjectStore** if your application makes use of file document or image objects. Other sorts of objects do not need **ObjectStore** to be enabled.
 
 10. To configure logging, select the **Logging** service from the dropdown.
 
@@ -273,7 +273,7 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit({
 
 ### Starting the Application
 
-1. On the **Start Application** tab, you can see the application details. Click **Start Application** to start the application on SAP BTP.
+1. On the **Start Application** tab, you can see the application details. Click **Start application** to start the application on SAP BTP.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/start-application.png" >}}
 
@@ -283,27 +283,24 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit({
 
 ## Environment Details {#EnvironmentDetails}
 
-The environment details page contains the following four tabs:
+The environment details page contains the following tabs:
 
 * [General](#general-tab) – how the application is deployed on SAP BTP
 * [Model Options](#model-options-tab) – application constants and scheduled events
 * [Services](#binding-services) – Cloud Foundry service management
 * [Runtime](#runtime-tab) – custom environment variables which define **User-Provided Variables** in SAP Cloud Foundry environment — pre-defined variables can be used to control the behavior of the Mendix Runtime
 
-Open the environment details by clicking **Details** on an environment on the Environments page of the Development Portal. You will also be taken to this page when you successfully deploy or transport your app.
+Open the environment details by clicking details [icon] on an environment on the **Environments** page of the Development Portal. You will also be taken to this page when you successfully deploy your app.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/environment-details.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/env-details.png" >}}
 
-{{% alert color="info" %}}If you make changes to your app which you want be applied next time the app is deployed you must make them here.
+{{% alert color="info" %}}If you make changes to your app which you want be applied next time the app is deployed you must make them in the **Environment Details**.
 
 Changes made to the app in the SAP BTP cockpit are only temporary and can be overwritten by the values in the Mendix Portal next time the app is deployed.{{% /alert %}}
 
 ### General Tab {#general-tab}
 
 This tab contains information on how the application is deployed on SAP BTP.
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/11-sap-env-details.png" class="no-border" >}}
-
 Most of this page shows information about the app, but there are several options which allow you to change the app.
 
 #### Start and Stop Application
@@ -378,29 +375,25 @@ Click **Change** to change the subscription secret which is the code which regis
 
 This tab displays the application constants and allows you to edit them. It also lets you enable or disable scheduled events.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/12-sap-model-options.png" class="no-border" >}}
-
 {{% alert color="info" %}}
 You need to restart your app if you change any of these options.
 {{% /alert %}}
 
 #### Scheduled Events
 
-You can see the status of each scheduled event. CURRENTLY ENABLED shows the status in the running app. ENABLED shows that status that will be applied the next time the app is restarted.
+You can see the status of each scheduled event. **Currently Enabled** shows the status in the running app. **Enabled** shows that status that will be applied the next time the app is restarted.
 
-To change the state of a scheduled event, select it, then click **Toggle** to change the ENABLED flag.
+To change the state of a scheduled event, select it, and click **Enable** or **Disable** from **Actions** to change the **Enabled** flag.
 
 #### Constants
 
-You can see the value of all the constants used by the app. CURRENT VALUE is the value in the running app. NEW VALUE is the value which will be used the next time the app is restarted.
+You can see the value of all the constants used by the app. **Currently Value** is the value in the running app. **New Value** is the value which will be used the next time the app is restarted.
 
-To change a value, select the constant you want to change and click **Edit**.
+To change a value, select the constant you want to change and click {{% icon name="pencil" %}} icon.
 
 ### Services Tab {#binding-services}
 
 This tab displays Cloud Foundry services which are bound to the app, waiting to be bound to the app, or available to be bound to the app. These are the services which are available to you in SAP BTP and are the same services that you can see in the SAP BTP marketplace.
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-tab.png"   width="50%"  class="no-border" >}}
 
 {{% alert color="warning" %}}
 There are a number of services which your Mendix app requires. If you unbind any of these services, your app will probably stop working:
@@ -410,11 +403,11 @@ There are a number of services which your Mendix app requires. If you unbind any
 * Database (PostgreSQL, Hyperscaler Option or SAP HANA schema)
 * Connectivity
 
-Services should be selected, bound, and unbound through this **Services** page. Changes made in the SAP BTP cockpit will not be reflected in the Mendix Portal.
+You should select, bound, and unbound **Services** through **Services** page. Changes made in the SAP BTP cockpit will not be reflected in the Mendix Portal.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Changes to bound services will not take place immediately. You will have to stop and start your application to activate the changes.
+Changes to **Bound Services** will not take place immediately. Stop and start your application to activate the changes.
 
 Services which will be bound when the application is stopped and restarted are listed in the category **Services To Be Bound**. You will also see an information message in this case: the button **Review Services** will list the services which are not currently bound.
 {{% /alert %}}
@@ -426,7 +419,7 @@ To connect a service in the **Available Services** section, do the following ste
 1. Select one or more services (you can search for them by name).
 2. Select a **Plan** for each service. This must be a plan which is part of your quota for this space.
 3. Select a JSON **File** to upload if you need to add extra configuration.
-4. Click **Connect Services**.
+4. Click **Connect Selected Services**.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-connect.png" class="no-border" >}}
 
@@ -451,10 +444,10 @@ To upload the JSON **File** for service binding, follow these steps:
 The service bindings will be created with the provided configurations when you restart the application. 
 
 {{% alert color="info" %}}
-If you receive an error, and the service fails to bind please check all aspects of your SAP account. The error message may not provide full information about, for example, which plans you are allowed to choose for a particular service.
+If you receive an error, and the service fails to bind, check all aspects of your SAP account. The error message may not provide full information about, for example, which plans you are allowed to choose for a particular service.
 {{% /alert %}}
 
-If you receive an error trying to restart the app, please refer to the [App Will Not Start](#willnotstart) section under *Issues*, below.
+If you receive an error trying to restart the app, refer to the [App Will Not Start](#willnotstart) section under *Issues* below.
 
 #### Unbinding and Removing Services
 
