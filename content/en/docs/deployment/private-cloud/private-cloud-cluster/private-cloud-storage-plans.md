@@ -1937,7 +1937,7 @@ In the S3 plan configuration, enter the following details:
 * **Create account (IAM user) per environment** - Set to **No**.
 * **Endpoint** - The S3 bucket's endpoint address.
 * **Access Key** and **Secret Key** - The credentials for the environment user account.
-* **Autogenerate prefix** - Leave it empty
+* **Autogenerate prefix** - Leave it empty.
 * **Share bucket between environments** - Specifies if the bucket can be shared between environments (create an on-demand storage plan); Enable this option and the bucket will be shared between multiple environments. 
 
 ## Walkthroughs
