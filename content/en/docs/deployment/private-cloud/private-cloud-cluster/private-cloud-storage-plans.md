@@ -769,7 +769,7 @@ Azure workload identities allow a Kubernetes Service Account to authenticate its
 JDBC databases are dedicated, basic databases. The **Dedicated JDBC** plan enables you to enter the [database configuration parameters](/refguide/custom-settings/) for an existing database directly, as supported by the Mendix Runtime. This plan allows to configure and use any database supported by the Mendix Runtime, including Oracle.
 
 {{% alert color="info" %}}
-In order to use **STACKIT PostgreSQL Flex** db, use the JDBC plan and provide the connection details as per the STACKIT documentation. Use the STACKIT CLI or API to create a dedicated database user for the new Mendix environment.
+In order to use **STACKIT PostgreSQL Flex** database, use the JDBC plan and provide the connection details, as described in the STACKIT documentation. Use the STACKIT CLI or API to create a dedicated database user for the new Mendix environment.
 {{% /alert %}}
 
 #### Prerequisites
