@@ -4,6 +4,7 @@ url: /community-tools/contribute-to-mendix-docs/style-guide/product-naming-guide
 weight: 100
 description: "Guidelines on usage, capitalization, and spelling for Mendix product names and terms, including main products and other Mendix-specific terminology."
 ---
+<!-- vale off -->
 
 ## Purpose of This Guide
 
@@ -46,11 +47,19 @@ Always use with "Mendix," so always use "Mendix on Kubernetes."
 
 This term replaces "Mendix for Private Cloud", which is not to be used in the product UI or documentation.
 
+### Mendix Agents Kit
+
+Use "Mendix Agents Kit" the first time it's mentioned in a doc. For any subsequent mentions, omit "Mendix" and just use "Agents Kit".
+
+Capitalize in all instances.
+
+Do not use "the Mendix Agents Kit" or "the Agents Kit".
+
 ### Mendix Cloud
 
 Capitalize in all instances.
 
-Always use with "Mendix," so always use "Mendix Cloud."
+Always use with "Mendix," so always use "Mendix Cloud".
 
 Do not use "the Mendix Cloud", and do not mention a version number when referring to Mendix Cloud.
 
@@ -78,9 +87,9 @@ It is fine to use "Control Center."
 
 ### Mendix Marketplace
 
-Capitalize in all instances, even when just writing "Marketplace."
+Capitalize in all instances, even when just writing "Marketplace." Use "Mendix Marketplace" on first mention in a document, then "Marketplace" for subsequent mentions. When there's risk of confusion with another marketplace (such as Siemens Marketplace), use "Mendix Marketplace" throughout.
 
-It is fine to use "the Mendix Marketplace" or "the Marketplace."
+This is a product name, so don't add a definite article.
 
 ### Mendix Platform
 
@@ -147,7 +156,7 @@ Does not need to be capitalized, and "team" should be used without the qualifier
 
 ### app template
 
-This is the term to use to reflect the create-new-app flow UI in the Developer Portal.
+This is the term to use to reflect the create-new-app flow UI in Apps.
 
 Do not use "starter app."
 
@@ -454,12 +463,6 @@ Do not use SBoM.
 ### Sprint
 
 Capitalize in all instances.
-
-### Studio Pro landing page
-
-The Studio Pro landing page refers to the page that contains **My Apps**, **Marketplace**, and **Developer Portal** tabs.
-
-Capitalize "Studio Pro".
 
 ### sub-microflow
 
