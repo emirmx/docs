@@ -497,10 +497,10 @@ However, the maximum length for the service name is 50 characters. If this limit
 
 ### Runtime Tab {#runtime-tab}
 
-In the **Runtime** tab, you can **Add**, **Edit**, or **Delete** custom runtime settings and environment variables.
+In the **Runtime** tab, you can **Add**, edit ({{% icon name="pencil" %}}), or delete [icon] custom runtime settings and environment variables.
 
 {{% alert color="info" %}}
-New values will only be applied when you restart your app. The value which is currently applied is shown under **CURRENT VALUE**.
+New values will only be applied when you restart your app. The value which is currently applied is shown under **Current Value**.
 {{% /alert %}}
 
 #### Custom Runtime Settings
@@ -516,11 +516,12 @@ You can choose to add supported variables by selecting them from a drop-down lis
 * **DT_PAAS_TOKEN** – the token for integrating your Dynatrace environment with Cloud Foundry
 * **DT_SAAS_URL** – the monitoring endpoint URL of the Dynatrace service
 * **DT_TENANT** – the unique identifier of your Dynatrace environment
+* **DT_IS_MANAGED** – a variable to enable metrics integration for DT Managed.
+* **DT_CLUSTER_ID** – tag your cluster, process group, or deployment group.
+* **DT_CUSTOM_PROP** – to provide metadata for your process group.
 * **NON_MENDIX_PUBLIC_CLOUD** - must be set to **true** when using Datadog, Dynatrace, or other similar tools
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/custom-environment-variables.png" alt="List of custom environment variables" class="no-border" >}}
-
-The variables beginning with **DT_** set up Dynatrace. Setting these variables means that the Dynatrace OneAgent is loaded into your environment. You will then receive all J2EE-related metrics from your app. See [Dynatrace OneAgent](https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/) for more information.
+The variables beginning with **DT_** set up Dynatrace. Setting these variables means that the Dynatrace OneAgent is loaded into your environment. You receive all J2EE-related metrics from your app. See [Dynatrace OneAgent](https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/) for more information.
 
 ##### Unsupported Environment Variables
 
@@ -532,7 +533,7 @@ Only use unsupported environment variables if you know exactly what you are doin
 
 ## Databases in SAP BTP {#databases}
 
-Mendix needs access to a relational database back end and can run using different types of database. For deployment to SAP BTP, you have the choice of PostgreSQL, Hyperscaler Option or SAP HANA.
+Mendix needs access to a relational database back end and can run using different types of database. For deployment to SAP BTP, you have the choice of PostgreSQL, Hyperscaler Option, or SAP HANA.
 
 ### Running Mendix on PostgreSQL, Hyperscaler Option {#sap-hyperscaler}
 
@@ -540,23 +541,23 @@ Mendix needs access to a relational database back end and can run using differen
 SAP have removed some of the PostgreSQL databases available in their marketplace. If you need a PostgreSQL database, you will have to use PostgreSQL, Hyperscaler Option as your database. This requires some extra configuration which is described below. Alternatively, you can use [SAP HANA](#sap-hana).
 {{% /alert %}}
 
-Select the **postgresql-db** (PostgreSQL, Hyperscaler Option) database service.
+Select the **postgresql-db** (PostgreSQL, Hyperscaler Option) database service from the **Available Services**.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/postgresql-service.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/postgresql-service.png" >}}
 
-You will need to upload a file which contains the configuration for this database – click **Browse…** to select your configuration file. You can use the [SAP Hyperscaler PostgreSQL Configurator](#postgresql-configurator) to help you create the configuration file and find more information in the *Parameters* section of [PostgreSQL on SAP Business Technology Platform, Hyperscaler Option](https://help.sap.com/viewer/b3fe3621fa4a4ed28d7bbe3d6d88f036/Cloud/en-US/0630e03aa45d479eaf806c564dc2447a.html) in the *SAP Help Portal*.
+Upload a file which contains the configuration for this database. Click **Browse** to select your configuration file. You can use the [SAP Hyperscaler PostgreSQL Configurator](#postgresql-configurator) to help you create the configuration file. For more information, refer to Parameters section of [PostgreSQL on SAP Business Technology Platform, Hyperscaler Option](https://help.sap.com/viewer/b3fe3621fa4a4ed28d7bbe3d6d88f036/Cloud/en-US/0630e03aa45d479eaf806c564dc2447a.html).
 
 During the creation of the environment, the selected PostgreSQL, Hyperscaler Option service will be added to your space and, when you deploy your app, the app will be bound to it.
 
-This database service should not be unbound from your environment: see [Services Tab](#binding-services), above, for more information on required services.
+This database service should not be unbound from your environment. For more information on required services, see the [Services Tab](#binding-services) above.
 
 #### SAP Hyperscaler PostgreSQL Configurator {#postgresql-configurator}
 
-To get help to create the configuration file, click the **Configurator** button.
+To get help to create the configuration file, click **Configurator**.
 
-On the new page which is displayed you can set the required values for your **SAP Hyperscaler PostgreSQL** database. Tooltips describe the values which you need to provide. 
+You can set the required values for your **SAP Hyperscaler PostgreSQL** database. Tooltips describe the values which you need to provide. 
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/postgresql-configurator.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/postgresql-configurator.png" >}}
 
 {{% alert color="warning" %}}
 There is no validation on the value of the **Source Instance ID** or **Restore Time** you enter for Standard or Premium plans. If you have issues, check that you entered the correct value here.
@@ -568,9 +569,9 @@ Alternatively, click **Download Configuration File** to create the file which yo
 ### Running Mendix on SAP HANA {#sap-hana}
 
 {{% alert color="info" %}}
-You can only use SAP HANA as the Mendix database for Mendix 7.23.3 and above.
+You can only use SAP HANA as the Mendix database for Mendix V7.23.3 and above.
 
-There are also some differences in the way that Mendix can be used with SAP HANA compared to a PostgreSQL, Hyperscaler Option database – see [SAP HANA – Known Issues](/refguide/saphana/).
+There are also some differences in the way that Mendix can be used with SAP HANA compared to a PostgreSQL, Hyperscaler Option database. For more information, see [SAP HANA – Known Issues](/refguide/saphana/).
 {{% /alert %}}
 
 #### SAP HANA Configuration for Full Accounts
@@ -580,29 +581,28 @@ To run a Mendix application on SAP BTP using SAP HANA as the database, there are
 * Provision the SAP HANA DB Service and make it available in your application space.
 * Provision SAP HANA Cloud and make this service available to your application space.
 
-Once one of these services is available, you can use the SAP Cloud deployment functions of the Mendix SAP Mendix Portal to deploy your app and use the **HANA_SCHEMA** service to bind your application to the provisioned service. The HANA_SCHEMA will create a separate schema on the SAP HANA Database which isolates your application's data from other applications. In this way the SAP HANA DB/Cloud Service will be shared across applications.
+Once one of these services is available, you can use the SAP Cloud deployment functions of the Mendix SAP Mendix Portal to deploy your app and use the **HANA_SCHEMA** service to bind your application to the provisioned service. The HANA_SCHEMA creates a separate schema on the SAP HANA Database which isolates your application's data from other applications. In this way the SAP HANA DB/Cloud Service will be shared across applications.
 
 {{% alert color="warning" %}}
-Please bear the following in mind when using SAP HANA as your Mendix database:
 
 * Do not attempt to add the SAP HANA *service* to your app. It is the SAP HANA *schema* which needs to be bound to your app.
 
 * Do not use the **Services** tab or the SAP BTP Marketplace to add both a PostgreSQL, Hyperscaler Option database and an SAP HANA schema to your app. If you do this it is not possible to predict which database your Mendix app will choose to bind.
 {{% /alert %}}
 
-If you have issues with your app running on SAP HANA, you will need to use the SAP BTP cockpit to investigate. The Mendix Portal does not have information on the status or configuration of the SAP HANA service.
+If you have issues with your app running on SAP HANA, use the SAP BTP cockpit to investigate. The Mendix Portal does not have information on the status or configuration of the SAP HANA service.
 
 #### SAP HANA Configuration for Trial Accounts
 
-For new trial accounts, you can bind your Mendix app to a trial SAP HANA database. Just choose **hanatrial-securestore** from the drop-down of supported databases.
+For new trial accounts, you can bind your Mendix app to a trial SAP HANA database. Choose **hanatrial-securestore** from the drop-down of supported databases.
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/hanatrial-schema.png" class="no-border" >}}
 
-Some older trial accounts do not include `hanatrial-securestore`. In this case you will get an error when you try to deploy your Mendix app saying that *provisioning has failed because service hanatrial with plan securestore is not found*.
+Some older trial accounts do not include `hanatrial-securestore`. In this case you can get an error when you try to deploy your Mendix app saying that *provisioning has failed because service hanatrial with plan securestore is not found*.
 
 #### SAP HANA Performance Tuning
 
-If your SAP HANA database has performance issues, you may be able to improve performance by performing the following tuning:
+If your SAP HANA database has performance issues, you can improve it by performing the following tuning:
 
 1. Obtain the following service binding credentials from the SAP BTP cockpit, or via the cli:
 
@@ -626,7 +626,7 @@ If your SAP HANA database has performance issues, you may be able to improve per
 
 4. Go to the [General tab](#general-tab) and restart your app to apply the changes.
 
-The additional parameters that you added to the url in the `MXRUNTIME_DatabaseJdbcUrl` will set the following tuning parameters:
+The additional parameters that you added to the url in the `MXRUNTIME_DatabaseJdbcUrl`, set the following tuning parameters:
 
 | Parameter | Value |
 | --- | --- |
