@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### License Manager CLI v0.10.11 {#0.10.11}
 
-* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* We have updated the components to use the latest dependency versions in order to improve security score ratings for container images.
 
 #### Mendix Operator v2.27.1 {#2.27.1}
 
