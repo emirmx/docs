@@ -56,7 +56,7 @@ The OIDC SSO module supports the following features:
     * Supports SSO and API-security.
     * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft's Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](https://marketplace.mendix.com/link/component/244687) module.
     * Comes with helper microflows (DELETE, GET, PATCH, POST, and PUT) which call an API with a valid token (and automate the token refresh process).
-    * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP. PKCE will be used automatically if the IdP supports it.
+    * PKCE is enabled by default for all the IdPs. You can disable it if required. 
     * Configuration can be controlled through constants set during your deployment (version 2.3.0 and above).
     * Supports multiple OIDC IdPs by allowing configuration of user provisioning and access token parsing microflows per IdP.
     * Supports Authentication Context Class Reference (ACR) to allow your app to suggest the desired method or level of authentication for user login to the Identity Provider (IdP) (version 2.3.0 and above).
@@ -70,7 +70,6 @@ The OIDC SSO module supports the following features:
 2. Configuration Experience Features:
 
     * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP. The IdP's well-known endpoint also indicates which user claims the IdP may provide during single sign-on. The module reads this information, so the developer does not need to configure it. The available claims can be used in custom provisioning microflow, as described in the section [Custom User Provisioning Using a Microflow.](#custom-provisioning-mf)
-        * For example, PKCE will be used automatically if it is detected.
     * Configuration can be controlled through constants set during your deployment (version 2.3.0 and above).
     * Comes with default user provisioning microflow that works with Entra ID; there you may need to build a custom user provisioning flow.
     * User provisioning microflows can be used from any other modules in your app. They do not need to be exclusively a part of the OIDC module.
@@ -86,7 +85,7 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 * Helps you build an OAuth client that initiates the Authorization Code grant flow to sign the end-user in via the browser.
 * Uses the `nonce` parameter to defend against replay attacks.
 * Validates ID-token signatures.
-* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. If your IdP’s well-known endpoint indicates *S256* as value for `code_challenge_methods_supported`, the OIDC Module will automatically apply the PKCE feature. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature to be better protected against hackers who try to get access to your app. Customers using EntraID may need to update their well-known endpoint, as EntraID does not automatically publish the `code_challenge_methods_supported` parameter. As a result, PKCE will not be enabled automatically.
+* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature for better protection against hackers who try to get access to your app. PKCE is enabled by default.
 * When authenticating APIs, it validates access tokens in one of two ways:
 
     * If the IdP supports token introspection, exposing the `/introspect` endpoint of the IdP, the OIDC module will introspect the access token to see if it is valid.
@@ -119,7 +118,6 @@ The OIDC SSO module also has the following limitations:
 * If you use both the [SAML](/appstore/modules/saml/) module and the OIDC SSO module in the same app, each end-user can only authenticate using one IdP.
 * If OIDC SSO is used for API security, it does not validate the value of the `aud` claim, as suggested by [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#section-4). Customers should prevent cross-JWT confusion by using unique scope values.
 * The Admin screens have separate tabs for configuring clients that use the Client Credential grant for API security and for situations where your app is used for both SSO and API security. If the first version of your app uses only OIDC SSO for API security and you want to introduce SSO in a later version, the IdP configuration needs to be re-entered on the other tab.
-* Customers using EntraID may need to update their well-known endpoint, as EntraID does not automatically publish the `code_challenge_methods_supported` parameter. As a result, PKCE will not be enabled automatically.
 
 ## Dependencies
 
@@ -324,7 +322,9 @@ In this case, the OIDC client is the app you are making.
 
    **Client assertion** is automatically set to *Client ID and Secret*.
 
-4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
+4. PKCE is enabled by default. To disable it, select **No**.
+
+5. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
@@ -344,21 +344,21 @@ In this case, the OIDC client is the app you are making.
 
     {{% alert color="info" %}}After a key renewal, some SSO requests may fail if your IdP does not immediately refresh its key cache. {{% /alert %}}
 
-5. Add the **Client Secret** if you choose `client_secret_basic` or `client_secret_post` as client authentication method.
-6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
+6. Add the **Client Secret** if you choose `client_secret_basic` or `client_secret_post` as client authentication method.
+7. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
 
     {{% alert color="info" %}} If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`. {{% /alert %}}
 
     * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
-7. Click **Save**
+8. Click **Save**
 
     {{% alert color="info" %}} Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information. {{% /alert %}}
 
-8. Select your client configuration and click **Edit**.
-9. Select the scopes expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
+9. Select your client configuration and click **Edit**.
+10. Select the scopes expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
     * If you need refresh tokens for your end-users, you also need the `offline_access` scope.
     * Add other scopes as needed.
-10. Select your user parsing. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses thin tokens. You can set up user provisioning by setting the following standard flows:
+11. Select your user parsing. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses thin tokens. You can set up user provisioning by setting the following standard flows:
 
     | Default Microflow | Use |
     | --- | --- |
@@ -372,7 +372,7 @@ In this case, the OIDC client is the app you are making.
 
     {{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the timezone and language for newly created users, these settings will be set according to default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
 
-11. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
+12. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
 
     {{% alert color="info" %}}Starting from version 4.0.0 of the OIDC SSO, the default user roles in the UserProvisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
 
@@ -502,6 +502,8 @@ when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not nee
 * **ACRValues** – selected ACRvalues — the selected Acr with multiple values separated by a space  
 
     Example: `acr1 acr2`
+
+* **EnablePKCE** (*default: True*) – enables Proof Key for Code Exchange (PKCE)
 
 ##### Deploy-time IdPs for API Security Only Configuration
 
