@@ -33,11 +33,11 @@ Before you can manage your SAP BTP using the Mendix Portal, you will need to set
 
 In this scenario, you have an existing app which is running in another environment: for instance, on Mendix Cloud. To change this, open your app in [Apps](https://sprintr.home.mendix.com/), go to **Settings**, and then switch to the **Cloud Settings** tab.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/cloud-settings.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/cloud-settings.png" >}}
 
-Click **Set up SAP Cloud** to go to the SAP BTP welcome page.
+Click **Set up** on **SAP BTP Cloud Deployment** to go to the SAP BTP welcome page.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/cloud-settings-landing-page.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/cloud-settings-landing-page.png" >}}
 
 Click **Getting Started**, then continue with [Set Up Region](#SetUpRegion).
 
@@ -93,7 +93,7 @@ If you have issues using SAP authentication, refer to [SAP Single Sign-On](/deve
 
 Provide the final details for the SAP BTP development environment.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-development.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-new-development.png" >}}
 
 Choose a **Domain**, **Organization**, and **Space** which is configured for you in this region.
 
@@ -275,8 +275,6 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit({
 
 1. On the **Start Application** tab, you can see the application details. Click **Start application** to start the application on SAP BTP.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/start-application.png" >}}
-
     {{% alert color="info" %}}This will bind any services which are in the status **Services To Be Bound**.{{% /alert %}}
 
 2. When the application has been started, you will be taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails) below.
@@ -313,7 +311,7 @@ The button will change to **Start Application** which you can click to start or 
 You may need to use this option to stop and start your app after changing one of the settings on this page.
 {{% /alert %}}
 
-If you receive an error trying to start the app, refer to the [App Will Not Start](#willnotstart) section below.
+If you receive an error trying to start the app, refer to the [App Does Not Start](#appnotstart) section below.
 
 #### Change Admin Password
 
@@ -419,7 +417,7 @@ To connect a service in the **Available Services** section, do the following ste
 3. Select a JSON file to upload if you need to add extra configuration.
 4. Click **Connect Selected Services**. You can also **Review your Services** before restarting your app. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-connect.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/connect-service.png" >}}
 
     The services you have selected will be added as **Services To Be Bound**. Now, you can upload JSON file with a configuration that will be applied to the service binding.
 
@@ -444,7 +442,7 @@ The service bindings will be created with the provided configurations when you r
 If you receive an error, and the service fails to bind, check all aspects of your SAP account. The error message may not provide full information about, for example, which plans you are allowed to choose for a particular service.
 {{% /alert %}}
 
-If you receive an error trying to restart the app, refer to the [App Will Not Start](#willnotstart) section below. 
+If you receive an error trying to restart the app, refer to the [App Does Not Start](#appnotstart) section below. 
 
 #### Unbinding and Removing Services
 
@@ -698,7 +696,7 @@ A more detailed description of the reason why the environment creation failed wi
 
 Resolve the issue described in the error message.
 
-### App Will Not Start {#willnotstart}
+### App Does Not Start {#appnotstart}
 
 Under some circumstances an app with a service in the **Services To Be Bound** status will not restart.
 
