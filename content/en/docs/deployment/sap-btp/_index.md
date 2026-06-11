@@ -645,10 +645,10 @@ If you are the last person to leave a Mendix app you can delete the app. However
 
 If you are the last member of the app development team, you will be asked if you want to delete the app.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/delete-app.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/delete-app.png" >}}
 
 {{% alert color="info" %}}
-This will not stop the app and delete the deployment of the app in SAP BTP.
+This action does not stop the app and delete the deployment of the app in SAP BTP.
 
 If you want to delete your app and all its resources, delete the environment and resources first before you leave the app via the Mendix Portal.
 {{% /alert %}}
@@ -659,12 +659,12 @@ You can still delete the app and its resources from the SAP BTP cockpit, but you
 
 Since SAP Application Logging will soon be deprecated, you need to migrate your logging service to SAP Cloud Logging for older environments still using SAP Application Logging. To complete the migration, follow the steps below:
 
-1. In the **Services** tab of the **Environment** details page, search for and select **cloud-logging** in the **Available Services** field.
+1. In the **Services** tab of the **Environment Details** page, search for and select **cloud-logging** in the **Available Services** field.
 
-    {{% alert color="info" %}}Note that the user account must have entitlements for the SAP Cloud Logging service in SAP BTP.{{% /alert %}}
+    {{% alert color="info" %}}User account must have entitlements for the SAP Cloud Logging service in SAP BTP.{{% /alert %}}
 
-2. Select the appropriate **Plan** and upload a **File** if required. 
-3. Click **Connect Services** and restart your application to bind the new SAP Cloud logging service.
+2. Select the appropriate **Plan** and upload a file if required. 
+3. Click **Connect Selected Services** and restart your application to bind the new SAP Cloud logging service.
 4. At this point, both **application-logs** and **cloud-logging** services will be active for your application.
 5. Retain the **application-logs** service until its log retention period ends, to ensure access to existing log entries. Then, delete it following the instructions provided in the [Unbinding and Removing Services](/developerportal/deploy/sap-cloud-platform/#unbinding-and-removing-services) section above. After this, only the new SAP Cloud Logging service will remain active.
 6. When using the **cloud-logging** service, upgrade **SapApplicationLogs** to the latest version. If you are using an older version, update the **Default Value** of the **ApplicationLoggingService** constant to *cloud-logging* in the [SAP Logging Connector](https://marketplace.mendix.com/link/component/110219). For more information, refer to the [Using the Connector](/appstore/modules/sap/sap-logger/#using-the-connector) section of the *SAP Logging Connector* document.
@@ -677,8 +677,6 @@ If you encounter any issues with your apps on SAP BTP, use the following trouble
 ### Environment is not Created
 
 If you add an environment and it fails to be created it will be shown with a red symbol next to it on the Environments page:
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-environment.png" class="no-border" >}}
 
 #### Cause
 
@@ -702,7 +700,7 @@ Resolve the issue described in the error message.
 
 ### App Will Not Start {#willnotstart}
 
-Under some circumstances an app with a service in the **Services To Be Bound** status will not restart. You will get an error with *Could not bind service...* in the details.
+Under some circumstances an app with a service in the **Services To Be Bound** status will not restart.
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-bind-error.png" class="no-border" >}}
 
@@ -714,7 +712,7 @@ This indicates that SAP Cloud Portal is not able to bind the service, even thoug
 
 If you remove the service from the app, the app should restart successfully.
 
-If you are trying to bind more than one new service, it is not possible to identify within the Mendix Portal which service is causing the issue. If the culprit is not obvious, you will have to remove all the services or go to SAP Cloud Portal where you can use the service name in the error message to find which service is causing the error.
+If you are trying to bind more than one new service, it is not possible to identify within the Mendix Portal which service is causing the issue. You may need to remove all the services or go to SAP Cloud Portal where you can use the service name in the error message to find which service is causing the error.
 
 ### An Error Occurs While Deploying App From Studio Pro
 
@@ -724,7 +722,7 @@ If an app is deployed to SAP using the Studio Pro **Run** or **Publish** button 
 
 The deployment fails because the marketplace services have not been bound.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/error-desktop-modeler.png"   width="50%"  class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/error-desktop-modeler.png" >}}
 
 #### Solution
 
@@ -750,7 +748,7 @@ Starting from Mendix version 9.7, the support for the `statsd` is removed.
     * **Name** - select **NON_MENDIX_PUBLIC_CLOUD**
     * **Value** - select **true**
 
-2. Redeploy your application, and then restart it. Just restarting the app is not sufficient because additional dependencies need to be included.
+2. Redeploy your application, and restart it. Just restarting the app is not sufficient because additional dependencies need to be included.
 
 ## Status of SAP BTP Deployment
 
