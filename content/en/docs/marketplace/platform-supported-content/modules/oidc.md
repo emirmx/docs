@@ -166,7 +166,7 @@ Once the Mx Model Reflection module has been imported into your app, you need to
 
 3. Select the modules **MxModelReflection** and **OIDC**  and click **Click to refresh** for both the modules and the entities. Starting from version 3.0.0 of the OIDC SSO module, additionally select and refresh the **Administration** and **System** modules in the **MxModelReflection.MxObjects_Overview** page to configure User Provisioning.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/select_modules.png" alt="MxObjects_Overview page with MxModelReflection and OIDC modules selected" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/select-modules.png" alt="MxObjects_Overview page with MxModelReflection and OIDC modules selected" class="no-border" >}}
 
 ### Migrating from Community Edition to Platform Edition{#migration}
 
@@ -383,7 +383,7 @@ In this case, the OIDC client is the app you are making.
 
 Once you have completed these steps, the SSO-configuration is ready for testing. For more information, see the [Testing and troubleshooting](#testing) section.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/idp_config.png" alt="IdP Integration page showing configured Azure, AzureCertificate, and Auth0 providers" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/idp-config.png" alt="IdP Integration page showing configured Azure, AzureCertificate, and Auth0 providers" >}}
 
 See the section [Optional Features](#optional) information on additional optional features you may want to implement.
 
