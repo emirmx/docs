@@ -250,7 +250,7 @@ You can also transport to the required environment from the **Overview** tab of 
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/edit-constants.png" class="no-border" >}}
 
-3. In the **Scheduled Events** section, select the scheduled event you want to *Enable* or *Disable* and click **Next**.
+3. In the **Scheduled Events** section, select the scheduled event you want to *Enable* or *Disable* and click **Next**. For more information, refer to [Schedules Events](#schedules-events).
 
 ### Unbinding and Deleting Service Instances    
 
@@ -290,7 +290,7 @@ The environment details page contains the following tabs:
 * [Services](#binding-services) – Cloud Foundry service management
 * [Runtime](#runtime-tab) – custom environment variables which define **User-Provided Variables** in SAP Cloud Foundry environment — pre-defined variables can be used to control the behavior of the Mendix Runtime
 
-Open the environment details by clicking details [icon] on an environment on the **Environments** page of the Development Portal. You will also be taken to this page when you successfully deploy your app.
+Open the environment details by clicking details [icon] on the **Environments** page of the Development Portal. You will also be taken to this page when you successfully deploy or transport your app.
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/env-details.png" >}}
 
@@ -313,11 +313,11 @@ The button will change to **Start Application** which you can click to start or 
 You may need to use this option to stop and start your app after changing one of the settings on this page.
 {{% /alert %}}
 
-If you receive an error trying to start the app, please refer to the [App Will Not Start](#willnotstart) section under *Issues*, below.
+If you receive an error trying to start the app, refer to the [App Will Not Start](#willnotstart) section below.
 
 #### Change Admin Password
 
-Click **Change Admin Password** to change the password for the administrator account (by default, MxAdmin) in your Mendix app.
+Find three dots icon ({{% icon name="three-dots-menu-horizontal" %}}) and click **Change Admin Password** to change the password for the administrator account (by default, MxAdmin) in your Mendix app.
 
 {{% alert color="warning" %}}
 The new password will not come into effect until you stop and start your environment.
@@ -329,19 +329,17 @@ Click **View Recent Log** to see recent events written to the log.
 
 #### Delete Environment
 
-**Delete Environment** enables you to delete the environment and, optionally, all its resources: including the app.
+**Delete Environment** enables you to delete the environment and, optionally, all its resources, including the app.
 
-You will be asked to confirm that this environment should be removed. You will also be asked to confirm that the resources associated with the environment should also be removed. Note that the default is NOT to remove the resources.
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/delete-environment.png" class="no-border" >}}
+You will be asked to confirm that this environment should be removed. You will also be asked to confirm that the resources associated with the environment should also be removed. Note that the default is not to remove the resources.
 
 {{% alert color="info" %}}
-If you do not select **Remove resources** in this dialog, the resources will be left in SAP BTP. This could be useful if you want to remove the environment but, for some reason, a resource cannot be removed. In this case, the resources can only be removed individually from within the SAP BTP cockpit.
+If you do not select **Remove resources** in the dialog, the resources will be left in SAP BTP. This could be useful if you want to remove the environment but, for some reason, a resource cannot be removed. In this case, the resources can only be removed individually from within the SAP BTP cockpit.
 {{% /alert %}}
 
 #### Change Development Mode
 
-Click **Change** to change the **Development Mode** toggle. Set it to Yes if you want the application to run with only prototype security, or completely without security. This is not recommended for acceptance or production environments.
+Click **Change** to change the **Development Mode**. Set it to *Yes* if you want the application to run with only prototype security, or completely without security. This is not recommended for acceptance or production environments.
 
 #### Change App URL
 
@@ -357,11 +355,11 @@ If the app is started or stopped (that is, the environment has been created succ
 
 Use the **Instances** slider to change the number of instances of the app which can run. This allows you to scale the app horizontally to support a large numbers of users, or to improve the app's resilience by allowing it to continue to run if there are any issues with one of the instances.
 
-Use the **Memory per instance** slider to change the amount of memory allocated to each instance of the app ("user's current memory").
+Use the **Memory per instance** slider to change the amount of memory allocated to each instance of the app (user's current memory).
 
 Click **Scale Now** to apply the new settings. If the application is running, it will be stopped and restarted to apply the settings. If it is stopped it will not be started automatically; the new settings will be used the next time the application is started.
 
-Click **Reset** to return the values to what they were before the sliders were moved.
+Click **Cancel** to return the values to what they were before the sliders were moved.
 
 {{% alert color="info" %}}
 You can also make use of the **Application Autoscaler** service on SAP BTP. Mendix provides assistance in setting up the parameters needed to configure application autoscaler. For more information see [Application Autoscaler for SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/sap-autoscaler/).
@@ -369,7 +367,7 @@ You can also make use of the **Application Autoscaler** service on SAP BTP. Mend
 
 #### Change License Subscription ID
 
-Click **Change** to change the subscription secret which is the code which registers your production Mendix license to this environment.
+Click **Change** to change the **Subscription Secret** which is the code which registers your production Mendix license to this environment.
 
 ### Model Options Tab {#model-options-tab}
 
@@ -379,7 +377,7 @@ This tab displays the application constants and allows you to edit them. It also
 You need to restart your app if you change any of these options.
 {{% /alert %}}
 
-#### Scheduled Events
+#### Scheduled Events {#schedules-events}
 
 You can see the status of each scheduled event. **Currently Enabled** shows the status in the running app. **Enabled** shows that status that will be applied the next time the app is restarted.
 
@@ -387,9 +385,9 @@ To change the state of a scheduled event, select it, and click **Enable** or **D
 
 #### Constants
 
-You can see the value of all the constants used by the app. **Currently Value** is the value in the running app. **New Value** is the value which will be used the next time the app is restarted.
+You can see the value of all the constants used by the app. **Current Value** is the value in the running app. **New Value** is the value which will be used the next time the app is restarted.
 
-To change a value, select the constant you want to change and click {{% icon name="pencil" %}} icon.
+To change a value, select the constant you want to change and click edit ({{% icon name="pencil" %}}) icon.
 
 ### Services Tab {#binding-services}
 
@@ -403,7 +401,7 @@ There are a number of services which your Mendix app requires. If you unbind any
 * Database (PostgreSQL, Hyperscaler Option or SAP HANA schema)
 * Connectivity
 
-You should select, bound, and unbound **Services** through **Services** page. Changes made in the SAP BTP cockpit will not be reflected in the Mendix Portal.
+You should select, bind, and unbind services through **Services** page. Changes made in the SAP BTP cockpit will not be reflected in the Mendix Portal.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -418,15 +416,15 @@ To connect a service in the **Available Services** section, do the following ste
 
 1. Select one or more services (you can search for them by name).
 2. Select a **Plan** for each service. This must be a plan which is part of your quota for this space.
-3. Select a JSON **File** to upload if you need to add extra configuration.
-4. Click **Connect Selected Services**.
+3. Select a JSON file to upload if you need to add extra configuration.
+4. Click **Connect Selected Services**. You can also **Review your Services** before restarting your app. 
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-connect.png" class="no-border" >}}
 
-    The services you have selected will be added as **Services To Be Bound**. Now, you can upload JSON **File** with a configuration that will be applied to the service binding. 
+    The services you have selected will be added as **Services To Be Bound**. Now, you can upload JSON file with a configuration that will be applied to the service binding.
 
 {{% alert color="info" %}}
-If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](#sap-hyperscaler) in this document for more information.
+If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](#sap-hyperscaler). 
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -436,10 +434,9 @@ If you use the **Application Autoscaler** service on SAP BTP, Mendix can create 
 To upload the JSON **File** for service binding, follow these steps:
 
 1. Select the service in the **Service To Be Bound** section.
-2. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) next to the service for which you want to upload the file.
+2. Click three-dot icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service for which you want to upload the file.
 3. Select **Add Binding Configuration**.
-4. Select the JSON **File** to upload.
-5. Click **Save**.
+4. Select the JSON **File** to upload and click **Save**
 
 The service bindings will be created with the provided configurations when you restart the application. 
 
@@ -447,7 +444,7 @@ The service bindings will be created with the provided configurations when you r
 If you receive an error, and the service fails to bind, check all aspects of your SAP account. The error message may not provide full information about, for example, which plans you are allowed to choose for a particular service.
 {{% /alert %}}
 
-If you receive an error trying to restart the app, refer to the [App Will Not Start](#willnotstart) section under *Issues* below.
+If you receive an error trying to restart the app, refer to the [App Will Not Start](#willnotstart) section below. 
 
 #### Unbinding and Removing Services
 
@@ -455,45 +452,38 @@ If you no longer require a service, you can unbind it or remove it from your app
 
 ##### Unbinding a Service
 
-1. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to unbind in the **Bound Services** section.
+1. Click three-dot icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to unbind in the **Bound Services** section.
 2. Select one of the following:
     * **Unbind Service** – unbind the service instance and move it to the **Services To Be Bound** section — the service will be bound again next time your app is restarted
     * **Delete Service** – unbind the service instance from the application and delete the service instance from your environment
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-unbind.png" class="no-border" >}}
+3. If you wish to **Delete Service**, confirm by clicking the appropriate button:
 
-3. Confirm by clicking the appropriate button
-
-    * **Unbind**
-    * **Delete & Restart App**
-    * **Delete** – if you want to unbind more services or do not want the change to happen immediately, then you can choose *Delete*. However, this may leave the app in an unstable state as the service will be deleted from the environment
+    * **Delete & Restart App** – to confirm the delete action and restart the app
+    * **Delete** – if you want to unbind more services or do not want the change to happen immediately, then you can choose **Delete**. However, this may leave the app in an unstable state as the service will be deleted from the environment
     * **Cancel** – do not delete or unbind this service
-
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-unbind-warning.png" class="no-border" >}}
 
     Once the service is deleted, it is deleted from the app environment and returned to the list of **Available Services**. If the service is unbound but not deleted, it is returned to the list of **Services To Be Bound**, and will be rebound next time the app is restarted.
 
-##### Removing an Unbound Service
+##### Removing an Unbound Service {#unbound-services}
 
-1. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to remove in the **Services To Be Bound** section.
+1. Click three-dots icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to remove in the **Services To Be Bound** section.
 
-2. Select **Remove Service**.
-
-3. Confirm by clicking **Remove**.
+2. Select **Remove Service** and confirm by clicking **Remove**.
 
     The service is deleted from the app environment and returned to the list of **Available Services**.
 
-#### Add Binding Configuration
+#### Adding Binding Configuration
 
 When a service is in the **Services To Be Bound** section, you can add a new binding configuration, if this is supported by the service and the Mendix Portal.
 
-If you want to change the configuration of a service which is already bound, you will need to unbind the service first, as described above.
+If you want to change the configuration of a service which is already bound, you will need to unbind the service first, as described in the [Removing an Unbound Service](#unbound-services) section above.
 
-1. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to (re)configure in the **Services To Be Bound** section.
+1. Click three-dots icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to (re)configure in the **Services To Be Bound** section.
 
 2. Select **Add Binding Configuration**.
 
-3. You can either use the Configurator to create your configuration by clicking **Open Editor**, or click **Browse…** to upload an existing file as the configuration.
+3. You can either use the Configurator to create your configuration by clicking **Open Editor**, or click **Browse** to upload an existing file as the configuration.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-binding-configuration.png" class="no-border" >}}
 
@@ -501,7 +491,7 @@ If you want to change the configuration of a service which is already bound, you
 
 #### Service Names
 
-The services which are created by the Mendix Portal will be named automatically. You will see these names in the SAP BTP cockpit. The name of the service will normally be **App name** + **_** + **Environment Name** + **_** + **a random 6-character suffix**. All spaces will be removed from the app and environment names. For example, `MyApp_Development_c7sd9q`.
+The services which are created by the Mendix Portal will be named automatically. You can see these names in the SAP BTP cockpit. Normally, the name of the service is **App name** + **_** + **Environment Name** + **_** + **a random 6-character suffix**. All spaces will be removed from the app and environment names. For example, `MyApp_Development_c7sd9q`.
 
 However, the maximum length for the service name is 50 characters. If this limit would be exceeded by the name created above, an alternative service name will be used. The format of this is **Environment Name** + **_** + **a random 6-character suffix**. If the Environment name is longer than 43 characters, only the first 43 characters are used.
 
@@ -530,13 +520,11 @@ You can choose to add supported variables by selecting them from a drop-down lis
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/custom-environment-variables.png" alt="List of custom environment variables" class="no-border" >}}
 
-The variables beginning **DT_** set up Dynatrace. Setting these variables means that the Dynatrace OneAgent is loaded into your environment. You will then receive all J2EE-related metrics from your app. See [Dynatrace OneAgent](https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/) for more information.
+The variables beginning with **DT_** set up Dynatrace. Setting these variables means that the Dynatrace OneAgent is loaded into your environment. You will then receive all J2EE-related metrics from your app. See [Dynatrace OneAgent](https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/) for more information.
 
 ##### Unsupported Environment Variables
 
-You can also enter other environment variables which can be used to support Mendix features which are in beta. In this case, click **No** for **Supported** and enter the name of the variable as well as its value.
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/custom-environment-variables-unsupported.png" alt="List of custom environment variables" class="no-border" >}}
+You can also enter other environment variables which can be used to support Mendix features which are in beta. In this case, click **No** for **Supported?** and enter the **Name** of the variable and **New Value**.
 
 {{% alert color="info" %}}
 Only use unsupported environment variables if you know exactly what you are doing. Incorrect values can prevent Mendix Runtime from starting.
