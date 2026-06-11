@@ -30,7 +30,7 @@ The module version 4.1.1 is a special release intended only for Mendix version 1
 The OIDC SSO module works with both web/responsive applications and progressive web apps (PWA).
 {{% /alert %}}
 
-Alternatives you can use [SAML](https://marketplace.mendix.com/link/component/1174) for managing single sign-on if your IdP supports the SAML protocol but not the OIDC protocol.
+Alternatively, you can use [SAML](https://marketplace.mendix.com/link/component/1174) for managing single sign-on if your IdP supports the SAML protocol but not the OIDC protocol.
 
 You can also use the [Mendix SSO](https://marketplace.mendix.com/link/component/111349) if your app is targeted at end-users that have signed up to the Mendix platform. However, this module is deprecated as of May 1, 2026. You may alternatively use [SAML](/appstore/modules/saml/), or [LDAP](/appstore/modules/ldap/).
 
@@ -54,7 +54,7 @@ The OIDC SSO module supports the following features:
 1. IdP Integration Capabilities:
 
     * Supports SSO and API-security.
-    * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft's Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](https://marketplace.mendix.com/link/component/244687) module.
+    * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](https://marketplace.mendix.com/link/component/244687) module.
     * Comes with helper microflows (DELETE, GET, PATCH, POST, and PUT) which call an API with a valid token (and automate the token refresh process).
     * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP. PKCE will be used automatically if the IdP supports it.
     * Configuration can be controlled through constants set during your deployment (version 2.3.0 and above).
@@ -72,7 +72,7 @@ The OIDC SSO module supports the following features:
     * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP. The IdP's well-known endpoint also indicates which user claims the IdP may provide during single sign-on. The module reads this information, so the developer does not need to configure it. The available claims can be used in custom provisioning microflow, as described in the section [Custom User Provisioning Using a Microflow.](#custom-provisioning-mf)
         * For example, PKCE will be used automatically if it is detected.
     * Configuration can be controlled through constants set during your deployment (version 2.3.0 and above).
-    * Comes with default user provisioning microflow that works with Entra ID; there you may need to build a custom user provisioning flow.
+    * Comes with default user provisioning microflow that works with Entra ID; however, you may need to build a custom user provisioning flow.
     * User provisioning microflows can be used from any other modules in your app. They do not need to be exclusively a part of the OIDC module.
 
 3. Developer Experience Features:
@@ -97,11 +97,11 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 * Stores an access token for each end-user that can be used to make API calls on their behalf.
 * The OIDC SSO module supports ‘bearer’ Access Token type and does not support the Message Authentication Code (MAC) when making calls to resource servers or APIs as defined in [RFC6749 section 7.1](https://datatracker.ietf.org/doc/html/rfc6749#section-7.1).
 * Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method.
-* It supports nine signing algorithms: ECC SHA-256 (ES256), ECC SHA-384 (ES384), ECC SHA-512 (ES512), RSASSA-PSS SHA-256 (PS256), RSASSA-PSS SHA-384 (PS384), RSASSA-PSS SHA-512 (PS512), RSA SHA-256 (RS256), RSA SHA-384 (RS384), RSA SHA-512 (RS512), and automatically regenerates a new key pair upon expiry.
-* Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above).
+* It supports nine signing algorithms: ECC SHA-256 (ES256), ECC SHA-384 (ES384), ECC SHA-512 (ES512), RSASSA-PSS SHA-256 (PS256), RSASSA-PSS SHA-384 (PS384), RSASSA-PSS SHA-512 (PS512), RSA SHA-256 (RS256), RSA SHA-384 (RS384), and RSA SHA-512 (RS512), and automatically regenerates a new key pair upon expiry.
+* Supports ACR in authorization requests. The ACR in the OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above).
 * Supports `response_mode=query` and `response_mode=form_post`.
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
-* When the OIDC SSO module secures an API with the Client Credential grant, the `sub` as claim (which contains either user-id or client-id) should always be available in the access token as per [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#name-data-structure).  If it is not included, the module will look for `client_id`. To be compliant with Microsoft's Entra ID and Okta, it will use `app_id` or `cid` as alternatives to `client_id`. Any of these client identifiers are used to create a user in the Mendix application, allowing the Mendix security model to apply not only to users (human identities) but also to clients (machine identities).
+* When the OIDC SSO module secures an API with the Client Credential grant, the `sub` claim (which contains either user-id or client-id) should always be available in the access token as per [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#name-data-structure). If it is not included, the module will look for `client_id`. To be compliant with Microsoft Entra ID and Okta, it will use `app_id` or `cid` as alternatives to `client_id`. Any of these client identifiers are used to create a user in the Mendix application, allowing the Mendix security model to apply not only to users (human identities) but also to clients (machine identities).
 * Supports [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html). When sending a logout request to the IdP's `end_session_endpoint`, the parameters `id_token_hint` and `post_logout_redirect_uri` are supported for the logout request.
 
 #### Limitations
@@ -172,7 +172,7 @@ Once the Mx Model Reflection module has been imported into your app, you need to
 
 ### Migrating from Community Edition to Platform Edition{#migration}
 
-If you already have the [OpenIDConnect Single Sign-on (OIDC, OAuth2, SSO)](https://marketplace.mendix.com/link/component/117529) (community edition) in your module, you can migrate to this, platform supported, version by following the instruction below.
+If you already have the [OpenIDConnect Single Sign-on (OIDC, OAuth2, SSO)](https://marketplace.mendix.com/link/component/117529) (community edition) in your module, you can migrate to this platform-supported version by following the instructions below.
 
 #### Upgrading from Mendix 8 to Mendix 9
 
@@ -307,7 +307,7 @@ For information about configuring Amazon Cognito for the OIDC SSO module, see [A
 
 ### Runtime Configuration of Your IdP at Your App {#runtime-idp-app}
 
-This section describes how you can configure your IdP in your Mendix app using the Admin UIs provided by the OIDC SSO module. The **IdP Integration (OIDC)** screen offers three tabs:
+This section describes how you can configure your IdP in your Mendix app using the Admin UIs provided by the OIDC SSO module. The **IdP Integration (OIDC)** screen offers two tabs:
 
 * **IdPs for SSO and API security**: Use this more extensive configuration screen if you are implementing SSO and optionally API security.
 * **IdPs for API security only**: Use this simpler configuration screen if you are configuring an IdP that is only used for API security (i.e., Client Credential grant). For more information, see the [API Security Configuration for Client Credential Grant](#client-credential-grant) section below.
@@ -338,7 +338,7 @@ In this case, the OIDC client is the app you are making.
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
     * `private_key_jwt`: This method introduced in version 4.1.0 and uses asymmetric key cryptography (algorithm) for authentication (also known as key pair based authentication). This is the best option for security. It has the following options to share your application's public key with your IdP. Choose the right option depending on your IdP's capabilities:
-        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS endpoint of your application. Most IdPs aupport this capability, and it is the preffered approach as it eliminates the need to manually exchange keys during the setup. When you select the *JWKS URI* from the **Exchange of public key**, configure the following fields:
+        * JWKS URI: This option assumes that your IdP can fetch the public key from the JWKS endpoint of your application. Most IdPs aupport this capability, and it is the preferred approach as it eliminates the need to manually exchange keys during the setup. When you select the *JWKS URI* from the **Exchange of public key**, configure the following fields:
             * **Key pair expiration days**: (default 90)
             * **JWT signing algorithm**: (default RS256)
 
@@ -359,7 +359,7 @@ In this case, the OIDC client is the app you are making.
     * If you need refresh tokens for your end-users, you also need the `offline_access` scope.
     * Add other scopes as needed.
 
-9. On the **Creating User** tab, select your **User creation microflow**. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses thin tokens. You can set up user provisioning by setting the following standard flows:
+9. On the **Creating User** tab, select your **User creation microflow**. By default, this module will use standard OpenID claims to provision end-users in your app. Also included is a flow that uses the standard UserInfo endpoint in OIDC, which is useful in the case that your IdP uses opaque tokens. You can set up user provisioning by setting the following standard flows:
 
     | Default Microflow | Use |
     | --- | --- |
