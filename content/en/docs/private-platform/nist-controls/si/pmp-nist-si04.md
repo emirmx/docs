@@ -12,7 +12,7 @@ This document describes how Private Mendix Platform fulfills the SI-04 control.
 
 | Control ID | SI-04 |
 | --- | --- |
-| Control category | SC - System and Communications Protection |
+| Control category | SI - System and Information Integrity |
 | Requirement baseline | FEDRAMP MODERATE |
 | Responsibility and ownership | Customer - Infra, Customer - Org |
 
