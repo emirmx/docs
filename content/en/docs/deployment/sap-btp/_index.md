@@ -225,7 +225,7 @@ There is a limit of 200 MB on the size of the MDA file you can upload to the Men
 SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9c7092c7b7ae4d49bc8ae35fdd0e0b18.html#loio9809fa4f02cb4696baea5c23d6eaac94) on the size of a deployment package.
 {{% /alert %}}
 
-A green tick indicates that the build has finished. Click the deploy icon to deploy the package to SAP BTP.
+A green tick indicates that the build has finished. Click the deploy icon ({{% icon name="deploy" %}}) to deploy the package to SAP BTP.
 
 ### Transporting to an Environment
 
@@ -245,7 +245,7 @@ You can also transport to the required environment from the **Overview** tab of 
 
 1. Once your package is transported, you are redirected to the **Configure Environment** tab.
 
-2. To change any constants from the **Constants** list, select the constant you want to edit and click the edit icon ({{% icon name="pencil" %}}).
+2. To change any constants from the **Constants** list, select the constant you want to edit and click the edit ({{% icon name="pencil" %}}) icon.
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/edit-constants.png" class="no-border" >}}
 
@@ -257,7 +257,7 @@ You can also transport to the required environment from the **Overview** tab of 
 
 {{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Bound Services**. For a new app, these services are required for the correct deployment of the app.{{% /alert %}}
 
-2. If you want to remove a service instance from your environment, click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
+1. If you want to remove a service instance from your environment, click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
 
     The options do the following:
 
@@ -268,7 +268,7 @@ You can also transport to the required environment from the **Overview** tab of 
 
 ### Runtime Settings and Environment Variables
 
-Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit ({{% icon name="pencil" %}}), or delete custom runtime settings and environment variables. For more information, refer to [Runtime](#runtime-tab). Click **Next**.
+Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit ({{% icon name="pencil" %}}), or delete ({{% icon name="trash-can-filled" %}}) custom runtime settings and environment variables. For more information, refer to [Runtime](#runtime-tab). Click **Next**.
 
 ### Starting the Application
 
@@ -276,7 +276,7 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit (
 
 {{% alert color="info" %}}This binds any services which are in the status **Services To Be Bound**.{{% /alert %}}
 
-2. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails).
+1. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails).
 
 ## Environment Details {#EnvironmentDetails}
 
@@ -287,7 +287,7 @@ The environment details page contains the following tabs:
 * [Services](#binding-services) – Cloud Foundry service management
 * [Runtime](#runtime-tab) – custom environment variables which define **User-Provided Variables** in the SAP Cloud Foundry environment — pre-defined variables can be used to control the behavior of the Mendix Runtime
 
-Open the environment details by clicking the details icon on the **Environments** page of the Development Portal. You will also be taken to this page when you successfully deploy or transport your app.
+Open the environment details by clicking the details ({{% icon name="pencil-write-paper" %}}) icon on the **Environments** page of the Development Portal. You will also be taken to this page when you successfully deploy or transport your app.
 
 {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/env-details.png" alt="" >}}
 
@@ -430,7 +430,7 @@ If you use the **Application Autoscaler** service on SAP BTP, Mendix can create 
 To upload the JSON **File** for service binding, follow these steps:
 
 1. Select the service in the **Service To Be Bound** section.
-2. Click the three-dot icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service for which you want to upload the file.
+2. Click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the service for which you want to upload the file.
 3. Select **Add Binding Configuration**.
 4. Select the JSON **File** to upload and click **Save**.
 
@@ -448,7 +448,7 @@ If you no longer require a service, you can unbind it or remove it from your app
 
 ##### Unbinding a Service
 
-1. Click the three-dot icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to unbind in the **Bound Services** section.
+1. Click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the service you want to unbind in the **Bound Services** section.
 1. Select one of the following:
     * **Unbind Service** – unbinds the service instance and moves it to the **Services To Be Bound** section. The service is bound again next time your app is restarted.
     * **Delete Service** – unbinds the service instance from the application and deletes the service instance from your environment.
@@ -463,7 +463,7 @@ If you no longer require a service, you can unbind it or remove it from your app
 
 ##### Removing an Unbound Service {#unbound-services}
 
-1. Click the three-dots icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to remove in the **Services To Be Bound** section.
+1. Click the three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the service you want to remove in the **Services To Be Bound** section.
 1. Select **Remove Service** and confirm by clicking **Remove**.
 
     The service is deleted from the app environment and returned to the list of **Available Services**.
@@ -474,7 +474,7 @@ When a service is in the **Services To Be Bound** section, you can add a new bin
 
 If you want to change the configuration of a service which is already bound, unbind the service first, as described in the [Removing an Unbound Service](#unbound-services) section.
 
-1. Click the three-dots icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the service you want to (re)configure in the **Services To Be Bound** section.
+1. Click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the service you want to (re)configure in the **Services To Be Bound** section.
 
 2. Select **Add Binding Configuration**.
 
