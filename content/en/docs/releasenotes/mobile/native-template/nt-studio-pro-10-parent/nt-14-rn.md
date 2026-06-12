@@ -11,7 +11,7 @@ description: "Native Template 14"
 
 ### Improvements
 
-* We removed the fallback scijava Maven repositories.
+* We removed the fallback `scijava` Maven repositories.
 
 ## 14.1.17
 
@@ -20,7 +20,6 @@ description: "Native Template 14"
 ### Improvements
 
 * We updated vulnerable `okhttp`, `jackson`, and `security-crypto` dependencies.
-
 
 ## 14.1.16
 
