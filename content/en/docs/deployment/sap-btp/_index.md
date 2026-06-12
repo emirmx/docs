@@ -92,7 +92,7 @@ If you have issues using SAP authentication, refer to [SAP Single Sign-On](/deve
 
 Provide the final details for the SAP BTP development environment.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-new-development.png" alt="" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-development.png" alt="" >}}
 
 Choose a **Domain**, **Organization**, and **Space** which is configured for you in this region.
 
@@ -193,7 +193,7 @@ You still have to deploy your app in [Apps](https://sprintr.home.mendix.com/) th
 
 1. Open the app in [Apps](https://sprintr.home.mendix.com/). In the **Environments** page, select the **Deployment Packages** tab. This tab shows the list of built packages. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/deployment-packages.png" alt="">}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/deployment-package.png" alt="">}}
 
 2. Click **Create a Package** and select the **Branch** on the Team Server which you want to use. Click **Next**.
 
@@ -598,7 +598,7 @@ Some older trial accounts do not include `hanatrial-securestore`. In this case, 
 
 If your SAP HANA database has performance issues, you can improve it by performing the following tuning:
 
-1. Obtain the following service binding credentials from the SAP BTP cockpit, or via the CLI:
+1. Obtain the following service binding credentials from the **Environment Variables** of SAP BTP cockpit, or via the CLI:
 
     * Host
     * Url
