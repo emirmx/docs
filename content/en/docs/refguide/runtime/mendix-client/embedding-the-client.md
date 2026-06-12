@@ -168,7 +168,7 @@ If the host app uses Content Security Policy (CSP), make sure its policy allows 
 
 ## Known Issues
 
-### Optional parameters
+### Optional Parameters
 Omitting a parameter that is marked as optional from the `parameters` object will result in the error page being shown instead of the default value being passed.
 
 ## Read More
