@@ -164,7 +164,7 @@ To create a new environment, perform the following steps:
 
 13. Click **Next** to create the environment and finish the setup.
 
-An environment is created. With more than one environment created, you can transport your application between environments. See [Deploy Package](#DeployPackage) for more information.
+An environment is created. With more than one environment created, you can transport your application between environments. See [Transporting to an Environment](#transport) for more information.
 
 ## Preparing Packages for Deployment
 
@@ -227,7 +227,7 @@ SAP BTP [has a limit of 1.5 GB](https://help.sap.com/viewer/65de2977205c403bbc10
 
 A green tick indicates that the build has finished. Click the deploy icon ({{% icon name="deploy" %}}) to deploy the package to SAP BTP.
 
-### Transporting to an Environment
+### Transporting to an Environment {#transport}
 
 1. In the **Transport** tab, change the deployment **Environment** if required.
 
@@ -413,7 +413,7 @@ To connect a service in the **Available Services** section, do the following ste
 1. Select one or more services (you can search for them by name).
 2. Select a **Plan** for each service. This must be a plan which is part of your quota for this space.
 3. Select a JSON file to upload if you need to add extra configuration.
-4. Click **Connect Selected Services**. You can also **Review your Services** before restarting your app. 
+4. Click **Connect Selected Services**. You can also **Review Services** before restarting your app. 
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/connect-service.png" alt="" >}}
 
@@ -480,7 +480,7 @@ If you want to change the configuration of a service which is already bound, unb
 
 3. You can either use the Configurator to create your configuration by clicking **Open Editor**, or click **Browse** to upload an existing file as the configuration.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-binding-configuration.png" alt="" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-binding-config.png" alt="" >}}
 
     See the documentation for the service you are configuring for more information.
 
@@ -590,7 +590,7 @@ If you have issues with your app running on SAP HANA, use the SAP BTP cockpit to
 
 For new trial accounts, you can bind your Mendix app to a trial SAP HANA database. Choose **hanatrial-securestore** from the drop-down of supported databases.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/hanatrial-schema.png" alt="" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/hanatrial.png" alt="" >}}
 
 Some older trial accounts do not include `hanatrial-securestore`. In this case, you can get an error when you try to deploy your Mendix app saying that *provisioning has failed because service hanatrial with plan securestore is not found*.
 
@@ -605,7 +605,7 @@ If your SAP HANA database has performance issues, you can improve it by performi
     * Schema
     * Password
     * User
-        {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/binding-credentials.png" alt="" class="no-border" >}}
+
 1. Go to the [Runtime tab](#runtime-tab) of your app environment.
 1. Enter the following unsupported environment variables with the associated values, using the values taken from the service binding credentials:
 
@@ -678,15 +678,11 @@ This could be caused by exceeding your organization's quota limit for a service 
 
 1. Click **Details** next to the failed environment.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-details.png" alt="" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-details.png" alt="" >}}
 
-2. Click **Details** on the error message at the top of the page.
+2. Click **Details** on the error message at the top of the page and you will get a detailed description of the reason why the environment creation failed.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-more-details.png" alt="" class="no-border" >}}
-
-A more detailed description of the reason why the environment creation failed will be displayed.
-
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-description.png" alt="" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/failed-more-details.png" alt="" >}}
 
 #### Solution
 
