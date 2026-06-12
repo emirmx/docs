@@ -39,7 +39,7 @@ The **General** tab in the **Edit Menu Items Item** dialog box has the following
     * Configurable when the **Item type** is **Button**
 
 {{% alert color="warning" %}}
-Due to current limitations, menu items are not hidden based on user access to actions set in **On click action**. For example, if a user does not have access to a microflow assigned to a menu item, the item will still be visible, but clicking it will have no effect.
+Due to current limitations, menu items are not hidden based on user access to actions set in an **On click action**. For example, if a user does not have access to a microflow assigned to a menu item, the item will still be visible, but clicking it will have no effect.
 {{% /alert %}}
 
 Other main properties of the widget are as follows:
