@@ -141,7 +141,7 @@ When upgrading to version 4.0.0 of the SCIM module, ensure you are also using ve
 
 | Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information |
 | --- | --- | --- | --- |
-| 10.24 LTS and above | 4.1.0 | 2.2.0 | Adds support for single-value attributes, multi-value/extension attributes, and role assignment via SCIM provisioning. |
+| 10.24 LTS and above | 4.1.0 | 2.2.1 | Adds support for single-value attributes, multi-value/extension attributes, and role assignment via SCIM provisioning. |
 | 10.24 LTS and above | 4.0.1 | 2.2.0 | Compatible with 11.6 MTS. SCIM module is ready for the React client. |
 | 9.24 LTS and above | 3.0.0 | 1.0.2 | – |
 
@@ -283,6 +283,8 @@ Configure role mapping in your IdP's User Attribute Mapping:
 * Expression: `SingleAppRoleAssignment([appRoleAssignments])`
 * Target Attribute: `roles[primary eq "true"].value`
 
+For differnt `Expression` and `Target Attribute` values, refer to [Provisioning a role to a SCIM app](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/customize-application-attributes#provisioning-a-role-to-a-scim-app) of *Microsoft Entra ID*. 
+
 {{% alert color="info" %}}
 The default `UC_CustomProvisioning` microflow handles role assignment automatically when configured. You can customize this microflow to implement your own role mapping logic based on your application's requirements.
 {{% /alert %}}
@@ -373,7 +375,7 @@ The table below lists all supported constants. Mandatory constants must be set a
 | Constants | Description | Mandatory/Optional | Default Value |
 | --- | --- | --- | --- |
 | `Default_APIKey_Value` | **API Key** (token) for the authentication | Mandatory | No default value |
-| `Default_IdPConfiguration_Name` | default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted.| Mandatory | No default Value |
+| `Default_IdPConfiguration_Name` | default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted. | Mandatory | No default Value |
 | **IdPConfiguration_MicroflowName** | This constant specifies a custom microflow that returns a list of IdP configurations and is used to create SCIM IdP configurations at deploy time. | Optional | `SCIM.Default_CreateIDPConfiguration` |
 | `Default_AllowCreateUsers` | allows to create users in the application | Optional | `True` |
 | `Default_CustomEntity_Name` | custom Entity name that can be specified for provisioning | Optional | `Administration.Account` |
