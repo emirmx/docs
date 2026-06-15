@@ -3,12 +3,7 @@ title: "Audit Logs"
 url: /control-center/audit-logs/
 description: "Describes the Audit Logs page in the Mendix Control Center."
 weight: 30
-beta: true
 ---
-
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
-{{% /alert %}}
 
 ## Introduction
 
