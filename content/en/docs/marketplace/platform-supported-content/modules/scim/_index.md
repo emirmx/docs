@@ -42,7 +42,7 @@ Your IdP can perform create, read, update, and delete (CRUD) operations on the u
 
 * Remove users: user deletion can be either a 'hard' delete, which removes user records from the app's database, or a 'soft' delete, which deactivates the Mendix user but keeps their records. If you set the flag **Default_DeleteUserPermanently** (in the **Acceptance Environment Details** of the Mendix application environment) to *True*, the user will be hard deleted. By default, the flag is set to *False*.
 
-* The following user attributes are supported during the creation or updating of users: first name, last name, and email address.
+* The following user attributes are supported during the creation or updating of users: first name, last name, email address additional custom attributes. For more information, see [Advanced Attribute Mapping](#advanced-attribute-mapping).
 
 * Update users: synchronizes changes in the user's profile in your IdP with your Mendix app, such as a change in the user’s information.
 
@@ -62,12 +62,15 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * Synchronization of users from multiple SCIM clients is currently in beta.
 * The module supports deployment-time configuration using constants, eliminating a need for runtime configuration by a local admin user.
 * The SCIM module simplifies the deletion of all (test) users provisioned by a SCIM (test) client, and then the IdP SCIM test client itself.
+* The module supports single-value attribute mapping at the root level without customization.
+* The module supports multi-value and extension attributes through the `UC_CustomProvisioning` microflow, enabling advanced scenarios like role assignment and custom schema handling.
+* Automatic role assignment is supported through SCIM provisioning when configured with Entra ID. See [Role Assignment](#role-assignment) below.
 
 ### Limitations
 
 The SCIM module has the following limitations:
 
-* The SCIM module does not sync groups (or group memberships) to your app. This means you cannot use the SCIM module to assign user roles to your app’s users. Instead, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
+* The SCIM module does not sync groups (or group memberships) to your app. Starting from version 4.1.0, you can assign user roles using the SCIM `roles` attribute (see [Role Assignment](#role-assignment) below). For earlier versions, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
 * The module does not support the development of a SCIM client application.
 * Multiple clients can be configured only at runtime via the admin screen.
@@ -93,8 +96,6 @@ Currently, the SCIM module does not support the following features of the SCIM s
 * User attributes other than a basic user profile. Mendix currently supports a limited set of user attributes from the SCIM user schema, including UserName, Email, FamilyName, GivenName, and Active status
 
 * Multi-valued attributes
-
-* User schema extensions
 
 * Multi-tenancy
 
@@ -138,8 +139,9 @@ This section provides an overview of updates for the SCIM and UserCommons module
 When upgrading to version 4.0.0 of the SCIM module, ensure you are also using version 2.0.0 of the UserCommons module.
 {{% /alert %}}
 
-| Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information|
+| Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information |
 | --- | --- | --- | --- |
+| 10.24 LTS and above | 4.1.0 | 2.2.0 | Adds support for single-value attributes, multi-value/extension attributes, and role assignment via SCIM provisioning. |
 | 10.24 LTS and above | 4.0.1 | 2.2.0 | Compatible with 11.6 MTS. SCIM module is ready for the React client. |
 | 9.24 LTS and above | 3.0.0 | 1.0.2 | – |
 
@@ -215,7 +217,7 @@ For reference, the table below gives an overview of attribute mapping when using
 | locale | Locale | en-US | en-US |
 
 {{% alert color="info" %}}
-The SCIM module only supports the IdP attributes (claims) listed in the table above. Any other claims in the SCIM payload will be ignored.
+The SCIM module only supports the IdP attributes (claims) listed in the table above by default. Starting from version 4.1.0, additional attributes can be handled using single-value mapping or custom provisioning for multi-value/extension attributes attributes. For more information, (see [Advanced Attribute Mapping](#advanced-attribute-mapping) below).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -236,6 +238,54 @@ The table below compares the primary user-identifying attribute used by SCIM (i.
 | EntraID | OIDC SSO | SCIM.externalID and OIDC.oid contain the same value. |
 | Okta | SAML | SCIM.externalID and SAML.Use Name ID contain the same value. <br> Note: Configure Application username to Custom with user.getInternalProperty("id"). |
 | EntraID | SAML | SCIM.externalID and SAML.Use Name ID contain the same value. <br> Note: Map Unique User Identifier as user.objectid in SSO Configuration. |
+
+#### Advanced Attribute Mapping {#advanced-attribute-mapping}
+
+Starting from version 4.1.0, the SCIM module provides enhanced support for handling both single-value and multi-value attributes, as well as SCIM extension schemas.
+
+#### Single-Value Attributes {#single-value-attributes}
+
+The SCIM module supports mapping single-value attributes directly at the root level of the SCIM request without requiring customization.
+
+To do this, configure the attribute (for example, `username2`) at the Identity Provider (IdP) root level. Map this attribute in your Mendix application using **Attribute Mapping** (Additional Claims) in the User Provisioning configuration.
+
+{{% alert color="info" %}}
+Single-value attributes work directly with the standard SCIM request payload structure and do not require custom provisioning microflows.
+{{% /alert %}}
+
+#### Multi-Value and Extension Attributes {#multi-value-attributes}
+
+For handling multi-value attributes or SCIM extension attributes, the SCIM module provides flexibility through the `UC_CustomProvisioning` microflow.
+
+The full SCIM request body is passed to your custom provisioning microflow as claims. Available claims are:
+
+* POST and PUT requests: Use the PAYLOAD claim
+* PATCH requests: Use the PATCH_PAYLOAD claim
+
+To do this: 
+
+1. Customize the `UC_CustomProvisioning` microflow. See [User Provisioning](user-provisioning) section below.
+2. Access the `UserClaimList` parameter in your custom provisioning microflow to retrieve the full SCIM request JSON.
+3. Retrieve the PAYLOAD claim (for POST/PUT) or PATCH_PAYLOAD claim (for PATCH)
+4. Parse the JSON to extract the required attributes
+5. Map the extracted values to your Mendix domain model
+Example - SCIM Extension Schema
+
+#### Assigning Roles Through SCIM Provisioning {#role-assignment}
+
+Starting from version 4.1.0, the SCIM module supports automatic role assignment through SCIM provisioning. This is a practical example of handling multi-value SCIM attributes, as the roles attribute is inherently multi-valued. For more information, see the [Multi-Value and Extension Attributes](#multi-value-attributes) section above.
+
+In the User Provisioning configuration, select the `UC_CustomProvisioning` microflow under **Custom UserProvisioning**. The default implementation processes roles and assigns them automatically.
+
+Configure role mapping in your IdP's User Attribute Mapping:
+
+* Mapping Type: `Expression`
+* Expression: `SingleAppRoleAssignment([appRoleAssignments])`
+* Target Attribute: `roles[primary eq "true"].value`
+
+{{% alert color="info" %}}
+The default `UC_CustomProvisioning` microflow handles role assignment automatically when configured. You can customize this microflow to implement your own role mapping logic based on your application's requirements.
+{{% /alert %}}
 
 ### Runtime Configuration
 
@@ -259,7 +309,7 @@ Another option is to generate an API key yourself and submit it to the SCIM modu
 
 {{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the time zone and language, these settings will be set according to the default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
 
-#### User Provisioning
+#### User Provisioning {user-provisioning}
 
 In the **Provisioning** section of the SCIM server configuration, you need to configure the following fields:
 
@@ -278,7 +328,7 @@ In the **Provisioning** section of the SCIM server configuration, you need to co
     * You can map only one IdP claim to a **Custom user Entity** attribute.
     * The **IdP Attribute** is one of the fixed claims supported by the SCIM module.
     * **IdP attribute** (Claim) cannot be of type enum, autonumber, or an association.
-    * Use custom logic in the **User Provisioning** (Optional) – In **Custom UserProvisioning**, select a microflow you want to run for custom user provisioning.
+    * Use custom logic in the **User Provisioning** (Optional) – In **Custom UserProvisioning**, select a microflow you want to run for custom user provisioning. Starting from version 4.1.0, the default `UC_CustomProvisioning` microflow includes automatic role assignment support. See [Assigning Roles Through SCIM Provisioning](#role-assignment) above.
 
 * The custom microflow name must begin with the string `UC_CustomProvisioning`. Starting from version 4.0.0, you can find a reference microflow (`SCIM.UC_CustomProvisioning`) in the **MOVE ME** folder. The custom microflow requires the following parameters:
 
