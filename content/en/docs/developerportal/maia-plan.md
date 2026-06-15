@@ -134,18 +134,7 @@ After you click **Start Building**, the **Start Development** window is displaye
 
 #### Connecting Maia Plan to Jira {#connect-jira}
 
-Follow these steps to connect Maia Plan to Jira:
-
-1. In the **Connect Planning Tool** window, select **Jira**.
-2. Fill in the information as follows:
-
-    * **Base URL Jira Environment** – The URL of your company’s environment within the Jira platform, as provided by Jira. This URL usually looks like this: https://my-company.atlassian.net.
-    * **Project Key** – The unique key of your project within the Jira platform.
-    * **Board ID** –  The unique number which identifies a specific board in your Jira project/space.
-    * **Jira Account** – The login name of a user on the Jira platform with project administration rights.
-    * **API Token**: A valid API token issued by the Jira platform and assigned to the above mentioned admin user. For more information on how to get this API token, refer to [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
-
-Make sure that the [prerequisites for using Jira](/developerportal/project-management/jira-connector/#prerequisites) are met.    
+The following two sections describe the two main actions you need to take to use Jira as your project management tool in Maia Plan.
 
 ##### Configuring Jira for Maia Plan
 
@@ -176,11 +165,26 @@ Existing Jira projects/spaces:
     * For a new board, select **All work items from your space**.     
         {{% alert color="info" %}} When you select **All work items from your space**, a consolidated backlog view is created. This view includes work items from all boards in the project, not just those managed through Maia Plan. {{% /alert %}}
 
-#### Using Jira with Maia Plan
+##### Configuring Maia Plan for Jira
 
-Once you have connected Maia Plan to Jira, you can start using Jira as your project management tool, as follows:
+Before you begin, make sure that the [prerequisites for using Jira](/developerportal/project-management/jira-connector/#prerequisites) are met.
+
+Follow these steps to connect Maia Plan to Jira:
+
+1. In the **Connect Planning Tool** window, select **Jira**.
+2. Fill in the information as follows:
+
+    * **Base URL Jira Environment** – The URL of your company’s environment within the Jira platform, as provided by Jira. This URL usually looks like this: https://my-company.atlassian.net.
+    * **Project Key** – The unique key of your project/space within the Jira platform.
+    * **Board ID** – The unique number that identifies a specific board in your Jira project/space.
+    * **Jira Account** – The login name of a user on the Jira platform with project administration rights.
+    * **API Token** – A valid API token issued by the Jira platform and assigned to the admin user mentioned above. For more information on how to get this API token, refer to [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).    
+
+##### Using Jira with Maia Plan
+
+After you connect Maia Plan to Jira, you can use Jira as your project management tool:
 
 1. In Maia Plan, in the **Start Development** window, set the planning tool to Jira, as previously indicated.
 2. Open the Jira board from Maia Plan. Your epics and stories are displayed in the Jira backlog.
-3. Create an active sprint in Jira, if one does not already exist.
+3. If an active sprint does not already exist, create one in Jira.
 4. Move the stories you want to work on from the backlog into the active sprint. The stories in the active sprint are now also available in Studio Pro.
