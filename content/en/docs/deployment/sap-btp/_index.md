@@ -716,13 +716,11 @@ If an app is deployed to SAP using the Studio Pro **Run** or **Publish** button 
 
 The deployment fails because the marketplace services have not been bound.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/error-desktop-modeler.png" alt="" >}}
-
 #### Solution
 
 If you use the Mendix Portal to look at the details of the environment to which you are deploying, you see that the services are still waiting to be bound.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/error-not-bound.png" alt="" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/not-bound-error.png" alt="" >}}
 
 Start the app from the Mendix Portal to bind the services. Once they are bound, you can deploy your app from Studio Pro as usual.
 
