@@ -123,7 +123,6 @@ After you click **Start Building**, the **Start Development** window is displaye
 
     * **Mendix Planning Board (default)** – Use the Mendix planning board, where you can reorganize the sprints as needed.     
     * **Jira** – Use Jira to organize and prioritize your work. To do that, follow the steps in the [Connecting to Jira](#connect-jira) section.  
-        Make sure that the [prerequisites for using Jira](/developerportal/project-management/jira-connector/#prerequisites) are met.
     
    {{% alert color="info" %}}
    If you start prioritizing your work before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window.
@@ -135,29 +134,53 @@ After you click **Start Building**, the **Start Development** window is displaye
 
 #### Connecting Maia Plan to Jira {#connect-jira}
 
-Follow these steps to connect Maia Plan to Jira.
+Follow these steps to connect Maia Plan to Jira:
 
-##### New Jira Projects
+1. In the **Connect Planning Tool** window, select **Jira**.
+2. Fill in the information as follows:
 
-1. Create a new Jira project.
+    * **Base URL Jira Environment** – The URL of your company’s environment within the Jira platform, as provided by Jira. This URL usually looks like this: https://my-company.atlassian.net.
+    * **Project Key** – The unique key of your project within the Jira platform.
+    * **Board ID** –  The unique number which identifies a specific board in your Jira project/space.
+    * **Jira Account** – The login name of a user on the Jira platform with project administration rights.
+    * **API Token**: A valid API token issued by the Jira platform and assigned to the above mentioned admin user. For more information on how to get this API token, refer to [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+
+Make sure that the [prerequisites for using Jira](/developerportal/project-management/jira-connector/#prerequisites) are met.    
+
+##### Configuring Jira for Maia Plan
+
+Follow these steps to configure Jira for use with Maia Plan.
+
+New Jira projects/spaces:
+
+1. Create a new Jira project/space.
 2. Ensure that the default board has the correct project filter. To do that, follow these steps:
 
-    1. Find your **Project key**. The project key is the short code that Jira assigns to your project. You can find it next your project name, in the top left corner of your Jira project. It is also available in the **Project Settings** window, which you can access from the context menu of your project.
+    1. Find your **Project key** or **Space key**. The project key is the short code that Jira assigns to your project. You can find it next your project name, in the top left corner of your Jira project. It is also available in the **Project Settings** window, which you can access from the context menu of your project.
+        {{< figure src="/attachments/developerportal/maia/space-key.png" alt="Board key field in Jira" max-width="30%" >}}
     2. Click **Board Settings** in the context menu of your board.
-        {{< figure src="/attachments/developerportal/maia/board-settings-option.png" alt="Board Settings button in Jira" >}}
-    3. Set the filter to *project = <ProjectKey>*. 
+        {{< figure src="/attachments/developerportal/maia/board-settings-option.png" alt="Board Settings button in Jira" max-width="30%" >}}
+    3. Set the filter to *project = "your project key"*. 
 
-##### Existing Jira Projects
+Existing Jira projects/spaces:
 
-1. Open your existing Jira project.
+1. Open your existing Jira project/space.
 2. Select the board you want to use with Maia Plan, or create a new one.
 3. Ensure the board includes a filter for the project's Jira key:
 
     * For an existing board:
 
         1. Open **Board Settings**.
-        2. Confirm that the filter is set to *project = <ProjectKey>*.
+        2. Confirm that the filter is set to *project = "your project key"*.
 
     * For a new board, select **All work items from your space**.     
-        {{% alert color="warning" %}} When you select **All work items from your space**, a consolidated backlog view is created. This view includes work items from all boards in the project, not just those managed through Maia Plan. {{% /alert %}}
+        {{% alert color="info" %}} When you select **All work items from your space**, a consolidated backlog view is created. This view includes work items from all boards in the project, not just those managed through Maia Plan. {{% /alert %}}
 
+#### Using Jira with Maia Plan
+
+Once you have connected Maia Plan to Jira, you can start using Jira as your project management tool, as follows:
+
+1. In Maia Plan, in the **Start Development** window, set the planning tool to Jira, as previously indicated.
+2. Open the Jira board from Maia Plan. Your epics and stories are displayed in the Jira backlog.
+3. Create an active sprint in Jira, if one does not already exist.
+4. Move the stories you want to work on from the backlog into the active sprint. The stories in the active sprint are now also available in Studio Pro.
