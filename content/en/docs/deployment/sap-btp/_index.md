@@ -696,7 +696,7 @@ Resolve the issue described in the error message.
 
 Under some circumstances, an app with a service in the **Services To Be Bound** status will not restart.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/service-bind-error.png" alt="" class="no-border" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/error-service-bind.png" alt="" >}}
 
 #### Cause
 
