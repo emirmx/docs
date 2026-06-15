@@ -63,12 +63,16 @@ Currently supported regions are:
 * Azure Japan 
 * Azure Singapore 
 * Azure US East (VA) 
-* Azure US West (WA) 
+* Azure US West (WA)
+* Brazil (São Paulo)
 * Canada (Montreal) 
-* Europe (Frankfurt) 
-* Europe (Netherlands) 
+* Europe (Frankfurt)
+* Europe (Frankfurt) - 004
+* Europe (Netherlands)
+* Europe (Netherlands) - 001
 * US Central (IA) Beta 
 * US East (VA)
+* US East (VA) - 001
 
 Contact Mendix Support if you have a requirement for an additional region.
 {{% /alert %}}
@@ -92,7 +96,7 @@ If you have issues using SAP authentication, refer to [SAP Single Sign-On](/deve
 
 Provide the final details for the SAP BTP development environment.
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/create-development.png" alt="" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/creating-development.png" alt="" >}}
 
 Choose a **Domain**, **Organization**, and **Space** which is configured for you in this region.
 
@@ -313,7 +317,7 @@ If you receive an error trying to start the app, refer to the [App Does Not Star
 
 #### Change Admin Password
 
-Find the three-dots icon ({{% icon name="three-dots-menu-horizontal" %}}) and click **Change Admin Password** to change the password for the administrator account (by default, MxAdmin) in your Mendix app.
+Find the three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon and click **Change Admin Password** to change the password for the administrator account (by default, MxAdmin) in your Mendix app.
 
 {{% alert color="warning" %}}
 The new password will not come into effect until you stop and start your environment.
@@ -321,7 +325,7 @@ The new password will not come into effect until you stop and start your environ
 
 #### View Recent Log
 
-Click **View Recent Log** to see recent events written to the log.
+Click three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon and select **View Recent Log** to see recent events written to the log.
 
 #### Delete Environment
 
