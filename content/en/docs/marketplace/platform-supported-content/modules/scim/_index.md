@@ -42,7 +42,7 @@ Your IdP can perform create, read, update, and delete (CRUD) operations on the u
 
 * Remove users: user deletion can be either a 'hard' delete, which removes user records from the app's database, or a 'soft' delete, which deactivates the Mendix user but keeps their records. If you set the flag **Default_DeleteUserPermanently** (in the **Acceptance Environment Details** of the Mendix application environment) to *True*, the user will be hard deleted. By default, the flag is set to *False*.
 
-* The following user attributes are supported during the creation or updating of users: first name, last name, email address additional custom attributes. For more information, see [Advanced Attribute Mapping](#advanced-attribute-mapping).
+* The following user attributes are supported during the creation or updating of users: first name, last name, email address, and additional custom attributes. For more information, see [Advanced Attribute Mapping](#advanced-attribute-mapping).
 
 * Update users: synchronizes changes in the user's profile in your IdP with your Mendix app, such as a change in the user’s information.
 
@@ -70,7 +70,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 
 The SCIM module has the following limitations:
 
-* The SCIM module does not sync groups (or group memberships) to your app. Starting from version 4.1.0, you can assign user roles using the SCIM `roles` attribute (see [Role Assignment](#role-assignment) below). For earlier versions, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
+* The SCIM module does not sync groups (or group memberships) to your app. Starting from version 4.1.0, you can assign user roles using the SCIM `roles` attribute. See [Assigning Roles Through SCIM Provisioning] (#role-assignment) below. For earlier versions, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
 * The module does not support the development of a SCIM client application.
 * Multiple clients can be configured only at runtime via the admin screen.
