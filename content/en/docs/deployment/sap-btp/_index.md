@@ -259,9 +259,9 @@ You can also transport to the required environment from the **Overview** tab of 
 
 1. In the **Services** tab, select any additional services you need for your app. For more information, see the [Services tab](#binding-services).
 
-{{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Bound Services**. For a new app, these services are required for the correct deployment of the app.{{% /alert %}}
+    {{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Bound Services**. For a new app, these services are required for the correct deployment of the app.{{% /alert %}}
 
-1. If you want to remove a service instance from your environment, click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
+2. If you want to remove a service instance from your environment, click the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu for the service and select **Unbind Service** or **Delete Service**.
 
     The options do the following:
 
@@ -278,9 +278,9 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit (
 
 1. On the **Start Application** tab, you can see the application details. Click **Start application** to start the application on SAP BTP.
 
-{{% alert color="info" %}}This binds any services which are in the status **Services To Be Bound**.{{% /alert %}}
+    {{% alert color="info" %}}This binds any services which are in the status **Services To Be Bound**.{{% /alert %}}
 
-1. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails).
+2. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](#EnvironmentDetails).
 
 ## Environment Details {#EnvironmentDetails}
 

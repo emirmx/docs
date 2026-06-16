@@ -1,6 +1,6 @@
 ---
-title: "SAP Environment Details"
-linktitle: "SAP Environment Details"
+title: "Environment Details on SAP BTP"
+linktitle: "Environment Details on SAP BTP"
 url: /developerportal/deploy/sap-cloud-platform/environments
 weight: 20
 description: "Describes SAP Business Technology Platform Environment Details."
@@ -59,7 +59,7 @@ The new password will not come into effect until you stop and start your environ
 
 #### View Recent Log
 
-Click three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon and select **View Recent Log** to see recent events written to the log.
+Click the three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon and select **View Recent Log** to see recent events written to the log.
 
 #### Delete Environment
 
@@ -153,7 +153,7 @@ To connect a service in the **Available Services** section, do the following ste
 3. Select a JSON file to upload if you need to add extra configuration.
 4. Click **Connect Selected Services**. You can also **Review Services** before restarting your app. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/connect-service.png" alt="" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/autoscaler-service.png" alt="" >}}
 
     The services you have selected will be added as **Services To Be Bound**. Now, you can upload a JSON file with a configuration that will be applied to the service binding.
 
@@ -204,7 +204,7 @@ If you no longer require a service, you can unbind it or remove it from your app
 1. Click the three-dots ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the service you want to remove in the **Services To Be Bound** section.
 1. Select **Remove Service** and confirm by clicking **Remove**.
 
-    The service is deleted from the app environment and returned to the list of **Available Services**.
+The service is deleted from the app environment and returned to the list of **Available Services**.
 
 #### Adding Binding Configuration
 
@@ -263,4 +263,3 @@ You can also enter other environment variables which can be used to support Mend
 {{% alert color="info" %}}
 Only use unsupported environment variables if you know exactly what you are doing. Incorrect values can prevent the Mendix Runtime from starting.
 {{% /alert %}}
-
