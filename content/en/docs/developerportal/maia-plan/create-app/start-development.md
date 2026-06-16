@@ -15,10 +15,10 @@ After you click **Start Building**, the **Start Development** window is displaye
     * **Jira** – Use Jira to organize and prioritize your work. To do that, follow the steps in the [Connecting to Jira](#connect-jira) section.  
     
    {{% alert color="info" %}}
-   If you start prioritizing your work before Maia is done [finding recommendations](#recommender), recommended components are not displayed in the **Planning** window.
+   If you start prioritizing your work before Maia is done [finding recommendations](/developerportal/maia-plan/generate-plan/#recommender), recommended components are not displayed in the **Planning** window.
    {{% /alert %}}
 
-* **Build** – Click the **Open in Studio Pro** button in the **Build** section to open Studio Pro, where you can continue working on the new app. Studio Pro does not currently take into account [recommended components](#recommender).
+* **Build** – Click the **Open in Studio Pro** button in the **Build** section to open Studio Pro, where you can continue working on the new app. Studio Pro does not currently take into account [recommended components](/developerportal/maia-plan/generate-plan/#recommender).
     
     For details, refer to [Maia Make](/refguide/maia-make/) in the Studio Pro documentation.    
 
