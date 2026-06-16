@@ -64,7 +64,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * The SCIM module simplifies the deletion of all (test) users provisioned by a SCIM (test) client, and then the IdP SCIM test client itself.
 * The module supports single-value attribute mapping at the root level without customization.
 * The module supports multi-value and extension attributes through the `UC_CustomProvisioning` microflow, enabling advanced scenarios like role assignment and custom schema handling.
-* Automatic role assignment is supported through SCIM provisioning when configured with Entra ID. See [Role Assignment](#role-assignment) below.
+* Automatic role assignment is supported through SCIM provisioning when configured with Entra ID. See [Assigning Roles Through SCIM Provisioning](#role-assignment) below.
 
 ### Limitations
 
@@ -217,7 +217,7 @@ For reference, the table below gives an overview of attribute mapping when using
 | locale | Locale | en-US | en-US |
 
 {{% alert color="info" %}}
-The SCIM module only supports the IdP attributes (claims) listed in the table above by default. Starting from version 4.1.0, additional attributes can be handled using single-value mapping or custom provisioning for multi-value/extension attributes attributes. For more information, (see [Advanced Attribute Mapping](#advanced-attribute-mapping) below).
+The SCIM module only supports the IdP attributes (claims) listed in the table above by default. Starting from version 4.1.0, you can handle additional attributes using single-value mapping or custom provisioning for multi-value/extension attributes attributes. For more information, (see [Advanced Attribute Mapping](#advanced-attribute-mapping) below).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -311,7 +311,7 @@ Another option is to generate an API key yourself and submit it to the SCIM modu
 
 {{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the time zone and language, these settings will be set according to the default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
 
-#### User Provisioning {user-provisioning}
+#### User Provisioning {#user-provisioning}
 
 In the **Provisioning** section of the SCIM server configuration, you need to configure the following fields:
 
