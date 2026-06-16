@@ -134,7 +134,7 @@ When you export a module package (an *.mpk* file), Studio Pro 11.12 and above ad
 * The Mendix metamodel version used to create the package
 * The list of files included in the package
 
-The legacy `package.xml` metadata file is still included for backward compatibility.
+The legacy `package.xml` metadata file is NOT mentioned in the `manifest.json` but is still included in the package for backward compatibility.
 
 
 
