@@ -90,6 +90,13 @@ For more information on how each Maia Make capability work, refer to the followi
 
 In Studio Pro 11.8 and above, most of the features described in the documents above are available only through the chat interface. There are no separate entry points to these features in their respective editors. [Maia Explain](/refguide/maia-explain/) is an exception. You can still access this feature by right-clicking the documents (for example, microflows or pages) in the **App Explorer** and the **Maia Explain** option is in the context menu.
 
+## Saving Maia Session
+
+Maia session is helpful in analysing and reasoning the response and behaviour of Maia. To save and access the Maia Session, navigate to HELP -> Support Tools -> Capture Maia Agent Session
+
+<img width="1240" height="1130" alt="image" src="https://github.com/user-attachments/assets/368f1254-0c4d-4c1f-9dbc-9c04b8691542" />
+
+
 ## Read More
 
 * [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
