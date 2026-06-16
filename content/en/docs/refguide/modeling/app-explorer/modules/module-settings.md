@@ -110,6 +110,9 @@ In some cases you might want to override the automatically assigned Module ID. T
 
 {{% alert color="warning" %}}
 Changing the Module ID may break existing installations that depend on this module. Only override this value if you know what you are doing.
+
+Marketplace will not allow you to publish a module with ModuleID that is already used by another publisher.
+
 {{% /alert %}}
 
 ### Checksum {#checksum}
