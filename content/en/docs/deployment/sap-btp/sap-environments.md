@@ -125,7 +125,7 @@ To change a value, select the constant you want to change and click the edit ({{
 
 ### Services Tab {#binding-services}
 
-This tab displays Cloud Foundry services which are bound to the app, waiting to be bound to the app, or available to be bound to the app. These are the services which are available to you in SAP BTP and are the same services that you can see in the SAP BTP marketplace.
+This tab displays Cloud Foundry services which are bound to the app, waiting to be bound to the app, or available to be bound to the app. These are the services which are available to you in SAP BTP and are the same services that you can see in the SAP BTP Marketplace.
 
 {{% alert color="warning" %}}
 There are a number of services which your Mendix app requires. If you unbind any of these services, your app probably stops working:
@@ -158,7 +158,7 @@ To connect a service in the **Available Services** section, do the following ste
     The services you have selected will be added as **Services To Be Bound**. Now, you can upload a JSON file with a configuration that will be applied to the service binding.
 
 {{% alert color="info" %}}
-If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](#sap-hyperscaler). 
+If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](/developerportal/deploy/sap-cloud-platform/#sap-hyperscaler). 
 {{% /alert %}}
 
 {{% alert color="info" %}}
