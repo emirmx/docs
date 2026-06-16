@@ -25,6 +25,10 @@ This page describes the following:
 * Configure host app requirements such as CORS and CSP
 * Mount and unmount the client at the correct lifecycle moment
 
+{{% alert color="inof" %}}
+Embedding the Mendix client is only supported for the [Mendix React Client](/refguide/mendix-client/react/).
+{{% /alert %}}
+
 ## How the Embedded Client Works
 
 When your app contains an Embedded navigation profile, the Mendix runtime exposes an embedded entry bundle at `/dist/embedded-index.js`.
@@ -58,7 +62,7 @@ After you add the Embedded profile, the Mendix runtime serves the following bund
 <runtime-url>/dist/embedded-index.js
 ```
 
-For example, if your runtime URL is `http://localhost:8081`, the embedded bundle is served from `http://localhost:8081/dist/embedded-index.js`.
+For example, if your runtime URL is `http://localhost:8080`, the embedded bundle is served from `http://localhost:8080/dist/embedded-index.js`.
 
 The Embedded profile defines the starting page for the embedded app, which is the first page shown when the host calls `render(...)`, and it can also define an error page for startup or navigation failures. When the embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(...)` configuration. The configured error page is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page or when the selected home page is not accessible for the signed-in user.
 
