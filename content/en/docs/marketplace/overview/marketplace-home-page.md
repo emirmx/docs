@@ -30,7 +30,7 @@ You can refine search results using the following filters:
 
 * **Support** – Select between the available support categories. For details, see the [Marketplace Content Support](/appstore/marketplace-content-support/).
 * **Visibility** – Choose whether you want to display public, private, or company components.
-* **Content Types** – Choose the type of content to display. For details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
+* **Content Types** – Choose the type of content to display. For details, refer to the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
 * **Category** – Select specific domains in which components or services share characteristics, functions, or purposes.
 * **Industry** – Select specific sectors or business domains in which components or services are used.
 * **Compatibility** – Choose between Studio Pro major versions.
@@ -44,9 +44,35 @@ For details on finding and installing Marketplace content in Studio Pro, see the
 
 The **Manage Components** category contains the items described in the following sections.
 
-## Published
+### Published {#published}
 
-This page includes all your published components
+This page includes all components that you have access to, along with the following information for each:
+
+* **Name** – The component's name. Clicking the name of a component in the list opens its [details page](/appstore/component-details/).
+* **Visibility** – Indicates whether the component is public or private.     
+    If a component is marked as private, that means the component is your company's private Marketplace content. For details on how this is configured, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*. This content can be shared with [guests](#guests).
+* **Support Type** – The category of support Mendix offers for the component.
+* **Component Type** – The type of component. For details, refer to the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
+* **Company Group** – The [company groups](#content-groups) that the component belongs to, if any.
+* **Last Updated On** – The date when the component was last updated.
+* **Latest Version** – The latest version of the component.
+* **Studio Pro Version** – The Studio Pro version required for the component to work.
+* **Actions** – Select one of these contextual actions:
+
+    * **Add New Release** – Add a new version of the component.
+    * **Manage Versions** – Edit or unpublish any version of the component. Keep in mind the following:
+
+        * If the component is [protected](#group-content) within a [content group](#content-groups), a [group member](#members) can unpublish any version.
+        * If the component is not protected within a content group, you can only unpublish a version that you have published yourself.
+        * Select **Unpublish** to remove all your versions of the component.
+        * The option to unpublish is only available for deprecated components.
+
+        For details on editing, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*.
+
+    * **Deprecate Component** – Deprecate the component, and select alternatives.    
+        For details on deprecating components, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
+
+From this page, you can also upload a new component by clicking **Upload Component**. For details, refer to [Uploading Content to the Marketplace](/appstore/submit-content/).
 
 ### Drafts {#my-drafts}
 
@@ -74,40 +100,10 @@ Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on a com
 
 Keep in mind the following: 
 
-* Only one draft version of a component can exist at a time, so when one draft version is in progress, you cannot initiate another.
 * If there is a draft version in progress, you can edit or delete it.
 * If there is a draft version in progress, and it is assigned to another user, you can reassign it to to yourself. 
 
 For more information on creating a draft version, refer to the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Uploading to the Marketplace*.  
-
-### Components {#my-content}
-
-Clicking **Components** opens the **My Components** page, where you can see a list of the Marketplace components for which you have created at least one version.    
-Clicking the name of a component in the list opens its [details page](/appstore/component-details/).
-
-Click the contextual **Actions** menu to access options for managing your content:
-
-* **Add New Release** – Add a new version of the component.
-* **Manage Versions** – Edit or unpublish any version of the component.      
-    Keep in mind the following:
-
-    * If the component is [protected](#group-content) within a [content group](#content-groups), a [group member](#members) can unpublish any version.
-    * If the component is not protected within a content group, you can only unpublish a version that you have published yourself.
-    * Select **Unpublish** to remove all your versions of the component.
-    * The option to unpublish is only available for deprecated components.
-
-    For details on editing, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*.    
-    
-* **Deprecate Component** – Deprecate the component, and select alternatives.    
-    For details on deprecating components, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
-
-A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*. This content can be shared with [guests](#guests).
-
-A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
-
-### Shared with Me {#shared-with-me}
-
-This page contains private content shared with you by other companies who have marked you as a [guest](#guests).
 
 ### Saved {#saved-components}
 
@@ -120,25 +116,18 @@ Click the contextual menu to access options for managing this component:
 * **Receive/Stop Email Notifications** – Start receiving email notifications, or stop the notifications if they are enabled.
 * **Unsave** – Remove the component from your saved content.
 
-### Reviews {#my-reviews}
+### Shared with Me {#shared-with-me}
 
-Clicking **Reviews** opens the **My Reviews** page, which contains reviews of [My Components](#my-content) by other users, as well as **My reviews** that you have written for other content.
+This page contains private content shared with you by other companies who have marked you as a [guest](#guests).
 
-## Company {#company}
+## Reviews {#my-reviews}
 
-The **Company** category contains the items described in the following sections.
+Clicking **Reviews** opens the **My Reviews** page, which contains the following tabs:
 
-### Components {#company-content}
+* **My Content** – Reviews of your components provided by other users.
+* **My Reviews** – Reviews that you have written for other content.
 
-Clicking **Components** opens the **My Company Components** page, where you can see all the content your company has published to the Marketplace as private.
-
-Click the name of the component to access its [details page](/appstore/component-details/).
-
-Click the contextual menu to access options for managing this content.
-
-The options in this menu are the same as those for the [My Components](#my-content) section.
-
-### Groups {#content-groups}
+## Company Groups {#content-groups}
 
 Clicking **Groups** opens the **Content Groups** page. This is visible to all users, but only [Mendix Admins](/control-center/company-settings/) can create and delete content groups. Both [Group Admins](#members) and Mendix Admins can manage content group members. 
 
@@ -155,7 +144,7 @@ This table breaks down the roles and permissions for content groups:
 | Guest                                       | ✘                               | ✘                    | ✘                       | ✘                                                  | ✔                             | ✘               |      ✘    |
 | Developer (not part of any group)           |       ✘                  |   ✘              |      ✘          |   ✔       |    ✔  | ✔ | ✔ |
 
-#### Content Tab {#group-content}
+### Content Tab {#group-content}
 
 On this tab, you can assign content that can only be managed by members of this group. To assign a component to a content group, click **Assign Content**, and select a Marketplace component from the dialog box.
 
@@ -165,9 +154,9 @@ A component can only be assigned to one content group at a time. If a component 
 
 Click the contextual menu to access options for managing this content.
 
-The options in this menu are the same as those for the [My Components](#my-content) section. The **Unassign from Group** button is only available for [Group Admins](#members), and can be used to remove content from the content group.
+The options in this menu are the same as those for the [Published](#published) section. The **Unassign from Group** button is only available for [Group Admins](#members), and can be used to remove content from the content group.
 
-#### Members Tab {#members}
+### Members Tab {#members}
 
 On this tab, you can enter the email address of a Mendix Platform user from your company and click **Add Member** to add them as a content group member. Content group members can manage the [content](#group-content) assigned to the group.
 
@@ -175,7 +164,7 @@ Once a member is added, you can select their permission level: **Group Member** 
 
 To remove a member, click **Remove** next to their name.
 
-#### Guests Tab {#guests}
+### Guests Tab {#guests}
 
 A guest is a Mendix Platform user from outside your organization who can download the selected private [content](#group-content) of this group. 
 
@@ -189,7 +178,7 @@ The guest must be a registered Mendix Platform user. Otherwise, they will not be
 
 To remove a guest, click **Remove**.
 
-#### Settings Tab {#settings}
+### Settings Tab {#settings}
 
 {{% alert color="info" %}}
 This tab is only accessible to [Group Admins](#members) and [Mendix Admins](/control-center/company-settings/).
