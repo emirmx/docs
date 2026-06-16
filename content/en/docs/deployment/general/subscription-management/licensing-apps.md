@@ -176,10 +176,12 @@ To activate the license on a Mendix app using Portable App Distribution on eithe
    
 ```bash
 # License configuration
-runtime.params {
-  License.LicenseID = <licenseId>
-  License.LicenseKey = <license_Key
+runtime {
+ license {
+   id = 
+    key = 
+  }
 }
 ```
 
-The values for these properties can also be passed by using environment variables for your deployment type, or by creating a separate config file.
+The values for these properties can also be passed by using environment variables `RUNTIME_LICENSE_ID` and `RUNTIME_LICENSE_KEY` for your deployment type, or by creating a separate config file.
