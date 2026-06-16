@@ -27,7 +27,7 @@ The environment details page contains the following tabs:
 * [Services](#binding-services) – Cloud Foundry service management
 * [Runtime](#runtime-tab) – custom environment variables which define **User-Provided Variables** in the SAP Cloud Foundry environment — pre-defined variables can be used to control the behavior of the Mendix Runtime
 
-{{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/env-details.png" alt="" >}}
+{{< figure src="/attachments/deployment/sap-btp/sap-env-details/env-details.png" alt="" >}}
 
 {{% alert color="info" %}}If you make changes to your app which you want to be applied next time the app is deployed, you must make them in the **Environment Details**.
 
@@ -153,7 +153,7 @@ To connect a service in the **Available Services** section, do the following ste
 3. Select a JSON file to upload if you need to add extra configuration.
 4. Click **Connect Selected Services**. You can also **Review Services** before restarting your app. 
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/autoscaler-service.png" alt="" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-env-details/autoscaler-service.png" alt="" >}}
 
     The services you have selected will be added as **Services To Be Bound**. Now, you can upload a JSON file with a configuration that will be applied to the service binding.
 
@@ -218,7 +218,7 @@ If you want to change the configuration of a service which is already bound, unb
 
 3. You can either use the Configurator to create your configuration by clicking **Open Editor**, or click **Browse** to upload an existing file as the configuration.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/add-binding-config.png" alt="" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-env-details/add-binding-config.png" alt="" >}}
 
     See the documentation for the service you are configuring for more information.
 
