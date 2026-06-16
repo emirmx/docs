@@ -54,7 +54,7 @@ The password you provide when using one of the above connection methods will be 
 
 ### Using Integrated Security for SQL Server
 
-If you plan to connect to SQL Server using integrated security, ensure the JDBC driver in the `userlib` folder matches the version supplied with Studio Pro (via the `runtime/bundles/` folder inside the Mendix installation directory).
+If you plan to connect to SQL Server using integrated security, ensure the JDBC driver in the `userlib` folder or version mentioned in the module settings matches the version supplied with Studio Pro (via the `runtime/bundles/` folder inside the Mendix installation directory).
 
 ## External Database Connection Document {#external-database-document}
 
