@@ -218,8 +218,7 @@ To update content that has already been published, follow these steps:
 
 1. Find the component in one of the following sections:
 
-    * **My Content**
-    * **Company Content**
+    * **Published**
     * **Content Group**
     {{% alert color="info" %}}If an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group.{{% /alert %}}
 
@@ -228,8 +227,6 @@ To update content that has already been published, follow these steps:
     * **Add New Release**
     * **Manage Versions** – This option gives you access to the **Edit** and **Unpublish** actions for each version of the component.
     * **Unpublish Component**
-
-    {{% alert color="info" %}}Only one draft version of a component can exist at a time, so when one draft version is in progress, another draft cannot be started. If there is a draft version in progress, click **Edit Draft** on the page where you manage the component in order to see the draft.{{% /alert %}}
 
 3. You can edit all component details, as described in the [Adding New Marketplace Content](#adding) section above.
 4. In the **Version** section of the **Package** page, update the **Major**, **Minor**, and **Patch** numbers so that the component is saved as a new version:

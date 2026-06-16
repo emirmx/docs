@@ -1,11 +1,10 @@
 ---
-title: "Content API"
-linktitle: "Marketplace Content"
+title: "Marketplace Content API"
 url: /apidocs-mxsdk/apidocs/content-api/
 type: swagger
 description: "The Content API accesses both public and company-specific Marketplace content information."
 restapi: true
-weight: 45
+weight: 10
 ---
 
 ## Introduction
@@ -22,7 +21,7 @@ If you have Marketplace content, this API can help you get the following informa
 
 ### Generating a PAT
 
-For details on how to generate a PAT, see the [Personal Access Tokens](/portal/user-settings/#pat) section of *User Settings*.
+For details on how to generate a PAT, refer to the [Personal Access Tokens](/portal/user-settings/#pat) section of *User Settings*.
 
 Select at least the following as the **Marketplace** scope:
 
@@ -39,7 +38,7 @@ GET /content HTTP/1.1
 Authorization: MxToken 7LJE…vk
 ```
 
-To authenticate calls when using the OpenAPI specification below, click **Authorize** and use the value `MxToken {GENERATED_PAT}`.
+To authenticate calls when using the OpenAPI specification included in the next section, click **Authorize** and use the value `MxToken {GENERATED_PAT}`.
 
 ## API Reference
 

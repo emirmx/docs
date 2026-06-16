@@ -29,7 +29,7 @@ The search box at the top of the page allows you to explore the Mendix Marketpla
 You can refine search results using the following filters:
 
 * **Support** – Select between the available support categories. For details, see the [Marketplace Content Support](/appstore/marketplace-content-support/).
-* **Visibility** – Choose whether you want to display [public or private](/appstore/submit-content/#support-licensing) content.
+* **Visibility** – Choose whether you want to display public, private, or company components.
 * **Content Types** – Choose the type of content to display. For details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
 * **Category** – Select specific domains in which components or services share characteristics, functions, or purposes.
 * **Industry** – Select specific sectors or business domains in which components or services are used.
@@ -40,9 +40,13 @@ You can refine search results using the following filters:
 For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Using Marketplace Content*.
 {{% /alert %}}
 
-## Personal {#personal}
+## Manage Components
 
-The **Personal** category contains the items described in the following sections.
+The **Manage Components** category contains the items described in the following sections.
+
+## Published
+
+This page includes all your published components
 
 ### Drafts {#my-drafts}
 
@@ -142,13 +146,14 @@ You can configure content groups for various levels of access to your company co
 
 This table breaks down the roles and permissions for content groups:
 
-| Roles                                       | Manage Groups (Create & Delete) | Manage Group Members | Assign Content to Group | Manage Content (Add New Release, Manage Versions) | View & Download Group Content | View Group List |
-| ------------------------------------------- | ------------------------------- | -------------------- | ----------------------- | -------------------------------------------------- | ----------------------------- | --------------- |
-| Mendix Admin                                | ✔                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               |
-| Group Admin                                 | ✘                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               |
-| Group Member                                | ✘                               | ✘                    | ✘                       | ✔                                                  | ✔                             | ✔               |
-| Organization member (not part of any group) | ✘                               | ✘                    | ✘                       | ✘                                                  | ✔                             | ✔               |
-| Guest                                       | ✘                               | ✘                    | ✘                       | ✘                                                  | ✔                             | ✘               |
+| Roles                                       | Manage groups (create & delete) | Manage group members | Assign content to group | Manage content (Add new release, manage releases) | View & download group content | View group list | Manage drafts |
+| ------------------------------------------- | ------------------------------- | -------------------- | ----------------------- | -------------------------------------------------- | ----------------------------- | --------------- | ------------------ |
+| Mendix Admin                                | ✔                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               | ✘          |
+| Group Admin                                 | ✘                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               |    ✔      |
+| Group Member                                | ✘                               | ✘                    | ✘                       | ✔                                                  | ✔                             | ✔               |      ✔     |
+| Organization member (not part of any group) | ✘                               | ✘                    | ✘                       | ✘                                                  | ✔                             | ✔               |      ✘     |
+| Guest                                       | ✘                               | ✘                    | ✘                       | ✘                                                  | ✔                             | ✘               |      ✘    |
+| Developer (not part of any group)           |       ✘                  |   ✘              |      ✘          |   ✔       |    ✔  | ✔ | ✔ |
 
 #### Content Tab {#group-content}
 
