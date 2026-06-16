@@ -9,7 +9,8 @@ weight: 20
 
 ## Introduction
 
-The Mendix Publish API allows you to publish components to Marketplace.
+The Marketplace Publish API allows you to manage the releases of your Marketplace components. It provides endpoints to create new releases with version metadata, upload source files, check release status as it moves through review and publication workflows, and unpublish releases when needed.     
+The API handles both public and private components.
 
 {{% alert color="warning" %}}
 You can currently only publish new releases of existing components.
@@ -40,3 +41,4 @@ To authenticate calls when using the OpenAPI specification included in the next 
 
 ## API Reference
 
+{{< swaggerui-disable-try-it-out src="/openapi-spec/marketplace-publish.yaml"  >}}
