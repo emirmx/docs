@@ -10,6 +10,45 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.8.0
+
+### Release date: June 18, 2026
+
+### Workstation Management
+
+#### New features
+
+*   **Workspace Usage Reports:** You can now view detailed usage reports that show how Workstations are being used across your different workspaces and company. This helps you understand and optimize your Workstation deployment.
+*   **Automated Usage Metrics Collection:** Workstation Clients now automatically report their daily active usage to the server, tracking which stations were used and on which days. This data powers the new usage reports, giving you valuable insights without extra effort.
+*   **Printer Device Support:** We've added full support for setting up and managing new printer device types directly within the Management UI. This expands the range of peripherals you can integrate with your Workstations.
+*   **Manual Bulk Configuration Push:** A new "Sync Clients" button has been added to the station overview page, allowing you to manually sync client configurations for workstations that are out of sync. This provides a quick way to ensure all clients have the latest settings.
+*   **Workspace Environment Types:** Workspaces can now be assigned an environment type (Test, Acceptance, Production) when created, and this can be changed in the workspace settings. This helps you better organize and manage your different development and deployment stages.
+*   **Serial Device Detection by pnpId:** We've added setup UI support for detecting serial devices using their pnpId. This provides another robust method for reliably identifying and connecting to serial devices.
+
+#### Improvements
+
+*   **Streamlined Station Detail Page:** The station detail page UI has been improved by making options like "detect card reader" and "dev mode edit" less prominent. This declutters the interface and highlights the most frequently used settings.
+
+
+### Workstation Client
+
+#### New features
+
+*   **Printer Device Support:** The Workstation Client now fully supports the new printer device type. This means your Workstation Clients can seamlessly interact with configured printers.
+*   **New Diagnostics Page:** A new Diagnostics page is available on the Client (when developer mode is enabled). This page displays crucial information like available printers, serial ports, card readers, credentials, station configuration, system info, and log levels, making troubleshooting much easier.
+*   **Serial Device Detection by pnpId:** The client now supports detecting serial devices using their pnpId. This enhances the reliability of connecting to serial devices, especially in environments where port assignments might change.
+
+
+#### Bug Fixes
+
+*   **Studio Pro Login Blocked:** Fixed an issue where the client would block sign-in to Studio Pro when 6 or more devices were configured due to an overlap in port usage. Studio Pro users can now log in without issues, regardless of the number of configured devices.
+
+### Workstation Connector
+
+#### Improvements
+
+*   **Improved Get/Create Device Action:** The `Get/Create Device` action now returns an empty object instead of throwing an error when no matching device is found. This makes your custom integrations more robust and prevents unexpected crashes.
+
 ## 3.7.0
 
 ### Release date: May 21, 2026
