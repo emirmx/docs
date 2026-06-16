@@ -76,6 +76,6 @@ After you connect Maia Plan to Jira, you can use Jira as your project management
 
 1. In Maia Plan, in the **Start Development** window, set the planning tool to Jira, as previously indicated.
 2. Click **Open Jira** to open the connected Jira board from Maia Plan. Your epics and stories are displayed in the Jira backlog.    
-     {{% alert color="warning" %}} When you open the Jira board from Maia Plan, the backlog currently only contains company-managed projects. To see all projects, including team-managed ones, open the Jira board from **Apps**. {{% /alert %}}
+     {{% alert color="warning" %}} The redirection from Maia Plan to team-managed project boards is not currently working as expected. To see your team-managed project board, you need to have the correct URL yourself. This issue does not occur for company-managed project boards, which open correctly from Maia Plan. {{% /alert %}}
 3. If an active sprint does not already exist, create one in Jira.
 4. Move the stories you want to work on from the backlog into the active sprint. The stories in the active sprint are now also available in Studio Pro.
