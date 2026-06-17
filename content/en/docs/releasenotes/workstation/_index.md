@@ -23,7 +23,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 * Printer Device Support – We added full support for setting up and managing new printer device types directly within the Management UI. This expands the range of peripherals you can integrate with your Workstations.
 * Manual Bulk Configuration Push – A new **Sync Clients** button has been added to the station overview page, allowing you to manually sync client configurations for workstations that are out of sync. This provides a quick way to ensure all clients have the latest settings.
 * Workspace Environment Types – Workspaces can now be assigned an environment type (Test, Acceptance, Production) when created, and this can be changed in the workspace settings. This helps you better organize and manage your different development and deployment stages.
-* Serial Device Detection by pnpId – We added setup UI support for detecting serial devices using their pnpId. This provides another robust method for reliably identifying and connecting to serial devices.
+* Serial Device Detection by pnpId – We added support for detecting serial devices using their pnpId. This provides another robust method for reliably identifying and connecting to serial devices.
 
 #### Improvements
 
