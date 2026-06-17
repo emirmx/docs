@@ -34,6 +34,9 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 #### New Features
 
 * Printer Device Support – The Workstation Client now fully supports the new printer device type. This means your Workstation Clients can seamlessly interact with configured printers.
+
+    {{% alert color="info" %}}Only raw text and label printers are supported.{{% /alert %}}
+
 * New Diagnostics Page – A new Diagnostics page is available on the Client (when developer mode is enabled). This page displays crucial information like available printers, serial ports, card readers, credentials, station configuration, system info, and log levels, making troubleshooting much easier.
 * Serial Device Detection by pnpId – The client now supports detecting serial devices using their pnpId. This enhances the reliability of connecting to serial devices, especially in environments where port assignments might change.
 
