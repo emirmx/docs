@@ -56,6 +56,8 @@ To enable the embedded client for your Mendix app, do the following:
 6. Configure an fallback page for the Embedded profile (optional).
 7. Run or deploy the app.
 
+{{< figure src="/attachments/refguide/mendix-client/embedding-the-client/nav-profile.png" alt="embedded navigation profile UI" class="no-border">}}
+
 After you add the Embedded profile, the Mendix runtime serves the following bundle:
 
 ```text
