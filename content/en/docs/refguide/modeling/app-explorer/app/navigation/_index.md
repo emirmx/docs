@@ -61,7 +61,7 @@ You are required to enable anonymous users in your app's security settings and i
 
 The Embedded profile lets you use a Mendix web app as a component inside another web application. The host application loads the embedded client and owns browser-level navigation, while the Mendix app renders and navigates inside its mounted region.
 
-The Embedded profile defines a default home page and can also define an error page. When the configured home page expects page parameters, the host application can pass them through the `parameters` object in `render(...)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
+The Embedded profile defines a default home page and can also define an fallbacl page. When the configured home page expects page parameters, the host application can pass them through the `parameters` object in `render(...)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 ## Redirection to Profiles {#redirection}
 
@@ -117,9 +117,7 @@ For each role-based home page, you can specify the user role it applies to and t
 
 The fallback page is a page or microflow that can be used to customize the application's behavior when trying to access a [microflow](/refguide/microflow/#url) or [page](/refguide/page-properties/#url) URL that does not exist. For more information, see [Setting a Fallback Page](/refguide/setting-up-the-navigation-structure/#fallback) in *Setting Up Navigation*.
 
-#### Error Page
-
-For Embedded profiles, you can configure an error page. This page is shown when the embedded app cannot open the configured home page during startup or navigation. Examples include page parameter values passed through `render(...)` that do not match the expected parameter types, or a configured home page that is not accessible for the signed-in user. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
+For Embedded profiles, you can configure a fallback page as well. This page is shown when the embedded app cannot open the configured home page during startup or navigation. Examples include page parameter values passed through `render(...)` that do not match the expected parameter types, or a configured home page that is not accessible for the signed-in user. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 ### Authentication {#authentication}
 

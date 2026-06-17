@@ -53,7 +53,7 @@ To enable the embedded client for your Mendix app, do the following:
 3. Click **Add navigation profile**.
 4. Select **Embedded**.
 5. Configure the **Default home page** for the Embedded profile.
-6. Configure an error page for the Embedded profile (optional).
+6. Configure an fallback page for the Embedded profile (optional).
 7. Run or deploy the app.
 
 After you add the Embedded profile, the Mendix runtime serves the following bundle:
@@ -64,7 +64,7 @@ After you add the Embedded profile, the Mendix runtime serves the following bund
 
 For example, if your runtime URL is `http://localhost:8080`, the embedded bundle is served from `http://localhost:8080/dist/embedded-index.js`.
 
-The Embedded profile defines the starting page for the embedded app, which is the first page shown when the host calls `render(...)`, and it can also define an error page for startup or navigation failures. When the embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(...)` configuration. The configured error page is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page or when the selected home page is not accessible for the signed-in user.
+The Embedded profile defines the starting page for the embedded app, which is the first page shown when the host calls `render(...)`, and it can also define an fallback page for startup or navigation failures. When the embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(...)` configuration. The configured fallback page is shown when the parameters passed in `render(...)` do not match the expected parameter types of the embedded home page or when the selected home page is not accessible for the signed-in user.
 
 The parameter names in `parameters` must match the page parameters expected by the embedded home page.
 
@@ -173,7 +173,7 @@ If the host app uses Content Security Policy (CSP), make sure its policy allows 
 ## Known Issues
 
 ### Optional Parameters
-Omitting a parameter that is marked as optional from the `parameters` object will result in the error page being shown instead of the default value being passed.
+Omitting a parameter that is marked as optional from the `parameters` object will result in the fallback page being shown instead of the default value being passed.
 
 ## Read More
 
