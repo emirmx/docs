@@ -35,7 +35,7 @@ New Jira projects/spaces:
 1. Create a new Jira project/space.
 2. Ensure that the default board has the correct project filter. To do that, follow these steps:
 
-    1. Find your **Project key** or **Space key**. The project key is the short code that Jira assigns to your project. You can find it next your project name, in the top left corner of your Jira project. It is also available in the **Project Settings** window, which you can access from the context menu of your project.
+    1. Find your **Project key** or **Space key**. The project key is the short code that Jira assigns to your project. You can find it next to your project name, in the top left corner of your Jira project. It is also available in the **Project Settings** window, which you can access from the context menu of your project.
         {{< figure src="/attachments/developerportal/maia/space-key.png" alt="Board key field in Jira" max-width="30%" >}}
     2. Click **Board Settings** in the context menu of your board.
         {{< figure src="/attachments/developerportal/maia/board-settings-option.png" alt="Board Settings button in Jira" max-width="30%" >}}
