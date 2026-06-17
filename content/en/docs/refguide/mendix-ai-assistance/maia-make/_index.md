@@ -102,7 +102,7 @@ The conversational interface includes the following options:
 By default, Maia uses the Mendix platform's AI service. You can configure Maia to use your own LLM provider instead (also known as bring your own LLM or BYO LLM).
 
 {{% alert color="info" %}}
-Configuring a custom AI provider is available in Studio Pro 11.12 and above.
+Configuring a custom AI provider is available in Studio Pro 11.12 and above as a beta feature.
 {{% /alert %}}
 
 To enable custom LLM provider configuration, follow these steps:
@@ -111,7 +111,7 @@ To enable custom LLM provider configuration, follow these steps:
 2. In the **Preferences** dialog box that opens, go to the **New Features** tab.
 3. Select the **Enable configuring a custom AI provider for Maia** checkbox, then click **OK**.
 
-After enabling this feature, a **Settings** ({{% icon name="cog" %}}) icon appears in the Maia pane.
+After enabling this feature, a **Settings** ({{% icon name="cog" %}}) icon appears in the upper-right corner of the Maia pane.
 
 ### Provider Configuration {#provider-configuration}
 
