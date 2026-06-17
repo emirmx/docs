@@ -105,6 +105,10 @@ Keep in mind the following:
 
 For more information on creating a draft version, refer to the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Uploading to the Marketplace*.  
 
+## Personal
+
+The **Personal** category contains the items described in the following sections.
+
 ### Saved {#saved-components}
 
 Clicking **Saved** opens the **Saved Content** page, which presents the Marketplace content you have [saved](/appstore/component-details/). 
@@ -120,7 +124,7 @@ Click the contextual menu to access options for managing this component:
 
 This page contains private content shared with you by other companies who have marked you as a [guest](#guests).
 
-## Reviews {#my-reviews}
+### Reviews {#my-reviews}
 
 Clicking **Reviews** opens the **My Reviews** page, which contains the following tabs:
 

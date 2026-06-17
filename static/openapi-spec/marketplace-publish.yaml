@@ -81,7 +81,7 @@ paths:
       description: |-
         Creates a new release in `Draft` state for a specific component. This allows Marketplace component publishers to prepare a new version of their component.
 
-        **Authorization:** The user must have permission to create releases for the component. The user is a developer of the component and meets user group rules. If the user does not have access, a `404 Not Found` response is returned.
+        **Authorization:** The user must have permission to create releases for the component. The user is a developer of the component and meets user group rules. 
 
         **Parameters:**
         - The componentId: The corresponding component must exist in Marketplace.
@@ -194,9 +194,11 @@ paths:
         A release in the `InReview` state is automatically published to Marketplace and transitions to `Published` once all required review conditions have been satisfied.
         
         **Supported File Types:**
-        - `.mpk` - Mendix Package file
-        - `.mxmodule` - Mendix Module file
-        - `.mxsolution` - Mendix Solution file
+        - For platform-supported components and private components, any file type.
+        - For non-platform-supported components and public components, only the following file types are supported:
+          - `.mpk` - Mendix Package file
+          - `.mxmodule` - Mendix Module file
+          - `.mxsolution` - Mendix Solution file
       operationId: uploadReleaseSourceFile
       parameters:
         - $ref: '#/components/parameters/releaseId'
