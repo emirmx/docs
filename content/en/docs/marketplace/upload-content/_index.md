@@ -49,7 +49,7 @@ Some fields only apply to specific component types, so follow the on-screen prom
 
     * **Public** – Your component will be available to the entire Mendix community.    
       This content must be reviewed and approved by Mendix before it is available.
-    * **Private** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.    
+    * **Private** – Your content will receive the **Private** label, and be available only via the [Published](/appstore/home-page/#published) page in the **Manage Components** section.    
       Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.    
       This content is not reviewed by Mendix.    
     

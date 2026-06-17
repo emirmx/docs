@@ -50,7 +50,7 @@ The component list contains the following information:
 * **Version** — The version of the component that is being used.
 * **Findings** — The number of findings of each type, color-coded according to severity level.
 * **License** — For components derived from the Mendix Marketplace, this is the end-user license for the component.
-* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
+* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via the [Published](/appstore/home-page/#published) page in the **Manage Components** section.
 * **Apps using component** – The number of apps where the component is used.
 * **Latest version** — For components derived from the Mendix Marketplace, this is the latest version of the component.
 * **Publisher** — For components derived from the Mendix Marketplace, this is the name of the organization that published the component.
