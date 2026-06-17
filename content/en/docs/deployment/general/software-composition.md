@@ -126,7 +126,7 @@ Different versions of Studio Pro support different component dependencies. For d
 The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
 
 * [Findings](/control-center/overview-tab/#overview-findings)
-* [Component Usage](/control-center/overview-tab/#overvieew-component-usage)
+* [Component Usage](/control-center/overview-tab/#overview-component-usage)
 
 <!--
 #### Finding and Component Details
