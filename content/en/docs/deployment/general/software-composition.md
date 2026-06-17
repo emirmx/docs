@@ -115,7 +115,7 @@ Different versions of Studio Pro support different component dependencies. For d
 The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
 
 * [Findings](/control-center/overview-tab/#overview-findings)
-* [Component Usage](/control-center/overview-tab/#overviw-component-usage)
+* [Component Usage](/control-center/overview-tab/#overview-component-usage)
 
 ### Policy Status {#policy-status}
 
@@ -123,13 +123,13 @@ The **Policy Status** tab at the deployment package level displays a list of the
 
 * **Status** – The status of the violation.
 * **Policy Name** – The name of the violated policy.
-* **View Details** – Details about the violated policy:
+* **View Details** – This opens the **Policy Details** pane, which displays the following details about the violated policy:
 
     * **Policy ID** – The unique ID of the policy.
     * **Policy Name** – The name of the policy.
     * **Description** – A short description of the policy, which includes the reason why it is violated.
     * **Status** – Whether the policy is active or not.
-    * **Scope** – The apps that the policy applies to.
+    * **Scope** – The apps that the policy applies to. A breakdown of these is displayed on the **Policy Scope** tab of this pane.
     * **Created by** – The unique ID of the user who created the policy.
     * **Created on** – The date when the policy was created.
     * **Last modified by** – The unique ID of the user who most recently updated the policy.
