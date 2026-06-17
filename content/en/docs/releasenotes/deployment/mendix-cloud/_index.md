@@ -1,5 +1,5 @@
 ---
-title: "2026 Mendix Cloud Release Notes"
+title: "Mendix Cloud Release Notes"
 linktitle: "Mendix Cloud"
 url: /releasenotes/developer-portal/mendix-cloud/
 weight: 10
