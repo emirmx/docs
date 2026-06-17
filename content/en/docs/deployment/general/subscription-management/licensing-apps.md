@@ -184,4 +184,4 @@ runtime {
 }
 ```
 
-The values for these properties can also be passed by using environment variables `RUNTIME_LICENSE_ID` and `RUNTIME_LICENSE_KEY` for your deployment type, or by creating a separate config file.
+The values for these properties can also be passed by using the environment variables `RUNTIME_LICENSE_ID` and `RUNTIME_LICENSE_KEY` for your deployment type, or by creating a separate config file.
