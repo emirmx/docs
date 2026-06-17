@@ -25,7 +25,7 @@ This page describes the following:
 * Configure host app requirements such as CORS and CSP
 * Mount and unmount the client at the correct lifecycle moment
 
-{{% alert color="inof" %}}
+{{% alert color="info" %}}
 Embedding the Mendix client is only supported for the [Mendix React Client](/refguide/mendix-client/react/).
 {{% /alert %}}
 
