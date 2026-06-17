@@ -97,6 +97,53 @@ The conversational interface includes the following options:
 * **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
 * **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
+## Configuring a Custom AI Provider {#custom-provider}
+
+By default, Maia uses the Mendix platform's AI service. You can configure Maia to use your own LLM provider instead (also known as bring your own LLM or BYO LLM).
+
+{{% alert color="info" %}}
+Configuring a custom AI provider is available in Studio Pro 11.12 and above.
+{{% /alert %}}
+
+To enable custom LLM provider configuration, follow these steps:
+
+1. Open the Studio Pro settings.
+2. In the **Preferences** dialog box that opens, go to the **New Features** tab.
+3. Select the **Enable configuring a custom AI provider for Maia** checkbox, then click **OK**.
+
+After enabling this feature, a **Settings** ({{% icon name="cog" %}}) icon appears in the Maia pane.
+
+### Provider Configuration {#provider-configuration}
+
+Custom AI provider settings are per-project and local to your workstation. Each app can have its own configuration, and settings are not committed to version control.
+
+#### Mendix Platform {#mendix-platform}
+
+The Mendix platform AI service is the default, recommended option and requires no configuration. Some Mendix platform optimizations may not be available if you use a custom LLM provider instead.
+
+#### Amazon Bedrock {#amazon-bedrock}
+
+To configure Amazon Bedrock as your LLM provider, follow these steps:
+
+1. Click **Settings** ({{% icon name="cog" %}}) in the Maia pane.
+2. Select **Amazon Bedrock** from the **LLM Provider** list.
+3. Select an **Authentication Mode**:
+   * **API Key** – Create an API key in AWS, then enter the **Base URL** and your **API Key**. Studio Pro stores the API key securely across sessions.
+   * **AWS Signature Version 4** – Select the **Region** and enter your AWS **Access Key ID** and **Secret Access Key**. If available, credentials are taken from your AWS CLI configuration (environment variables). If you enter credentials manually, they are not saved and must be re-entered each session.
+4. Enter the **Model ID**. You can find available model IDs in your AWS Bedrock console. Mendix recommends Claude Sonnet 4.6 for optimal Maia performance.
+5. Click **Save Config**.
+
+#### OpenAI Compatible {#openai-compatible}
+
+To configure an OpenAI-compatible provider, follow these steps:
+
+1. Click **Settings** ({{% icon name="cog" %}}) in the Maia pane.
+2. Select **OpenAI Compatible** from the **LLM Provider** list.
+3. Enter the **Base URL** for your API endpoint.
+4. Enter the **Model ID**.
+5. Enter your **API Key**. Studio Pro stores this key securely across sessions.
+6. Click **Save Config**.
+
 ## Read More
 
 * [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
