@@ -22,10 +22,15 @@ Every entity can have multiple access rules which are applicable to one or more 
 
 {{% alert color="info" %}}
 Access rules are not inherited from an entity's [generalization](/refguide10/entities/#generalization), because the security for every entity is specified explicitly. So when adding an access rule to an entity, always make sure that all required XPath constraints are applied. If the entity has a generalization with access rules defining XPath constraints, these will not apply to its specializations and will therefore not limit its visibility.
+Note that **System.User** is an exception to this: its built-in access rules do apply to specializations and cannot be overridden by the specialization's own access rules.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The **System.User** entity has inbuilt access rules where access is given to its attributes if the end-user can manage the role of that User object. Specializations of **System.User** (such as **Administration.Account**) cannot change this access with their own access rules.
+The **System.User** entity has built-in platform-enforced access rules that grant access to its attributes when the requesting user's role is configured to manage the role assigned to that User object. Unlike regular access rules — which are defined per entity and are not inherited from generalizations — these built-in rules operate at the platform level and cannot be overridden or restricted by access rules defined on a specialization.
+
+This means that if you create a specialization of **System.User** (such as **Administration.Account**), any user whose role is configured to manage the role assigned to that User object can read the **System.User** attributes of objects of your specialization, regardless of XPath constraints you define on the specialization entity itself.
+
+Example: If your application requires limiting managers to only see users in their own department, XPath constraints on the specialization alone are not sufficient to enforce this restriction. The access granted through **System.User**'s built-in rules is controlled by the [User management setting](/refguide10/user-roles/#user-management) in **App Security**: a user can read **System.User** attributes of a User object only if their role is configured to manage the role of that object. To limit exposure, configure each user role in **App Security** to manage only the roles it strictly needs — avoid granting broad "manage all roles" permissions unless the use case requires it.
 {{% /alert %}}
 
 ## Defining Access Rules {#new-editor}
