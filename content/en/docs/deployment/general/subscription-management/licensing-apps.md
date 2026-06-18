@@ -169,10 +169,10 @@ For more instructions on how to do this, see [Linux Deployment](/developerportal
 
 ### Portable App Distribution{#portableappdistribution}
 
-To activate the license on a Mendix app using Portable App Distribution on Docker, Cloud Foundry, or Unix-like servers, follow these steps:
+To activate the license for a Mendix app using Portable App Distribution on Docker, Cloud Foundry, or Unix-like servers, follow these steps:
 
 1. Open the `$ConfigName.conf` in `etc/configurations`.
-2.  Add the `LicenseID` and `LicenseKey` to your runtime configuration:
+2. Add the `LicenseID` and `LicenseKey` to your runtime configuration:
    
 ```bash
 # License configuration
@@ -184,4 +184,4 @@ runtime {
 }
 ```
 
-The values for these properties can also be passed by using the environment variables `RUNTIME_LICENSE_ID` and `RUNTIME_LICENSE_KEY` for your deployment type, or by creating a separate config file.
+The values for these properties can also be passed by using the environment variables `RUNTIME_LICENSE_ID` and `RUNTIME_LICENSE_KEY` for the license related to your deployment target, or by creating a separate config file.
