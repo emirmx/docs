@@ -105,7 +105,6 @@ The finding list contains the following information:
 * **Deprecated since version publish date** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-<!--
 #### Finding and Component Details
 
 If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes two sections:
@@ -125,7 +124,6 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Type** – The type of the component affected by this finding.
     * **Publisher** – The entity that published the component affected by this finding.
     * **Apps using component** – The number of apps where the vulnerable component is used. Click **View Component Usage** to see a list of affected apps.
--->
 
 ### Component Usage {#overview-component-usage}
 
