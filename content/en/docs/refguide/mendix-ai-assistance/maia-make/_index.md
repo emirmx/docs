@@ -92,7 +92,9 @@ In Studio Pro 11.8 and above, most of the features described in the documents ab
 
 ## Saving Maia Session
 
-Maia session is helpful in analysing and reasoning the response and behaviour of Maia. To save and access the Maia Session, navigate to HELP -> Support Tools -> Capture Maia Agent Session
+Maia session is helpful in analysing and reasoning the response and behaviour of Maia. To save and access the Maia Session, navigate to HELP > Support Tools > Capture Maia Agent Session.
+
+In Studio Pro 11.9 - 11.11, navigate to HELP > Support Tools > Dump Maia Agent Session.
 
 <img width="1240" height="1130" alt="image" src="https://github.com/user-attachments/assets/368f1254-0c4d-4c1f-9dbc-9c04b8691542" />
 
