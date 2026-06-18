@@ -112,10 +112,10 @@ paths:
           description: The release was successfully created and it is in `Draft` state. The `Location` header contains the URI of the new release.
           headers:
             Location:
-              description: The URI of the newly created release (for example, `/v1/releases/{releaseId}`).
+              description: The URI of the newly created release (for example, `https://marketplace-api.mendix.com/v1/releases/{releaseId}`).
               schema:
                 type: string
-                example: "/v1/releases/3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                example: "https://marketplace-api.mendix.com/v1/releases/{releaseId}/v1/releases/3fa85f64-5717-4562-b3fc-2c963f66afa6"
         '400':
           description: |-
             The request contains invalid or missing data.
