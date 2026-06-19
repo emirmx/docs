@@ -156,7 +156,7 @@ The component usage list contains the following information:
   For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
 * **License** – For components derived from the Mendix Marketplace, this is the end-user license for the component.
 * **Latest version** – For components derived from the Mendix Marketplace, this is the latest version of the component.
-* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
+* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is only available for your organisation. On the Marketplace homepage, you can use the **Visibility** filter to display specific components.
 * **Latest Runtime Compatible Version** — The most recent runtime version to which the component is compatible.
 * **Publisher** – For components derived from the Mendix Marketplace, this is the name of the organization that published the component.
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
