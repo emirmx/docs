@@ -5,14 +5,11 @@ weight: 15
 description: "Describes the Mendix Portable Runtime deployment method for Mendix apps."
 no_list: false 
 description_list: true
-beta: true
 ---
-
-{{% alert color="warning" %}} This feature is in beta. For more information, see [Release Status](/releasenotes/release-status/). {{% /alert %}}
 
 ## Introduction
 
-Mendix Portable Runtime provides a flexible and straightforward method for isolated server-based deployments. By enabling customers to generate a bundled artifact packaged as a .zip file and run it directly, Mendix Portable Runtime simplifies the deployment process.
+Mendix Portable Runtime (previously called Portable App Distribution) provides a flexible and straightforward method for isolated server-based deployments. By enabling customers to generate a bundled artifact packaged as a .zip file and run it directly, Mendix Portable Runtime simplifies the deployment process.
 
 ## Benefits
 
