@@ -1,7 +1,7 @@
 ---
 title: "Submitting a Support Request"
 url: /support/submit-support-request/
-weight: 20
+weight: 30
 description: "Describes the details necessary for Mendix Support to process your request."
 aliases:
     - /developerportal/support/submit-support-request/
@@ -131,6 +131,15 @@ You can add large attachments such as app files to the request. Please note that
 {{% alert color="info" %}}
 Attachments added to Mendix Support requests will be automatically deleted after 365 days.
 {{% /alert %}}
+
+Attachments are uploaded via SendSafely, a secure file transfer service. SendSafely may be blocked by your network, which prevents the widget from displaying. In that case, the page shows a `Could not render widget 'SupportPortal.SendSafely.sendSafelyDropzone1'` error. 
+
+To resolve that error, please make sure that the following URLs are allowlisted in your network's security settings:
+
+* `https://mendix.sendsafely.eu`
+* `https://mendix.sendsafely.com`
+* `https://static-mendix.sendsafely.eu`
+* `https://sendsafely-dual-region-eu.s3-accelerate.amazonaws.com`
 
 ### Logs
 

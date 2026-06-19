@@ -27,4 +27,4 @@ After 120 days from an app environment's creation, Mendix begins charging a fixe
 
 ### Will I Still Need to Request Runtime Licenses for my Mendix Apps?
 
-Yes. For production environments, you must supply runtime licenses for your Mendix apps to move the Mendix Runtime out of trial mode. This licensing process aligns with how Mendix on Kubernetes works (for example, requesting and applying subscription keys). For more information, see [Licensing Apps outside Mendix Cloud](http://localhost:1313/developerportal/deploy/licensing-apps-outside-mxcloud/).
+Yes. For production environments, you must supply runtime licenses for your Mendix apps to move the Mendix Runtime out of trial mode. This licensing process aligns with how Mendix on Kubernetes works (for example, requesting and applying subscription keys). For more information, see [Licensing Apps outside Mendix Cloud](/developerportal/deploy/licensing-apps-outside-mxcloud/).
