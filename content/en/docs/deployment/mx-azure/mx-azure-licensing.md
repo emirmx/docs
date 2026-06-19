@@ -24,7 +24,7 @@ For the first 120 days after creating any new app environment within your Mendix
 After 120 days from an app environment's creation, Mendix begins charging a fixed number of [Cloud Tokens](/control-center/cloud-tokens/) per app environment (14 tokens as of 2025). If your token balance is insufficient, Mendix will contact you to arrange replenishment.
 
 {{% alert color="info" %}}  
-Deploying multiple Mendix on Azure clusters does **not** impact licensing costs. Mendix only charges based on the number of app environments, regardless of how many clusters you deploy.  
+Deploying multiple Mendix on Azure clusters does not impact licensing costs. Mendix only charges based on the number of app environments, regardless of how many clusters you deploy.  
 {{% /alert %}}
 
 ## Frequently Asked Questions
@@ -35,4 +35,4 @@ Yes. For production environments, you must supply runtime licenses for your Mend
 
 ### Does Deploying Multiple Mendix on Azure Clusters Affect Licensing Costs?
 
-No. Mendix on Azure licensing is based solely on the number of **app environments**, not the number of clusters. You can deploy multiple clusters without incurring additional licensing costs from Mendix. Only the app environments running within those clusters are counted for billing purposes.
+No. Mendix on Azure licensing is based solely on the number of app environments, not the number of clusters. You can deploy multiple clusters without incurring additional licensing costs from Mendix. Only the app environments running within those clusters are counted for billing purposes.

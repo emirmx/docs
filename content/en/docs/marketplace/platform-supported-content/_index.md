@@ -1,7 +1,7 @@
 ---
 title: "Platform-Supported Content"
 url: /appstore/platform-supported-content/
-weight: 5
+weight: 6
 description: ""
 no_list: false
 ---

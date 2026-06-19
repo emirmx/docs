@@ -29,31 +29,59 @@ The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a variet
 | --- | --- | --- |
 | Load Balancer Type | Controls whether your applications are reachable publicly or only privately via your own (Virtual) Network or Private Endpoints. | Yes |
 | AKS Node CIDR IP Range | Defines the IP address range on the VNet hosting AKS cluster nodes. This can only be set during initial deployment and should align with your organization's IP plan if you plan to connect Mendix on Azure to other networks via peering. Default is acceptable when no interconnection is required. | No |
-| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes ](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/) to understand the implications | No |
+| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/) to understand the implications | No |
 
 For more information, see [Configuring Ingress and Egress](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/).
 
 ### Application Cluster Settings
 
-| Advanced Option	| Description	| Editable after Initial Creation |
-| ---	| ---	| ---	|
+| Advanced Option    | Description    | Editable after Initial Creation |
+| ---    | ---    | ---    |
 | AKS Node VM Size | The VM size used on the AKS application cluster. Default should suffice in most circumstances. You can change the default size in case of performance issues (for example, using non-burstable instances can improve Mendix Runtime performance), or if your Mendix app environment instances require more RAM than available under current selection. In case a Mendix app environment instance is configured to require more RAM than available on the current VM size, switching to a larger VM size might be required to have the app instance start at all. | Yes |
-| AKS Maximum Node Count | The number of available cluster nodes will be increased and decreased automatically based on the combined capacity requirement of all deployed Mendix apps. This setting controls the upper limit to the number of available nodes in order to avoid cost surprises.	| Yes	|
-| AKS Service Tier	| The [AKS service tier](https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers) determines the service level Microsoft provides on the Mendix on Azure Kubernetes cluster control plane. This does not impact application performance, only Microsoft's SLA. The Free tier is sufficient in most situations. Standard can be considered by organizations that value a financially backed SLA. For information about the associated costs, refer to Microsoft documentation. The Premium tier does not offer any additional value in combination with Mendix on Azure and is not recommended. | Yes |
+| AKS Maximum Node Count | The number of available cluster nodes will be increased and decreased automatically based on the combined capacity requirement of all deployed Mendix apps. This setting controls the upper limit to the number of available nodes in order to avoid cost surprises.    | Yes    |
+| AKS Service Tier    | The [AKS service tier](https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers) determines the service level Microsoft provides on the Mendix on Azure Kubernetes cluster control plane. This does not impact application performance, only Microsoft's SLA. The Free tier is sufficient in most situations. Standard can be considered by organizations that value a financially backed SLA. For information about the associated costs, refer to Microsoft documentation. The Premium tier does not offer any additional value in combination with Mendix on Azure and is not recommended. | Yes |
+
+### Custom CA Certificate
+
+When initializing your cluster, you can now select a custom CA certificate. For more information, see [Custom TLS](/developerportal/deploy/standard-operator/#custom-tls).
+
+{{< figure src="/attachments/deployment/mx-azure/customca.png" class="no-border" >}}
+
+### Redundancy
+
+| Advanced Option | Description | Editable after Initial Creation |
+| --- | --- | --- |
+| Application Layer Redundancy | Defines Azure Availability Zones for AKS node pools to enhance resilience by distributing nodes across zones. | Yes |
+| Database Layer Redundancy | Configures high availability (HA) for the PostgreSQL database by setting the Azure Availability Zone for the standby replica. **HA Modes**: **SameZone** (Primary and standby in the same zone, protects against instance failure); **ZoneRedundant** (Primary and standby in different zones protects against zone-wide failures). | Yes |
+| Storage Layer Redundancy | Defines the data replication strategy for the application's storage account to ensure durability and availability. **Options**: **LRS** (Locally Redundant Storage, 3 copies in one datacenter in the same region); **ZRS** (Zone-Redundant Storage, 3 copies across 3 availability zones in the same region); **GRS** (Geo-Redundant Storage, 3 LRS copies in the primary region and 3 asynchronous copies in the paired secondary region);  **RA-GRS** (Read-Access Geo-Redundant Storage, GRS with read access to the secondary region); **GZRS** (Geo-Zone-Redundant Storage, ZRS in the primary region and 3 asynchronous copies in the paired secondary region); **RA-GZRS** (Read-Access Geo-Zone-Redundant Storage, GZRS with read access to the secondary region). **Upgrade Paths (No Recreation)**: - LRS → GRS → RA-GRS - ZRS → GZRS → RA-GZRS | Yes |
+| Backup Storage Redundancy | Specifies the replication strategy for the backup storage account. **Options**: Same as application storage redundancy (LRS, ZRS, GRS, RA-GRS, GZRS, RA-GZRS). | Yes |
+
+#### Restrictions and Limitations when Editing a Cluster
+
+The following restrictions and limitations apply:
+
+* You cannot change the database layer cannot change from Zone Redundant to Same Zone. You must first disable High Availability (HA), and then enable it with Same Zone.
+* You cannot change the database layer to HA and the Postgres Compute tier to Burstable during same edit. You must first upgrade to GP/MO, and then enable HA in the next edit.
+* You can only upgrade the storage layer and backup layer redundancy in the following ways:
+
+    * LRS → GRS → RAGRS
+    * ZRS → GZRS → RAGZRS
+
+{{< figure src="/attachments/deployment/mx-azure/infraredundancy.png" class="no-border" >}}
 
 ### Database Settings
 
-| Advanced Option | Description	| Editable after initial creation |
-| ---	| ---	| ---	|
-| Enable Read Replica	| Enables a read replica for direct app database access. For more information, see [Direct Database Access](/developerportal/deploy/mendix-on-azure/configuration/direct-database-access/). | Yes |
-| Compute Tier and Size | Specifies the DB Compute Tier for the shared PostgreSQL database used by all Mendix app environments. You may need to increase it for better app performance. For more information, see [Compute options in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute) in Microsoft documentation. 	| Yes 	|
-| Storage Performance Tier 	| Specifies the Storage Performance Tier for the shared PostgreSQL database. Consider increasing if performance issues arise. For more information, see [Storage in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage) in Microsoft documentation. | Yes |
+| Advanced Option | Description    | Editable after initial creation |
+| ---    | ---    | ---    |
+| Enable Read Replica    | Enables a read replica for direct app database access. For more information, see [Direct Database Access](/developerportal/deploy/mendix-on-azure/configuration/direct-database-access/). | Yes |
+| Compute Tier and Size | Specifies the DB Compute Tier for the shared PostgreSQL database used by all Mendix app environments. You may need to increase it for better app performance. For more information, see [Compute options in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute) in Microsoft documentation.     | Yes     |
+| Storage Performance Tier     | Specifies the Storage Performance Tier for the shared PostgreSQL database. Consider increasing if performance issues arise. For more information, see [Storage in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage) in Microsoft documentation. | Yes |
 
 ### Observability Settings
 
-| Advanced Option | Description	| Editable after initial creation |
-| ---	| ---	| ---	|
-| Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering) is required for private access.	| Yes |
+| Advanced Option | Description    | Editable after initial creation |
+| ---    | ---    | ---    |
+| Managed Grafana Accessibility     | Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering) is required for private access.    | Yes |
 
 ## Self-service configuration available via Microsoft Azure Portal
 
@@ -87,6 +115,8 @@ Additional cluster managers have the same configuration privileges as the origin
 {{% alert color="info" %}} 
 Before adding a cluster manager, ensure the invited user signs in to the Mendix on Azure portal prior to accepting the invitation. Otherwise, the invitation might show as accepted, but the user will not have access to any Mendix on Azure resources. 
 {{% /alert %}}
+
+For detailed information about cluster visibility and permission requirements for viewing and editing clusters, see [Cluster Visibility and Permissions](/developerportal/deploy/mendix-on-azure/cluster-visibility/).
 
 ## Configuration Assistance Available by Submitting a Support Ticket through the Mendix on Azure Portal
 

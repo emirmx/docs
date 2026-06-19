@@ -87,7 +87,7 @@ For example: `*Database*_DBsource.`
 Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
 {{% alert color="info" %}}
-Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](/refguide/configuration/#constants).
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](/refguide/configurations-tab/#constants).
 
 For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section of *Deploying an App to Mendix Cloud*. {{% /alert %}}
 
@@ -202,7 +202,7 @@ The certificates below are required for server configuration and the SSL mode se
 
 You can configure custom settings that are only used when you run your app locally. To do this, follow these steps: 
 
-1. Add the authority certificate (CA) to the **Certificates** tab in the App Settings. See the [Certificates Tab](/refguide/app-settings/#certificates-tab) section of *App Settings* for information about adding certificates. 
+1. Add the authority certificate (CA) to the **Certificates** tab in the App Settings. See the [Certificates Tab](/refguide/certificates-tab/) section of *App Settings* for information about adding certificates. 
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/certificates-tab.png" class="no-border" >}}
 
@@ -215,20 +215,20 @@ To test SSL-based connections from the Database Connection wizard, use the Certi
 1. Import the CA certificate file
     {{% /alert %}}
 
-2. If the PostgreSQL server requires Mendix to authenticate using a client certificate, add the client certificate details to the App Settings by clicking **Configuration** > **Edit** > **Custom**. See the [Running Locally](/developerportal/deploy/use-a-client-certificate/) section of *Use a Client Certificate* for further instructions of how to add the certificate details.
+1. If the PostgreSQL server requires Mendix to authenticate using a client certificate, add the client certificate details to the App Settings by clicking **Configuration** > **Edit** > **Custom**. See the [Running Locally](/developerportal/deploy/use-a-client-certificate/) section of *Use a Client Certificate* for further instructions of how to add the certificate details.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/edit-configuration.png" class="no-border" >}}
 
-3. Add the connection details to the [Database Connection wizard](#connect-database). Fill in the following details:
+1. Add the connection details to the [Database Connection wizard](#connect-database). Fill in the following details:
     * Set SSL encryption to **Yes**
     * Set SSL mode as per your requirement
     * Add the Client certificate identifier; this must match the value provided in the custom settings dialog
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/example-SSL-connection.png" class="no-border" >}}
 
-4. Click **Test Connection**.
+1. Click **Test Connection**.
 
-5. Run your application to test the connection for local runtime.
+1. Run your application to test the connection for local runtime.
 
 ### Running in the Cloud
 
