@@ -97,29 +97,6 @@ The conversational interface includes the following options:
 * **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
 * **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
-#### Support for Folder Structure
-
-In Studio Pro 11.10 and above, Maia understands and leverages the existing folder structure within your Mendix applications for all documents except for pages. This enables Maia to:
-
-* Organize documents into folders: When creating new documents, Maia can place them directly into relevant folders, respecting your project's organization.
-* Follow existing folder structures: Maia works within your established folder hierarchy, making it easier to maintain consistency.
-* Adhere to Mendix best practices: Maia can help organize documents according to the standard Mendix best practices for folder structure. For detailed guidance on optimal organization of folders, refer to the [Folder Structure](/refguide/naming-convention-best-practices/#folder-structure) section in *Naming Convention Best Practices*.
-
-For more information on how each Maia Make capability work, refer to the following documents:
-
-* [Maia Chat](/refguide/maia-chat/)
-* [Maia Explain](/refguide/maia-explain/)
-* [Maia for Domain Model](/refguide/maia-for-domain-model/)
-* [Maia for Pages](/refguide/maia-for-pages/)
-* [Maia for Microflows](/refguide/maia-for-microflows/)
-* [Maia for Workflows](/refguide/maia-for-workflows/) (in Studio Pro 11.9 and above)
-* [Maia for OQL](/refguide/maia-for-oql/) (in Studio Pro 11.9 and above)
-* [Maia MCP Client](/refguide/maia-mcp/)
-* [Studio Pro MCP Server](/refguide/studio-pro-mcp-server/)
-* [Maia Web Fetch](/refguide/maia-web-fetch/)
-
-In Studio Pro 11.8 and above, most of the features described in the documents above are available only through the chat interface. There are no separate entry points to these features in their respective editors. [Maia Explain](/refguide/maia-explain/) is an exception. You can still access this feature by right-clicking the documents (for example, microflows or pages) in the **App Explorer** and the **Maia Explain** option is in the context menu.
-
 ## Saving Maia Session
 
 Maia session is helpful in analysing and reasoning the response and behaviour of Maia. To save and access the Maia Session, navigate to HELP > Support Tools > Capture Maia Agent Session.
