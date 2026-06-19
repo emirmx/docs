@@ -156,7 +156,7 @@ For the microflow that you use in your [scheduled events](/refguide/scheduled-ev
 
 ### App Microflows {#app-microflows}
 
-Your [app settings](/refguide/app-settings/) provide three events that can trigger a microflow. In these cases we advise writing out the purpose as a microflow name. These microflows are defined only once per app and should preferably call sub-microflows to do the actual processing. These sub-microflows should have a prefix indicated below:
+Your [app settings](/refguide/app-settings/) provide three events that can trigger a microflow. In these cases Mendix advieses writing out the purpose as a microflow name. These microflows are defined only once per app and should preferably call sub-microflows to do the actual processing. These sub-microflows should have a prefix indicated below:
 
 | Event Type      | Microflow Name | Sub-Microflow Prefix |
 | --------------- | -------------- | -------------------- |
@@ -249,7 +249,7 @@ Pages that are called when a [user task](/refguide/user-task/) in a workflow is 
 | List objects of a single entity type | _Overview    |
 | Create an object                     | _New         |
 | Update an object                     | _Edit        |
-| Create or update an object         | _NewEdit     |
+| Create or update an object           | _NewEdit     |
 | View an object (read-only)           | _View        |
 | Select a single object               | _Select      |
 | Select multiple objects              | _MultiSelect |
@@ -271,7 +271,7 @@ Documents used to support integration should have the prefixes listed below.
 {{% alert color="warning" %}}
 The [Deep Link](/appstore/modules/deep-link/) module is deprecated. It is replaced by [page URLs](/refguide/page-properties/#url) and [microflow URLs](/refguide/microflow/#url). For instructions on migrating to page and microflow URLs, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section in *Deep Link*.
 
-We will continue to actively support this module for Studio Pro 9.
+Mendix will continue to actively support this module for Studio Pro 9.
 {{% /alert %}}
 
 ## Home Pages
