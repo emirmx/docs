@@ -156,7 +156,7 @@ For the microflow that you use in your [scheduled events](/refguide/scheduled-ev
 
 ### App Microflows {#app-microflows}
 
-Your [app settings](/refguide/app-settings/) provide three events that can trigger a microflow. In these cases Mendix advieses writing out the purpose as a microflow name. These microflows are defined only once per app and should preferably call sub-microflows to do the actual processing. These sub-microflows should have a prefix indicated below:
+Your [app settings](/refguide/app-settings/) provide three events that can trigger a microflow. In these cases Mendix advises writing out the purpose as a microflow name. These microflows are defined only once per app and should preferably call sub-microflows to do the actual processing. These sub-microflows should have a prefix indicated below:
 
 | Event Type      | Microflow Name | Sub-Microflow Prefix |
 | --------------- | -------------- | -------------------- |
