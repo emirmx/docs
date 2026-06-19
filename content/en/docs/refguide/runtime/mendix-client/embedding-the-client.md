@@ -12,7 +12,7 @@ This feature is in Public Beta. For more information, see [Release Status](/rele
 
 ## Introduction
 
-The embedded client lets you use a Mendix web app as a component inside another web application, without using the standard Mendix shell page. This makes it easier to add Mendix capabilities to broader digital experiences, support micro-frontend architectures, and integrate Mendix seamlessly with existing portals, products, or custom frontends. In this setup, the host application owns the surrounding page and browser-level experience, while the Mendix app owns the region where it is mounted.
+The embedded client lets you use a Mendix web app as a component inside another web application. This makes it easier to add Mendix capabilities to broader digital experiences, support micro-frontend architectures, and integrate Mendix seamlessly with existing portals, products, or custom frontends. In this setup, the host application owns the surrounding page and browser-level experience, while the Mendix app owns the region where it is mounted.
 
 This page describes the following:
 
@@ -43,6 +43,10 @@ Your host application is responsible for the following:
 * Showing any loading or error state in the host UI
 
 The same integration pattern works in React, Vue, plain JavaScript, and other frontend frameworks.
+
+## Example host apps
+
+See the [embedded-mendix-demo-apps](https://github.com/mendix/embedded-mendix-demo-apps) GitHub repository for an example Mendix application that has been configured to be embedded, together with example host applications using Vue, React, and vanilla JavaScript.
 
 ## Configuring the Embedded App
 
@@ -162,7 +166,7 @@ Not all custom CSS will behave exactly the same when an app is embedded. However
 
 An embedded app does not react to changes in the browser address bar or to the browser's back and forward buttons. This is because the embedded app runs as a component inside the host app, and the host app should control browser navigation.
 
-The embedded Mendix app can still navigate internally. For example, it can open other pages by using [Show Page](/refguide/show-page/) actions or buttons that open a page.
+The embedded Mendix app can still navigate internally. For example, it can open other pages by using [Show Page](/refguide/show-page/) actions or buttons that open a page. When the browser reloads, the Mendix app restarts as well, and the home page is shown.
 
 ## Cross-Origin Requests
 
@@ -171,6 +175,10 @@ If the host app and the Mendix runtime use different origins, make sure the Mend
 ## Content Security Policy
 
 If the host app uses Content Security Policy (CSP), make sure its policy allows JavaScript to load from the Mendix runtime domain. This is required because the host app loads the embedded bundle and other client resources from that domain. For more information, see [Content Security Policy](/howto/security/csp/).
+
+## Cross-site Cookies
+
+Cross-site cookies must be enabled in the browser when the Mendix application is hosted on a different domain from the host application.
 
 ## Known Issues
 
