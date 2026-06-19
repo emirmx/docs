@@ -1,28 +1,28 @@
 ---
-title: "Portable App Distribution on Linux"
+title: "Mendix Portable Runtime on Linux"
 url: /developerportal/deploy/linux-pad/
-description: "How to install and configure Mendix on a Linux system using Portable App Distribution."
+description: "How to install and configure Mendix on a Linux system using Mendix Portable Runtime."
 weight: 20
 ---
 
 ## Introduction
 
-Portable App Distribution refers to packaging applications in a self-contained format that includes all necessary dependencies, allowing them to run on various Linux systems without requiring traditional installation.
+Mendix Portable Runtime refers to packaging applications in a self-contained format that includes all necessary dependencies, allowing them to run on various Linux systems without requiring traditional installation.
 
-This documentation provides guidance for deploying Portable App Distribution in a Linux environment and serves as a helpful reference rather than official implementation support.
+This documentation provides guidance for deploying Mendix Portable Runtime in a Linux environment and serves as a helpful reference rather than official implementation support.
 
 {{% alert color="info" %}}
-Unlike the M2EE-based deployment, where Mendix provides full end-to-end tooling support, the Portable App Distribution approach only requires Java to run, with Mendix's support strictly limited to the Portable App Distribution package itself. All implementation, configuration, and deployment activities, including Linux deployment, remain the customer's sole responsibility.
+Unlike the M2EE-based deployment, where Mendix provides full end-to-end tooling support, the Mendix Portable Runtime approach only requires Java to run, with Mendix's support strictly limited to the Mendix Portable Runtime package itself. All implementation, configuration, and deployment activities, including Linux deployment, remain the customer's sole responsibility.
 For information about the scope of support, see [Support for Different Deployment Strategies](/support/deployment-strategy-support/).
 {{% /alert %}}
 
 ## Prerequisites
 
-To deploy your app to an on-premises Linux configuration using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/), ensure that you fulfill the following prerequisites:
+To deploy your app to an on-premises Linux configuration using [Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/), ensure that you fulfill the following prerequisites:
 
 * A Linux environment. This can be a virtual machine, a physical server, or a cloud instance (for example, AWS EC2, Azure VM, Google Cloud VM). You will need `sudo` or `root` privileges for some commands.
 * Java Development Kit (JDK). Your application requires a compatible Java runtime. For installation instructions, refer to the following sections. 
-* Your [Portable App Distribution .zip file](/developerportal/deploy/portable-app-distribution-deploy/).
+* Your [Mendix Portable Runtime .zip file](/developerportal/deploy/portable-app-distribution-deploy/).
 * A method to transfer the .zip file onto your Linux machine, for example:
 
     * Cloud storage - If your Linux machine is in the cloud, you can use the cloud provider's CLI (for example, AWS S3, Azure Blob Storage, Google Cloud Storage).
@@ -30,7 +30,7 @@ To deploy your app to an on-premises Linux configuration using [Portable App Dis
     * Version Control System (VCS) - If your .zip is stored in a repository.
     * Artifactory/Nexus: For artifact management.
 
-## Deploying an App with Portable App Distribution
+## Deploying an App with Mendix Portable Runtime
 
 To deploy your app to Linux, perform the following steps:
 
@@ -55,10 +55,10 @@ To deploy your app to Linux, perform the following steps:
 
     If your application requires it, you can change the Java version on vendor as needed, for example, `openjdk-21-jdk` or `java-21-amazon-corretto`.
 
-    {{% alert color="info" %}} Your Portable App Distribution only requires a Java Runtime Environment (JRE) to run, but it is often recommended to install a full JDK as it includes the JRE and development tools. {{% /alert %}}
+    {{% alert color="info" %}} Your Mendix Portable Runtime only requires a Java Runtime Environment (JRE) to run, but it is often recommended to install a full JDK as it includes the JRE and development tools. {{% /alert %}}
 
 4. Verify that Java is correctly installed by running the following command: `java -version`.
-5. Upload the Portable App Distribution .zip file to a location where your Linux server can access it by using one of the following options, depending on the location and configuration of your Linux machine.
+5. Upload the Mendix Portable Runtime .zip file to a location where your Linux server can access it by using one of the following options, depending on the location and configuration of your Linux machine.
 
     * For Azure Blob Storage (often done as part of a CI/CD pipeline): `az storage blob upload --account-name <your storage account name> --container-name <your container name> --name <your app>.zip --file <your project folder>/build/distributions/your-app.zip --auth-mode login`
     
@@ -102,7 +102,7 @@ To deploy your app to Linux, perform the following steps:
     sh bin/start
     ```
 
-    The `bin/start` script is a common convention for Portable App Distributions using the Default configuration. If your application uses a different configuration, start script, or command, adjust accordingly.
+    The `bin/start` script is a common convention for Mendix Portable Runtimes using the Default configuration. If your application uses a different configuration, start script, or command, adjust accordingly.
 
 9. Verify that the application is running by opening the following URL in your browser: `http://<public IP of your Linux instance>:8080`.
 

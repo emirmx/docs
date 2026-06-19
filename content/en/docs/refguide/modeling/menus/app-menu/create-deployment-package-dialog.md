@@ -27,7 +27,7 @@ Unfortunately, from the error shown on the log during deployment, it is not alwa
 
 Here, you can decide whether you will create a portable deployment package.
 
-A portable deployment package bundles your application code with all its necessary dependencies into a single, self-contained artifact. For more information about portable packages, see [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/).
+A portable deployment package bundles your application code with all its necessary dependencies into a single, self-contained artifact. For more information about portable packages, see [Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/).
 
 {{< figure src="/attachments/refguide/modeling/menus/app-menu/create-deployment-package-dialog/create-portable-package.png" alt="Create Deployment Package dialog with the portable option selected" width="500" >}}
 

@@ -13,11 +13,11 @@ This section describes how to deploy your Mendix app to a Docker environment.
 
 ## Docker Deployment Options
 
-Mendix offers two options for Docker deployments: Portable App Distribution or the Docker Buildpack.
+Mendix offers two options for Docker deployments: Mendix Portable Runtime or the Docker Buildpack.
 
-### Portable App Distribution
+### Mendix Portable Runtime
 
-[Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/) allows users to generate their portable app with a single MxBuild command. It requires fewer manual steps than the Docker Buildpack, simpler environment configuration, and no `rootfs` preparation. Running Portable App Distribution can take as little as 3-6 minutes (the time may vary based on the application's size and complexity).
+[Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/) allows users to generate their portable app with a single MxBuild command. It requires fewer manual steps than the Docker Buildpack, simpler environment configuration, and no `rootfs` preparation. Running Mendix Portable Runtime can take as little as 3-6 minutes (the time may vary based on the application's size and complexity).
 
 ### Docker Buildpack
 

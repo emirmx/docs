@@ -22,7 +22,7 @@ aliases:
 ## Introduction
 
 {{% alert color="warning" %}} 
-Cloud Foundry buildpack deployment from Studio Pro is deprecated in version 10 and removed in version 11. Consider using the [Portable App Distribution for Cloud Foundry](/developerportal/deploy/cloud-foundry-pad/) option instead. 
+Cloud Foundry buildpack deployment from Studio Pro is deprecated in version 10 and removed in version 11. Consider using the [Mendix Portable Runtime for Cloud Foundry](/developerportal/deploy/cloud-foundry-pad/) option instead. 
 
 The following documentation is provided for reference purposes only.
 {{% /alert %}}
