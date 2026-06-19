@@ -97,7 +97,7 @@ The conversational interface includes the following options:
 * **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
 * **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
-## Saving Maia Session {#saving-maia-session}
+## Save a Maia Session {#save-maia-session}
 
 A Maia session contains your conversation history and context, which can help analyze Maia's responses and behavior for troubleshooting or support purposes. To save a Maia session, go to **Help** > **Support Tools** > **Capture Maia Agent Session**.
 
