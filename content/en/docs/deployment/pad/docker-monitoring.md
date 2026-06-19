@@ -1,7 +1,7 @@
 ---
 title: "Monitoring Tools in Docker"
 url: /developerportal/deploy/docker-monitoring/
-weight: 30
+weight: 50
 description: "Describes the available monitoring tools for Docker deployments of Mendix."
 ---
 

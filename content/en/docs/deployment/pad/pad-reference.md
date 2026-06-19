@@ -2,7 +2,7 @@
 title: "Reference Guide for Portable Apps Distribution"
 url: /developerportal/deploy/portable-apps-distribution/reference/
 linktitle: "Reference Guide"
-weight: 100
+weight: 30
 description: "Describes the folder structure and commmand line parameters for the Portable Apps Distribution deployment method for Mendix apps."
 ---
 

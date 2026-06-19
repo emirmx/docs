@@ -1,7 +1,7 @@
 ---
-title: "Mendix Portable Runtime for Docker"
+title: "Best Practices for Docker Deployment"
 url: /developerportal/deploy/docker-deploy-pad/
-weight: 20
+weight: 40
 description: "Describes how to deploy using a Docker image by using Mendix Portable Runtime."
 ---
 

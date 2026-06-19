@@ -1,8 +1,8 @@
 ---
-title: "Mendix Portable Runtime on Linux"
+title: "Reference Guide for Linux Deployments"
 url: /developerportal/deploy/linux-pad/
 description: "How to install and configure Mendix on a Linux system using Mendix Portable Runtime."
-weight: 20
+weight: 80
 ---
 
 ## Introduction
