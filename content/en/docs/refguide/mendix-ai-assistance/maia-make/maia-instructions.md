@@ -16,7 +16,7 @@ To use Maia Agent Instructions, an internet connection and signing in to Studio 
 {{% /alert %}}
 
 Maia Instructions are a [standard-compliant](https://agents.md) way to steer the behavior of the agent for your project or module. They allow you to define common
-context of your prompts only once as they are automatically loaded when necessary.
+context of your prompts (such as naming conventions or styling preferences) only once as they are automatically loaded when necessary.
 
 They can be provided on the project level or on the module level. Project-level instructions are automatically included in every conversation started within the given project. Module-level instructions are automatically included whenever documents in the given module are read, updated, or created.
 
