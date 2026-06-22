@@ -14,9 +14,11 @@ Mendix Cloud deployments are also dependent on the latest version of the [Mendix
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, refer to [Mendix Status](https://status.mendix.com/).
 
-## June 2026
-
 ### June 17, 2026
+
+#### New Features
+
+* [Software Composition](/developerportal/deploy/software-composition/) is now enhanced with the ability to view details on components marked as **Vulnerable**. This provides valuable information about the severity and CVSS score of the finding.
 
 #### Fixes
 
