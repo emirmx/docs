@@ -30,7 +30,7 @@ Most of the time, an [entity](/refguide/entities/) reflects a real-world object 
 Mendix advises using names which avoid abbreviations and underscores. Entity names should use PascalCase, for example, **HousekeepingRecord** or **LogEntry**.
 
 {{% alert color="info" %}}
-Following these entity naming conventions will prevent issues with naming conflicts between modules and entities. For example, if a module named **Customer** contains an entity named **customer** (note the lower-case "c"), there will be a Java compilation error and the app will not run. Renaming the entity to **Customer** will solve the problem.
+Following these entity naming conventions will prevent issues with naming conflicts between modules and entities. For example, Java packages are generated for each module using lowercase names. This means that if a module named **Customer** contains an entity named **customer** (note the lower-case "c"), there will be a Java compilation error and the app will not run. Renaming the entity to **Customer** solves the problem.
 {{% /alert %}}
 
 ### Entity Attributes
