@@ -243,6 +243,10 @@ The table below compares the primary user-identifying attribute used by SCIM (i.
 
 Starting from version 4.1.0, the SCIM module provides enhanced support for handling both single-value and multi-value attributes, as well as SCIM extension schemas.
 
+{{% alert color="info" %}}
+Some identity providers, such as Microsoft Entra ID, may send custom SCIM extension attributes in a subsequent update (PATCH) request instead of the initial user creation (POST) request.
+{{% /alert %}}
+
 #### Single-Value Attributes {#single-value-attributes}
 
 The SCIM module supports mapping single-value attributes directly at the root level of the SCIM request without requiring customization.
