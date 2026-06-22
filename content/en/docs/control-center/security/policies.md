@@ -23,9 +23,9 @@ You can use one of the existing templates to create your own policy.
 
 2. Select one of the available templates:
 
-    * Don’t allow high or critical findings
-    * Don’t allow Mendix runtime versions below 9.24.26
     * Only allow Marketplace components that are platform-supported
+    * Only medium or low findings are allowed
+    * Only Mendix runtime versions >= 9.24.43 are allowed
 
 3. In the **Policy Name** field, add a name for the new policy.
 
