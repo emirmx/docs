@@ -268,7 +268,7 @@ The full SCIM request body is passed to your custom provisioning microflow as cl
 
 To do this: 
 
-1. Customize the `UC_CustomProvisioning` microflow. See [User Provisioning](user-provisioning) section below.
+1. Customize the `UC_CustomProvisioning` microflow. See [User Provisioning](#user-provisioning) section below.
 2. Access the `UserClaimList` parameter in your custom provisioning microflow to retrieve the full SCIM request JSON.
 3. Retrieve the PAYLOAD claim (for POST/PUT) or PATCH_PAYLOAD claim (for PATCH).
 4. Parse the JSON to extract the required attributes.
