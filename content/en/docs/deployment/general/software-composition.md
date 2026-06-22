@@ -128,7 +128,6 @@ The page is divided into two tabs: **Findings** and **Component Usage**. For det
 * [Findings](/control-center/overview-tab/#overview-findings)
 * [Component Usage](/control-center/overview-tab/#overview-component-usage)
 
-<!--
 #### Finding and Component Details
 
 If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes two sections:
@@ -149,7 +148,6 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Publisher** – The entity that published the component affected by this finding.
 
 * **Mendix Guidance** – AI-generated guidance which describes the vulnerability, outlines the reasons why it is important to fix it, and recommends solutions.
--->
 
 ### Policy Status {#policy-status}
 
@@ -216,7 +214,7 @@ The component list contains the following information:
 * **Version** — The version of the component that is being used.
 * **Findings** — The number of findings of each type, color-coded according to severity level.
 * **License** — For components derived from the Mendix Marketplace, this is the end-user license for the component.
-* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
+* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is only available for your organisation. On the Marketplace homepage, you can use the **Visibility** filter to display specific components.
 * **Latest version** — For components derived from the Mendix Marketplace, this is the latest version of the component.
 * **Publisher** — For components derived from the Mendix Marketplace, this is the name of the organization that published the component.
 * **View details** — Clicking this opens the [Component App Details](#component-usage) page.
@@ -264,7 +262,6 @@ The finding list contains the following information:
 
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-<!--
 ##### Finding and Component Details
 
 If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes these sections:
@@ -284,7 +281,6 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Type** – The type of the component affected by this finding.
 
 * **Mendix Guidance** – AI-generated guidance which describes the vulnerability, outlines the reasons why it is important to fix it, and recommends solutions.
--->
 
 #### Component Usage {#component-component-usage}
 

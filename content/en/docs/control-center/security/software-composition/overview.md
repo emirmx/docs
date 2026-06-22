@@ -106,7 +106,6 @@ The finding list contains the following information:
 * **Deprecated since version publish date** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-<!--
 #### Finding and Component Details
 
 If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes two sections:
@@ -126,7 +125,6 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Type** – The type of the component affected by this finding.
     * **Publisher** – The entity that published the component affected by this finding.
     * **Apps using component** – The number of apps where the vulnerable component is used. Click **View Component Usage** to see a list of affected apps.
--->
 
 ### Component Usage {#overview-component-usage}
 
@@ -157,7 +155,7 @@ The component usage list contains the following information:
   For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
 * **License** – For components derived from the Mendix Marketplace, this is the end-user license for the component.
 * **Latest version** – For components derived from the Mendix Marketplace, this is the latest version of the component.
-* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
+* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is only available for your organisation. On the Marketplace homepage, you can use the **Visibility** filter to display specific components.
 * **Latest Runtime Compatible Version** — The most recent runtime version to which the component is compatible.
 * **Publisher** – For components derived from the Mendix Marketplace, this is the name of the organization that published the component.
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
