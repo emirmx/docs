@@ -8,6 +8,10 @@ numberless_headings: true
 
 These release notes cover changes to the [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/extensibility-api/).
 
+## Version 11.12.0
+
+* We removed the elements helper methods (`add*()`, `get*()`, `getContainer()`, `delete()`) from the model api types
+
 ## Version 11.11.0
 
 * We added a **New** button to the [Element Selector API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/element-selector-api/), which allows users to add new documents and entities from the element selector.
