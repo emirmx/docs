@@ -138,7 +138,7 @@ This duplicates the [Microflow](#microflow) specified above.
 
 ##### Microflow Arguments
 
-**Microflow arguments** specify the values that are passed as parameters when the microflow is called. Each argument can be defined using an expression or by choosing a variable that is available on the page. Variables are exposed by the widget itself, surrounding data widgets, a widget with selection, page variables, and page parameters. When the [**Microflow**](#microflow) is set, arguments are automatically filled for parameters with clear candidate variables. For example, because the name of the variable matches that of the parameter, or only one variable of the parameter's type is available.
+**Microflow arguments** specify the values that are passed as parameters when the microflow is called. Each argument can be defined using an expression or by choosing a variable that is available on the page. Variables are exposed by the widget itself, surrounding data widgets, a widget with selection, page variables, and page parameters. When the [**Microflow**](#microflow) is set, arguments are automatically filled for parameters with matching candidate variables. Specifically, if the name of the variable matches that of the parameter, or only one variable of the parameter's type is available, then arguments for those parameters will be filled with those candidate values automatically.
 
 ##### Microflow Call Type
 
