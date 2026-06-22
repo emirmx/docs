@@ -223,7 +223,7 @@ Set the **Nanoflow** property to specify a [nanoflow](/refguide/nanoflow/) that 
 
 You can either select an existing nanoflow or create a new nanoflow by clicking the **New** button from the **Select Nanoflow** dialog box.
 
-**Nanoflow arguments** specify the values that are passed as parameters when the nanoflow is called. Each argument can be defined using an expression or by choosing a variable that is available on the page. Variables are exposed by the widget itself, surrounding data widgets, a widget with selection, page variables, and page parameters. When the **Nanoflow** is set, arguments are automatically filled for parameters with clear candidate variables. For example, because the name of the variable matches that of the parameter, or only one variable of the parameter's type is available.
+**Nanoflow arguments** specify the values that are passed as parameters when the nanoflow is called. Each argument can be defined using an expression or by choosing a variable that is available on the page. Variables are exposed by the widget itself, surrounding data widgets, a widget with selection, page variables, and page parameters. When the **Nanoflow** is set, arguments are automatically filled for parameters with matching candidate variables. Specifically, if the name of the variable matches that of the parameter, or only one variable of the parameter's type is available, then arguments for those parameters will be filled with those candidate values automatically.
 
 If there is nothing to pass to the new nanoflow, then a dialog box is shown where you can only specify the name of the nanoflow.
 
