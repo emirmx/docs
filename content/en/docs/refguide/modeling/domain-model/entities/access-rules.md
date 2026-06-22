@@ -38,7 +38,6 @@ The **System.User** entity is a special case when considering access rules. It h
     This means that if you create a specialization of **System.User** (for example, **Administration.Account**), any user with a role which manages the role assigned to that User object can always read the **System.User** attributes of objects of your specialization. This is the case, even if you add XPath constraints on the specialization entity to prevent this.
 
 For example, suppose you want to limit managers to only see users in their own department. Using only XPath constraints on the specialization cannot enforce this restriction because the [User management](/refguide/user-roles/#user-management) setting in **App Security** can grant access to **System.User** attributes for any role configured to manage that User object's role. To enforce the department restriction, configure each user role in **App Security** to manage only the roles it strictly needs—avoid granting broad "manage all roles" permissions unless your use case requires it.
-
 {{% /alert %}}
 
 ## Defining Access Rules {#new-editor}
