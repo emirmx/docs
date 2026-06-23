@@ -73,4 +73,18 @@ For more information about deploying to a self-hosted environment, refer to the 
 * [Mendix Portable Runtime for Linux](/developerportal/deploy/linux-pad/)
 * [Mendix Portable Runtime for Cloud Foundry](/developerportal/deploy/cloud-foundry-pad/)
 
+## Frequently Asked Questions
+
+### What Will Happen with my Windows Deployment using Windows Service Console?
+
+The Windows Service Console will stay as it is. Mendix Portable Runtime does not replace the Windows Service Console scope. The goal of Windows Service Console is to provide customers a Windows UI experience that our other products cannot offer. 
+
+### Do I Need to Buy a New Subscription to Implement Mendix Portable Runtime?
+
+Mendix Portable Runtime is included in the Server-Based subscription portfolio and uses the same license model. If you are entitled to the subscription, you can request a license to use with Mendix Portable Runtime. For more information, see [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
+
+### Does Mendix Fully Support Deployments using Mendix Portable Runtime on Linux or Cloud Foundry Environments?
+
+Unlike the traditional M2EE-based or Cloud Foundry buildpack deployment, where Mendix fully supports the tooling, handling, and execution of the Mendix application package end-to-end, the Mendix Portable Runtime approach shifts the responsibility model. With Mendix Portable Runtime, the package requires only Java to run, and while Mendix officially supports the Mendix Portable Runtime package itself, all implementation, configuration, and deployment activities are the sole responsibility of the customer, meaning that Mendix does not officially support Linux or Cloud Foundry deployment as a platform, but exclusively supports the Mendix Portable Runtime package and what Mx runtime supports. For more information, see [Support for Different Deployment Strategies](/support/deployment-strategy-support/).
+ 
 ## Read More
