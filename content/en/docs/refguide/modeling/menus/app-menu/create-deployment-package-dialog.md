@@ -32,7 +32,7 @@ A portable deployment package bundles your application code with all its necessa
 {{< figure src="/attachments/refguide/modeling/menus/app-menu/create-deployment-package-dialog/create-portable-package.png" alt="Create Deployment Package dialog with the portable option selected" width="500" >}}
 
 {{% alert color="info" %}}
-Unlike regular packages, portable packages are created as .zip files, in order to make their deployment more convenient for cloud environments. For more information about the structure and contents of the .zip file, see [Reference Guide for Portable Apps Distribution](/developerportal/deploy/portable-apps-distribution/reference/).
+Unlike regular packages, portable packages are created as .zip files, in order to make their deployment more convenient for cloud environments. For more information about the structure and contents of the .zip file, see [Reference Guide for Mendix Portable Runtime](/developerportal/deploy/portable-apps-distribution/reference/).
 {{% /alert %}}
 
 ## Options for Portable Packages

@@ -3,7 +3,7 @@ title: "Best Practices for Managing Configuration File Precedence"
 url: /developerportal/deploy/portable-app-distribution-deploy/best-practices/
 linktitle: "Best Practices"
 weight: 20
-description: "Describes the best practices for managing the configuration order for Portable Apps Distribution."
+description: "Describes the best practices for managing the configuration order for Mendix Portable Runtime."
 ---
 
 ## Introduction
