@@ -89,7 +89,7 @@ The following options are available above the list:
 The finding list contains the following information:
 
 * **Severity** — The severity level of the finding related to that component.
-* **Finding Type** — The type of finding, which can be **Outdated** or **Deprecated**.
+* **Finding Type** — The type of finding, which can be **Outdated**, **Deprecated**, or **Vulnerable**.
 * **Component** — The name of the component used in the app. Clicking this takes you to the corresponding Mendix Marketplace page.
 * **Version** — The version of the component that is used in the app.
 * **Type** — The type of component.
@@ -112,7 +112,7 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
 * **Finding Details** – This includes the following details:
 
     * **Severity** – The severity of the finding, as computed on the [Scoring Criteria](/control-center/scoring-criteria-tab/) tab.
-    * **CVE-ID** – The unique ID which identifies the finding on the **Security Advisories** page.
+    * **CVE-ID** – The unique ID which identifies the finding on the [Security Advisories](https://docs.mendix.com/releasenotes/security-advisories/) page.
     * **CVSS Score 3.1** and **CVSS Score 4.0** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
     * **Age** – The number of days since the date when the CVSS score was computed.
     * **Created on** – The date when the component was created.
