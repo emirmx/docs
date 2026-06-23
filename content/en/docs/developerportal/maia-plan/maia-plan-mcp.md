@@ -13,11 +13,11 @@ The MCP server has the following key characteristics:
 
 * Read-only interface – No create, update, or delete operations are supported.
 * Project-level access control – Each request is validated against user permissions, so users can only retrieve data for projects they are allowed to view.
-* Focused tool set – Three tools are available:
+* Focused tool set – The following tools are available:
 
-    * Find a plan using search terms (returns a plan UUID for follow-up calls).
-    * Get project scope as Markdown.
-    * Get project solution as Markdown.
+    * `Get_Project_Plan`
+    * `Get_Plan_Content`
+
 * Per-project retrieval – Each call targets a specific project identified by UUID.
 
 ## Prerequisites
@@ -37,13 +37,13 @@ To connect your MCP client to the Maia Plan MCP Server, configure the server URL
 Configure your MCP client with the following server details:
 
 * **Protocol** – The server uses the standard MCP protocol over HTTPS.
-* **URL** – Use the Maia Plan MCP Server endpoint URL provided by Mendix.
+* **URL** – Te Maia Plan MCP Server endpoint URL, which is `https://plan.home.mendix.com/mcp-server/mcp`.
 
 ### Authentication {#authentication}
 
 The Maia Plan MCP Server requires authentication using a personal access token (PAT).
 
-Create a PAT with the required scopes for Maia Plan access. Consult your Mendix administrator if you are unsure which scopes are needed.    
+Create a PAT with the `mx:plan:v1:read` scope for Maia Plan access.    
 For instructions on creating a PAT, refer to [Setting Up Your Personal Access Token](/apidocs-mxsdk/mxsdk/set-up-your-pat/).
 
 Store your PAT securely. Do not hardcode credentials into scripts or configuration files that may be committed to version control.
@@ -79,88 +79,79 @@ For detailed instructions, refer to the [Claude Code documentation](https://docs
 
 #### Configuring Other MCP Clients
 
-For other MCP clients, refer to the client's documentation for instructions on adding external MCP servers and configuring authentication. Most MCP clients support environment variable-based authentication, which is the recommended approach.
+For other MCP clients, refer to the client documentation for instructions on adding external MCP servers and configuring authentication. Most MCP clients support environment variable-based authentication, which is the recommended approach.
 
 ## Available Tools {#tools}
 
-The Maia Plan MCP Server provides three tools for retrieving plan data.
+The Maia Plan MCP Server provides the following tools for retrieving plan data.
 
-### Find Plans {#find-plans}
+### Get_Project_Plan {#get-plan}
 
-Use this tool to search for plans using search terms. The tool returns a plan UUID that you can use in follow-up calls to retrieve plan details.
+Use this tool to search for Maia Plan projects using the project title, the project ID, or keywords. The tool returns a sorted list of accessible plans, along with their UUIDs. You can use a plan's UUID to retrieve plan details using the `Get_Plan_Content` tool.
 
-Tool specifics:
-
-* When to use:
-
-    * You know the project name or other identifying information, but you do not have the project UUID.
-    * You want to discover available plans before retrieving plan content.
-
-* Inputs:
-
-    * Search terms – One or more keywords related to the project name, description, or other identifying information.
-
-* Returns:
-
-    * A list of matching plans, each with a plan UUID.
-
-{{% alert color="info" %}}
 The tool only returns plans for projects you have permission to view. If you do not have access to a project, it does not appear in the search results.
-{{% /alert %}}
 
-### Get Plan Scope {#get-scope}
+#### Input
 
-Use this tool to retrieve the project scope as Markdown. The project scope includes the project goal, success criteria, target users, and requirements.
+Enter one or more of the following to search for a Maia Plan project:
 
-Tool specifics:
+* `projectID` – The project's UUID. 
+* `query` – A search string. The `query` field must not exceed 500 characters, and is best for title match.
+* `keywords` – Specific search keywords. The search terms you enter in the `keywords` field are used to match across title, Markdown text, epics, and stories.
+You can search for Maia Plan projects using the project ID, a text string, or specific keywords.
 
-* When to use:
+You can also filter by `planRole` and `updatedAfter` date.
 
-    * You want to review the high-level project objectives and requirements.
-    * You need to document or share the project scope outside of Maia Plan.
+Keep in mind the following:
 
-* Inputs:
+* All fields are optional, but you must provide at least one: `projectId`, `query`, or `keywords`.
+* Search fields are not case sensitive.
+* Partial matches are accepted.
 
-    * Plan UUID – The unique identifier for the plan. You can obtain this UUID using the [Find Plans](#find-plans) tool.
+#### Output
 
-* Returns:
+The search returns a JSON list of plans, sorted by `score` in a descending order.    
+If validation fails, a plain string is returned, not a JSON object.
 
-    * The project scope in Markdown format.
+### Get_Plan_Content {#get-content}
 
-### Get Plan Solution {#get-solution}
+Use this tool to retrieve the full content of a specific Maia Plan project by UUID. The tool returns a structured JSON which includes the project scope in Markdown format, and/or the solution (epics, stories, acceptance criteria).
 
-Use this tool to retrieve the project solution as Markdown. The project solution includes all epics and stories defined in the plan.
+Keep in mind the following:
 
-Tool specifics:
+* The tool only returns plans that the authenticated user can access.
+* The tool only returns current plan versions.
 
-* When to use:
+#### Input
 
-    * You want to review the detailed implementation plan with epics and stories.
-    * You need to export the project solution for documentation, reporting, or integration with other systems.
+Enter the following to retrieve plan content:
 
-* Inputs:
+* `planUUID` – The plan's UUID, retrieved using the `Get_Project_Plan` tool.
+* `sections` – The sections that you want to retrieve. This can be one of the following:
 
-    * Plan UUID – The unique identifier for the plan. You can obtain this UUID using the [Find Plans](#find-plans) tool.
+    * `scope` – Retrieves the project overview, the goals, and the requirements. If this is left empty, an empty string or array is returned.
+    * `solution` – Retrieves epics, stories, and acceptance criteria. If this is left empty, an empty string or array is returned.
+    * `both` – Retrieves the complete plan.
 
-* Returns:
+#### Output
 
-    * The project solution in Markdown format, including all epics and their associated stories.
+The tool returns the selected sections as a JSON string.
 
 ## How It Works {#how-it-works}
 
 The following steps describe how the Maia Plan MCP Server processes requests:
 
-1. An MCP client calls one of the available tools and includes an `Authorization` header with your personal access token.
+1. An MCP client calls one of the available tools and includes an `Authorization` header with a bearer token, which is your personal access token.
 2. The server validates the token and identifies you.
 3. The server filters plans based on your access permissions.
-4. If you called the [Find Plans](#find-plans) tool, the server returns a list of plan UUIDs for projects you can access.
-5. If you called the [Get Plan Scope](#get-scope) or [Get Plan Solution](#get-solution) tool, the server validates that you have access to the specified project and returns the requested Markdown content.
+4. If you called the [Get_Project_Plan](#get-plan) tool, the server returns a list of plan UUIDs for projects you can access.
+5. If you called the [Get_Plan_Content](#get-content) tool, the server validates that you have access to the specified project and returns the requested Markdown content.
 
 ## Security and Access Control {#security}
 
 The Maia Plan MCP Server enforces the following security measures:
 
-* Authentication required – All requests must include a valid personal access token.
+* Authentication required – All requests must include a valid bearer token (personal access token) in the authorization header.
 * Project-level authorization – Access is checked for each project. You can only retrieve data for projects you have permission to view in Mendix Portal.
 * Read-only access – The MCP server does not support create, update, or delete operations. All tools provide read-only access to plan data.
 * Unauthorized requests denied – If you attempt to access a project you do not have permission to view, the server returns an error.
