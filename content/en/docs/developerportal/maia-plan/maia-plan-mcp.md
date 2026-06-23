@@ -15,8 +15,8 @@ The MCP server has the following key characteristics:
 * Project-level access control – Each request is validated against user permissions, so users can only retrieve data for projects they are allowed to view.
 * Focused tool set – The following tools are available:
 
-    * `Get_Project_Plan`
-    * `Get_Plan_Content`
+    * [`Get_Project_Plan`](#get-plan)
+    * [`Get_Plan_Content`](#get-content)
 
 * Per-project retrieval – Each call targets a specific project identified by UUID.
 
@@ -37,7 +37,7 @@ To connect your MCP client to the Maia Plan MCP Server, configure the server URL
 Configure your MCP client with the following server details:
 
 * **Protocol** – The server uses the standard MCP protocol over HTTPS.
-* **URL** – Te Maia Plan MCP Server endpoint URL, which is `https://plan.home.mendix.com/mcp-server/mcp`.
+* **URL** – The Maia Plan MCP Server endpoint URL, which is `https://plan.home.mendix.com/mcp-server/mcp`.
 
 ### Authentication {#authentication}
 
@@ -98,7 +98,6 @@ Enter one or more of the following to search for a Maia Plan project:
 * `projectID` – The project's UUID. 
 * `query` – A search string. The `query` field must not exceed 500 characters, and is best for title match.
 * `keywords` – Specific search keywords. The search terms you enter in the `keywords` field are used to match across title, Markdown text, epics, and stories.
-You can search for Maia Plan projects using the project ID, a text string, or specific keywords.
 
 You can also filter by `planRole` and `updatedAfter` date.
 
@@ -110,12 +109,12 @@ Keep in mind the following:
 
 #### Output
 
-The search returns a JSON list of plans, sorted by `score` in a descending order.    
+The search returns a JSON list of plans, sorted by `score` in descending order.    
 If validation fails, a plain string is returned, not a JSON object.
 
 ### Get_Plan_Content {#get-content}
 
-Use this tool to retrieve the full content of a specific Maia Plan project by UUID. The tool returns a structured JSON which includes the project scope in Markdown format, and/or the solution (epics, stories, acceptance criteria).
+Use this tool to retrieve the full content of a specific Maia Plan project by UUID. The tool returns a structured JSON that includes the project scope in Markdown format and/or the solution (epics, stories, acceptance criteria).
 
 Keep in mind the following:
 
@@ -144,8 +143,8 @@ The following steps describe how the Maia Plan MCP Server processes requests:
 1. An MCP client calls one of the available tools and includes an `Authorization` header with a bearer token, which is your personal access token.
 2. The server validates the token and identifies you.
 3. The server filters plans based on your access permissions.
-4. If you called the [Get_Project_Plan](#get-plan) tool, the server returns a list of plan UUIDs for projects you can access.
-5. If you called the [Get_Plan_Content](#get-content) tool, the server validates that you have access to the specified project and returns the requested Markdown content.
+4. If you called the `Get_Project_Plan` tool, the server returns a list of plan UUIDs for projects you can access.
+5. If you called the `Get_Plan_Content` tool, the server validates that you have access to the specified project and returns the requested Markdown content.
 
 ## Security and Access Control {#security}
 
