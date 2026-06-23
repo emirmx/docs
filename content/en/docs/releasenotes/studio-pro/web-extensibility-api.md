@@ -8,6 +8,12 @@ numberless_headings: true
 
 These release notes cover changes to the [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/extensibility-api/).
 
+## Version 11.12.0
+
+* We added a `permissionsChanged` event that can help you know if the user changed the permissions of your extensions in the [Permissions API] (/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/)
+* We added the `documentsChanged` event for when one of your dependencies gets modified in Studio Pro and is a dependency you can get notified.
+* The version of the studio pro is available though the [Preferences API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/).
+
 ## Version 11.11.0
 
 * We added a **New** button to the [Element Selector API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/element-selector-api/), which allows users to add new documents and entities from the element selector.
