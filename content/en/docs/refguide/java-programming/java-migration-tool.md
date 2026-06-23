@@ -2,12 +2,12 @@
 title: "Java Migration Tool"
 url: /refguide/java-migration-tool/
 weight: 47
-description: "Describes the Java Migration Tool CLI for automatically rewriting deprecated Mendix Java API calls."
+description: "Describes the Java Migration Tool CLI for automatically rewriting deprecated and removed Mendix Java API calls."
 ---
 
 ## Introduction
 
-The **Java Migration Tool** (`jmt`) is a command-line utility that automatically rewrites deprecated Mendix Java API calls.
+The **Java Migration Tool** (`jmt`) is a command-line utility that automatically rewrites deprecated and removed Mendix Java API calls.
 
 The tool complements the [Update Assistant (Beta)](/refguide/update-assistant/) pane: use the pane to identify deprecations, and the CLI to apply the fixes automatically.
 
