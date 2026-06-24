@@ -16,7 +16,17 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## June 2026
 
+### June 24, 2026
+
+#### New Features
+
+* You can now view and take action on policy violations, which are automatically detected and reported in Software Composition. Policies are defined in Control Center, allowing you to check for conditions like finding severity, Mendix runtime version, and Marketplace component licenses and support types. For details, refer to [Policies](/control-center/policies/), [Policy Status](/control-center/policy-status/), and [Software Composition](/developerportal/deploy/software-composition/).
+
 ### June 17, 2026
+
+#### New Features
+
+* [Software Composition](/developerportal/deploy/software-composition/) is now enhanced with the ability to view details on components marked as **Vulnerable**. This provides valuable information about the severity and CVSS score of the finding.
 
 #### Fixes
 

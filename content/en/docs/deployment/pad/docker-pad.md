@@ -1,13 +1,13 @@
 ---
-title: "Portable App Distribution for Docker"
+title: "Best Practices for Docker Deployment"
 url: /developerportal/deploy/docker-deploy-pad/
-weight: 20
-description: "Describes how to deploy using a Docker image by using Portable App Distribution."
+weight: 40
+description: "Describes how to deploy using a Docker image by using Mendix Portable Runtime."
 ---
 
 ## Introduction
 
-This guide provides a walkthrough for deploying your Mendix application using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/) with Docker. This approach is particularly useful for containerized environments, and can significantly ease your CI/CD setup.
+This guide provides a walkthrough for deploying your Mendix application using [Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/) with Docker. This approach is particularly useful for containerized environments, and can significantly ease your CI/CD setup.
 
 {{% alert color="info" %}}
 This document is not an official Mendix implementation, or a substitute for recommended production deployment strategies. For more features, such as app management or governance, we suggest using [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) or [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), which offer a structured, tested experience with cloud infrastructure. 
@@ -15,13 +15,13 @@ This document is not an official Mendix implementation, or a substitute for reco
 For information about the scope of support, see [Support for Different Deployment Strategies](/support/deployment-strategy-support/).
 {{% /alert %}}
 
-## Benefits of Portable App Distribution
+## Benefits of Mendix Portable Runtime
 
-Portable App Distribution revolutionizes the way in which Mendix applications are packaged and delivered. This innovative approach bundles your application code with all its necessary dependencies into a single, self-contained, and runnable artifact. This greatly simplifies the deployment of Mendix applications, whether you are targeting on-premise infrastructure or modern containerized environments like Docker, making the entire process more efficient and seamless.
+Mendix Portable Runtime revolutionizes the way in which Mendix applications are packaged and delivered. This innovative approach bundles your application code with all its necessary dependencies into a single, self-contained, and runnable artifact. This greatly simplifies the deployment of Mendix applications, whether you are targeting on-premise infrastructure or modern containerized environments like Docker, making the entire process more efficient and seamless.
 
-The ability to generate a Portable App Distribution with a single build command means that creating a Docker-ready artifact becomes a streamlined process, making the overall integration into existing Docker-based CI/CD pipelines more efficient and less prone to errors.
+The ability to generate a Mendix Portable Runtime with a single build command means that creating a Docker-ready artifact becomes a streamlined process, making the overall integration into existing Docker-based CI/CD pipelines more efficient and less prone to errors.
 
-The Portable App Distribution feature allows you to package and deploy Mendix apps without relying on the Mendix Cloud or a Mendix Operator. This is particularly useful for the following use cases:
+The Mendix Portable Runtime feature allows you to package and deploy Mendix apps without relying on the Mendix Cloud or a Mendix Operator. This is particularly useful for the following use cases:
 
 * Air-gapped environments where internet access is restricted or unavailable
 * Private cloud deployments where you manage your own infrastructure
@@ -29,7 +29,7 @@ The Portable App Distribution feature allows you to package and deploy Mendix ap
 
 Docker provides a consistent and reproducible environment for running Mendix apps, making it ideal for cloud-native and containerized deployments.
 
-Portable App Distribution offers a more agile, user-centric, and efficient deployment ecosystem, empowering customers with greater control over their Docker deployments and simplifying the internal deployment processes.
+Mendix Portable Runtime offers a more agile, user-centric, and efficient deployment ecosystem, empowering customers with greater control over their Docker deployments and simplifying the internal deployment processes.
 
 ## Prerequisites
 
@@ -40,13 +40,13 @@ Before you begin, ensure you have the following:
 * Docker installed on your system (for building and running Docker images)
 * Access to a container registry (for pushing and pulling Docker images)
 
-## Deploying an App with Portable App Distribution
+## Deploying an App with Mendix Portable Runtime
 
-The Portable App Distribution feature in Mendix Studio Pro provides you with the necessary application files to build a Docker image. It packages your Mendix application as a self-contained distribution, ready for integration into your Docker environment.
+The Mendix Portable Runtime feature in Mendix Studio Pro provides you with the necessary application files to build a Docker image. It packages your Mendix application as a self-contained distribution, ready for integration into your Docker environment.
 
-To deploy your app to Docker, you must create a Portable App Distribution Package, build a Docker image, and then deploy the Docker image (including optionally pushing it to a container registry). For more information, refer to the sections below.
+To deploy your app to Docker, you must create a Mendix Portable Runtime Package, build a Docker image, and then deploy the Docker image (including optionally pushing it to a container registry). For more information, refer to the sections below.
 
-### Creating a Portable App Distribution Package
+### Creating a Mendix Portable Runtime Package
 
 To create a Portable Package from your Mendix app, perform the following steps:
 
@@ -57,7 +57,7 @@ To create a Portable Package from your Mendix app, perform the following steps:
 
 The Portable Package is saved to the following location: `<your-project-folder>/releases/<XYZ_portable_YYYYMMDD_hhmm>.zip`.
 
-For more information about Portable Packages, see [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/). Files included in the Portable Package are the core of your Mendix application and are ready to be included in a Docker image.
+For more information about Portable Packages, see [Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/). Files included in the Portable Package are the core of your Mendix application and are ready to be included in a Docker image.
    
 ### Building a Docker Image
 
@@ -94,7 +94,7 @@ To build a Docker image from the Portable Package, perform the following steps:
     CMD ["./bin/start", "etc/Default"]
     ```
 
-    You must create this Dockerfile yourself and place it alongside the application files generated by the Portable App Distribution. The `COPY` commands in the example above assume that the `app`, `bin`, `etc`, and `lib` directories are in the same location as your Dockerfile.
+    You must create this Dockerfile yourself and place it alongside the application files generated by the Mendix Portable Runtime. The `COPY` commands in the example above assume that the `app`, `bin`, `etc`, and `lib` directories are in the same location as your Dockerfile.
 
 3. Build the Docker image by using the following command: `docker build -t <your-image-name>:<tag> -f build/docker/Dockerfile`, where:
 
@@ -116,7 +116,7 @@ Once the Docker image is available in your container registry, you can deploy it
 1. Pull the Docker image from your container registry by running the following command: `docker pull <your-registry>/<your-image-name>:<tag>`, replacing `<your-registry>`, `<your-image-name>`, and `<tag>` with the appropriate values for your Docker image.
 2. Optional: Configure the container.
 
-    The Portable App Distribution container can be configured to suit your deployment environment and requirements. You can do this in the `etc` [configuration folder](/developerportal/deploy/portable-apps-distribution/reference/#folder-structure). You can also apply the configuration through environment variables or a configuration file, giving you flexibility depending on your setup and preferences. Both approaches support the same set of runtime settings, so you can choose whichever method best fits your workflow.
+    The Mendix Portable Runtime container can be configured to suit your deployment environment and requirements. You can do this in the `etc` [configuration folder](/developerportal/deploy/portable-apps-distribution/reference/#folder-structure). You can also apply the configuration through environment variables or a configuration file, giving you flexibility depending on your setup and preferences. Both approaches support the same set of runtime settings, so you can choose whichever method best fits your workflow.
 
     For more information, see the [Environment Variables](#env-variables) and [Configuration File](#config-file) sections below.
 
@@ -134,7 +134,7 @@ You can view your running Mendix application at `localhost:8080`. To stop the ap
 
 For more complex setups involving multiple Docker containers, or for simpler local testing purposes, you can use Docker Compose. It allows you to define and run multi-container Docker applications.
 
-The following is an example of a *docker-compose.yaml* file that sets up your Mendix application with an HSQLDB for local testing. This example assumes you have the Portable App Distribution files (`app`, `bin`, `etc`, `lib`) in a parent directory relative to your *docker-compose.yaml* file.
+The following is an example of a *docker-compose.yaml* file that sets up your Mendix application with an HSQLDB for local testing. This example assumes you have the Mendix Portable Runtime files (`app`, `bin`, `etc`, `lib`) in a parent directory relative to your *docker-compose.yaml* file.
 
 ```yaml
 # This file provides an example on how to start the runtime with HSQLDB.
