@@ -690,7 +690,7 @@ function dependencyWasRemovedAndReaddedWithSameName(dependencies: Dependency[], 
 }
 ```
 
-If you need to know when an entity is removed, then added with one of the same name, you should use `documentsChanged` instead, as mentioned above, and retrieve the entities of the changed Domain Model in order to compare them to your current list of entity dependencies you have in your custom document. Then you can trigger the checks by saving the document.
+If you need to know when an entity is removed, then added another one of the same name, you should use `documentsChanged` instead, as mentioned above, and retrieve the entities of the changed Domain Model in order to compare them to your current list of entity dependencies you have in your custom document. Then you can trigger the checks by saving the document.
 
 ```typescript
 /* eslint-disable no-console */
