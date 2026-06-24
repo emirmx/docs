@@ -10,7 +10,7 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.12.0
 
-* We removed the elements helper methods (`add*()`, `get*()`, `getContainer()`, `delete()`) from the model api types
+* We removed the elements helper methods (`add*()`, `get*()`, `getContainer()`, and `delete()`) from the Model API types.
 
 ## Version 11.11.0
 
