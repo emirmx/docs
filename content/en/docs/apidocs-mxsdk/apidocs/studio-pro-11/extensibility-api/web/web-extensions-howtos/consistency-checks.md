@@ -2,24 +2,25 @@
 title: "Consistency Checks for Custom Blob Documents"
 linktitle: "Consistency Checks"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/consistency-checks/
+description: "Describes how to define consistency checks for custom blob documents in Studio Pro extensions."
 ---
-
-## Prerequisites
-
-* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
-* Make sure you are familiar with creating custom documents as described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/).
-
-{{% alert color="warning" %}}
-If you try to change the blob document or any of its dependencies during the consistency checks, you will get an exception on save. Saving is not allowed because you might interfere with the checks and make the app invalid.
-{{% /alert %}}
 
 ## Introduction
 
-Consistency checks allow your extension to validate custom blob documents and display errors, warnings, and deprecation notices in Studio Pro's Errors pane. These checks run automatically before deployment and whenever referenced elements change, ensuring your documents remain valid throughout the development lifecycle.
+Consistency checks allow your extension to validate custom blob documents and display errors, warnings, and deprecation notices in Studio Pro's **Errors** pane. These checks run automatically before deployment and whenever referenced elements change, ensuring your documents remain valid throughout the development lifecycle.
+
+## Prerequisites
+
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one.
+* Familiarize yourself with creating custom documents as described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/).
+
+{{% alert color="warning" %}}
+Do not modify the blob document or its dependencies during consistency checks. Saving is blocked at this point because changes could interfere with the checks and leave the app in an invalid state.
+{{% /alert %}}
 
 ## Basic Example
 
-Based on the code described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/), you will define consistency checks for the first name field, where you can learn how to display errors, warnings, and deprecation notices in Studio Pro's Errors pane.
+Based on the code described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/), this section defines consistency checks for the first name field and shows how to display errors, warnings, and deprecation notices in Studio Pro's **Errors** pane.
 
 ```typescript {hl_lines=["10-13", "19-58", "69"]}
 import { 
@@ -105,16 +106,16 @@ export const component: IComponent = {
 }
 ```
 
-Every `errorCode` returned by your check function **must** be listed in `reservedErrorCodes`. At the registration time you cannot use Mendix reserved prefixes or your registration will fail: `cw`, `ce`, `ci`. Make sure that your check only returns errors with codes included in the `reservedErrorCodes` list, otherwise your check will fail and a generic error message will show in the Errors Pane.
+Every `errorCode` returned by your check function must be listed in `reservedErrorCodes`. You cannot use the Mendix reserved prefixes `cw`, `ce`, or `ci`during registration or the check will fail and a generic error message will appear in the **Errors** pane.
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/consistencyChecks/generic_error.png" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/consistencyChecks/generic_error.png" alt="" >}}
 
-This error will also show if one of your checks throw an unexpected exception. In order to know what the exception was, you can check the Mendix logs.
+This error also appears if one of your checks throws an unexpected exception. To find out what the exception was, check the Mendix logs.
 
-It is important to remember that you are not allowed to call save operations on the model api when the consistency checks are running. An error will throw and you will see the generic error in the Errors Pane again.
+You cannot call save operations on the model API while consistency checks are running. If you do, an error throws and the generic error appears in the **Errors** pane again.
 
 {{% alert color="info" %}}
-The check function is async so you can use await when loading other model elements to validate references.
+The check function is async, so you can use `await` when loading other model elements to validate references.
 {{% /alert %}}
 
 ## ConsistencyError Properties
@@ -129,7 +130,7 @@ The check function is async so you can use await when loading other model elemen
 
 ## Checking References to Other Documents
 
-When your document stores references to other model elements (microflows, constants, or other custom blob documents), you might want to validate that those elements still exist. If a user deletes a referenced microflow, your consistency check can report that error.
+If your document stores references to other model elements (microflows, constants, or other custom blob documents), you can validate that those elements still exist. If a user deletes a referenced microflow, your consistency check can report the error.
 
 Replace your `src/main/index.ts` file with the following:
 
@@ -408,7 +409,7 @@ export const component: IComponent = {
 ```
 
 
-Return dependentElementIds to tell Studio Pro which elements your document depends on. When those elements change, your checks re-run automatically.
+Return `dependentElementIds` to tell Studio Pro which elements your document depends on. When those elements change, your checks rerun automatically.
 
 {{% alert color="info" %}}
 Without dependency tracking, your checks only run during full consistency check runs. With dependency tracking, checks run immediately when referenced elements change.
@@ -416,7 +417,7 @@ Without dependency tracking, your checks only run during full consistency check 
 
 ### Excluded Documents
 
-If a document you reference is excluded you must check for it like this:
+If a document you reference is excluded, you must check for it using the following code:
 
 ```typescript
 const customDoc = await studioPro.app.model.customBlobDocuments.getDocumentById(refId);
@@ -431,9 +432,10 @@ if ("document" in customDoc && customDoc.document.excluded) {
 ```
 
 ### Changed Elements
-When one of your dependencies gets modified in Studio Pro, you should be notified, in case one of them is your dependency. Based on that change you might want to return a consistency error. In order to be notified of any element (document or entity) that has changed, you need to subscribe to the `documentsChanged` event.
 
-Let's say you have a document type that contains multiple lists of dependencies, for microflows, entities, or other custom blob documents. Then for each of these types you can and update your document.
+When one of your dependencies gets modified in Studio Pro, you can return a consistency error based on that change. To be notified when any element (document or entity) changes, subscribe to the `documentsChanged` event.
+
+For example, if you have a document type that contains multiple lists of dependencies for microflows, entities, or other custom blob documents, you can update your document for each of these types.
 
 ```typescript
 import { DocumentInfo, getStudioProApi } from "@mendix/extensions-api";
@@ -491,15 +493,18 @@ async function checkDependencyWasChanged(dependencies: Dependency[], documents: 
 }
 ```
 
-By checking if any of the changed documents from the event payload are included in your dependencies, you can trigger the consistency checks to run again by updating the content of your blob document and running ` studioPro.app.model.customBlobDocuments.updateDocumentContent`. This way you can be sure your checks will be run again whenever one of your dependencies is modified from Studio Pro. 
+By checking whether any of the changed documents from the event payload are included in your dependencies, you can trigger the consistency checks to run again by updating the content of your blob document using `studioPro.app.model.customBlobDocuments.updateDocumentContent`. This ensures your checks run again whenever one of your dependencies is modified in Studio Pro.
 
 
 ### Renamed Elements
-If one of your dependencies gets renamed, you might want to know about it and update the names of the dependencies in your document. Studio Pro cannot automatically rename your dependencies, it can only let you know that the document matching the id now has a new name. It is up to you to update your dependency's name.
 
-In order to be notified when a element (any document or entity) gets renamed, you need to subscribe to the `elementsRenamed` event. The event payload contains a list of `ElementRenameInfo`, which contains the old name, the new name, and the document type. You can then use the old name to search your dependencies, and if it exists, you can then update the dependency with its new name.
+If one of your dependencies gets renamed, you may need to update the dependency names in your document. Studio Pro cannot automatically rename your dependencies; it can only notify you that the document matching the ID now has a new name. It is up to you to update your dependency's name.
 
-**This is also very useful if you need to know if one of your dependencies has been moved to a different module. When entities or documents get moved between modules, their fully qualified name is changed, triggering the rename event.**
+To be notified when an element (any document or entity) gets renamed, subscribe to the `elementsRenamed` event. The event payload contains a list of `ElementRenameInfo`, which includes the old name, the new name, and the document type. You can use the old name to search your dependencies, and if it exists, update the dependency with its new name.
+
+{{% alert color="info" %}}
+This is also useful for detecting when one of your dependencies has been moved to a different module. When entities or documents move between modules, their fully qualified name changes, which triggers the rename event.
+{{% /alert %}}
 
 ```typescript
 import { getStudioProApi, StudioProApi } from "@mendix/extensions-api";
@@ -620,13 +625,15 @@ function checkDependencyRenamed(
 }
 ```
 
-As you can see, you search for your dependency by qualified name instead of id, by comparing it to the `oldName` property of the event's list payload. Once you rename your dependency, you then need to update your custom document's content.
+You search for your dependency by qualified name instead of ID, by comparing it to the `oldName` property of the event's list payload. After renaming your dependency, you must update your custom document's content.
 
-Important to note that if a module gets renamed inside Studio Pro, you will need to update all the qualified names of your dependencies. So you can listen to the `elementsRenamed` event, and check for the type to be `Projects$Module`. That way you can be sure that your dependencies always have the correct qualified name. If a module gets renamed inside Studio Pro, the event only contains the module as the payload, not the documents that it contains. So it is up to the extension developer to update the dependencies that belong to the renamed module and update their qualified names.
+Note that if a module gets renamed in Studio Pro, you must update all the qualified names of your dependencies. Listen to the `elementsRenamed` event and check whether the type is `Projects$Module` to ensure your dependencies always have the correct qualified name. When a module is renamed in Studio Pro, the event payload contains only the module, not the documents it contains. It is up to the extension developer to update the qualified names of all dependencies belonging to the renamed module.
 
 ### Added Documents
-In order to detect a new document being added in Studio Pro, you need to subscribe to the `documentAdded` event in the `projectChanges` api. Keep in mind that this does not trigger if entities get added to a domain model, since entities are not documents, but the `documentsChanged` event will trigger in that case, with the `DomainModels$DomainModel` being the type of the document that has changed.
-Let's say you have a dependency on a microflow named "MySpecialMicroflow", and you have a consistency check that will show an error if this microflow gets deleted. If the user decides to resolve this error by adding another microflow with the same exact name, inside the same module, they would expect the error to go away. But since this new microflow's ID is different that the one you originally depended on, you need to update your dependency's ID with this new ID. So you can listen to the `documentAdded` event, and compare the dependencies by name, and when you find it, update the ID and then update your custom document.
+
+To detect when a new document is added in Studio Pro, subscribe to the `documentAdded` event in the `projectChanges` API. Note that this does not trigger when entities are added to a domain model, because entities are not documents. In that case, the `documentsChanged` event triggers instead, with `DomainModels$DomainModel` as the document type.
+
+For example, if you have a dependency on a microflow named *MySpecialMicroflow* and a consistency check that shows an error when that microflow is deleted, a user may resolve the error by adding a new microflow with the same name in the same module. Because the new microflow has a different ID than the original, you must update your dependency's ID. To do this, listen to the `documentAdded` event, compare dependencies by name, and when a match is found, update the ID and then update your custom document.
 
 ```typescript
 import { DocumentInfo, getStudioProApi } from "@mendix/extensions-api";
@@ -690,7 +697,7 @@ function dependencyWasRemovedAndReaddedWithSameName(dependencies: Dependency[], 
 }
 ```
 
-If you need to know when an entity is removed, then added with one of the same name, you should use `documentsChanged` instead, as mentioned above, and retrieve the entities of the changed Domain Model in order to compare them to your current list of entity dependencies you have in your custom document. Then you can trigger the checks by saving the document.
+To detect when an entity is removed and then another one is added with the same name, use `documentsChanged` instead. Retrieve the entities of the changed domain model and compare them to your current list of entity dependencies in your custom document, then trigger the checks by saving the document.
 
 ```typescript
 /* eslint-disable no-console */
