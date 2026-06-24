@@ -127,9 +127,7 @@ To configure Amazon Bedrock as your LLM provider, follow these steps:
 
 1. Click **Settings** ({{% icon name="cog" %}}) in the Maia pane.
 2. Select **Amazon Bedrock** from the **LLM Provider** list.
-3. Select an **Authentication Mode**:
-   * **API Key** – Create an API key in AWS, then enter the **Base URL** and your **API Key**. Studio Pro stores the API key securely across sessions.
-   * **AWS Signature Version 4** – Select the **Region** and enter your AWS **Access Key ID** and **Secret Access Key**. If available, credentials are taken from your AWS CLI configuration (environment variables). If you enter credentials manually, they are not saved and must be re-entered each session.
+3. Create an API key in AWS, then enter the **Base URL** and your **API Key**. Studio Pro stores the API key securely across sessions.
 4. Enter the **Model ID**. You can find available model IDs in your AWS Bedrock console. Mendix recommends Claude Sonnet 4.6 for optimal Maia performance.
 5. Click **Save Config**.
 
