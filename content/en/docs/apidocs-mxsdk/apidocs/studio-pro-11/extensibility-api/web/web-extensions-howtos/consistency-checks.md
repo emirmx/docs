@@ -14,10 +14,6 @@ Consistency checks allow your extension to validate custom blob documents and di
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one.
 * Familiarize yourself with creating custom documents as described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/).
 
-{{% alert color="warning" %}}
-Do not modify the blob document or its dependencies during consistency checks. Saving is blocked at this point because changes could interfere with the checks and leave the app in an invalid state.
-{{% /alert %}}
-
 ## Basic Example
 
 Based on the code described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/), this section defines consistency checks for the first name field and shows how to display errors, warnings, and deprecation notices in Studio Pro's **Errors** pane.
@@ -112,7 +108,9 @@ Every `errorCode` returned by your check function must be listed in `reservedErr
 
 This error also appears if one of your checks throws an unexpected exception. To find out what the exception was, check the Mendix logs.
 
-You cannot call save operations on the model API while consistency checks are running. If you do, an error throws and the generic error appears in the **Errors** pane again.
+{{% alert color="warning" %}}
+Do not modify the blob document or its dependencies during consistency checks. Saving is blocked at this point because changes could interfere with the checks and leave the app in an invalid state.
+{{% /alert %}}
 
 {{% alert color="info" %}}
 The check function is async, so you can use `await` when loading other model elements to validate references.
