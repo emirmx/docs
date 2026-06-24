@@ -2,7 +2,7 @@
 title: "Mendix Cloud GenAI Resource Packs Release Notes"
 linktitle: "Mendix GenAI Resources"
 url: /releasenotes/genai-resource-packs/
-description: "Release notes for Mendix Cloud GenAI Resource Packs"
+description: "Describes changes and improvements made to Mendix Cloud GenAI Resource Packs."
 weight: 25
 numberless_headings: true
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
