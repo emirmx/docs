@@ -53,7 +53,7 @@ Guidance:
 * **Maia Learn** – helps you to quickly learn Mendix core concepts and get started with Studio Pro. For more information, see [Maia Learn](/refguide/maia-learn/).
 * **Maia Explain** – helps you easily understand a microflow or a nanoflow. It explains the general purpose of the logic and highlights specific technical details to help you understand the logic further. For more information, see [Maia Explain](/refguide/maia-explain/).
 * **Maia Agent Skills** – lets you define modular, reusable instructions that extend Maia with domain-specific knowledge. Maia applies them automatically whenever relevant, eliminating the need to repeat the same context across conversations. For more information, see [Maia Agent Skills](/refguide/maia-agent-skills/).
-* **Maia Agent Instructions** – lets you define project- or module-level instructions (AGENTS.md) that steer agent behavior. Use them to set common context for your prompts, such as naming conventions or language preferences, so they are automatically included whenever relevant. For more information, see [Maia Agent Instructions](/refguide/maia-instructions/).
+* **Maia Agent Instructions** – lets you define project- or module-level instructions (AGENTS.md) that steer agent behavior. Use them to set common context for your prompts, such as company conventions or environment restrictions, so they are automatically included whenever relevant. For more information, see [Maia Agent Instructions](/refguide/maia-instructions/).
 
 Recommenders:
 

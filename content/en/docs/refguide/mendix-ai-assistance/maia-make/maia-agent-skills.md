@@ -104,9 +104,18 @@ For more information on how skills and reference files load, and when they apply
 
 At the start of each chat session, Maia becomes aware of all agent skills in your project. As you work, Maia picks up the relevant skill content automatically. You do not need to reference or invoke skills explicitly.
 
-Make sure to provide informative description of a skill as this is the only information Maia uses to decide whether to read your skill.
+Make sure to provide informative description of a skill as this is the leading information Maia uses to decide whether to read your skill.
 
 If you add or edit a skill while a session is active, those changes take effect the next time you start a chat.
+
+## Skill overview
+
+Since Studio Pro 11.12, Maia lets you list all registered agent skills. Click the **Skills** button next to
+**Add** in the Maia input area to open the skill overview pane. The pane shows whether each skill loaded
+successfully, including any error message, the references that were found, and the module the skill belongs to.
+
+Updates to skills, whether you add a new skill or change an existing one, appear only after you start a new session.
+You can force Maia to sync skill information mid-session by clicking **Sync** in the skill overview pane.
 
 ## Limitations {#limitations}
 
