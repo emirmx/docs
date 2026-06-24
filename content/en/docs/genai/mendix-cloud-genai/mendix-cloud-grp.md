@@ -66,10 +66,15 @@ For example, if you allocate 50 Cloud Tokens per month, your resource receives 5
 
 | Model Family | GenAI Units per 1M Input Tokens | GenAI Units per 1M Output Tokens |
 | ------------ | ------------------------------- | -------------------------------- |
-| Claude Haiku | 35.81 | 179.07 |
-| Claude Sonnet | 107.44 | 537.21 |
-| Claude Opus | 179.07 | 895.35 |
-| Cohere Embed | 30.23 | — |
+| Claude Haiku 4.5 | 35.81 | 179.07 |
+| Claude Sonnet 4.5 | 107.44 | 537.21 |
+| Claude Sonnet 4.6 | 107.44 | 537.21 |
+| Claude Opus 4.6 | 179.07 | 895.35 |
+| Claude Opus 4.7 | 179.07 | 895.35 |
+| Claude Opus 4.8 | 179.07 | 895.35 |
+| Cohere Embed V3 English | 30.23 | — |
+| Cohere Embed V3 Multilingual | 30.23 | — |
+| Cohere Embed V4 | 30.23 | — |
 
 There are no fixed capacity tiers. You choose any Cloud Token amount that matches your expected usage and adjust it at any time. For more information, see the [Adjusting Resource GenAI Unit Capacity](/control-center/genai-resources-self-service/#adjusting-resource-genai-unit-capacity) section of *GenAI Resources*.
 
