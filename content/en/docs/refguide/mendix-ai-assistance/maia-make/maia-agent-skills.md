@@ -62,7 +62,8 @@ The `name` field must match the skill's parent directory name exactly. A mismatc
 
 ### Directory Structure {#directory-structure}
 
-Skills are stored in the `skillssource/` directory at the root of your application directory. You can also manage skills directly in the file system, for example, to copy in skills from another project. After making changes in the file system, go to **App** > **Synchronize App Directory** (keyboard shortcut: <kbd>F4</kbd>) to make the changes visible in Studio Pro.
+Skills are stored in the `skillssource/` directory at the root of your application directory. You can also manage skills directly in the file system, for example, to copy in skills from another project. After making changes in the file system, go to **App** > **Synchronize App Directory** (keyboard shortcut: <kbd>F4</kbd>) to make the changes visible in Studio Pro. 
+You can also sync the changes by pressing the 'Sync' button in Maia skills overview pane.
 
 Project-level skills are stored directly under `skillssource` directory:
 
@@ -115,7 +116,7 @@ Since Studio Pro 11.12, Maia lets you list all registered agent skills. Click th
 successfully, including any error message, the references that were found, and the module the skill belongs to.
 
 Updates to skills, whether you add a new skill or change an existing one, appear only after you start a new session.
-You can force Maia to sync skill information mid-session by clicking **Sync** in the skill overview pane.
+To apply the updated skills immediately, click the **Sync** button in the skill overview pane.
 
 ## Limitations {#limitations}
 
