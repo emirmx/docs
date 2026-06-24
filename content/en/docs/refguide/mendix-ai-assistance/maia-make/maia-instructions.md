@@ -15,10 +15,11 @@ This feature was released as part of [Maia Make](/refguide/maia-make/) capabilit
 To use Maia Agent Instructions, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Instructions are a [standard-compliant](https://agents.md) way to steer the behavior of the agent for your project or module. They allow you to define common
-context of your prompts (such as naming conventions or styling preferences) only once as they are automatically loaded when necessary.
+Maia Instructions are agent instructions that are automatically added to the conversation context. They let you define shared prompt context, such as company conventions or environment restrictions, once and reuse it when needed.
 
-They can be provided on the project level or on the module level. Project-level instructions are automatically included in every conversation started within the given project. Module-level instructions are automatically included whenever documents in the given module are read, updated, or created.
+They can be provided at the project level or module level. Project-level instructions are included in every conversation in the project. Module-level instructions are included whenever Maia starts working in the given module.
+
+Maia Instructions follow the [AGENTS.md standard](https://agents.md) for agent instructions.
 
 ## Maia Instructions vs. Agent Skills {#instructions-vs-skills}
 
@@ -26,9 +27,9 @@ Maia supports both [agent skills](/refguide/maia-agent-skills/) and agent instru
 
 |               | Instructions                                                                                        | Skills                                                                                   |
 | ------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Loading       | Deterministically loaded, whenever working with the given project or module                         | Agent decides to load skills on demand, based on their description                       |
-| Applicability | Project or module-wide instructions that should always be part of context (e.g. preferred language) | Instructions that are applicable only in certain situations (e.g. microflow conventions) |
-| Organization  | Single file, should be kept as short as possible                                                    | Allows you to split instructions into multiple files that Maia reads on demand as needed |
+| Loading       | Deterministically loaded, whenever working with the given project or module                         | Agent decides to load skills on demand, based on their name and description                       |
+| Applicability | Project or module-wide instructions that should always be part of context (for example, company preferences) | Instructions that are applicable only in certain situations (for example, microflow conventions) |
+| Organization  | Single file, should be kept as short as possible                                                    | Allows you to split instructions into the core skill and additional references that Maia reads on demand as needed |
 
 ## Creating a New Maia Instruction {#creating-instructions}
 
