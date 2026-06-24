@@ -54,10 +54,10 @@ When a user installs an extension that requests permissions, they can manage tho
 
 ## Reacting to Permission Changes
 
-Extensions can subscribe to the `permissionsChanged` event on `IExtensionPermissionsApi` to be notified whenever the user grants or revokes permissions for any of the extensions. This allows you to reactively update your extension's behaviour without requiring a restart.
+Extensions can subscribe to the `permissionsChanged` event on `IExtensionPermissionsApi` to be notified whenever the user grants or revokes permissions for any extension. This allows you to reactively update your extension's behavior without requiring a restart.
 
 The event carries no arguments. When it fires, call `getPermissions()` to retrieve the current state.
-Update you main/index.ts to the following to check when someone unchecked the permissions.
+Update your `main/index.ts` to the following to detect when a permission changes.
 
 ```typescript
 import { IComponent, getStudioProApi } from "@mendix/extensions-api";
@@ -90,10 +90,9 @@ export const component: IComponent = {
     }
 };
 ```
-The `permissionsChanged` event fires for all extensions whenever any permission is granted or revoked anywhere in the system, not just for your extension. This means multiple extensions may be responding to the same event simultaneously.
+The `permissionsChanged` event fires for all extensions whenever any permission is granted or revoked anywhere in the system, not just for your extension. This means multiple extensions may respond to the same event simultaneously.
 
-To check if the change happened for your extension you must compare the old granted state against the new one for the permission name you want to be granted.
-Without this check, your extension would fire a notification every time any extension's permission changes, even ones completely unrelated to you.
+To check if a change affects your extension, compare the old granted state against the new one for each permission name your extension declared. Without this check, your extension fires a notification every time any permission changes, including changes unrelated to your extension.
 
 ## Available Permissions
 

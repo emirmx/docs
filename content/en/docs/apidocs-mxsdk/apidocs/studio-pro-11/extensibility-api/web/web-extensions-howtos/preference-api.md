@@ -25,6 +25,10 @@ Create a menu that displays a dialog with text in the `loaded` method in the mai
 
 In the example below, you create one menu item that shows a message box with the user's preferences, such as `Light` or `Dark` mode, current language and the version of Studio Pro the user is using.
 
+{{% alert type="info" %}}
+Seeing the current Studio Pro version is available for Studio Pro 11.12 and above.
+{{% /alert %}} 
+
 Replace your `src/main/index.ts` file with the following:
 
 ```typescript

@@ -10,9 +10,9 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.12.0
 
-* We added a `permissionsChanged` event that can help you know if the user changed the permissions of your extensions in the [Permissions API] (/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/)
-* We added the `documentsChanged` event for when one of your dependencies gets modified in Studio Pro and is a dependency you can get notified.
-* The version of the studio pro is available though the [Preferences API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/).
+* We added a `permissionsChanged` event to the [Permissions API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/extension-permissions/) that notifies you when the user changes the permissions of your extension.
+* We added the `documentsChanged` event, which notifies you when a document that your extension depends on is modified in Studio Pro.
+* The Studio Pro version is now available through the [Preferences API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/).
 
 ## Version 11.11.0
 
