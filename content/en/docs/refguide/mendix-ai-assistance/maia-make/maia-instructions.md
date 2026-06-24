@@ -40,6 +40,8 @@ To create a new Maia Instruction, follow these steps:
 
 Studio Pro creates the `AGENTS.md` file. You can continue adding the instruction content.
 
+Note that newly added instructions or changes to existing instructions are discovered only when new session is started.
+
 ### Instructions Content {#instructions-content}
 
 Maia Instructions are arbitrary Markdown files that follow the AGENTS.md standard. You can structure them any way you like.
