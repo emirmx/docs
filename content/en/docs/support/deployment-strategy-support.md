@@ -81,7 +81,7 @@ Mendix Support does not have access to app health, logs, graphs and monitoring â
 
 {{< figure src="/attachments/support/sap-cloud-platform.png"   width="40%"  class="no-border" >}}
 
-## Cloud Foundry / Docker and Kubernetes / Mendix Portable Runtime / Traditional Architectures
+## Mendix Portable Runtime / Cloud Foundry / Docker and Kubernetes / Traditional Architectures
 
 Mendix is compatible with all the well-known cloud providers: IBM Cloud, Microsoft Azure, Amazon Web Services (AWS), Red Hat OpenShift, and Google Cloud Platform.
 
@@ -91,4 +91,4 @@ Check our [System Requirements](/refguide/system-requirements/) for the supporte
 
 Mendix Support does not have access to app health, logs, graphs and monitoring. If you run into issues or want to ask a question on these supported components, please always provide relevant logs, data and your own analysis that explains why you suspect the issue is caused by one of our supported components.
 
-{{< figure src="/attachments/support/on-premises.png"   width="75%"  class="no-border" >}}
+{{< figure src="/attachments/support/cloud-foundry_docker.png"   width="75%"  class="no-border" >}}

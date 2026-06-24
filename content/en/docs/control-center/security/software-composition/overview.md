@@ -89,7 +89,7 @@ The following options are available above the list:
 The finding list contains the following information:
 
 * **Severity** — The severity level of the finding related to that component.
-* **Finding Type** — The type of finding, which can be **Outdated** or **Deprecated**.
+* **Finding Type** — The type of finding, which can be **Outdated**, **Deprecated**, or **Vulnerable**.
 * **Component** — The name of the component used in the app. Clicking this takes you to the corresponding Mendix Marketplace page.
 * **Version** — The version of the component that is used in the app.
 * **Type** — The type of component.
@@ -105,7 +105,6 @@ The finding list contains the following information:
 * **Deprecated since version publish date** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-<!--
 #### Finding and Component Details
 
 If a finding is marked as **Vulnerable**, its corresponding component has a **View Details** button. Clicking it opens a window which includes two sections:
@@ -113,7 +112,7 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
 * **Finding Details** – This includes the following details:
 
     * **Severity** – The severity of the finding, as computed on the [Scoring Criteria](/control-center/scoring-criteria-tab/) tab.
-    * **CVE-ID** – The unique ID which identifies the finding on the **Security Advisories** page.
+    * **CVE-ID** – The unique ID which identifies the finding on the [Security Advisories](https://docs.mendix.com/releasenotes/security-advisories/) page.
     * **CVSS Score 3.1** and **CVSS Score 4.0** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
     * **Age** – The number of days since the date when the CVSS score was computed.
     * **Created on** – The date when the component was created.
@@ -125,7 +124,6 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
     * **Type** – The type of the component affected by this finding.
     * **Publisher** – The entity that published the component affected by this finding.
     * **Apps using component** – The number of apps where the vulnerable component is used. Click **View Component Usage** to see a list of affected apps.
--->
 
 ### Component Usage {#overview-component-usage}
 
