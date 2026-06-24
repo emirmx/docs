@@ -12,7 +12,7 @@ Consistency checks allow your extension to validate custom blob documents and di
 ## Prerequisites
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one.
-* Familiarize yourself with creating custom documents as described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/).
+* Familiarize yourself with creating custom documents as described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/).
 
 {{% alert color="warning" %}}
 Do not modify the blob document or its dependencies during consistency checks. Saving is blocked at this point because changes could interfere with the checks and leave the app in an invalid state.
@@ -20,7 +20,7 @@ Do not modify the blob document or its dependencies during consistency checks. S
 
 ## Basic Example
 
-Based on the code described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-documents/), this section defines consistency checks for the first name field and shows how to display errors, warnings, and deprecation notices in Studio Pro's **Errors** pane.
+Based on the code described in [Custom Blob Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/), this section defines consistency checks for the first name field and shows how to display errors, warnings, and deprecation notices in Studio Pro's **Errors** pane.
 
 ```typescript {hl_lines=["10-13", "19-58", "69"]}
 import { 
