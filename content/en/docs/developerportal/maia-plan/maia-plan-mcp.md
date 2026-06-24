@@ -75,7 +75,7 @@ To configure Claude Code to connect to the Maia Plan MCP Server, follow these st
 3. Specify the server URL and authentication method (using the `MENDIX_TOKEN` environment variable).
 4. Save the configuration file.
 
-For detailed instructions, refer to the [Claude Code documentation](https://docs.anthropic.com/claude/docs/model-context-protocol).
+For detailed instructions, refer to the [Claude Code documentation](https://claude.com/docs/connectors/building/mcp).
 
 #### Configuring Other MCP Clients
 
@@ -99,7 +99,8 @@ Enter one or more of the following to search for a Maia Plan project:
 * `query` – A search string. The `query` field must not exceed 500 characters, and is best for title match.
 * `keywords` – Specific search keywords. The search terms you enter in the `keywords` field are used to match across title, Markdown text, epics, and stories.
 
-You can also filter by `planRole` and `updatedAfter` date.
+You can also filter by `planRole` and `updatedAfter` date.    
+The `planRole` can be `Owner` or `Viewer`.
 
 Keep in mind the following:
 
@@ -126,10 +127,10 @@ Keep in mind the following:
 Enter the following to retrieve plan content:
 
 * `planUUID` – The plan's UUID, retrieved using the `Get_Project_Plan` tool.
-* `sections` – The sections that you want to retrieve. This can be one of the following:
+* `sections` – The sections that you want to retrieve. You must specify at least one of the following sections. Otherwise, no results are returned.
 
-    * `scope` – Retrieves the project overview, the goals, and the requirements. If this is left empty, an empty string or array is returned.
-    * `solution` – Retrieves epics, stories, and acceptance criteria. If this is left empty, an empty string or array is returned.
+    * `scope` – Retrieves the project overview, the goals, and the requirements. 
+    * `solution` – Retrieves epics, stories, and acceptance criteria. 
     * `both` – Retrieves the complete plan.
 
 #### Output
