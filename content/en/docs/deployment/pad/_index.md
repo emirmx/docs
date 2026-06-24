@@ -34,7 +34,7 @@ The Mendix Portable Runtime functionality is available in Mendix Studio Pro vers
 
 You must also ensure that you have the supported version of [Java Runtime Environment](/refguide/system-requirements/#java).
 
-## Creating a Mendix Portable Runtime File
+## Creating a Mendix Portable Runtime File {#creating-a-portable-app-distribution-file}
 
 In most production environments, deployment packages are created by using the [Mx-Build](/refguide/mxbuild/) command-line tool. However, you can also [manually create a deployment package](/refguide/create-deployment-package-dialog/) if required, for example, for a local test deployment.
 
