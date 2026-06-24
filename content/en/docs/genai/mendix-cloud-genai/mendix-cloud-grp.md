@@ -13,7 +13,7 @@ aliases:
 Mendix Cloud GenAI Resource Packs provide turn-key access to Generative AI technology, delivered through Mendix Cloud.
 
 {{% alert color="info" %}}
-Model Resource Packs now use a Cloud Token for the GenAI Units conversion that allows you to use any supported Claude model from a single resource, while Cohere Embed models are provided through separate Embeddings Resource Packs.
+Model Resource Packs now use a Cloud Token for the GenAI Units conversion that allows you to use any supported Anthropic Claude model from a single resource, while Cohere Embed models are provided through separate Embeddings Resource Packs.
 {{% /alert %}}
 
 * Model Resource Packs offer access to large language model capacity. You choose a monthly Cloud Token amount, which is converted to [GenAI Units](/agents/mx-cloud-genai/Navigate-MxGenAI/#what-are-tokens-and-genai-units) at a rate of 100 GenAI Units per Cloud Token. GenAI Units are consumed against a model-specific exchange rate, so you can use any supported Anthropic Claude model — Haiku, Sonnet, or Opus — from a single resource. 

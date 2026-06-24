@@ -12,6 +12,13 @@ These release notes cover changes made to the [Mendix Cloud GenAI Resource Packs
 
 ## 2026
 
+### June 25, 2026
+
+#### New Features
+
+* We introduced multi-model support for Text Generation Resources. Company Admins can now provision resources that support multiple models, and increase or decrease the capacity of existing resources.
+* We introduced flexible pricing using GenAI Units. Users can now view their GenAI Units balance, usage, and consumption metrics directly on the **Consumption** overview page.
+
 ### May 7, 2026
 
 #### Fixes
