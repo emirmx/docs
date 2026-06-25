@@ -359,6 +359,7 @@ Once the above changes are applied, end users can directly navigate to the desir
 When using the SAML module with the Deep link Module (for Mendix 8 and 9), you need to set the `LoginLocation` constant of the Deeplink module to `/SSO/login?f=true&cont=` to redirect the user to the original deep link location after a successful login.
 
 To redirect users through a specific Identity Provider (IdP) and then navigate to a deeplink, include both the `_idp_id` and `cont` parameters:
+
 `https://mydomain.com/sso/login?_idp_id=MyIdPAlias&cont=p/workflow/1234`
 
 {{% alert color="info" %}}
