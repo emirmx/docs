@@ -83,12 +83,13 @@ This approach gives you full control over the following:
 
 ### When to Use Method 1
 
-Use this method when you want to:
+Use this method when:
 
-* Hide MCP protocol details from the Cortex Agent.
-* Expose business-friendly Snowflake functions.
-* Control authentication and payload construction inside Snowflake.
-* Implement custom validation or response handling logic.
+* You want to hide MCP protocol details from the Cortex Agent.
+* You want to expose business-friendly Snowflake functions.
+* You need to control authentication and payload construction inside Snowflake.
+* You are implementing custom validation or response handling logic.
+* You are not able to use OAuth as authentication.
 
 ### Architecture
 
