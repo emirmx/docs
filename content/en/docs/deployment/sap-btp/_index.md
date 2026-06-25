@@ -253,11 +253,11 @@ You can also transport to the required environment from the **Overview** tab of 
 
     {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/edit-constants.png" class="no-border" >}}
 
-3. In the **Scheduled Events** section, select the scheduled event you want to *Enable* or *Disable* and click **Next**. For more information, refer to [Scheduled Events](#schedules-events).
+3. In the **Scheduled Events** section, select the scheduled event you want to *Enable* or *Disable* and click **Next**. For more information, refer to [Scheduled Events](/developerportal/deploy/sap-cloud-platform/environments/#schedules-events).
 
 ### Unbinding and Deleting Service Instances    
 
-1. In the **Services** tab, select any additional services you need for your app. For more information, see the [Services tab](#binding-services).
+1. In the **Services** tab, select any additional services you need for your app. For more information, see the [Services tab](/developerportal/deploy/sap-cloud-platform/environments/#binding-services).
 
     {{% alert color="warning" %}}In your initial deployment, do not remove any of the services with the status **Bound Services**. For a new app, these services are required for the correct deployment of the app.{{% /alert %}}
 
@@ -280,7 +280,7 @@ Click **Next** to continue to the **Runtime** tab. Here, you can **Add**, edit (
 
     {{% alert color="info" %}}This binds any services which are in the status **Services To Be Bound**.{{% /alert %}}
 
-2. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](/developerportal/deploy/sap-cloud-platform/environments).
+2. When the application has been started, you are taken to the **Environment Details** page for the selected environment. See [Environment Details](/developerportal/deploy/sap-cloud-platform/environments/).
 
 ## Deleting an App
 
@@ -309,7 +309,7 @@ Since SAP Application Logging will soon be deprecated, migrate your logging serv
 1. Select the appropriate **Plan** and upload a file if required.
 1. Click **Connect Selected Services** and restart your application to bind the new SAP Cloud logging service.
 1. At this point, both the **application-logs** and **cloud-logging** services are active for your application.
-1. Retain the **application-logs** service until its log retention period ends to ensure access to existing log entries. Then, delete it following the instructions provided in the [Unbinding and Removing Services](#unbinding-and-removing-services) section. After this, only the new SAP Cloud Logging service remains active.
+1. Retain the **application-logs** service until its log retention period ends to ensure access to existing log entries. Then, delete it following the instructions provided in the [Unbinding and Removing Services](/developerportal/deploy/sap-cloud-platform/environments/#unbinding-and-removing-services) section. After this, only the new SAP Cloud Logging service remains active.
 1. When using the **cloud-logging** service, upgrade **SapApplicationLogs** to the latest version. If you are using an older version, update the **Default Value** of the **ApplicationLoggingService** constant to *cloud-logging* in the [SAP Logging Connector](https://marketplace.mendix.com/link/component/110219). For more information, refer to the [Using the Connector](/appstore/modules/sap/sap-logger/#using-the-connector) section of *SAP Logging Connector*.
 1. You can view the logs of an environment using SAP Cloud Logging in your application's logs. For more details, see the [Viewing the Logs](/developerportal/deploy/sap-cloud-platform/sap-monitoring/#viewing-the-logs) section of *Monitoring Environments in Mendix Apps on SAP BTP*.
 
