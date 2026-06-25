@@ -12,11 +12,11 @@ You can integrate a Mendix application with a Snowflake Cortex Agent using the M
 
 This article covers two integration methods:
 
-* Method 1 - Snowflake functions as an intermediary layer.
+* [Method 1 - Snowflake functions as an intermediary layer](#method-1)
 
     The Cortex Agent uses a custom tool backed by a Snowflake SQL wrapper function, which delegates to a Python function that communicates with the Mendix MCP server using Basic Authentication.
 
-* Method 2 - Direct MCP connector. 
+* [Method 2 - Direct MCP connector](#method-2)
 
     The Cortex Agent connects directly to the Mendix MCP server through a Snowflake external MCP server and API integration using OAuth 2.0.
 
@@ -70,7 +70,7 @@ A user interacting with the Cortex Agent can ask a question such as, *How many t
 
 The agent invokes the appropriate tool and returns the result.
 
-## Method 1 - Using Snowflake Functions as an Intermediary Layer
+## Method 1 - Using Snowflake Functions as an Intermediary Layer {#method-1}
 
 In this method, the Cortex Agent does not connect directly to the Mendix MCP server. Instead, it uses a custom tool that is backed by a Snowflake SQL wrapper function. That wrapper function calls a Snowflake Python function, which handles all MCP communication with the Mendix app.
 
@@ -119,7 +119,9 @@ To configure your app for method 1, perform the following steps:
     * **Input parameter** - `Status` of type `String`
     * **Description** - A description that helps the AI agent understand when to call this tool
 
-    For more information on exposing microflows as MCP tools, see the MCP module documentation on the Mendix documentation site.
+    For more information on exposing microflows as MCP tools, see the [MCP module documentation](/agents/mcp/) on the Mendix documentation site.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-mcp-agent/mcp-agent1.png" class="no-border" alt="Mendix microflow exposed as an MCP tool, implementing conditional logic to return ticket counts by status." >}}
 
 2. Create a Snowflake secret for basic authentication.
 
@@ -285,6 +287,8 @@ To configure your app for method 1, perform the following steps:
     * When the agent should use it
     * Which values are supported for the Status argument: **Open**, **In Progress**, **Closed**
 
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-mcp-agent/mcp-agent2.png" class="no-border" alt="Snowflake Cortex Agent configured with a custom tool that invokes the SQL wrapper function." >}}
+
 7. Test the integration.
 
     You can test the wrapper function directly in Snowflake before using it through the agent.
@@ -297,7 +301,7 @@ To configure your app for method 1, perform the following steps:
 
     A successful response returns a VARIANT value containing the JSON-RPC result from the Mendix MCP server.
 
-## Method 2 - Connecting the Cortex Agent Directly to the Mendix MCP Server
+## Method 2 - Connecting the Cortex Agent Directly to the Mendix MCP Server {#method-2}
 
 In this method, the Cortex Agent connects to the Mendix MCP server through a Snowflake external MCP server and API integration. The Cortex Agent uses the MCP connector directly, without requiring custom Snowflake functions for request construction or authentication.
 
@@ -382,13 +386,13 @@ To configure your app for method 2, perform the following steps:
 
     This makes the Mendix MCP endpoint available as a named connector that can be attached to a Cortex Agent.
 
-```text
-USE ROLE ACCOUNTADMIN;
-CREATE EXTERNAL MCP SERVER mendix_mcp_server
-  WITH DISPLAY_NAME = 'Mendix MCP server'
-  URL = 'https://<your-mendix-app>.apps.<region>.mendixcloud.com/MendixMCP/mcp'
-  API_INTEGRATION = custom_mcp_api_integration;
-```
+    ```text
+    USE ROLE ACCOUNTADMIN;
+    CREATE EXTERNAL MCP SERVER mendix_mcp_server
+      WITH DISPLAY_NAME = 'Mendix MCP server'
+      URL = 'https://<your-mendix-app>.apps.<region>.mendixcloud.com/MendixMCP/mcp'
+      API_INTEGRATION = custom_mcp_api_integration;
+    ```
 
 4. Add the Mendix MCP server as a connector to a Cortex Agent, by performing the following steps:
 
@@ -398,6 +402,8 @@ CREATE EXTERNAL MCP SERVER mendix_mcp_server
     4. Click **Add MCP** server.
     5. Select the Mendix MCP server from the list of available external MCP servers.
     6. Save the agent configuration.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-mcp-agent/mcp-agent3.png" class="no-border" alt="Cortex Agent overview page showing the MCP Connectors section with the Mendix MCP server configured." >}}
 
 5. Connect and test the MCP connector.
 
@@ -409,6 +415,8 @@ CREATE EXTERNAL MCP SERVER mendix_mcp_server
     4. Ask a question that should trigger the Mendix tool, for example, *How many tickets are open?*
 
     The agent should invoke the `RetrieveNumberOfTicketsInStatus` tool through the MCP connector and return the result.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-mcp-agent/mcp-agent4.png" class="no-border" alt="Cortex Agent runtime view showing the Mendix MCP server connector with the Connect option." >}}
 
 ## Security Considerations
 
@@ -440,46 +448,68 @@ If you encounter any issues, use the following troubleshooting tips to help you 
 
 #### Python Function Cannot Reach Endpoint
 
-If the Python function cannot reach the Mendix endpoint, verify that the external access integration is correctly configured and that the network rule allows outbound access to the Mendix Cloud host.
+The Python function cannot reach the Mendix endpoint.
 
-#### Basic Authentication Fails
+##### Solution
+
+Verify that the external access integration is correctly configured and that the network rule allows outbound access to the Mendix Cloud host.
+
+#### Basic Authentication Failure
+
+Basic authentication fails.
+
+##### Solution
 
 Check the following:
 
-The Snowflake secret exists and contains the correct username and password
+* The Snowflake secret exists and contains the correct username and password.
+* The function definition references the correct secret name in the `SECRETS` clause.
+* The Mendix MCP server is configured to accept basic authentication.
 
-The function definition references the correct secret name in the SECRETS clause
+#### Unexpected Wrapper Function Result
 
-The Mendix MCP server is configured to accept Basic Authentication
+The wrapper function returns an unexpected result.
 
-The wrapper function returns an unexpected result
+##### Solution
 
-Verify that the tool name RetrieveNumberOfTicketsInStatus and the argument name Status in the SQL wrapper function exactly match the tool definition in your Mendix app.
+Verify that the tool name `RetrieveNumberOfTicketsInStatus` and the argument name `Status` in the SQL wrapper function exactly match the tool definition in your Mendix app.
 
-An unsupported status value causes an error
+#### Unexpected Status Value Causes an Error
 
-The Mendix microflow throws an exception for unsupported values. Ensure the Cortex Agent tool description clearly states the supported values (Open, Closed, In Progress) so the agent does not pass invalid input.
+The Mendix microflow throws an exception for unsupported values.
 
-Method 2
-The external MCP server does not appear in the agent configuration
+##### Solution
+
+Ensure the Cortex Agent tool description clearly states the supported values (**Open**, **Closed**, **In Progress**) so the agent does not pass invalid input.
+
+### Method 2
+
+#### No MCP Server in Agent Configuration
+
+The external MCP server does not appear in the agent configuration.
+
+##### Solution
 
 Verify that the external MCP server was created successfully and that your Snowflake role has the required permissions to view and use it.
 
-OAuth authentication fails
+#### OAuth Authentication Failure
+
+OAuth authentication fails.
+
+##### Solution
 
 Check the following:
 
-The client ID and client secret are correct
+* The client ID and client secret are correct.
+* The tenant ID matches your identity provider directory.
+* The token endpoint and authorization endpoint URLs are correct.
+* The configured scope matches the API registration in your identity provider.
+* The identity provider allows the required OAuth grant flow for this client.
 
-The tenant ID matches your identity provider directory
+#### Tool Not Invoked
 
-The token endpoint and authorization endpoint URLs are correct
+The agent does not invoke the expected tool.
 
-The configured scope matches the API registration in your identity provider
+##### Solution
 
-The identity provider allows the required OAuth grant flow for this client
-
-The agent does not invoke the expected tool
-
-Verify that the Mendix MCP server exposes the tool correctly and that the MCP connector is in a connected state in the agent session. If the connector shows as disconnected, click Connect and complete the authorization flow.
-
+Verify that the Mendix MCP server exposes the tool correctly and that the MCP connector is in a connected state in the agent session. If the connector shows as disconnected, click **Connect** and complete the authorization flow.
