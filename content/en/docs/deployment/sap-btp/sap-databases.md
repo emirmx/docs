@@ -26,7 +26,7 @@ Upload a file which contains the configuration for this database. Click **Browse
 
 During the creation of the environment, the selected PostgreSQL, Hyperscaler Option service is added to your space. When you deploy your app, the app is bound to it.
 
-This database service should not be unbound from your environment. For more information on required services, see the [Services Tab](#binding-services) above.
+This database service should not be unbound from your environment. For more information on required services, see the [Services Tab](/developerportal/deploy/sap-cloud-platform/environments/#binding-services).
 
 #### SAP Hyperscaler PostgreSQL Configurator {#postgresql-configurator}
 
@@ -100,7 +100,7 @@ If your SAP HANA database has performance issues, you can improve it by performi
     | MXRUNTIME_DatabaseUserName | {user} |
     | MXRUNTIME_DatabaseType | `SAPHANA` |
 
-1. Go to the [General tab](#general-tab) and restart your app to apply the changes.
+1. Go to the [General tab](/developerportal/deploy/sap-cloud-platform/environments/#general-tab) and restart your app to apply the changes.
 
 The additional parameters that you added to the URL in the `MXRUNTIME_DatabaseJdbcUrl` set the following tuning parameters:
 

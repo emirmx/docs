@@ -100,7 +100,7 @@ Provide the final details for the SAP BTP development environment.
 
 Choose a **Domain**, **Organization**, and **Space** which is configured for you in this region.
 
-If you do not choose a **Custom database**, you can still choose from a range of different databases, such as PostgreSQL, Hyperscaler Option, and SAP HANA. Ensure that the database you choose is supported by your quota plan for this region and organization. See [Databases in SAP BTP](#databases) for important information on selecting the correct database for your app.
+If you do not choose a **Custom database**, you can still choose from a range of different databases, such as PostgreSQL, Hyperscaler Option, and SAP HANA. Ensure that the database you choose is supported by your quota plan for this region and organization. See [Databases in SAP BTP](/developerportal/deploy/sap-cloud-platform/databases/) for important information on selecting the correct database for your app.
 
 If you select **Yes** for **Custom database**, provide the details for the **Name** and the **Plan**.
 
@@ -150,7 +150,7 @@ To create a new environment, perform the following steps:
 
 7. Set **Development Mode** to *Yes* if you want the application to run with the Mendix security level of Prototype/demo, or *No* for no security. This is not recommended for acceptance or production environments.
 
-8. Select the database you would like to use. Be aware that even if a specific database is part of the Marketplace, it could still be unavailable because of limitations imposed by the quota of your organization. See [Databases in SAP BTP](#databases) below for information on selecting the correct database for your app.
+8. Select the database you would like to use. Be aware that even if a specific database is part of the Marketplace, it could still be unavailable because of limitations imposed by the quota of your organization. See [Databases in SAP BTP](/developerportal/deploy/sap-cloud-platform/databases/) for information on selecting the correct database for your app.
 
     If you choose **Custom Database**, enter a **Name** for the database and the **Plan**.
 

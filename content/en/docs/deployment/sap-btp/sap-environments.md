@@ -47,7 +47,7 @@ The button will change to **Start Application** which you can click to start or 
 You may need to use this option to stop and start your app after changing one of the settings on this page.
 {{% /alert %}}
 
-If you receive an error trying to start the app, refer to the [App Does Not Start](#appnotstart) section below.
+If you receive an error trying to start the app, refer to the [App Does Not Start](/developerportal/deploy/sap-cloud-platform/#appnotstart) section below.
 
 #### Change Admin Password
 
@@ -158,7 +158,7 @@ To connect a service in the **Available Services** section, do the following ste
     The services you have selected will be added as **Services To Be Bound**. Now, you can upload a JSON file with a configuration that will be applied to the service binding.
 
 {{% alert color="info" %}}
-If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](/developerportal/deploy/sap-cloud-platform/#sap-hyperscaler). 
+If you use the **PostgreSQL, Hyperscaler Option** service on SAP BTP, Mendix can create a JSON file for you. See [Running Mendix on PostgreSQL, Hyperscaler Option](/developerportal/deploy/sap-cloud-platform/databases/#sap-hyperscaler). 
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -178,7 +178,7 @@ The service bindings are created with the provided configurations when you resta
 If you receive an error and the service fails to bind, check all aspects of your SAP account. The error message may not provide full information about, for example, which plans you are allowed to choose for a particular service.
 {{% /alert %}}
 
-If you receive an error trying to restart the app, refer to the [App Does Not Start](#appnotstart) section below. 
+If you receive an error trying to restart the app, refer to the [App Does Not Start](/developerportal/deploy/sap-cloud-platform/#appnotstart) section below. 
 
 #### Unbinding and Removing Services
 
