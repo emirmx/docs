@@ -22,7 +22,7 @@ Model Resource Packs now use a Cloud Token for the GenAI Units conversion that a
 
 * Knowledge Base Resource Packs provide an OpenSearch-based vector database to support Retrieval-Augmented Generation (RAG), Semantic Search, and other Generative AI use cases.
 
-Developers can use the Mendix cloud GenAI Portal to manage their Mendix Cloud GenAI resources and seamlessly integrate model and knowledge base capabilities into their Mendix apps using the [Mendix Cloud GenAI Connector](/agents/mx-cloud-genai/mxgenai-connector/). Optimized for high performance and low latency, Mendix Cloud GenAI Resource Packs provide the easiest and fastest way to deliver end-to-end Generative AI solutions with Mendix.
+Developers can use the Mendix Cloud GenAI Portal to manage their Mendix Cloud GenAI resources and seamlessly integrate model and knowledge base capabilities into their Mendix apps using the [Mendix Cloud GenAI Connector](/agents/mx-cloud-genai/mxgenai-connector/). Optimized for high performance and low latency, Mendix Cloud GenAI Resource Packs provide the easiest and fastest way to deliver end-to-end Generative AI solutions with Mendix.
 
 ### General Availability
 
@@ -33,6 +33,10 @@ You can purchase GenAI Resource Packs using Mendix Cloud Tokens. For details aro
 ## Models
 
 Mendix Cloud GenAI Resource Packs give you access to Anthropic's Claude model families and Cohere's Embed models. A single text generation resource supports multiple Claude model families, for example, Haiku, Sonnet, and Opus so you can use the most appropriate model for each use case without managing separate resources. Embeddings resources support Cohere Embed models for generating embedding vectors.
+
+{{% alert color="info" %}}
+To use multiple models from a single resource, upgrade [Mendix Cloud GenAI Connector](/agents/mx-cloud-genai/mxgenai-connector/) to V6.2.0 or later.
+{{% /alert %}}
 
 ### Supported Models
 
@@ -60,7 +64,7 @@ If you have questions about upcoming regions or want to explore making models av
 
 ### GenAI Units and Model Pricing
 
-Text generation and embeddings resources use a flexible consumption model based on [GenAI Units](/agents/mx-cloud-genai/Navigate-MxGenAI/#what-are-tokens-and-genai-units). When you provision a resource, you choose a monthly GenAI Unit capacity in Mendix Cloud Tokens. The system converts your selection to GenAI Units at a fixed rate of 100 GenAI Units per Cloud Token. All consumption is then deducted from this GenAI Units balance at a model-specific exchange rate. For more information, see [Provisioning GenAI Resources](/control-center/genai-resources-self-service/#provisioning-genai-resources)
+Text generation and embeddings resources use a flexible consumption model based on [GenAI Units](/agents/mx-cloud-genai/Navigate-MxGenAI/#what-are-tokens-and-genai-units). When you provision a resource, you choose a monthly GenAI Unit capacity in Mendix Cloud Tokens. The system converts your selection to GenAI Units at a fixed rate of 100 GenAI Units per Cloud Token. All consumption is then deducted from this GenAI Units balance at a model-specific exchange rate. For more information, see [Provisioning GenAI Resources](/control-center/genai-resources-self-service/#provisioning-genai-resources).
 
 For example, if you allocate 50 Cloud Tokens per month, your resource receives 5,000 GenAI Units per month. You can use any combination of available models against this balance. The exchange rates are as follows:
 
