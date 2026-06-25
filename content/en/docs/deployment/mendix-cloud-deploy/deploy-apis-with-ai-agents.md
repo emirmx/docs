@@ -13,7 +13,7 @@ description: "Describes how to connect AI coding assistants to Mendix Cloud usin
 For example, you can ask the AI assistant to list your apps, deploy the latest package to an acceptance environment, or stop a production environment, without writing `curl` commands or navigating the Mendix Portal.
 
 {{% alert color="warning" %}}
-The use of AI tools is non-deterministic, outputs may vary between runs. AI Assistants/Agents will have permissions based on what the API Key and Personal Access Token (PAT) have access to. Through the [Backups API](https://docs.mendix.com/apidocs-mxsdk/apidocs/backups-api/) and Logs, they may have access to production environments and Personally Identifiable Information (PII) contained within your environments. Carefully review and limit the scope of credentials before use.
+The use of AI tools is non-deterministic, outputs may vary between runs. AI Assistants/Agents will have permissions based on what the API Key and Personal Access Token (PAT) have access to. Through the [Backups API](/apidocs-mxsdk/apidocs/backups-api/) and [Logs](/developerportal/operate/logs/), they may have access to production environments and Personally Identifiable Information (PII) contained within your environments. Carefully review and limit the scope of credentials before use.
 {{% /alert %}}
 
 ## Prerequisites
