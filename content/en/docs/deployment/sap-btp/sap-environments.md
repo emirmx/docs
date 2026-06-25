@@ -2,7 +2,7 @@
 title: "Environment Details on SAP BTP"
 linktitle: "Environment Details on SAP BTP"
 url: /developerportal/deploy/sap-cloud-platform/environments
-weight: 20
+weight: 10
 description: "Describes SAP Business Technology Platform Environment Details."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
