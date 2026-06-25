@@ -25,7 +25,7 @@ The core of Mendix's navigation model is founded on the following profiles:
 * [Phone web](#phone-web)
     * Phone web offline
 * [Native mobile (tablet & phone)](#native-phone)
-* [Embedded](#embedded) (Beta)
+* [Embedded](#embedded) (Beta - introduced in Mendix 11.12.0)
 
 End-users that access the app via a particular device type are automatically redirected to the homepage of the appropriate browser or mobile profile based on the profile type (for details see [Redirection to Profiles](#redirection), below). This does not apply to the Embedded profile which is used when a host application loads the embedded client. 
 
@@ -58,6 +58,10 @@ You must enable anonymous users in your app's security settings and include anon
 {{% /alert %}}
 
 ### Embedded{#embedded}
+
+{{% alert color="info" %}}
+Embedded profiles were introduced in Mendix version 11.12.0.
+{{% /alert %}}
 
 The Embedded profile lets you use a Mendix web app as a component inside another web application. The host application loads the embedded client and owns browser-level navigation, while the Mendix app renders and navigates inside its mounted region.
 

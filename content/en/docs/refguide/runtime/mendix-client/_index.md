@@ -29,7 +29,7 @@ The Mendix Dojo Client is bootstrapped by loading a `mxui.js` script from an HTM
 
 The Mendix React client is bootstrapped in different way. It loads the `index.js` file which loads the `common.js` with the Mendix client. More JavaScript files that contain page, layout, and nanoflow definitions will be loaded after this.
 
-When you want to mount a Mendix web app inside another web application, you can also use the embedded client. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
+From Mendix version 11.12.0, when you want to mount a Mendix web app inside another web application, you can also use the embedded client. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
 For **mobile applications**, the Mendix Client acts as a React Native application. This means that apps created by Mendix consist of two parts: a *wrapper* and a *bundle*. The wrapper is a native iOS or Android application that loads the bundle and exposes platform functionality to it. The bundle includes Client Core, Pluggable Widgets, and application-specific resources like nanoflows and pages.
 

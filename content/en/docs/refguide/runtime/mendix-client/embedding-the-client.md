@@ -7,7 +7,7 @@ beta: true
 ---
 
 {{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
+This feature was introduced in Mendix version 11.12.0. It is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
 ## Introduction

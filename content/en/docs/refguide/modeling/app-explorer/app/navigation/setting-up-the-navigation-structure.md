@@ -36,7 +36,7 @@ For online profiles, you can set a microflow as a default home page. Make sure a
 
 For the native mobile profile, you can set a nanoflow as a home page, either as a default or as a role-based. For more information, see the [Setting a Nanoflow as a Home Page](#nanoflow-home-page) section below.
 
-For the Embedded profile, the selected home page is the first page shown when the host application calls `render(…)`. When that page requires parameters, the host application passes them through the `parameters` object in `render(…)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
+For the Embedded profile, introduced in Mendix version 11.12.0, the selected home page is the first page shown when the host application calls `render(…)`. When that page requires parameters, the host application passes them through the `parameters` object in `render(…)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 {{% /alert %}}
 
 Now every time an end-user signs in to the application, the selected page/microflow is shown/triggered.
@@ -77,6 +77,10 @@ If a microflow is used as a fallback, it can have only one String parameter name
 The fallback page will only be used for URLs that start with a [URL Prefix](/refguide/runtime-tab/#url-prefix).
 
 ## Setting an Error Page for an Embedded Profile
+
+{{% alert color="info" %}}
+Embedded profiles were introduced in Mendix version 11.12.0. 
+{{% /alert %}}
 
 The Embedded profile can use an error page when the configured home page cannot be opened during startup or navigation. This can happen when the values passed in `render(…)` do not match the expected page parameter types or when the signed-in end-user does not have access to the configured home page. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
