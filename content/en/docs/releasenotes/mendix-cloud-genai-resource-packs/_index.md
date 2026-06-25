@@ -16,8 +16,8 @@ These release notes cover changes made to the [Mendix Cloud GenAI Resource Packs
 
 #### New Features
 
-* We introduced multi-model support for Text Generation Resources. Company Admins can now provision resources that support multiple models, and increase or decrease the capacity of existing resources.
-* We introduced flexible pricing using GenAI Units. Users can now view their GenAI Units balance, usage, and consumption metrics directly on the **Consumption** overview page.
+* We introduced multi-model support for Text Generation Resources. Company Admins can now [provision resources](/control-center/genai-resources-self-service/#provisioning-genai-resources) that support multiple models, and increase or decrease the capacity of existing resources.
+* We introduced flexible pricing using [GenAI Units](/agents/mx-cloud-genai/Navigate-MxGenAI/#what-are-tokens-and-genai-units). Users can now view their GenAI Units balance, usage, and consumption metrics directly on the **Consumption** overview page.
 
 ### May 7, 2026
 
