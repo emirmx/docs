@@ -139,7 +139,7 @@ To configure an OpenAI-compatible provider, follow these steps:
 2. Select **OpenAI Compatible** from the **LLM Provider** list.
 3. Enter the **Base URL** for your API endpoint.
 4. Enter the **Model ID**.
-5. Enter your **API Key**. Studio Pro stores this key securely across sessions.
+5. Optional: Enter your **API Key**. Studio Pro stores this key securely across sessions.
 6. Click **Save Config**.
 
 ## Read More
