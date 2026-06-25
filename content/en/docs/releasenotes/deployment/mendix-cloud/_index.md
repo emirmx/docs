@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## June 2026
 
+### June 25, 2026
+
+#### New Features
+
+* Mendix Cloud APIs now support Model Context Protocol (MCP). AI coding assistants such as Claude Code and VS Code with GitHub Copilot can connect to your Mendix Cloud environments and manage deployments, environments, backups, and the app lifecycle through natural language. For more information, refer to [Using Mendix Deploy APIs with AI Agents (MCP)](/developerportal/deploy/deploy-apis-with-ai-agents/).
+
 ### June 24, 2026
 
 #### New Features
