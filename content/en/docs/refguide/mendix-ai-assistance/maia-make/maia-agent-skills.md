@@ -109,7 +109,7 @@ Make sure to provide informative description of a skill as this is the leading i
 
 If you add or edit a skill while a session is active, those changes take effect the next time you start a chat.
 
-## Skill overview
+## Skill Overview
 
 Since Studio Pro 11.12, Maia lets you list all registered agent skills. Click the **Skills** button next to
 **Add** in the Maia input area to open the skill overview pane. The pane shows whether each skill loaded
