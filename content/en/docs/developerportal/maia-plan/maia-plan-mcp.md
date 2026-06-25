@@ -25,7 +25,11 @@ The MCP server has the following key characteristics:
 Before you can use the Maia Plan MCP Server, you need the following:
 
 * Access to at least one Maia Plan project in the Mendix Portal.
-* A personal access token (PAT) with the appropriate scopes. For details on how to create and configure your PAT, refer to [Setting Up Your Personal Access Token](/apidocs-mxsdk/mxsdk/set-up-your-pat/).
+* A personal access token (PAT) with the appropriate scopes. For details on how to create and configure your PAT, refer to:
+
+    * The [Personal Access Tokens](/portal/user-settings/#pat) section of the *User Settings* page
+    * [Setting Up Your Personal Access Token](/apidocs-mxsdk/mxsdk/set-up-your-pat/)
+
 * An MCP client capable of connecting to external servers, such as Claude Code or a custom MCP implementation.
 
 ## Configuring the MCP Server {#configure}
@@ -43,8 +47,10 @@ Configure your MCP client with the following server details:
 
 The Maia Plan MCP Server requires authentication using a personal access token (PAT).
 
-Create a PAT with the `mx:plan:v1:read` scope for Maia Plan access.    
-For instructions on creating a PAT, refer to [Setting Up Your Personal Access Token](/apidocs-mxsdk/mxsdk/set-up-your-pat/).
+Create a PAT with the `mx:plan:v1:read` scope for Maia Plan access. For details on how to create and configure your PAT, refer to:
+
+* The [Personal Access Tokens](/portal/user-settings/#pat) section of the *User Settings* page
+* [Setting Up Your Personal Access Token](/apidocs-mxsdk/mxsdk/set-up-your-pat/)   
 
 Store your PAT securely. Do not hardcode credentials into scripts or configuration files that may be committed to version control.
 
