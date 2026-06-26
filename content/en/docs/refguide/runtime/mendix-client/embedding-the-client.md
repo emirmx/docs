@@ -12,7 +12,7 @@ This feature was introduced in Mendix version 11.12.0. It is in Public Beta. For
 
 ## Introduction
 
-The embedded client lets you use a Mendix web app as a component inside another web application. This makes it easier to add Mendix capabilities to broader digital experiences, support micro-frontend architectures, and integrate Mendix seamlessly into existing portals, products, or custom frontends. In this setup, the host application owns the surrounding page and browser-level experience, while the Mendix app owns the region where it is mounted.
+The embedded client lets you use a Mendix web app as a component inside another web application. This makes it easier to add Mendix capabilities to broader digital experiences, support micro-frontend architectures, and integrate Mendix seamlessly into existing portals, products, or custom frontends. In this setup, the host application owns the surrounding page and browser-level experience, while the Mendix app owns the region where it is embedded.
 
 This page describes how to do the following:
 
@@ -69,7 +69,7 @@ After you add the Embedded profile, the Mendix runtime serves the following bund
 <runtime-url>/dist/embedded-index.js
 ```
 
-For example, if your runtime URL is `http://localhost:8080`, the embedded bundle is served from `http://localhost:8080/dist/embedded-index.js`.
+For example, if your runtime URL is `http://my-app.mendixcloud.com`, the embedded bundle is served from `http://my-app.mendixcloud.com/dist/embedded-index.js.
 
 The Embedded profile defines the starting page for the embedded app, which is the first page shown when the host calls `render(…)`. It can also define a fallback page for startup or navigation failures. When the embedded home page requires page parameters, pass those values from the host application by using the `parameters` object in the `render(…)` configuration (see [Loading and Rendering the Embedded Client](#loading), below). The configured fallback page is shown when the parameters passed in `render(…)` do not match the expected parameter types of the embedded home page or when the selected home page is not accessible to the signed-in user.
 

@@ -76,15 +76,15 @@ If a microflow is used as a fallback, it can have only one String parameter name
 
 The fallback page will only be used for URLs that start with a [URL Prefix](/refguide/runtime-tab/#url-prefix).
 
-## Setting an Error Page for an Embedded Profile
+## Setting an Fallback Page for an Embedded Profile
 
 {{% alert color="info" %}}
 Embedded profiles were introduced in Mendix version 11.12.0. 
 {{% /alert %}}
 
-The Embedded profile can use an error page when the configured home page cannot be opened during startup or navigation. This can happen when the values passed in `render(…)` do not match the expected page parameter types or when the signed-in end-user does not have access to the configured home page. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
+The Embedded profile can use a fallback page when the configured home page cannot be opened during startup or navigation. This can happen when the values passed in `render(…)` do not match the expected page parameter types or when the signed-in end-user does not have access to the configured home page. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
-To configure an error page, open the Embedded profile in the **Navigation** editor and select the page you want to use.
+To configure a fallback page, open the Embedded profile in the **Navigation** editor and select the page you want to use.
 
 ## Setting a Nanoflow as a Home Page {#nanoflow-home-page}
 
