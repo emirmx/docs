@@ -1,6 +1,6 @@
 ---
-title: "Maia Instructions (AGENTS.md)"
-linktitle: "Custom Instructions"
+title: "Maia Agent Instructions (AGENTS.md)"
+linktitle: "Maia Instructions"
 url: /refguide/maia-instructions/
 weight: 95
 description: "Describes how to create and manage Maia Instructions (AGENTS.md) to steer agent behavior at the project or module level."
@@ -25,11 +25,11 @@ Maia Instructions follow the [AGENTS.md standard](https://agents.md) for agent i
 
 Maia supports both [agent skills](/refguide/maia-agent-skills/) and agent instructions. The following table summarizes their differences:
 
-|               | Instructions                                                                                        | Skills                                                                                   |
+| Aspects               | Instructions                                                                                        | Skills                                                                                   |
 | ------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Loading       | Deterministically loaded, whenever working with the given project or module                         | Agent decides to load skills on demand, based on their name and description                       |
-| Applicability | Project or module-wide instructions that should always be part of context (for example, company preferences) | Instructions that are applicable only in certain situations (for example, microflow conventions) |
-| Organization  | Single file, should be kept as short as possible                                                    | Allows you to split instructions into the core skill and additional references that Maia reads on demand as needed |
+| Loading       | Deterministically loaded, whenever working with the given project or module.                         | Agent decides to load skills on demand, based on their name and description.                       |
+| Applicability | Project or module-wide instructions that should always be part of context (for example, company preferences). | Instructions that are applicable only in certain situations (for example, microflow conventions). |
+| Organization  | Single file, should be kept as short as possible.                                                    | Allows you to split instructions into the core skill and additional references that Maia reads on demand as needed. |
 
 ## Creating a New Maia Instruction {#creating-instructions}
 
@@ -56,7 +56,5 @@ Project-level instructions are stored as `skillssource/AGENTS.md`, while module-
 ## Read More
 
 - [Agent Skills](/refguide/maia-agent-skills/)
-- [Maia Make Capabilities](/refguide/maia-make/)
 - [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
 - [Maia Chat](/refguide/maia-chat/)
-- [Agent Instructions Standard](https://agents.md) – the full specification for the agent instructions
