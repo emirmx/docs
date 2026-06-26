@@ -168,20 +168,30 @@ export const component: IComponent = {
                     k => k.$ID === data.configConstant!.id
                 );
 
-                const constant = constants.find(c => c.$ID === data.configConstant!.id) ?? null;
-
-                if (constant && constant.type.$Type !== "DataTypes$StringType") {
-                    result.push({
-                        errorCode: WRONG_CONSTANT_TYPE,
-                        errorDescription: `Constant '${data.configConstant.name}' must be of type String`,
-                        severity: "error",
-                        elementText: "Config Constant",
-                        propertyName: "configConstant"
-                    });
-                }
+                const constant = constants.find(c => c.$ID === data.configConstant!.id);
 
                 if (constant) {
-                    dependentElementIds.push(data.configConstant.id);
+                    if (constant.excluded) {
+                        result.push({
+                            errorCode: DOC_EXCLUDED,
+                            errorDescription: "Referenced document is excluded",
+                            severity: "error",
+                            elementText: "Config Constant",
+                            propertyName: "configConstant"
+                        });
+                    }
+
+                    if (constant.type.$Type !== "DataTypes$StringType") {
+                        result.push({
+                            errorCode: WRONG_CONSTANT_TYPE,
+                            errorDescription: `Constant '${data.configConstant.name}' must be of type String`,
+                            severity: "error",
+                            elementText: "Config Constant",
+                            propertyName: "configConstant"
+                        });
+                    }
+                    
+                    dependentElementIds.push(data.configConstant.id);                    
                 }
             }
 
@@ -379,7 +389,7 @@ function PersonEditor(input: { studioPro: StudioProApi; documentId: string }) {
 
             <div style={{ marginTop: 16 }}>
                 <button onClick={selectConstant}>Select Config Constant (must be String)</button>
-            </div>a
+            </div>
             {person.configConstant && (
                 <div style={{ marginTop: 8 }}>
                     Selected: {person.configConstant.qualifiedName}
@@ -412,22 +422,6 @@ Return `dependentElementIds` to tell Studio Pro which elements your document dep
 {{% alert color="info" %}}
 Without dependency tracking, your checks only run during full consistency check runs. With dependency tracking, checks run immediately when referenced elements change.
 {{% /alert %}}
-
-### Excluded Documents
-
-If a document you reference is excluded, you must check for it using the following code:
-
-```typescript
-const customDoc = await studioPro.app.model.customBlobDocuments.getDocumentById(refId);
-
-if ("document" in customDoc && customDoc.document.excluded) {
-    result.push({
-        errorCode: DOC_EXCLUDED,
-        errorDescription: "Referenced document is excluded",
-        severity: "error"
-    });
-}
-```
 
 ### Changed Elements
 
