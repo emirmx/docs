@@ -21,7 +21,7 @@ Instead of typing the same context into every chat, you define agent skills once
 
 Use agent skills to equip Maia with the domain knowledge and conventions it needs, whether those are company-wide standards or team-specific workflows. For example, a skill capturing your company's Mendix naming conventions means Maia applies them consistently whenever it generates entities, attributes, or microflows without you having to mention them each time.
 
-Since Studio Pro 11.12, Maia supports not only project-level skills, but also skills for all application (non-protected) modules. These skills are exportable together with the module in which they are contained
+Starting from Studio Pro 11.12, Maia supports not only project-level skills, but also skills for all application (non-protected) modules. These skills are exportable together with the module in which they are kept
 and can help you split your skills better.
 
 For guidance on writing effective skills, see [Best Practices for Skill Creators](https://agentskills.io/skill-creation/best-practices) and [Optimizing Skill Descriptions](https://agentskills.io/skill-creation/optimizing-descriptions) in the [Agent Skills documentation](https://agentskills.io/).
@@ -63,7 +63,7 @@ The `name` field must match the skill's parent directory name exactly. A mismatc
 ### Directory Structure {#directory-structure}
 
 Skills are stored in the `skillssource/` directory at the root of your application directory. You can also manage skills directly in the file system, for example, to copy in skills from another project. After making changes in the file system, go to **App** > **Synchronize App Directory** (keyboard shortcut: <kbd>F4</kbd>) to make the changes visible in Studio Pro. 
-You can also sync the changes by pressing the 'Sync' button in Maia skills overview pane.
+You can also sync the changes by pressing the **Sync** button in the **Maia skills** overview pane.
 
 Project-level skills are stored directly under `skillssource` directory:
 
