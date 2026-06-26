@@ -107,7 +107,7 @@ You can specify which repositories to use for Gradle. The content of this field 
 ### Generative AI
 
 * **Enable Maia** - When enabled, you can access all Maia capabilities in Studio Pro. It is enabled by default.
-* **Enable web tools** (in Studio Pro 11.11 and above) - When enabled, you can use the [Maia Web Fetch](/refguide/maia-web-fetch/) feature to fetch and read content from public websites and APIs. It is enabled by default. Restart Studio Pro for the change to take effect.
+* **Enable web tools** (in Studio Pro 11.11 and above) - When enabled, you can use the [Maia Web Fetch](/refguide/maia-web-fetch/) feature to fetch and read content from public websites and APIs. It is enabled by default. Restart Studio Pro for the change to take effect. For Studio Pro 11.12 and above, the changes take effect immediately and do not require restart. 
 
 In Studio Pro 11.7 and below, the **Generative AI** section contains the following settings:
 
