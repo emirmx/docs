@@ -63,7 +63,7 @@ You must enable anonymous users in your app's security settings and include anon
 Embedded profiles were introduced in Mendix version 11.12.0.
 {{% /alert %}}
 
-The Embedded profile lets you use a Mendix web app as a component inside another web application. The host application loads the embedded client and owns browser-level navigation, while the Mendix app renders and navigates inside its mounted region.
+The Embedded profile lets you use a Mendix web app as a component inside another non-Mendix web application. The host application loads the embedded client and owns browser-level navigation, while the Mendix app renders and navigates inside its mounted region.
 
 The Embedded profile defines a default home page and can also define a fallback page. When the configured home page expects page parameters, the host application can pass them through the `parameters` object in `render(…)`. For more information, see [Embedding the Client](/refguide/mendix-client/embedding-the-client/).
 
