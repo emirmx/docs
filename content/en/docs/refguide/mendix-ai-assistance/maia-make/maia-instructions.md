@@ -36,11 +36,11 @@ Maia supports both [agent skills](/refguide/maia-agent-skills/) and agent instru
 To create a new Maia Instruction, follow these steps:
 
 1. In the **App Explorer**, find either the **Maia** node under **App** for project-level instructions, or the **Maia** node under a module if you wish to add a module-level instruction.
-1. Right-click this node and click **Add** > **Agent instructions**.
+2. Right-click this node and click **Add** > **Agent instructions**.
 
 Studio Pro creates the `AGENTS.md` file. You can continue adding the instruction content.
 
-Note that newly added instructions or changes to existing instructions are discovered only when new session is started.
+{{% alert color="info" %}}Newly added instructions or changes to existing instructions are discovered only when new session is started.{{% /alert %}}
 
 ### Instructions Content {#instructions-content}
 
