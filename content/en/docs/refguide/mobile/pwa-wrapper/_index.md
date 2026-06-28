@@ -4,12 +4,8 @@ url: /refguide/mobile/pwa-wrapper/
 weight: 45
 description: "Package Mendix PWAs as native Android and iOS apps and use wrapper capabilities."
 cascade:
-    beta: true
+beta: false
 ---
-
-{{% alert color="info" %}}
-This feature is currently in beta. For more information, refer to [Release Status](/releasenotes/release-status/).
-{{% /alert %}}
 
 ## Introduction
 
@@ -55,7 +51,7 @@ The standard workflow is as follows:
 
 ## Limitations
 
-Keep the following beta limitations in mind:
+Keep the following limitations in mind:
 
 * Some capabilities depend on physical device hardware and cannot be validated reliably on simulators or emulators
 * Platform support varies for individual capabilities, so not every capability behaves the same way on Android and iOS
