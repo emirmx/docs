@@ -53,4 +53,4 @@ If your system has a low memory limit, add the `--renderToDisk` parameter to the
 
 ## Mendix Documentation MCP Server
 
-Mendixlabs have created an MCP server which you can use with your AI harness to give your models access to the Mendix documentation. You can find it at [mendixlabs/mendix-doc.mcp](https://github.com/mendixlabs/mendix-doc-mcp) in GitHub.
+Mendix Labs have created an MCP server which you can use with your AI harness to give your models access to the Mendix documentation. You can find it at [mendixlabs/mendix-doc.mcp](https://github.com/mendixlabs/mendix-doc-mcp) in GitHub.
