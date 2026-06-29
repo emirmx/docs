@@ -60,7 +60,7 @@ The customer is responsible for:
 
 ##### Implementer and Operator Responsibilities
 
- * App Implementer - Implement vulnerability tracking and measurement for the Mendix application.
+* App Implementer - Implement vulnerability tracking and measurement for the Mendix application.
 * Infra Operator - Measure and track infrastructure flaw remediation times.
 * App Operator - Ensure custom application flaws are remediated within customer-defined benchmarks.
 
@@ -85,3 +85,27 @@ The Mendix on Kubernetes (Operator) release notes contain dated entries that rec
 
 Each entry is date-stamped, making it possible to calculate the elapsed time from CVE publication (visible in NVD) to Mendix's fix release. For more information, see [Mendix on Kubernetes](/releasenotes/developer-portal/mendix-for-private-cloud/).
 
+### Private Mendix Platform Release Notes: Security Fix Tracking per Version
+
+The Private Mendix Platform release notes record security improvements per release version with dates, organized under structured sub-sections (*New Features*, *Improvements*, *Updates*, *Fixes*, and *Known Issues*). This provides the dated fix record needed to establish remediation benchmarks.
+
+#### Example
+
+**Version 2.6.1 (May 4, 2026)**
+
+Fixes: *We have increased the security around entity access rules and user management privileges.*
+
+Updates: *Masked app constants - Masked values are hidden in logs, and can optionally be hidden in CI/CD settings*.
+
+For more information, see [Private Mendix Platform](/releasenotes/private-platform/).
+
+### Release Policy (LTS and MTS): Security Patch Commitment per Version
+
+The Mendix Release Policy defines which versions receive security patches and for how long, establishing the benchmark framework for corrective action timelines. LTS and MTS versions both explicitly receive patch releases for bug and security fixes during their support window - this
+is the public, documented commitment that security flaws will be remediated within the version's supported lifetime.
+
+Long-Term Support (LTS) versions receive patch releases for bug and security fixes only. Support ends when a third consecutive major version releases. For more information, see [Long-Term Support Version (LTS)](/releasenotes/studio-pro/lts-mts/#lts).
+
+Medium-Term Support (MTS) versions receive patch releases for bug and security fixes. Support ends three months after the next major version releases. For more information, see [Medium-Term Support Version (MTS)](/releasenotes/studio-pro/lts-mts/#mts).
+
+For information about the current supported versions and dates, refer to the [version support table](/releasenotes/studio-pro/lts-mts/#types-of-support).
