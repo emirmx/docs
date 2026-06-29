@@ -80,7 +80,7 @@ The following public documentation proves that PMP container images are hardened
 
 Mendix app container images are locked down by default - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths.
 
-This means any process attempting to execute with elevated privileges or modify protected paths is immediately anomalous — a behavioral signal detectable without signatures.
+This means any process attempting to execute with elevated privileges or modify protected paths is immediately anomalous - a behavioral signal detectable without signatures.
 
 For more information, see [Containerized Mendix App Architecture](/developerportal/deploy/private-cloud-cluster/#containerized-mendix-app-architecture).
 
@@ -102,7 +102,7 @@ For more information, see [Read-only RootFS](/developerportal/deploy/private-clo
 The Private Mendix Platform operator sets `automountServiceAccountToken: false` on Mendix app pods by default:
 
 
-* *`runtimeAutomountServiceAccountToken` — Specify if Mendix app pods should get a Kubernetes Service Account token; defaults to false*
+* *`runtimeAutomountServiceAccountToken` - Specify if Mendix app pods should get a Kubernetes Service Account token; defaults to false*
 
 Disabling token automounting prevents a compromised container from using the Kubernetes API to perform lateral movement - a common behaviour-based attack vector. Any API calls from a Private Mendix Platform app pod are therefore anomalous and detectable without needing a signature for the specific malware.
 
