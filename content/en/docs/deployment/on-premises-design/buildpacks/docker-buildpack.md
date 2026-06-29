@@ -1,7 +1,7 @@
 ---
 title: "Docker Buildpack"
 url: /developerportal/deploy/docker-deploy/
-weight: 60
+weight: 20
 description: "Describes how to deploy using a Docker image using a Docker Buildpack."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
