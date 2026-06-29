@@ -50,6 +50,10 @@ For Method 2, you also need the following:
 
 ## Example Scenario
 
+{{% alert color="info" %}}
+The following examples demonstrate the integration pattern. For production use, consider adding stronger error handling, security, retries, response validation, and logging.
+{{% /alert %}}
+
 The examples in this article use a Mendix MCP tool named *RetrieveNumberOfTicketsInStatus*. This tool is exposed by a Mendix microflow and accepts the following input:
 
 | Parameter | Type | Description |
@@ -63,8 +67,6 @@ The microflow returns the number of tickets for the given status. In this exampl
 | Open | 42 |
 | Closed | 128 |
 | In Progress | 19 |
-
-If a value other than the supported statuses is provided, the microflow throws an exception.
 
 A user interacting with the Cortex Agent can ask a question such as, *How many tickets are open?*
 
@@ -351,7 +353,7 @@ To configure your app for method 2, perform the following steps:
 
     Keep your client secret confidential. Do not include it in shared documentation, code, or version control systems.
 
-2. Create a Snowflake API integration that configures OAuth 2.0 access to the Mendix MCP endpoint:
+2. Create a Snowflake API integration to configure OAuth 2.0 access to the Mendix MCP endpoint:
 
     ```text
     USE ROLE ACCOUNTADMIN;
