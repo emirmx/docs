@@ -1,13 +1,13 @@
 ---
-title: "Portable App Distribution for Kubernetes"
+title: "Best practices for Kubernetes"
 url: /developerportal/deploy/docker-deploy-k8s/
-weight: 20
-description: "Describes how to use Portable App Distribution to deploy on Kubernetes without installing the Mendix Operator."
+weight: 60
+description: "Describes how to use Mendix Portable Runtime to deploy on Kubernetes without installing the Mendix Operator."
 ---
 
 ## Introduction
 
-This guide provides a walkthrough for deploying your Mendix application using [Portable App Distribution](/developerportal/deploy/portable-app-distribution-deploy/) with Kubernetes, but without relying on the Mendix Operator. This is particularly useful for air-gapped environments, private cloud deployments, or scenarios where you need full control over the deployment process.
+This guide provides a walkthrough for deploying your Mendix application using [Mendix Portable Runtime](/developerportal/deploy/portable-app-distribution-deploy/) with Kubernetes, but without relying on the Mendix Operator. This is particularly useful for air-gapped environments, private cloud deployments, or scenarios where you need full control over the deployment process.
 
 {{% alert color="info" %}}
 This document is not an official Mendix implementation, or a substitute for recommended production deployment strategies. For more features, such as app management or governance, we suggest using [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) or [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), which offer a structured, tested experience with cloud infrastructure. 
@@ -15,13 +15,13 @@ This document is not an official Mendix implementation, or a substitute for reco
 For information about the scope of support, see [Support for Different Deployment Strategies](/support/deployment-strategy-support/).
 {{% /alert %}}
 
-## Benefits of Portable App Distribution
+## Benefits of Mendix Portable Runtime
 
-Portable App Distribution revolutionizes the way in which Mendix applications are packaged and delivered. This innovative approach bundles your application code with all its necessary dependencies into a single, self-contained, and runnable artifact. This greatly simplifies the deployment of Mendix applications, whether you are targeting on-premise infrastructure or modern containerized environments like Docker, making the entire process more efficient and seamless.
+Mendix Portable Runtime revolutionizes the way in which Mendix applications are packaged and delivered. This innovative approach bundles your application code with all its necessary dependencies into a single, self-contained, and runnable artifact. This greatly simplifies the deployment of Mendix applications, whether you are targeting on-premise infrastructure or modern containerized environments like Docker, making the entire process more efficient and seamless.
 
-The ability to generate a Portable App Distribution with a single build command means that creating a Docker-ready artifact becomes a streamlined process, making the overall integration into existing Docker-based CI/CD pipelines more efficient and less prone to errors.
+The ability to generate a Mendix Portable Runtime with a single build command means that creating a Docker-ready artifact becomes a streamlined process, making the overall integration into existing Docker-based CI/CD pipelines more efficient and less prone to errors.
 
-The Portable App Distribution feature allows you to package and deploy Mendix apps without relying on the Mendix Cloud or a Mendix Operator. This is particularly useful for the following use cases:
+The Mendix Portable Runtime feature allows you to package and deploy Mendix apps without relying on the Mendix Cloud or a Mendix Operator. This is particularly useful for the following use cases:
 
 * Air-gapped environments where internet access is restricted or unavailable
 * Private cloud deployments where you manage your own infrastructure
@@ -29,7 +29,7 @@ The Portable App Distribution feature allows you to package and deploy Mendix ap
 
 Docker provides a consistent and reproducible environment for running Mendix apps, making it ideal for cloud-native and containerized deployments.
 
-Portable App Distribution offers a more agile, user-centric, and efficient deployment ecosystem, empowering customers with greater control over their Docker deployments and simplifying the internal deployment processes.
+Mendix Portable Runtime offers a more agile, user-centric, and efficient deployment ecosystem, empowering customers with greater control over their Docker deployments and simplifying the internal deployment processes.
 
 ## Prerequisites
 
@@ -41,11 +41,11 @@ Before you begin, ensure you have the following:
 * Kubernetes cluster (if deploying to Kubernetes)
 * `kubectl` configured to connect to your Kubernetes cluster
 
-## Deploying an App with Portable App Distribution
+## Deploying an App with Mendix Portable Runtime
 
-The Portable App Distribution feature in Mendix Studio Pro provides you with the necessary application files to build a Docker image. It packages your Mendix application as a self-contained distribution, ready for integration into your Docker environment.
+The Mendix Portable Runtime feature in Mendix Studio Pro provides you with the necessary application files to build a Docker image. It packages your Mendix application as a self-contained distribution, ready for integration into your Docker environment.
 
-To deploy your app to Docker, you must [create a Portable App Distribution Package](/developerportal/deploy/portable-app-distribution-deploy/#creating-a-portable-app-distribution-file), build a Docker image, and then deploy the Docker image (including pushing it to a container registry). For more information, refer to the sections below.
+To deploy your app to Docker, you must [create a Mendix Portable Runtime Package](/developerportal/deploy/portable-app-distribution-deploy/#creating-a-portable-app-distribution-file), build a Docker image, and then deploy the Docker image (including pushing it to a container registry). For more information, refer to the sections below.
 
 ### Building a Docker Image
 
