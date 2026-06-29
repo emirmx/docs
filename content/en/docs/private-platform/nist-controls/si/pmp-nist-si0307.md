@@ -82,7 +82,7 @@ Mendix app container images are locked down by default - they run as a non-root 
 
 This means any process attempting to execute with elevated privileges or modify protected paths is immediately anomalous - a behavioral signal detectable without signatures.
 
-For more information, see [Containerized Mendix App Architecture](/developerportal/deploy/private-cloud-cluster/#containerized-mendix-app-architecture).
+For more information, see [Containerized Mendix App Architecture](/developerportal/deploy/private-cloud-cluster/#containerized-architecture).
 
 ### Read-Only Root Filesystem
 
@@ -95,7 +95,7 @@ observe.
 
 App containers also support this through `runtimeReadOnlyRootFilesystem` in the operator CR.
 
-For more information, see [Read-only RootFS](/developerportal/deploy/private-cloud-cluster/#read-only-rootfs).
+For more information, see [Read-only RootFS](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
 
 ### Service Account Token Automounting Disabled by Default
 
@@ -106,7 +106,7 @@ The Private Mendix Platform operator sets `automountServiceAccountToken: false` 
 
 Disabling token automounting prevents a compromised container from using the Kubernetes API to perform lateral movement - a common behavior-based attack vector. Any API calls from a Private Mendix Platform app pod are therefore anomalous and detectable without needing a signature for the specific malware.
 
-For more information, see [Mendix App Deployment Settings](/developerportal/deploy/private-cloud-cluster/#mendix-app-deployment).
+For more information, see [Mendix App Deployment Settings](/developerportal/deploy/private-cloud-cluster/#advanced-deployment-settings).
 
 ### Private Mendix Platform Release Notes - CVE Remediation as Evidence of Active Scanning
 
