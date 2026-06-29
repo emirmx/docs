@@ -28,22 +28,22 @@ There are two ways to open the MCP Client panel:
 
 ### Preset Servers {#preset-servers}
 
-Preset MCP servers let you connect to common services without entering URLs or credentials.
+Preset MCP servers allow you connect to common services without entering URLs or credentials.
 
 #### Mendix Marketplace {#mendix-marketplace-preset}
 
-Studio Pro adds the **Mendix Marketplace** connection automatically when you open the MCP Client panel. It authenticates with your Mendix ID — no extra credentials needed. Marketplace tools are disabled by default — enable the ones you need from the expanded card.
+Studio Pro adds the **Mendix Marketplace** connection automatically when you open the MCP Client panel. It authenticates with your Mendix ID, so no extra credentials are needed. Marketplace tools are disabled by default; enable the ones you need from the expanded card.
 
 Mendix manages this connection. You cannot remove it, but you can enable or disable it using the checkbox on the **Mendix Marketplace** card.
 
 #### Preset Catalog {#preset-catalog}
 
-Click **+ Add MCP Server** to open the catalog alongside the manual entry form. Each preset appears as a tile. Click a tile to select it — Studio Pro sets the URL, connection type, and authentication type automatically. Only the server name remains editable.
+Click **Add MCP Server** to open the catalog alongside the manual entry form. Each preset appears as a tile. Click a tile to select it. Studio Pro sets the URL, connection type, and authentication type automatically. Only the server name remains editable.
 
-* For OAuth presets: click **Authenticate** to authorize in your browser, then click **OK** to save.
-* For bearer token presets: enter your token, then click **OK**.
+* For OAuth presets: click **Authenticate** to authorize in your browser, then click **OK** to save
+* For bearer token presets: enter your token, then click **OK**
 
-Tools from new preset connections are **disabled by default**. Enable the tools you need from the expanded connection card.
+Tools from new preset connections are disabled by default. Enable the tools you need from the expanded connection card.
 
 ### Adding an MCP Server {#adding-server}
 
@@ -88,7 +88,7 @@ For Figma MCP, the simplest option is to generate a personal access token in Fig
 
 ##### Callback URL {#callback-url}
 
-The OAuth callback URL format is `http://localhost:{port}/mcp/oauth/callback`. Studio Pro uses a fixed port from the range **44380–44384** — one port per running Studio Pro instance, starting from 44380.
+The OAuth callback URL format is `http://localhost:{port}/mcp/oauth/callback`. Studio Pro uses a fixed port from the range **44380–44384**, one port per running Studio Pro instance, starting from 44380.
 
 When registering an OAuth app with a provider, enter all five callback URLs if the provider allows multiple:
 
@@ -98,7 +98,7 @@ When registering an OAuth app with a provider, enter all five callback URLs if t
 * `http://localhost:44383/mcp/oauth/callback`
 * `http://localhost:44384/mcp/oauth/callback`
 
-If the provider allows only one callback URL, use `http://localhost:44380/mcp/oauth/callback` — Studio Pro always tries port 44380 first.
+If the provider allows only one callback URL, use `http://localhost:44380/mcp/oauth/callback`. Studio Pro always tries port 44380 first.
 
 {{% alert color="info" %}}
 If all ports in the range 44380–44384 are occupied (for example, when multiple Studio Pro instances are open), Studio Pro shows an error. Close another instance or free a port and try connecting again.
@@ -107,7 +107,7 @@ If all ports in the range 44380–44384 are occupied (for example, when multiple
 Use `--mcp-oauth-ports` to override the port range (for example, `--mcp-oauth-ports=44380-44384` or `--mcp-oauth-ports=44380,39321`).
 
 {{% alert color="warning" %}}
-For servers that validate the callback URL against the [OAuth Client ID Metadata Document (SEP-991)](https://modelcontextprotocol.io/seps/991-enable-url-based-client-registration-using-oauth-c), custom ports will always be rejected — the metadata document is hosted by Mendix and lists only ports 44380–44384 as valid callback URLs. Custom ports are only useful for servers that do not enforce this validation, such as internal or self-hosted servers.
+Some servers validate the callback URL against the [OAuth Client ID Metadata Document (SEP-991)](https://modelcontextprotocol.io/seps/991-enable-url-based-client-registration-using-oauth-c). For these servers, custom ports are always rejected; the metadata document is hosted by Mendix and lists only ports 44380–44384 as valid callback URLs. Custom ports only work with servers that do not enforce this validation, such as internal or self-hosted servers.
 {{% /alert %}}
 
 ### Managing Connections {#managing-connections}
