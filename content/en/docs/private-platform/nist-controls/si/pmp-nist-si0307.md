@@ -78,13 +78,13 @@ The following public documentation proves that PMP container images are hardened
 
 #### Non-root Execution, No Privilege Escalation, Locked-down Filesystem
 
-Mendix app container images are locked down by default — they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths.
+Mendix app container images are locked down by default - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths.
 
 This means any process attempting to execute with elevated privileges or modify protected paths is immediately anomalous — a behavioral signal detectable without signatures.
 
 For more information, see [Containerized Mendix App Architecture](/developerportal/deploy/private-cloud-cluster/#containerized-mendix-app-architecture).
 
-### Read-only Root Filesystem
+### Read-Only Root Filesystem
 
 From Mendix Operator v2.21.0+, all system containers use `readOnlyRootFilesystem: true` by default:
 
