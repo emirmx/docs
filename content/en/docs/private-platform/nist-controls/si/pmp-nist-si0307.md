@@ -104,7 +104,7 @@ The Private Mendix Platform operator sets `automountServiceAccountToken: false` 
 
 * *`runtimeAutomountServiceAccountToken` - Specify if Mendix app pods should get a Kubernetes Service Account token; defaults to false*
 
-Disabling token automounting prevents a compromised container from using the Kubernetes API to perform lateral movement - a common behaviour-based attack vector. Any API calls from a Private Mendix Platform app pod are therefore anomalous and detectable without needing a signature for the specific malware.
+Disabling token automounting prevents a compromised container from using the Kubernetes API to perform lateral movement - a common behavior-based attack vector. Any API calls from a Private Mendix Platform app pod are therefore anomalous and detectable without needing a signature for the specific malware.
 
 For more information, see [Mendix App Deployment Settings](/developerportal/deploy/private-cloud-cluster/#mendix-app-deployment).
 
