@@ -220,7 +220,7 @@ To configure your app for method 1, perform the following steps:
             "jsonrpc": "2.0",
             "id": init_id,
             "method": "initialize",
-            "params": {"protocolVersion": "2024-11-05", "capabilities": {}}
+            "params": {"protocolVersion": "2025-03-26", "capabilities": {}}
         }
         init_resp = session.post(base_url, json=init_payload, headers=headers, timeout=30)
         init_resp.raise_for_status()
