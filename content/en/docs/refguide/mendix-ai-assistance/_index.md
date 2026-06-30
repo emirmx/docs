@@ -29,6 +29,8 @@ For more information on how to ensure optimal performance of Maia, see the [Best
 
 Mendix applies fair use limits to maintain a reliable experience for all users. If usage exceeds these limits, your Maia access may be temporarily paused. Account access is reviewed on a weekly schedule. Your account will be automatically reactivated within seven days once the review period concludes.
 
+If you need uninterrupted access to Maia capabilities, you can [configure a custom AI provider](/refguide/maia-make/#custom-provider) to use your own LLM provider.
+
 ## Network Configuration Requirements {#maia-network-requirement}
 
 To ensure the smooth operation of Mendix AI Assistance (Maia), the following network requirements must be met:
