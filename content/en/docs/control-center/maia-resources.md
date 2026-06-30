@@ -30,7 +30,7 @@ The overview page provides a centralized view of all Maia Units currently provis
 
 1. **Make sure you have Cloud Tokens available**
 Cloud Tokens are purchased through your Mendix subscription. If your organization already has Cloud Tokens allocated to other services, you can reassign them. Check your available balance in the Control Center. If you need to purchase more, contact your Mendix account manager.
-2. **Convert Cloud Tokens to Maia Units **
+2. **Convert Cloud Tokens to Maia Units**
 In the Control Center, go to Maia Resources and select Provision Resource. Choose how many Cloud Tokens to allocate. Each Cloud Token gives you 100 Maia Units per month.
 3. **Use Maia in Studio Pro**
 Your new capacity is active immediately. Studio Pro unblocks and Maia Make becomes available again.
