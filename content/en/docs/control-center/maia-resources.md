@@ -52,7 +52,7 @@ This allows you to select how many Cloud Token to use to provision Maia Units. E
 
 Click **Provision** to select an amount of cloud tokens. An pop-up shows the Maia Units capacity that will be added. Clicking **Provision** again completes the process. You are taken back to the **Maia Resource** page where the newly provisioned Maia Units appear in the list.
 
-{{< figure src="/attachments/control-center/maia-resources/resource-summary.jpeg" alt="" >}}
+{{< figure src="/attachments/control-center/maia-resources/resource-summary.jpeg" alt="" width="300" >}}
 
 ## Upgrading Maia Units {#upgrading-maia-units}
 
