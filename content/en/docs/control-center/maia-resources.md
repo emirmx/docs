@@ -1,4 +1,3 @@
-
 ---
 title: "Maia Resources"
 url: /control-center/maia-resources/
