@@ -35,7 +35,7 @@ To fix this issue, do the following:
 
 ## Changes
 
-* We removed the app preview and QR code feature. This feature was designed for the AppCenter workflow (which shut down in 2025) and is no longer functional. The removal eliminates the Windows location permission dialog that was triggered on every launch when enumerating network interfaces.
+* We removed the app preview feature, which included QR code generation for APK downloads over LAN. This feature was designed for the AppCenter workflow (which shut down in 2025) and is no longer functional. The removal eliminates the Windows location permission dialog that was triggered on every launch when enumerating network interfaces.
 
 ## Release 1.0.145 {#10145}
 
