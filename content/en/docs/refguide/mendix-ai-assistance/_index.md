@@ -25,11 +25,15 @@ For information on what third-party services Maia uses and what data are sent to
 
 For more information on how to ensure optimal performance of Maia, see the [Best Practice for Maia Performance](#maia-performance-best-practice) section below.
 
-## Fair Use Policy {#fair-use}
+## Maia Usage Limits {#maia-usage}
 
-Mendix applies fair use limits to maintain a reliable experience for all users. If usage exceeds these limits, your Maia access may be temporarily paused. Account access is reviewed on a weekly schedule. Your account will be automatically reactivated within seven days once the review period concludes.
+To ensure a reliable experience with Maia, Mendix provides two ways to manage your usage: purchasing Maia Units and configuring a custom AI provider of your choice. Every user receives 200 free units per month and can purchase more as needed.
+
+When your free Maia Units allocation or purchased Maia Units have been consumed, you receive a notification in Studio Pro indicating that you need to take action before you can use Maia Make again. Your allocation resets at the start of each month. To increase your capacity, you can purchase additional Maia Units. For more information on purchasing Maia Units, see [Increasing Your Maia Usage Capacity](/control-center/maia-resources/#increase-maia-units). 
 
 If you need uninterrupted access to Maia capabilities, you can [configure a custom AI provider](/refguide/maia-make/#custom-provider) to use your own LLM provider.
+
+Alternatively, you can use the Studio Pro MCP Server's bring your own agent (BYO Agent) capabilities, which allows you to use Maia's capabilities directly from external clients, including AI coding assistants, agents, and other MCP-based LLM tools. For more information on the Studio Pro MCP Server, see [Studio Pro MCP Server](/refguide/studio-pro-mcp-server/).
 
 ## Network Configuration Requirements {#maia-network-requirement}
 
