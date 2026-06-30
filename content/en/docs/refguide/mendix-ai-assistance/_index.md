@@ -27,7 +27,7 @@ For more information on how to ensure optimal performance of Maia, see the [Best
 
 ## Maia Usage Limits {#maia-usage}
 
-To ensure a reliable experience with Maia, Mendix provides two ways to manage your usage: purchasing Maia Units and configuring a custom AI provider of your choice. Every user receives 200 free units per month and can purchase more as needed.
+To ensure a reliable experience with Maia, Mendix provides two ways to manage your usage: purchasing Maia Units and configuring a custom AI provider of your choice. Every company receives 200 free units per month and can purchase more as needed.
 
 When your free Maia Units allocation or purchased Maia Units have been consumed, you receive a notification in Studio Pro indicating that you need to take action before you can use Maia Make again. Your allocation resets at the start of each month. To increase your capacity, you can purchase additional Maia Units. For more information on purchasing Maia Units, see [Increasing Your Maia Usage Capacity](/control-center/maia-resources/#increase-maia-units). 
 
@@ -92,6 +92,10 @@ Various Maia features are available in Mendix Portal. For more information, refe
 Various Maia features are available in Private Mendix Platform. For more information, refer to [Maia in Private Mendix Platform](/private-mendix-platform/maia/).
 
 ## Maia Third-Party Services {#maia-third-party-services}
+
+{{% alert color="info" %}}
+As of Studio Pro 11.12, Maia Make uses Claude Sonnet 4.6.
+{{% /alert %}}
 
 [Maia Make](/refguide/maia-make/) introduced in Studio Pro 11.8 uses Claude Sonnet 4.5. Any Maia Make capability in Studio Pro 11.8 and above uses this model to generate Mendix models. 
 
