@@ -6,7 +6,7 @@ description: "Describes how to provision and deprovision Maia Resources using se
 
 ## Introduction
 
-Maia Resources is your access point to increase the capacity of Maia Units for using Maia Make in Studio Pro. It allows admins to provision, upgrade, downgrade, and deprovision Maia Units and manage the resources for Maia Make for their company. For more information on Maia Make’s capabilities, refer to [Mendix AI Assistance (Maia)](refguide/mendix-ai-assistance/).
+Maia Resources is your access point to increase the capacity of Maia Units for using Maia Make in Studio Pro. It allows admins to provision, upgrade, downgrade, and deprovision Maia Units and manage the resources for Maia Make for their company. For more information on Maia Make’s capabilities, refer to [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/).
 
 ## Prerequisites
 
