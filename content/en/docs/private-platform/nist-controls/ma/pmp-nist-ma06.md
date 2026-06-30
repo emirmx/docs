@@ -14,7 +14,7 @@ This document describes how Private Mendix Platform fulfills the MA-06 control.
 | --- | --- |
 | Control category | MA - Maintenance |
 | Requirement baseline | FEDRAMP MODERATE |
-| Responsibility and ownership | Customer - Infra, Customer - Org |
+| Responsibility and ownership | Mendix - Private Mendix Platform, Mendix - Operator, Mendix - Studio Pro/Runtime, Customer - Infra, Customer - Org |
 
 ## Control
 
@@ -36,7 +36,9 @@ The following controls are related to this control:
 
 ### Customer Responsibility
 
-The responsibility for sourcing maintenance and defining Service Level Expectations (SLAs) for the Mendix solution, as well as directing Infra and App Operators to perform maintenance and support, rests with the customer.  Mendix provides the core platform and product support as defined in its license agreements and MSA, but the day-to-day operational maintenance and the specific performance guarantees (SLAs) for a deployed solution are inherently tied to the customer's chosen infrastructure, operational policies, and contractual relationships with other vendors.
+The responsibility for sourcing maintenance and defining Service Level Expectations (SLAs) for the Mendix solution, as well as directing Infra and App Operators to perform maintenance and support, rests with the customer. 
+
+Mendix provides the core platform and product support as defined in its license agreements and MSA, but the day-to-day operational maintenance and the specific performance guarantees (SLAs) for a deployed solution are inherently tied to the customer's chosen infrastructure, operational policies, and contractual relationships with other vendors.
 
 ## Guidance
 

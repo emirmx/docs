@@ -14,7 +14,7 @@ This document describes how Private Mendix Platform fulfills the MA-05 (01) cont
 | --- | --- |
 | Control category | MA - Maintenance |
 | Requirement baseline | FEDRAMP MODERATE |
-| Responsibility and ownership | Customer - Infra, Customer - Org |
+| Responsibility and ownership | Mendix - Private Mendix Platform, Mendix - Operator, Mendix - Studio Pro/Runtime, Customer - Infra, Customer - Org |
 
 ## Control
 
