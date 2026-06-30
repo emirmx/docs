@@ -123,7 +123,7 @@ This option (@ icon) allows you to add certain logic or pages to Maia as context
 
 #### Changed List
 
-A list appears above the chatbox with a list of items that were added or changed by Maia.
+A list of items added or changed by Maia appears above the chat box. Click an entry to open the relevant document. To undo all changes, click **Undo all**. To undo a single change, click the undo button on the right side of that item.
 
 {{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/changed-list.png" width="250px" >}}
 
