@@ -101,21 +101,31 @@ The conversational interface includes the following features.
 
 Clicking **New Chat** allows you to clear the messages and start a new conversation that does not reference your current chat.
 
+{{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/new-chat.jpg" width="250px" >}}
+
 #### Configure MCP Connections 
 
 This option ({{% icon name="plug" %}}) allows you to connect external [MCP](https://modelcontextprotocol.io/introduction) servers to Maia, giving it access to third-party tools during chat. For more information on how to configure MCP connections, see [Maia MCP Client](/refguide/maia-mcp/).
+
+{{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/configure.jpg" width="250px" >}}
 
 #### Add
 
 **{{% icon name="paperclip" %}} Add** allows you to attach images, PDFs, or user stories to help Maia understand your requirements better.
 
+{{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/add.jpg" width="250px" >}}
+
 #### Add file to Maia Chat 
 
 This option (@ icon) allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
+{{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/add-files.jpg" width="250px" >}}
+
 #### Changed List
 
 A list appears above the chatbox with a list of items that were added or changed by Maia.
+
+{{< figure src="/attachments/refguide/mendix-ai-assistance/maia-make/maia-make-capabilities/changed-list.png" width="250px" >}}
 
 #### Clarifying Questions
 
