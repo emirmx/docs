@@ -40,6 +40,7 @@ Maia Make can generate new documents, modify existing documents, and explain app
 | JavaScript actions | Studio Pro 11.9 | Explain-only in Studio Pro 11.9. Generation, adding parameters, and updating the associated JavaScript file available from Studio Pro 11.10. |
 | Navigation | Studio Pro 11.11 | |
 | Menu | Studio Pro 11.11 | |
+| Data Transformers | Studio Pro 11.12 | |
 
 ### Maia Make Standalone Capabilities
 
@@ -67,6 +68,8 @@ The following table lists the general capabilities of Maia Make and the Studio P
 | Removing elements | Allows Maia to remove elements from documents to support more advanced refactoring tasks. | Studio Pro 11.9 | |
 | Undo support | Allows you to undo Maia-generated changes on a per-document basis. | Studio Pro 11.9 | |
 | Folder structure support | Organizes new documents into existing folders and follows your established folder hierarchy when generating content. | Studio Pro 11.10 | Not supported for pages. |
+| Themes and styling | Allows Maia to modify theme variables, create custom styling, and manage design properties. | Studio Pro 11.12 | |
+| Markdown attachment support | Allows you to provide Markdown documents as input to help Maia better understand your requirements. | Studio Pro 11.12 | |
 
 ## Using Maia Make Capabilities
 
