@@ -2,6 +2,7 @@
 title: "Maia Resources"
 url: /control-center/maia-resources/
 description: "Describes how to provision and deprovision Maia Resources using self-service."
+weight: 25
 ---
 
 ## Introduction
