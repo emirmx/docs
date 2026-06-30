@@ -29,7 +29,7 @@ For more information on how to ensure optimal performance of Maia, see the [Best
 
 To ensure a reliable experience with Maia, Mendix provides two ways to manage your usage: purchasing Maia Units and configuring a custom AI provider of your choice. Every user receives 200 free units per month and can purchase more as needed.
 
-When your free Maia Units allocation or purchased Maia Units have been consumed, you receive a notification in Studio Pro indicating that you need to take action before you can use Maia Make again. Your allocation resets at the start of each month. To increase your capacity, you can purchase additional Maia Units. For more information on purchasing Maia Units, see [Increasing Your Maia Usage Capacity](/control-center/maia-resources/increase-maia-units/). 
+When your free Maia Units allocation or purchased Maia Units have been consumed, you receive a notification in Studio Pro indicating that you need to take action before you can use Maia Make again. Your allocation resets at the start of each month. To increase your capacity, you can purchase additional Maia Units. For more information on purchasing Maia Units, see [Increasing Your Maia Usage Capacity](/control-center/maia-resources/#increase-maia-units). 
 
 If you need uninterrupted access to Maia capabilities, you can [configure a custom AI provider](/refguide/maia-make/#custom-provider) to use your own LLM provider.
 
