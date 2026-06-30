@@ -28,7 +28,7 @@ When you connect external agents or AI tools to Studio Pro's MCP Server, those t
 
 ## Enabling the MCP Server
 
-To enable the MCP Server, navigate to **Preferences** > **Maia** > **MCP Server**, and check **Enable MCP Server**. You can also configure the port in this menu.
+To enable the MCP Server, navigate to **Preferences** > **AI** > **MCP Server**, and check **Enable MCP Server**. You can also configure the port in this menu.
 
 ### Connecting External Clients
 
