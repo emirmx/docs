@@ -20,7 +20,13 @@ You can access the Usage Reports by performing the following steps:
 
     {{< figure src="/attachments/workstation/wks-usage1.png" class="no-border" >}}
 
-2. To view the reports for a specific workspace, open the workspace in Workstation Management, and then click **Usage**.
+2. To view a report for all workspaces that are owned by your company, go to Workstation Management and click **Company Usage Report**. 
+
+{{% alert color="info" %}}
+The **Company Usage Report** tab is accessible only to users who have the Mendix Admin role assigned in [Control Center](/control-center/).
+{{% /alert %}}
+
+3. To view the reports for a specific workspace, open the workspace in Workstation Management, and then click **Usage**.
 
     {{< figure src="/attachments/workstation/wks-usage2.png" class="no-border" >}}
 
